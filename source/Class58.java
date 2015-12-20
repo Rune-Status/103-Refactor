@@ -338,7 +338,7 @@ public class Class58 {
 					if (Class31.gameConnection.avail() >= Client.frameSize * 371800591) {
 						Client.inBuffer.position = 0;
 						Class31.gameConnection.read(Client.inBuffer.payload, 0, Client.frameSize * 371800591);
-						Class76.method337();
+						Class76.clearCache();
 						ItemTable.method649(Client.inBuffer);
 						TileDecorationStub.anInt840 = -1071803165;
 						Class7.decodeMapRegion(false);

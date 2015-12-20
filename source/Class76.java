@@ -1,15 +1,18 @@
 
 public class Class76 {
 
-	static Class76 aClass76_639 = new Class76("RC", 1);
-	static Class76 aClass76_640 = new Class76("WIP", 2);
-	static Class76 aClass76_641 = new Class76("LIVE", 0);
+	static Class76 RC = new Class76("RC", 1);
+	static Class76 WIP = new Class76("WIP", 2);
+	static Class76 LIVE = new Class76("LIVE", 0);
 	public String aString642;
 	public int anInt643;
 	static Class26 aClass26_644;
-	static Class76 aClass76_645 = new Class76("BUILDLIVE", 3);
+	static Class76 BUILD_LIVE = new Class76("BUILDLIVE", 3);
 
-	static void method337() {
+	/**
+	 * Clear cache
+	 */
+	static void clearCache() {
 		Client.aLong2016 = -5938907264350207555L;
 		Client.anInt2019 = -1669020249;
 		Npc.aClass30_1968.anInt338 = 0;

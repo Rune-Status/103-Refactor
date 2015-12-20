@@ -25,7 +25,7 @@ public class Class7 {
 			var2 = Client.inBuffer.getUShortA();
 			var3 = Client.inBuffer.getULEShort();
 			var5 = Client.inBuffer.getUShort();
-			DualNode_Sub12.regionXTEAs = new int[var5][4];
+			DualNode_Sub12.regionXTEAs = new int[var5][4]; 
 
 			for (var6 = 0; var6 < var5; ++var6) {
 				for (var7 = 0; var7 < 4; ++var7) {
@@ -54,6 +54,9 @@ public class Class7 {
 					var9 = var1 + (var7 << 8);
 					if (!var13
 							|| var1 != 49 && var1 != 149 && var1 != 147 && var7 != 50 && (var7 != 49 || var1 != 47)) {
+						
+					
+						
 						GameClient.dumpMap(var9, DualNode_Sub12.regionXTEAs[var5]);
 						Client.regionIds[var5] = var9;
 						Class69.mapRegionFileIds[var5] = Class48_Sub1.aClass87_Sub1_1295

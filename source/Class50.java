@@ -67,7 +67,7 @@ public class Class50 {
 					Node_Sub9.anInt1339 * 674167779, 0, 0, -1);
 		}
 
-		DualNode_Sub13.method780();
+		RSGraphics.noClip();
 		int var7;
 		if (!Client.menuOpen) {
 			if (Client.anInt2122 * -527636925 != -1) {
@@ -102,10 +102,10 @@ public class Class50 {
 		if (Client.anInt2177 * 1685649351 == 3) {
 			for (var1 = 0; var1 < -580551879 * Client.anInt2168; ++var1) {
 				if (Client.aBoolArray2137[var1]) {
-					DualNode_Sub13.method785(Client.anIntArray2173[var1], Client.anIntArray2174[var1],
+					RSGraphics.fillRectangle(Client.anIntArray2173[var1], Client.anIntArray2174[var1],
 							Client.anIntArray2175[var1], Client.anIntArray2176[var1], 16711935, 128);
 				} else if (Client.aBoolArray2171[var1]) {
-					DualNode_Sub13.method785(Client.anIntArray2173[var1], Client.anIntArray2174[var1],
+					RSGraphics.fillRectangle(Client.anIntArray2173[var1], Client.anIntArray2174[var1],
 							Client.anIntArray2175[var1], Client.anIntArray2176[var1], 16711680, 128);
 				}
 			}

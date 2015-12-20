@@ -6,7 +6,7 @@ public abstract class Class48 {
 	public int anInt511;
 	public int anInt512;
 
-	protected abstract boolean method245(int var1, int var2, int var3, Class47 var4, int var5);
+	protected abstract boolean method245(int var1, int var2, int var3, CollionMap var4, int var5);
 
 	public static String method246(String var0) {
 		int var1 = var0.length();

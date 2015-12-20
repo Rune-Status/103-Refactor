@@ -23,7 +23,7 @@ public class Class94 {
 	}
 
 	static final void method405(byte[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
-			Landscape var8, Class47[] var9) {
+			Landscape var8, CollionMap[] var9) {
 		ByteBuf var10 = new ByteBuf(var0);
 		int var25 = -1;
 
@@ -83,7 +83,7 @@ public class Class94 {
 							var31 = var1 - 1;
 						}
 
-						Class47 var32 = null;
+						CollionMap var32 = null;
 						if (var31 >= 0) {
 							var32 = var9[var31];
 						}

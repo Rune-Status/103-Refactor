@@ -637,6 +637,6 @@ public final class Player extends Character {
 	}
 
 	public static Class76[] method1051() {
-		return new Class76[] { Class76.aClass76_645, Class76.aClass76_641, Class76.aClass76_640, Class76.aClass76_639 };
+		return new Class76[] { Class76.BUILD_LIVE, Class76.LIVE, Class76.WIP, Class76.RC };
 	}
 }

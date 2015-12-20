@@ -7,7 +7,7 @@ public class Class48_Sub1 extends Class48 {
 	static int anInt1298;
 	static int anInt1299;
 
-	protected boolean method245(int var1, int var2, int var3, Class47 var4, int var5) {
+	protected boolean method245(int var1, int var2, int var3, CollionMap var4, int var5) {
 		return 2014068737 * this.anInt511 == var2 && this.anInt509 * -1876894601 == var3;
 	}
 

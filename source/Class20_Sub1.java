@@ -134,7 +134,7 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 		}
 	}
 
-	static final boolean method512(int var0, int var1, int var2, Class48 var3, Class47 var4) {
+	static final boolean method512(int var0, int var1, int var2, Class48 var3, CollionMap var4) {
 		int var5 = var0;
 		int var11 = var1;
 		byte var6 = 64;
@@ -148,7 +148,7 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 		Class58.anIntArray544[var10] = var0;
 		int var20 = var10 + 1;
 		Class58.anIntArray547[var10] = var1;
-		int[][] var14 = var4.anIntArrayArray504;
+		int[][] var14 = var4.flags;
 
 		label256: while (var20 != var13) {
 			var5 = Class58.anIntArray544[var13];

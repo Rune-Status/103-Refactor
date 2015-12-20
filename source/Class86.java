@@ -103,9 +103,9 @@ public class Class86 {
 						"sl_stars", "");
 			}
 
-			DualNode_Sub13.method793(1933284923 * Class6.anInt132, 23, 765, 480, 0);
-			DualNode_Sub13.method786(1933284923 * Class6.anInt132, 0, 125, 23, 12425273, 9135624);
-			DualNode_Sub13.method786(Class6.anInt132 * 1933284923 + 125, 0, 640, 23, 5197647, 2697513);
+			RSGraphics.method793(1933284923 * Class6.anInt132, 23, 765, 480, 0);
+			RSGraphics.method786(1933284923 * Class6.anInt132, 0, 125, 23, 12425273, 9135624);
+			RSGraphics.method786(Class6.anInt132 * 1933284923 + 125, 0, 640, 23, 5197647, 2697513);
 			var0.method982(GameStrings.aString1106, 62 + Class6.anInt132 * 1933284923, 15, 0, -1);
 			if (Node_Sub8.aDualNode_Sub13_Sub2Array1314 != null) {
 				Node_Sub8.aDualNode_Sub13_Sub2Array1314[1].method929(1933284923 * Class6.anInt132 + 140, 1);
@@ -174,7 +174,7 @@ public class Class86 {
 				var0.method980(GameStrings.aString1072, 32 + var7, 17, 16777215, -1);
 			}
 
-			DualNode_Sub13.method793(Class6.anInt132 * 1933284923 + 708, 4, 50, 16, 0);
+			RSGraphics.method793(Class6.anInt132 * 1933284923 + 708, 4, 50, 16, 0);
 			var1.method982(GameStrings.aString1079, 25 + 1933284923 * Class6.anInt132 + 708, 16, 16777215, -1);
 			var28 = 0;
 			var5 = 33554432;
@@ -295,9 +295,9 @@ public class Class86 {
 				if (var18) {
 					var19 = var1.method967(World.worlds[Class6.anInt144 * 154582397].activity) + 6;
 					int var47 = var1.anInt1824 + 8;
-					DualNode_Sub13.method793(Class74.anInt621 * -453286219 - var19 / 2,
+					RSGraphics.method793(Class74.anInt621 * -453286219 - var19 / 2,
 							5 + 103771565 * Class74.anInt622 + 20, var19, var47, 16777120);
-					DualNode_Sub13.method787(-453286219 * Class74.anInt621 - var19 / 2,
+					RSGraphics.drawRectangle(-453286219 * Class74.anInt621 - var19 / 2,
 							103771565 * Class74.anInt622 + 20 + 5, var19, var47, 0);
 					var1.method982(World.worlds[Class6.anInt144 * 154582397].activity, Class74.anInt621 * -453286219,
 							5 + 20 + 103771565 * Class74.anInt622 + var1.anInt1824 + 4, 0, -1);
@@ -323,11 +323,11 @@ public class Class86 {
 				byte var4 = 20;
 				var0.method982(GameStrings.aString861, 1744540627 * Class6.anInt126 + 180, 245 - var4, 16777215, -1);
 				var5 = 253 - var4;
-				DualNode_Sub13.method787(Class6.anInt126 * 1744540627 + 180 - 152, var5, 304, 34, 9179409);
-				DualNode_Sub13.method787(Class6.anInt126 * 1744540627 + 180 - 151, var5 + 1, 302, 32, 0);
-				DualNode_Sub13.method793(180 + 1744540627 * Class6.anInt126 - 150, var5 + 2,
+				RSGraphics.drawRectangle(Class6.anInt126 * 1744540627 + 180 - 152, var5, 304, 34, 9179409);
+				RSGraphics.drawRectangle(Class6.anInt126 * 1744540627 + 180 - 151, var5 + 1, 302, 32, 0);
+				RSGraphics.method793(180 + 1744540627 * Class6.anInt126 - 150, var5 + 2,
 						-140328599 * Class6.anInt122, 30, 9179409);
-				DualNode_Sub13.method793(-140328599 * Class6.anInt122 + (1744540627 * Class6.anInt126 + 180 - 150),
+				RSGraphics.method793(-140328599 * Class6.anInt122 + (1744540627 * Class6.anInt126 + 180 - 150),
 						var5 + 2, 300 - -140328599 * Class6.anInt122, 30, 0);
 				var0.method982(Class6.aString131, 180 + 1744540627 * Class6.anInt126, 276 - var4, 16777215, -1);
 			}

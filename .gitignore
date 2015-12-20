@@ -3,3 +3,4 @@
 .settings/
 maps/
 *.class
+/bin/

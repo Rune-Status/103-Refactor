@@ -133,9 +133,9 @@ public final class Class39 {
 						var13 = 1;
 					}
 
-					DualNode_Sub13.method793(Client.anInt2093 * -94432357 + var2 - var8 / 2,
+					RSGraphics.method793(Client.anInt2093 * -94432357 + var2 - var8 / 2,
 							Client.anInt2094 * -770682383 + var3 - 3, var13, 5, '\uff00');
-					DualNode_Sub13.method793(-94432357 * Client.anInt2093 + var2 - var8 / 2 + var13,
+					RSGraphics.method793(-94432357 * Client.anInt2093 + var2 - var8 / 2 + var13,
 							-770682383 * Client.anInt2094 + var3 - 3, var8 - var13, 5, 16711680);
 				}
 			}
@@ -257,7 +257,7 @@ public final class Class39 {
 		}
 	}
 
-	public static int method218(int var0, int var1, int var2, Class48 var3, Class47 var4, boolean var5, int[] var6,
+	public static int method218(int var0, int var1, int var2, Class48 var3, CollionMap var4, boolean var5, int[] var6,
 			int[] var7) {
 		int var12;
 		for (int var8 = 0; var8 < 128; ++var8) {
@@ -298,7 +298,7 @@ public final class Class39 {
 			Class58.anIntArray544[var17] = var0;
 			var32 = var17 + 1;
 			Class58.anIntArray547[var17] = var1;
-			var18 = var4.anIntArrayArray504;
+			var18 = var4.flags;
 
 			while (true) {
 				if (var32 == var21) {
@@ -415,7 +415,7 @@ public final class Class39 {
 			Class58.anIntArray544[var17] = var0;
 			var32 = var17 + 1;
 			Class58.anIntArray547[var17] = var1;
-			var18 = var4.anIntArrayArray504;
+			var18 = var4.flags;
 
 			while (true) {
 				if (var21 == var32) {

@@ -4,7 +4,7 @@ import java.awt.MediaTracker;
 import java.awt.Toolkit;
 import java.awt.image.PixelGrabber;
 
-public final class Sprite extends DualNode_Sub13 {
+public final class Sprite extends RSGraphics {
 
 	public int anInt1814;
 	public int height;
@@ -52,7 +52,7 @@ public final class Sprite extends DualNode_Sub13 {
 	}
 
 	public void method939() {
-		method779(this.pixels, this.height, this.width);
+		setRaster(this.pixels, this.height, this.width);
 	}
 
 	static void method940(int[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
@@ -173,35 +173,35 @@ public final class Sprite extends DualNode_Sub13 {
 				var4 = ((var15 << 16) - var9 + var14 - 1) / var14;
 			}
 
-			var13 = var1 + var2 * anInt1575;
-			int var11 = anInt1575 - var3;
-			if (var2 + var4 > anInt1574) {
-				var4 -= var2 + var4 - anInt1574;
+			var13 = var1 + var2 * raster_width;
+			int var11 = raster_width - var3;
+			if (var2 + var4 > draw_region_max_y) {
+				var4 -= var2 + var4 - draw_region_max_y;
 			}
 
 			int var5;
-			if (var2 < anInt1573) {
-				var5 = anInt1573 - var2;
+			if (var2 < draw_region_y) {
+				var5 = draw_region_y - var2;
 				var4 -= var5;
-				var13 += var5 * anInt1575;
+				var13 += var5 * raster_width;
 				var9 += var14 * var5;
 			}
 
-			if (var1 + var3 > anInt1576) {
-				var5 = var1 + var3 - anInt1576;
+			if (var1 + var3 > draw_region_max_x) {
+				var5 = var1 + var3 - draw_region_max_x;
 				var3 -= var5;
 				var11 += var5;
 			}
 
-			if (var1 < anInt1572) {
-				var5 = anInt1572 - var1;
+			if (var1 < draw_region_x) {
+				var5 = draw_region_x - var1;
 				var3 -= var5;
 				var13 += var5;
 				var7 += var8 * var5;
 				var11 += var5;
 			}
 
-			method949(anIntArray1571, this.pixels, 0, var7, var9, var13, var11, var3, var4, var8, var14, var6);
+			method949(raster, this.pixels, 0, var7, var9, var13, var11, var3, var4, var8, var14, var6);
 		}
 	}
 
@@ -212,44 +212,44 @@ public final class Sprite extends DualNode_Sub13 {
 	public void method946(int var1, int var2) {
 		var1 += this.anInt1814;
 		var2 += this.anInt1817;
-		int var3 = var1 + var2 * anInt1575;
+		int var3 = var1 + var2 * raster_width;
 		int var5 = 0;
 		int var6 = this.width;
 		int var7 = this.height;
-		int var8 = anInt1575 - var7;
+		int var8 = raster_width - var7;
 		int var9 = 0;
 		int var4;
-		if (var2 < anInt1573) {
-			var4 = anInt1573 - var2;
+		if (var2 < draw_region_y) {
+			var4 = draw_region_y - var2;
 			var6 -= var4;
-			var2 = anInt1573;
+			var2 = draw_region_y;
 			var5 += var4 * var7;
-			var3 += var4 * anInt1575;
+			var3 += var4 * raster_width;
 		}
 
-		if (var2 + var6 > anInt1574) {
-			var6 -= var2 + var6 - anInt1574;
+		if (var2 + var6 > draw_region_max_y) {
+			var6 -= var2 + var6 - draw_region_max_y;
 		}
 
-		if (var1 < anInt1572) {
-			var4 = anInt1572 - var1;
+		if (var1 < draw_region_x) {
+			var4 = draw_region_x - var1;
 			var7 -= var4;
-			var1 = anInt1572;
+			var1 = draw_region_x;
 			var5 += var4;
 			var3 += var4;
 			var9 += var4;
 			var8 += var4;
 		}
 
-		if (var1 + var7 > anInt1576) {
-			var4 = var1 + var7 - anInt1576;
+		if (var1 + var7 > draw_region_max_x) {
+			var4 = var1 + var7 - draw_region_max_x;
 			var7 -= var4;
 			var9 += var4;
 			var8 += var4;
 		}
 
 		if (var7 > 0 && var6 > 0) {
-			method959(anIntArray1571, this.pixels, 0, var5, var3, var7, var6, var8, var9);
+			method959(raster, this.pixels, 0, var5, var3, var7, var6, var8, var9);
 		}
 	}
 
@@ -325,44 +325,44 @@ public final class Sprite extends DualNode_Sub13 {
 		} else {
 			var1 += this.anInt1814;
 			var2 += this.anInt1817;
-			int var7 = var1 + var2 * anInt1575;
+			int var7 = var1 + var2 * raster_width;
 			int var8 = 0;
 			int var5 = this.width;
 			int var10 = this.height;
-			int var11 = anInt1575 - var10;
+			int var11 = raster_width - var10;
 			int var9 = 0;
 			int var6;
-			if (var2 < anInt1573) {
-				var6 = anInt1573 - var2;
+			if (var2 < draw_region_y) {
+				var6 = draw_region_y - var2;
 				var5 -= var6;
-				var2 = anInt1573;
+				var2 = draw_region_y;
 				var8 += var6 * var10;
-				var7 += var6 * anInt1575;
+				var7 += var6 * raster_width;
 			}
 
-			if (var2 + var5 > anInt1574) {
-				var5 -= var2 + var5 - anInt1574;
+			if (var2 + var5 > draw_region_max_y) {
+				var5 -= var2 + var5 - draw_region_max_y;
 			}
 
-			if (var1 < anInt1572) {
-				var6 = anInt1572 - var1;
+			if (var1 < draw_region_x) {
+				var6 = draw_region_x - var1;
 				var10 -= var6;
-				var1 = anInt1572;
+				var1 = draw_region_x;
 				var8 += var6;
 				var7 += var6;
 				var9 += var6;
 				var11 += var6;
 			}
 
-			if (var1 + var10 > anInt1576) {
-				var6 = var1 + var10 - anInt1576;
+			if (var1 + var10 > draw_region_max_x) {
+				var6 = var1 + var10 - draw_region_max_x;
 				var10 -= var6;
 				var9 += var6;
 				var11 += var6;
 			}
 
 			if (var10 > 0 && var5 > 0) {
-				method961(anIntArray1571, this.pixels, 0, var8, var7, var10, var5, var11, var9, var3, var4);
+				method961(raster, this.pixels, 0, var8, var7, var10, var5, var11, var9, var3, var4);
 			}
 		}
 	}
@@ -370,44 +370,44 @@ public final class Sprite extends DualNode_Sub13 {
 	public void method951(int var1, int var2, int var3) {
 		var1 += this.anInt1814;
 		var2 += this.anInt1817;
-		int var6 = var1 + var2 * anInt1575;
+		int var6 = var1 + var2 * raster_width;
 		int var10 = 0;
 		int var7 = this.width;
 		int var8 = this.height;
-		int var9 = anInt1575 - var8;
+		int var9 = raster_width - var8;
 		int var4 = 0;
 		int var5;
-		if (var2 < anInt1573) {
-			var5 = anInt1573 - var2;
+		if (var2 < draw_region_y) {
+			var5 = draw_region_y - var2;
 			var7 -= var5;
-			var2 = anInt1573;
+			var2 = draw_region_y;
 			var10 += var5 * var8;
-			var6 += var5 * anInt1575;
+			var6 += var5 * raster_width;
 		}
 
-		if (var2 + var7 > anInt1574) {
-			var7 -= var2 + var7 - anInt1574;
+		if (var2 + var7 > draw_region_max_y) {
+			var7 -= var2 + var7 - draw_region_max_y;
 		}
 
-		if (var1 < anInt1572) {
-			var5 = anInt1572 - var1;
+		if (var1 < draw_region_x) {
+			var5 = draw_region_x - var1;
 			var8 -= var5;
-			var1 = anInt1572;
+			var1 = draw_region_x;
 			var10 += var5;
 			var6 += var5;
 			var4 += var5;
 			var9 += var5;
 		}
 
-		if (var1 + var8 > anInt1576) {
-			var5 = var1 + var8 - anInt1576;
+		if (var1 + var8 > draw_region_max_x) {
+			var5 = var1 + var8 - draw_region_max_x;
 			var8 -= var5;
 			var4 += var5;
 			var9 += var5;
 		}
 
 		if (var8 > 0 && var7 > 0) {
-			method947(anIntArray1571, this.pixels, 0, var10, var6, var8, var7, var9, var4, var3);
+			method947(raster, this.pixels, 0, var10, var6, var8, var7, var9, var4, var3);
 		}
 	}
 
@@ -468,35 +468,35 @@ public final class Sprite extends DualNode_Sub13 {
 				var4 = ((var16 << 16) - var11 + var13 - 1) / var13;
 			}
 
-			var7 = var1 + var2 * anInt1575;
-			int var12 = anInt1575 - var3;
-			if (var2 + var4 > anInt1574) {
-				var4 -= var2 + var4 - anInt1574;
+			var7 = var1 + var2 * raster_width;
+			int var12 = raster_width - var3;
+			if (var2 + var4 > draw_region_max_y) {
+				var4 -= var2 + var4 - draw_region_max_y;
 			}
 
 			int var9;
-			if (var2 < anInt1573) {
-				var9 = anInt1573 - var2;
+			if (var2 < draw_region_y) {
+				var9 = draw_region_y - var2;
 				var4 -= var9;
-				var7 += var9 * anInt1575;
+				var7 += var9 * raster_width;
 				var11 += var13 * var9;
 			}
 
-			if (var1 + var3 > anInt1576) {
-				var9 = var1 + var3 - anInt1576;
+			if (var1 + var3 > draw_region_max_x) {
+				var9 = var1 + var3 - draw_region_max_x;
 				var3 -= var9;
 				var12 += var9;
 			}
 
-			if (var1 < anInt1572) {
-				var9 = anInt1572 - var1;
+			if (var1 < draw_region_x) {
+				var9 = draw_region_x - var1;
 				var3 -= var9;
 				var7 += var9;
 				var6 += var8 * var9;
 				var12 += var9;
 			}
 
-			method963(anIntArray1571, this.pixels, 0, var6, var11, var7, var12, var3, var4, var8, var13, var10, var5);
+			method963(raster, this.pixels, 0, var6, var11, var7, var12, var3, var4, var8, var13, var10, var5);
 		}
 	}
 
@@ -511,7 +511,7 @@ public final class Sprite extends DualNode_Sub13 {
 			var10000 = var5 - var1;
 		}
 
-		int var14 = var3 + var1 + var9 + (var4 + var2 + var16) * anInt1575;
+		int var14 = var3 + var1 + var9 + (var4 + var2 + var16) * raster_width;
 		int var18 = var2 + var16;
 
 		for (int var17 = var16; var17 < var11; ++var17) {
@@ -536,13 +536,13 @@ public final class Sprite extends DualNode_Sub13 {
 			for (int var15 = var10; var15 < var13; ++var15) {
 				int var21 = this.pixels[var15 + var17 * this.height];
 				if (var21 != 0) {
-					anIntArray1571[var20++] = var21;
+					raster[var20++] = var21;
 				} else {
 					++var20;
 				}
 			}
 
-			var14 += anInt1575;
+			var14 += raster_width;
 		}
 
 	}
@@ -579,7 +579,7 @@ public final class Sprite extends DualNode_Sub13 {
 			var13 = var13 * var9 >> 8;
 			int var14 = (var5 << 16) + var11 * var12 + var10 * var13;
 			int var15 = (var6 << 16) + (var11 * var13 - var10 * var12);
-			int var16 = var1 + var2 * anInt1575;
+			int var16 = var1 + var2 * raster_width;
 
 			for (var2 = 0; var2 < var4; ++var2) {
 				int var17 = var16;
@@ -589,7 +589,7 @@ public final class Sprite extends DualNode_Sub13 {
 				for (var1 = -var3; var1 < 0; ++var1) {
 					int var20 = this.pixels[(var18 >> 16) + (var19 >> 16) * this.height];
 					if (var20 != 0) {
-						anIntArray1571[var17++] = var20;
+						raster[var17++] = var20;
 					} else {
 						++var17;
 					}
@@ -600,7 +600,7 @@ public final class Sprite extends DualNode_Sub13 {
 
 				var14 += var12;
 				var15 += var13;
-				var16 += anInt1575;
+				var16 += raster_width;
 			}
 		} catch (Exception var21) {
 			;
@@ -687,27 +687,27 @@ public final class Sprite extends DualNode_Sub13 {
 			var30 = var30 + 15 >> 4;
 			var24 >>= 4;
 			var7 = var7 + 15 >> 4;
-			if (var28 < anInt1572) {
-				var28 = anInt1572;
+			if (var28 < draw_region_x) {
+				var28 = draw_region_x;
 			}
 
-			if (var30 > anInt1576) {
-				var30 = anInt1576;
+			if (var30 > draw_region_max_x) {
+				var30 = draw_region_max_x;
 			}
 
-			if (var24 < anInt1573) {
-				var24 = anInt1573;
+			if (var24 < draw_region_y) {
+				var24 = draw_region_y;
 			}
 
-			if (var7 > anInt1574) {
-				var7 = anInt1574;
+			if (var7 > draw_region_max_y) {
+				var7 = draw_region_max_y;
 			}
 
 			var30 = var28 - var30;
 			if (var30 < 0) {
 				var7 = var24 - var7;
 				if (var7 < 0) {
-					int var32 = var24 * anInt1575 + var28;
+					int var32 = var24 * raster_width + var28;
 					double var35 = 1.6777216E7D / (double) var6;
 					int var10 = (int) Math.floor(Math.sin(var12) * var35 + 0.5D);
 					int var25 = (int) Math.floor(Math.cos(var12) * var35 + 0.5D);
@@ -724,7 +724,7 @@ public final class Sprite extends DualNode_Sub13 {
 					int var34;
 					if (var25 == 0) {
 						if (var10 == 0) {
-							for (var34 = var7; var34 < 0; var32 += anInt1575) {
+							for (var34 = var7; var34 < 0; var32 += raster_width) {
 								var22 = var32;
 								var26 = var37;
 								var11 = var8;
@@ -734,7 +734,7 @@ public final class Sprite extends DualNode_Sub13 {
 									for (; var31 < 0; ++var31) {
 										var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 										if (var21 != 0) {
-											anIntArray1571[var22++] = var21;
+											raster[var22++] = var21;
 										} else {
 											++var22;
 										}
@@ -744,7 +744,7 @@ public final class Sprite extends DualNode_Sub13 {
 								++var34;
 							}
 						} else if (var10 < 0) {
-							for (var34 = var7; var34 < 0; var32 += anInt1575) {
+							for (var34 = var7; var34 < 0; var32 += raster_width) {
 								var22 = var32;
 								var26 = var37;
 								var11 = var8 + (var9 * var10 >> 4);
@@ -764,7 +764,7 @@ public final class Sprite extends DualNode_Sub13 {
 									while (var31 < 0) {
 										var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 										if (var21 != 0) {
-											anIntArray1571[var22++] = var21;
+											raster[var22++] = var21;
 										} else {
 											++var22;
 										}
@@ -778,7 +778,7 @@ public final class Sprite extends DualNode_Sub13 {
 								var37 -= var10;
 							}
 						} else {
-							for (var34 = var7; var34 < 0; var32 += anInt1575) {
+							for (var34 = var7; var34 < 0; var32 += raster_width) {
 								var22 = var32;
 								var26 = var37;
 								var11 = var8 + (var9 * var10 >> 4);
@@ -798,7 +798,7 @@ public final class Sprite extends DualNode_Sub13 {
 									while (var31 < 0) {
 										var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 										if (var21 != 0) {
-											anIntArray1571[var22++] = var21;
+											raster[var22++] = var21;
 										} else {
 											++var22;
 										}
@@ -814,7 +814,7 @@ public final class Sprite extends DualNode_Sub13 {
 						}
 					} else if (var25 < 0) {
 						if (var10 == 0) {
-							for (var34 = var7; var34 < 0; var32 += anInt1575) {
+							for (var34 = var7; var34 < 0; var32 += raster_width) {
 								var22 = var32;
 								var26 = var37 + (var9 * var25 >> 4);
 								var11 = var8;
@@ -834,7 +834,7 @@ public final class Sprite extends DualNode_Sub13 {
 									while (var31 < 0) {
 										var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 										if (var21 != 0) {
-											anIntArray1571[var22++] = var21;
+											raster[var22++] = var21;
 										} else {
 											++var22;
 										}
@@ -848,7 +848,7 @@ public final class Sprite extends DualNode_Sub13 {
 								var8 += var25;
 							}
 						} else if (var10 < 0) {
-							for (var34 = var7; var34 < 0; var32 += anInt1575) {
+							for (var34 = var7; var34 < 0; var32 += raster_width) {
 								var22 = var32;
 								var26 = var37 + (var9 * var25 >> 4);
 								var11 = var8 + (var9 * var10 >> 4);
@@ -880,7 +880,7 @@ public final class Sprite extends DualNode_Sub13 {
 								while (var31 < 0) {
 									var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 									if (var21 != 0) {
-										anIntArray1571[var22++] = var21;
+										raster[var22++] = var21;
 									} else {
 										++var22;
 									}
@@ -895,7 +895,7 @@ public final class Sprite extends DualNode_Sub13 {
 								var8 += var25;
 							}
 						} else {
-							for (var34 = var7; var34 < 0; var32 += anInt1575) {
+							for (var34 = var7; var34 < 0; var32 += raster_width) {
 								var22 = var32;
 								var26 = var37 + (var9 * var25 >> 4);
 								var11 = var8 + (var9 * var10 >> 4);
@@ -927,7 +927,7 @@ public final class Sprite extends DualNode_Sub13 {
 								while (var31 < 0) {
 									var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 									if (var21 != 0) {
-										anIntArray1571[var22++] = var21;
+										raster[var22++] = var21;
 									} else {
 										++var22;
 									}
@@ -943,7 +943,7 @@ public final class Sprite extends DualNode_Sub13 {
 							}
 						}
 					} else if (var10 == 0) {
-						for (var34 = var7; var34 < 0; var32 += anInt1575) {
+						for (var34 = var7; var34 < 0; var32 += raster_width) {
 							var22 = var32;
 							var26 = var37 + (var9 * var25 >> 4);
 							var11 = var8;
@@ -963,7 +963,7 @@ public final class Sprite extends DualNode_Sub13 {
 								while (var31 < 0) {
 									var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 									if (var21 != 0) {
-										anIntArray1571[var22++] = var21;
+										raster[var22++] = var21;
 									} else {
 										++var22;
 									}
@@ -977,7 +977,7 @@ public final class Sprite extends DualNode_Sub13 {
 							var8 += var25;
 						}
 					} else if (var10 < 0) {
-						for (var34 = var7; var34 < 0; var32 += anInt1575) {
+						for (var34 = var7; var34 < 0; var32 += raster_width) {
 							var22 = var32;
 							var26 = var37 + (var9 * var25 >> 4);
 							var11 = var8 + (var9 * var10 >> 4);
@@ -1009,7 +1009,7 @@ public final class Sprite extends DualNode_Sub13 {
 							while (var31 < 0) {
 								var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 								if (var21 != 0) {
-									anIntArray1571[var22++] = var21;
+									raster[var22++] = var21;
 								} else {
 									++var22;
 								}
@@ -1024,7 +1024,7 @@ public final class Sprite extends DualNode_Sub13 {
 							var8 += var25;
 						}
 					} else {
-						for (var34 = var7; var34 < 0; var32 += anInt1575) {
+						for (var34 = var7; var34 < 0; var32 += raster_width) {
 							var22 = var32;
 							var26 = var37 + (var9 * var25 >> 4);
 							var11 = var8 + (var9 * var10 >> 4);
@@ -1056,7 +1056,7 @@ public final class Sprite extends DualNode_Sub13 {
 							while (var31 < 0) {
 								var21 = this.pixels[(var11 >> 12) * this.height + (var26 >> 12)];
 								if (var21 != 0) {
-									anIntArray1571[var22++] = var21;
+									raster[var22++] = var21;
 								} else {
 									++var22;
 								}
@@ -1088,7 +1088,7 @@ public final class Sprite extends DualNode_Sub13 {
 			var14 = var14 * var8 >> 8;
 			int var15 = (var5 << 16) + var12 * var13 + var11 * var14;
 			int var16 = (var6 << 16) + (var12 * var14 - var11 * var13);
-			int var17 = var1 + var2 * anInt1575;
+			int var17 = var1 + var2 * raster_width;
 
 			for (var2 = 0; var2 < var4; ++var2) {
 				int var18 = var9[var2];
@@ -1097,14 +1097,14 @@ public final class Sprite extends DualNode_Sub13 {
 				int var21 = var16 - var13 * var18;
 
 				for (var1 = -var10[var2]; var1 < 0; ++var1) {
-					anIntArray1571[var19++] = this.pixels[(var20 >> 16) + (var21 >> 16) * this.height];
+					raster[var19++] = this.pixels[(var20 >> 16) + (var21 >> 16) * this.height];
 					var20 += var14;
 					var21 -= var13;
 				}
 
 				var15 += var13;
 				var16 += var14;
-				var17 += anInt1575;
+				var17 += raster_width;
 			}
 		} catch (Exception var22) {
 			;
@@ -1115,44 +1115,44 @@ public final class Sprite extends DualNode_Sub13 {
 	public void method958(int var1, int var2) {
 		var1 += this.anInt1814;
 		var2 += this.anInt1817;
-		int var5 = var1 + var2 * anInt1575;
+		int var5 = var1 + var2 * raster_width;
 		int var6 = 0;
 		int var7 = this.width;
 		int var8 = this.height;
-		int var9 = anInt1575 - var8;
+		int var9 = raster_width - var8;
 		int var3 = 0;
 		int var4;
-		if (var2 < anInt1573) {
-			var4 = anInt1573 - var2;
+		if (var2 < draw_region_y) {
+			var4 = draw_region_y - var2;
 			var7 -= var4;
-			var2 = anInt1573;
+			var2 = draw_region_y;
 			var6 += var4 * var8;
-			var5 += var4 * anInt1575;
+			var5 += var4 * raster_width;
 		}
 
-		if (var2 + var7 > anInt1574) {
-			var7 -= var2 + var7 - anInt1574;
+		if (var2 + var7 > draw_region_max_y) {
+			var7 -= var2 + var7 - draw_region_max_y;
 		}
 
-		if (var1 < anInt1572) {
-			var4 = anInt1572 - var1;
+		if (var1 < draw_region_x) {
+			var4 = draw_region_x - var1;
 			var8 -= var4;
-			var1 = anInt1572;
+			var1 = draw_region_x;
 			var6 += var4;
 			var5 += var4;
 			var3 += var4;
 			var9 += var4;
 		}
 
-		if (var1 + var8 > anInt1576) {
-			var4 = var1 + var8 - anInt1576;
+		if (var1 + var8 > draw_region_max_x) {
+			var4 = var1 + var8 - draw_region_max_x;
 			var8 -= var4;
 			var3 += var4;
 			var9 += var4;
 		}
 
 		if (var8 > 0 && var7 > 0) {
-			method940(anIntArray1571, this.pixels, var6, var5, var8, var7, var9, var3);
+			method940(raster, this.pixels, var6, var5, var8, var7, var9, var3);
 		}
 	}
 

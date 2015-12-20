@@ -65,14 +65,14 @@ public abstract class Entity extends DualNode {
 				}
 			}
 
-			int[] var15 = DualNode_Sub13.anIntArray1571;
-			int var16 = DualNode_Sub13.anInt1575;
-			int var17 = DualNode_Sub13.anInt1570;
+			int[] var15 = RSGraphics.raster;
+			int var16 = RSGraphics.raster_width;
+			int var17 = RSGraphics.raster_height;
 			int[] var12 = new int[4];
-			DualNode_Sub13.method782(var12);
+			RSGraphics.copyDrawRegion(var12);
 			var6 = new Sprite(36, 32);
-			DualNode_Sub13.method779(var6.pixels, 36, 32);
-			DualNode_Sub13.method795();
+			RSGraphics.setRaster(var6.pixels, 36, 32);
+			RSGraphics.reset();
 			DualNode_Sub13_Sub1.method909();
 			DualNode_Sub13_Sub1.method911(16, 16);
 			DualNode_Sub13_Sub1.aBool1780 = false;
@@ -106,7 +106,7 @@ public abstract class Entity extends DualNode {
 				var6.method962(var3);
 			}
 
-			DualNode_Sub13.method779(var6.pixels, 36, 32);
+			RSGraphics.setRaster(var6.pixels, 36, 32);
 			if (var7.anInt1633 * -507524473 != -1) {
 				var19.method946(0, 0);
 			}
@@ -119,8 +119,8 @@ public abstract class Entity extends DualNode {
 				ItemDefinition.aClass106_1620.method428(var6, var9);
 			}
 
-			DualNode_Sub13.method779(var15, var16, var17);
-			DualNode_Sub13.method783(var12);
+			RSGraphics.setRaster(var15, var16, var17);
+			RSGraphics.setDrawRegion(var12);
 			DualNode_Sub13_Sub1.method909();
 			DualNode_Sub13_Sub1.aBool1780 = true;
 			return var6;

@@ -389,7 +389,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			Class34.anInt381 = -780223189 * var1;
 			Node_Sub9.anInt1339 = 427958731 * var2;
 			Class125.anInt830 = var3 * -778950217;
-			Class47.anApplet508 = this;
+			CollionMap.anApplet508 = this;
 			if (IsaacRandom.aClass63_102 == null) {
 				IsaacRandom.aClass63_102 = new Class63();
 			}

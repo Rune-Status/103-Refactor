@@ -105,7 +105,7 @@ public class DynamicObject extends Entity {
 
 		} else {
 			Class6.anInt116 = var4 * -217167121;
-			DualNode_Sub13.method795();
+			RSGraphics.reset();
 			byte[] var6 = var1.method389("title.jpg", "");
 			Class56.aSprite542 = new Sprite(var6, var0);
 			Class6.aSprite137 = Class56.aSprite542.method937();

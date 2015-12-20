@@ -1,5 +1,5 @@
 
-public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
+public class DualNode_Sub13_Sub1 extends RSGraphics {
 
 	static int anInt1777;
 	static boolean aBool1778 = false;
@@ -24,7 +24,7 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 	static int anInt1797;
 
 	public static final void method909() {
-		method924(anInt1572, anInt1573, anInt1576, anInt1574);
+		method924(draw_region_x, draw_region_y, draw_region_max_x, draw_region_max_y);
 	}
 
 	public static final void method910() {
@@ -38,8 +38,8 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 
 	public static final void method911(int var0, int var1) {
 		int var2 = anIntArray1790[0];
-		int var3 = var2 / anInt1575;
-		int var4 = var2 - var3 * anInt1575;
+		int var3 = var2 / raster_width;
+		int var4 = var2 - var3 * raster_width;
 		anInt1785 = var0 - var4;
 		anInt1786 = var1 - var3;
 		anInt1789 = -anInt1785;
@@ -145,24 +145,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method919(anIntArray1571, var19, 0, 0, var0, var4 >> 14, var5 >> 14, var6,
+											method919(raster, var19, 0, 0, var0, var4 >> 14, var5 >> 14, var6,
 													var33, var34, var20, var35, var36, var37, var38);
 											var5 += var23;
 											var4 += var29;
 											var6 += var25;
-											var0 += anInt1575;
+											var0 += raster_width;
 											var34 += var41;
 											var20 += var21;
 											var35 += var39;
 										}
 									}
 
-									method919(anIntArray1571, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var33,
+									method919(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var33,
 											var34, var20, var35, var36, var37, var38);
 									var5 += var23;
 									var3 += var27;
 									var6 += var25;
-									var0 += anInt1575;
+									var0 += raster_width;
 									var34 += var41;
 									var20 += var21;
 									var35 += var39;
@@ -181,24 +181,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method919(anIntArray1571, var19, 0, 0, var0, var5 >> 14, var4 >> 14, var6,
+											method919(raster, var19, 0, 0, var0, var5 >> 14, var4 >> 14, var6,
 													var33, var34, var20, var35, var36, var37, var38);
 											var5 += var23;
 											var4 += var29;
 											var6 += var25;
-											var0 += anInt1575;
+											var0 += raster_width;
 											var34 += var41;
 											var20 += var21;
 											var35 += var39;
 										}
 									}
 
-									method919(anIntArray1571, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var33,
+									method919(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var33,
 											var34, var20, var35, var36, var37, var38);
 									var5 += var23;
 									var3 += var27;
 									var6 += var25;
-									var0 += anInt1575;
+									var0 += raster_width;
 									var34 += var41;
 									var20 += var21;
 									var35 += var39;
@@ -237,24 +237,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method919(anIntArray1571, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6,
+											method919(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6,
 													var33, var34, var20, var35, var36, var37, var38);
 											var5 += var29;
 											var3 += var27;
 											var6 += var25;
-											var0 += anInt1575;
+											var0 += raster_width;
 											var34 += var41;
 											var20 += var21;
 											var35 += var39;
 										}
 									}
 
-									method919(anIntArray1571, var19, 0, 0, var0, var3 >> 14, var4 >> 14, var6, var33,
+									method919(raster, var19, 0, 0, var0, var3 >> 14, var4 >> 14, var6, var33,
 											var34, var20, var35, var36, var37, var38);
 									var4 += var23;
 									var3 += var27;
 									var6 += var25;
-									var0 += anInt1575;
+									var0 += raster_width;
 									var34 += var41;
 									var20 += var21;
 									var35 += var39;
@@ -273,24 +273,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method919(anIntArray1571, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6,
+											method919(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6,
 													var33, var34, var20, var35, var36, var37, var38);
 											var5 += var29;
 											var3 += var27;
 											var6 += var25;
-											var0 += anInt1575;
+											var0 += raster_width;
 											var34 += var41;
 											var20 += var21;
 											var35 += var39;
 										}
 									}
 
-									method919(anIntArray1571, var19, 0, 0, var0, var4 >> 14, var3 >> 14, var6, var33,
+									method919(raster, var19, 0, 0, var0, var4 >> 14, var3 >> 14, var6, var33,
 											var34, var20, var35, var36, var37, var38);
 									var4 += var23;
 									var3 += var27;
 									var6 += var25;
-									var0 += anInt1575;
+									var0 += raster_width;
 									var34 += var41;
 									var20 += var21;
 									var35 += var39;
@@ -342,24 +342,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method919(anIntArray1571, var19, 0, 0, var1, var5 >> 14, var3 >> 14, var7,
+											method919(raster, var19, 0, 0, var1, var5 >> 14, var3 >> 14, var7,
 													var33, var34, var20, var35, var36, var37, var38);
 											var3 += var27;
 											var5 += var23;
 											var7 += var25;
-											var1 += anInt1575;
+											var1 += raster_width;
 											var34 += var41;
 											var20 += var21;
 											var35 += var39;
 										}
 									}
 
-									method919(anIntArray1571, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var33,
+									method919(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var33,
 											var34, var20, var35, var36, var37, var38);
 									var3 += var27;
 									var4 += var29;
 									var7 += var25;
-									var1 += anInt1575;
+									var1 += raster_width;
 									var34 += var41;
 									var20 += var21;
 									var35 += var39;
@@ -378,24 +378,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method919(anIntArray1571, var19, 0, 0, var1, var3 >> 14, var5 >> 14, var7,
+											method919(raster, var19, 0, 0, var1, var3 >> 14, var5 >> 14, var7,
 													var33, var34, var20, var35, var36, var37, var38);
 											var3 += var27;
 											var5 += var23;
 											var7 += var25;
-											var1 += anInt1575;
+											var1 += raster_width;
 											var34 += var41;
 											var20 += var21;
 											var35 += var39;
 										}
 									}
 
-									method919(anIntArray1571, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var33,
+									method919(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var33,
 											var34, var20, var35, var36, var37, var38);
 									var3 += var27;
 									var4 += var29;
 									var7 += var25;
-									var1 += anInt1575;
+									var1 += raster_width;
 									var34 += var41;
 									var20 += var21;
 									var35 += var39;
@@ -434,24 +434,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method919(anIntArray1571, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7,
+											method919(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7,
 													var33, var34, var20, var35, var36, var37, var38);
 											var3 += var23;
 											var4 += var29;
 											var7 += var25;
-											var1 += anInt1575;
+											var1 += raster_width;
 											var34 += var41;
 											var20 += var21;
 											var35 += var39;
 										}
 									}
 
-									method919(anIntArray1571, var19, 0, 0, var1, var5 >> 14, var4 >> 14, var7, var33,
+									method919(raster, var19, 0, 0, var1, var5 >> 14, var4 >> 14, var7, var33,
 											var34, var20, var35, var36, var37, var38);
 									var5 += var27;
 									var4 += var29;
 									var7 += var25;
-									var1 += anInt1575;
+									var1 += raster_width;
 									var34 += var41;
 									var20 += var21;
 									var35 += var39;
@@ -470,24 +470,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method919(anIntArray1571, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7,
+											method919(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7,
 													var33, var34, var20, var35, var36, var37, var38);
 											var3 += var23;
 											var4 += var29;
 											var7 += var25;
-											var1 += anInt1575;
+											var1 += raster_width;
 											var34 += var41;
 											var20 += var21;
 											var35 += var39;
 										}
 									}
 
-									method919(anIntArray1571, var19, 0, 0, var1, var4 >> 14, var5 >> 14, var7, var33,
+									method919(raster, var19, 0, 0, var1, var4 >> 14, var5 >> 14, var7, var33,
 											var34, var20, var35, var36, var37, var38);
 									var5 += var27;
 									var4 += var29;
 									var7 += var25;
-									var1 += anInt1575;
+									var1 += raster_width;
 									var34 += var41;
 									var20 += var21;
 									var35 += var39;
@@ -538,24 +538,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method919(anIntArray1571, var19, 0, 0, var2, var4 >> 14, var3 >> 14, var8,
+										method919(raster, var19, 0, 0, var2, var4 >> 14, var3 >> 14, var8,
 												var33, var34, var20, var35, var36, var37, var38);
 										var4 += var29;
 										var3 += var27;
 										var8 += var25;
-										var2 += anInt1575;
+										var2 += raster_width;
 										var34 += var41;
 										var20 += var21;
 										var35 += var39;
 									}
 								}
 
-								method919(anIntArray1571, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var33, var34,
+								method919(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var33, var34,
 										var20, var35, var36, var37, var38);
 								var4 += var29;
 								var5 += var23;
 								var8 += var25;
-								var2 += anInt1575;
+								var2 += raster_width;
 								var34 += var41;
 								var20 += var21;
 								var35 += var39;
@@ -574,24 +574,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method919(anIntArray1571, var19, 0, 0, var2, var3 >> 14, var4 >> 14, var8,
+										method919(raster, var19, 0, 0, var2, var3 >> 14, var4 >> 14, var8,
 												var33, var34, var20, var35, var36, var37, var38);
 										var4 += var29;
 										var3 += var27;
 										var8 += var25;
-										var2 += anInt1575;
+										var2 += raster_width;
 										var34 += var41;
 										var20 += var21;
 										var35 += var39;
 									}
 								}
 
-								method919(anIntArray1571, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var33, var34,
+								method919(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var33, var34,
 										var20, var35, var36, var37, var38);
 								var4 += var29;
 								var5 += var23;
 								var8 += var25;
-								var2 += anInt1575;
+								var2 += raster_width;
 								var34 += var41;
 								var20 += var21;
 								var35 += var39;
@@ -630,24 +630,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method919(anIntArray1571, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8,
+										method919(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8,
 												var33, var34, var20, var35, var36, var37, var38);
 										var4 += var27;
 										var5 += var23;
 										var8 += var25;
-										var2 += anInt1575;
+										var2 += raster_width;
 										var34 += var41;
 										var20 += var21;
 										var35 += var39;
 									}
 								}
 
-								method919(anIntArray1571, var19, 0, 0, var2, var3 >> 14, var5 >> 14, var8, var33, var34,
+								method919(raster, var19, 0, 0, var2, var3 >> 14, var5 >> 14, var8, var33, var34,
 										var20, var35, var36, var37, var38);
 								var3 += var29;
 								var5 += var23;
 								var8 += var25;
-								var2 += anInt1575;
+								var2 += raster_width;
 								var34 += var41;
 								var20 += var21;
 								var35 += var39;
@@ -666,24 +666,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method919(anIntArray1571, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8,
+										method919(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8,
 												var33, var34, var20, var35, var36, var37, var38);
 										var4 += var27;
 										var5 += var23;
 										var8 += var25;
-										var2 += anInt1575;
+										var2 += raster_width;
 										var34 += var41;
 										var20 += var21;
 										var35 += var39;
 									}
 								}
 
-								method919(anIntArray1571, var19, 0, 0, var2, var5 >> 14, var3 >> 14, var8, var33, var34,
+								method919(raster, var19, 0, 0, var2, var5 >> 14, var3 >> 14, var8, var33, var34,
 										var20, var35, var36, var37, var38);
 								var3 += var29;
 								var5 += var23;
 								var8 += var25;
-								var2 += anInt1575;
+								var2 += raster_width;
 								var34 += var41;
 								var20 += var21;
 								var35 += var39;
@@ -852,17 +852,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method918(anIntArray1571, var0, var6, 0, var4 >> 14, var5 >> 14);
+									method918(raster, var0, var6, 0, var4 >> 14, var5 >> 14);
 									var5 += var9;
 									var4 += var8;
-									var0 += anInt1575;
+									var0 += raster_width;
 								}
 							}
 
-							method918(anIntArray1571, var0, var6, 0, var3 >> 14, var5 >> 14);
+							method918(raster, var0, var6, 0, var3 >> 14, var5 >> 14);
 							var5 += var9;
 							var3 += var7;
-							var0 += anInt1575;
+							var0 += raster_width;
 						}
 					} else {
 						var2 -= var1;
@@ -878,17 +878,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method918(anIntArray1571, var0, var6, 0, var5 >> 14, var4 >> 14);
+									method918(raster, var0, var6, 0, var5 >> 14, var4 >> 14);
 									var5 += var9;
 									var4 += var8;
-									var0 += anInt1575;
+									var0 += raster_width;
 								}
 							}
 
-							method918(anIntArray1571, var0, var6, 0, var5 >> 14, var3 >> 14);
+							method918(raster, var0, var6, 0, var5 >> 14, var3 >> 14);
 							var5 += var9;
 							var3 += var7;
-							var0 += anInt1575;
+							var0 += raster_width;
 						}
 					}
 				} else {
@@ -919,17 +919,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method918(anIntArray1571, var0, var6, 0, var3 >> 14, var5 >> 14);
+									method918(raster, var0, var6, 0, var3 >> 14, var5 >> 14);
 									var5 += var8;
 									var3 += var7;
-									var0 += anInt1575;
+									var0 += raster_width;
 								}
 							}
 
-							method918(anIntArray1571, var0, var6, 0, var3 >> 14, var4 >> 14);
+							method918(raster, var0, var6, 0, var3 >> 14, var4 >> 14);
 							var4 += var9;
 							var3 += var7;
-							var0 += anInt1575;
+							var0 += raster_width;
 						}
 					} else {
 						var1 -= var2;
@@ -945,17 +945,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method918(anIntArray1571, var0, var6, 0, var5 >> 14, var3 >> 14);
+									method918(raster, var0, var6, 0, var5 >> 14, var3 >> 14);
 									var5 += var8;
 									var3 += var7;
-									var0 += anInt1575;
+									var0 += raster_width;
 								}
 							}
 
-							method918(anIntArray1571, var0, var6, 0, var4 >> 14, var3 >> 14);
+							method918(raster, var0, var6, 0, var4 >> 14, var3 >> 14);
 							var4 += var9;
 							var3 += var7;
-							var0 += anInt1575;
+							var0 += raster_width;
 						}
 					}
 				}
@@ -998,17 +998,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method918(anIntArray1571, var1, var6, 0, var5 >> 14, var3 >> 14);
+									method918(raster, var1, var6, 0, var5 >> 14, var3 >> 14);
 									var3 += var7;
 									var5 += var9;
-									var1 += anInt1575;
+									var1 += raster_width;
 								}
 							}
 
-							method918(anIntArray1571, var1, var6, 0, var4 >> 14, var3 >> 14);
+							method918(raster, var1, var6, 0, var4 >> 14, var3 >> 14);
 							var3 += var7;
 							var4 += var8;
-							var1 += anInt1575;
+							var1 += raster_width;
 						}
 					} else {
 						var0 -= var2;
@@ -1024,17 +1024,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method918(anIntArray1571, var1, var6, 0, var3 >> 14, var5 >> 14);
+									method918(raster, var1, var6, 0, var3 >> 14, var5 >> 14);
 									var3 += var7;
 									var5 += var9;
-									var1 += anInt1575;
+									var1 += raster_width;
 								}
 							}
 
-							method918(anIntArray1571, var1, var6, 0, var3 >> 14, var4 >> 14);
+							method918(raster, var1, var6, 0, var3 >> 14, var4 >> 14);
 							var3 += var7;
 							var4 += var8;
-							var1 += anInt1575;
+							var1 += raster_width;
 						}
 					}
 				} else {
@@ -1065,17 +1065,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method918(anIntArray1571, var1, var6, 0, var3 >> 14, var4 >> 14);
+									method918(raster, var1, var6, 0, var3 >> 14, var4 >> 14);
 									var3 += var9;
 									var4 += var8;
-									var1 += anInt1575;
+									var1 += raster_width;
 								}
 							}
 
-							method918(anIntArray1571, var1, var6, 0, var5 >> 14, var4 >> 14);
+							method918(raster, var1, var6, 0, var5 >> 14, var4 >> 14);
 							var5 += var7;
 							var4 += var8;
-							var1 += anInt1575;
+							var1 += raster_width;
 						}
 					} else {
 						var2 -= var0;
@@ -1091,17 +1091,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method918(anIntArray1571, var1, var6, 0, var4 >> 14, var3 >> 14);
+									method918(raster, var1, var6, 0, var4 >> 14, var3 >> 14);
 									var3 += var9;
 									var4 += var8;
-									var1 += anInt1575;
+									var1 += raster_width;
 								}
 							}
 
-							method918(anIntArray1571, var1, var6, 0, var4 >> 14, var5 >> 14);
+							method918(raster, var1, var6, 0, var4 >> 14, var5 >> 14);
 							var5 += var7;
 							var4 += var8;
-							var1 += anInt1575;
+							var1 += raster_width;
 						}
 					}
 				}
@@ -1143,17 +1143,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 									return;
 								}
 
-								method918(anIntArray1571, var2, var6, 0, var4 >> 14, var3 >> 14);
+								method918(raster, var2, var6, 0, var4 >> 14, var3 >> 14);
 								var4 += var8;
 								var3 += var7;
-								var2 += anInt1575;
+								var2 += raster_width;
 							}
 						}
 
-						method918(anIntArray1571, var2, var6, 0, var4 >> 14, var5 >> 14);
+						method918(raster, var2, var6, 0, var4 >> 14, var5 >> 14);
 						var4 += var8;
 						var5 += var9;
-						var2 += anInt1575;
+						var2 += raster_width;
 					}
 				} else {
 					var1 -= var0;
@@ -1169,17 +1169,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 									return;
 								}
 
-								method918(anIntArray1571, var2, var6, 0, var3 >> 14, var4 >> 14);
+								method918(raster, var2, var6, 0, var3 >> 14, var4 >> 14);
 								var4 += var8;
 								var3 += var7;
-								var2 += anInt1575;
+								var2 += raster_width;
 							}
 						}
 
-						method918(anIntArray1571, var2, var6, 0, var5 >> 14, var4 >> 14);
+						method918(raster, var2, var6, 0, var5 >> 14, var4 >> 14);
 						var4 += var8;
 						var5 += var9;
-						var2 += anInt1575;
+						var2 += raster_width;
 					}
 				}
 			} else {
@@ -1210,17 +1210,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 									return;
 								}
 
-								method918(anIntArray1571, var2, var6, 0, var4 >> 14, var5 >> 14);
+								method918(raster, var2, var6, 0, var4 >> 14, var5 >> 14);
 								var4 += var7;
 								var5 += var9;
-								var2 += anInt1575;
+								var2 += raster_width;
 							}
 						}
 
-						method918(anIntArray1571, var2, var6, 0, var3 >> 14, var5 >> 14);
+						method918(raster, var2, var6, 0, var3 >> 14, var5 >> 14);
 						var3 += var8;
 						var5 += var9;
-						var2 += anInt1575;
+						var2 += raster_width;
 					}
 				} else {
 					var0 -= var1;
@@ -1236,17 +1236,17 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 									return;
 								}
 
-								method918(anIntArray1571, var2, var6, 0, var5 >> 14, var4 >> 14);
+								method918(raster, var2, var6, 0, var5 >> 14, var4 >> 14);
 								var4 += var7;
 								var5 += var9;
-								var2 += anInt1575;
+								var2 += raster_width;
 							}
 						}
 
-						method918(anIntArray1571, var2, var6, 0, var5 >> 14, var3 >> 14);
+						method918(raster, var2, var6, 0, var5 >> 14, var3 >> 14);
 						var3 += var8;
 						var5 += var9;
-						var2 += anInt1575;
+						var2 += raster_width;
 					}
 				}
 			}
@@ -2257,19 +2257,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method923(anIntArray1571, var0, 0, 0, var4 >> 14, var5 >> 14, var6, var19);
+										method923(raster, var0, 0, 0, var4 >> 14, var5 >> 14, var6, var19);
 										var5 += var18;
 										var4 += var13;
 										var6 += var15;
-										var0 += anInt1575;
+										var0 += raster_width;
 									}
 								}
 
-								method923(anIntArray1571, var0, 0, 0, var3 >> 14, var5 >> 14, var6, var19);
+								method923(raster, var0, 0, 0, var3 >> 14, var5 >> 14, var6, var19);
 								var5 += var18;
 								var3 += var14;
 								var6 += var15;
-								var0 += anInt1575;
+								var0 += raster_width;
 							}
 						} else {
 							var2 -= var1;
@@ -2285,19 +2285,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method923(anIntArray1571, var0, 0, 0, var5 >> 14, var4 >> 14, var6, var19);
+										method923(raster, var0, 0, 0, var5 >> 14, var4 >> 14, var6, var19);
 										var5 += var18;
 										var4 += var13;
 										var6 += var15;
-										var0 += anInt1575;
+										var0 += raster_width;
 									}
 								}
 
-								method923(anIntArray1571, var0, 0, 0, var5 >> 14, var3 >> 14, var6, var19);
+								method923(raster, var0, 0, 0, var5 >> 14, var3 >> 14, var6, var19);
 								var5 += var18;
 								var3 += var14;
 								var6 += var15;
-								var0 += anInt1575;
+								var0 += raster_width;
 							}
 						}
 					} else {
@@ -2329,19 +2329,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method923(anIntArray1571, var0, 0, 0, var3 >> 14, var5 >> 14, var6, var19);
+										method923(raster, var0, 0, 0, var3 >> 14, var5 >> 14, var6, var19);
 										var5 += var13;
 										var3 += var14;
 										var6 += var15;
-										var0 += anInt1575;
+										var0 += raster_width;
 									}
 								}
 
-								method923(anIntArray1571, var0, 0, 0, var3 >> 14, var4 >> 14, var6, var19);
+								method923(raster, var0, 0, 0, var3 >> 14, var4 >> 14, var6, var19);
 								var4 += var18;
 								var3 += var14;
 								var6 += var15;
-								var0 += anInt1575;
+								var0 += raster_width;
 							}
 						} else {
 							var1 -= var2;
@@ -2357,19 +2357,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method923(anIntArray1571, var0, 0, 0, var5 >> 14, var3 >> 14, var6, var19);
+										method923(raster, var0, 0, 0, var5 >> 14, var3 >> 14, var6, var19);
 										var5 += var13;
 										var3 += var14;
 										var6 += var15;
-										var0 += anInt1575;
+										var0 += raster_width;
 									}
 								}
 
-								method923(anIntArray1571, var0, 0, 0, var4 >> 14, var3 >> 14, var6, var19);
+								method923(raster, var0, 0, 0, var4 >> 14, var3 >> 14, var6, var19);
 								var4 += var18;
 								var3 += var14;
 								var6 += var15;
-								var0 += anInt1575;
+								var0 += raster_width;
 							}
 						}
 					}
@@ -2414,19 +2414,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method923(anIntArray1571, var1, 0, 0, var5 >> 14, var3 >> 14, var7, var19);
+										method923(raster, var1, 0, 0, var5 >> 14, var3 >> 14, var7, var19);
 										var3 += var14;
 										var5 += var18;
 										var7 += var15;
-										var1 += anInt1575;
+										var1 += raster_width;
 									}
 								}
 
-								method923(anIntArray1571, var1, 0, 0, var4 >> 14, var3 >> 14, var7, var19);
+								method923(raster, var1, 0, 0, var4 >> 14, var3 >> 14, var7, var19);
 								var3 += var14;
 								var4 += var13;
 								var7 += var15;
-								var1 += anInt1575;
+								var1 += raster_width;
 							}
 						} else {
 							var0 -= var2;
@@ -2442,19 +2442,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method923(anIntArray1571, var1, 0, 0, var3 >> 14, var5 >> 14, var7, var19);
+										method923(raster, var1, 0, 0, var3 >> 14, var5 >> 14, var7, var19);
 										var3 += var14;
 										var5 += var18;
 										var7 += var15;
-										var1 += anInt1575;
+										var1 += raster_width;
 									}
 								}
 
-								method923(anIntArray1571, var1, 0, 0, var3 >> 14, var4 >> 14, var7, var19);
+								method923(raster, var1, 0, 0, var3 >> 14, var4 >> 14, var7, var19);
 								var3 += var14;
 								var4 += var13;
 								var7 += var15;
-								var1 += anInt1575;
+								var1 += raster_width;
 							}
 						}
 					} else {
@@ -2486,19 +2486,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method923(anIntArray1571, var1, 0, 0, var3 >> 14, var4 >> 14, var7, var19);
+										method923(raster, var1, 0, 0, var3 >> 14, var4 >> 14, var7, var19);
 										var3 += var18;
 										var4 += var13;
 										var7 += var15;
-										var1 += anInt1575;
+										var1 += raster_width;
 									}
 								}
 
-								method923(anIntArray1571, var1, 0, 0, var5 >> 14, var4 >> 14, var7, var19);
+								method923(raster, var1, 0, 0, var5 >> 14, var4 >> 14, var7, var19);
 								var5 += var14;
 								var4 += var13;
 								var7 += var15;
-								var1 += anInt1575;
+								var1 += raster_width;
 							}
 						} else {
 							var2 -= var0;
@@ -2514,19 +2514,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method923(anIntArray1571, var1, 0, 0, var4 >> 14, var3 >> 14, var7, var19);
+										method923(raster, var1, 0, 0, var4 >> 14, var3 >> 14, var7, var19);
 										var3 += var18;
 										var4 += var13;
 										var7 += var15;
-										var1 += anInt1575;
+										var1 += raster_width;
 									}
 								}
 
-								method923(anIntArray1571, var1, 0, 0, var4 >> 14, var5 >> 14, var7, var19);
+								method923(raster, var1, 0, 0, var4 >> 14, var5 >> 14, var7, var19);
 								var5 += var14;
 								var4 += var13;
 								var7 += var15;
-								var1 += anInt1575;
+								var1 += raster_width;
 							}
 						}
 					}
@@ -2570,19 +2570,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method923(anIntArray1571, var2, 0, 0, var4 >> 14, var3 >> 14, var8, var19);
+									method923(raster, var2, 0, 0, var4 >> 14, var3 >> 14, var8, var19);
 									var4 += var13;
 									var3 += var14;
 									var8 += var15;
-									var2 += anInt1575;
+									var2 += raster_width;
 								}
 							}
 
-							method923(anIntArray1571, var2, 0, 0, var4 >> 14, var5 >> 14, var8, var19);
+							method923(raster, var2, 0, 0, var4 >> 14, var5 >> 14, var8, var19);
 							var4 += var13;
 							var5 += var18;
 							var8 += var15;
-							var2 += anInt1575;
+							var2 += raster_width;
 						}
 					} else {
 						var1 -= var0;
@@ -2598,19 +2598,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method923(anIntArray1571, var2, 0, 0, var3 >> 14, var4 >> 14, var8, var19);
+									method923(raster, var2, 0, 0, var3 >> 14, var4 >> 14, var8, var19);
 									var4 += var13;
 									var3 += var14;
 									var8 += var15;
-									var2 += anInt1575;
+									var2 += raster_width;
 								}
 							}
 
-							method923(anIntArray1571, var2, 0, 0, var5 >> 14, var4 >> 14, var8, var19);
+							method923(raster, var2, 0, 0, var5 >> 14, var4 >> 14, var8, var19);
 							var4 += var13;
 							var5 += var18;
 							var8 += var15;
-							var2 += anInt1575;
+							var2 += raster_width;
 						}
 					}
 				} else {
@@ -2642,19 +2642,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method923(anIntArray1571, var2, 0, 0, var4 >> 14, var5 >> 14, var8, var19);
+									method923(raster, var2, 0, 0, var4 >> 14, var5 >> 14, var8, var19);
 									var4 += var14;
 									var5 += var18;
 									var8 += var15;
-									var2 += anInt1575;
+									var2 += raster_width;
 								}
 							}
 
-							method923(anIntArray1571, var2, 0, 0, var3 >> 14, var5 >> 14, var8, var19);
+							method923(raster, var2, 0, 0, var3 >> 14, var5 >> 14, var8, var19);
 							var3 += var13;
 							var5 += var18;
 							var8 += var15;
-							var2 += anInt1575;
+							var2 += raster_width;
 						}
 					} else {
 						var0 -= var1;
@@ -2670,19 +2670,19 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 										return;
 									}
 
-									method923(anIntArray1571, var2, 0, 0, var5 >> 14, var4 >> 14, var8, var19);
+									method923(raster, var2, 0, 0, var5 >> 14, var4 >> 14, var8, var19);
 									var4 += var14;
 									var5 += var18;
 									var8 += var15;
-									var2 += anInt1575;
+									var2 += raster_width;
 								}
 							}
 
-							method923(anIntArray1571, var2, 0, 0, var5 >> 14, var3 >> 14, var8, var19);
+							method923(raster, var2, 0, 0, var5 >> 14, var3 >> 14, var8, var19);
 							var3 += var13;
 							var5 += var18;
 							var8 += var15;
-							var2 += anInt1575;
+							var2 += raster_width;
 						}
 					}
 				}
@@ -2806,11 +2806,11 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 			anIntArray1790 = new int[World.method482(anInt1787)];
 		}
 
-		int var5 = var1 * anInt1575 + var0;
+		int var5 = var1 * raster_width + var0;
 
 		for (int var4 = 0; var4 < anInt1787; ++var4) {
 			anIntArray1790[var4] = var5;
-			var5 += anInt1575;
+			var5 += raster_width;
 		}
 
 	}
@@ -2916,24 +2916,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method920(anIntArray1571, var19, 0, 0, var0, var4 >> 14, var5 >> 14, var6,
+											method920(raster, var19, 0, 0, var0, var4 >> 14, var5 >> 14, var6,
 													var34, var40, var27, var31, var35, var41, var37);
 											var5 += var26;
 											var4 += var29;
 											var6 += var38;
-											var0 += anInt1575;
+											var0 += raster_width;
 											var40 += var36;
 											var27 += var28;
 											var31 += var32;
 										}
 									}
 
-									method920(anIntArray1571, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var34,
+									method920(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var34,
 											var40, var27, var31, var35, var41, var37);
 									var5 += var26;
 									var3 += var20;
 									var6 += var38;
-									var0 += anInt1575;
+									var0 += raster_width;
 									var40 += var36;
 									var27 += var28;
 									var31 += var32;
@@ -2952,24 +2952,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method920(anIntArray1571, var19, 0, 0, var0, var5 >> 14, var4 >> 14, var6,
+											method920(raster, var19, 0, 0, var0, var5 >> 14, var4 >> 14, var6,
 													var34, var40, var27, var31, var35, var41, var37);
 											var5 += var26;
 											var4 += var29;
 											var6 += var38;
-											var0 += anInt1575;
+											var0 += raster_width;
 											var40 += var36;
 											var27 += var28;
 											var31 += var32;
 										}
 									}
 
-									method920(anIntArray1571, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var34,
+									method920(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var34,
 											var40, var27, var31, var35, var41, var37);
 									var5 += var26;
 									var3 += var20;
 									var6 += var38;
-									var0 += anInt1575;
+									var0 += raster_width;
 									var40 += var36;
 									var27 += var28;
 									var31 += var32;
@@ -3008,24 +3008,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method920(anIntArray1571, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6,
+											method920(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6,
 													var34, var40, var27, var31, var35, var41, var37);
 											var5 += var29;
 											var3 += var20;
 											var6 += var38;
-											var0 += anInt1575;
+											var0 += raster_width;
 											var40 += var36;
 											var27 += var28;
 											var31 += var32;
 										}
 									}
 
-									method920(anIntArray1571, var19, 0, 0, var0, var3 >> 14, var4 >> 14, var6, var34,
+									method920(raster, var19, 0, 0, var0, var3 >> 14, var4 >> 14, var6, var34,
 											var40, var27, var31, var35, var41, var37);
 									var4 += var26;
 									var3 += var20;
 									var6 += var38;
-									var0 += anInt1575;
+									var0 += raster_width;
 									var40 += var36;
 									var27 += var28;
 									var31 += var32;
@@ -3044,24 +3044,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method920(anIntArray1571, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6,
+											method920(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6,
 													var34, var40, var27, var31, var35, var41, var37);
 											var5 += var29;
 											var3 += var20;
 											var6 += var38;
-											var0 += anInt1575;
+											var0 += raster_width;
 											var40 += var36;
 											var27 += var28;
 											var31 += var32;
 										}
 									}
 
-									method920(anIntArray1571, var19, 0, 0, var0, var4 >> 14, var3 >> 14, var6, var34,
+									method920(raster, var19, 0, 0, var0, var4 >> 14, var3 >> 14, var6, var34,
 											var40, var27, var31, var35, var41, var37);
 									var4 += var26;
 									var3 += var20;
 									var6 += var38;
-									var0 += anInt1575;
+									var0 += raster_width;
 									var40 += var36;
 									var27 += var28;
 									var31 += var32;
@@ -3113,24 +3113,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method920(anIntArray1571, var19, 0, 0, var1, var5 >> 14, var3 >> 14, var7,
+											method920(raster, var19, 0, 0, var1, var5 >> 14, var3 >> 14, var7,
 													var34, var40, var27, var31, var35, var41, var37);
 											var3 += var20;
 											var5 += var26;
 											var7 += var38;
-											var1 += anInt1575;
+											var1 += raster_width;
 											var40 += var36;
 											var27 += var28;
 											var31 += var32;
 										}
 									}
 
-									method920(anIntArray1571, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var34,
+									method920(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var34,
 											var40, var27, var31, var35, var41, var37);
 									var3 += var20;
 									var4 += var29;
 									var7 += var38;
-									var1 += anInt1575;
+									var1 += raster_width;
 									var40 += var36;
 									var27 += var28;
 									var31 += var32;
@@ -3149,24 +3149,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method920(anIntArray1571, var19, 0, 0, var1, var3 >> 14, var5 >> 14, var7,
+											method920(raster, var19, 0, 0, var1, var3 >> 14, var5 >> 14, var7,
 													var34, var40, var27, var31, var35, var41, var37);
 											var3 += var20;
 											var5 += var26;
 											var7 += var38;
-											var1 += anInt1575;
+											var1 += raster_width;
 											var40 += var36;
 											var27 += var28;
 											var31 += var32;
 										}
 									}
 
-									method920(anIntArray1571, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var34,
+									method920(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var34,
 											var40, var27, var31, var35, var41, var37);
 									var3 += var20;
 									var4 += var29;
 									var7 += var38;
-									var1 += anInt1575;
+									var1 += raster_width;
 									var40 += var36;
 									var27 += var28;
 									var31 += var32;
@@ -3205,24 +3205,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method920(anIntArray1571, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7,
+											method920(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7,
 													var34, var40, var27, var31, var35, var41, var37);
 											var3 += var26;
 											var4 += var29;
 											var7 += var38;
-											var1 += anInt1575;
+											var1 += raster_width;
 											var40 += var36;
 											var27 += var28;
 											var31 += var32;
 										}
 									}
 
-									method920(anIntArray1571, var19, 0, 0, var1, var5 >> 14, var4 >> 14, var7, var34,
+									method920(raster, var19, 0, 0, var1, var5 >> 14, var4 >> 14, var7, var34,
 											var40, var27, var31, var35, var41, var37);
 									var5 += var20;
 									var4 += var29;
 									var7 += var38;
-									var1 += anInt1575;
+									var1 += raster_width;
 									var40 += var36;
 									var27 += var28;
 									var31 += var32;
@@ -3241,24 +3241,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 												return;
 											}
 
-											method920(anIntArray1571, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7,
+											method920(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7,
 													var34, var40, var27, var31, var35, var41, var37);
 											var3 += var26;
 											var4 += var29;
 											var7 += var38;
-											var1 += anInt1575;
+											var1 += raster_width;
 											var40 += var36;
 											var27 += var28;
 											var31 += var32;
 										}
 									}
 
-									method920(anIntArray1571, var19, 0, 0, var1, var4 >> 14, var5 >> 14, var7, var34,
+									method920(raster, var19, 0, 0, var1, var4 >> 14, var5 >> 14, var7, var34,
 											var40, var27, var31, var35, var41, var37);
 									var5 += var20;
 									var4 += var29;
 									var7 += var38;
-									var1 += anInt1575;
+									var1 += raster_width;
 									var40 += var36;
 									var27 += var28;
 									var31 += var32;
@@ -3309,24 +3309,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method920(anIntArray1571, var19, 0, 0, var2, var4 >> 14, var3 >> 14, var8,
+										method920(raster, var19, 0, 0, var2, var4 >> 14, var3 >> 14, var8,
 												var34, var40, var27, var31, var35, var41, var37);
 										var4 += var29;
 										var3 += var20;
 										var8 += var38;
-										var2 += anInt1575;
+										var2 += raster_width;
 										var40 += var36;
 										var27 += var28;
 										var31 += var32;
 									}
 								}
 
-								method920(anIntArray1571, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var34, var40,
+								method920(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var34, var40,
 										var27, var31, var35, var41, var37);
 								var4 += var29;
 								var5 += var26;
 								var8 += var38;
-								var2 += anInt1575;
+								var2 += raster_width;
 								var40 += var36;
 								var27 += var28;
 								var31 += var32;
@@ -3345,24 +3345,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method920(anIntArray1571, var19, 0, 0, var2, var3 >> 14, var4 >> 14, var8,
+										method920(raster, var19, 0, 0, var2, var3 >> 14, var4 >> 14, var8,
 												var34, var40, var27, var31, var35, var41, var37);
 										var4 += var29;
 										var3 += var20;
 										var8 += var38;
-										var2 += anInt1575;
+										var2 += raster_width;
 										var40 += var36;
 										var27 += var28;
 										var31 += var32;
 									}
 								}
 
-								method920(anIntArray1571, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var34, var40,
+								method920(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var34, var40,
 										var27, var31, var35, var41, var37);
 								var4 += var29;
 								var5 += var26;
 								var8 += var38;
-								var2 += anInt1575;
+								var2 += raster_width;
 								var40 += var36;
 								var27 += var28;
 								var31 += var32;
@@ -3401,24 +3401,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method920(anIntArray1571, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8,
+										method920(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8,
 												var34, var40, var27, var31, var35, var41, var37);
 										var4 += var20;
 										var5 += var26;
 										var8 += var38;
-										var2 += anInt1575;
+										var2 += raster_width;
 										var40 += var36;
 										var27 += var28;
 										var31 += var32;
 									}
 								}
 
-								method920(anIntArray1571, var19, 0, 0, var2, var3 >> 14, var5 >> 14, var8, var34, var40,
+								method920(raster, var19, 0, 0, var2, var3 >> 14, var5 >> 14, var8, var34, var40,
 										var27, var31, var35, var41, var37);
 								var3 += var29;
 								var5 += var26;
 								var8 += var38;
-								var2 += anInt1575;
+								var2 += raster_width;
 								var40 += var36;
 								var27 += var28;
 								var31 += var32;
@@ -3437,24 +3437,24 @@ public class DualNode_Sub13_Sub1 extends DualNode_Sub13 {
 											return;
 										}
 
-										method920(anIntArray1571, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8,
+										method920(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8,
 												var34, var40, var27, var31, var35, var41, var37);
 										var4 += var20;
 										var5 += var26;
 										var8 += var38;
-										var2 += anInt1575;
+										var2 += raster_width;
 										var40 += var36;
 										var27 += var28;
 										var31 += var32;
 									}
 								}
 
-								method920(anIntArray1571, var19, 0, 0, var2, var5 >> 14, var3 >> 14, var8, var34, var40,
+								method920(raster, var19, 0, 0, var2, var5 >> 14, var3 >> 14, var8, var34, var40,
 										var27, var31, var35, var41, var37);
 								var3 += var29;
 								var5 += var26;
 								var8 += var38;
-								var2 += anInt1575;
+								var2 += raster_width;
 								var40 += var36;
 								var27 += var28;
 								var31 += var32;

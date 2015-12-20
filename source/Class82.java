@@ -14,8 +14,8 @@ public final class Class82 {
 		int var4 = var2 + 6;
 		int var5 = Client.aDualNode_Sub13_Sub3_Sub1_2047.method969(var0, 250);
 		int var6 = Client.aDualNode_Sub13_Sub3_Sub1_2047.method970(var0, 250) * 13;
-		DualNode_Sub13.method793(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var2 + var6, 0);
-		DualNode_Sub13.method787(var3 - var2, var4 - var2, var5 + var2 + var2, var2 + var2 + var6, 16777215);
+		RSGraphics.method793(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var2 + var6, 0);
+		RSGraphics.drawRectangle(var3 - var2, var4 - var2, var5 + var2 + var2, var2 + var2 + var6, 16777215);
 		Client.aDualNode_Sub13_Sub3_Sub1_2047.method990(var0, var3, var4, var5, var6, 16777215, -1, 1, 1, 0);
 		DualNode_Sub2.method668(var3 - var2, var4 - var2, var2 + var2 + var5, var2 + var2 + var6);
 		if (var1) {

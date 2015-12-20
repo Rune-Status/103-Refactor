@@ -12,7 +12,7 @@ public abstract class Class20 {
 	public abstract void method141(Graphics var1, int var2, int var3, int var4, int var5, short var6);
 
 	public final void method142() {
-		DualNode_Sub13.method779(this.anIntArray271, this.anInt270 * 1154763343, this.anInt272 * -1725941875);
+		RSGraphics.setRaster(this.anIntArray271, this.anInt270 * 1154763343, this.anInt272 * -1725941875);
 	}
 
 	static final void method143(Player var0, int var1, int var2, int var3) {

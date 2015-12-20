@@ -186,7 +186,7 @@ public final class Connection implements Runnable {
 	}
 
 	static final void method301() {
-		Class47.method243();
+		CollionMap.method243();
 		if (DualNode_Sub1.aWidget1446 == null) {
 			if (Client.aWidget2141 == null) {
 				int var2 = 823601801 * Class74.anInt627;

@@ -1,5 +1,5 @@
 
-public final class DualNode_Sub13_Sub2 extends DualNode_Sub13 {
+public final class DualNode_Sub13_Sub2 extends RSGraphics {
 
 	public int[] anIntArray1798;
 	public byte[] aByteArray1799;
@@ -97,44 +97,44 @@ public final class DualNode_Sub13_Sub2 extends DualNode_Sub13 {
 	public void method929(int var1, int var2) {
 		var1 += this.anInt1803;
 		var2 += this.anInt1802;
-		int var4 = var1 + var2 * anInt1575;
+		int var4 = var1 + var2 * raster_width;
 		int var9 = 0;
 		int var3 = this.anInt1801;
 		int var5 = this.anInt1800;
-		int var7 = anInt1575 - var5;
+		int var7 = raster_width - var5;
 		int var8 = 0;
 		int var6;
-		if (var2 < anInt1573) {
-			var6 = anInt1573 - var2;
+		if (var2 < draw_region_y) {
+			var6 = draw_region_y - var2;
 			var3 -= var6;
-			var2 = anInt1573;
+			var2 = draw_region_y;
 			var9 += var6 * var5;
-			var4 += var6 * anInt1575;
+			var4 += var6 * raster_width;
 		}
 
-		if (var2 + var3 > anInt1574) {
-			var3 -= var2 + var3 - anInt1574;
+		if (var2 + var3 > draw_region_max_y) {
+			var3 -= var2 + var3 - draw_region_max_y;
 		}
 
-		if (var1 < anInt1572) {
-			var6 = anInt1572 - var1;
+		if (var1 < draw_region_x) {
+			var6 = draw_region_x - var1;
 			var5 -= var6;
-			var1 = anInt1572;
+			var1 = draw_region_x;
 			var9 += var6;
 			var4 += var6;
 			var8 += var6;
 			var7 += var6;
 		}
 
-		if (var1 + var5 > anInt1576) {
-			var6 = var1 + var5 - anInt1576;
+		if (var1 + var5 > draw_region_max_x) {
+			var6 = var1 + var5 - draw_region_max_x;
 			var5 -= var6;
 			var8 += var6;
 			var7 += var6;
 		}
 
 		if (var5 > 0 && var3 > 0) {
-			method928(anIntArray1571, this.aByteArray1799, this.anIntArray1798, var9, var4, var5, var3, var7, var8);
+			method928(raster, this.aByteArray1799, this.anIntArray1798, var9, var4, var5, var3, var7, var8);
 		}
 	}
 

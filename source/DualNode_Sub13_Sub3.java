@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public abstract class DualNode_Sub13_Sub3 extends DualNode_Sub13 {
+public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 	static int anInt1818 = -1;
 	byte[][] aByteArrayArray1819 = new byte[256][];
@@ -620,82 +620,82 @@ public abstract class DualNode_Sub13_Sub3 extends DualNode_Sub13 {
 	}
 
 	static void method977(byte[] var0, int var1, int var2, int var3, int var4, int var5) {
-		int var6 = var1 + var2 * anInt1575;
-		int var10 = anInt1575 - var3;
+		int var6 = var1 + var2 * raster_width;
+		int var10 = raster_width - var3;
 		int var7 = 0;
 		int var9 = 0;
 		int var8;
-		if (var2 < anInt1573) {
-			var8 = anInt1573 - var2;
+		if (var2 < draw_region_y) {
+			var8 = draw_region_y - var2;
 			var4 -= var8;
-			var2 = anInt1573;
+			var2 = draw_region_y;
 			var9 += var8 * var3;
-			var6 += var8 * anInt1575;
+			var6 += var8 * raster_width;
 		}
 
-		if (var2 + var4 > anInt1574) {
-			var4 -= var2 + var4 - anInt1574;
+		if (var2 + var4 > draw_region_max_y) {
+			var4 -= var2 + var4 - draw_region_max_y;
 		}
 
-		if (var1 < anInt1572) {
-			var8 = anInt1572 - var1;
+		if (var1 < draw_region_x) {
+			var8 = draw_region_x - var1;
 			var3 -= var8;
-			var1 = anInt1572;
+			var1 = draw_region_x;
 			var9 += var8;
 			var6 += var8;
 			var7 += var8;
 			var10 += var8;
 		}
 
-		if (var1 + var3 > anInt1576) {
-			var8 = var1 + var3 - anInt1576;
+		if (var1 + var3 > draw_region_max_x) {
+			var8 = var1 + var3 - draw_region_max_x;
 			var3 -= var8;
 			var7 += var8;
 			var10 += var8;
 		}
 
 		if (var3 > 0 && var4 > 0) {
-			method987(anIntArray1571, var0, var5, var9, var6, var3, var4, var10, var7);
+			method987(raster, var0, var5, var9, var6, var3, var4, var10, var7);
 		}
 	}
 
 	static void method978(byte[] var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-		int var7 = var1 + var2 * anInt1575;
-		int var9 = anInt1575 - var3;
+		int var7 = var1 + var2 * raster_width;
+		int var9 = raster_width - var3;
 		int var11 = 0;
 		int var10 = 0;
 		int var8;
-		if (var2 < anInt1573) {
-			var8 = anInt1573 - var2;
+		if (var2 < draw_region_y) {
+			var8 = draw_region_y - var2;
 			var4 -= var8;
-			var2 = anInt1573;
+			var2 = draw_region_y;
 			var10 += var8 * var3;
-			var7 += var8 * anInt1575;
+			var7 += var8 * raster_width;
 		}
 
-		if (var2 + var4 > anInt1574) {
-			var4 -= var2 + var4 - anInt1574;
+		if (var2 + var4 > draw_region_max_y) {
+			var4 -= var2 + var4 - draw_region_max_y;
 		}
 
-		if (var1 < anInt1572) {
-			var8 = anInt1572 - var1;
+		if (var1 < draw_region_x) {
+			var8 = draw_region_x - var1;
 			var3 -= var8;
-			var1 = anInt1572;
+			var1 = draw_region_x;
 			var10 += var8;
 			var7 += var8;
 			var11 += var8;
 			var9 += var8;
 		}
 
-		if (var1 + var3 > anInt1576) {
-			var8 = var1 + var3 - anInt1576;
+		if (var1 + var3 > draw_region_max_x) {
+			var8 = var1 + var3 - draw_region_max_x;
 			var3 -= var8;
 			var11 += var8;
 			var9 += var8;
 		}
 
 		if (var3 > 0 && var4 > 0) {
-			method979(anIntArray1571, var0, var5, var10, var7, var3, var4, var9, var11, var6);
+			method979(raster, var0, var5, var10, var7, var3, var4, var9, var11, var6);
 		}
 	}
 

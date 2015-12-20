@@ -15,7 +15,7 @@ public final class BoundaryDecorationStub {
 	int config = 0;
 	int orientationA;
 
-	static final void method106(byte[] var0, int var1, int var2, Landscape var3, Class47[] var4) {
+	static final void method106(byte[] var0, int var1, int var2, Landscape var3, CollionMap[] var4) {
 		ByteBuf var5 = new ByteBuf(var0);
 		int var9 = -1;
 
@@ -49,7 +49,7 @@ public final class BoundaryDecorationStub {
 						var19 = var18 - 1;
 					}
 
-					Class47 var6 = null;
+					CollionMap var6 = null;
 					if (var19 >= 0) {
 						var6 = var4[var19];
 					}
@@ -146,7 +146,7 @@ public final class BoundaryDecorationStub {
 			InterfaceNode.landscape = new Landscape(4, 104, 104, Class39.tileHeights);
 
 			for (var0 = 0; var0 < 4; ++var0) {
-				Client.aClass47Array2053[var0] = new Class47(104, 104);
+				Client.aClass47Array2053[var0] = new CollionMap(104, 104);
 			}
 
 			RuneScript.minimapSprite = new Sprite(512, 512);

@@ -27,9 +27,9 @@ public class Class36 implements Interface5 {
 		int var3 = 1899383153 * Class4.menuWidth;
 		int var4 = 1426002097 * Class4.menuHeight;
 		int var2 = 6116423;
-		DualNode_Sub13.method793(var0, var1, var3, var4, var2);
-		DualNode_Sub13.method793(1 + var0, var1 + 1, var3 - 2, 16, 0);
-		DualNode_Sub13.method787(1 + var0, 18 + var1, var3 - 2, var4 - 19, 0);
+		RSGraphics.method793(var0, var1, var3, var4, var2);
+		RSGraphics.method793(1 + var0, var1 + 1, var3 - 2, 16, 0);
+		RSGraphics.drawRectangle(1 + var0, 18 + var1, var3 - 2, var4 - 19, 0);
 		Class35.aDualNode_Sub13_Sub3_Sub1_386.method980(GameStrings.aString996, var0 + 3, var1 + 14, var2, -1);
 		int var5 = -453286219 * Class74.anInt621;
 		int var9 = Class74.anInt622 * 103771565;

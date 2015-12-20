@@ -20,7 +20,7 @@ public class Class53 {
 
 	static final void method272(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8) {
-		DualNode_Sub13.method789(var2, var3, var4, var5);
+		RSGraphics.setDrawRegion(var2, var3, var4, var5);
 		DualNode_Sub13_Sub1.method909();
 
 		for (int var14 = 0; var14 < var0.length; ++var14) {
@@ -206,7 +206,7 @@ public class Class53 {
 								var16 = Client.anInt2224 * -990874927;
 								var13 = 2112468213 * Client.screenHeight;
 								var31 = -336695531 * Client.screenWidth;
-								DualNode_Sub13.method789(var9, var16, var9 + var13, var31 + var16);
+								RSGraphics.setDrawRegion(var9, var16, var9 + var13, var31 + var16);
 								DualNode_Sub13_Sub1.method909();
 								int var20;
 								if (!Client.aBool2046) {
@@ -323,7 +323,7 @@ public class Class53 {
 								}
 
 								Class34.method201();
-								DualNode_Sub13.method793(var9, var16, var13, var31, 0);
+								RSGraphics.method793(var9, var16, var13, var31, 0);
 								Class34.method201();
 								var39 = DualNode_Sub13_Sub1.anInt1784;
 								DualNode_Sub13_Sub1.anInt1784 = -478819715 * Client.screenZoom;
@@ -471,12 +471,12 @@ public class Class53 {
 											var32 = (150 - Client.anIntArray2132[var20])
 													* (Class35.aDualNode_Sub13_Sub3_Sub1_386.method967(var71) + 100)
 													/ 150;
-											DualNode_Sub13.method781(Client.anInt2093 * -94432357 + var9 - 50, var16,
+											RSGraphics.setInnerDrawRegion(Client.anInt2093 * -94432357 + var9 - 50, var16,
 													var9 + Client.anInt2093 * -94432357 + 50, var16 + var31);
 											Class35.aDualNode_Sub13_Sub3_Sub1_386.method980(var71,
 													-94432357 * Client.anInt2093 + var9 + 50 - var32,
 													var16 + -770682383 * Client.anInt2094, var12, 0);
-											DualNode_Sub13.method789(var9, var16, var9 + var13, var16 + var31);
+											RSGraphics.setDrawRegion(var9, var16, var9 + var13, var16 + var31);
 										}
 
 										if (Client.anIntArray2089[var20] == 5) {
@@ -488,14 +488,14 @@ public class Class53 {
 												var42 = var32 - 125;
 											}
 
-											DualNode_Sub13.method781(var9,
+											RSGraphics.setInnerDrawRegion(var9,
 													-770682383 * Client.anInt2094 + var16
 															- Class35.aDualNode_Sub13_Sub3_Sub1_386.anInt1824 - 1,
 													var13 + var9, 5 + var16 + -770682383 * Client.anInt2094);
 											Class35.aDualNode_Sub13_Sub3_Sub1_386.method982(var71,
 													var9 + Client.anInt2093 * -94432357,
 													Client.anInt2094 * -770682383 + var16 + var42, var12, 0);
-											DualNode_Sub13.method789(var9, var16, var13 + var9, var31 + var16);
+											RSGraphics.setDrawRegion(var9, var16, var13 + var9, var31 + var16);
 										}
 									} else {
 										Class35.aDualNode_Sub13_Sub3_Sub1_386.method982(var71,
@@ -535,18 +535,18 @@ public class Class53 {
 								}
 
 								if (Client.aBool2214) {
-									DualNode_Sub13.method793(var9, var16, var13, var31, 0);
+									RSGraphics.method793(var9, var16, var13, var31, 0);
 									Class82.method363(GameStrings.aString852, false);
 								}
 
 								Client.aBoolArray2118[var15.boundsIndex * 1983233805] = true;
-								DualNode_Sub13.method789(var2, var3, var4, var5);
+								RSGraphics.setDrawRegion(var2, var3, var4, var5);
 								continue;
 							}
 
 							if (var15.contentType * -179718399 == 1338) {
 								Node_Sub8.method547(var15, var10, var11, var18);
-								DualNode_Sub13.method789(var2, var3, var4, var5);
+								RSGraphics.setDrawRegion(var2, var3, var4, var5);
 								continue;
 							}
 
@@ -559,12 +559,12 @@ public class Class53 {
 												Client.minimapRotation * -1916997753, 256, var55.anIntArray1646,
 												var55.anIntArray1645);
 									} else {
-										DualNode_Sub13.method792(var10, var11, 0, var55.anIntArray1646,
+										RSGraphics.method792(var10, var11, 0, var55.anIntArray1646,
 												var55.anIntArray1645);
 									}
 								}
 
-								DualNode_Sub13.method789(var2, var3, var4, var5);
+								RSGraphics.setDrawRegion(var2, var3, var4, var5);
 								continue;
 							}
 						}
@@ -600,7 +600,7 @@ public class Class53 {
 										var18);
 							}
 
-							DualNode_Sub13.method789(var2, var3, var4, var5);
+							RSGraphics.setDrawRegion(var2, var3, var4, var5);
 							DualNode_Sub13_Sub1.method909();
 						}
 
@@ -614,27 +614,27 @@ public class Class53 {
 								var31 = 177405235 * var15.viewportHeight;
 								Class35.aDualNode_Sub13_Sub2Array395[0].method929(var9, var11);
 								Class35.aDualNode_Sub13_Sub2Array395[1].method929(var9, var13 + var11 - 16);
-								DualNode_Sub13.method793(var9, var11 + 16, 16, var13 - 32, 15197487 * Client.anInt2067);
+								RSGraphics.method793(var9, var11 + 16, 16, var13 - 32, 15197487 * Client.anInt2067);
 								var17 = (var13 - 32) * var13 / var31;
 								if (var17 < 8) {
 									var17 = 8;
 								}
 
 								var30 = var16 * (var13 - 32 - var17) / (var31 - var13);
-								DualNode_Sub13.method793(var9, var30 + 16 + var11, 16, var17,
+								RSGraphics.method793(var9, var30 + 16 + var11, 16, var17,
 										403555201 * Client.anInt2068);
-								DualNode_Sub13.method784(var9, var30 + var11 + 16, var17, 439456629 * Client.anInt2070);
-								DualNode_Sub13.method784(var9 + 1, 16 + var11 + var30, var17,
+								RSGraphics.method784(var9, var30 + var11 + 16, var17, 439456629 * Client.anInt2070);
+								RSGraphics.method784(var9 + 1, 16 + var11 + var30, var17,
 										439456629 * Client.anInt2070);
-								DualNode_Sub13.method796(var9, var30 + 16 + var11, 16, Client.anInt2070 * 439456629);
-								DualNode_Sub13.method796(var9, var11 + 17 + var30, 16, Client.anInt2070 * 439456629);
-								DualNode_Sub13.method784(var9 + 15, var11 + 16 + var30, var17,
+								RSGraphics.method796(var9, var30 + 16 + var11, 16, Client.anInt2070 * 439456629);
+								RSGraphics.method796(var9, var11 + 17 + var30, 16, Client.anInt2070 * 439456629);
+								RSGraphics.method784(var9 + 15, var11 + 16 + var30, var17,
 										1001974215 * Client.anInt2069);
-								DualNode_Sub13.method784(14 + var9, var30 + 17 + var11, var17 - 1,
+								RSGraphics.method784(14 + var9, var30 + 17 + var11, var17 - 1,
 										Client.anInt2069 * 1001974215);
-								DualNode_Sub13.method796(var9, var17 + var30 + var11 + 15, 16,
+								RSGraphics.method796(var9, var17 + var30 + var11 + 15, 16,
 										1001974215 * Client.anInt2069);
-								DualNode_Sub13.method796(var9 + 1, var11 + 14 + var30 + var17, 15,
+								RSGraphics.method796(var9 + 1, var11 + 14 + var30 + var17, 15,
 										Client.anInt2069 * 1001974215);
 							}
 
@@ -694,10 +694,10 @@ public class Class53 {
 															var70.method951(var31 + var30, var17 + var38, 128);
 															if (var1 != -1) {
 																Widget var60 = var0[var1 & '\uffff'];
-																if (var38 + var17 < DualNode_Sub13.anInt1573
+																if (var38 + var17 < RSGraphics.draw_region_y
 																		&& var60.insetY * -1602694527 > 0) {
 																	var26 = -1163930299 * Client.anInt2066
-																			* (DualNode_Sub13.anInt1573 - var17 - var38)
+																			* (RSGraphics.draw_region_y - var17 - var38)
 																			/ 3;
 																	if (var26 > Client.anInt2066 * 1245598898) {
 																		var26 = Client.anInt2066 * 1245598898;
@@ -712,13 +712,13 @@ public class Class53 {
 																	Class68.method326(var60);
 																}
 
-																if (var38 + var17 + 32 > DualNode_Sub13.anInt1574
+																if (var38 + var17 + 32 > RSGraphics.draw_region_max_y
 																		&& -1602694527
 																				* var60.insetY < var60.viewportHeight
 																						* 177405235
 																						- var60.height * 1227800423) {
 																	var26 = Client.anInt2066 * -1163930299 * (32 + var38
-																			+ var17 - DualNode_Sub13.anInt1574) / 3;
+																			+ var17 - RSGraphics.draw_region_max_y) / 3;
 																	if (var26 > 1245598898 * Client.anInt2066) {
 																		var26 = Client.anInt2066 * 1245598898;
 																	}
@@ -774,17 +774,17 @@ public class Class53 {
 
 									if (var19 == 0) {
 										if (var15.aBool1161) {
-											DualNode_Sub13.method793(var10, var11, 1645211541 * var15.width,
+											RSGraphics.method793(var10, var11, 1645211541 * var15.width,
 													1227800423 * var15.height, var9);
 										} else {
-											DualNode_Sub13.method787(var10, var11, var15.width * 1645211541,
+											RSGraphics.drawRectangle(var10, var11, var15.width * 1645211541,
 													1227800423 * var15.height, var9);
 										}
 									} else if (var15.aBool1161) {
-										DualNode_Sub13.method785(var10, var11, var15.width * 1645211541,
+										RSGraphics.fillRectangle(var10, var11, var15.width * 1645211541,
 												1227800423 * var15.height, var9, 256 - (var19 & 255));
 									} else {
-										DualNode_Sub13.method794(var10, var11, 1645211541 * var15.width,
+										RSGraphics.method794(var10, var11, 1645211541 * var15.width,
 												var15.height * 1227800423, var9, 256 - (var19 & 255));
 									}
 								} else {
@@ -891,7 +891,7 @@ public class Class53 {
 																1227800423 * var15.height);
 													}
 												} else {
-													DualNode_Sub13.method781(var10, var11,
+													RSGraphics.setInnerDrawRegion(var10, var11,
 															var15.width * 1645211541 + var10,
 															1227800423 * var15.height + var11);
 													var31 = (1645211541 * var15.width + (var16 - 1)) / var16;
@@ -913,7 +913,7 @@ public class Class53 {
 														}
 													}
 
-													DualNode_Sub13.method789(var2, var3, var4, var5);
+													RSGraphics.setDrawRegion(var2, var3, var4, var5);
 												}
 											}
 										}
@@ -1092,8 +1092,8 @@ public class Class53 {
 													var38 = var5 - var16;
 												}
 
-												DualNode_Sub13.method793(var30, var38, var9, var16, 16777120);
-												DualNode_Sub13.method787(var30, var38, var9, var16, 0);
+												RSGraphics.method793(var30, var38, var9, var16, 16777120);
+												RSGraphics.drawRectangle(var30, var38, var9, var16, 0);
 												var62 = var15.text;
 												var24 = var38 + var51.anInt1824 + 2;
 
@@ -1126,7 +1126,7 @@ public class Class53 {
 														var31 = var15.height * 1227800423 + var11;
 													}
 
-													DualNode_Sub13.method791(var9, var16, var13, var31,
+													RSGraphics.drawLine(var9, var16, var13, var31,
 															1384750979 * var15.textColor);
 												} else {
 													var9 = 1645211541 * var15.width >= 0 ? var15.width * 1645211541

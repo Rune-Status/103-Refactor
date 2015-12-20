@@ -15,6 +15,11 @@ import netscape.javascript.JSObject;
 
 public final class Client extends GameEngine {
 
+	
+	public Client() {
+		
+	}
+	
 	static int minimapRotation = 0;
 	static Client aClient2005;
 	static boolean aBool2006 = true;
@@ -81,7 +86,7 @@ public final class Client extends GameEngine {
 	static int anInt2050 = 693748815;
 	static int anInt2051 = -943887744;
 	static int[] regionIds;
-	static Class47[] aClass47Array2053 = new Class47[4];
+	static CollionMap[] aClass47Array2053 = new CollionMap[4];
 	static boolean dynamicRegion = false;
 	static int[][][] anIntArrayArrayArray2055 = new int[4][13][13];
 	static int[] anIntArray2056 = new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3 };
@@ -666,13 +671,13 @@ public final class Client extends GameEngine {
 													var17 = 8 * var6;
 													var18 = 8 * (var11 & 7);
 													var19 = (var12 & 7) * 8;
-													Class47[] var20 = aClass47Array2053;
+													CollionMap[] var20 = aClass47Array2053;
 
 													for (var21 = 0; var21 < 8; ++var21) {
 														for (var22 = 0; var22 < 8; ++var22) {
 															if (var16 + var21 > 0 && var16 + var21 < 103
 																	&& var22 + var17 > 0 && var22 + var17 < 103) {
-																var20[var83].anIntArrayArray504[var21 + var16][var22
+																var20[var83].flags[var21 + var16][var22
 																		+ var17] &= -16777217;
 															}
 														}
@@ -765,7 +770,7 @@ public final class Client extends GameEngine {
 						Class66.method325();
 						Class34.method201();
 						Landscape var92 = InterfaceNode.landscape;
-						Class47[] var93 = aClass47Array2053;
+						CollionMap[] var93 = aClass47Array2053;
 
 						for (var6 = 0; var6 < 4; ++var6) {
 							for (var89 = 0; var89 < 104; ++var89) {
@@ -3435,7 +3440,7 @@ public final class Client extends GameEngine {
 										if (var10 != 22 && var10 != 29 && var10 != 34 && var10 != 36 && var10 != 46
 												&& var10 != 47 && var10 != 48) {
 											int[][] var154 = aClass47Array2053[-747958745
-													* InterfaceNode.floorLevel].anIntArrayArray504;
+													* InterfaceNode.floorLevel].flags;
 
 											for (var16 = 0; var16 < 10; ++var16) {
 												var17 = (int) (Math.random() * 4.0D);

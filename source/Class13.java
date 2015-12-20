@@ -123,9 +123,9 @@ public class Class13 {
 			}
 		}
 
-		DualNode_Sub13.method789(Class6.anInt132 * 1933284923, 9, 128 + 1933284923 * Class6.anInt132, var0 + 7);
+		RSGraphics.setDrawRegion(Class6.anInt132 * 1933284923, 9, 128 + 1933284923 * Class6.anInt132, var0 + 7);
 		Class56.aSprite542.method958(Class6.anInt132 * 1933284923, 0);
-		DualNode_Sub13.method780();
+		RSGraphics.noClip();
 		var1 = 0;
 		int var2 = Class62.aClass20_570.anInt270 * 1802935495 + 1933284923 * Class6.anInt132;
 
@@ -163,10 +163,10 @@ public class Class13 {
 			var2 += var4 + 1154763343 * Class62.aClass20_570.anInt270 - 128;
 		}
 
-		DualNode_Sub13.method789(1933284923 * Class6.anInt132 + 765 - 128, 9, 1933284923 * Class6.anInt132 + 765,
+		RSGraphics.setDrawRegion(1933284923 * Class6.anInt132 + 765 - 128, 9, 1933284923 * Class6.anInt132 + 765,
 				var0 + 7);
 		Class6.aSprite137.method958(382 + 1933284923 * Class6.anInt132, 0);
-		DualNode_Sub13.method780();
+		RSGraphics.noClip();
 		var1 = 0;
 		var2 = 637 + 24 + 1802935495 * Class62.aClass20_570.anInt270 + Class6.anInt132 * 1933284923;
 
@@ -224,9 +224,9 @@ public class Class13 {
 				var12 = 512 * var8 * var3 / (334 * var15);
 				var6 = (var2 - var12) / 2;
 				if (var4) {
-					DualNode_Sub13.method780();
-					DualNode_Sub13.method793(var0, var1, var6, var3, -16777216);
-					DualNode_Sub13.method793(var0 + var2 - var6, var1, var6, var3, -16777216);
+					RSGraphics.noClip();
+					RSGraphics.method793(var0, var1, var6, var3, -16777216);
+					RSGraphics.method793(var0 + var2 - var6, var1, var6, var3, -16777216);
 				}
 
 				var0 += var6;
@@ -240,9 +240,9 @@ public class Class13 {
 				var12 = var2 * var15 * 334 / (512 * var8);
 				var6 = (var3 - var12) / 2;
 				if (var4) {
-					DualNode_Sub13.method780();
-					DualNode_Sub13.method793(var0, var1, var2, var6, -16777216);
-					DualNode_Sub13.method793(var0, var3 + var1 - var6, var2, var6, -16777216);
+					RSGraphics.noClip();
+					RSGraphics.method793(var0, var1, var2, var6, -16777216);
+					RSGraphics.method793(var0, var3 + var1 - var6, var2, var6, -16777216);
 				}
 
 				var1 += var6;

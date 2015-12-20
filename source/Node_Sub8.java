@@ -126,7 +126,7 @@ public final class Node_Sub8 extends Node {
 		Class34.method201();
 		DualNode_Sub14 var6 = var0.method491(false);
 		if (var6 != null) {
-			DualNode_Sub13.method789(var1, var2, var1 + var6.anInt1647 * 662480183, var6.anInt1648 * -988977157 + var2);
+			RSGraphics.setDrawRegion(var1, var2, var1 + var6.anInt1647 * 662480183, var6.anInt1648 * -988977157 + var2);
 			if (Client.anInt2200 * -1797803011 != 2 && Client.anInt2200 * -1797803011 != 5) {
 				int var8 = -1916997753 * Client.minimapRotation + Client.minimapScale * -1718342721 & 2047;
 				int var7 = 48 + 1272643751 * Class68.myPlayer.strictX / 32;
@@ -250,11 +250,11 @@ public final class Node_Sub8 extends Node {
 				}
 
 				if (!Class68.myPlayer.aBool1998) {
-					DualNode_Sub13.method793(var6.anInt1647 * 662480183 / 2 + var1 - 1,
+					RSGraphics.method793(var6.anInt1647 * 662480183 / 2 + var1 - 1,
 							var2 + -988977157 * var6.anInt1648 / 2 - 1, 3, 3, 16777215);
 				}
 			} else {
-				DualNode_Sub13.method792(var1, var2, 0, var6.anIntArray1646, var6.anIntArray1645);
+				RSGraphics.method792(var1, var2, 0, var6.anIntArray1646, var6.anIntArray1645);
 			}
 
 			Client.aBoolArray2171[var3] = true;
