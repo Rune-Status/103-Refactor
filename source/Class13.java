@@ -127,7 +127,7 @@ public class Class13 {
 		Class56.aSprite542.method958(Class6.anInt132 * 1933284923, 0);
 		RSGraphics.noClip();
 		var1 = 0;
-		int var2 = Class62.aClass20_570.anInt270 * 1802935495 + 1933284923 * Class6.anInt132;
+		int var2 = IndexTable.aClass20_570.anInt270 * 1802935495 + 1933284923 * Class6.anInt132;
 
 		int var3;
 		int var4;
@@ -152,15 +152,15 @@ public class Class13 {
 					var10 = var3;
 					var8 = 256 - var3;
 					var3 = Class6.anIntArray124[var3];
-					var9 = Class62.aClass20_570.anIntArray271[var2];
-					Class62.aClass20_570.anIntArray271[var2++] = (var8 * (var9 & 16711935) + var10 * (var3 & 16711935)
+					var9 = IndexTable.aClass20_570.anIntArray271[var2];
+					IndexTable.aClass20_570.anIntArray271[var2++] = (var8 * (var9 & 16711935) + var10 * (var3 & 16711935)
 							& -16711936) + ((var9 & '\uff00') * var8 + var10 * (var3 & '\uff00') & 16711680) >> 8;
 				} else {
 					++var2;
 				}
 			}
 
-			var2 += var4 + 1154763343 * Class62.aClass20_570.anInt270 - 128;
+			var2 += var4 + 1154763343 * IndexTable.aClass20_570.anInt270 - 128;
 		}
 
 		RSGraphics.setDrawRegion(1933284923 * Class6.anInt132 + 765 - 128, 9, 1933284923 * Class6.anInt132 + 765,
@@ -168,7 +168,7 @@ public class Class13 {
 		Class6.aSprite137.method958(382 + 1933284923 * Class6.anInt132, 0);
 		RSGraphics.noClip();
 		var1 = 0;
-		var2 = 637 + 24 + 1802935495 * Class62.aClass20_570.anInt270 + Class6.anInt132 * 1933284923;
+		var2 = 637 + 24 + 1802935495 * IndexTable.aClass20_570.anInt270 + Class6.anInt132 * 1933284923;
 
 		for (var5 = 1; var5 < var0 - 1; ++var5) {
 			var7 = Class6.anIntArray145[var5] * (var0 - var5) / var0;
@@ -181,8 +181,8 @@ public class Class13 {
 					var10 = var3;
 					var8 = 256 - var3;
 					var3 = Class6.anIntArray124[var3];
-					var9 = Class62.aClass20_570.anIntArray271[var2];
-					Class62.aClass20_570.anIntArray271[var2++] = (var10 * (var3 & '\uff00') + var8 * (var9 & '\uff00')
+					var9 = IndexTable.aClass20_570.anIntArray271[var2];
+					IndexTable.aClass20_570.anIntArray271[var2++] = (var10 * (var3 & '\uff00') + var8 * (var9 & '\uff00')
 							& 16711680) + ((var3 & 16711935) * var10 + var8 * (var9 & 16711935) & -16711936) >> 8;
 				} else {
 					++var2;
@@ -190,7 +190,7 @@ public class Class13 {
 			}
 
 			var1 += 128 - var4;
-			var2 += Class62.aClass20_570.anInt270 * 1154763343 - var4 - var7;
+			var2 += IndexTable.aClass20_570.anInt270 * 1154763343 - var4 - var7;
 		}
 
 	}
@@ -258,7 +258,7 @@ public class Class13 {
 			for (int var9 = 0; var9 < 9; ++var9) {
 				int var13 = var9 * 32 + 128 + 15;
 				int var11 = 3 * var13 + 600;
-				int var10 = DualNode_Sub13_Sub1.anIntArray1788[var13];
+				int var10 = DualNode_Sub13_Sub1.SIN_TABLE[var13];
 				var14[var9] = var10 * var11 >> 16;
 			}
 

@@ -364,12 +364,12 @@ public class NpcDefinition extends DualNode {
 		var9.anInt1311 = -622541955 * var8;
 	}
 
-	static Class87_Sub1 method806(int var0, boolean var1, boolean var2, boolean var3) {
-		Class62 var4 = null;
-		if (Class75.aClass121_634 != null) {
-			var4 = new Class62(var0, Class75.aClass121_634, Class39.aClass121Array428[var0], 1000000);
+	static CacheIndex openCacheIndex(int var0, boolean var1, boolean var2, boolean var3) {
+		IndexTable var4 = null;
+		if (Class75.cacheDataFile != null) {
+			var4 = new IndexTable(var0, Class75.cacheDataFile, Class39.cacheIndexFiles[var0], 1000000);
 		}
 
-		return new Class87_Sub1(var4, Class3.aClass62_92, var0, var1, var2, var3);
+		return new CacheIndex(var4, Class3.aClass62_92, var0, var1, var2, var3);
 	}
 }

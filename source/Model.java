@@ -58,8 +58,8 @@ public class Model extends Entity {
 	int[] anIntArray1906;
 	public static int onCursorCount = 0;
 	static int[] anIntArray1907 = DualNode_Sub13_Sub1.anIntArray1793;
-	static int[] anIntArray1908 = DualNode_Sub13_Sub1.anIntArray1788;
-	static int[] anIntArray1909 = DualNode_Sub13_Sub1.anIntArray1792;
+	static int[] anIntArray1908 = DualNode_Sub13_Sub1.SIN_TABLE;
+	static int[] anIntArray1909 = DualNode_Sub13_Sub1.COS_TABLE;
 	public static int anInt1910 = 0;
 	static int[] anIntArray1911 = DualNode_Sub13_Sub1.anIntArray1795;
 	int anInt1912;

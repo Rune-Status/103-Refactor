@@ -41,7 +41,7 @@ public final class Class91 {
 	}
 
 	public static int method401(int var0) {
-		Varpbit var1 = Class87_Sub1.getVarpbit(var0);
+		Varpbit var1 = CacheIndex.getVarpbit(var0);
 		int var4 = var1.varp * 12908597;
 		int var3 = var1.lowBit * -585070571;
 		int var2 = 984543857 * var1.highBit;

@@ -1,6 +1,6 @@
 import java.applet.Applet;
 
-public class CollionMap {
+public class CollisionMap {
 
 	int width;
 	public int[][] flags;
@@ -377,7 +377,7 @@ public class CollionMap {
 
 	}
 
-	public CollionMap(int var1, int var2) {
+	public CollisionMap(int var1, int var2) {
 		this.width = 374777743 * var1;
 		this.height = 252847431 * var2;
 		this.flags = new int[this.width * 115906415][-852495241 * this.height];

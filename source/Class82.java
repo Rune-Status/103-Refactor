@@ -21,7 +21,7 @@ public final class Class82 {
 		if (var1) {
 			try {
 				Graphics var7 = LandscapeTile.aCanvas1417.getGraphics();
-				Class62.aClass20_570.method144(var7, 0, 0, -819332484);
+				IndexTable.aClass20_570.method144(var7, 0, 0, -819332484);
 			} catch (Exception var12) {
 				LandscapeTile.aCanvas1417.repaint();
 			}

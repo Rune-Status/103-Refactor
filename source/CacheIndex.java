@@ -1,19 +1,19 @@
 import java.awt.datatransfer.Clipboard;
 import java.util.zip.CRC32;
 
-public class Class87_Sub1 extends Class87 {
+public class CacheIndex extends Class87 {
 
-	Class62 aClass62_1324;
+	IndexTable aClass62_1324;
 	int anInt1325;
 	volatile boolean[] aBoolArray1326;
 	boolean aBool1327 = false;
 	static CRC32 aCRC32_1328 = new CRC32();
 	static Clipboard aClipboard1329;
 	volatile boolean aBool1330 = false;
-	int anInt1331;
+	int crcValue;
 	int anInt1332;
 	static Class4 aClass4_1333;
-	Class62 aClass62_1334;
+	IndexTable aClass62_1334;
 	int anInt1335 = 439070177;
 
 	public static int method555(int var0) {
@@ -62,7 +62,7 @@ public class Class87_Sub1 extends Class87 {
 
 			if (this.aClass62_1324 != null) {
 				int var5 = this.anInt1325 * -1858370801;
-				Class62 var6 = this.aClass62_1324;
+				IndexTable var6 = this.aClass62_1324;
 				Node_Sub9 var7 = new Node_Sub9();
 				var7.anInt1338 = 0;
 				var7.key = (long) var5;
@@ -89,7 +89,7 @@ public class Class87_Sub1 extends Class87 {
 			var2[var2.length - 2] = (byte) (this.anIntArray707[var1] >> 8);
 			var2[var2.length - 1] = (byte) this.anIntArray707[var1];
 			if (this.aClass62_1334 != null) {
-				Class62 var17 = this.aClass62_1334;
+				IndexTable var17 = this.aClass62_1334;
 				Node_Sub9 var18 = new Node_Sub9();
 				var18.anInt1338 = 0;
 				var18.key = (long) var1;
@@ -134,7 +134,7 @@ public class Class87_Sub1 extends Class87 {
 
 			for (var1 = 0; var1 < this.aBoolArray1326.length; ++var1) {
 				if (this.anIntArray702[var1] > 0) {
-					Class62 var2 = this.aClass62_1334;
+					IndexTable var2 = this.aClass62_1334;
 					Node_Sub9 var4 = new Node_Sub9();
 					var4.anInt1338 = -516148383;
 					var4.key = (long) var1;
@@ -185,7 +185,7 @@ public class Class87_Sub1 extends Class87 {
 		}
 	}
 
-	public Class87_Sub1(Class62 var1, Class62 var2, int var3, boolean var4, boolean var5, boolean var6) {
+	public CacheIndex(IndexTable var1, IndexTable var2, int var3, boolean var4, boolean var5, boolean var6) {
 		super(var4, var5);
 		this.aClass62_1334 = var1;
 		this.aClass62_1324 = var2;
@@ -196,9 +196,9 @@ public class Class87_Sub1 extends Class87 {
 			Class93.aBuffer731.position = -920877945 + -1473404712 * var7;
 			int var9 = Class93.aBuffer731.getInt();
 			int var10 = Class93.aBuffer731.getInt();
-			this.method561(var9, var10);
+			this.setInformation(var9, var10);
 		} else {
-			Class39.method221((Class87_Sub1) null, 255, 255, 0, (byte) 0, true);
+			Class39.method221((CacheIndex) null, 255, 255, 0, (byte) 0, true);
 			Class81.aClass87_Sub1Array681[var7] = this;
 		}
 
@@ -220,7 +220,7 @@ public class Class87_Sub1 extends Class87 {
 		}
 	}
 
-	void method560(Class62 var1, int var2, byte[] var3, boolean var4) {
+	void method560(IndexTable var1, int var2, byte[] var3, boolean var4) {
 		int var6;
 		if (this.aClass62_1324 == var1) {
 			if (this.aBool1330) {
@@ -228,7 +228,7 @@ public class Class87_Sub1 extends Class87 {
 			}
 
 			if (var3 == null) {
-				Class39.method221(this, 255, -1858370801 * this.anInt1325, this.anInt1331 * 457223413, (byte) 0, true);
+				Class39.method221(this, 255, -1858370801 * this.anInt1325, this.crcValue * 457223413, (byte) 0, true);
 				return;
 			}
 
@@ -246,8 +246,8 @@ public class Class87_Sub1 extends Class87 {
 				var8 = var7.getInt();
 			}
 
-			if (var6 != 457223413 * this.anInt1331 || var8 != 1796955907 * this.anInt1332) {
-				Class39.method221(this, 255, this.anInt1325 * -1858370801, 457223413 * this.anInt1331, (byte) 0, true);
+			if (var6 != 457223413 * this.crcValue || var8 != 1796955907 * this.anInt1332) {
+				Class39.method221(this, 255, this.anInt1325 * -1858370801, 457223413 * this.crcValue, (byte) 0, true);
 				return;
 			}
 
@@ -290,13 +290,13 @@ public class Class87_Sub1 extends Class87 {
 
 	}
 
-	public void method561(int var1, int var2) {
-		this.anInt1331 = -2002673827 * var1;
+	public void setInformation(int var1, int var2) {
+		this.crcValue = -2002673827 * var1;
 		this.anInt1332 = -1397521493 * var2;
 		if (this.aClass62_1324 != null) {
 			Class59.method292(-1858370801 * this.anInt1325, this.aClass62_1324, this);
 		} else {
-			Class39.method221(this, 255, -1858370801 * this.anInt1325, this.anInt1331 * 457223413, (byte) 0, true);
+			Class39.method221(this, 255, -1858370801 * this.anInt1325, this.crcValue * 457223413, (byte) 0, true);
 		}
 
 	}

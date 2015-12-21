@@ -11,7 +11,7 @@ public class PlayerConfig {
 	long aLong533;
 	static int[] anIntArray534 = new int[] { 8, 11, 4, 6, 9, 7, 10 };
 	int[] appearance;
-	static Class87_Sub1 aClass87_Sub1_535;
+	static CacheIndex aClass87_Sub1_535;
 
 	public void method262(int[] var1, int[] var2, boolean var3, int var4) {
 		if (var1 == null) {

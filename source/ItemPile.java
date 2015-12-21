@@ -85,7 +85,7 @@ public final class ItemPile {
 				}
 
 				Landscape var36 = InterfaceNode.landscape;
-				CollionMap var21 = Client.aClass47Array2053[var0];
+				CollisionMap var21 = Client.aClass47Array2053[var0];
 				ObjectDefinition var8 = Class37.getObjectDefinition(var4);
 				int var12;
 				int var27;

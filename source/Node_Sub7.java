@@ -142,7 +142,7 @@ public class Node_Sub7 extends Node {
 		this.anIntArray1292 = new int[var5];
 
 		for (int var7 = 0; var7 < this.anIntArray1287.length; ++var7) {
-			DualNode_Sub13_Sub2 var12 = Class62.method306(var4, this.anIntArray1287[var7]);
+			DualNode_Sub13_Sub2 var12 = IndexTable.method306(var4, this.anIntArray1287[var7]);
 			var12.method930();
 			byte[] var14 = var12.aByteArray1799;
 			int[] var9 = var12.anIntArray1798;

@@ -14,7 +14,7 @@ public class Class26 {
 	static Class78 aClass78_313;
 	int anInt314;
 	Class61 aClass61_315;
-	static Class87_Sub1 aClass87_Sub1_316;
+	static CacheIndex aClass87_Sub1_316;
 
 	byte[] method167() throws IOException {
 		if (Node_Sub5.currentTimeMs() > this.aLong311 * 5610376891018015397L) {

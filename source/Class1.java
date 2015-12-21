@@ -4,7 +4,7 @@ public class Class1 {
 	static Class1 aClass1_1 = new Class1();
 	static Class1 aClass1_2 = new Class1();
 	static Class1 aClass1_3 = new Class1();
-	static Class87_Sub1 aClass87_Sub1_4;
+	static CacheIndex aClass87_Sub1_4;
 	public static DualNode_Sub15 aDualNode_Sub15_5;
 	static Class1 aClass1_6 = new Class1();
 

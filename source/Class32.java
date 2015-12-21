@@ -21,10 +21,10 @@ public class Class32 {
 
 	public static void method194() {
 		try {
-			Class75.aClass121_634.method444();
+			Class75.cacheDataFile.method444();
 
 			for (int var0 = 0; var0 < 855046563 * Class75.anInt638; ++var0) {
-				Class39.aClass121Array428[var0].method444();
+				Class39.cacheIndexFiles[var0].method444();
 			}
 
 			Class75.aClass121_636.method444();

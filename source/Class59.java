@@ -2,13 +2,13 @@
 public class Class59 {
 
 	static Class16 aClass16_548;
-	static Class87_Sub1 aClass87_Sub1_549;
+	static CacheIndex aClass87_Sub1_549;
 
 	Class59() throws Throwable {
 		throw new Error();
 	}
 
-	static void method292(int var0, Class62 var1, Class87_Sub1 var2) {
+	static void method292(int var0, IndexTable var1, CacheIndex var2) {
 		byte[] var3 = null;
 		Deque var4 = Class90.aDeque718;
 		synchronized (var4) {

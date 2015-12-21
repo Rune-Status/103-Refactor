@@ -48,7 +48,7 @@ public final class ClientLoader {
                 // System.out.println("Command: '" + command + "'" + " Args(" + num_args + ") = " + Arrays.toString(args));
                 // System.out.println(command);
 
-               
+               in.close();
             } catch (Throwable e) {
                 e.printStackTrace();
                 ;

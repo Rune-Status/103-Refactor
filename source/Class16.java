@@ -520,7 +520,7 @@ public class Class16 {
 	}
 
 	protected static final void method130() {
-		Class62.anImage572 = null;
+		IndexTable.anImage572 = null;
 		Class7.aFont153 = null;
 		IsaacRandom.aFontMetrics98 = null;
 	}

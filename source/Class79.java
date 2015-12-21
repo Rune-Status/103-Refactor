@@ -77,11 +77,11 @@ public class Class79 {
 			var2 = var2.replace('@', '_');
 			var2 = var2.replace('&', '_');
 			var2 = var2.replace('#', '_');
-			if (CollionMap.anApplet508 == null) {
+			if (CollisionMap.anApplet508 == null) {
 				return;
 			}
 
-			URL var15 = new URL(CollionMap.anApplet508.getCodeBase(),
+			URL var15 = new URL(CollisionMap.anApplet508.getCodeBase(),
 					"clienterror.ws?c=" + 1316357127 * Class125.anInt830 + "&u=" + RuntimeException_Sub1.aString1807
 							+ "&v1=" + Class63.aString579 + "&v2=" + Class63.aString575 + "&e=" + var2);
 			DataInputStream var17 = new DataInputStream(var15.openStream());

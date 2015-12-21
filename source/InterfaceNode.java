@@ -29,7 +29,7 @@ public class InterfaceNode extends Node {
 	}
 
 	static final int method578(int var0, int var1, int var2, int var3) {
-		int var4 = 65536 - DualNode_Sub13_Sub1.anIntArray1792[1024 * var2 / var3] >> 1;
+		int var4 = 65536 - DualNode_Sub13_Sub1.COS_TABLE[1024 * var2 / var3] >> 1;
 		return (var4 * var1 >> 16) + (var0 * (65536 - var4) >> 16);
 	}
 

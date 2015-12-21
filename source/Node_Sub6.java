@@ -148,14 +148,14 @@ public final class Node_Sub6 extends Node {
 			File var13 = new File(BitBuf.aString1729, "random.dat");
 			int var16;
 			if (var13.exists()) {
-				Class75.randomDat = new Class121(new Class126(var13, "rw", 25L), 24, 0);
+				Class75.randomDat = new CacheFile(new CacheFileAccessor(var13, "rw", 25L), 24, 0);
 			} else {
 				label88: for (int var14 = 0; var14 < Class67.aStringArray584.length; ++var14) {
 					for (var16 = 0; var16 < BoundaryDecorationStub.aStringArray217.length; ++var16) {
 						File var17 = new File(BoundaryDecorationStub.aStringArray217[var16]
 								+ Class67.aStringArray584[var14] + File.separatorChar + "random.dat");
 						if (var17.exists()) {
-							Class75.randomDat = new Class121(new Class126(var17, "rw", 25L), 24, 0);
+							Class75.randomDat = new CacheFile(new CacheFileAccessor(var17, "rw", 25L), 24, 0);
 							break label88;
 						}
 					}
@@ -169,21 +169,21 @@ public final class Node_Sub6 extends Node {
 				var15.write(var16);
 				var15.seek(0L);
 				var15.close();
-				Class75.randomDat = new Class121(new Class126(var13, "rw", 25L), 24, 0);
+				Class75.randomDat = new CacheFile(new CacheFileAccessor(var13, "rw", 25L), 24, 0);
 			}
 		} catch (IOException var12) {
 			;
 		}
 
-		Class75.aClass121_634 = new Class121(
-				new Class126(DualNode_Sub6.method700("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
-		Class75.aClass121_636 = new Class121(
-				new Class126(DualNode_Sub6.method700("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
-		Class39.aClass121Array428 = new Class121[Class75.anInt638 * 855046563];
+		Class75.cacheDataFile = new CacheFile(
+				new CacheFileAccessor(DualNode_Sub6.method700("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
+		Class75.aClass121_636 = new CacheFile(
+				new CacheFileAccessor(DualNode_Sub6.method700("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+		Class39.cacheIndexFiles = new CacheFile[Class75.anInt638 * 855046563];
 
 		for (var4 = 0; var4 < Class75.anInt638 * 855046563; ++var4) {
-			Class39.aClass121Array428[var4] = new Class121(
-					new Class126(DualNode_Sub6.method700("main_file_cache.idx" + var4), "rw", 1048576L), 6000, 0);
+			Class39.cacheIndexFiles[var4] = new CacheFile(
+					new CacheFileAccessor(DualNode_Sub6.method700("main_file_cache.idx" + var4), "rw", 1048576L), 6000, 0);
 		}
 
 	}

@@ -1,13 +1,13 @@
 
 public class Class48_Sub1 extends Class48 {
 
-	static Class87_Sub1 aClass87_Sub1_1295;
+	static CacheIndex aClass87_Sub1_1295;
 	static Sprite aSprite1296;
 	static Class124 aClass124_1297;
 	static int anInt1298;
 	static int anInt1299;
 
-	protected boolean method245(int var1, int var2, int var3, CollionMap var4, int var5) {
+	protected boolean method245(int var1, int var2, int var3, CollisionMap var4, int var5) {
 		return 2014068737 * this.anInt511 == var2 && this.anInt509 * -1876894601 == var3;
 	}
 

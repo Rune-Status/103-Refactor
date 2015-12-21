@@ -2,32 +2,32 @@ import java.awt.Image;
 import java.io.EOFException;
 import java.io.IOException;
 
-public final class Class62 {
+public final class IndexTable {
 
-	int anInt567 = 566364424;
-	Class121 aClass121_568 = null;
-	int anInt569;
+	int maxSize = 566364424;
+	CacheFile indexFile = null;
+	int index;
 	public static Class20 aClass20_570;
 	static byte[] aByteArray571 = new byte[520];
 	protected static Image anImage572;
-	Class121 aClass121_573 = null;
+	CacheFile dataFile = null;
 
 	public byte[] method302(int var1) {
-		Class121 var2 = this.aClass121_573;
+		CacheFile var2 = this.dataFile;
 		synchronized (var2) {
 			try {
-				if (this.aClass121_568.method450() < (long) (var1 * 6 + 6)) {
+				if (this.indexFile.method450() < (long) (var1 * 6 + 6)) {
 					return null;
 				} else {
-					this.aClass121_568.seek((long) (var1 * 6));
-					this.aClass121_568.method443(aByteArray571, 0, 6);
+					this.indexFile.seek((long) (var1 * 6));
+					this.indexFile.method443(aByteArray571, 0, 6);
 					int var3 = (aByteArray571[2] & 255) + ((aByteArray571[1] & 255) << 8)
 							+ ((aByteArray571[0] & 255) << 16);
 					int var4 = (aByteArray571[5] & 255) + ((aByteArray571[4] & 255) << 8)
 							+ ((aByteArray571[3] & 255) << 16);
-					if (var3 < 0 || var3 > -1757028579 * this.anInt567) {
+					if (var3 < 0 || var3 > -1757028579 * this.maxSize) {
 						return null;
-					} else if (var4 <= 0 || (long) var4 > this.aClass121_573.method450() / 520L) {
+					} else if (var4 <= 0 || (long) var4 > this.dataFile.method450() / 520L) {
 						return null;
 					} else {
 						byte[] var5 = new byte[var3];
@@ -38,23 +38,23 @@ public final class Class62 {
 								return null;
 							}
 
-							this.aClass121_573.seek((long) (520 * var4));
+							this.dataFile.seek((long) (520 * var4));
 							int var8 = var3 - var6;
 							if (var8 > 512) {
 								var8 = 512;
 							}
 
-							this.aClass121_573.method443(aByteArray571, 0, 8 + var8);
+							this.dataFile.method443(aByteArray571, 0, 8 + var8);
 							int var9 = (aByteArray571[1] & 255) + ((aByteArray571[0] & 255) << 8);
 							int var10 = (aByteArray571[3] & 255) + ((aByteArray571[2] & 255) << 8);
 							int var11 = ((aByteArray571[5] & 255) << 8) + ((aByteArray571[4] & 255) << 16)
 									+ (aByteArray571[6] & 255);
 							int var12 = aByteArray571[7] & 255;
-							if (var9 != var1 || var7 != var10 || 1928833099 * this.anInt569 != var12) {
+							if (var9 != var1 || var7 != var10 || 1928833099 * this.index != var12) {
 								return null;
 							}
 
-							if (var11 < 0 || (long) var11 > this.aClass121_573.method450() / 520L) {
+							if (var11 < 0 || (long) var11 > this.dataFile.method450() / 520L) {
 								return null;
 							}
 
@@ -76,9 +76,9 @@ public final class Class62 {
 	}
 
 	public boolean method303(int var1, byte[] var2, int var3) {
-		Class121 var4 = this.aClass121_573;
+		CacheFile var4 = this.dataFile;
 		synchronized (var4) {
-			if (var3 >= 0 && var3 <= -1757028579 * this.anInt567) {
+			if (var3 >= 0 && var3 <= -1757028579 * this.maxSize) {
 				boolean var5 = this.method305(var1, var2, var3, true);
 				if (!var5) {
 					var5 = this.method305(var1, var2, var3, false);
@@ -112,33 +112,33 @@ public final class Class62 {
 		return var3;
 	}
 
-	public Class62(int var1, Class121 var2, Class121 var3, int var4) {
-		this.anInt569 = -1410277021 * var1;
-		this.aClass121_573 = var2;
-		this.aClass121_568 = var3;
-		this.anInt567 = 1952963381 * var4;
+	public IndexTable(int var1, CacheFile var2, CacheFile var3, int var4) {
+		this.index = -1410277021 * var1;
+		this.dataFile = var2;
+		this.indexFile = var3;
+		this.maxSize = 1952963381 * var4;
 	}
 
 	boolean method305(int var1, byte[] var2, int var3, boolean var4) {
-		Class121 var5 = this.aClass121_573;
+		CacheFile var5 = this.dataFile;
 		synchronized (var5) {
 			boolean var10000;
 			try {
 				int var6;
 				if (var4) {
-					if (this.aClass121_568.method450() < (long) (6 + var1 * 6)) {
+					if (this.indexFile.method450() < (long) (6 + var1 * 6)) {
 						return false;
 					}
 
-					this.aClass121_568.seek((long) (6 * var1));
-					this.aClass121_568.method443(aByteArray571, 0, 6);
+					this.indexFile.seek((long) (6 * var1));
+					this.indexFile.method443(aByteArray571, 0, 6);
 					var6 = (aByteArray571[5] & 255) + ((aByteArray571[4] & 255) << 8)
 							+ ((aByteArray571[3] & 255) << 16);
-					if (var6 <= 0 || (long) var6 > this.aClass121_573.method450() / 520L) {
+					if (var6 <= 0 || (long) var6 > this.dataFile.method450() / 520L) {
 						return false;
 					}
 				} else {
-					var6 = (int) ((this.aClass121_573.method450() + 519L) / 520L);
+					var6 = (int) ((this.dataFile.method450() + 519L) / 520L);
 					if (var6 == 0) {
 						var6 = 1;
 					}
@@ -150,18 +150,18 @@ public final class Class62 {
 				aByteArray571[3] = (byte) (var6 >> 16);
 				aByteArray571[4] = (byte) (var6 >> 8);
 				aByteArray571[5] = (byte) var6;
-				this.aClass121_568.seek((long) (6 * var1));
-				this.aClass121_568.write(aByteArray571, 0, 6);
+				this.indexFile.seek((long) (6 * var1));
+				this.indexFile.write(aByteArray571, 0, 6);
 				int var7 = 0;
 
 				for (int var8 = 0; var7 < var3; ++var8) {
 					int var9 = 0;
 					int var10;
 					if (var4) {
-						this.aClass121_573.seek((long) (520 * var6));
+						this.dataFile.seek((long) (520 * var6));
 
 						try {
-							this.aClass121_573.method443(aByteArray571, 0, 8);
+							this.dataFile.method443(aByteArray571, 0, 8);
 						} catch (EOFException var14) {
 							break;
 						}
@@ -171,18 +171,18 @@ public final class Class62 {
 						var9 = (aByteArray571[6] & 255) + ((aByteArray571[4] & 255) << 16)
 								+ ((aByteArray571[5] & 255) << 8);
 						int var12 = aByteArray571[7] & 255;
-						if (var1 != var10 || var11 != var8 || this.anInt569 * 1928833099 != var12) {
+						if (var1 != var10 || var11 != var8 || this.index * 1928833099 != var12) {
 							return false;
 						}
 
-						if (var9 < 0 || (long) var9 > this.aClass121_573.method450() / 520L) {
+						if (var9 < 0 || (long) var9 > this.dataFile.method450() / 520L) {
 							return false;
 						}
 					}
 
 					if (var9 == 0) {
 						var4 = false;
-						var9 = (int) ((this.aClass121_573.method450() + 519L) / 520L);
+						var9 = (int) ((this.dataFile.method450() + 519L) / 520L);
 						if (var9 == 0) {
 							++var9;
 						}
@@ -203,15 +203,15 @@ public final class Class62 {
 					aByteArray571[4] = (byte) (var9 >> 16);
 					aByteArray571[5] = (byte) (var9 >> 8);
 					aByteArray571[6] = (byte) var9;
-					aByteArray571[7] = (byte) (this.anInt569 * 1928833099);
-					this.aClass121_573.seek((long) (var6 * 520));
-					this.aClass121_573.write(aByteArray571, 0, 8);
+					aByteArray571[7] = (byte) (this.index * 1928833099);
+					this.dataFile.seek((long) (var6 * 520));
+					this.dataFile.write(aByteArray571, 0, 8);
 					var10 = var3 - var7;
 					if (var10 > 512) {
 						var10 = 512;
 					}
 
-					this.aClass121_573.write(var2, var7, var10);
+					this.dataFile.write(var2, var7, var10);
 					var7 += var10;
 					var6 = var9;
 				}

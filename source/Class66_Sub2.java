@@ -8,14 +8,14 @@ public class Class66_Sub2 extends Class66 {
 	int anInt1321;
 	int anInt1322 = -1663734701;
 
-	void method321(int var1) {
+	void method321() {
 		for (int var2 = 0; var2 < 10; ++var2) {
 			this.aLongArray1319[var2] = 0L;
 		}
 
 	}
 
-	int method322(int var1, int var2, byte var3) {
+	int method322(int var1, int var2) {
 		int var4 = this.anInt1317 * -897075515;
 		int var5 = this.anInt1322 * -546326565;
 		this.anInt1317 = 155660092;

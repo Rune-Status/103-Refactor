@@ -134,7 +134,7 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 		}
 	}
 
-	static final boolean method512(int var0, int var1, int var2, Class48 var3, CollionMap var4) {
+	static final boolean method512(int var0, int var1, int var2, Class48 var3, CollisionMap var4) {
 		int var5 = var0;
 		int var11 = var1;
 		byte var6 = 64;

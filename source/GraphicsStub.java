@@ -26,12 +26,12 @@ public final class GraphicsStub extends Entity {
 		File var20;
 		if (Class75.aFile632.exists()) {
 			try {
-				Class126 var7 = new Class126(Class75.aFile632, "rw", 10000L);
+				CacheFileAccessor var7 = new CacheFileAccessor(Class75.aFile632, "rw", 10000L);
 
 				int var9;
-				for (var8 = new ByteBuf((int) var7.method458()); 314639891
+				for (var8 = new ByteBuf((int) var7.length()); 314639891
 						* var8.position < var8.payload.length; var8.position += -184175589 * var9) {
-					var9 = var7.method457(var8.payload, var8.position * 314639891,
+					var9 = var7.read(var8.payload, var8.position * 314639891,
 							var8.payload.length - var8.position * 314639891);
 					if (var9 == -1) {
 						throw new IOException();
@@ -61,7 +61,7 @@ public final class GraphicsStub extends Entity {
 					}
 				}
 
-				var7.method459();
+				var7.close();
 			} catch (IOException var17) {
 				var17.printStackTrace();
 			}
@@ -130,13 +130,13 @@ public final class GraphicsStub extends Entity {
 			var8 = null;
 
 			try {
-				Class126 var24 = new Class126(Class75.aFile632, "rw", 10000L);
+				CacheFileAccessor var24 = new CacheFileAccessor(Class75.aFile632, "rw", 10000L);
 				ByteBuf var26 = new ByteBuf(500);
 				var26.putByte(3);
 				var26.putByte(var8 != null ? 1 : 0);
 				var26.putCESU8(var19.getPath());
-				var24.method460(var26.payload, 0, var26.position * 314639891);
-				var24.method459();
+				var24.write(var26.payload, 0, var26.position * 314639891);
+				var24.close();
 			} catch (IOException var15) {
 				var15.printStackTrace();
 			}

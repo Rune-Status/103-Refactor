@@ -8,7 +8,7 @@ public class Node_Sub5 extends Node {
 	int anInt1263;
 	int[][] anIntArrayArray1264;
 	static Class24 aClass24_1265;
-	static Class87_Sub1 aClass87_Sub1_1266;
+	static CacheIndex aClass87_Sub1_1266;
 	int anInt1267;
 
 	public static synchronized long currentTimeMs() {
@@ -48,7 +48,7 @@ public class Node_Sub5 extends Node {
 		synchronized (var0) {
 			Container var1 = Client.aClient2005.method1033();
 			if (var1 != null) {
-				DualNode_Sub6.anInt1505 = Math.max(var1.getSize().width, Class126.anInt836 * 2055757083) * -1411246095;
+				DualNode_Sub6.anInt1505 = Math.max(var1.getSize().width, CacheFileAccessor.anInt836 * 2055757083) * -1411246095;
 				Class21.anInt281 = Math.max(var1.getSize().height, ClanMate.anInt1222 * -1066486805) * 588847321;
 				if (DualNode_Sub10.aFrame1538 == var1) {
 					Insets var2 = DualNode_Sub10.aFrame1538.getInsets();
@@ -91,7 +91,7 @@ public class Node_Sub5 extends Node {
 					var7 = var8;
 				}
 
-				Class62.aClass20_570 = (Class20) var7;
+				IndexTable.aClass20_570 = (Class20) var7;
 				if (var1 == DualNode_Sub10.aFrame1538) {
 					Insets var16 = DualNode_Sub10.aFrame1538.getInsets();
 					LandscapeTile.aCanvas1417.setLocation(76231581 * Client.anInt1983 + var16.left,

@@ -46,7 +46,7 @@ public final class Client extends GameEngine {
 	static int anInt2021 = 0;
 	static int[] levels = new int[25];
 	static int hintArrowX = 0;
-	static Class87_Sub1 aClass87_Sub1_2022;
+	static CacheIndex aClass87_Sub1_2022;
 	static int[] anIntArray2023 = new int[] { 16776960, 16711680, '\uff00', '\uffff', 16711935, 16777215 };
 	static boolean aBool2024 = false;
 	static int anInt2025 = 0;
@@ -86,7 +86,7 @@ public final class Client extends GameEngine {
 	static int anInt2050 = 693748815;
 	static int anInt2051 = -943887744;
 	static int[] regionIds;
-	static CollionMap[] aClass47Array2053 = new CollionMap[4];
+	static CollisionMap[] aClass47Array2053 = new CollisionMap[4];
 	static boolean dynamicRegion = false;
 	static int[][][] anIntArrayArrayArray2055 = new int[4][13][13];
 	static int[] anIntArray2056 = new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3 };
@@ -143,7 +143,7 @@ public final class Client extends GameEngine {
 	static int anInt2101 = 0;
 	static boolean aBool2102 = false;
 	static boolean aBool2103 = false;
-	static Class87_Sub1 aClass87_Sub1_2104;
+	static CacheIndex aClass87_Sub1_2104;
 	static int anInt2105 = 0;
 	static Player[] playerArray = new Player[2048];
 	static int myPlayerIndex = 313169887;
@@ -487,11 +487,11 @@ public final class Client extends GameEngine {
 		int var114;
 		int var145;
 		if (846055547 * anInt2113 == 0) {
-			BoundaryDecorationStub.method108();
+			BoundaryDecorationStub.bootClient();
 			Class2.method61();
 		} else if (anInt2113 * 846055547 == 5) {
 			Class16.method127(this);
-			BoundaryDecorationStub.method108();
+			BoundaryDecorationStub.bootClient();
 			Class2.method61();
 		} else if (846055547 * anInt2113 != 10 && 846055547 * anInt2113 != 11) {
 			if (846055547 * anInt2113 == 20) {
@@ -671,7 +671,7 @@ public final class Client extends GameEngine {
 													var17 = 8 * var6;
 													var18 = 8 * (var11 & 7);
 													var19 = (var12 & 7) * 8;
-													CollionMap[] var20 = aClass47Array2053;
+													CollisionMap[] var20 = aClass47Array2053;
 
 													for (var21 = 0; var21 < 8; ++var21) {
 														for (var22 = 0; var22 < 8; ++var22) {
@@ -770,7 +770,7 @@ public final class Client extends GameEngine {
 						Class66.method325();
 						Class34.method201();
 						Landscape var92 = InterfaceNode.landscape;
-						CollionMap[] var93 = aClass47Array2053;
+						CollisionMap[] var93 = aClass47Array2053;
 
 						for (var6 = 0; var6 < 4; ++var6) {
 							for (var89 = 0; var89 < 104; ++var89) {
@@ -919,7 +919,7 @@ public final class Client extends GameEngine {
 													var36 = 256 * var16 / var19;
 													var37 = var17 / var145;
 													int var38 = var18 / var145;
-													var34 = Class62.method304(var36, var37, var38);
+													var34 = IndexTable.method304(var36, var37, var38);
 													var36 = var36 + Class39.anInt431 * -1833492449 & 255;
 													var38 += 1969012569 * Class39.anInt439;
 													if (var38 < 0) {
@@ -928,7 +928,7 @@ public final class Client extends GameEngine {
 														var38 = 255;
 													}
 
-													var35 = Class62.method304(var36, var37, var38);
+													var35 = IndexTable.method304(var36, var37, var38);
 												}
 
 												if (var6 > 0) {
@@ -978,7 +978,7 @@ public final class Client extends GameEngine {
 														var40 = -1;
 														var41 = -2;
 													} else {
-														var42 = Class62.method304(-491020635 * var39.anInt1531,
+														var42 = IndexTable.method304(-491020635 * var39.anInt1531,
 																var39.anInt1524 * -958248725,
 																1921798311 * var39.anInt1530);
 														var43 = Class39.anInt431 * -1833492449
@@ -991,7 +991,7 @@ public final class Client extends GameEngine {
 															var44 = 255;
 														}
 
-														var41 = Class62.method304(var43, -958248725 * var39.anInt1524,
+														var41 = IndexTable.method304(var43, -958248725 * var39.anInt1524,
 																var44);
 													}
 
@@ -1012,7 +1012,7 @@ public final class Client extends GameEngine {
 															var45 = 255;
 														}
 
-														var41 = Class62.method304(var44, -285023507 * var39.anInt1532,
+														var41 = IndexTable.method304(var44, -285023507 * var39.anInt1532,
 																var45);
 														var43 = DualNode_Sub13_Sub1.anIntArray1793[Class33
 																.method200(var41, 96)];
@@ -3475,7 +3475,7 @@ public final class Client extends GameEngine {
 							}
 						}
 
-						Class62.aClass20_570.method142();
+						IndexTable.aClass20_570.method142();
 					}
 
 					if (846055547 * anInt2113 == 30) {
@@ -3598,7 +3598,7 @@ public final class Client extends GameEngine {
 										var178 = (DualNode_Sub8) var177.next();
 									}
 
-									Class87_Sub1.aClipboard1329.setContents(new StringSelection(var94),
+									CacheIndex.aClipboard1329.setContents(new StringSelection(var94),
 											(ClipboardOwner) null);
 								} else {
 									anIntArray2190[-703165807 * anInt2188] = Class5.anInt112 * -1989794123;
@@ -3722,9 +3722,9 @@ public final class Client extends GameEngine {
 																			+ -625398447 * anInt2050;
 																	var12 = 1566554261 * anInt2149
 																			+ anInt2143 * 702495857;
-																	Node_Sub9.method563(Class87_Sub1.aClass4_1333,
+																	Node_Sub9.method563(CacheIndex.aClass4_1333,
 																			var11, var12);
-																	Class87_Sub1.aClass4_1333 = null;
+																	CacheIndex.aClass4_1333 = null;
 																}
 
 																aWidget2141 = null;
@@ -3796,9 +3796,9 @@ public final class Client extends GameEngine {
 															} else if (menuItemCount * 1768430155 > 0) {
 																var83 = -827759387 * anInt2131;
 																var5 = anInt2101 * 45845103;
-																Node_Sub9.method563(Class87_Sub1.aClass4_1333, var83,
+																Node_Sub9.method563(CacheIndex.aClass4_1333, var83,
 																		var5);
-																Class87_Sub1.aClass4_1333 = null;
+																CacheIndex.aClass4_1333 = null;
 															}
 
 															anInt2098 = 503154074;
@@ -4447,12 +4447,12 @@ public final class Client extends GameEngine {
 												Class93.aBuffer731 = Class81.aBuffer678;
 
 												for (var10 = 0; var10 < 256; ++var10) {
-													Class87_Sub1 var24 = Class81.aClass87_Sub1Array681[var10];
+													CacheIndex var24 = Class81.aClass87_Sub1Array681[var10];
 													if (var24 != null) {
 														Class93.aBuffer731.position = -920877945 + var10 * -1473404712;
 														var12 = Class93.aBuffer731.getInt();
 														int var17 = Class93.aBuffer731.getInt();
-														var24.method561(var12, var17);
+														var24.setInformation(var12, var17);
 													}
 												}
 											} else {
@@ -4728,9 +4728,9 @@ public final class Client extends GameEngine {
 			Class26.aClass78_313.method340(LandscapeTile.aCanvas1417, (short) 17146);
 		}
 
-		Class3.aClass62_92 = new Class62(255, Class75.aClass121_634, Class75.aClass121_636, 500000);
+		Class3.aClass62_92 = new IndexTable(255, Class75.cacheDataFile, Class75.aClass121_636, 500000);
 		Node_Sub5.aClass24_1265 = ItemDefinition.method821();
-		Class87_Sub1.aClipboard1329 = this.getToolkit().getSystemClipboard();
+		CacheIndex.aClipboard1329 = this.getToolkit().getSystemClipboard();
 		Class52.method260(this, Class31.aString349);
 		if (anInt2074 * 1082541889 != 0) {
 			worldSelectorDisplayed = true;
@@ -4875,11 +4875,11 @@ public final class Client extends GameEngine {
 				}
 
 				try {
-					if (Class62.anImage572 == null) {
-						Class62.anImage572 = LandscapeTile.aCanvas1417.createImage(304, 34);
+					if (IndexTable.anImage572 == null) {
+						IndexTable.anImage572 = LandscapeTile.aCanvas1417.createImage(304, 34);
 					}
 
-					Graphics var10 = Class62.anImage572.getGraphics();
+					Graphics var10 = IndexTable.anImage572.getGraphics();
 					var10.setColor(var8);
 					var10.drawRect(0, 0, 303, 33);
 					var10.fillRect(2, 2, 3 * var6, 30);
@@ -4889,7 +4889,7 @@ public final class Client extends GameEngine {
 					var10.setFont(Class7.aFont153);
 					var10.setColor(Color.white);
 					var10.drawString(var7, (304 - IsaacRandom.aFontMetrics98.stringWidth(var7)) / 2, 22);
-					var9.drawImage(Class62.anImage572, Class34.anInt381 * -452716157 / 2 - 152,
+					var9.drawImage(IndexTable.anImage572, Class34.anInt381 * -452716157 / 2 - 152,
 							Node_Sub9.anInt1339 * 674167779 / 2 - 18, (ImageObserver) null);
 				} catch (Exception var13) {
 					int var11 = -452716157 * Class34.anInt381 / 2 - 152;
@@ -4954,7 +4954,7 @@ public final class Client extends GameEngine {
 
 				for (var20 = 0; var20 < anInt2168 * -580551879; ++var20) {
 					if (aBoolArray2171[var20]) {
-						Class62.aClass20_570.method141(var21, anIntArray2173[var20], anIntArray2174[var20],
+						IndexTable.aClass20_570.method141(var21, anIntArray2173[var20], anIntArray2174[var20],
 								anIntArray2175[var20], anIntArray2176[var20], (short) 271);
 						aBoolArray2171[var20] = false;
 					}
@@ -4965,7 +4965,7 @@ public final class Client extends GameEngine {
 		} else if (anInt2113 * 846055547 > 0) {
 			try {
 				var21 = LandscapeTile.aCanvas1417.getGraphics();
-				Class62.aClass20_570.method144(var21, 0, 0, -819332484);
+				IndexTable.aClass20_570.method144(var21, 0, 0, -819332484);
 
 				for (var20 = 0; var20 < anInt2168 * -580551879; ++var20) {
 					aBoolArray2171[var20] = false;

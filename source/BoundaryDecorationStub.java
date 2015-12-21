@@ -15,7 +15,7 @@ public final class BoundaryDecorationStub {
 	int config = 0;
 	int orientationA;
 
-	static final void method106(byte[] var0, int var1, int var2, Landscape var3, CollionMap[] var4) {
+	static final void method106(byte[] var0, int var1, int var2, Landscape var3, CollisionMap[] var4) {
 		ByteBuf var5 = new ByteBuf(var0);
 		int var9 = -1;
 
@@ -49,7 +49,7 @@ public final class BoundaryDecorationStub {
 						var19 = var18 - 1;
 					}
 
-					CollionMap var6 = null;
+					CollisionMap var6 = null;
 					if (var19 >= 0) {
 						var6 = var4[var19];
 					}
@@ -140,13 +140,13 @@ public final class BoundaryDecorationStub {
 
 	}
 
-	static void method108() {
+	static void bootClient() {
 		int var0;
 		if (Client.bootState * -773857325 == 0) {
 			InterfaceNode.landscape = new Landscape(4, 104, 104, Class39.tileHeights);
 
 			for (var0 = 0; var0 < 4; ++var0) {
-				Client.aClass47Array2053[var0] = new CollionMap(104, 104);
+				Client.aClass47Array2053[var0] = new CollisionMap(104, 104);
 			}
 
 			RuneScript.minimapSprite = new Sprite(512, 512);
@@ -164,7 +164,7 @@ public final class BoundaryDecorationStub {
 				for (var1 = 0; var1 < 9; ++var1) {
 					var2 = 128 + 32 * var1 + 15;
 					var4 = var2 * 3 + 600;
-					var3 = DualNode_Sub13_Sub1.anIntArray1788[var2];
+					var3 = DualNode_Sub13_Sub1.SIN_TABLE[var2];
 					var22[var1] = var4 * var3 >> 16;
 				}
 
@@ -173,22 +173,22 @@ public final class BoundaryDecorationStub {
 				Class6.anInt122 = -1175970450;
 				Client.bootState = 1438149290;
 			} else if (Client.bootState * -773857325 == 30) {
-				Class34.aClass87_Sub1_385 = NpcDefinition.method806(0, false, true, true);
-				Client.aClass87_Sub1_2022 = NpcDefinition.method806(1, false, true, true);
-				Client.aClass87_Sub1_2104 = NpcDefinition.method806(2, true, false, true);
-				RuneScript.aClass87_Sub1_1723 = NpcDefinition.method806(3, false, true, true);
-				DualNode_Sub10.aClass87_Sub1_1537 = NpcDefinition.method806(4, false, true, true);
-				Class48_Sub1.aClass87_Sub1_1295 = NpcDefinition.method806(5, true, true, true);
-				Class2.aClass87_Sub1_79 = NpcDefinition.method806(6, true, true, false);
-				Class3.aClass87_Sub1_93 = NpcDefinition.method806(7, false, true, true);
-				Node_Sub5.aClass87_Sub1_1266 = NpcDefinition.method806(8, false, true, true);
-				Class1.aClass87_Sub1_4 = NpcDefinition.method806(9, false, true, true);
-				Class40.aClass87_Sub1_445 = NpcDefinition.method806(10, false, true, true);
-				PlayerConfig.aClass87_Sub1_535 = NpcDefinition.method806(11, false, true, true);
-				DualNode_Sub5.aClass87_Sub1_1502 = NpcDefinition.method806(12, false, true, true);
-				Class2.aClass87_Sub1_76 = NpcDefinition.method806(13, true, false, true);
-				Class26.aClass87_Sub1_316 = NpcDefinition.method806(14, false, true, false);
-				Class59.aClass87_Sub1_549 = NpcDefinition.method806(15, false, true, true);
+				Class34.aClass87_Sub1_385 = NpcDefinition.openCacheIndex(0, false, true, true);
+				Client.aClass87_Sub1_2022 = NpcDefinition.openCacheIndex(1, false, true, true);
+				Client.aClass87_Sub1_2104 = NpcDefinition.openCacheIndex(2, true, false, true);
+				RuneScript.aClass87_Sub1_1723 = NpcDefinition.openCacheIndex(3, false, true, true);
+				DualNode_Sub10.aClass87_Sub1_1537 = NpcDefinition.openCacheIndex(4, false, true, true);
+				Class48_Sub1.aClass87_Sub1_1295 = NpcDefinition.openCacheIndex(5, true, true, true);
+				Class2.aClass87_Sub1_79 = NpcDefinition.openCacheIndex(6, true, true, false);
+				Class3.aClass87_Sub1_93 = NpcDefinition.openCacheIndex(7, false, true, true);
+				Node_Sub5.aClass87_Sub1_1266 = NpcDefinition.openCacheIndex(8, false, true, true);
+				Class1.aClass87_Sub1_4 = NpcDefinition.openCacheIndex(9, false, true, true);
+				Class40.aClass87_Sub1_445 = NpcDefinition.openCacheIndex(10, false, true, true);
+				PlayerConfig.aClass87_Sub1_535 = NpcDefinition.openCacheIndex(11, false, true, true);
+				DualNode_Sub5.aClass87_Sub1_1502 = NpcDefinition.openCacheIndex(12, false, true, true);
+				Class2.aClass87_Sub1_76 = NpcDefinition.openCacheIndex(13, true, false, true);
+				Class26.aClass87_Sub1_316 = NpcDefinition.openCacheIndex(14, false, true, false);
+				Class59.aClass87_Sub1_549 = NpcDefinition.openCacheIndex(15, false, true, true);
 				Class6.aString131 = GameStrings.aString857;
 				Class6.anInt122 = 1943026396;
 				Client.bootState = -945779144;
@@ -222,7 +222,7 @@ public final class BoundaryDecorationStub {
 					Client.bootState = -2137743361;
 				}
 			} else {
-				Class87_Sub1 var11;
+				CacheIndex var11;
 				if (Client.bootState * -773857325 == 45) {
 					boolean var20 = !Client.aBool2010;
 					Class8.anInt157 = -999529678;
@@ -234,8 +234,8 @@ public final class BoundaryDecorationStub {
 							LandscapeTile.aCanvas1417, 0, 22050);
 					DualNode_Sub14.aClass8_1644.method91(var10);
 					var11 = Class59.aClass87_Sub1_549;
-					Class87_Sub1 var15 = Class26.aClass87_Sub1_316;
-					Class87_Sub1 var13 = DualNode_Sub10.aClass87_Sub1_1537;
+					CacheIndex var15 = Class26.aClass87_Sub1_316;
+					CacheIndex var13 = DualNode_Sub10.aClass87_Sub1_1537;
 					Class89.aClass87_716 = var11;
 					Class110.aClass87_786 = var15;
 					Class110.aClass87_781 = var13;
@@ -297,13 +297,13 @@ public final class BoundaryDecorationStub {
 						Class6.aString131 = GameStrings.aString865 + Client.aClass87_Sub1_2104.method559() + "%";
 						Class6.anInt122 = 1534111892;
 					} else {
-						Class87_Sub1 var19 = Client.aClass87_Sub1_2104;
+						CacheIndex var19 = Client.aClass87_Sub1_2104;
 						DualNode_Sub9.aClass87_1533 = var19;
 						Class26.method170(Client.aClass87_Sub1_2104);
 						Class35.method203(Client.aClass87_Sub1_2104, Class3.aClass87_Sub1_93);
 						Class96_Sub1.method498(Client.aClass87_Sub1_2104, Class3.aClass87_Sub1_93, Client.aBool2010);
 						Class2.method60(Client.aClass87_Sub1_2104, Class3.aClass87_Sub1_93);
-						Class87_Sub1 var9 = Client.aClass87_Sub1_2104;
+						CacheIndex var9 = Client.aClass87_Sub1_2104;
 						var11 = Class3.aClass87_Sub1_93;
 						boolean var14 = Client.membersWorld;
 						DualNode_Sub13_Sub3_Sub1 var12 = Class20_Sub1.aDualNode_Sub13_Sub3_Sub1_1214;
@@ -314,11 +314,11 @@ public final class BoundaryDecorationStub {
 						Class31.aDualNode_Sub13_Sub3_Sub1_350 = var12;
 						DualNode_Sub6.method699(Client.aClass87_Sub1_2104, Class34.aClass87_Sub1_385,
 								Client.aClass87_Sub1_2022);
-						Class87_Sub1 var16 = Client.aClass87_Sub1_2104;
-						Class87_Sub1 var8 = Class3.aClass87_Sub1_93;
+						CacheIndex var16 = Client.aClass87_Sub1_2104;
+						CacheIndex var8 = Class3.aClass87_Sub1_93;
 						DualNode_Sub1.aClass87_1456 = var16;
 						DualNode_Sub1.aClass87_1440 = var8;
-						Class87_Sub1 var7 = Client.aClass87_Sub1_2104;
+						CacheIndex var7 = Client.aClass87_Sub1_2104;
 						Varpbit.aClass87_1727 = var7;
 						Node_Sub8.method549(Client.aClass87_Sub1_2104);
 						Class32.method193(RuneScript.aClass87_Sub1_1723, Class3.aClass87_Sub1_93,
@@ -326,7 +326,7 @@ public final class BoundaryDecorationStub {
 						Class31.method190(Client.aClass87_Sub1_2104);
 						ItemTable.method648(Client.aClass87_Sub1_2104);
 						Class32.method196(Client.aClass87_Sub1_2104);
-						Class87_Sub1 var6 = Client.aClass87_Sub1_2104;
+						CacheIndex var6 = Client.aClass87_Sub1_2104;
 						DualNode_Sub6.aClass87_1506 = var6;
 						Class33.aClass28_364 = new Class28();
 						Class6.aString131 = GameStrings.aString866;

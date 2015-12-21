@@ -3,7 +3,7 @@ public class DualNode_Sub5 extends DualNode {
 
 	static Class106 aClass106_1500 = new Class106(64);
 	public int anInt1501 = 0;
-	static Class87_Sub1 aClass87_Sub1_1502;
+	static CacheIndex aClass87_Sub1_1502;
 	static int[] landRegionFielIds;
 	static int menuY;
 

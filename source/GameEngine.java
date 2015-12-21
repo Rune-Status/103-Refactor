@@ -39,7 +39,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			var1.remove(LandscapeTile.aCanvas1417);
 		}
 
-		Class34.anInt381 = Math.max(var1.getWidth(), Class126.anInt836 * 2055757083) * -780223189;
+		Class34.anInt381 = Math.max(var1.getWidth(), CacheFileAccessor.anInt836 * 2055757083) * -780223189;
 		Node_Sub9.anInt1339 = Math.max(var1.getHeight(), -1066486805 * ClanMate.anInt1222) * 427958731;
 		Insets var2;
 		if (DualNode_Sub10.aFrame1538 != null) {
@@ -77,11 +77,11 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			var9 = var7;
 		}
 
-		if (Class62.aClass20_570 != null) {
-			Class62.aClass20_570.method144(((Class20) var9).anImage273.getGraphics(), 0, 0, -819332484);
+		if (IndexTable.aClass20_570 != null) {
+			IndexTable.aClass20_570.method144(((Class20) var9).anImage273.getGraphics(), 0, 0, -819332484);
 		}
 
-		Class62.aClass20_570 = (Class20) var9;
+		IndexTable.aClass20_570 = (Class20) var9;
 		aBool1982 = false;
 		aLong1984 = Node_Sub5.currentTimeMs() * -2460302806870968417L;
 	}
@@ -220,8 +220,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 			while (aLong1972 * 2722427985237087875L == 0L
 					|| Node_Sub5.currentTimeMs() < 2722427985237087875L * aLong1972) {
-				Node_Sub8.anInt1301 = Class90.aClass66_721.method322(anInt1974 * 2081489859, anInt1973 * 87833367,
-						(byte) -6) * 1809972633;
+				Node_Sub8.anInt1301 = Class90.aClass66_721.method322(anInt1974 * 2081489859, anInt1973 * 87833367) * 1809972633;
 
 				for (int var15 = 0; var15 < -108132695 * Node_Sub8.anInt1301; ++var15) {
 					this.method1029();
@@ -359,7 +358,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 	protected Dimension method1034() {
 		Container var1 = this.method1033();
-		int var2 = Math.max(var1.getWidth(), 2055757083 * Class126.anInt836);
+		int var2 = Math.max(var1.getWidth(), 2055757083 * CacheFileAccessor.anInt836);
 		int var4 = Math.max(var1.getHeight(), ClanMate.anInt1222 * -1066486805);
 		if (DualNode_Sub10.aFrame1538 != null) {
 			Insets var3 = DualNode_Sub10.aFrame1538.getInsets();
@@ -389,7 +388,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			Class34.anInt381 = -780223189 * var1;
 			Node_Sub9.anInt1339 = 427958731 * var2;
 			Class125.anInt830 = var3 * -778950217;
-			CollionMap.anApplet508 = this;
+			CollisionMap.anApplet508 = this;
 			if (IsaacRandom.aClass63_102 == null) {
 				IsaacRandom.aClass63_102 = new Class63();
 			}

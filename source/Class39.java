@@ -2,7 +2,7 @@
 public final class Class39 {
 
 	static int[] anIntArray427 = new int[] { 1, 0, -1, 0 };
-	public static Class121[] aClass121Array428;
+	public static CacheFile[] cacheIndexFiles;
 	static byte[][][] aByteArrayArrayArray429;
 	static byte[][][] aByteArrayArrayArray430;
 	static int anInt431 = ((int) (Math.random() * 17.0D) - 8) * 1676696543;
@@ -257,7 +257,7 @@ public final class Class39 {
 		}
 	}
 
-	public static int method218(int var0, int var1, int var2, Class48 var3, CollionMap var4, boolean var5, int[] var6,
+	public static int method218(int var0, int var1, int var2, Class48 var3, CollisionMap var4, boolean var5, int[] var6,
 			int[] var7) {
 		int var12;
 		for (int var8 = 0; var8 < 128; ++var8) {
@@ -749,7 +749,7 @@ public final class Class39 {
 
 	}
 
-	static void method221(Class87_Sub1 var0, int var1, int var2, int var3, byte var4, boolean var5) {
+	static void method221(CacheIndex var0, int var1, int var2, int var3, byte var4, boolean var5) {
 		long var6 = (long) (var2 + (var1 << 16));
 		DualNode_Sub15 var8 = (DualNode_Sub15) Class81.aNodeTable685.get(var6);
 		if (var8 == null) {

@@ -5,7 +5,7 @@ public class DualNode_Sub10 extends DualNode {
 	static Class106 aClass106_1534 = new Class106(64);
 	public boolean aBool1535 = false;
 	static Class87 aClass87_1536;
-	static Class87_Sub1 aClass87_Sub1_1537;
+	static CacheIndex aClass87_Sub1_1537;
 	protected static Frame aFrame1538;
 
 	void method717(ByteBuf var1) {

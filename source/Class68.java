@@ -18,7 +18,7 @@ public final class Class68 {
 		if (Client.aWidget2141 == null && !Client.menuOpen) {
 			if (var0 != null) {
 				Widget var5 = var0;
-				int var4 = Class87_Sub1.method555(Class30.getWidgetConfig(var0));
+				int var4 = CacheIndex.method555(Class30.getWidgetConfig(var0));
 				Widget var3;
 				int var6;
 				if (var4 != 0) {
@@ -50,7 +50,7 @@ public final class Class68 {
 				if (var8 != null) {
 					Client.aWidget2141 = var0;
 					var5 = var0;
-					var4 = Class87_Sub1.method555(Class30.getWidgetConfig(var0));
+					var4 = CacheIndex.method555(Class30.getWidgetConfig(var0));
 					if (var4 == 0) {
 						var3 = null;
 					} else {
@@ -84,12 +84,12 @@ public final class Class68 {
 					Client.aBool2150 = false;
 					if (Client.menuItemCount * 1768430155 > 0) {
 						int var9 = Client.menuItemCount * 1768430155 - 1;
-						Class87_Sub1.aClass4_1333 = new Class4();
-						Class87_Sub1.aClass4_1333.anInt109 = Client.menuArg1[var9] * -615722007;
-						Class87_Sub1.aClass4_1333.anInt106 = 607560247 * Client.menuArg2[var9];
-						Class87_Sub1.aClass4_1333.anInt107 = -859373123 * Client.menuOpcodes[var9];
-						Class87_Sub1.aClass4_1333.anInt105 = Client.menuArg0[var9] * -558864427;
-						Class87_Sub1.aClass4_1333.aString108 = Client.menuActions[var9];
+						CacheIndex.aClass4_1333 = new Class4();
+						CacheIndex.aClass4_1333.anInt109 = Client.menuArg1[var9] * -615722007;
+						CacheIndex.aClass4_1333.anInt106 = 607560247 * Client.menuArg2[var9];
+						CacheIndex.aClass4_1333.anInt107 = -859373123 * Client.menuOpcodes[var9];
+						CacheIndex.aClass4_1333.anInt105 = Client.menuArg0[var9] * -558864427;
+						CacheIndex.aClass4_1333.aString108 = Client.menuActions[var9];
 					}
 
 					return;

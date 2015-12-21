@@ -170,8 +170,8 @@ public class Class7 {
 		int var6 = var3 * var3 + var2 * var2;
 		if (var6 > 4225 && var6 < 90000) {
 			int var10 = Client.minimapRotation * -1916997753 + Client.minimapScale * -1718342721 & 2047;
-			int var12 = DualNode_Sub13_Sub1.anIntArray1788[var10];
-			int var11 = DualNode_Sub13_Sub1.anIntArray1792[var10];
+			int var12 = DualNode_Sub13_Sub1.SIN_TABLE[var10];
+			int var11 = DualNode_Sub13_Sub1.COS_TABLE[var10];
 			var12 = 256 * var12 / (256 + -806982331 * Client.viewRotation);
 			var11 = 256 * var11 / (256 + Client.viewRotation * -806982331);
 			int var13 = var11 * var2 + var3 * var12 >> 16;

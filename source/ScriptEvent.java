@@ -17,7 +17,7 @@ public class ScriptEvent extends Node {
 	int anInt1438;
 
 	static final void method650(int var0, int var1, int var2, int var3, int var4, int var5, Landscape var6,
-			CollionMap var7) {
+			CollisionMap var7) {
 		if (!Client.aBool2010 || (Class39.renderRules[0][var1][var2] & 2) != 0
 				|| (Class39.renderRules[var0][var1][var2] & 16) == 0) {
 			if (var0 < Class39.anInt438 * -1263368093) {

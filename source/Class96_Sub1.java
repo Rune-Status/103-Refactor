@@ -335,8 +335,8 @@ public class Class96_Sub1 extends Class96 {
 										var46 -= var44.anInt1648 * -988977157 / 2;
 										var10 = -1718342721 * Client.minimapScale + Client.minimapRotation * -1916997753
 												& 2047;
-										var24 = DualNode_Sub13_Sub1.anIntArray1788[var10];
-										var26 = DualNode_Sub13_Sub1.anIntArray1792[var10];
+										var24 = DualNode_Sub13_Sub1.SIN_TABLE[var10];
+										var26 = DualNode_Sub13_Sub1.COS_TABLE[var10];
 										var24 = var24 * (256 + Client.viewRotation * -806982331) >> 8;
 										var26 = var26 * (-806982331 * Client.viewRotation + 256) >> 8;
 										var27 = var11 * var26 + var24 * var46 >> 11;

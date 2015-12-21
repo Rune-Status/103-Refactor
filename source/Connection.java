@@ -186,7 +186,7 @@ public final class Connection implements Runnable {
 	}
 
 	static final void method301() {
-		CollionMap.method243();
+		CollisionMap.method243();
 		if (DualNode_Sub1.aWidget1446 == null) {
 			if (Client.aWidget2141 == null) {
 				int var2 = 823601801 * Class74.anInt627;
@@ -257,8 +257,8 @@ public final class Connection implements Runnable {
 										&& Client.menuItemCount * 1768430155 > 0) {
 									var0 = Client.anInt2131 * -827759387;
 									var8 = Client.anInt2101 * 45845103;
-									Node_Sub9.method563(Class87_Sub1.aClass4_1333, var0, var8);
-									Class87_Sub1.aClass4_1333 = null;
+									Node_Sub9.method563(CacheIndex.aClass4_1333, var0, var8);
+									CacheIndex.aClass4_1333 = null;
 								}
 
 								Client.aBool2103 = false;
@@ -273,12 +273,12 @@ public final class Connection implements Runnable {
 								Client.anInt2101 = Class74.anInt629 * -1619983687;
 								if (Client.menuItemCount * 1768430155 > 0) {
 									var0 = 1768430155 * Client.menuItemCount - 1;
-									Class87_Sub1.aClass4_1333 = new Class4();
-									Class87_Sub1.aClass4_1333.anInt109 = -615722007 * Client.menuArg1[var0];
-									Class87_Sub1.aClass4_1333.anInt106 = Client.menuArg2[var0] * 607560247;
-									Class87_Sub1.aClass4_1333.anInt107 = Client.menuOpcodes[var0] * -859373123;
-									Class87_Sub1.aClass4_1333.anInt105 = Client.menuArg0[var0] * -558864427;
-									Class87_Sub1.aClass4_1333.aString108 = Client.menuActions[var0];
+									CacheIndex.aClass4_1333 = new Class4();
+									CacheIndex.aClass4_1333.anInt109 = -615722007 * Client.menuArg1[var0];
+									CacheIndex.aClass4_1333.anInt106 = Client.menuArg2[var0] * 607560247;
+									CacheIndex.aClass4_1333.anInt107 = Client.menuOpcodes[var0] * -859373123;
+									CacheIndex.aClass4_1333.anInt105 = Client.menuArg0[var0] * -558864427;
+									CacheIndex.aClass4_1333.aString108 = Client.menuActions[var0];
 								}
 
 								Class68.method326(DualNode_Sub1.aWidget1446);

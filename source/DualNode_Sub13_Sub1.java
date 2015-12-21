@@ -12,11 +12,11 @@ public class DualNode_Sub13_Sub1 extends RSGraphics {
 	static int anInt1785;
 	static int anInt1786;
 	static int anInt1787;
-	public static int[] anIntArray1788 = new int[2048];
+	public static int[] SIN_TABLE = new int[2048];
 	static int anInt1789;
 	static int[] anIntArray1790 = new int[1024];
 	static int anInt1791;
-	public static int[] anIntArray1792 = new int[2048];
+	public static int[] COS_TABLE = new int[2048];
 	public static int[] anIntArray1793 = new int[65536];
 	static int[] anIntArray1794 = new int[512];
 	static int[] anIntArray1795 = new int[2048];
@@ -2178,8 +2178,8 @@ public class DualNode_Sub13_Sub1 extends RSGraphics {
 		}
 
 		for (var0 = 0; var0 < 2048; ++var0) {
-			anIntArray1788[var0] = (int) (65536.0D * Math.sin((double) var0 * 0.0030679615D));
-			anIntArray1792[var0] = (int) (65536.0D * Math.cos((double) var0 * 0.0030679615D));
+			SIN_TABLE[var0] = (int) (65536.0D * Math.sin((double) var0 * 0.0030679615D));
+			COS_TABLE[var0] = (int) (65536.0D * Math.cos((double) var0 * 0.0030679615D));
 		}
 
 	}

@@ -83,8 +83,8 @@ public abstract class Entity extends DualNode {
 				var13 = (int) (1.04D * (double) var13);
 			}
 
-			int var18 = var13 * DualNode_Sub13_Sub1.anIntArray1788[-1553926171 * var7.anInt1612] >> 16;
-			int var14 = var13 * DualNode_Sub13_Sub1.anIntArray1792[-1553926171 * var7.anInt1612] >> 16;
+			int var18 = var13 * DualNode_Sub13_Sub1.SIN_TABLE[-1553926171 * var7.anInt1612] >> 16;
+			int var14 = var13 * DualNode_Sub13_Sub1.COS_TABLE[-1553926171 * var7.anInt1612] >> 16;
 			var20.method998();
 			var20.method1012(0, 1613119041 * var7.anInt1613, var7.anInt1634 * 400650845, var7.anInt1612 * -1553926171,
 					2086962731 * var7.anInt1642,

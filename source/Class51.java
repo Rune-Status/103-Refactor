@@ -31,8 +31,8 @@ public class Class51 {
 			int var6 = Client.minimapScale * -1718342721 + -1916997753 * Client.minimapRotation & 2047;
 			int var9 = var2 * var2 + var3 * var3;
 			if (var9 <= 6400) {
-				int var8 = DualNode_Sub13_Sub1.anIntArray1788[var6];
-				int var7 = DualNode_Sub13_Sub1.anIntArray1792[var6];
+				int var8 = DualNode_Sub13_Sub1.SIN_TABLE[var6];
+				int var7 = DualNode_Sub13_Sub1.COS_TABLE[var6];
 				var8 = 256 * var8 / (Client.viewRotation * -806982331 + 256);
 				var7 = var7 * 256 / (-806982331 * Client.viewRotation + 256);
 				int var10 = var8 * var3 + var2 * var7 >> 16;

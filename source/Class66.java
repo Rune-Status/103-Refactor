@@ -2,9 +2,9 @@ import java.io.File;
 
 public abstract class Class66 {
 
-	abstract void method321(int var1);
+	abstract void method321();
 
-	abstract int method322(int var1, int var2, byte var3);
+	abstract int method322(int var1, int var2);
 
 	static void setCacheDirectory(File var0) {
 		Class79.cacheDirectory = var0;

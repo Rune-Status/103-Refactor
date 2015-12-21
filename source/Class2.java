@@ -1,10 +1,10 @@
 
 public class Class2 {
 
-	static Class87_Sub1 aClass87_Sub1_76;
+	static CacheIndex aClass87_Sub1_76;
 	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array77;
 	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array78;
-	static Class87_Sub1 aClass87_Sub1_79;
+	static CacheIndex aClass87_Sub1_79;
 	public static char aChar80;
 
 	public static void method60(Class87 var0, Class87 var1) {
@@ -17,7 +17,7 @@ public class Class2 {
 	}
 
 	protected static final void method61() {
-		Class90.aClass66_721.method321(-1108956053);
+		Class90.aClass66_721.method321();
 
 		int var0;
 		for (var0 = 0; var0 < 32; ++var0) {
@@ -37,10 +37,10 @@ public class Class2 {
 			var0 -= 282154897 * Projectile.cameraX;
 			var4 -= 1447873857 * FriendedPlayer.cameraZ;
 			var1 -= -324676025 * Class72.cameraY;
-			int var8 = DualNode_Sub13_Sub1.anIntArray1788[1162853107 * Class67.cameraPitch];
-			int var6 = DualNode_Sub13_Sub1.anIntArray1792[1162853107 * Class67.cameraPitch];
-			int var3 = DualNode_Sub13_Sub1.anIntArray1788[Class65.cameraYaw * -210812059];
-			int var7 = DualNode_Sub13_Sub1.anIntArray1792[Class65.cameraYaw * -210812059];
+			int var8 = DualNode_Sub13_Sub1.SIN_TABLE[1162853107 * Class67.cameraPitch];
+			int var6 = DualNode_Sub13_Sub1.COS_TABLE[1162853107 * Class67.cameraPitch];
+			int var3 = DualNode_Sub13_Sub1.SIN_TABLE[Class65.cameraYaw * -210812059];
+			int var7 = DualNode_Sub13_Sub1.COS_TABLE[Class65.cameraYaw * -210812059];
 			int var5 = var0 * var7 + var1 * var3 >> 16;
 			var1 = var7 * var1 - var0 * var3 >> 16;
 			var0 = var5;

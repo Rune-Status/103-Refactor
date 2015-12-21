@@ -17,7 +17,7 @@ public class Class81 {
 	public static ByteBuf aBuffer678;
 	public static int anInt679 = 0;
 	public static CRC32 aCRC32_680 = new CRC32();
-	public static Class87_Sub1[] aClass87_Sub1Array681 = new Class87_Sub1[256];
+	public static CacheIndex[] aClass87_Sub1Array681 = new CacheIndex[256];
 	public static NodeTable aNodeTable682 = new NodeTable(32);
 	public static int anInt683 = 0;
 	public static int anInt684 = 0;

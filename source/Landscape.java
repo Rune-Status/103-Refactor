@@ -640,10 +640,10 @@ public class Landscape {
 		}
 
 		++anInt19;
-		anInt26 = DualNode_Sub13_Sub1.anIntArray1788[var4];
-		anInt27 = DualNode_Sub13_Sub1.anIntArray1792[var4];
-		anInt28 = DualNode_Sub13_Sub1.anIntArray1788[var5];
-		anInt29 = DualNode_Sub13_Sub1.anIntArray1792[var5];
+		anInt26 = DualNode_Sub13_Sub1.SIN_TABLE[var4];
+		anInt27 = DualNode_Sub13_Sub1.COS_TABLE[var4];
+		anInt28 = DualNode_Sub13_Sub1.SIN_TABLE[var5];
+		anInt29 = DualNode_Sub13_Sub1.COS_TABLE[var5];
 		aBoolArrayArray13 = aBoolArrayArrayArrayArray52[(var4 - 128) / 32][var5 / 64];
 		anInt15 = var1;
 		anInt7 = var2;
@@ -1985,10 +1985,10 @@ public class Landscape {
 		int var12;
 		for (var8 = 128; var8 <= 384; var8 += 32) {
 			for (var9 = 0; var9 < 2048; var9 += 64) {
-				anInt26 = DualNode_Sub13_Sub1.anIntArray1788[var8];
-				anInt27 = DualNode_Sub13_Sub1.anIntArray1792[var8];
-				anInt28 = DualNode_Sub13_Sub1.anIntArray1788[var9];
-				anInt29 = DualNode_Sub13_Sub1.anIntArray1792[var9];
+				anInt26 = DualNode_Sub13_Sub1.SIN_TABLE[var8];
+				anInt27 = DualNode_Sub13_Sub1.COS_TABLE[var8];
+				anInt28 = DualNode_Sub13_Sub1.SIN_TABLE[var9];
+				anInt29 = DualNode_Sub13_Sub1.COS_TABLE[var9];
 				var10 = (var8 - 128) / 32;
 				var11 = var9 / 64;
 

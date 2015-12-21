@@ -39,7 +39,7 @@ public class Class28 {
 	}
 
 	void method174() {
-		Class126 var1 = this.method179(true);
+		CacheFileAccessor var1 = this.method179(true);
 		boolean var14 = false;
 
 		try {
@@ -84,7 +84,7 @@ public class Class28 {
 
 					while (true) {
 						if (var6 >= this.aStringArray324.length) {
-							var1.method460(var20.payload, 0, 314639891 * var20.position);
+							var1.write(var20.payload, 0, 314639891 * var20.position);
 							break;
 						}
 
@@ -97,7 +97,7 @@ public class Class28 {
 					}
 				} catch (Exception var18) {
 					try {
-						var1.method459();
+						var1.close();
 						var14 = false;
 					} catch (Exception var16) {
 						var14 = false;
@@ -106,7 +106,7 @@ public class Class28 {
 				}
 
 				try {
-					var1.method459();
+					var1.close();
 					var14 = false;
 				} catch (Exception var17) {
 					var14 = false;
@@ -115,7 +115,7 @@ public class Class28 {
 		} finally {
 			if (var14) {
 				try {
-					var1.method459();
+					var1.close();
 				} catch (Exception var15) {
 					;
 				}
@@ -128,18 +128,18 @@ public class Class28 {
 	}
 
 	void method175() {
-		Class126 var1 = this.method179(false);
+		CacheFileAccessor var1 = this.method179(false);
 		boolean var20 = false;
 
 		try {
 			label186: {
 				try {
 					var20 = true;
-					byte[] var2 = new byte[(int) var1.method458()];
+					byte[] var2 = new byte[(int) var1.length()];
 
 					int var4;
 					for (int var3 = 0; var3 < var2.length; var3 += var4) {
-						var4 = var1.method457(var2, var3, var2.length - var3);
+						var4 = var1.read(var2, var3, var2.length - var3);
 						if (var4 == -1) {
 							throw new EOFException();
 						}
@@ -148,7 +148,7 @@ public class Class28 {
 					ByteBuf var28 = new ByteBuf(var2);
 					if (var28.payload.length - var28.position * 314639891 < 1) {
 						try {
-							var1.method459();
+							var1.close();
 						} catch (Exception var23) {
 							;
 						}
@@ -159,7 +159,7 @@ public class Class28 {
 					int var5 = var28.getUByte();
 					if (var5 < 0 || var5 > 1) {
 						try {
-							var1.method459();
+							var1.close();
 						} catch (Exception var25) {
 							;
 						}
@@ -191,7 +191,7 @@ public class Class28 {
 					}
 				} catch (Exception var26) {
 					try {
-						var1.method459();
+						var1.close();
 						var20 = false;
 					} catch (Exception var22) {
 						var20 = false;
@@ -200,7 +200,7 @@ public class Class28 {
 				}
 
 				try {
-					var1.method459();
+					var1.close();
 					var20 = false;
 				} catch (Exception var24) {
 					var20 = false;
@@ -209,7 +209,7 @@ public class Class28 {
 		} finally {
 			if (var20) {
 				try {
-					var1.method459();
+					var1.close();
 				} catch (Exception var21) {
 					;
 				}
@@ -247,7 +247,7 @@ public class Class28 {
 
 	}
 
-	Class126 method179(boolean var1) {
+	CacheFileAccessor method179(boolean var1) {
 		return BoundaryStub.method154("2", Client.aClass77_2091.aString646, var1);
 	}
 

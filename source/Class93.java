@@ -9,7 +9,7 @@ public class Class93 {
 		throw new Error();
 	}
 
-	static final void method404(byte[] var0, int var1, int var2, int var3, int var4, CollionMap[] var5) {
+	static final void method404(byte[] var0, int var1, int var2, int var3, int var4, CollisionMap[] var5) {
 		int var7;
 		int var8;
 		for (int var6 = 0; var6 < 4; ++var6) {

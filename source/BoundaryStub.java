@@ -28,11 +28,11 @@ public final class BoundaryStub {
 		return var0;
 	}
 
-	public static Class126 method154(String var0, String var1, boolean var2) {
+	public static CacheFileAccessor method154(String var0, String var1, boolean var2) {
 		File var3 = new File(Class75.cacheLocation, "preferences" + var0 + ".dat");
 		if (var3.exists()) {
 			try {
-				Class126 var10 = new Class126(var3, "rw", 10000L);
+				CacheFileAccessor var10 = new CacheFileAccessor(var3, "rw", 10000L);
 				return var10;
 			} catch (IOException var9) {
 				;
@@ -47,10 +47,10 @@ public final class BoundaryStub {
 		}
 
 		File var5 = new File(BitBuf.aString1729, "jagex_" + var1 + "_preferences" + var0 + var4 + ".dat");
-		Class126 var6;
+		CacheFileAccessor var6;
 		if (!var2 && var5.exists()) {
 			try {
-				var6 = new Class126(var5, "rw", 10000L);
+				var6 = new CacheFileAccessor(var5, "rw", 10000L);
 				return var6;
 			} catch (IOException var8) {
 				;
@@ -58,7 +58,7 @@ public final class BoundaryStub {
 		}
 
 		try {
-			var6 = new Class126(var3, "rw", 10000L);
+			var6 = new CacheFileAccessor(var3, "rw", 10000L);
 			return var6;
 		} catch (IOException var7) {
 			throw new RuntimeException();

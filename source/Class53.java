@@ -234,16 +234,16 @@ public class Class53 {
 									var36 = var26;
 									int var33;
 									if (var27 != 0) {
-										var35 = DualNode_Sub13_Sub1.anIntArray1788[var27];
-										var33 = DualNode_Sub13_Sub1.anIntArray1792[var27];
+										var35 = DualNode_Sub13_Sub1.SIN_TABLE[var27];
+										var33 = DualNode_Sub13_Sub1.COS_TABLE[var27];
 										var20 = var33 * var34 - var35 * var26 >> 16;
 										var36 = var33 * var26 + var35 * var34 >> 16;
 										var34 = var20;
 									}
 
 									if (var37 != 0) {
-										var35 = DualNode_Sub13_Sub1.anIntArray1788[var37];
-										var33 = DualNode_Sub13_Sub1.anIntArray1792[var37];
+										var35 = DualNode_Sub13_Sub1.SIN_TABLE[var37];
+										var33 = DualNode_Sub13_Sub1.COS_TABLE[var37];
 										var20 = var33 * var39 + var35 * var36 >> 16;
 										var36 = var33 * var36 - var39 * var35 >> 16;
 										var39 = var20;
@@ -966,10 +966,10 @@ public class Class53 {
 											DualNode_Sub13_Sub1.method911(var15.width * 1645211541 / 2 + var10,
 													1227800423 * var15.height / 2 + var11);
 											var17 = var15.modelZoom * -1472457387
-													* DualNode_Sub13_Sub1.anIntArray1788[175924351
+													* DualNode_Sub13_Sub1.SIN_TABLE[175924351
 															* var15.rotationX] >> 16;
 											var30 = -1472457387 * var15.modelZoom
-													* DualNode_Sub13_Sub1.anIntArray1792[175924351
+													* DualNode_Sub13_Sub1.COS_TABLE[175924351
 															* var15.rotationX] >> 16;
 											if (var52 != null) {
 												if (!var15.interactable) {

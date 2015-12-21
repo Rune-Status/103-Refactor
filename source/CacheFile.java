@@ -1,7 +1,7 @@
 import java.io.EOFException;
 import java.io.IOException;
 
-public class Class121 {
+public class CacheFile {
 
 	int anInt807 = 0;
 	byte[] aByteArray808;
@@ -13,7 +13,7 @@ public class Class121 {
 	long aLong814;
 	long aLong815 = -5097607827615164521L;
 	long aLong816;
-	Class126 aClass126_817;
+	CacheFileAccessor aClass126_817;
 
 	public void method443(byte[] var1, int var2, int var3) throws IOException {
 		try {
@@ -53,10 +53,10 @@ public class Class121 {
 			}
 
 			if (var3 > this.aByteArray808.length) {
-				this.aClass126_817.method456(-8326374793673939791L * this.aLong814);
+				this.aClass126_817.seek(-8326374793673939791L * this.aLong814);
 
 				for (this.aLong810 = this.aLong814 * 1575725130253279575L; var3 > 0; var3 -= var8) {
-					var8 = this.aClass126_817.method457(var1, var2, var3);
+					var8 = this.aClass126_817.read(var1, var2, var3);
 					if (var8 == -1) {
 						break;
 					}
@@ -133,7 +133,7 @@ public class Class121 {
 
 	public void method444() throws IOException {
 		this.method449();
-		this.aClass126_817.method459();
+		this.aClass126_817.close();
 	}
 
 	public void write(byte[] var1, int var2, int var3) throws IOException {
@@ -182,11 +182,11 @@ public class Class121 {
 				}
 			} else {
 				if (-4876416496348054217L * this.aLong810 != -8326374793673939791L * this.aLong814) {
-					this.aClass126_817.method456(this.aLong814 * -8326374793673939791L);
+					this.aClass126_817.seek(this.aLong814 * -8326374793673939791L);
 					this.aLong810 = 1575725130253279575L * this.aLong814;
 				}
 
-				this.aClass126_817.method460(var1, var2, var3);
+				this.aClass126_817.write(var1, var2, var3);
 				this.aLong810 += -7398757543161329529L * (long) var3;
 				if (-4876416496348054217L * this.aLong810 > 182354950301920001L * this.aLong813) {
 					this.aLong813 = 2869469855561285687L * this.aLong810;
@@ -228,9 +228,9 @@ public class Class121 {
 		}
 	}
 
-	public Class121(Class126 var1, int var2, int var3) throws IOException {
+	public CacheFile(CacheFileAccessor var1, int var2, int var3) throws IOException {
 		this.aClass126_817 = var1;
-		this.aLong816 = (this.aLong813 = var1.method458() * -5755731196710398719L) * -9096814420392384055L;
+		this.aLong816 = (this.aLong813 = var1.length() * -5755731196710398719L) * -9096814420392384055L;
 		this.aByteArray808 = new byte[var2];
 		this.aByteArray812 = new byte[var3];
 		this.aLong814 = 0L;
@@ -243,14 +243,14 @@ public class Class121 {
 	void method447() throws IOException {
 		this.anInt811 = 0;
 		if (-4876416496348054217L * this.aLong810 != this.aLong814 * -8326374793673939791L) {
-			this.aClass126_817.method456(this.aLong814 * -8326374793673939791L);
+			this.aClass126_817.seek(this.aLong814 * -8326374793673939791L);
 			this.aLong810 = this.aLong814 * 1575725130253279575L;
 		}
 
 		int var1;
 		for (this.aLong809 = this.aLong814 * 3944497200042446949L; this.anInt811
 				* -293863773 < this.aByteArray808.length; this.anInt811 += 235906315 * var1) {
-			var1 = this.aClass126_817.method457(this.aByteArray808, this.anInt811 * -293863773,
+			var1 = this.aClass126_817.read(this.aByteArray808, this.anInt811 * -293863773,
 					this.aByteArray808.length - this.anInt811 * -293863773);
 			if (var1 == -1) {
 				break;
@@ -272,11 +272,11 @@ public class Class121 {
 	void method449() throws IOException {
 		if (-1L != this.aLong815 * -2285779735292712999L) {
 			if (this.aLong810 * -4876416496348054217L != -2285779735292712999L * this.aLong815) {
-				this.aClass126_817.method456(-2285779735292712999L * this.aLong815);
+				this.aClass126_817.seek(-2285779735292712999L * this.aLong815);
 				this.aLong810 = -5602583930400994449L * this.aLong815;
 			}
 
-			this.aClass126_817.method460(this.aByteArray812, 0, 183200453 * this.anInt807);
+			this.aClass126_817.write(this.aByteArray812, 0, 183200453 * this.anInt807);
 			this.aLong810 += (long) this.anInt807 * 8285643226346288611L;
 			if (-4876416496348054217L * this.aLong810 > 182354950301920001L * this.aLong813) {
 				this.aLong813 = 2869469855561285687L * this.aLong810;

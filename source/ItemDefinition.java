@@ -575,16 +575,16 @@ public class ItemDefinition extends DualNode {
 	}
 
 	static Class24 method821() {
-		Class126 var0 = null;
+		CacheFileAccessor var0 = null;
 		Class24 var1 = new Class24();
 
 		try {
 			var0 = BoundaryStub.method154("", Client.aClass77_2091.aString646, false);
-			byte[] var2 = new byte[(int) var0.method458()];
+			byte[] var2 = new byte[(int) var0.length()];
 
 			int var4;
 			for (int var3 = 0; var3 < var2.length; var3 += var4) {
-				var4 = var0.method457(var2, var3, var2.length - var3);
+				var4 = var0.read(var2, var3, var2.length - var3);
 				if (var4 == -1) {
 					throw new IOException();
 				}
@@ -597,7 +597,7 @@ public class ItemDefinition extends DualNode {
 
 		try {
 			if (var0 != null) {
-				var0.method459();
+				var0.close();
 			}
 		} catch (Exception var5) {
 			;

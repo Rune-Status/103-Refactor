@@ -23,7 +23,7 @@ public class DualNode_Sub11 extends DualNode {
 	}
 
 	static Widget method725(Widget var0) {
-		int var1 = Class87_Sub1.method555(Class30.getWidgetConfig(var0));
+		int var1 = CacheIndex.method555(Class30.getWidgetConfig(var0));
 		if (var1 == 0) {
 			return null;
 		} else {

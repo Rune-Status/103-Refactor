@@ -1,8 +1,8 @@
 
 public class Node_Sub9 extends Node {
 
-	Class62 aClass62_1336;
-	Class87_Sub1 aClass87_Sub1_1337;
+	IndexTable aClass62_1336;
+	CacheIndex aClass87_Sub1_1337;
 	int anInt1338;
 	public static int anInt1339;
 	byte[] aByteArray1340;

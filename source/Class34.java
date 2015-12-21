@@ -20,7 +20,7 @@ public final class Class34 {
 	int anInt382;
 	int anInt383;
 	int anInt384;
-	static Class87_Sub1 aClass87_Sub1_385;
+	static CacheIndex aClass87_Sub1_385;
 
 	static final void method201() {
 		if (Class30.aClass8_341 != null) {

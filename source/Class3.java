@@ -14,8 +14,8 @@ public class Class3 {
 	static String[] aStringArray90 = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
 			"Oct", "Nov", "Dec" };
 	static int anInt91 = 0;
-	static Class62 aClass62_92;
-	static Class87_Sub1 aClass87_Sub1_93;
+	static IndexTable aClass62_92;
+	static CacheIndex aClass87_Sub1_93;
 	static int anInt94;
 	static int[] anIntArray95 = new int[1000];
 
