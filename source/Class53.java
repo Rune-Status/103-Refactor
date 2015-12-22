@@ -148,7 +148,7 @@ public class Class53 {
 						int var40;
 						if (-179718399 * var15.contentType != 0) {
 							if (var15.contentType * -179718399 == 1336) {
-								if (Client.worldSelectorDisplayed) {
+								if (Client.displayFps) {
 									var11 += 15;
 									Client.aDualNode_Sub13_Sub3_Sub1_2047.method972(
 											"Fps:" + Client.anInt1976 * 305420995, var10 + 1645211541 * var15.width,

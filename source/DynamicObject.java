@@ -190,7 +190,7 @@ public class DynamicObject extends Entity {
 			Class114.anInt795 = 0;
 			Class37.aString404 = "";
 			Class6.aBool139 = true;
-			Class6.aBool143 = false;
+			Class6.loadedWorlds = false;
 			if (!Node_Sub5.aClass24_1265.aBool303) {
 				Class91.method402(2, Class2.aClass87_Sub1_79, "scape main", "", 255, false);
 			} else {
@@ -199,7 +199,7 @@ public class DynamicObject extends Entity {
 
 			ScriptEvent.method652(false);
 			Class6.aBool142 = true;
-			Class6.anInt132 = 1079825139 * ((-452716157 * Class34.anInt381 - 1468194207 * Client.anInt2233) / 2);
+			Class6.anInt132 = 1079825139 * ((-452716157 * Class34.gameWidth - 1468194207 * Client.anInt2233) / 2);
 			Class6.anInt126 = 1843765198 + Class6.anInt132 * 132725497;
 			Class56.aSprite542.method958(1933284923 * Class6.anInt132, 0);
 			Class6.aSprite137.method958(Class6.anInt132 * 1933284923 + 382, 0);

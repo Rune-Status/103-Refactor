@@ -39,18 +39,18 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			var1.remove(LandscapeTile.aCanvas1417);
 		}
 
-		Class34.anInt381 = Math.max(var1.getWidth(), CacheFileAccessor.anInt836 * 2055757083) * -780223189;
-		Node_Sub9.anInt1339 = Math.max(var1.getHeight(), -1066486805 * ClanMate.anInt1222) * 427958731;
+		Class34.gameWidth = Math.max(var1.getWidth(), CacheFileAccessor.anInt836 * 2055757083) * -780223189;
+		Node_Sub9.gameHeight = Math.max(var1.getHeight(), -1066486805 * ClanMate.anInt1222) * 427958731;
 		Insets var2;
 		if (DualNode_Sub10.aFrame1538 != null) {
 			var2 = DualNode_Sub10.aFrame1538.getInsets();
-			Class34.anInt381 -= -780223189 * (var2.left + var2.right);
-			Node_Sub9.anInt1339 -= (var2.bottom + var2.top) * 427958731;
+			Class34.gameWidth -= -780223189 * (var2.left + var2.right);
+			Node_Sub9.gameHeight -= (var2.bottom + var2.top) * 427958731;
 		}
 
 		LandscapeTile.aCanvas1417 = new GameCanvas(this);
 		var1.add(LandscapeTile.aCanvas1417);
-		LandscapeTile.aCanvas1417.setSize(-452716157 * Class34.anInt381, Node_Sub9.anInt1339 * 674167779);
+		LandscapeTile.aCanvas1417.setSize(-452716157 * Class34.gameWidth, Node_Sub9.gameHeight * 674167779);
 		LandscapeTile.aCanvas1417.setVisible(true);
 		if (DualNode_Sub10.aFrame1538 == var1) {
 			var2 = DualNode_Sub10.aFrame1538.getInsets();
@@ -62,8 +62,8 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 		LandscapeTile.aCanvas1417.addFocusListener(this);
 		LandscapeTile.aCanvas1417.requestFocus();
 		aBool1979 = true;
-		int var3 = -452716157 * Class34.anInt381;
-		int var4 = 674167779 * Node_Sub9.anInt1339;
+		int var3 = -452716157 * Class34.gameWidth;
+		int var4 = 674167779 * Node_Sub9.gameHeight;
 		Canvas var5 = LandscapeTile.aCanvas1417;
 
 		Object var9;
@@ -385,8 +385,8 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			}
 
 			shell = this;
-			Class34.anInt381 = -780223189 * var1;
-			Node_Sub9.anInt1339 = 427958731 * var2;
+			Class34.gameWidth = -780223189 * var1;
+			Node_Sub9.gameHeight = 427958731 * var2;
 			Class125.anInt830 = var3 * -778950217;
 			CollisionMap.anApplet508 = this;
 			if (IsaacRandom.aClass63_102 == null) {
@@ -426,7 +426,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 		if ((anInt1980 += -871230615) * 355183833 - 1 > 50) {
 			anInt1980 -= -611857790;
 			aBool1979 = true;
-			LandscapeTile.aCanvas1417.setSize(Class34.anInt381 * -452716157, 674167779 * Node_Sub9.anInt1339);
+			LandscapeTile.aCanvas1417.setSize(Class34.gameWidth * -452716157, 674167779 * Node_Sub9.gameHeight);
 			LandscapeTile.aCanvas1417.setVisible(true);
 			if (DualNode_Sub10.aFrame1538 == var1) {
 				Insets var7 = DualNode_Sub10.aFrame1538.getInsets();
@@ -452,8 +452,8 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			if (Class63.aString575 != null && Class63.aString575.startsWith("1.5")
 					&& Node_Sub5.currentTimeMs() - aLong1984 * -2499368560980646817L > 1000L) {
 				Rectangle var2 = var1.getClipBounds();
-				if (var2 == null || var2.width >= -452716157 * Class34.anInt381
-						&& var2.height >= 674167779 * Node_Sub9.anInt1339) {
+				if (var2 == null || var2.width >= -452716157 * Class34.gameWidth
+						&& var2.height >= 674167779 * Node_Sub9.gameHeight) {
 					aBool1982 = true;
 				}
 			}

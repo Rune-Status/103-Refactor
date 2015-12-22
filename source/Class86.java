@@ -70,7 +70,7 @@ public class Class86 {
 	static void method367(DualNode_Sub13_Sub3_Sub1 var0, DualNode_Sub13_Sub3_Sub1 var1, DualNode_Sub13_Sub3_Sub1 var2,
 			boolean var3) {
 		if (var3) {
-			Class6.anInt132 = 1079825139 * ((-452716157 * Class34.anInt381 - Client.anInt2233 * 1468194207) / 2);
+			Class6.anInt132 = 1079825139 * ((-452716157 * Class34.gameWidth - Client.anInt2233 * 1468194207) / 2);
 			Class6.anInt126 = Class6.anInt132 * 132725497 + 1843765198;
 		}
 
@@ -83,7 +83,7 @@ public class Class86 {
 		int var36;
 		int var39;
 		int var40;
-		if (Class6.aBool143) {
+		if (Class6.loadedWorlds) {
 			if (Class93.aSpriteArray733 == null) {
 				Class93.aSpriteArray733 = DynamicObject.method1023(Node_Sub5.aClass87_Sub1_1266, "sl_back", "");
 			}

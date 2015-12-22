@@ -126,8 +126,8 @@ public class Class76 {
 		BitBuf var5 = Client.outBuffer;
 		var1 = Client.resizable ? 2 : 1;
 		var5.putByte(var1);
-		Client.outBuffer.putShort(-452716157 * Class34.anInt381);
-		Client.outBuffer.putShort(674167779 * Node_Sub9.anInt1339);
+		Client.outBuffer.putShort(-452716157 * Class34.gameWidth);
+		Client.outBuffer.putShort(674167779 * Node_Sub9.gameHeight);
 		Client.clanChatOwner = null;
 		Class86.clanChatSize = 0;
 		InterfaceNode.clanMates = null;

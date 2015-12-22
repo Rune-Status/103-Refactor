@@ -65,19 +65,19 @@ public class Node_Sub5 extends Node {
 				}
 
 				if (!Client.resizable) {
-					Class34.anInt381 = Client.anInt2233 * 870030517;
-					Node_Sub9.anInt1339 = Client.anInt2181 * -796663565;
+					Class34.gameWidth = Client.anInt2233 * 870030517;
+					Node_Sub9.gameHeight = Client.anInt2181 * -796663565;
 				} else {
-					Class34.anInt381 = Math.min(DualNode_Sub6.anInt1505 * -1830553327, 7680) * -780223189;
-					Node_Sub9.anInt1339 = Math.min(Class21.anInt281 * 2045896553, 2160) * 427958731;
+					Class34.gameWidth = Math.min(DualNode_Sub6.anInt1505 * -1830553327, 7680) * -780223189;
+					Node_Sub9.gameHeight = Math.min(Class21.anInt281 * 2045896553, 2160) * 427958731;
 				}
 
-				Client.anInt1983 = (-1830553327 * DualNode_Sub6.anInt1505 - Class34.anInt381 * -452716157) / 2
+				Client.anInt1983 = (-1830553327 * DualNode_Sub6.anInt1505 - Class34.gameWidth * -452716157) / 2
 						* 1792273077;
 				Client.anInt1978 = 0;
-				LandscapeTile.aCanvas1417.setSize(Class34.anInt381 * -452716157, 674167779 * Node_Sub9.anInt1339);
-				int var3 = Class34.anInt381 * -452716157;
-				int var4 = Node_Sub9.anInt1339 * 674167779;
+				LandscapeTile.aCanvas1417.setSize(Class34.gameWidth * -452716157, 674167779 * Node_Sub9.gameHeight);
+				int var3 = Class34.gameWidth * -452716157;
+				int var4 = Node_Sub9.gameHeight * 674167779;
 				Canvas var5 = LandscapeTile.aCanvas1417;
 
 				Object var7;
@@ -100,8 +100,8 @@ public class Node_Sub5 extends Node {
 					LandscapeTile.aCanvas1417.setLocation(76231581 * Client.anInt1983, Client.anInt1978 * -225353991);
 				}
 
-				int var17 = Class34.anInt381 * -452716157;
-				int var18 = Node_Sub9.anInt1339 * 674167779;
+				int var17 = Class34.gameWidth * -452716157;
+				int var18 = Node_Sub9.gameHeight * 674167779;
 				if (DualNode_Sub6.anInt1505 * -1830553327 < var17) {
 					var17 = -1830553327 * DualNode_Sub6.anInt1505;
 				}

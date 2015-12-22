@@ -40,7 +40,7 @@ public final class Client extends GameEngine {
 	static int anInt2018 = 0;
 	static int anInt2019 = -1669020249;
 	static boolean aBool2020 = true;
-	static boolean worldSelectorDisplayed = false;
+	static boolean displayFps = false;
 	static int hintArrowY = 0;
 	static int[] experiences = new int[25];
 	static int anInt2021 = 0;
@@ -3314,15 +3314,15 @@ public final class Client extends GameEngine {
 						var83 = 2090526775 * Class74.anInt629;
 						if (var83 < 0) {
 							var83 = 0;
-						} else if (var83 > 674167779 * Node_Sub9.anInt1339) {
-							var83 = Node_Sub9.anInt1339 * 674167779;
+						} else if (var83 > 674167779 * Node_Sub9.gameHeight) {
+							var83 = Node_Sub9.gameHeight * 674167779;
 						}
 
 						var5 = Class74.anInt628 * -2040065729;
 						if (var5 < 0) {
 							var5 = 0;
-						} else if (var5 > Class34.anInt381 * -452716157) {
-							var5 = -452716157 * Class34.anInt381;
+						} else if (var5 > Class34.gameWidth * -452716157) {
+							var5 = -452716157 * Class34.gameWidth;
 						}
 
 						var6 = (int) var65;
@@ -3608,8 +3608,8 @@ public final class Client extends GameEngine {
 							}
 
 							if (anInt2226 * -1074177723 != -1) {
-								Class40.method222(-1074177723 * anInt2226, 0, 0, Class34.anInt381 * -452716157,
-										Node_Sub9.anInt1339 * 674167779, 0, 0);
+								Class40.method222(-1074177723 * anInt2226, 0, 0, Class34.gameWidth * -452716157,
+										Node_Sub9.gameHeight * 674167779, 0, 0);
 							}
 
 							anInt2151 += 44844977;
@@ -4733,7 +4733,7 @@ public final class Client extends GameEngine {
 		CacheIndex.aClipboard1329 = this.getToolkit().getSystemClipboard();
 		Class52.method260(this, Class31.aString349);
 		if (anInt2074 * 1082541889 != 0) {
-			worldSelectorDisplayed = true;
+			displayFps = true;
 		}
 
 		int var4 = -1207115777 * Node_Sub5.aClass24_1265.anInt300;
@@ -4750,8 +4750,8 @@ public final class Client extends GameEngine {
 			BitBuf var5 = outBuffer;
 			int var6 = resizable ? 2 : 1;
 			var5.putByte(var6);
-			outBuffer.putShort(Class34.anInt381 * -452716157);
-			outBuffer.putShort(674167779 * Node_Sub9.anInt1339);
+			outBuffer.putShort(Class34.gameWidth * -452716157);
+			outBuffer.putShort(674167779 * Node_Sub9.gameHeight);
 		}
 
 		aBool1979 = true;
@@ -4821,8 +4821,8 @@ public final class Client extends GameEngine {
 					BitBuf var5 = outBuffer;
 					var6 = resizable ? 2 : 1;
 					var5.putByte(var6);
-					outBuffer.putShort(-452716157 * Class34.anInt381);
-					outBuffer.putShort(674167779 * Node_Sub9.anInt1339);
+					outBuffer.putShort(-452716157 * Class34.gameWidth);
+					outBuffer.putShort(674167779 * Node_Sub9.gameHeight);
 				}
 
 				aBool1979 = true;
@@ -4867,7 +4867,7 @@ public final class Client extends GameEngine {
 
 				if (var19) {
 					var9.setColor(Color.black);
-					var9.fillRect(0, 0, Class34.anInt381 * -452716157, 674167779 * Node_Sub9.anInt1339);
+					var9.fillRect(0, 0, Class34.gameWidth * -452716157, 674167779 * Node_Sub9.gameHeight);
 				}
 
 				if (var8 == null) {
@@ -4889,11 +4889,11 @@ public final class Client extends GameEngine {
 					var10.setFont(Class7.aFont153);
 					var10.setColor(Color.white);
 					var10.drawString(var7, (304 - IsaacRandom.aFontMetrics98.stringWidth(var7)) / 2, 22);
-					var9.drawImage(IndexTable.anImage572, Class34.anInt381 * -452716157 / 2 - 152,
-							Node_Sub9.anInt1339 * 674167779 / 2 - 18, (ImageObserver) null);
+					var9.drawImage(IndexTable.anImage572, Class34.gameWidth * -452716157 / 2 - 152,
+							Node_Sub9.gameHeight * 674167779 / 2 - 18, (ImageObserver) null);
 				} catch (Exception var13) {
-					int var11 = -452716157 * Class34.anInt381 / 2 - 152;
-					int var12 = 674167779 * Node_Sub9.anInt1339 / 2 - 18;
+					int var11 = -452716157 * Class34.gameWidth / 2 - 152;
+					int var12 = 674167779 * Node_Sub9.gameHeight / 2 - 18;
 					var9.setColor(var8);
 					var9.drawRect(var11, var12, 303, 33);
 					var9.fillRect(var11 + 2, 2 + var12, 3 * var6, 30);

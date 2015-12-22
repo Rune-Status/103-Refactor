@@ -182,8 +182,8 @@ public class Class58 {
 				xteaStart = 314639891 * Client.aPacketBuffer2115.position;
 				Client.aPacketBuffer2115.putString(Class6.aString136);
 				Client.aPacketBuffer2115.putByte((Client.resizable ? 1 : 0) << 1 | (Client.aBool2010 ? 1 : 0));
-				Client.aPacketBuffer2115.putShort(-452716157 * Class34.anInt381);
-				Client.aPacketBuffer2115.putShort(Node_Sub9.anInt1339 * 674167779);
+				Client.aPacketBuffer2115.putShort(-452716157 * Class34.gameWidth);
+				Client.aPacketBuffer2115.putShort(Node_Sub9.gameHeight * 674167779);
 				BitBuf var3 = Client.aPacketBuffer2115;
 				byte[] var4 = new byte[24];
 

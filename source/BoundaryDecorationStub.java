@@ -118,7 +118,7 @@ public final class BoundaryDecorationStub {
 					&& Class74.anInt629 * 2090526775 >= 4
 					&& Class74.anInt628 * -2040065729 <= 708 + 1933284923 * Class6.anInt132 + 50
 					&& 2090526775 * Class74.anInt629 <= 20) {
-				Class6.aBool143 = false;
+				Class6.loadedWorlds = false;
 				Class56.aSprite542.method958(Class6.anInt132 * 1933284923, 0);
 				Class6.aSprite137.method958(Class6.anInt132 * 1933284923 + 382, 0);
 				IgnoredPlayer.aDualNode_Sub13_Sub2_754.method929(
@@ -129,7 +129,7 @@ public final class BoundaryDecorationStub {
 			if (Class6.anInt144 * 154582397 != -1) {
 				World var5 = World.worlds[154582397 * Class6.anInt144];
 				Class88.setWorld(var5);
-				Class6.aBool143 = false;
+				Class6.loadedWorlds = false;
 				Class56.aSprite542.method958(1933284923 * Class6.anInt132, 0);
 				Class6.aSprite137.method958(382 + Class6.anInt132 * 1933284923, 0);
 				IgnoredPlayer.aDualNode_Sub13_Sub2_754.method929(

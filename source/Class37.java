@@ -181,7 +181,7 @@ final class Class37 implements Comparator {
 		BitBuf var3 = Client.outBuffer;
 		int var2 = Client.resizable ? 2 : 1;
 		var3.putByte(var2);
-		Client.outBuffer.putShort(Class34.anInt381 * -452716157);
-		Client.outBuffer.putShort(674167779 * Node_Sub9.anInt1339);
+		Client.outBuffer.putShort(Class34.gameWidth * -452716157);
+		Client.outBuffer.putShort(674167779 * Node_Sub9.gameHeight);
 	}
 }

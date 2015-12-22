@@ -149,8 +149,8 @@ public class DualNode_Sub1 extends DualNode {
 	static void method659() {
 		int var0 = Client.anInt1983 * 76231581;
 		int var1 = Client.anInt1978 * -225353991;
-		int var2 = -1830553327 * DualNode_Sub6.anInt1505 - -452716157 * Class34.anInt381 - var0;
-		int var3 = 2045896553 * Class21.anInt281 - 674167779 * Node_Sub9.anInt1339 - var1;
+		int var2 = -1830553327 * DualNode_Sub6.anInt1505 - -452716157 * Class34.gameWidth - var0;
+		int var3 = 2045896553 * Class21.anInt281 - 674167779 * Node_Sub9.gameHeight - var1;
 		if (var0 > 0 || var2 > 0 || var1 > 0 || var3 > 0) {
 			try {
 				Container var4 = Client.aClient2005.method1033();

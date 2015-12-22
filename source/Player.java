@@ -561,8 +561,8 @@ public final class Player extends Character {
 		int var1;
 		int var2;
 		if (var3 == null) {
-			var1 = Class34.anInt381 * -452716157;
-			var2 = 674167779 * Node_Sub9.anInt1339;
+			var1 = Class34.gameWidth * -452716157;
+			var2 = 674167779 * Node_Sub9.gameHeight;
 		} else {
 			var1 = 1645211541 * var3.width;
 			var2 = 1227800423 * var3.height;

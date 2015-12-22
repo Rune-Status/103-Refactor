@@ -3153,16 +3153,16 @@ public abstract class Class52 {
 															}
 
 															if (var83.equalsIgnoreCase("displayfps")) {
-																Client.worldSelectorDisplayed = !Client.worldSelectorDisplayed;
+																Client.displayFps = !Client.displayFps;
 															}
 
 															if (Client.myRights * 1520983779 >= 2) {
 																if (var83.equalsIgnoreCase("fpson")) {
-																	Client.worldSelectorDisplayed = true;
+																	Client.displayFps = true;
 																}
 
 																if (var83.equalsIgnoreCase("fpsoff")) {
-																	Client.worldSelectorDisplayed = false;
+																	Client.displayFps = false;
 																}
 
 																if (var83.equalsIgnoreCase("gc")) {
@@ -3647,8 +3647,8 @@ public abstract class Class52 {
 								BitBuf var94 = Client.outBuffer;
 								var35 = Client.resizable ? 2 : 1;
 								var94.putByte(var35);
-								Client.outBuffer.putShort(-452716157 * Class34.anInt381);
-								Client.outBuffer.putShort(674167779 * Node_Sub9.anInt1339);
+								Client.outBuffer.putShort(-452716157 * Class34.gameWidth);
+								Client.outBuffer.putShort(674167779 * Node_Sub9.gameHeight);
 							}
 
 							GameEngine.aBool1979 = true;

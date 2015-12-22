@@ -30,7 +30,7 @@ public class Class6 {
 	static int anInt140 = 0;
 	static String aString141 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"£$%^&*()-_=+[{]};:\'@#~,<.>/?\\| ";
 	static boolean aBool142;
-	static boolean aBool143 = false;
+	static boolean loadedWorlds = false;
 	static int anInt144 = -2121360341;
 	static int[] anIntArray145 = new int[256];
 	static Widget[] aWidgetArray146;
