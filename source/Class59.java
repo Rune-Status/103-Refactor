@@ -59,7 +59,7 @@ public class Class59 {
 
 	}
 
-	static Class method294(String var0) throws ClassNotFoundException {
+	static Class resolveType(String var0) throws ClassNotFoundException {
 		return var0.equals("B") ? Byte.TYPE
 				: (var0.equals("I") ? Integer.TYPE
 						: (var0.equals("S") ? Short.TYPE

@@ -1182,8 +1182,8 @@ public abstract class Class52 {
 														if (var54.length() <= 500 && var37.length() <= 500) {
 															Client.outBuffer.putHeader(196);
 															Client.outBuffer
-																	.putShort(1 + TileDecorationStub.method464(var54)
-																			+ TileDecorationStub.method464(var37));
+																	.putShort(1 + TileDecorationStub.getLength(var54)
+																			+ TileDecorationStub.getLength(var37));
 															Client.outBuffer.putString(var37);
 															Client.outBuffer.putByteC(var33);
 															Client.outBuffer.putString(var54);
@@ -1568,7 +1568,7 @@ public abstract class Class52 {
 															var16 = Class3.anIntArray95[var5];
 															Client.outBuffer.putHeader(62);
 															Client.outBuffer
-																	.putByte(TileDecorationStub.method464(var83) + 1);
+																	.putByte(TileDecorationStub.getLength(var83) + 1);
 															Client.outBuffer.putString(var83);
 															Client.outBuffer.putByteS(var16);
 															continue;
@@ -1649,7 +1649,7 @@ public abstract class Class52 {
 																} else {
 																	Client.outBuffer.putHeader(164);
 																	Client.outBuffer.putByte(
-																			TileDecorationStub.method464(var83));
+																			TileDecorationStub.getLength(var83));
 																	Client.outBuffer.putString(var83);
 																}
 																continue;
@@ -1737,7 +1737,7 @@ public abstract class Class52 {
 																} else {
 																	Client.outBuffer.putHeader(178);
 																	Client.outBuffer.putByte(
-																			TileDecorationStub.method464(var83));
+																			TileDecorationStub.getLength(var83));
 																	Client.outBuffer.putString(var83);
 																}
 																continue;
@@ -1783,7 +1783,7 @@ public abstract class Class52 {
 																	Client.anInt2114 = Client.anInt2151 * -712636309;
 																	Client.outBuffer.putHeader(159);
 																	Client.outBuffer.putByte(
-																			TileDecorationStub.method464(var83));
+																			TileDecorationStub.getLength(var83));
 																	Client.outBuffer.putString(var83);
 																	continue label3080;
 																}
@@ -1902,7 +1902,7 @@ public abstract class Class52 {
 															if (InterfaceNode.clanMates != null) {
 																Client.outBuffer.putHeader(166);
 																Client.outBuffer
-																		.putByte(TileDecorationStub.method464(var83));
+																		.putByte(TileDecorationStub.getLength(var83));
 																Client.outBuffer.putString(var83);
 															}
 															continue;
@@ -1919,7 +1919,7 @@ public abstract class Class52 {
 															if (!var83.equals("")) {
 																Client.outBuffer.putHeader(233);
 																Client.outBuffer
-																		.putByte(TileDecorationStub.method464(var83));
+																		.putByte(TileDecorationStub.getLength(var83));
 																Client.outBuffer.putString(var83);
 															}
 															continue;
@@ -2175,7 +2175,7 @@ public abstract class Class52 {
 															var75 = (Class115) Class70.aClass114_588.aList793
 																	.get(var33);
 															long var26 = Node_Sub5.currentTimeMs()
-																	- 8991659602621826001L * Class42.aLong449
+																	- 8991659602621826001L * Huffman.aLong449
 																	- -3596478625201456337L * var75.aLong797;
 															var49 = (int) (var26 / 3600000L);
 															var20 = (int) ((var26 - (long) (var49 * 3600000)) / 60000L);
@@ -2489,7 +2489,7 @@ public abstract class Class52 {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															Class3.aStringArray85[var6++] = DualNode_Sub13_Sub3
-																	.method971(var83);
+																	.appendTags(var83);
 															continue;
 														}
 
@@ -2842,7 +2842,7 @@ public abstract class Class52 {
 															var35 = Class3.anIntArray95[var5 + 1];
 															Client.outBuffer.putHeader(71);
 															Client.outBuffer
-																	.putByte(TileDecorationStub.method464(var83) + 2);
+																	.putByte(TileDecorationStub.getLength(var83) + 2);
 															Client.outBuffer.putString(var83);
 															Client.outBuffer.putByte(var16 - 1);
 															Client.outBuffer.putByte(var35);
@@ -3089,7 +3089,7 @@ public abstract class Class52 {
 															var49 = 314639891 * var76.position;
 															byte[] var68 = Class53.method273(var54);
 															var76.putUSmart(var68.length);
-															var76.position += Class120.aClass42_806.method228(var68, 0,
+															var76.position += Class120.huffman.method228(var68, 0,
 																	var68.length, var76.payload,
 																	var76.position * 314639891) * -184175589;
 															Client.outBuffer.putVarShort(

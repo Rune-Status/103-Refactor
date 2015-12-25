@@ -285,7 +285,7 @@ public final class TileDecorationStub {
 		}
 	}
 
-	public static int method464(String var0) {
+	public static int getLength(String var0) {
 		return var0.length() + 1;
 	}
 

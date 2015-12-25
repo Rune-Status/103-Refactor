@@ -361,113 +361,113 @@ public class DualNode_Sub2 extends DualNode {
 		return var2 != 0 ? (var2 == 1 ? var1 : (var2 == 2 ? 7 - var0 : 7 - var1)) : var0;
 	}
 
-	public static void method671(ByteBuf var0, int var1, int var2) {
-		Node_Sub16 var3 = new Node_Sub16();
-		var3.anInt1419 = var0.getUByte() * 669809141;
-		var3.anInt1426 = var0.getInt() * 554885847;
-		var3.anIntArray1420 = new int[var3.anInt1419 * -707810723];
-		var3.anIntArray1421 = new int[var3.anInt1419 * -707810723];
-		var3.aFieldArray1422 = new Field[-707810723 * var3.anInt1419];
-		var3.anIntArray1423 = new int[-707810723 * var3.anInt1419];
-		var3.aMethodArray1424 = new Method[-707810723 * var3.anInt1419];
-		var3.aByteArrayArrayArray1425 = new byte[-707810723 * var3.anInt1419][][];
+	public static void decodeClassVerifier(ByteBuf buf, int var1, int var2) {
+		ClassVerifier ver = new ClassVerifier();
+		ver.count = buf.getUByte() * 669809141;
+		ver.anInt1426 = buf.getInt() * 554885847;
+		ver.type = new int[ver.count * -707810723];
+		ver.errorIdentifiers = new int[ver.count * -707810723];
+		ver.fields = new Field[-707810723 * ver.count];
+		ver.fieldValues = new int[-707810723 * ver.count];
+		ver.methods = new Method[-707810723 * ver.count];
+		ver.methodsBytecodes = new byte[-707810723 * ver.count][][];
 
-		for (int var4 = 0; var4 < -707810723 * var3.anInt1419; ++var4) {
+		for (int index = 0; index < -707810723 * ver.count; ++index) {
 			try {
-				int var5 = var0.getUByte();
-				String var6;
-				String var7;
-				int var8;
-				if (var5 != 0 && var5 != 1 && var5 != 2) {
-					if (var5 == 3 || var5 == 4) {
-						var6 = var0.getString();
-						var7 = var0.getString();
-						var8 = var0.getUByte();
-						String[] var9 = new String[var8];
+				int type = buf.getUByte();
+				String cName;
+				String fName;
+				int size;
+				if (type != 0 && type != 1 && type != 2) {
+					if (type == 3 || type == 4) {
+						cName = buf.getString();
+						fName = buf.getString();
+						size = buf.getUByte();
+						String[] methodNames = new String[size];
 
-						for (int var10 = 0; var10 < var8; ++var10) {
-							var9[var10] = var0.getString();
+						for (int var10 = 0; var10 < size; ++var10) {
+							methodNames[var10] = buf.getString();
 						}
 
-						String var26 = var0.getString();
-						byte[][] var11 = new byte[var8][];
-						int var13;
-						if (var5 == 3) {
-							for (int var12 = 0; var12 < var8; ++var12) {
-								var13 = var0.getInt();
-								var11[var12] = new byte[var13];
-								var0.getBytes(var11[var12], 0, var13);
+						String returnType = buf.getString();
+						byte[][] methodBytecodes = new byte[size][];
+						int bytecodeSize;
+						if (type == 3) {
+							for (int mIndex = 0; mIndex < size; ++mIndex) {
+								bytecodeSize = buf.getInt();
+								methodBytecodes[mIndex] = new byte[bytecodeSize];
+								buf.getBytes(methodBytecodes[mIndex], 0, bytecodeSize);
 							}
 						}
 
-						var3.anIntArray1420[var4] = var5;
-						Class[] var27 = new Class[var8];
+						ver.type[index] = type;
+						Class<?>[] args = new Class<?>[size];
 
-						for (var13 = 0; var13 < var8; ++var13) {
-							var27[var13] = Class59.method294(var9[var13]);
+						for (bytecodeSize = 0; bytecodeSize < size; ++bytecodeSize) {
+							args[bytecodeSize] = Class59.resolveType(methodNames[bytecodeSize]);
 						}
 
-						Class var28 = Class59.method294(var26);
-						if (Class59.method294(var6).getClassLoader() == null) {
+						Class<?> methodReturn = Class59.resolveType(returnType);
+						if (Class59.resolveType(cName).getClassLoader() == null) {
 							throw new SecurityException();
 						}
 
-						Method[] var14 = Class59.method294(var6).getDeclaredMethods();
+						Method[] var14 = Class59.resolveType(cName).getDeclaredMethods();
 						Method[] var15 = var14;
 
 						for (int var16 = 0; var16 < var15.length; ++var16) {
 							Method var17 = var15[var16];
-							if (var17.getName().equals(var7)) {
+							if (var17.getName().equals(fName)) {
 								Class[] var18 = var17.getParameterTypes();
-								if (var27.length == var18.length) {
+								if (args.length == var18.length) {
 									boolean var19 = true;
 
-									for (int var20 = 0; var20 < var27.length; ++var20) {
-										if (var27[var20] != var18[var20]) {
+									for (int var20 = 0; var20 < args.length; ++var20) {
+										if (args[var20] != var18[var20]) {
 											var19 = false;
 											break;
 										}
 									}
 
-									if (var19 && var28 == var17.getReturnType()) {
-										var3.aMethodArray1424[var4] = var17;
+									if (var19 && methodReturn == var17.getReturnType()) {
+										ver.methods[index] = var17;
 									}
 								}
 							}
 						}
 
-						var3.aByteArrayArrayArray1425[var4] = var11;
+						ver.methodsBytecodes[index] = methodBytecodes;
 					}
 				} else {
-					var6 = var0.getString();
-					var7 = var0.getString();
-					var8 = 0;
-					if (var5 == 1) {
-						var8 = var0.getInt();
+					cName = buf.getString();
+					fName = buf.getString();
+					size = 0;
+					if (type == 1) {
+						size = buf.getInt();
 					}
 
-					var3.anIntArray1420[var4] = var5;
-					var3.anIntArray1423[var4] = var8;
-					if (Class59.method294(var6).getClassLoader() == null) {
+					ver.type[index] = type;
+					ver.fieldValues[index] = size;
+					if (Class59.resolveType(cName).getClassLoader() == null) {
 						throw new SecurityException();
 					}
 
-					var3.aFieldArray1422[var4] = Class59.method294(var6).getDeclaredField(var7);
+					ver.fields[index] = Class59.resolveType(cName).getDeclaredField(fName);
 				}
 			} catch (ClassNotFoundException var21) {
-				var3.anIntArray1421[var4] = -1;
+				ver.errorIdentifiers[index] = -1;
 			} catch (SecurityException var22) {
-				var3.anIntArray1421[var4] = -2;
+				ver.errorIdentifiers[index] = -2;
 			} catch (NullPointerException var23) {
-				var3.anIntArray1421[var4] = -3;
+				ver.errorIdentifiers[index] = -3;
 			} catch (Exception var24) {
-				var3.anIntArray1421[var4] = -4;
+				ver.errorIdentifiers[index] = -4;
 			} catch (Throwable var25) {
-				var3.anIntArray1421[var4] = -5;
+				ver.errorIdentifiers[index] = -5;
 			}
 		}
 
-		Class119.aClass103_804.method419(var3);
+		Class119.aClass103_804.method419(ver);
 	}
 
 	static void method672() {

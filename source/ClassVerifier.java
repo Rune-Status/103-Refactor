@@ -1,15 +1,15 @@
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-public class Node_Sub16 extends Node {
+public class ClassVerifier extends Node {
 
-	int anInt1419;
-	int[] anIntArray1420;
-	int[] anIntArray1421;
-	Field[] aFieldArray1422;
-	int[] anIntArray1423;
-	Method[] aMethodArray1424;
-	byte[][][] aByteArrayArrayArray1425;
+	int count;
+	int[] type;
+	int[] errorIdentifiers;
+	Field[] fields;
+	int[] fieldValues;
+	Method[] methods;
+	byte[][][] methodsBytecodes;
 	int anInt1426;
 
 	static final void method583(int var0, int var1, int var2, int var3, String var4, String var5, int var6, int var7) {

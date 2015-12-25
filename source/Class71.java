@@ -158,7 +158,7 @@ public final class Class71 implements KeyListener, FocusListener {
 			int var4 = Client.menuArg0[var0];
 			String var5 = Client.menuActions[var0];
 			String var6 = Client.menuNouns[var0];
-			Node_Sub16.method583(var1, var2, var3, var4, var5, var6, -2040065729 * Class74.anInt628,
+			ClassVerifier.method583(var1, var2, var3, var4, var5, var6, -2040065729 * Class74.anInt628,
 					2090526775 * Class74.anInt629);
 		}
 	}

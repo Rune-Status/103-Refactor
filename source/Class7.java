@@ -27,6 +27,8 @@ public class Class7 {
 			var5 = Client.inBuffer.getUShort();
 			DualNode_Sub12.regionXTEAs = new int[var5][4]; 
 
+			System.out.println("ChunkX: " + var3 + ", ChunkY: " + var2 + ", Count: " + var5 + ", (" + (var3 << 3) + ", " + (var2 << 3) + ")");
+			
 			for (var6 = 0; var6 < var5; ++var6) {
 				for (var7 = 0; var7 < 4; ++var7) {
 					DualNode_Sub12.regionXTEAs[var6][var7] = Client.inBuffer.getInt();

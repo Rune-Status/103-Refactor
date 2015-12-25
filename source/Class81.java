@@ -43,7 +43,7 @@ public class Class81 {
 		InterfaceNode.landscape.method15();
 
 		for (int var0 = 0; var0 < 4; ++var0) {
-			Client.aClass47Array2053[var0].method244();
+			Client.collisionMaps[var0].method244();
 		}
 
 		System.gc();

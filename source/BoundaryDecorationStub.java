@@ -146,7 +146,7 @@ public final class BoundaryDecorationStub {
 			InterfaceNode.landscape = new Landscape(4, 104, 104, Class39.tileHeights);
 
 			for (var0 = 0; var0 < 4; ++var0) {
-				Client.aClass47Array2053[var0] = new CollisionMap(104, 104);
+				Client.collisionMaps[var0] = new CollisionMap(104, 104);
 			}
 
 			RuneScript.minimapSprite = new Sprite(512, 512);
@@ -358,8 +358,8 @@ public final class BoundaryDecorationStub {
 							Class6.aString131 = GameStrings.aString1035 + 0 + "%";
 							Class6.anInt122 = 1595585568;
 						} else {
-							Class42 var17 = new Class42(Class40.aClass87_Sub1_445.method389("huffman", ""));
-							RuneScript.method872(var17);
+							Huffman var17 = new Huffman(Class40.aClass87_Sub1_445.method389("huffman", ""));
+							RuneScript.setHuffman(var17);
 							Class6.aString131 = GameStrings.aString873;
 							Class6.anInt122 = 1595585568;
 							Client.bootState = -926298570;

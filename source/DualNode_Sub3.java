@@ -318,7 +318,7 @@ public class DualNode_Sub3 extends DualNode {
 
 						Client.anInt2114 = Client.anInt2151 * -712636309;
 						Client.outBuffer.putHeader(210);
-						Client.outBuffer.putByte(TileDecorationStub.method464(var0));
+						Client.outBuffer.putByte(TileDecorationStub.getLength(var0));
 						Client.outBuffer.putString(var0);
 						break;
 					}

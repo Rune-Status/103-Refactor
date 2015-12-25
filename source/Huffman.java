@@ -1,12 +1,12 @@
 
-public class Class42 {
+public class Huffman {
 
 	byte[] aByteArray447;
 	int[] anIntArray448;
 	static long aLong449;
 	int[] anIntArray450;
 
-	public Class42(byte[] var1) {
+	public Huffman(byte[] var1) {
 		int var4 = var1.length;
 		this.anIntArray450 = new int[var4];
 		this.aByteArray447 = var1;
@@ -89,7 +89,7 @@ public class Class42 {
 
 	}
 
-	public int method227(byte[] var1, int var2, byte[] var3, int var4, int var5) {
+	public int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {
 		if (var5 == 0) {
 			return 0;
 		} else {

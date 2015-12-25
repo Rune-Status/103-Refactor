@@ -116,7 +116,7 @@ public final class Node_Sub8 extends Node {
 			Client.projectileDeque.method467();
 
 			for (var13 = 0; var13 < 4; ++var13) {
-				Client.aClass47Array2053[var13].method244();
+				Client.collisionMaps[var13].method244();
 			}
 
 		}
