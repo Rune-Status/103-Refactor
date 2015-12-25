@@ -17,27 +17,28 @@ public class Class7 {
 		int var1;
 		int var2;
 		int var3;
-		int var5;
-		int var6;
-		int var7;
+		int region_count;
+		int index;
+		int plane;
 		int var9;
 		if (!Client.dynamicRegion) {
 			var2 = Client.inBuffer.getUShortA();
 			var3 = Client.inBuffer.getULEShort();
-			var5 = Client.inBuffer.getUShort();
-			DualNode_Sub12.regionXTEAs = new int[var5][4]; 
+			region_count = Client.inBuffer.getUShort();
+			DualNode_Sub12.regionXTEAs = new int[region_count][4]; 
 
-			for (var6 = 0; var6 < var5; ++var6) {
-				for (var7 = 0; var7 < 4; ++var7) {
-					DualNode_Sub12.regionXTEAs[var6][var7] = Client.inBuffer.getInt();
+			for (index = 0; index < region_count; ++index) {
+				for (plane = 0; plane < 4; ++plane) {
+					DualNode_Sub12.regionXTEAs[index][plane] = Client.inBuffer.getInt();
+					System.out.println("region plane: " + index + "," + plane);
 				}
 			}
 
-			Client.regionIds = new int[var5];
-			Class69.mapRegionFileIds = new int[var5];
-			DualNode_Sub5.landRegionFielIds = new int[var5];
-			aByteArrayArray152 = new byte[var5][];
-			LandscapeTile.aByteArrayArray1406 = new byte[var5][];
+			Client.regionIds = new int[region_count];
+			Class69.mapRegionFileIds = new int[region_count];
+			DualNode_Sub5.landRegionFielIds = new int[region_count];
+			aByteArrayArray152 = new byte[region_count][];
+			LandscapeTile.aByteArrayArray1406 = new byte[region_count][];
 			boolean var13 = false;
 			if ((var3 / 8 == 48 || var3 / 8 == 49) && var2 / 8 == 48) {
 				var13 = true;
@@ -47,74 +48,75 @@ public class Class7 {
 				var13 = true;
 			}
 
-			var5 = 0;
+			region_count = 0;
 
-			for (var7 = (var3 - 6) / 8; var7 <= (6 + var3) / 8; ++var7) {
+			for (plane = (var3 - 6) / 8; plane <= (6 + var3) / 8; ++plane) {
 				for (var1 = (var2 - 6) / 8; var1 <= (6 + var2) / 8; ++var1) {
-					var9 = var1 + (var7 << 8);
+					var9 = var1 + (plane << 8);
 					if (!var13
-							|| var1 != 49 && var1 != 149 && var1 != 147 && var7 != 50 && (var7 != 49 || var1 != 47)) {
+							|| var1 != 49 && var1 != 149 && var1 != 147 && plane != 50 && (plane != 49 || var1 != 47)) {
 						
 					
 						
-						GameClient.dumpMap(var9, DualNode_Sub12.regionXTEAs[var5]);
-						Client.regionIds[var5] = var9;
-						Class69.mapRegionFileIds[var5] = Class48_Sub1.aClass87_Sub1_1295
-								.method383("m" + var7 + "_" + var1);
-						DualNode_Sub5.landRegionFielIds[var5] = Class48_Sub1.aClass87_Sub1_1295
-								.method383("l" + var7 + "_" + var1);
-						++var5;
+						GameClient.dumpMap(var9, DualNode_Sub12.regionXTEAs[region_count]);
+						Client.regionIds[region_count] = var9;
+						System.out.println("blahhh:" + Client.regionIds[region_count] + "," + var9);
+						Class69.mapRegionFileIds[region_count] = Class48_Sub1.aClass87_Sub1_1295
+								.method383("m" + plane + "_" + var1);
+						DualNode_Sub5.landRegionFielIds[region_count] = Class48_Sub1.aClass87_Sub1_1295
+								.method383("l" + plane + "_" + var1);
+						++region_count;
 					}
 				}
 			}
-
+			System.out.println("MapRegion: " + var3 + "," + var2);
 			Node_Sub8.method546(var3, var2);
 		} else {
 			var2 = Client.inBuffer.getUShort();
 			var3 = Client.inBuffer.getULEShortA();
-			var5 = Client.inBuffer.getUShort();
+			region_count = Client.inBuffer.getUShort();
 			Client.inBuffer.bitAccess();
 
-			for (var6 = 0; var6 < 4; ++var6) {
-				for (var7 = 0; var7 < 13; ++var7) {
+			for (index = 0; index < 4; ++index) {
+				for (plane = 0; plane < 13; ++plane) {
 					for (var1 = 0; var1 < 13; ++var1) {
 						var9 = Client.inBuffer.getBits(1);
 						if (var9 == 1) {
-							Client.anIntArrayArrayArray2055[var6][var7][var1] = Client.inBuffer.getBits(26);
+							Client.anIntArrayArrayArray2055[index][plane][var1] = Client.inBuffer.getBits(26);
 						} else {
-							Client.anIntArrayArrayArray2055[var6][var7][var1] = -1;
+							Client.anIntArrayArrayArray2055[index][plane][var1] = -1;
 						}
 					}
 				}
 			}
 
 			Client.inBuffer.byteAccess();
-			DualNode_Sub12.regionXTEAs = new int[var5][4];
+			DualNode_Sub12.regionXTEAs = new int[region_count][4];
 
-			for (var6 = 0; var6 < var5; ++var6) {
-				for (var7 = 0; var7 < 4; ++var7) {
-					DualNode_Sub12.regionXTEAs[var6][var7] = Client.inBuffer.getInt();
+			for (index = 0; index < region_count; ++index) {
+				for (plane = 0; plane < 4; ++plane) {
+					DualNode_Sub12.regionXTEAs[index][plane] = Client.inBuffer.getInt();
 				}
 			}
 
-			Client.regionIds = new int[var5];
-			Class69.mapRegionFileIds = new int[var5];
-			DualNode_Sub5.landRegionFielIds = new int[var5];
-			aByteArrayArray152 = new byte[var5][];
-			LandscapeTile.aByteArrayArray1406 = new byte[var5][];
-			var5 = 0;
+			Client.regionIds = new int[region_count];
+			Class69.mapRegionFileIds = new int[region_count];
+			DualNode_Sub5.landRegionFielIds = new int[region_count];
+			aByteArrayArray152 = new byte[region_count][];
+			LandscapeTile.aByteArrayArray1406 = new byte[region_count][];
+			region_count = 0;
 
-			for (var6 = 0; var6 < 4; ++var6) {
-				for (var7 = 0; var7 < 13; ++var7) {
+			for (index = 0; index < 4; ++index) {
+				for (plane = 0; plane < 13; ++plane) {
 					for (var1 = 0; var1 < 13; ++var1) {
-						var9 = Client.anIntArrayArrayArray2055[var6][var7][var1];
+						var9 = Client.anIntArrayArrayArray2055[index][plane][var1];
 						if (var9 != -1) {
 							int var11 = var9 >> 14 & 1023;
 							int var12 = var9 >> 3 & 2047;
 							int var8 = (var11 / 8 << 8) + var12 / 8;
 
 							int var4;
-							for (var4 = 0; var4 < var5; ++var4) {
+							for (var4 = 0; var4 < region_count; ++var4) {
 								if (Client.regionIds[var4] == var8) {
 									var8 = -1;
 									break;
@@ -122,14 +124,14 @@ public class Class7 {
 							}
 
 							if (var8 != -1) {
-								Client.regionIds[var5] = var8;
+								Client.regionIds[region_count] = var8;
 								var4 = var8 >> 8 & 255;
 								int var10 = var8 & 255;
-								Class69.mapRegionFileIds[var5] = Class48_Sub1.aClass87_Sub1_1295
+								Class69.mapRegionFileIds[region_count] = Class48_Sub1.aClass87_Sub1_1295
 										.method383("m" + var4 + "_" + var10);
-								DualNode_Sub5.landRegionFielIds[var5] = Class48_Sub1.aClass87_Sub1_1295
+								DualNode_Sub5.landRegionFielIds[region_count] = Class48_Sub1.aClass87_Sub1_1295
 										.method383("l" + var4 + "_" + var10);
-								++var5;
+								++region_count;
 							}
 						}
 					}
