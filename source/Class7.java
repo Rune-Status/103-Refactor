@@ -33,6 +33,7 @@ public class Class7 {
 					System.out.println("region plane: " + index + "," + plane);
 				}
 			}
+			//System.out.println("ChunkX: " + var3 + ", ChunkY: " + var2 + ", Count: " + var5 + ", (" + (var3 << 3) + ", " + (var2 << 3) + ")");
 
 			Client.regionIds = new int[region_count];
 			Class69.mapRegionFileIds = new int[region_count];

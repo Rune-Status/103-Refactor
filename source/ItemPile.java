@@ -47,7 +47,7 @@ public final class ItemPile {
 					InterfaceNode.landscape.method56(var0, var2, var3);
 					var16 = Class37.getObjectDefinition(var32);
 					if (-1030255905 * var16.anInt1690 != 0) {
-						Client.aClass47Array2053[var0].method238(var2, var3, var33, var34, var16.aBool1714);
+						Client.collisionMaps[var0].method238(var2, var3, var33, var34, var16.aBool1714);
 					}
 				}
 
@@ -64,7 +64,7 @@ public final class ItemPile {
 					}
 
 					if (var16.anInt1690 * -1030255905 != 0) {
-						Client.aClass47Array2053[var0].method239(var2, var3, 1162660975 * var16.sizeX,
+						Client.collisionMaps[var0].method239(var2, var3, 1162660975 * var16.sizeX,
 								var16.sizeY * -1976023901, var34, var16.aBool1714);
 					}
 				}
@@ -73,7 +73,7 @@ public final class ItemPile {
 					InterfaceNode.landscape.method27(var0, var2, var3);
 					var16 = Class37.getObjectDefinition(var32);
 					if (var16.anInt1690 * -1030255905 == 1) {
-						Client.aClass47Array2053[var0].method241(var2, var3);
+						Client.collisionMaps[var0].method241(var2, var3);
 					}
 				}
 			}
@@ -85,7 +85,7 @@ public final class ItemPile {
 				}
 
 				Landscape var36 = InterfaceNode.landscape;
-				CollisionMap var21 = Client.aClass47Array2053[var0];
+				CollisionMap var21 = Client.collisionMaps[var0];
 				ObjectDefinition var8 = Class37.getObjectDefinition(var4);
 				int var12;
 				int var27;

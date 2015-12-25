@@ -106,7 +106,7 @@ public abstract class Class66 {
 						}
 
 						byte[] var14 = new byte[var13];
-						var12.position += Class120.aClass42_806.method227(var12.payload, 314639891 * var12.position,
+						var12.position += Class120.huffman.decompress(var12.payload, 314639891 * var12.position,
 								var14, 0, var13) * -184175589;
 						String var15 = LandscapeTile.getString(var14, 0, var13);
 						var16 = var15;
@@ -114,7 +114,7 @@ public abstract class Class66 {
 						var16 = "Cabbage";
 					}
 
-					var16 = DualNode_Sub13_Sub3.method971(Class48.method246(var16));
+					var16 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var16));
 					var2.overheadText = var16.trim();
 					var2.anInt1942 = -1783525269 * (var5 >> 8);
 					var2.anInt1926 = (var5 & 255) * -819780711;
@@ -201,7 +201,7 @@ public abstract class Class66 {
 		if ((var3 & 8192) != 0) {
 			for (var5 = 0; var5 < 3; ++var5) {
 				var2.aStringArray1986[var5] = buf.getString();
-				System.out.println(var5 + ", \"" + var2.aStringArray1986[var5] + "\"");
+				//System.out.println(var5 + ", \"" + var2.aStringArray1986[var5] + "\"");
 			}
 		}
 

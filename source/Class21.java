@@ -76,7 +76,7 @@ public class Class21 {
 				Client.aClass48_Sub1_2234.anInt510 = -25596441;
 				Class48_Sub1 var11 = Client.aClass48_Sub1_2234;
 				int var10 = Class39.method218(var4, var7, var9, var11,
-						Client.aClass47Array2053[-1522270499 * var0.anInt2004], true, Client.anIntArray2235,
+						Client.collisionMaps[-1522270499 * var0.anInt2004], true, Client.anIntArray2235,
 						Client.anIntArray2236);
 				if (var10 >= 1) {
 					for (int var5 = 0; var5 < var10 - 1; ++var5) {

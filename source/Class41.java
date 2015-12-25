@@ -81,7 +81,7 @@ public final class Class41 {
 				var6.putBytes(var24, 0, 24);
 				var6.putLong(var4.nextLong());
 				var6.encryptRSA(Class22.aBigInteger283, Class22.aBigInteger284);
-				var8 = TileDecorationStub.method464(var3);
+				var8 = TileDecorationStub.getLength(var3);
 				if (var8 % 8 != 0) {
 					var8 += 8 - var8 % 8;
 				}

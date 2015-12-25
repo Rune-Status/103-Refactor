@@ -15,8 +15,8 @@ public class RuneScript extends DualNode {
 	static Class106 aClass106_1725 = new Class106(128);
 	int stringStackCount;
 
-	public static void method872(Class42 var0) {
-		Class120.aClass42_806 = var0;
+	public static void setHuffman(Huffman var0) {
+		Class120.huffman = var0;
 	}
 
 	static final void prcoessSceneFrame() {

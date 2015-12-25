@@ -40,7 +40,7 @@ public final class Client extends GameEngine {
 	static int anInt2018 = 0;
 	static int anInt2019 = -1669020249;
 	static boolean aBool2020 = true;
-	static boolean worldSelectorDisplayed = false;
+	static boolean displayFps = false;
 	static int hintArrowY = 0;
 	static int[] experiences = new int[25];
 	static int anInt2021 = 0;
@@ -86,7 +86,7 @@ public final class Client extends GameEngine {
 	static int anInt2050 = 693748815;
 	static int anInt2051 = -943887744;
 	static int[] regionIds;
-	static CollisionMap[] aClass47Array2053 = new CollisionMap[4];
+	static CollisionMap[] collisionMaps = new CollisionMap[4];
 	static boolean dynamicRegion = false;
 	static int[][][] anIntArrayArrayArray2055 = new int[4][13][13];
 	static int[] anIntArray2056 = new int[] { 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3 };
@@ -559,7 +559,7 @@ public final class Client extends GameEngine {
 						System.gc();
 
 						for (var3 = 0; var3 < 4; ++var3) {
-							aClass47Array2053[var3].method244();
+							collisionMaps[var3].method244();
 						}
 
 						for (var3 = 0; var3 < 4; ++var3) {
@@ -610,7 +610,7 @@ public final class Client extends GameEngine {
 								if (var7 != null) {
 									Class34.method201();
 									Class93.method404(var7, var5, var6, 1990031784 * TileDecorationStub.anInt840 - 48,
-											1403298904 * Class90.anInt722 - 48, aClass47Array2053);
+											1403298904 * Class90.anInt722 - 48, collisionMaps);
 								}
 							}
 
@@ -633,7 +633,7 @@ public final class Client extends GameEngine {
 									var89 = 64 * (regionIds[var83] & 255) - 714823515 * Class28.regionBaseY;
 									Class34.method201();
 									BoundaryDecorationStub.method106(var87, var6, var89, InterfaceNode.landscape,
-											aClass47Array2053);
+											collisionMaps);
 								}
 							}
 						}
@@ -671,7 +671,7 @@ public final class Client extends GameEngine {
 													var17 = 8 * var6;
 													var18 = 8 * (var11 & 7);
 													var19 = (var12 & 7) * 8;
-													CollisionMap[] var20 = aClass47Array2053;
+													CollisionMap[] var20 = collisionMaps;
 
 													for (var21 = 0; var21 < 8; ++var21) {
 														for (var22 = 0; var22 < 8; ++var22) {
@@ -756,7 +756,7 @@ public final class Client extends GameEngine {
 														&& LandscapeTile.aByteArrayArray1406[var13] != null) {
 													Class94.method405(LandscapeTile.aByteArrayArray1406[var13], var83,
 															var5 * 8, 8 * var6, var8, 8 * (var10 & 7), (var11 & 7) * 8,
-															var9, InterfaceNode.landscape, aClass47Array2053);
+															var9, InterfaceNode.landscape, collisionMaps);
 													break;
 												}
 											}
@@ -770,7 +770,7 @@ public final class Client extends GameEngine {
 						Class66.method325();
 						Class34.method201();
 						Landscape var92 = InterfaceNode.landscape;
-						CollisionMap[] var93 = aClass47Array2053;
+						CollisionMap[] var93 = collisionMaps;
 
 						for (var6 = 0; var6 < 4; ++var6) {
 							for (var89 = 0; var89 < 104; ++var89) {
@@ -1387,7 +1387,11 @@ public final class Client extends GameEngine {
 								lastFrameId = frameId * -874887809;
 
 								// TODO
+
 								//System.out.println("Incomming Frame: ( " + (793368497 * frameId) + ", " + (371800591 * frameSize) + " (" + Class100.frameSizes[frameId * 793368497] + ") )");
+
+								 //System.out.println("Incomming Frame: ( " + (793368497 * frameId) + ", " + (371800591 * frameSize) + " (" + Class100.frameSizes[frameId * 793368497] + ") )");
+
 
 								if (793368497 * frameId == 120) {
 									var5 = inBuffer.getIMEInt();
@@ -1437,7 +1441,7 @@ public final class Client extends GameEngine {
 
 									InterfaceNode.method579(var6, var5, var89);
 
-									System.out.println("sendInterface(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", "
+									if (GameClient.dump) System.out.println("sendInterface(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", "
 											+ var5 + ", " + (var89 == 1) + ");");
 
 									frameId = -726667601;
@@ -1529,7 +1533,7 @@ public final class Client extends GameEngine {
 								if (frameId * 793368497 == 161) {
 									var126 = inBuffer.getUByte() == 1;
 									if (var126) {
-										Class42.aLong449 = (Node_Sub5.currentTimeMs() - inBuffer.getLong())
+										Huffman.aLong449 = (Node_Sub5.currentTimeMs() - inBuffer.getLong())
 												* 3889566144197309745L;
 										Class70.aClass114_588 = new Class114(inBuffer, true);
 									} else {
@@ -1643,7 +1647,7 @@ public final class Client extends GameEngine {
 										widgetConfigs.put(new WidgetConfig(var8), var48);
 									}
 
-									System.out.println("sendInterfaceSettings(" + (var6 >> 0x10) + ", "
+									if (GameClient.dump) System.out.println("sendInterfaceSettings(" + (var6 >> 0x10) + ", "
 											+ (var6 & 0xFFFF) + ", " + var89 + ", " + var5 + ", " + var8 + ");");
 
 									frameId = -726667601;
@@ -1659,7 +1663,7 @@ public final class Client extends GameEngine {
 										Class94.tempVars[var6] = var173;
 									}
 
-									System.out.println("sendVarp(" + var6 + ", " + var173 + ");");
+									if (GameClient.dump) System.out.println("sendVarp(" + var6 + ", " + var173 + ");");
 
 									World.method484(var6);
 									anIntArray2152[(anInt2153 += 1551596873) * -729938695 - 1 & 31] = var6;
@@ -1676,7 +1680,7 @@ public final class Client extends GameEngine {
 										Class94.tempVars[var6] = var5;
 									}
 
-									System.out.println("sendVarp(" + var6 + ", " + var5 + ");");
+									if (GameClient.dump) System.out.println("sendVarp(" + var6 + ", " + var5 + ");");
 
 									World.method484(var6);
 									anIntArray2152[(anInt2153 += 1551596873) * -729938695 - 1 & 31] = var6;
@@ -1746,7 +1750,7 @@ public final class Client extends GameEngine {
 											}
 
 											byte[] var166 = new byte[var18];
-											var162.position += Class120.aClass42_806.method227(var162.payload,
+											var162.position += Class120.huffman.decompress(var162.payload,
 													314639891 * var162.position, var166, 0, var18) * -184175589;
 											String var165 = LandscapeTile.getString(var166, 0, var18);
 											var167 = var165;
@@ -1754,7 +1758,7 @@ public final class Client extends GameEngine {
 											var167 = "Cabbage";
 										}
 
-										var167 = DualNode_Sub13_Sub3.method971(Class48.method246(var167));
+										var167 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var167));
 										byte var161;
 										if (var127.aBool611) {
 											var161 = 7;
@@ -1949,7 +1953,7 @@ public final class Client extends GameEngine {
 										Class65.method319(anInt2226 * -1074177723, 1);
 									}
 
-									System.out.println("sendInterfaceTransform(" + (var6 >> 0x10) + ", "
+									if (GameClient.dump) System.out.println("sendInterfaceTransform(" + (var6 >> 0x10) + ", "
 											+ (var6 & 0xFFFF) + ", " + (var5 >> 0x10) + ", " + (var5 & 0xFFFF) + ");");
 
 									frameId = -726667601;
@@ -2012,7 +2016,7 @@ public final class Client extends GameEngine {
 											}
 
 											byte[] var164 = new byte[var145];
-											var155.position += Class120.aClass42_806.method227(var155.payload,
+											var155.position += Class120.huffman.decompress(var155.payload,
 													314639891 * var155.position, var164, 0, var145) * -184175589;
 											String var168 = LandscapeTile.getString(var164, 0, var145);
 											var158 = var168;
@@ -2020,7 +2024,7 @@ public final class Client extends GameEngine {
 											var158 = "Cabbage";
 										}
 
-										var158 = DualNode_Sub13_Sub3.method971(Class48.method246(var158));
+										var158 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var158));
 										if (var136.anInt606 * -2127218069 != -1) {
 											DualNode_Sub1
 													.method658(9,
@@ -2117,7 +2121,7 @@ public final class Client extends GameEngine {
 										}
 									}
 
-									System.out.println("sendSkills(" + var89 + ", " + var6 + ", " + var5 + ");");
+									if (GameClient.dump) System.out.println("sendSkills(" + var89 + ", " + var6 + ", " + var5 + ");");
 
 									anIntArray2156[(anInt2157 += -245523573) * -549276637 - 1 & 31] = var89;
 									frameId = -726667601;
@@ -2135,7 +2139,7 @@ public final class Client extends GameEngine {
 										Class68.method326(var109);
 									}
 
-									System.out.println("sendInterfaceText(" + (var5 >> 0x10) + ", " + (var5 & 0xFFFF)
+									if (GameClient.dump) System.out.println("sendInterfaceText(" + (var5 >> 0x10) + ", " + (var5 & 0xFFFF)
 											+ ", \"" + var135 + "\");");
 
 									frameId = -726667601;
@@ -2187,7 +2191,7 @@ public final class Client extends GameEngine {
 								}
 
 								if (793368497 * frameId == 242) {
-									DualNode_Sub2.method671(inBuffer, frameSize * 371800591, -1457674298);
+									DualNode_Sub2.decodeClassVerifier(inBuffer, frameSize * 371800591, -1457674298);
 									frameId = -726667601;
 									var85 = true;
 									break label3092;
@@ -2279,7 +2283,7 @@ public final class Client extends GameEngine {
 									var5 = inBuffer.getInt();
 									Class20_Sub1.aClass61_1215 = IsaacRandom.aClass63_102.method308(var5);
 
-									System.out.println("sendIP(\"" + Class63.method315(var5) + "\");");
+									if (GameClient.dump) System.out.println("sendIP(\"" + Class63.method315(var5) + "\");");
 
 									frameId = -726667601;
 									var85 = true;
@@ -2388,7 +2392,7 @@ public final class Client extends GameEngine {
 										aBoolArray2118[var6] = true;
 									}
 
-									System.out.println("sendRootInterface(" + var5 + ");");
+									if (GameClient.dump) System.out.println("sendRootInterface(" + var5 + ");");
 
 									frameId = -726667601;
 									var85 = true;
@@ -2449,7 +2453,7 @@ public final class Client extends GameEngine {
 										}
 
 										byte[] var116 = new byte[var9];
-										var152.position += Class120.aClass42_806.method227(var152.payload,
+										var152.position += Class120.huffman.decompress(var152.payload,
 												var152.position * 314639891, var116, 0, var9) * -184175589;
 										String var119 = LandscapeTile.getString(var116, 0, var9);
 										var138 = var119;
@@ -2457,7 +2461,7 @@ public final class Client extends GameEngine {
 										var138 = "Cabbage";
 									}
 
-									var138 = DualNode_Sub13_Sub3.method971(Class48.method246(var138));
+									var138 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var138));
 									Class75.method334(6, var94, var138);
 									frameId = -726667601;
 									var85 = true;
@@ -2569,7 +2573,7 @@ public final class Client extends GameEngine {
 										aBoolArray2109[var89 - 1] = var6 == 0;
 									}
 
-									System.out.println("sendPlayerAction(" + var89 + ", \"" + var94 + "\", " + (var89 == 0) + ");");
+									if (GameClient.dump) System.out.println("sendPlayerAction(" + var89 + ", \"" + var94 + "\", " + (var89 == 0) + ");");
 
 									frameId = -726667601;
 									var85 = true;
@@ -2585,7 +2589,7 @@ public final class Client extends GameEngine {
 										}
 									}
 
-									System.out.println("sendVarpReset();");
+									if (GameClient.dump) System.out.println("sendVarpReset();");
 
 									ByteBuf.method644();
 									anInt2153 += -1888507616;
@@ -3006,7 +3010,7 @@ public final class Client extends GameEngine {
 										}
 									}
 
-									System.out.println("sendVarpRecache();");
+									if (GameClient.dump) System.out.println("sendVarpRecache();");
 
 									frameId = -726667601;
 									var85 = true;
@@ -3227,7 +3231,7 @@ public final class Client extends GameEngine {
 						outBuffer.putHeader(54);
 						outBuffer.putByte(0);
 						var2 = outBuffer.position * 314639891;
-						BitBuf.method883(outBuffer);
+						BitBuf.encodeClassVerifier(outBuffer);
 						outBuffer.putVarByte(outBuffer.position * 314639891 - var2);
 					}
 
@@ -3321,15 +3325,15 @@ public final class Client extends GameEngine {
 						var83 = 2090526775 * Class74.anInt629;
 						if (var83 < 0) {
 							var83 = 0;
-						} else if (var83 > 674167779 * Node_Sub9.anInt1339) {
-							var83 = Node_Sub9.anInt1339 * 674167779;
+						} else if (var83 > 674167779 * Node_Sub9.gameHeight) {
+							var83 = Node_Sub9.gameHeight * 674167779;
 						}
 
 						var5 = Class74.anInt628 * -2040065729;
 						if (var5 < 0) {
 							var5 = 0;
-						} else if (var5 > Class34.anInt381 * -452716157) {
-							var5 = -452716157 * Class34.anInt381;
+						} else if (var5 > Class34.gameWidth * -452716157) {
+							var5 = -452716157 * Class34.gameWidth;
 						}
 
 						var6 = (int) var65;
@@ -3446,7 +3450,7 @@ public final class Client extends GameEngine {
 										var12 = var8;
 										if (var10 != 22 && var10 != 29 && var10 != 34 && var10 != 36 && var10 != 46
 												&& var10 != 47 && var10 != 48) {
-											int[][] var154 = aClass47Array2053[-747958745
+											int[][] var154 = collisionMaps[-747958745
 													* InterfaceNode.floorLevel].flags;
 
 											for (var16 = 0; var16 < 10; ++var16) {
@@ -3615,8 +3619,8 @@ public final class Client extends GameEngine {
 							}
 
 							if (anInt2226 * -1074177723 != -1) {
-								Class40.method222(-1074177723 * anInt2226, 0, 0, Class34.anInt381 * -452716157,
-										Node_Sub9.anInt1339 * 674167779, 0, 0);
+								Class40.method222(-1074177723 * anInt2226, 0, 0, Class34.gameWidth * -452716157,
+										Node_Sub9.gameHeight * 674167779, 0, 0);
 							}
 
 							anInt2151 += 44844977;
@@ -4740,7 +4744,7 @@ public final class Client extends GameEngine {
 		CacheIndex.aClipboard1329 = this.getToolkit().getSystemClipboard();
 		Class52.method260(this, Class31.aString349);
 		if (anInt2074 * 1082541889 != 0) {
-			worldSelectorDisplayed = true;
+			displayFps = true;
 		}
 
 		int var4 = -1207115777 * Node_Sub5.aClass24_1265.anInt300;
@@ -4757,8 +4761,8 @@ public final class Client extends GameEngine {
 			BitBuf var5 = outBuffer;
 			int var6 = resizable ? 2 : 1;
 			var5.putByte(var6);
-			outBuffer.putShort(Class34.anInt381 * -452716157);
-			outBuffer.putShort(674167779 * Node_Sub9.anInt1339);
+			outBuffer.putShort(Class34.gameWidth * -452716157);
+			outBuffer.putShort(674167779 * Node_Sub9.gameHeight);
 		}
 
 		aBool1979 = true;
@@ -4828,8 +4832,8 @@ public final class Client extends GameEngine {
 					BitBuf var5 = outBuffer;
 					var6 = resizable ? 2 : 1;
 					var5.putByte(var6);
-					outBuffer.putShort(-452716157 * Class34.anInt381);
-					outBuffer.putShort(674167779 * Node_Sub9.anInt1339);
+					outBuffer.putShort(-452716157 * Class34.gameWidth);
+					outBuffer.putShort(674167779 * Node_Sub9.gameHeight);
 				}
 
 				aBool1979 = true;
@@ -4874,7 +4878,7 @@ public final class Client extends GameEngine {
 
 				if (var19) {
 					var9.setColor(Color.black);
-					var9.fillRect(0, 0, Class34.anInt381 * -452716157, 674167779 * Node_Sub9.anInt1339);
+					var9.fillRect(0, 0, Class34.gameWidth * -452716157, 674167779 * Node_Sub9.gameHeight);
 				}
 
 				if (var8 == null) {
@@ -4896,11 +4900,11 @@ public final class Client extends GameEngine {
 					var10.setFont(Class7.aFont153);
 					var10.setColor(Color.white);
 					var10.drawString(var7, (304 - IsaacRandom.aFontMetrics98.stringWidth(var7)) / 2, 22);
-					var9.drawImage(IndexTable.anImage572, Class34.anInt381 * -452716157 / 2 - 152,
-							Node_Sub9.anInt1339 * 674167779 / 2 - 18, (ImageObserver) null);
+					var9.drawImage(IndexTable.anImage572, Class34.gameWidth * -452716157 / 2 - 152,
+							Node_Sub9.gameHeight * 674167779 / 2 - 18, (ImageObserver) null);
 				} catch (Exception var13) {
-					int var11 = -452716157 * Class34.anInt381 / 2 - 152;
-					int var12 = 674167779 * Node_Sub9.anInt1339 / 2 - 18;
+					int var11 = -452716157 * Class34.gameWidth / 2 - 152;
+					int var12 = 674167779 * Node_Sub9.gameHeight / 2 - 18;
 					var9.setColor(var8);
 					var9.drawRect(var11, var12, 303, 33);
 					var9.fillRect(var11 + 2, 2 + var12, 3 * var6, 30);
@@ -5132,7 +5136,7 @@ public final class Client extends GameEngine {
 		int var2 = var0.position * 314639891;
 		byte[] var3 = Class53.method273(var1);
 		var0.putUSmart(var3.length);
-		var0.position += Class120.aClass42_806.method228(var3, 0, var3.length, var0.payload, 314639891 * var0.position)
+		var0.position += Class120.huffman.method228(var3, 0, var3.length, var0.payload, 314639891 * var0.position)
 				* -184175589;
 		return var0.position * 314639891 - var2;
 	}

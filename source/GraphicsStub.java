@@ -204,7 +204,7 @@ public final class GraphicsStub extends Entity {
 	}
 
 	public static boolean method936(int var0) {
-		Node_Sub16 var1 = (Node_Sub16) Class119.aClass103_804.method420();
+		ClassVerifier var1 = (ClassVerifier) Class119.aClass103_804.method420();
 		return var1 != null;
 	}
 }

@@ -43,7 +43,7 @@ public class Class16 {
 	}
 
 	static void method127(GameEngine var0) {
-		if (Class6.aBool143) {
+		if (Class6.loadedWorlds) {
 			BoundaryDecorationStub.method107(var0);
 		} else {
 			if ((823601801 * Class74.anInt627 == 1 || !ClanMate.aBool1221 && 823601801 * Class74.anInt627 == 4)
@@ -75,7 +75,7 @@ public class Class16 {
 									&& Class74.anInt629 * 2090526775 >= var1
 									&& 2090526775 * Class74.anInt629 <= var2 + var1) {
 								if (Class30.loadWorlds()) {
-									Class6.aBool143 = true;
+									Class6.loadedWorlds = true;
 								}
 
 								return;
@@ -83,7 +83,7 @@ public class Class16 {
 						}
 
 						if (Class76.aClass26_644 != null && Class30.loadWorlds()) {
-							Class6.aBool143 = true;
+							Class6.loadedWorlds = true;
 						}
 					}
 

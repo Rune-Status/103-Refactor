@@ -51,6 +51,7 @@ public class GameClient extends JFrame implements AppletStub {
 	private String host;
 	private Client clnt;
 	public static boolean rsps;
+	public static boolean dump;
 	private Map<String, String> map;
 
 	public static void main(String[] args) throws Exception {
@@ -67,7 +68,8 @@ public class GameClient extends JFrame implements AppletStub {
 
 	private void startApplet() {
 		try {
-			rsps = true;
+			rsps = false;
+			dump = !rsps;
 			clnt = new Client();
 			map = new HashMap<>();
 			host = rsps ? new String("http://127.0.0.1") : new String("http://oldschool86.runescape.com");
@@ -97,18 +99,20 @@ public class GameClient extends JFrame implements AppletStub {
 			clnt.init();
 			clnt.start();
 
-			/*
-			 * for (int iii = 0; iii < Class109.frameSizes.length; iii++) { int
-			 * size = Class109.frameSizes[iii]; if (size == -1)
-			 * System.out.println(
-			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
-			 * ", FrameType.VARIABLE_BYTE);"); else if (size == -2)
-			 * System.out.println(
-			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
-			 * ", FrameType.VARIABLE_SHORT);"); else System.out.println(
-			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
-			 * ", FrameType.FIXED);"); }
-			 */
+			
+			/*for (int iii = 0; iii < Class100.frameSizes.length; iii++) {
+				int size = Class100.frameSizes[iii];
+				if (size == -1)
+					System.out.println("GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii
+							+ ", FrameType.VARIABLE_BYTE);");
+				else if (size == -2)
+					System.out.println("GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii
+							+ ", FrameType.VARIABLE_SHORT);");
+				else
+					System.out.println(
+							"GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii + ", FrameType.FIXED);");
+			}*/
+			 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

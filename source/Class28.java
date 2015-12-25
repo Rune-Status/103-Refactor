@@ -62,7 +62,7 @@ public class Class28 {
 
 					for (int var5 = 0; var5 < this.aStringArray324.length; ++var5) {
 						if (this.aBoolArray322[var5] && this.aStringArray324[var5] != null) {
-							var2 += 2 + TileDecorationStub.method464(this.aStringArray324[var5]);
+							var2 += 2 + TileDecorationStub.getLength(this.aStringArray324[var5]);
 							++var4;
 						}
 					}

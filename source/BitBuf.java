@@ -64,95 +64,95 @@ public final class BitBuf extends ByteBuf {
 		super(var1);
 	}
 
-	public static void method883(BitBuf var0) {
-		Node_Sub16 var1 = (Node_Sub16) Class119.aClass103_804.method420();
-		if (var1 != null) {
-			int var2 = var0.position * 314639891;
-			var0.putInt(var1.anInt1426 * 2103128295);
+	public static void encodeClassVerifier(BitBuf buf) {
+		ClassVerifier ver = (ClassVerifier) Class119.aClass103_804.method420();
+		if (ver != null) {
+			int pos = buf.position * 314639891;
+			buf.putInt(ver.anInt1426 * 2103128295);
 
-			for (int var3 = 0; var3 < var1.anInt1419 * -707810723; ++var3) {
-				if (var1.anIntArray1421[var3] != 0) {
-					var0.putByte(var1.anIntArray1421[var3]);
+			for (int index = 0; index < ver.count * -707810723; ++index) {
+				if (ver.errorIdentifiers[index] != 0) {
+					buf.putByte(ver.errorIdentifiers[index]);
 				} else {
 					try {
-						int var4 = var1.anIntArray1420[var3];
-						Field var5;
-						int var6;
-						if (var4 == 0) {
-							var5 = var1.aFieldArray1422[var3];
-							var6 = var5.getInt((Object) null);
-							var0.putByte(0);
-							var0.putInt(var6);
-						} else if (var4 == 1) {
-							var5 = var1.aFieldArray1422[var3];
-							var5.setInt((Object) null, var1.anIntArray1423[var3]);
-							var0.putByte(0);
-						} else if (var4 == 2) {
-							var5 = var1.aFieldArray1422[var3];
-							var6 = var5.getModifiers();
-							var0.putByte(0);
-							var0.putInt(var6);
+						int type = ver.type[index];
+						Field field;
+						int fieldValue;
+						if (type == 0) {
+							field = ver.fields[index];
+							fieldValue = field.getInt((Object) null);
+							buf.putByte(0);
+							buf.putInt(fieldValue);
+						} else if (type == 1) {
+							field = ver.fields[index];
+							field.setInt((Object) null, ver.fieldValues[index]);
+							buf.putByte(0);
+						} else if (type == 2) {
+							field = ver.fields[index];
+							fieldValue = field.getModifiers();
+							buf.putByte(0);
+							buf.putInt(fieldValue);
 						}
 
-						Method var22;
-						if (var4 == 3) {
-							var22 = var1.aMethodArray1424[var3];
-							byte[][] var23 = var1.aByteArrayArrayArray1425[var3];
-							Object[] var7 = new Object[var23.length];
+						Method method;
+						if (type == 3) {
+							method = ver.methods[index];
+							byte[][] bytecodes = ver.methodsBytecodes[index];
+							Object[] objects = new Object[bytecodes.length];
 
-							for (int var8 = 0; var8 < var23.length; ++var8) {
-								ObjectInputStream var9 = new ObjectInputStream(new ByteArrayInputStream(var23[var8]));
-								var7[var8] = var9.readObject();
+							for (int code = 0; code < bytecodes.length; ++code) {
+								ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bytecodes[code]));
+								objects[code] = ois.readObject();
 							}
 
-							Object var24 = var22.invoke((Object) null, var7);
-							if (var24 == null) {
-								var0.putByte(0);
-							} else if (var24 instanceof Number) {
-								var0.putByte(1);
-								var0.putLong(((Number) var24).longValue());
-							} else if (var24 instanceof String) {
-								var0.putByte(2);
-								var0.putString((String) var24);
+							Object invoke = method.invoke((Object) null, objects);
+							if (invoke == null) {
+								buf.putByte(0);
+							} else if (invoke instanceof Number) {
+								buf.putByte(1);
+								buf.putLong(((Number) invoke).longValue());
+							} else if (invoke instanceof String) {
+								buf.putByte(2);
+								buf.putString((String) invoke);
 							} else {
-								var0.putByte(4);
+								buf.putByte(4);
 							}
-						} else if (var4 == 4) {
-							var22 = var1.aMethodArray1424[var3];
-							var6 = var22.getModifiers();
-							var0.putByte(0);
-							var0.putInt(var6);
+						} else if (type == 4) {
+							method = ver.methods[index];
+							fieldValue = method.getModifiers();
+							buf.putByte(0);
+							buf.putInt(fieldValue);
 						}
 					} catch (ClassNotFoundException var10) {
-						var0.putByte(-10);
+						buf.putByte(-10);
 					} catch (InvalidClassException var11) {
-						var0.putByte(-11);
+						buf.putByte(-11);
 					} catch (StreamCorruptedException var12) {
-						var0.putByte(-12);
+						buf.putByte(-12);
 					} catch (OptionalDataException var13) {
-						var0.putByte(-13);
+						buf.putByte(-13);
 					} catch (IllegalAccessException var14) {
-						var0.putByte(-14);
+						buf.putByte(-14);
 					} catch (IllegalArgumentException var15) {
-						var0.putByte(-15);
+						buf.putByte(-15);
 					} catch (InvocationTargetException var16) {
-						var0.putByte(-16);
+						buf.putByte(-16);
 					} catch (SecurityException var17) {
-						var0.putByte(-17);
+						buf.putByte(-17);
 					} catch (IOException var18) {
-						var0.putByte(-18);
+						buf.putByte(-18);
 					} catch (NullPointerException var19) {
-						var0.putByte(-19);
+						buf.putByte(-19);
 					} catch (Exception var20) {
-						var0.putByte(-20);
+						buf.putByte(-20);
 					} catch (Throwable var21) {
-						var0.putByte(-21);
+						buf.putByte(-21);
 					}
 				}
 			}
 
-			var0.putCrc(var2);
-			var1.unlink();
+			buf.putCrc(pos);
+			ver.unlink();
 		}
 	}
 }

@@ -70,7 +70,7 @@ public class Class86 {
 	static void method367(DualNode_Sub13_Sub3_Sub1 var0, DualNode_Sub13_Sub3_Sub1 var1, DualNode_Sub13_Sub3_Sub1 var2,
 			boolean var3) {
 		if (var3) {
-			Class6.anInt132 = 1079825139 * ((-452716157 * Class34.anInt381 - Client.anInt2233 * 1468194207) / 2);
+			Class6.anInt132 = 1079825139 * ((-452716157 * Class34.gameWidth - Client.anInt2233 * 1468194207) / 2);
 			Class6.anInt126 = Class6.anInt132 * 132725497 + 1843765198;
 		}
 
@@ -83,7 +83,7 @@ public class Class86 {
 		int var36;
 		int var39;
 		int var40;
-		if (Class6.aBool143) {
+		if (Class6.loadedWorlds) {
 			if (Class93.aSpriteArray733 == null) {
 				Class93.aSpriteArray733 = DynamicObject.method1023(Node_Sub5.aClass87_Sub1_1266, "sl_back", "");
 			}
@@ -361,7 +361,7 @@ public class Class86 {
 						;
 					}
 
-					var0.method980(DualNode_Sub13_Sub3.method971(var6), 180 + 1744540627 * Class6.anInt126 - 70, var28,
+					var0.method980(DualNode_Sub13_Sub3.appendTags(var6), 180 + 1744540627 * Class6.anInt126 - 70, var28,
 							16777215, 0);
 					var28 += 15;
 					var8 = GameStrings.aString1052;
@@ -427,7 +427,7 @@ public class Class86 {
 					}
 
 					var0.method980(
-							DualNode_Sub13_Sub3.method971(var6)
+							DualNode_Sub13_Sub3.appendTags(var6)
 									+ (Class6.anInt115 * -1914929121 == 0 & Client.engineCycle * -1040073859 % 40 < 20
 											? Class48_Sub1.method545(16776960) + Class35.aString388 : ""),
 							Class6.anInt126 * 1744540627 + 180 - 70, var28, 16777215, 0);
@@ -523,7 +523,7 @@ public class Class86 {
 					}
 
 					var0.method980(
-							DualNode_Sub13_Sub3.method971(var6) + (-1040073859 * Client.engineCycle % 40 < 20
+							DualNode_Sub13_Sub3.appendTags(var6) + (-1040073859 * Client.engineCycle % 40 < 20
 									? Class48_Sub1.method545(16776960) + Class35.aString388 : ""),
 							1744540627 * Class6.anInt126 + 180 - 34, var28, 16777215, 0);
 					var28 += 15;

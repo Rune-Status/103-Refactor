@@ -308,7 +308,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 		return this.method968(var1, new int[] { var2 }, aStringArray1839);
 	}
 
-	public static String method971(String var0) {
+	public static String appendTags(String var0) {
 		int var1 = var0.length();
 		int var3 = 0;
 

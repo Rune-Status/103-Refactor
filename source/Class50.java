@@ -63,8 +63,8 @@ public class Class50 {
 		TileDecorationStub.aWidget838 = null;
 		if (Client.anInt2226 * -1074177723 != -1) {
 			Client.anInt2168 = 0;
-			Class24.method164(Client.anInt2226 * -1074177723, 0, 0, -452716157 * Class34.anInt381,
-					Node_Sub9.anInt1339 * 674167779, 0, 0, -1);
+			Class24.method164(Client.anInt2226 * -1074177723, 0, 0, -452716157 * Class34.gameWidth,
+					Node_Sub9.gameHeight * 674167779, 0, 0, -1);
 		}
 
 		RSGraphics.noClip();

@@ -111,8 +111,8 @@ public class Class66_Sub2 extends Class66 {
 		var2 += 8;
 		var3 = 756648549 * Client.menuItemCount + 22;
 		var4 = var0 - var2 / 2;
-		if (var2 + var4 > Class34.anInt381 * -452716157) {
-			var4 = -452716157 * Class34.anInt381 - var2;
+		if (var2 + var4 > Class34.gameWidth * -452716157) {
+			var4 = -452716157 * Class34.gameWidth - var2;
 		}
 
 		if (var4 < 0) {
@@ -120,8 +120,8 @@ public class Class66_Sub2 extends Class66 {
 		}
 
 		int var5 = var1;
-		if (var1 + var3 > 674167779 * Node_Sub9.anInt1339) {
-			var5 = 674167779 * Node_Sub9.anInt1339 - var3;
+		if (var1 + var3 > 674167779 * Node_Sub9.gameHeight) {
+			var5 = 674167779 * Node_Sub9.gameHeight - var3;
 		}
 
 		if (var5 < 0) {

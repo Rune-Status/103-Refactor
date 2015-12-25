@@ -16,7 +16,7 @@ public final class Class34 {
 	int anInt378;
 	int anInt379;
 	int anInt380;
-	public static int anInt381;
+	public static int gameWidth;
 	int anInt382;
 	int anInt383;
 	int anInt384;

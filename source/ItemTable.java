@@ -11,8 +11,8 @@ public class ItemTable extends Node {
 	}
 
 	static final void method647(boolean var0) {
-		FriendedPlayer.method409(-1074177723 * Client.anInt2226, -452716157 * Class34.anInt381,
-				674167779 * Node_Sub9.anInt1339, var0);
+		FriendedPlayer.method409(-1074177723 * Client.anInt2226, -452716157 * Class34.gameWidth,
+				674167779 * Node_Sub9.gameHeight, var0);
 	}
 
 	public static void method648(Class87 var0) {

@@ -3,16 +3,16 @@ public class Landscape {
 
 	static int anInt7;
 	static int[] anIntArray8 = new int[] { 76, 8, 137, 4, 0, 1, 38, 2, 19 };
-	int anInt9;
+	int maxX;
 	static Class34[] aClass34Array10 = new Class34[500];
-	int[][][] anIntArrayArrayArray11;
+	int[][][] tileHeights;
 	LandscapeTile[][][] tiles;
 	static Deque aDeque12 = new Deque();
 	static boolean[][] aBoolArrayArray13;
 	EntityMarker[] tempEntityMarkers = new EntityMarker[5000];
 	int[][][] anIntArrayArrayArray14;
 	static int anInt15;
-	int anInt16;
+	int maxY;
 	static int anInt17 = 0;
 	static int anInt18;
 	static int anInt19;
@@ -22,7 +22,7 @@ public class Landscape {
 	static int anInt23;
 	static int screenCenterY;
 	static int anInt24;
-	int anInt25;
+	int maxZ;
 	static int anInt26;
 	static int anInt27;
 	static int anInt28;
@@ -70,9 +70,9 @@ public class Landscape {
 	public void method15() {
 		int var1;
 		int var2;
-		for (var1 = 0; var1 < this.anInt25; ++var1) {
-			for (var2 = 0; var2 < this.anInt9; ++var2) {
-				for (int var3 = 0; var3 < this.anInt16; ++var3) {
+		for (var1 = 0; var1 < this.maxZ; ++var1) {
+			for (var2 = 0; var2 < this.maxX; ++var2) {
+				for (int var3 = 0; var3 < this.maxY; ++var3) {
 					this.tiles[var1][var2][var3] = null;
 				}
 			}
@@ -101,8 +101,8 @@ public class Landscape {
 	public void method16(int var1) {
 		this.anInt40 = var1;
 
-		for (int var2 = 0; var2 < this.anInt9; ++var2) {
-			for (int var3 = 0; var3 < this.anInt16; ++var3) {
+		for (int var2 = 0; var2 < this.maxX; ++var2) {
+			for (int var3 = 0; var3 < this.maxY; ++var3) {
 				if (this.tiles[var1][var2][var3] == null) {
 					this.tiles[var1][var2][var3] = new LandscapeTile(var1, var2, var3);
 				}
@@ -111,13 +111,13 @@ public class Landscape {
 
 	}
 
-	public Landscape(int var1, int var2, int var3, int[][][] var4) {
-		this.anInt25 = var1;
-		this.anInt9 = var2;
-		this.anInt16 = var3;
-		this.tiles = new LandscapeTile[var1][var2][var3];
-		this.anIntArrayArrayArray14 = new int[var1][var2 + 1][var3 + 1];
-		this.anIntArrayArrayArray11 = var4;
+	public Landscape(int p, int x, int y, int[][][] th) {
+		this.maxZ = p;
+		this.maxX = x;
+		this.maxY = y;
+		this.tiles = new LandscapeTile[p][x][y];
+		this.anIntArrayArrayArray14 = new int[p][x + 1][y + 1];
+		this.tileHeights = th;
 		this.method15();
 	}
 
@@ -574,7 +574,7 @@ public class Landscape {
 	void method37(Entity_Sub1 var1, int var2, int var3, int var4) {
 		LandscapeTile var5;
 		Entity_Sub1 var6;
-		if (var3 < this.anInt9) {
+		if (var3 < this.maxX) {
 			var5 = this.tiles[var2][var3 + 1][var4];
 			if (var5 != null && var5.tileDecorationStub != null
 					&& var5.tileDecorationStub.entity instanceof Entity_Sub1) {
@@ -583,7 +583,7 @@ public class Landscape {
 			}
 		}
 
-		if (var4 < this.anInt9) {
+		if (var4 < this.maxX) {
 			var5 = this.tiles[var2][var3][var4 + 1];
 			if (var5 != null && var5.tileDecorationStub != null
 					&& var5.tileDecorationStub.entity instanceof Entity_Sub1) {
@@ -592,7 +592,7 @@ public class Landscape {
 			}
 		}
 
-		if (var3 < this.anInt9 && var4 < this.anInt16) {
+		if (var3 < this.maxX && var4 < this.maxY) {
 			var5 = this.tiles[var2][var3 + 1][var4 + 1];
 			if (var5 != null && var5.tileDecorationStub != null
 					&& var5.tileDecorationStub.entity instanceof Entity_Sub1) {
@@ -601,7 +601,7 @@ public class Landscape {
 			}
 		}
 
-		if (var3 < this.anInt9 && var4 > 0) {
+		if (var3 < this.maxX && var4 > 0) {
 			var5 = this.tiles[var2][var3 + 1][var4 - 1];
 			if (var5 != null && var5.tileDecorationStub != null
 					&& var5.tileDecorationStub.entity instanceof Entity_Sub1) {
@@ -629,14 +629,14 @@ public class Landscape {
 	public void method39(int var1, int var2, int var3, int var4, int var5, int var6) {
 		if (var1 < 0) {
 			var1 = 0;
-		} else if (var1 >= this.anInt9 * 128) {
-			var1 = this.anInt9 * 128 - 1;
+		} else if (var1 >= this.maxX * 128) {
+			var1 = this.maxX * 128 - 1;
 		}
 
 		if (var3 < 0) {
 			var3 = 0;
-		} else if (var3 >= this.anInt16 * 128) {
-			var3 = this.anInt16 * 128 - 1;
+		} else if (var3 >= this.maxY * 128) {
+			var3 = this.maxY * 128 - 1;
 		}
 
 		++anInt19;
@@ -662,13 +662,13 @@ public class Landscape {
 		}
 
 		anInt21 = screenCenterY + 25;
-		if (anInt21 > this.anInt9) {
-			anInt21 = this.anInt9;
+		if (anInt21 > this.maxX) {
+			anInt21 = this.maxX;
 		}
 
 		anInt23 = anInt24 + 25;
-		if (anInt23 > this.anInt16) {
-			anInt23 = this.anInt16;
+		if (anInt23 > this.maxY) {
+			anInt23 = this.maxY;
 		}
 
 		this.method43();
@@ -678,7 +678,7 @@ public class Landscape {
 		LandscapeTile[][] var9;
 		int var12;
 		int var13;
-		for (var8 = this.anInt40; var8 < this.anInt25; ++var8) {
+		for (var8 = this.anInt40; var8 < this.maxZ; ++var8) {
 			var9 = this.tiles[var8];
 
 			for (var12 = anInt45; var12 < anInt21; ++var12) {
@@ -687,7 +687,7 @@ public class Landscape {
 					if (var10 != null) {
 						if (var10.anInt1410 * 643122391 <= var6
 								&& (aBoolArrayArray13[var12 - screenCenterY + 25][var13 - anInt24 + 25]
-										|| this.anIntArrayArrayArray11[var8][var12][var13] - var2 >= 2000)) {
+										|| this.tileHeights[var8][var12][var13] - var2 >= 2000)) {
 							var10.aBool1411 = true;
 							var10.aBool1412 = true;
 							if (var10.anInt1407 * 1758491173 > 0) {
@@ -712,7 +712,7 @@ public class Landscape {
 		int var14;
 		int var15;
 		int var16;
-		for (var8 = this.anInt40; var8 < this.anInt25; ++var8) {
+		for (var8 = this.anInt40; var8 < this.maxZ; ++var8) {
 			var9 = this.tiles[var8];
 
 			for (var12 = -25; var12 <= 0; ++var12) {
@@ -763,7 +763,7 @@ public class Landscape {
 			}
 		}
 
-		for (var8 = this.anInt40; var8 < this.anInt25; ++var8) {
+		for (var8 = this.anInt40; var8 < this.maxZ; ++var8) {
 			var9 = this.tiles[var8];
 
 			for (var12 = -25; var12 <= 0; ++var12) {
@@ -1343,7 +1343,7 @@ public class Landscape {
 					}
 
 					LandscapeTile var32;
-					if (var6 < this.anInt25 - 1) {
+					if (var6 < this.maxZ - 1) {
 						var32 = this.tiles[var6 + 1][var4][var5];
 						if (var32 != null && var32.aBool1412) {
 							aDeque12.method475(var32);
@@ -1644,11 +1644,11 @@ public class Landscape {
 		} else {
 			int var5 = var2 << 7;
 			int var6 = var3 << 7;
-			if (this.method48(var5 + 1, this.anIntArrayArrayArray11[var1][var2][var3], var6 + 1)
-					&& this.method48(var5 + 128 - 1, this.anIntArrayArrayArray11[var1][var2 + 1][var3], var6 + 1)
-					&& this.method48(var5 + 128 - 1, this.anIntArrayArrayArray11[var1][var2 + 1][var3 + 1],
+			if (this.method48(var5 + 1, this.tileHeights[var1][var2][var3], var6 + 1)
+					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3], var6 + 1)
+					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3 + 1],
 							var6 + 128 - 1)
-					&& this.method48(var5 + 1, this.anIntArrayArrayArray11[var1][var2][var3 + 1], var6 + 128 - 1)) {
+					&& this.method48(var5 + 1, this.tileHeights[var1][var2][var3 + 1], var6 + 128 - 1)) {
 				this.anIntArrayArrayArray14[var1][var2][var3] = anInt19;
 				return true;
 			} else {
@@ -1664,7 +1664,7 @@ public class Landscape {
 		} else {
 			int var9 = var2 << 7;
 			int var5 = var3 << 7;
-			int var6 = this.anIntArrayArrayArray11[var1][var2][var3] - 1;
+			int var6 = this.tileHeights[var1][var2][var3] - 1;
 			int var7 = var6 - 120;
 			int var10 = var6 - 230;
 			int var8 = var6 - 238;
@@ -1815,11 +1815,11 @@ public class Landscape {
 		} else {
 			int var5 = var2 << 7;
 			int var6 = var3 << 7;
-			return this.method48(var5 + 1, this.anIntArrayArrayArray11[var1][var2][var3] - var4, var6 + 1)
-					&& this.method48(var5 + 128 - 1, this.anIntArrayArrayArray11[var1][var2 + 1][var3] - var4, var6 + 1)
-					&& this.method48(var5 + 128 - 1, this.anIntArrayArrayArray11[var1][var2 + 1][var3 + 1] - var4,
+			return this.method48(var5 + 1, this.tileHeights[var1][var2][var3] - var4, var6 + 1)
+					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3] - var4, var6 + 1)
+					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3 + 1] - var4,
 							var6 + 128 - 1)
-					&& this.method48(var5 + 1, this.anIntArrayArrayArray11[var1][var2][var3 + 1] - var4,
+					&& this.method48(var5 + 1, this.tileHeights[var1][var2][var3 + 1] - var4,
 							var6 + 128 - 1);
 		}
 	}
@@ -1833,12 +1833,12 @@ public class Landscape {
 			} else {
 				var8 = var2 << 7;
 				var7 = var4 << 7;
-				return this.method48(var8 + 1, this.anIntArrayArrayArray11[var1][var2][var4] - var6, var7 + 1)
-						&& this.method48(var8 + 128 - 1, this.anIntArrayArrayArray11[var1][var2 + 1][var4] - var6,
+				return this.method48(var8 + 1, this.tileHeights[var1][var2][var4] - var6, var7 + 1)
+						&& this.method48(var8 + 128 - 1, this.tileHeights[var1][var2 + 1][var4] - var6,
 								var7 + 1)
-						&& this.method48(var8 + 128 - 1, this.anIntArrayArrayArray11[var1][var2 + 1][var4 + 1] - var6,
+						&& this.method48(var8 + 128 - 1, this.tileHeights[var1][var2 + 1][var4 + 1] - var6,
 								var7 + 128 - 1)
-						&& this.method48(var8 + 1, this.anIntArrayArrayArray11[var1][var2][var4 + 1] - var6,
+						&& this.method48(var8 + 1, this.tileHeights[var1][var2][var4 + 1] - var6,
 								var7 + 128 - 1);
 			}
 		} else {
@@ -1852,7 +1852,7 @@ public class Landscape {
 
 			var8 = (var2 << 7) + 1;
 			var7 = (var4 << 7) + 2;
-			int var10 = this.anIntArrayArrayArray11[var1][var2][var4] - var6;
+			int var10 = this.tileHeights[var1][var2][var4] - var6;
 			if (!this.method48(var8, var10, var7)) {
 				return false;
 			} else {
@@ -2092,7 +2092,7 @@ public class Landscape {
 		int var16;
 		for (int var14 = var2; var14 < var2 + var4; ++var14) {
 			for (var16 = var3; var16 < var3 + var5; ++var16) {
-				if (var14 < 0 || var16 < 0 || var14 >= this.anInt9 || var16 >= this.anInt16) {
+				if (var14 < 0 || var16 < 0 || var14 >= this.maxX || var16 >= this.maxY) {
 					return false;
 				}
 
@@ -2166,10 +2166,10 @@ public class Landscape {
 		int var13 = var12 = var10 + 128;
 		int var17;
 		int var19 = var17 = var20 + 128;
-		int var15 = this.anIntArrayArrayArray11[var2][var7][var8] - anInt7;
-		int var11 = this.anIntArrayArrayArray11[var2][var7 + 1][var8] - anInt7;
-		int var16 = this.anIntArrayArrayArray11[var2][var7 + 1][var8 + 1] - anInt7;
-		int var28 = this.anIntArrayArrayArray11[var2][var7][var8 + 1] - anInt7;
+		int var15 = this.tileHeights[var2][var7][var8] - anInt7;
+		int var11 = this.tileHeights[var2][var7 + 1][var8] - anInt7;
+		int var16 = this.tileHeights[var2][var7 + 1][var8 + 1] - anInt7;
+		int var28 = this.tileHeights[var2][var7][var8 + 1] - anInt7;
 		int var18 = var20 * var5 + var10 * var6 >> 16;
 		var20 = var20 * var6 - var10 * var5 >> 16;
 		var10 = var18;
@@ -2287,9 +2287,9 @@ public class Landscape {
 	}
 
 	public void method55(int var1, int var2, int var3) {
-		for (int var4 = 0; var4 < this.anInt25; ++var4) {
-			for (int var6 = 0; var6 < this.anInt9; ++var6) {
-				for (int var7 = 0; var7 < this.anInt16; ++var7) {
+		for (int var4 = 0; var4 < this.maxZ; ++var4) {
+			for (int var6 = 0; var6 < this.maxX; ++var6) {
+				for (int var7 = 0; var7 < this.maxY; ++var7) {
 					LandscapeTile var9 = this.tiles[var4][var6][var7];
 					if (var9 != null) {
 						BoundaryStub var5 = var9.boundaryStub;
@@ -2346,22 +2346,22 @@ public class Landscape {
 		int var17 = var4 + var6;
 
 		for (int var8 = var2; var8 <= var2 + 1; ++var8) {
-			if (var8 != this.anInt25) {
+			if (var8 != this.maxZ) {
 				for (int var9 = var15; var9 <= var12; ++var9) {
-					if (var9 >= 0 && var9 < this.anInt9) {
+					if (var9 >= 0 && var9 < this.maxX) {
 						for (int var10 = var13; var10 <= var17; ++var10) {
-							if (var10 >= 0 && var10 < this.anInt16
+							if (var10 >= 0 && var10 < this.maxY
 									&& (!var7 || var9 >= var12 || var10 >= var17 || var10 < var4 && var9 != var3)) {
 								LandscapeTile var18 = this.tiles[var8][var9][var10];
 								if (var18 != null) {
-									int var11 = (this.anIntArrayArrayArray11[var8][var9][var10]
-											+ this.anIntArrayArrayArray11[var8][var9 + 1][var10]
-											+ this.anIntArrayArrayArray11[var8][var9][var10 + 1]
-											+ this.anIntArrayArrayArray11[var8][var9 + 1][var10 + 1]) / 4
-											- (this.anIntArrayArrayArray11[var2][var3][var4]
-													+ this.anIntArrayArrayArray11[var2][var3 + 1][var4]
-													+ this.anIntArrayArrayArray11[var2][var3][var4 + 1]
-													+ this.anIntArrayArrayArray11[var2][var3 + 1][var4 + 1]) / 4;
+									int var11 = (this.tileHeights[var8][var9][var10]
+											+ this.tileHeights[var8][var9 + 1][var10]
+											+ this.tileHeights[var8][var9][var10 + 1]
+											+ this.tileHeights[var8][var9 + 1][var10 + 1]) / 4
+											- (this.tileHeights[var2][var3][var4]
+													+ this.tileHeights[var2][var3 + 1][var4]
+													+ this.tileHeights[var2][var3][var4 + 1]
+													+ this.tileHeights[var2][var3 + 1][var4 + 1]) / 4;
 									BoundaryStub var16 = var18.boundaryStub;
 									if (var16 != null) {
 										Entity_Sub1 var14;
