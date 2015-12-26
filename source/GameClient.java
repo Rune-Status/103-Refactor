@@ -51,7 +51,7 @@ public class GameClient extends JFrame implements AppletStub {
 	private String host;
 	private Client clnt;
 	public static boolean rsps;
-	public static boolean dump;
+	public static boolean dump = true;
 	private Map<String, String> map;
 
 	public static void main(String[] args) throws Exception {
@@ -69,7 +69,7 @@ public class GameClient extends JFrame implements AppletStub {
 	private void startApplet() {
 		try {
 			rsps = false;
-			dump = !rsps;
+			//dump = /*!rsps*/true;
 			clnt = new Client();
 			map = new HashMap<>();
 			host = rsps ? new String("http://127.0.0.1") : new String("http://oldschool86.runescape.com");

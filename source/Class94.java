@@ -104,7 +104,7 @@ public class Class94 {
 				return null;
 			}
 		}
-
+		//System.out.println("Widget: " + var1 + "," + var2);
 		return Widget.interfaces[var1][var2];
 	}
 }

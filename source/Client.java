@@ -1441,7 +1441,7 @@ public final class Client extends GameEngine {
 
 									InterfaceNode.method579(var6, var5, var89);
 
-									if (GameClient.dump) System.out.println("sendInterface(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", "
+									/*if (GameClient.dump) */System.out.println("sendInterface(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", "
 											+ var5 + ", " + (var89 == 1) + ");");
 
 									frameId = -726667601;
@@ -1469,6 +1469,9 @@ public final class Client extends GameEngine {
 									//5 interface id
 									System.out.println("SendInterfaceModel(" + var5 + "," + (var6 >> 16) + "," + var89 + ")");
 									var105 = Class94.method406(var6);
+									int t1 = var6 >> 16;
+									int t2 = var6 & 0xffff;
+									System.out.println(t1 + "," + t2);
 									ItemDefinition var149;
 									if (!var105.interactable) {
 										if (var89 == -1) {
@@ -1485,7 +1488,7 @@ public final class Client extends GameEngine {
 										var105.rotationZ = var149.anInt1613 * -438177483;
 										var105.modelZoom = -438091779 * (1568478228 * var149.anInt1637 / var5);
 										Class68.method326(var105);
-										System.out.println("SendInterfaceModel(" + var105.modelZoom + ")");
+										//System.out.println("SendInterfaceModel(" + var105.modelZoom + ")");
 									} else {
 										var105.itemId = var89 * -444483265;
 										var105.itemQuantity = var5 * 1567728457;
@@ -1496,7 +1499,7 @@ public final class Client extends GameEngine {
 										var105.anInt1198 = 889655743 * var149.anInt1642;
 										var105.anInt1151 = var149.anInt1616 * -738298705;
 										var105.modelZoom = -1079397735 * var149.anInt1637;
-										System.out.println("SendInterfaceModel(" + var105.itemId + "," + (var6 >> 16) + ")");
+										System.out.println("SendInterfaceModel2(" + var105.itemId + "," + (var6 >> 16) + ")");
 										if (var149.stackable * 1303294175 == 1) {
 											var105.anInt1155 = -1548696853;
 										} else {
