@@ -60,7 +60,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 		return this.anInt1656 * 1321975145;
 	}
 
-	public synchronized boolean method829(Node_Sub11 var1, Class87 var2, Class13 var3, int var4) {
+	public synchronized boolean method829(Node_Sub11 var1, AbstractIndex var2, Class13 var3, int var4) {
 		var1.method570();
 		boolean var7 = true;
 		int[] var6 = null;

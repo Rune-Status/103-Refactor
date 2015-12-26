@@ -80,7 +80,7 @@ public class IgnoredPlayer {
 			return null;
 		} else {
 			DualNode_Sub13_Sub3_Sub1 var1 = new DualNode_Sub13_Sub3_Sub1(var0, Class7.anIntArray149,
-					DualNode_Sub11.anIntArray1544, Class7.anIntArray150, Class7.anIntArray151, Class85.anIntArray690,
+					VarPlayerType.anIntArray1544, Class7.anIntArray150, Class7.anIntArray151, Class85.anIntArray690,
 					Npc.aByteArrayArray1966);
 			Class65.method318();
 			return var1;

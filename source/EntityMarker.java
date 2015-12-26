@@ -71,7 +71,7 @@ public final class EntityMarker {
 					if (var1.aModel2001 != null && Client.engineCycle * -1040073859 >= 359131139 * var1.anInt1989
 							&& Client.engineCycle * -1040073859 < var1.anInt1990 * 959962901) {
 						var1.aBool1996 = false;
-						var1.anInt1997 = NpcDefinition.method802(var1.strictX * 1272643751, -1801433343 * var1.strictY,
+						var1.anInt1997 = NpcType.method802(var1.strictX * 1272643751, -1801433343 * var1.strictY,
 								-747958745 * InterfaceNode.floorLevel) * 1126652769;
 						InterfaceNode.landscape.method20(-747958745 * InterfaceNode.floorLevel,
 								1272643751 * var1.strictX, -1801433343 * var1.strictY, var1.anInt1997 * -868972383, 60,
@@ -86,7 +86,7 @@ public final class EntityMarker {
 							Client.anIntArrayArray2121[var7][var8] = -1317183381 * Client.anInt2208;
 						}
 
-						var1.anInt1997 = NpcDefinition.method802(1272643751 * var1.strictX, var1.strictY * -1801433343,
+						var1.anInt1997 = NpcType.method802(1272643751 * var1.strictX, var1.strictY * -1801433343,
 								InterfaceNode.floorLevel * -747958745) * 1126652769;
 						InterfaceNode.landscape.method19(-747958745 * InterfaceNode.floorLevel,
 								1272643751 * var1.strictX, -1801433343 * var1.strictY, var1.anInt1997 * -868972383, 60,

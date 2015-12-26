@@ -9,7 +9,7 @@ public class Class25 {
 	static void method166() {
 		Class118.aByteArrayArrayArray802 = (byte[][][]) null;
 		Class39.aByteArrayArrayArray429 = (byte[][][]) null;
-		DualNode_Sub6.aByteArrayArrayArray1507 = (byte[][][]) null;
+		VarClientStringType.aByteArrayArrayArray1507 = (byte[][][]) null;
 		Class49.aByteArrayArrayArray514 = (byte[][][]) null;
 		Class39.anIntArrayArrayArray433 = (int[][][]) null;
 		Class39.aByteArrayArrayArray430 = (byte[][][]) null;

@@ -56,7 +56,7 @@ public final class Player extends Character {
 				}
 
 				if (var6[var4] >= 512) {
-					int var8 = FriendedPlayer.getItemDefinition(var6[var4] - 512).anInt1639 * 1721605111;
+					int var8 = FriendedPlayer.getItemType(var6[var4] - 512).anInt1639 * 1721605111;
 					if (var8 != 0) {
 						this.team = -1052938061 * var8;
 					}
@@ -134,11 +134,11 @@ public final class Player extends Character {
 		if (this.config == null) {
 			return null;
 		} else {
-			DualNode_Sub3 var6 = this.animation * -922607859 != -1 && this.anInt1936 * 1301453073 == 0
-					? Node_Sub6.method540(this.animation * -922607859, -846609165) : null;
-			DualNode_Sub3 var3 = this.anInt1932 * 57983255 != -1 && !this.aBool1996
+			SequenceType var6 = this.animation * -922607859 != -1 && this.anInt1936 * 1301453073 == 0
+					? Node_Sub6.getSequenceType(this.animation * -922607859) : null;
+			SequenceType var3 = this.anInt1932 * 57983255 != -1 && !this.aBool1996
 					&& (this.anInt1932 * 57983255 != this.anInt1959 * 370127001 || var6 == null)
-							? Node_Sub6.method540(57983255 * this.anInt1932, -714223326) : null;
+							? Node_Sub6.getSequenceType(57983255 * this.anInt1932) : null;
 			Model var4 = this.config.method268(var6, this.anInt1934 * 1402685833, var3, this.anInt1914 * -1199565973);
 			if (var4 == null) {
 				return null;
@@ -148,7 +148,7 @@ public final class Player extends Character {
 				Model var2;
 				Model[] var5;
 				if (!this.aBool1996 && this.anInt1938 * 1631645159 != -1 && this.anInt1925 * -1255206495 != -1) {
-					var2 = Class96_Sub1.method499(this.anInt1938 * 1631645159, (byte) 1)
+					var2 = Class96_Sub1.getSpotAnimType(this.anInt1938 * 1631645159)
 							.method656(-1255206495 * this.anInt1925);
 					if (var2 != null) {
 						var2.method1008(0, -(1719935737 * this.anInt1920), 0);
@@ -209,7 +209,7 @@ public final class Player extends Character {
 		var1.position = (var0.length - 2) * -184175589;
 		Class7.anInt154 = var1.getUShort() * 2080683417;
 		Class7.anIntArray149 = new int[Class7.anInt154 * 817614505];
-		DualNode_Sub11.anIntArray1544 = new int[817614505 * Class7.anInt154];
+		VarPlayerType.anIntArray1544 = new int[817614505 * Class7.anInt154];
 		Class7.anIntArray150 = new int[817614505 * Class7.anInt154];
 		Class7.anIntArray151 = new int[Class7.anInt154 * 817614505];
 		Npc.aByteArrayArray1966 = new byte[817614505 * Class7.anInt154][];
@@ -224,7 +224,7 @@ public final class Player extends Character {
 		}
 
 		for (var2 = 0; var2 < 817614505 * Class7.anInt154; ++var2) {
-			DualNode_Sub11.anIntArray1544[var2] = var1.getUShort();
+			VarPlayerType.anIntArray1544[var2] = var1.getUShort();
 		}
 
 		for (var2 = 0; var2 < 817614505 * Class7.anInt154; ++var2) {
@@ -303,7 +303,7 @@ public final class Player extends Character {
 
 	final void method1045(int var1, int var2, byte var3) {
 		if (this.animation * -922607859 != -1
-				&& Node_Sub6.method540(-922607859 * this.animation, -55186589).anInt1469 * -1099577343 == 1) {
+				&& Node_Sub6.getSequenceType(-922607859 * this.animation).anInt1469 * -1099577343 == 1) {
 			this.animation = 1587034171;
 		}
 
@@ -342,7 +342,7 @@ public final class Player extends Character {
 
 	int method1046() {
 		return this.config != null && this.config.npcId * -84158433 != -1
-				? DualNode_Sub11.getNpcDefinition(this.config.npcId * -84158433).anInt1589 * -691506967 : 1;
+				? VarPlayerType.getNpcType(this.config.npcId * -84158433).anInt1589 * -691506967 : 1;
 	}
 
 	static void decodeMovement(BitBuf var0, int var1) {
@@ -361,7 +361,7 @@ public final class Player extends Character {
 			} else {
 				GPI.cachedRegions[var1] = (var3.anInt2004 * -1522270499 << 28)
 						+ (1426698711 * Node_Sub10.regionBaseX + var3.anIntArray1945[0] >> 6 << 14)
-						+ (Class28.regionBaseY * 714823515 + var3.anIntArray1955[0] >> 6);
+						+ (VarClientHub.regionBaseY * 714823515 + var3.anIntArray1955[0] >> 6);
 				if (var3.anInt1931 * -744366479 != -1) {
 					GPI.cachedDirections[var1] = var3.anInt1931 * -744366479;
 				} else {
@@ -530,8 +530,8 @@ public final class Player extends Character {
 					var10 = var4 & 16383;
 					var9 = (var11 + Node_Sub10.regionBaseX * 1426698711 + var3.anIntArray1945[0] & 16383)
 							- 1426698711 * Node_Sub10.regionBaseX;
-					var8 = (var10 + Class28.regionBaseY * 714823515 + var3.anIntArray1955[0] & 16383)
-							- 714823515 * Class28.regionBaseY;
+					var8 = (var10 + VarClientHub.regionBaseY * 714823515 + var3.anIntArray1955[0] & 16383)
+							- 714823515 * VarClientHub.regionBaseY;
 					if (1467227105 * Client.myPlayerIndex == var1
 							&& (1272643751 * var3.strictX < 1536 || -1801433343 * var3.strictY < 1536
 									|| 1272643751 * var3.strictX >= 11776 || var3.strictY * -1801433343 >= 11776)) {
@@ -568,8 +568,8 @@ public final class Player extends Character {
 			var2 = 1227800423 * var3.height;
 		}
 
-		Class28.method183(var0, var1, var2, false);
-		DualNode_Sub3.method682(var0, var1, var2);
+		VarClientHub.method183(var0, var1, var2, false);
+		SequenceType.method682(var0, var1, var2);
 	}
 
 	static String method1049(Widget var0, int var1) {

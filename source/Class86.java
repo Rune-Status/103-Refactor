@@ -85,21 +85,21 @@ public class Class86 {
 		int var40;
 		if (Class6.loadedWorlds) {
 			if (Class93.aSpriteArray733 == null) {
-				Class93.aSpriteArray733 = DynamicObject.method1023(Node_Sub5.aClass87_Sub1_1266, "sl_back", "");
+				Class93.aSpriteArray733 = DynamicObject.method1023(Node_Sub5.spritesIndex, "sl_back", "");
 			}
 
 			if (Class2.aDualNode_Sub13_Sub2Array78 == null) {
-				Class2.aDualNode_Sub13_Sub2Array78 = ObjectDefinition.method868(Node_Sub5.aClass87_Sub1_1266,
+				Class2.aDualNode_Sub13_Sub2Array78 = ObjectType.method868(Node_Sub5.spritesIndex,
 						"sl_flags", "");
 			}
 
 			if (Class32.aDualNode_Sub13_Sub2Array357 == null) {
-				Class32.aDualNode_Sub13_Sub2Array357 = ObjectDefinition.method868(Node_Sub5.aClass87_Sub1_1266,
+				Class32.aDualNode_Sub13_Sub2Array357 = ObjectType.method868(Node_Sub5.spritesIndex,
 						"sl_arrows", "");
 			}
 
 			if (Node_Sub8.aDualNode_Sub13_Sub2Array1314 == null) {
-				Node_Sub8.aDualNode_Sub13_Sub2Array1314 = ObjectDefinition.method868(Node_Sub5.aClass87_Sub1_1266,
+				Node_Sub8.aDualNode_Sub13_Sub2Array1314 = ObjectType.method868(Node_Sub5.spritesIndex,
 						"sl_stars", "");
 			}
 
@@ -329,7 +329,7 @@ public class Class86 {
 						-140328599 * Class6.anInt122, 30, 9179409);
 				RSGraphics.method793(-140328599 * Class6.anInt122 + (1744540627 * Class6.anInt126 + 180 - 150),
 						var5 + 2, 300 - -140328599 * Class6.anInt122, 30, 0);
-				var0.method982(Class6.aString131, 180 + 1744540627 * Class6.anInt126, 276 - var4, 16777215, -1);
+				var0.method982(Class6.bootMessage, 180 + 1744540627 * Class6.anInt126, 276 - var4, 16777215, -1);
 			}
 
 			String var6;
@@ -572,7 +572,7 @@ public class Class86 {
 						var1.method982(GameStrings.aString929, var28 + var33 / 2, var29 + var31 / 2 + 12, 16777215, 0);
 					}
 				} else {
-					GroundItem.aDualNode_Sub13_Sub2_1841 = DualNode_Sub3.method680(Node_Sub5.aClass87_Sub1_1266,
+					GroundItem.aDualNode_Sub13_Sub2_1841 = SequenceType.method680(Node_Sub5.spritesIndex,
 							"sl_button", "");
 				}
 			}

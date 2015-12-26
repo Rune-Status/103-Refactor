@@ -23,7 +23,7 @@ public final class Class39 {
 	static final void method215(Character var0, int var1, int var2, int var3, int var4, int var5) {
 		if (var0 != null && var0.method1017((byte) 60)) {
 			if (var0 instanceof Npc) {
-				NpcDefinition var7 = ((Npc) var0).definition;
+				NpcType var7 = ((Npc) var0).definition;
 				if (var7.transformIds != null) {
 					var7 = var7.transform();
 				}
@@ -47,14 +47,14 @@ public final class Class39 {
 					DualNode_Sub12.method777(var0, 15 + var0.anInt1950 * 1688909931);
 					if (-94432357 * Client.anInt2093 > -1) {
 						if (var9.skullIcon * 1744423653 != -1) {
-							Varpbit.aSpriteArray1728[1744423653 * var9.skullIcon].method946(
+							VarBitType.aSpriteArray1728[1744423653 * var9.skullIcon].method946(
 									var2 + Client.anInt2093 * -94432357 - 12,
 									var3 + -770682383 * Client.anInt2094 - var8);
 							var8 += 25;
 						}
 
 						if (var9.prayerIcon * 266784541 != -1) {
-							ItemDefinition.aSpriteArray1619[var9.prayerIcon * 266784541].method946(
+							ItemType.aSpriteArray1619[var9.prayerIcon * 266784541].method946(
 									-94432357 * Client.anInt2093 + var2 - 12,
 									var3 + -770682383 * Client.anInt2094 - var8);
 							var8 += 25;
@@ -70,16 +70,16 @@ public final class Class39 {
 					}
 				}
 			} else {
-				NpcDefinition var12 = ((Npc) var0).definition;
+				NpcType var12 = ((Npc) var0).definition;
 				if (var12.transformIds != null) {
 					var12 = var12.transform();
 				}
 
 				if (1855378703 * var12.anInt1577 >= 0
-						&& 1855378703 * var12.anInt1577 < ItemDefinition.aSpriteArray1619.length) {
+						&& 1855378703 * var12.anInt1577 < ItemType.aSpriteArray1619.length) {
 					DualNode_Sub12.method777(var0, var0.anInt1950 * 1688909931 + 15);
 					if (-94432357 * Client.anInt2093 > -1) {
-						ItemDefinition.aSpriteArray1619[var12.anInt1577 * 1855378703].method946(
+						ItemType.aSpriteArray1619[var12.anInt1577 * 1855378703].method946(
 								-94432357 * Client.anInt2093 + var2 - 12, -770682383 * Client.anInt2094 + var3 - 30);
 					}
 				}
@@ -102,10 +102,10 @@ public final class Class39 {
 				DualNode_Sub12.method777(var0, var0.anInt1950 * 1688909931);
 				if (Client.anInt2093 * -94432357 > -1
 						&& -1673918139 * Client.anInt2082 < Client.anInt2083 * -475281231) {
-					Client.anIntArray2087[Client.anInt2082 * -1673918139] = Class35.aDualNode_Sub13_Sub3_Sub1_386
+					Client.anIntArray2087[Client.anInt2082 * -1673918139] = Class35.b12_full
 							.method967(var0.overheadText) / 2;
 					Client.anIntArray2086[Client.anInt2082
-							* -1673918139] = Class35.aDualNode_Sub13_Sub3_Sub1_386.anInt1824;
+							* -1673918139] = Class35.b12_full.anInt1824;
 					Client.anIntArray2084[Client.anInt2082 * -1673918139] = -94432357 * Client.anInt2093;
 					Client.anIntArray2085[-1673918139 * Client.anInt2082] = -770682383 * Client.anInt2094;
 					Client.anIntArray2088[Client.anInt2082 * -1673918139] = var0.anInt1942 * 621976643;
@@ -122,7 +122,7 @@ public final class Class39 {
 					if (var1 < var10) {
 						var8 = 30;
 					} else {
-						NpcDefinition var11 = ((Npc) var0).definition;
+						NpcType var11 = ((Npc) var0).definition;
 						var8 = -55339821 * var11.anInt1604;
 					}
 
@@ -160,7 +160,7 @@ public final class Class39 {
 
 						Class96_Sub1.aSpriteArray1204[var0.hitsplatDamages[var8]].method946(
 								-94432357 * Client.anInt2093 + var2 - 12, -770682383 * Client.anInt2094 + var3 - 12);
-						Class20_Sub1.aDualNode_Sub13_Sub3_Sub1_1214.method982(
+						Class20_Sub1.p11_full.method982(
 								Integer.toString(var0.hitsplatTypes[var8]), var2 + -94432357 * Client.anInt2093 - 1,
 								var3 + -770682383 * Client.anInt2094 + 3, 16777215, 0);
 					}
@@ -619,7 +619,7 @@ public final class Class39 {
 		}
 	}
 
-	static final void method219(NpcDefinition var0, int var1, int var2, int var3) {
+	static final void method219(NpcType var0, int var1, int var2, int var3) {
 		if (Client.menuItemCount * 1768430155 < 400) {
 			if (var0.transformIds != null) {
 				var0 = var0.transform();
@@ -791,11 +791,11 @@ public final class Class39 {
 	}
 
 	static RuneScript getRuneScript(int var0) {
-		RuneScript var1 = (RuneScript) RuneScript.aClass106_1725.method427((long) var0);
+		RuneScript var1 = (RuneScript) RuneScript.aClass106_1725.get((long) var0);
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var4 = DualNode_Sub5.aClass87_Sub1_1502.getFile(var0, 0);
+			byte[] var4 = InvType.clientScriptsIndex.getFile(var0, 0);
 			if (var4 == null) {
 				return null;
 			} else {
@@ -825,7 +825,7 @@ public final class Class39 {
 					}
 				}
 
-				RuneScript.aClass106_1725.method428(var1, (long) var0);
+				RuneScript.aClass106_1725.put(var1, (long) var0);
 				return var1;
 			}
 		}

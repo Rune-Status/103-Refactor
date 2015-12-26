@@ -61,7 +61,7 @@ public class World {
 				} else {
 					update = buf.getBits(1);
 					if (update == 0) {
-						skipCount = DualNode_Sub10.decodeSkipCount(buf);
+						skipCount = VarClientType.decodeSkipCount(buf);
 						GPI.skipFlags[playerIndex] = (byte) (GPI.skipFlags[playerIndex] | 2);
 					} else {
 						Player.decodeMovement(buf, playerIndex);
@@ -85,7 +85,7 @@ public class World {
 					} else {
 						update = buf.getBits(1);
 						if (update == 0) {
-							skipCount = DualNode_Sub10.decodeSkipCount(buf);
+							skipCount = VarClientType.decodeSkipCount(buf);
 							GPI.skipFlags[playerIndex] = (byte) (GPI.skipFlags[playerIndex] | 2);
 						} else {
 							Player.decodeMovement(buf, playerIndex);
@@ -109,7 +109,7 @@ public class World {
 						} else {
 							update = buf.getBits(1);
 							if (update == 0) {
-								skipCount = DualNode_Sub10.decodeSkipCount(buf);
+								skipCount = VarClientType.decodeSkipCount(buf);
 								GPI.skipFlags[playerIndex] = (byte) (GPI.skipFlags[playerIndex] | 2);
 							} else if (Class4.decodeRegionHash(buf, playerIndex)) {
 								GPI.skipFlags[playerIndex] = (byte) (GPI.skipFlags[playerIndex] | 2);
@@ -133,7 +133,7 @@ public class World {
 							} else {
 								update = buf.getBits(1);
 								if (update == 0) {
-									skipCount = DualNode_Sub10.decodeSkipCount(buf);
+									skipCount = VarClientType.decodeSkipCount(buf);
 									GPI.skipFlags[playerIndex] = (byte) (GPI.skipFlags[playerIndex] | 2);
 								} else if (Class4.decodeRegionHash(buf, playerIndex)) {
 									GPI.skipFlags[playerIndex] = (byte) (GPI.skipFlags[playerIndex] | 2);
@@ -168,7 +168,7 @@ public class World {
 	static final void method484(int var0) {
 		ByteBuf.method644();
 		Class39.method220();
-		int var2 = Class37.method209(var0).anInt1546 * -189310937;
+		int var2 = Class37.getVarPlayerType(var0).anInt1546 * -189310937;
 		if (var2 != 0) {
 			int var1 = Class94.tempVars[var0];
 			if (var2 == 1) {
@@ -219,7 +219,7 @@ public class World {
 
 				if (var3 != Client.anInt2201 * -1994948003) {
 					if (-1994948003 * Client.anInt2201 == 0 && Client.anInt2202 * 850867613 != -1) {
-						Class69.method328(Class2.aClass87_Sub1_79, 850867613 * Client.anInt2202, 0, var3, false);
+						Class69.method328(Class2.midiTrack1Index, 850867613 * Client.anInt2202, 0, var3, false);
 						Client.aBool2191 = false;
 					} else if (var3 == 0) {
 						Class110.aNode_Sub4_Sub4_784.method856();
@@ -328,15 +328,15 @@ public class World {
 		if (var0 == null) {
 			return false;
 		} else {
-			String var2 = DualNode_Sub11.method728(var0, Class48_Sub1.aClass124_1297);
+			String var2 = VarPlayerType.method728(var0, Class48_Sub1.aClass124_1297);
 
 			for (int var1 = 0; var1 < 1820302153 * Client.anInt2229; ++var1) {
 				IgnoredPlayer var3 = Client.ignoredPlayers[var1];
-				if (var2.equalsIgnoreCase(DualNode_Sub11.method728(var3.displayName, Class48_Sub1.aClass124_1297))) {
+				if (var2.equalsIgnoreCase(VarPlayerType.method728(var3.displayName, Class48_Sub1.aClass124_1297))) {
 					return true;
 				}
 
-				if (var2.equalsIgnoreCase(DualNode_Sub11.method728(var3.previousName, Class48_Sub1.aClass124_1297))) {
+				if (var2.equalsIgnoreCase(VarPlayerType.method728(var3.previousName, Class48_Sub1.aClass124_1297))) {
 					return true;
 				}
 			}

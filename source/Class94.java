@@ -50,7 +50,7 @@ public class Class94 {
 				int var30 = var23 >> 2;
 				int var20 = var23 & 3;
 				if (var4 == var13 && var17 >= var5 && var17 < 8 + var5 && var18 >= var6 && var18 < var6 + 8) {
-					ObjectDefinition var19 = Class37.getObjectDefinition(var25);
+					ObjectType var19 = Class37.getObjectType(var25);
 					int var24 = var17 & 7;
 					int var29 = var18 & 7;
 					int var27 = 1162660975 * var19.sizeX;
@@ -99,7 +99,7 @@ public class Class94 {
 		int parent = hash >> 16;
 		int child = hash & '\uffff';
 		if (Widget.interfaces[parent] == null || Widget.interfaces[parent][child] == null) {
-			boolean loaded = DualNode_Sub2.loadWidget(parent);
+			boolean loaded = IdentKitType.loadWidget(parent);
 			if (!loaded) {
 				return null;
 			}

@@ -342,20 +342,20 @@ public class Class8 {
 		this.aLong163 = Node_Sub5.currentTimeMs() * 7521534040423978303L;
 	}
 
-	public static DualNode_Sub9 method95(int var0) {
-		DualNode_Sub9 var1 = (DualNode_Sub9) DualNode_Sub9.aClass106_1523.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static OverlayType getOverlayType(int id) {
+		OverlayType type = (OverlayType) OverlayType.overlays.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = DualNode_Sub9.aClass87_1533.getFile(4, var0);
-			var1 = new DualNode_Sub9();
-			if (var2 != null) {
-				var1.method712(new ByteBuf(var2), var0);
+			byte[] bytes = OverlayType.overlay_ref.getFile(4, id);
+			type = new OverlayType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes), id);
 			}
 
-			var1.method715();
-			DualNode_Sub9.aClass106_1523.method428(var1, (long) var0);
-			return var1;
+			type.post();
+			OverlayType.overlays.put(type, (long) id);
+			return type;
 		}
 	}
 
@@ -370,7 +370,7 @@ public class Class8 {
 
 		Client.anInt2129 = 461597295 * var3;
 		Client.spellSelected = true;
-		DualNode_Sub3.anInt1488 = var0 * -222991695;
+		SequenceType.anInt1488 = var0 * -222991695;
 		Client.anInt2128 = 1188249893 * var1;
 		Class31.currentSpellTargets = -1648414847 * var2;
 		Class68.method326(var4);

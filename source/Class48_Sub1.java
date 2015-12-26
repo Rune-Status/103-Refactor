@@ -1,7 +1,7 @@
 
 public class Class48_Sub1 extends Class48 {
 
-	static CacheIndex aClass87_Sub1_1295;
+	static CacheIndex landscapesIndex;
 	static Sprite aSprite1296;
 	static Class124 aClass124_1297;
 	static int anInt1298;
@@ -15,7 +15,7 @@ public class Class48_Sub1 extends Class48 {
 		if (Node_Sub5.aClass24_1265.aBool298) {
 			return -747958745 * InterfaceNode.floorLevel;
 		} else {
-			int var0 = NpcDefinition.method802(282154897 * Projectile.cameraX, -324676025 * Class72.cameraY,
+			int var0 = NpcType.method802(282154897 * Projectile.cameraX, -324676025 * Class72.cameraY,
 					InterfaceNode.floorLevel * -747958745);
 			return var0 - 1447873857 * FriendedPlayer.cameraZ < 800 && (Class39.renderRules[InterfaceNode.floorLevel
 					* -747958745][Projectile.cameraX * 282154897 >> 7][Class72.cameraY * -324676025 >> 7] & 4) != 0

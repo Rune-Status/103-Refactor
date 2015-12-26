@@ -71,7 +71,7 @@ public class Class24 {
 
 	static void method160(int var0) {
 		if (var0 != -1) {
-			if (DualNode_Sub2.loadWidget(var0)) {
+			if (IdentKitType.loadWidget(var0)) {
 				Widget[] var4 = Widget.interfaces[var0];
 
 				for (int var3 = 0; var3 < var4.length; ++var3) {
@@ -111,21 +111,21 @@ public class Class24 {
 
 	}
 
-	public static DualNode_Sub13_Sub3_Sub1 method163(Class87 var0, Class87 var1, String var2, String var3) {
-		int var4 = var0.method383(var2);
-		int var6 = var0.method384(var4, var3);
+	public static DualNode_Sub13_Sub3_Sub1 method163(AbstractIndex sprites, AbstractIndex fonts, String fontName, String childName) {
+		int fileId = sprites.getFile(fontName);
+		int childId = sprites.getChild(fileId, childName);
 		DualNode_Sub13_Sub3_Sub1 var5;
-		if (!Class35.method202(var0, var4, var6)) {
+		if (!Class35.method202(sprites, fileId, childId)) {
 			var5 = null;
 		} else {
-			var5 = IgnoredPlayer.method415(var1.getFile(var4, var6));
+			var5 = IgnoredPlayer.method415(fonts.getFile(fileId, childId));
 		}
 
 		return var5;
 	}
 
 	static final void method164(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-		if (DualNode_Sub2.loadWidget(var0)) {
+		if (IdentKitType.loadWidget(var0)) {
 			Class6.aWidgetArray146 = null;
 			Class53.method272(Widget.interfaces[var0], -1, var1, var2, var3, var4, var5, var6, var7);
 			if (Class6.aWidgetArray146 != null) {

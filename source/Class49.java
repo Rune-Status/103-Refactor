@@ -5,7 +5,7 @@ public class Class49 {
 	static Connection aClass60_513;
 	static byte[][][] aByteArrayArrayArray514;
 	Inflater anInflater515;
-	public static Class87 aClass87_516;
+	public static AbstractIndex aClass87_516;
 
 	Class49(int var1, int var2, int var3) {
 	}
@@ -55,7 +55,7 @@ public class Class49 {
 
 					InterfaceNode.landscape.method19(InterfaceNode.floorLevel * -747958745, 1272643751 * var2.strictX,
 							-1801433343 * var2.strictY,
-							NpcDefinition.method802(var2.anInt1915 * -2013728192 - 64 + var2.strictX * 1272643751,
+							NpcType.method802(var2.anInt1915 * -2013728192 - 64 + var2.strictX * 1272643751,
 									var2.anInt1915 * -2013728192 - 64 + -1801433343 * var2.strictY,
 									InterfaceNode.floorLevel * -747958745),
 							60 + (var2.anInt1915 * -2013728192 - 64), var2, var2.anInt1937 * -2031663291, var4,

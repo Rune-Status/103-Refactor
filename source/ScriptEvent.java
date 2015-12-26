@@ -24,7 +24,7 @@ public class ScriptEvent extends Node {
 				Class39.anInt438 = var0 * -241419957;
 			}
 
-			ObjectDefinition var8 = Class37.getObjectDefinition(var3);
+			ObjectType var8 = Class37.getObjectType(var3);
 			int var9;
 			int var16;
 			if (var4 != 1 && var4 != 3) {
@@ -318,7 +318,7 @@ public class ScriptEvent extends Node {
 						var28 = 16;
 						var10 = var6.method53(var0, var1, var2);
 						if (var10 != 0) {
-							var28 = Class37.getObjectDefinition(var10 >> 14 & 32767).anInt1699 * 1063235335;
+							var28 = Class37.getObjectType(var10 >> 14 & 32767).anInt1699 * 1063235335;
 						}
 
 						if (var8.anInt1698 * -100857069 == -1 && var8.transformIds == null) {
@@ -335,7 +335,7 @@ public class ScriptEvent extends Node {
 						var28 = 8;
 						var10 = var6.method53(var0, var1, var2);
 						if (var10 != 0) {
-							var28 = Class37.getObjectDefinition(var10 >> 14 & 32767).anInt1699 * 1063235335 / 2;
+							var28 = Class37.getObjectType(var10 >> 14 & 32767).anInt1699 * 1063235335 / 2;
 						}
 
 						if (-100857069 * var8.anInt1698 == -1 && var8.transformIds == null) {
@@ -362,7 +362,7 @@ public class ScriptEvent extends Node {
 						var28 = 8;
 						var10 = var6.method53(var0, var1, var2);
 						if (var10 != 0) {
-							var28 = Class37.getObjectDefinition(var10 >> 14 & 32767).anInt1699 * 1063235335 / 2;
+							var28 = Class37.getObjectType(var10 >> 14 & 32767).anInt1699 * 1063235335 / 2;
 						}
 
 						int var19 = var4 + 2 & 3;

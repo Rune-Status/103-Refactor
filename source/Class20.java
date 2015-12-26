@@ -96,7 +96,7 @@ public abstract class Class20 {
 				: (var2 != null && var2.children != null && var1 < var2.children.length ? var2.children[var1] : null);
 	}
 
-	static void method147(DualNode_Sub3 var0, int var1, int var2, int var3) {
+	static void method147(SequenceType var0, int var1, int var2, int var3) {
 		if (Client.audioEffectCount * 2079336095 < 50 && Client.anInt2205 * 873913835 != 0) {
 			if (var0.anIntArray1487 != null && var1 < var0.anIntArray1487.length) {
 				int var5 = var0.anIntArray1487[var1];

@@ -7,7 +7,7 @@ public final class Class106 {
 	DualNode aDualNode766 = new DualNode();
 	Class105 aClass105_767 = new Class105();
 
-	public DualNode method427(long var1) {
+	public DualNode get(long var1) {
 		DualNode var3 = (DualNode) this.aNodeTable764.get(var1);
 		if (var3 != null) {
 			this.aClass105_767.method425(var3);
@@ -16,7 +16,7 @@ public final class Class106 {
 		return var3;
 	}
 
-	public void method428(DualNode var1, long var2) {
+	public void put(DualNode var1, long var2) {
 		if (this.anInt765 == 0) {
 			DualNode var4 = this.aClass105_767.method423();
 			var4.unlink();

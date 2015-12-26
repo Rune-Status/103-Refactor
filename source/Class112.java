@@ -2,7 +2,7 @@ import java.util.Comparator;
 
 final class Class112 implements Comparator {
 
-	static Class87 aClass87_789;
+	static AbstractIndex inv_ref;
 
 	public int compare(Object var1, Object var2) {
 		return this.method437((Class115) var1, (Class115) var2);

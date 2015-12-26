@@ -12,7 +12,7 @@ import java.util.Hashtable;
 public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageObserver {
 
 	ImageConsumer anImageConsumer1213;
-	static DualNode_Sub13_Sub3_Sub1 aDualNode_Sub13_Sub3_Sub1_1214;
+	static DualNode_Sub13_Sub3_Sub1 p11_full;
 	static Class61 aClass61_1215;
 	ColorModel aColorModel1216;
 
@@ -82,7 +82,7 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 		}
 	}
 
-	static Sprite[] method510(Class87 var0, int var1, int var2) {
+	static Sprite[] method510(AbstractIndex var0, int var1, int var2) {
 		if (!Class35.method202(var0, var1, var2)) {
 			return null;
 		} else {
@@ -93,7 +93,7 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 				var5.anInt1815 = -749860951 * Class7.anInt148;
 				var5.anInt1816 = Class7.anInt155 * -1945497809;
 				var5.anInt1814 = Class7.anIntArray149[var6];
-				var5.anInt1817 = DualNode_Sub11.anIntArray1544[var6];
+				var5.anInt1817 = VarPlayerType.anIntArray1544[var6];
 				var5.height = Class7.anIntArray150[var6];
 				var5.width = Class7.anIntArray151[var6];
 				int var4 = var5.width * var5.height;
@@ -118,19 +118,19 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 		var1.setHints(14);
 	}
 
-	public static DualNode_Sub2 method511(int var0) {
-		DualNode_Sub2 var1 = (DualNode_Sub2) DualNode_Sub2.aClass106_1458.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static IdentKitType getIdentKitType(int id) {
+		IdentKitType type = (IdentKitType) IdentKitType.identKits.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = DualNode_Sub2.aClass87_1468.getFile(3, var0);
-			var1 = new DualNode_Sub2();
-			if (var2 != null) {
-				var1.method665(new ByteBuf(var2), 2124429388);
+			byte[] bytes = IdentKitType.identKit_ref.getFile(3, id);
+			type = new IdentKitType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			DualNode_Sub2.aClass106_1458.method428(var1, (long) var0);
-			return var1;
+			IdentKitType.identKits.put(type, (long) id);
+			return type;
 		}
 	}
 

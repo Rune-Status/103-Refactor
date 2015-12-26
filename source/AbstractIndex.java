@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.RandomAccessFile;
 
-public abstract class Class87 {
+public abstract class AbstractIndex {
 
 	Class99[] aClass99Array694;
 	public int anInt695;
@@ -21,7 +21,7 @@ public abstract class Class87 {
 	int anInt709;
 	static int anInt710 = 0;
 
-	Class87(boolean var1, boolean var2) {
+	AbstractIndex(boolean var1, boolean var2) {
 		this.aBool708 = var1;
 		this.aBool700 = var2;
 	}
@@ -58,7 +58,7 @@ public abstract class Class87 {
 		int var2 = var1.length;
 		int var7 = Class58.getCrc(var1, 0, var2);
 		this.anInt695 = var7 * 1019466219;
-		ByteBuf var3 = new ByteBuf(DualNode_Sub7.method707(var1));
+		ByteBuf var3 = new ByteBuf(UnderlayType.method707(var1));
 		int var6 = var3.getUByte();
 		if (var6 >= 5 && var6 <= 7) {
 			if (var6 >= 6) {
@@ -255,7 +255,7 @@ public abstract class Class87 {
 					var18 = GroundItem.method991(this.anObjectArray704[var1], false);
 				}
 
-				byte[] var19 = DualNode_Sub7.method707(var18);
+				byte[] var19 = UnderlayType.method707(var18);
 				if (this.aBool708) {
 					this.anObjectArray704[var1] = null;
 				}
@@ -319,32 +319,32 @@ public abstract class Class87 {
 		}
 	}
 
-	public int method383(String var1) {
+	public int getFile(String var1) {
 		var1 = var1.toLowerCase();
-		return this.aClass99_697.method413(DualNode_Sub3.method683(var1));
+		return this.aClass99_697.getFile(SequenceType.djb2Hash(var1));
 	}
 
-	public int method384(int var1, String var2) {
+	public int getChild(int file, String var2) {
 		var2 = var2.toLowerCase();
-		return this.aClass99Array694[var1].method413(DualNode_Sub3.method683(var2));
+		return this.aClass99Array694[file].getFile(SequenceType.djb2Hash(var2));
 	}
 
 	public boolean method385(String var1, String var2) {
 		var1 = var1.toLowerCase();
 		var2 = var2.toLowerCase();
-		int var3 = this.aClass99_697.method413(DualNode_Sub3.method683(var1));
-		int var4 = this.aClass99Array694[var3].method413(DualNode_Sub3.method683(var2));
+		int var3 = this.aClass99_697.getFile(SequenceType.djb2Hash(var1));
+		int var4 = this.aClass99Array694[var3].getFile(SequenceType.djb2Hash(var2));
 		return this.method388(var3, var4);
 	}
 
 	public boolean method386(String var1) {
-		int var2 = this.method383("");
+		int var2 = this.getFile("");
 		return var2 != -1 ? this.method385("", var1) : this.method385(var1, "");
 	}
 
 	public void method387(String var1) {
 		var1 = var1.toLowerCase();
-		int var2 = this.aClass99_697.method413(DualNode_Sub3.method683(var1));
+		int var2 = this.aClass99_697.getFile(SequenceType.djb2Hash(var1));
 		if (var2 >= 0) {
 			this.method374(var2, (byte) 1);
 		}
@@ -369,8 +369,8 @@ public abstract class Class87 {
 	public byte[] method389(String var1, String var2) {
 		var1 = var1.toLowerCase();
 		var2 = var2.toLowerCase();
-		int var3 = this.aClass99_697.method413(DualNode_Sub3.method683(var1));
-		int var4 = this.aClass99Array694[var3].method413(DualNode_Sub3.method683(var2));
+		int var3 = this.aClass99_697.getFile(SequenceType.djb2Hash(var1));
+		int var4 = this.aClass99Array694[var3].getFile(SequenceType.djb2Hash(var2));
 		return this.getFile(var3, var4);
 	}
 

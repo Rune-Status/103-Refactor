@@ -1,30 +1,30 @@
 import java.io.EOFException;
 
-public class Class28 {
+public class VarClientHub {
 
 	static Class51 aClass51_320;
-	boolean[] aBoolArray321;
-	boolean[] aBoolArray322;
-	int[] anIntArray323;
-	String[] aStringArray324;
-	boolean aBool325 = false;
-	long aLong326;
+	boolean[] varcSerials;
+	boolean[] varcstringSerials;
+	int[] varcs;
+	String[] varcstrings;
+	boolean changed = false;
+	long lastSerialize;
 	static int regionBaseY;
 
-	void method171(int var1, int var2) {
-		this.anIntArray323[var1] = var2;
-		if (this.aBoolArray321[var1]) {
-			this.aBool325 = true;
+	void putVarc(int id, int val) {
+		this.varcs[id] = val;
+		if (this.varcSerials[id]) {
+			this.changed = true;
 		}
 
 	}
 
-	String method172(int var1) {
-		return this.aStringArray324[var1];
+	String getVarcString(int id) {
+		return this.varcstrings[id];
 	}
 
 	static final void method173(int var0) {
-		if (DualNode_Sub2.loadWidget(var0)) {
+		if (IdentKitType.loadWidget(var0)) {
 			Widget[] var2 = Widget.interfaces[var0];
 
 			for (int var3 = 0; var3 < var2.length; ++var3) {
@@ -38,7 +38,7 @@ public class Class28 {
 		}
 	}
 
-	void method174() {
+	void serialize() {
 		CacheFileAccessor var1 = this.method179(true);
 		boolean var14 = false;
 
@@ -50,8 +50,8 @@ public class Class28 {
 					int var3 = 0;
 
 					int var4;
-					for (var4 = 0; var4 < this.anIntArray323.length; ++var4) {
-						if (this.aBoolArray321[var4] && this.anIntArray323[var4] != -1) {
+					for (var4 = 0; var4 < this.varcs.length; ++var4) {
+						if (this.varcSerials[var4] && this.varcs[var4] != -1) {
 							var2 += 6;
 							++var3;
 						}
@@ -60,9 +60,9 @@ public class Class28 {
 					var2 += 2;
 					var4 = 0;
 
-					for (int var5 = 0; var5 < this.aStringArray324.length; ++var5) {
-						if (this.aBoolArray322[var5] && this.aStringArray324[var5] != null) {
-							var2 += 2 + TileDecorationStub.getLength(this.aStringArray324[var5]);
+					for (int var5 = 0; var5 < this.varcstrings.length; ++var5) {
+						if (this.varcstringSerials[var5] && this.varcstrings[var5] != null) {
+							var2 += 2 + TileDecorationStub.getLength(this.varcstrings[var5]);
 							++var4;
 						}
 					}
@@ -72,10 +72,10 @@ public class Class28 {
 					var20.putShort(var3);
 
 					int var6;
-					for (var6 = 0; var6 < this.anIntArray323.length; ++var6) {
-						if (this.aBoolArray321[var6] && this.anIntArray323[var6] != -1) {
+					for (var6 = 0; var6 < this.varcs.length; ++var6) {
+						if (this.varcSerials[var6] && this.varcs[var6] != -1) {
 							var20.putShort(var6);
-							var20.putInt(this.anIntArray323[var6]);
+							var20.putInt(this.varcs[var6]);
 						}
 					}
 
@@ -83,14 +83,14 @@ public class Class28 {
 					var6 = 0;
 
 					while (true) {
-						if (var6 >= this.aStringArray324.length) {
+						if (var6 >= this.varcstrings.length) {
 							var1.write(var20.payload, 0, 314639891 * var20.position);
 							break;
 						}
 
-						if (this.aBoolArray322[var6] && this.aStringArray324[var6] != null) {
+						if (this.varcstringSerials[var6] && this.varcstrings[var6] != null) {
 							var20.putShort(var6);
-							var20.putString(this.aStringArray324[var6]);
+							var20.putString(this.varcstrings[var6]);
 						}
 
 						++var6;
@@ -123,11 +123,11 @@ public class Class28 {
 			}
 		}
 
-		this.aBool325 = false;
-		this.aLong326 = Node_Sub5.currentTimeMs() * -4897623063149766703L;
+		this.changed = false;
+		this.lastSerialize = Node_Sub5.currentTimeMs() * -4897623063149766703L;
 	}
 
-	void method175() {
+	void deserialize() {
 		CacheFileAccessor var1 = this.method179(false);
 		boolean var20 = false;
 
@@ -145,8 +145,8 @@ public class Class28 {
 						}
 					}
 
-					ByteBuf var28 = new ByteBuf(var2);
-					if (var28.payload.length - var28.position * 314639891 < 1) {
+					ByteBuf buf = new ByteBuf(var2);
+					if (buf.payload.length - buf.position * 314639891 < 1) {
 						try {
 							var1.close();
 						} catch (Exception var23) {
@@ -156,7 +156,7 @@ public class Class28 {
 						return;
 					}
 
-					int var5 = var28.getUByte();
+					int var5 = buf.getUByte();
 					if (var5 < 0 || var5 > 1) {
 						try {
 							var1.close();
@@ -167,26 +167,26 @@ public class Class28 {
 						return;
 					}
 
-					int var6 = var28.getUShort();
+					int var6 = buf.getUShort();
 
 					int var7;
 					int var8;
 					int var9;
 					for (var7 = 0; var7 < var6; ++var7) {
-						var8 = var28.getUShort();
-						var9 = var28.getInt();
-						if (this.aBoolArray321[var8]) {
-							this.anIntArray323[var8] = var9;
+						var8 = buf.getUShort();
+						var9 = buf.getInt();
+						if (this.varcSerials[var8]) {
+							this.varcs[var8] = var9;
 						}
 					}
 
-					var7 = var28.getUShort();
+					var7 = buf.getUShort();
 
 					for (var8 = 0; var8 < var7; ++var8) {
-						var9 = var28.getUShort();
-						String var10 = var28.getString();
-						if (this.aBoolArray322[var9]) {
-							this.aStringArray324[var9] = var10;
+						var9 = buf.getUShort();
+						String var10 = buf.getString();
+						if (this.varcstringSerials[var9]) {
+							this.varcstrings[var9] = var10;
 						}
 					}
 				} catch (Exception var26) {
@@ -217,31 +217,31 @@ public class Class28 {
 			}
 		}
 
-		this.aBool325 = false;
+		this.changed = false;
 	}
 
-	void method176() {
-		if (this.aBool325 && this.aLong326 * -2233906655684255439L < Node_Sub5.currentTimeMs() - 60000L) {
-			this.method174();
+	void process() {
+		if (this.changed && this.lastSerialize * -2233906655684255439L < Node_Sub5.currentTimeMs() - 60000L) {
+			this.serialize();
 		}
 
 	}
 
-	boolean method177() {
-		return this.aBool325;
+	boolean changed() {
+		return this.changed;
 	}
 
-	void method178() {
+	void reset() {
 		int var1;
-		for (var1 = 0; var1 < this.anIntArray323.length; ++var1) {
-			if (!this.aBoolArray321[var1]) {
-				this.anIntArray323[var1] = -1;
+		for (var1 = 0; var1 < this.varcs.length; ++var1) {
+			if (!this.varcSerials[var1]) {
+				this.varcs[var1] = -1;
 			}
 		}
 
-		for (var1 = 0; var1 < this.aStringArray324.length; ++var1) {
-			if (!this.aBoolArray322[var1]) {
-				this.aStringArray324[var1] = null;
+		for (var1 = 0; var1 < this.varcstrings.length; ++var1) {
+			if (!this.varcstringSerials[var1]) {
+				this.varcstrings[var1] = null;
 			}
 		}
 
@@ -251,39 +251,39 @@ public class Class28 {
 		return BoundaryStub.method154("2", Client.aClass77_2091.aString646, var1);
 	}
 
-	Class28() {
-		this.anIntArray323 = new int[Client.aClass87_Sub1_2104.fileCount(19)];
-		this.aStringArray324 = new String[Client.aClass87_Sub1_2104.fileCount(15)];
-		this.aBoolArray321 = new boolean[this.anIntArray323.length];
+	VarClientHub() {
+		this.varcs = new int[Client.configsIndex.fileCount(19)];
+		this.varcstrings = new String[Client.configsIndex.fileCount(15)];
+		this.varcSerials = new boolean[this.varcs.length];
 
-		int var1;
-		for (var1 = 0; var1 < this.anIntArray323.length; ++var1) {
-			DualNode_Sub10 var2 = Class66_Sub2.method552(var1, 476397876);
-			this.aBoolArray321[var1] = var2.aBool1535;
+		int index;
+		for (index = 0; index < this.varcs.length; ++index) {
+			VarClientType varc = Class66_Sub2.getClientType(index);
+			this.varcSerials[index] = varc.serialize;
 		}
 
-		this.aBoolArray322 = new boolean[this.aStringArray324.length];
+		this.varcstringSerials = new boolean[this.varcstrings.length];
 
-		for (var1 = 0; var1 < this.aStringArray324.length; ++var1) {
-			DualNode_Sub6 var3 = ClanMate.method514(var1);
-			this.aBoolArray322[var1] = var3.aBool1508;
+		for (index = 0; index < this.varcstrings.length; ++index) {
+			VarClientStringType varc_string = ClanMate.getVarClientStringType(index);
+			this.varcstringSerials[index] = varc_string.serialize;
 		}
 
-		for (var1 = 0; var1 < this.anIntArray323.length; ++var1) {
-			this.anIntArray323[var1] = -1;
+		for (index = 0; index < this.varcs.length; ++index) {
+			this.varcs[index] = -1;
 		}
 
-		this.method175();
+		this.deserialize();
 	}
 
-	int method180(int var1) {
-		return this.anIntArray323[var1];
+	int getVarc(int id) {
+		return this.varcs[id];
 	}
 
-	void method181(int var1, String var2) {
-		this.aStringArray324[var1] = var2;
-		if (this.aBoolArray322[var1]) {
-			this.aBool325 = true;
+	void putVarcString(int id, String val) {
+		this.varcstrings[id] = val;
+		if (this.varcstringSerials[id]) {
+			this.changed = true;
 		}
 
 	}
@@ -383,7 +383,7 @@ public class Class28 {
 						if (var1 != null && var1.strictX * 1272643751 >= 0 && 1272643751 * var1.strictX < 13312
 								&& -1801433343 * var1.strictY >= 0 && -1801433343 * var1.strictY < 13312) {
 							var0.method992(var1.strictX * 1272643751, var1.strictY * -1801433343,
-									NpcDefinition.method802(var1.strictX * 1272643751, var1.strictY * -1801433343,
+									NpcType.method802(var1.strictX * 1272643751, var1.strictY * -1801433343,
 											-2138425693 * var0.anInt1844) - var0.endHeight * -1190049527,
 									-1040073859 * Client.engineCycle);
 						}
@@ -401,7 +401,7 @@ public class Class28 {
 						if (var3 != null && 1272643751 * var3.strictX >= 0 && 1272643751 * var3.strictX < 13312
 								&& var3.strictY * -1801433343 >= 0 && var3.strictY * -1801433343 < 13312) {
 							var0.method992(1272643751 * var3.strictX, var3.strictY * -1801433343,
-									NpcDefinition.method802(1272643751 * var3.strictX, -1801433343 * var3.strictY,
+									NpcType.method802(1272643751 * var3.strictX, -1801433343 * var3.strictY,
 											-2138425693 * var0.anInt1844) - -1190049527 * var0.endHeight,
 									Client.engineCycle * -1040073859);
 						}

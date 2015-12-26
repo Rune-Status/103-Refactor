@@ -31,7 +31,7 @@ public final class TileDecorationStub {
 				var4 = var8;
 				if (var16 == 2 && InterfaceNode.landscape.method34(-747958745 * InterfaceNode.floorLevel, var9, var10,
 						var8) >= 0) {
-					ObjectDefinition var11 = Class37.getObjectDefinition(var17);
+					ObjectType var11 = Class37.getObjectType(var17);
 					if (var11.transformIds != null) {
 						var11 = var11.transform();
 					}
@@ -89,7 +89,7 @@ public final class TileDecorationStub {
 						}
 
 						FriendedPlayer.addMenuRow(GameStrings.aString994, Class48_Sub1.method545('\uffff') + var11.name,
-								1002, var11.anInt1718 * -521826339 << 14, var9, var10);
+								1002, var11.id * -521826339 << 14, var9, var10);
 					}
 				}
 
@@ -171,7 +171,7 @@ public final class TileDecorationStub {
 					if (var24 != null) {
 						for (GroundItem var26 = (GroundItem) var24
 								.method472(); var26 != null; var26 = (GroundItem) var24.method476()) {
-							ItemDefinition var20 = FriendedPlayer.getItemDefinition(var26.anInt1842 * -848428919);
+							ItemType var20 = FriendedPlayer.getItemType(var26.anInt1842 * -848428919);
 							if (Client.itemSelectionStatus * -1110581093 == 1) {
 								FriendedPlayer.addMenuRow(GameStrings.aString993,
 										Client.selectedItemName + " " + Class35.aString391 + " "

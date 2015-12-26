@@ -15,8 +15,8 @@ public class ItemTable extends Node {
 				674167779 * Node_Sub9.gameHeight, var0);
 	}
 
-	public static void method648(Class87 var0) {
-		DualNode_Sub4.aClass87_1492 = var0;
+	public static void method648(AbstractIndex var0) {
+		EnumType.enum_ref = var0;
 	}
 
 	static final void method649(BitBuf var0) {
@@ -30,7 +30,7 @@ public class ItemTable extends Node {
 		int var6 = var3 & 16383;
 		var2.anIntArray1945[0] = var4 - 1426698711 * Node_Sub10.regionBaseX;
 		var2.strictX = ((var2.anIntArray1945[0] << 7) + (var2.method1046() << 6)) * 1705682711;
-		var2.anIntArray1955[0] = var6 - Class28.regionBaseY * 714823515;
+		var2.anIntArray1955[0] = var6 - VarClientHub.regionBaseY * 714823515;
 		var2.strictY = ((var2.anIntArray1955[0] << 7) + (var2.method1046() << 6)) * 1421914369;
 		InterfaceNode.floorLevel = (var2.anInt2004 = var7 * -1668953739) * -1941196453;
 		if (GPI.cachedAppearances[var1] != null) {

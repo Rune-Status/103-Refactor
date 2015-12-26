@@ -1,11 +1,11 @@
 
 public class Class13 {
 
-	Class87 aClass87_225;
+	AbstractIndex aClass87_225;
 	NodeTable aNodeTable226 = new NodeTable(256);
 	NodeTable aNodeTable227 = new NodeTable(256);
-	Class87 aClass87_228;
-	public static int anInt229;
+	AbstractIndex aClass87_228;
+	public static int itemsSize;
 
 	public Node_Sub2_Sub1 method113(int var1, int[] var2) {
 		if (this.aClass87_228.size() == 1) {
@@ -85,7 +85,7 @@ public class Class13 {
 		}
 	}
 
-	public Class13(Class87 var1, Class87 var2) {
+	public Class13(AbstractIndex var1, AbstractIndex var2) {
 		this.aClass87_228 = var1;
 		this.aClass87_225 = var2;
 	}

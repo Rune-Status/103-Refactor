@@ -225,7 +225,7 @@ public final class IndexTable {
 		}
 	}
 
-	public static DualNode_Sub13_Sub2 method306(Class87 var0, int var1) {
+	public static DualNode_Sub13_Sub2 method306(AbstractIndex var0, int var1) {
 		byte[] var2 = var0.method378(var1);
 		boolean var3;
 		if (var2 != null) {

@@ -24,7 +24,7 @@ public class Class65 {
 
 	public static void method318() {
 		Class7.anIntArray149 = null;
-		DualNode_Sub11.anIntArray1544 = null;
+		VarPlayerType.anIntArray1544 = null;
 		Class7.anIntArray150 = null;
 		Class7.anIntArray151 = null;
 		Class85.anIntArray690 = null;
@@ -36,7 +36,7 @@ public class Class65 {
 	}
 
 	static final void method319(int var0, int var1) {
-		if (DualNode_Sub2.loadWidget(var0)) {
+		if (IdentKitType.loadWidget(var0)) {
 			Class86.method365(Widget.interfaces[var0], var1);
 		}
 	}

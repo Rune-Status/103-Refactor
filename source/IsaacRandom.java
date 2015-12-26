@@ -18,7 +18,7 @@ public final class IsaacRandom {
 		for (InterfaceNode var0 = (InterfaceNode) Client.interfaceNodes
 				.method150(); var0 != null; var0 = (InterfaceNode) Client.interfaceNodes.method151()) {
 			if (-1882639549 * var0.owner == 0 || var0.owner * -1882639549 == 3) {
-				DualNode_Sub4.method691(var0, true);
+				EnumType.method691(var0, true);
 			}
 		}
 

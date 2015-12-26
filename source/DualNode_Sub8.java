@@ -1,7 +1,7 @@
 
 public class DualNode_Sub8 extends DualNode {
 
-	int anInt1516 = DualNode_Sub11.method724() * 396806425;
+	int anInt1516 = VarPlayerType.method724() * 396806425;
 	int anInt1517;
 	int anInt1518;
 	String aString1519;
@@ -9,7 +9,7 @@ public class DualNode_Sub8 extends DualNode {
 	String aString1521;
 
 	void method708(int var1, String var2, String var3, String var4) {
-		this.anInt1516 = DualNode_Sub11.method724() * 396806425;
+		this.anInt1516 = VarPlayerType.method724() * 396806425;
 		this.anInt1517 = 1070678137 * Client.engineCycle;
 		this.anInt1518 = var1 * 373059241;
 		this.aString1521 = var2;
@@ -136,6 +136,6 @@ public class DualNode_Sub8 extends DualNode {
 	}
 
 	public static void method711() {
-		ItemDefinition.aClass106_1620.method429();
+		ItemType.aClass106_1620.method429();
 	}
 }

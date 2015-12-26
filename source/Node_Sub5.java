@@ -8,7 +8,7 @@ public class Node_Sub5 extends Node {
 	int anInt1263;
 	int[][] anIntArrayArray1264;
 	static Class24 aClass24_1265;
-	static CacheIndex aClass87_Sub1_1266;
+	static CacheIndex spritesIndex;
 	int anInt1267;
 
 	public static synchronized long currentTimeMs() {
@@ -25,17 +25,17 @@ public class Node_Sub5 extends Node {
 		if (var0 == null) {
 			return false;
 		} else {
-			String var2 = DualNode_Sub11.method728(var0, Class48_Sub1.aClass124_1297);
+			String var2 = VarPlayerType.method728(var0, Class48_Sub1.aClass124_1297);
 
 			for (int var3 = 0; var3 < Client.anInt2184 * -1616775607; ++var3) {
 				if (var2.equalsIgnoreCase(
-						DualNode_Sub11.method728(Client.friendedPlayers[var3].displayName, Class48_Sub1.aClass124_1297))
+						VarPlayerType.method728(Client.friendedPlayers[var3].displayName, Class48_Sub1.aClass124_1297))
 						&& (!var1 || Client.friendedPlayers[var3].world * -698428043 != 0)) {
 					return true;
 				}
 			}
 
-			if (var2.equalsIgnoreCase(DualNode_Sub11.method728(Class68.myPlayer.name, Class48_Sub1.aClass124_1297))) {
+			if (var2.equalsIgnoreCase(VarPlayerType.method728(Class68.myPlayer.name, Class48_Sub1.aClass124_1297))) {
 				return true;
 			} else {
 				return false;
@@ -48,16 +48,16 @@ public class Node_Sub5 extends Node {
 		synchronized (var0) {
 			Container var1 = Client.aClient2005.method1033();
 			if (var1 != null) {
-				DualNode_Sub6.anInt1505 = Math.max(var1.getSize().width, CacheFileAccessor.anInt836 * 2055757083) * -1411246095;
+				VarClientStringType.anInt1505 = Math.max(var1.getSize().width, CacheFileAccessor.anInt836 * 2055757083) * -1411246095;
 				Class21.anInt281 = Math.max(var1.getSize().height, ClanMate.anInt1222 * -1066486805) * 588847321;
-				if (DualNode_Sub10.aFrame1538 == var1) {
-					Insets var2 = DualNode_Sub10.aFrame1538.getInsets();
-					DualNode_Sub6.anInt1505 -= -1411246095 * (var2.left + var2.right);
+				if (VarClientType.aFrame1538 == var1) {
+					Insets var2 = VarClientType.aFrame1538.getInsets();
+					VarClientStringType.anInt1505 -= -1411246095 * (var2.left + var2.right);
 					Class21.anInt281 -= 588847321 * (var2.top + var2.bottom);
 				}
 
-				if (-1830553327 * DualNode_Sub6.anInt1505 <= 0) {
-					DualNode_Sub6.anInt1505 = -1411246095;
+				if (-1830553327 * VarClientStringType.anInt1505 <= 0) {
+					VarClientStringType.anInt1505 = -1411246095;
 				}
 
 				if (2045896553 * Class21.anInt281 <= 0) {
@@ -68,11 +68,11 @@ public class Node_Sub5 extends Node {
 					Class34.gameWidth = Client.anInt2233 * 870030517;
 					Node_Sub9.gameHeight = Client.anInt2181 * -796663565;
 				} else {
-					Class34.gameWidth = Math.min(DualNode_Sub6.anInt1505 * -1830553327, 7680) * -780223189;
+					Class34.gameWidth = Math.min(VarClientStringType.anInt1505 * -1830553327, 7680) * -780223189;
 					Node_Sub9.gameHeight = Math.min(Class21.anInt281 * 2045896553, 2160) * 427958731;
 				}
 
-				Client.anInt1983 = (-1830553327 * DualNode_Sub6.anInt1505 - Class34.gameWidth * -452716157) / 2
+				Client.anInt1983 = (-1830553327 * VarClientStringType.anInt1505 - Class34.gameWidth * -452716157) / 2
 						* 1792273077;
 				Client.anInt1978 = 0;
 				LandscapeTile.aCanvas1417.setSize(Class34.gameWidth * -452716157, 674167779 * Node_Sub9.gameHeight);
@@ -92,8 +92,8 @@ public class Node_Sub5 extends Node {
 				}
 
 				IndexTable.aClass20_570 = (Class20) var7;
-				if (var1 == DualNode_Sub10.aFrame1538) {
-					Insets var16 = DualNode_Sub10.aFrame1538.getInsets();
+				if (var1 == VarClientType.aFrame1538) {
+					Insets var16 = VarClientType.aFrame1538.getInsets();
 					LandscapeTile.aCanvas1417.setLocation(76231581 * Client.anInt1983 + var16.left,
 							var16.top + -225353991 * Client.anInt1978);
 				} else {
@@ -102,8 +102,8 @@ public class Node_Sub5 extends Node {
 
 				int var17 = Class34.gameWidth * -452716157;
 				int var18 = Node_Sub9.gameHeight * 674167779;
-				if (DualNode_Sub6.anInt1505 * -1830553327 < var17) {
-					var17 = -1830553327 * DualNode_Sub6.anInt1505;
+				if (VarClientStringType.anInt1505 * -1830553327 < var17) {
+					var17 = -1830553327 * VarClientStringType.anInt1505;
 				}
 
 				if (Class21.anInt281 * 2045896553 < var18) {
@@ -124,7 +124,7 @@ public class Node_Sub5 extends Node {
 					ItemTable.method647(true);
 				}
 
-				DualNode_Sub1.method659();
+				SpotAnimType.method659();
 			}
 		}
 	}

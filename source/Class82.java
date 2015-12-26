@@ -12,12 +12,12 @@ public final class Class82 {
 		byte var2 = 4;
 		int var3 = 6 + var2;
 		int var4 = var2 + 6;
-		int var5 = Client.aDualNode_Sub13_Sub3_Sub1_2047.method969(var0, 250);
-		int var6 = Client.aDualNode_Sub13_Sub3_Sub1_2047.method970(var0, 250) * 13;
+		int var5 = Client.p12_full.method969(var0, 250);
+		int var6 = Client.p12_full.method970(var0, 250) * 13;
 		RSGraphics.method793(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var2 + var6, 0);
 		RSGraphics.drawRectangle(var3 - var2, var4 - var2, var5 + var2 + var2, var2 + var2 + var6, 16777215);
-		Client.aDualNode_Sub13_Sub3_Sub1_2047.method990(var0, var3, var4, var5, var6, 16777215, -1, 1, 1, 0);
-		DualNode_Sub2.method668(var3 - var2, var4 - var2, var2 + var2 + var5, var2 + var2 + var6);
+		Client.p12_full.method990(var0, var3, var4, var5, var6, 16777215, -1, 1, 1, 0);
+		IdentKitType.method668(var3 - var2, var4 - var2, var2 + var2 + var5, var2 + var2 + var6);
 		if (var1) {
 			try {
 				Graphics var7 = LandscapeTile.aCanvas1417.getGraphics();

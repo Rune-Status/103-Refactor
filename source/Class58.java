@@ -131,7 +131,7 @@ public class Class58 {
 				}
 
 				if (var0 != 0) {
-					ObjectDefinition.method869(var0);
+					ObjectType.method869(var0);
 					return;
 				}
 
@@ -208,26 +208,26 @@ public class Class58 {
 				var3.putBytes(var4, 0, 24);
 				Client.aPacketBuffer2115.putString(Client.aString2013);
 				Client.aPacketBuffer2115.putInt(-1929163163 * InterfaceNode.anInt1399);
-				ByteBuf var19 = new ByteBuf(DualNode_Sub2.aNode_Sub10_1467.method567());
-				DualNode_Sub2.aNode_Sub10_1467.method566(var19);
+				ByteBuf var19 = new ByteBuf(IdentKitType.aNode_Sub10_1467.method567());
+				IdentKitType.aNode_Sub10_1467.method566(var19);
 				Client.aPacketBuffer2115.putBytes(var19.payload, 0, var19.payload.length);
 				Client.aPacketBuffer2115.putByte(Class29.anInt335 * -1296445677);
-				Client.aPacketBuffer2115.putInt(Class34.aClass87_Sub1_385.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(Client.aClass87_Sub1_2022.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * Client.aClass87_Sub1_2104.anInt695);
+				Client.aPacketBuffer2115.putInt(Class34.skeletonsIndex.anInt695 * 1153748675);
+				Client.aPacketBuffer2115.putInt(Client.meshesIndex.anInt695 * 1153748675);
+				Client.aPacketBuffer2115.putInt(1153748675 * Client.configsIndex.anInt695);
 				Client.aPacketBuffer2115.putInt(1153748675 * RuneScript.interfaceIndex.anInt695);
-				Client.aPacketBuffer2115.putInt(1153748675 * DualNode_Sub10.aClass87_Sub1_1537.anInt695);
-				Client.aPacketBuffer2115.putInt(Class48_Sub1.aClass87_Sub1_1295.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class2.aClass87_Sub1_79.anInt695);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class3.aClass87_Sub1_93.anInt695);
-				Client.aPacketBuffer2115.putInt(Node_Sub5.aClass87_Sub1_1266.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class1.aClass87_Sub1_4.anInt695);
-				Client.aPacketBuffer2115.putInt(Class40.aClass87_Sub1_445.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(PlayerConfig.aClass87_Sub1_535.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * DualNode_Sub5.aClass87_Sub1_1502.anInt695);
-				Client.aPacketBuffer2115.putInt(Class2.aClass87_Sub1_76.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class26.aClass87_Sub1_316.anInt695);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class59.aClass87_Sub1_549.anInt695);
+				Client.aPacketBuffer2115.putInt(1153748675 * VarClientType.sfxIndex.anInt695);
+				Client.aPacketBuffer2115.putInt(Class48_Sub1.landscapesIndex.anInt695 * 1153748675);
+				Client.aPacketBuffer2115.putInt(1153748675 * Class2.midiTrack1Index.anInt695);
+				Client.aPacketBuffer2115.putInt(1153748675 * Class3.modelsIndex.anInt695);
+				Client.aPacketBuffer2115.putInt(Node_Sub5.spritesIndex.anInt695 * 1153748675);
+				Client.aPacketBuffer2115.putInt(1153748675 * Class1.texturesIndex.anInt695);
+				Client.aPacketBuffer2115.putInt(Class40.binaryIndex.anInt695 * 1153748675);
+				Client.aPacketBuffer2115.putInt(PlayerConfig.midiTack2Index.anInt695 * 1153748675);
+				Client.aPacketBuffer2115.putInt(1153748675 * InvType.clientScriptsIndex.anInt695);
+				Client.aPacketBuffer2115.putInt(Class2.fontMetricsIndex.anInt695 * 1153748675);
+				Client.aPacketBuffer2115.putInt(1153748675 * Class26.vorbisIndex.anInt695);
+				Client.aPacketBuffer2115.putInt(1153748675 * Class59.midiInstrumentsIndex.anInt695);
 				Client.aPacketBuffer2115.encryptXTEA(xteaKeys, xteaStart,
 						314639891 * Client.aPacketBuffer2115.position);
 				Client.aPacketBuffer2115.putVarShort(Client.aPacketBuffer2115.position * 314639891 - varStart);
@@ -257,7 +257,7 @@ public class Class58 {
 					Client.connectionState = 0;
 				} else {
 					if (var0 != 29) {
-						ObjectDefinition.method869(var0);
+						ObjectType.method869(var0);
 						return;
 					}
 
@@ -400,7 +400,7 @@ public class Class58 {
 								Client.anInt2037 += -260333731;
 								Client.connectionState = 0;
 							} else {
-								ObjectDefinition.method869(-3);
+								ObjectType.method869(-3);
 							}
 						}
 					}
@@ -417,7 +417,7 @@ public class Class58 {
 				Client.anInt2037 += -260333731;
 				Client.connectionState = 0;
 			} else {
-				ObjectDefinition.method869(-2);
+				ObjectType.method869(-2);
 			}
 		}
 	}

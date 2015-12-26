@@ -130,7 +130,7 @@ public class Node_Sub7 extends Node {
 		}
 	}
 
-	boolean method543(double var1, int var3, Class87 var4) {
+	boolean method543(double var1, int var3, AbstractIndex var4) {
 		int var5;
 		for (var5 = 0; var5 < this.anIntArray1287.length; ++var5) {
 			if (var4.method392(this.anIntArray1287[var5]) == null) {

@@ -1,9 +1,9 @@
 
-public class DualNode_Sub5 extends DualNode {
+public class InvType extends DualNode {
 
-	static Class106 aClass106_1500 = new Class106(64);
+	static Class106 invs = new Class106(64);
 	public int anInt1501 = 0;
-	static CacheIndex aClass87_Sub1_1502;
+	static CacheIndex clientScriptsIndex;
 	static int[] landRegionFielIds;
 	static int menuY;
 
@@ -27,7 +27,7 @@ public class DualNode_Sub5 extends DualNode {
 		}
 	}
 
-	void method694(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {

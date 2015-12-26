@@ -26,7 +26,7 @@ public class ClassVerifier extends Node {
 			Client.destinationY = 317027045 * var1;
 			Client.outBuffer.putHeader(107);
 			Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
-			Client.outBuffer.putLEShortA(var1 + Class28.regionBaseY * 714823515);
+			Client.outBuffer.putLEShortA(var1 + VarClientHub.regionBaseY * 714823515);
 			Client.outBuffer.putShortA(1426698711 * Node_Sub10.regionBaseX + var0);
 			Client.outBuffer.putShort(var3);
 		}
@@ -40,7 +40,7 @@ public class ClassVerifier extends Node {
 			var8 = Class94.getWidget(var1);
 			boolean var9 = true;
 			if (-179718399 * var8.contentType > 0) {
-				var9 = DualNode_Sub2.method667(var8);
+				var9 = IdentKitType.method667(var8);
 			}
 
 			if (var9) {
@@ -99,7 +99,7 @@ public class ClassVerifier extends Node {
 			Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
 			Client.outBuffer.putLEShortA(var0 + Node_Sub10.regionBaseX * 1426698711);
 			Client.outBuffer.putLEShortA(var3);
-			Client.outBuffer.putLEShortA(714823515 * Class28.regionBaseY + var1);
+			Client.outBuffer.putLEShortA(714823515 * VarClientHub.regionBaseY + var1);
 		}
 
 		int var13;
@@ -120,7 +120,7 @@ public class ClassVerifier extends Node {
 
 					boolean var16 = true;
 					if (-179718399 * var10.contentType > 0) {
-						var16 = DualNode_Sub2.method667(var10);
+						var16 = IdentKitType.method667(var10);
 					}
 
 					if (var16 && Node_Sub10.method569(Class30.getWidgetConfig(var10), var3 - 1)) {
@@ -201,7 +201,7 @@ public class ClassVerifier extends Node {
 		if (var2 == 25) {
 			var8 = Class20.method146(var1, var0);
 			if (var8 != null) {
-				DualNode_Sub2.method672();
+				IdentKitType.method672();
 				Class8.method96(var1, var0, Class63.method314(Class30.getWidgetConfig(var8)), 813479615 * var8.itemId);
 				Client.itemSelectionStatus = 0;
 				Client.menuActionPrefix = Class26.method168(var8);
@@ -232,7 +232,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
 				Client.outBuffer.putShort(1905121485 * Class32.anInt356);
 				Client.outBuffer.putLEInt(Class22.anInt286 * -47339353);
-				Client.outBuffer.putShort(Class28.regionBaseY * 714823515 + var1);
+				Client.outBuffer.putShort(VarClientHub.regionBaseY * 714823515 + var1);
 			}
 
 			if (var2 == 2) {
@@ -246,9 +246,9 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putLEShortA(var0 + 1426698711 * Node_Sub10.regionBaseX);
 				Client.outBuffer.putLEShortA(1149825709 * Client.anInt2128);
 				Client.outBuffer.putByteS(Class71.aBoolArray593[82] ? 1 : 0);
-				Client.outBuffer.putInt(DualNode_Sub3.anInt1488 * -1195336111);
+				Client.outBuffer.putInt(SequenceType.anInt1488 * -1195336111);
 				Client.outBuffer.putLEShortA(var3 >> 14 & 32767);
-				Client.outBuffer.putLEShortA(Class28.regionBaseY * 714823515 + var1);
+				Client.outBuffer.putLEShortA(VarClientHub.regionBaseY * 714823515 + var1);
 			}
 
 			if (var2 == 6) {
@@ -261,7 +261,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putHeader(192);
 				Client.outBuffer.putShortA(1426698711 * Node_Sub10.regionBaseX + var0);
 				Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
-				Client.outBuffer.putShort(var1 + Class28.regionBaseY * 714823515);
+				Client.outBuffer.putShort(var1 + VarClientHub.regionBaseY * 714823515);
 				Client.outBuffer.putShortA(var3 >> 14 & 32767);
 			}
 
@@ -306,7 +306,7 @@ public class ClassVerifier extends Node {
 				var8 = Class94.getWidget(var1);
 				if (var8 != null && var8.itemQuantities[var0] >= 100000) {
 					Class75.method334(27, "",
-							var8.itemQuantities[var0] + " x " + FriendedPlayer.getItemDefinition(var3).name);
+							var8.itemQuantities[var0] + " x " + FriendedPlayer.getItemType(var3).name);
 				} else {
 					Client.outBuffer.putHeader(158);
 					Client.outBuffer.putLEShortA(var3);
@@ -329,7 +329,7 @@ public class ClassVerifier extends Node {
 					Client.outBuffer.putHeader(74);
 					Client.outBuffer.putLEShort(var3);
 					Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
-					Client.outBuffer.putIMEInt(DualNode_Sub3.anInt1488 * -1195336111);
+					Client.outBuffer.putIMEInt(SequenceType.anInt1488 * -1195336111);
 					Client.outBuffer.putLEShortA(1149825709 * Client.anInt2128);
 				}
 			}
@@ -381,7 +381,7 @@ public class ClassVerifier extends Node {
 				Client.destinationX = var0 * -1943900347;
 				Client.destinationY = 317027045 * var1;
 				Client.outBuffer.putHeader(197);
-				Client.outBuffer.putShortA(var1 + 714823515 * Class28.regionBaseY);
+				Client.outBuffer.putShortA(var1 + 714823515 * VarClientHub.regionBaseY);
 				Client.outBuffer.putLEShortA(1426698711 * Node_Sub10.regionBaseX + var0);
 				Client.outBuffer.putShort(var3 >> 14 & 32767);
 				Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
@@ -409,7 +409,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putLEShortA(var3 >> 14 & 32767);
 				Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
 				Client.outBuffer.putLEShortA(1905121485 * Class32.anInt356);
-				Client.outBuffer.putShortA(var1 + 714823515 * Class28.regionBaseY);
+				Client.outBuffer.putShortA(var1 + 714823515 * VarClientHub.regionBaseY);
 				Client.outBuffer.putLEShortA(Node_Sub10.regionBaseX * 1426698711 + var0);
 				Client.outBuffer.putLEShortA(Class40.selectedItemIndex * 543565821);
 			}
@@ -477,7 +477,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putHeader(30);
 				Client.outBuffer.putShortA(1149825709 * Client.anInt2128);
 				Client.outBuffer.putInt(var1);
-				Client.outBuffer.putIMEInt(DualNode_Sub3.anInt1488 * -1195336111);
+				Client.outBuffer.putIMEInt(SequenceType.anInt1488 * -1195336111);
 				Client.outBuffer.putShort(var3);
 				Client.outBuffer.putShortA(var0);
 				Client.anInt2098 = 0;
@@ -536,14 +536,14 @@ public class ClassVerifier extends Node {
 			}
 
 			if (var2 == 38) {
-				DualNode_Sub2.method672();
+				IdentKitType.method672();
 				var8 = Class94.getWidget(var1);
 				Client.itemSelectionStatus = 2046756243;
 				Class40.selectedItemIndex = var0 * 1705405781;
 				Class22.anInt286 = var1 * 541949719;
 				Class32.anInt356 = 662033413 * var3;
 				Class68.method326(var8);
-				Client.selectedItemName = Class48_Sub1.method545(16748608) + FriendedPlayer.getItemDefinition(var3).name
+				Client.selectedItemName = Class48_Sub1.method545(16748608) + FriendedPlayer.getItemType(var3).name
 						+ Class48_Sub1.method545(16777215);
 				if (Client.selectedItemName == null) {
 					Client.selectedItemName = "null";
@@ -560,9 +560,9 @@ public class ClassVerifier extends Node {
 					Client.outBuffer.putHeader(7);
 					Client.outBuffer.putLEShortA(var0 + 1426698711 * Node_Sub10.regionBaseX);
 					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
-					Client.outBuffer.putIMEInt(-1195336111 * DualNode_Sub3.anInt1488);
+					Client.outBuffer.putIMEInt(-1195336111 * SequenceType.anInt1488);
 					Client.outBuffer.putShortA(1149825709 * Client.anInt2128);
-					Client.outBuffer.putShort(var1 + 714823515 * Class28.regionBaseY);
+					Client.outBuffer.putShort(var1 + 714823515 * VarClientHub.regionBaseY);
 					Client.outBuffer.putLEShortA(var3);
 				}
 
@@ -590,7 +590,7 @@ public class ClassVerifier extends Node {
 					Client.destinationY = 317027045 * var1;
 					Client.outBuffer.putHeader(195);
 					Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
-					Client.outBuffer.putShort(var1 + Class28.regionBaseY * 714823515);
+					Client.outBuffer.putShort(var1 + VarClientHub.regionBaseY * 714823515);
 					Client.outBuffer.putShort(var3 >> 14 & 32767);
 					Client.outBuffer.putShortA(var0 + Node_Sub10.regionBaseX * 1426698711);
 				}
@@ -602,14 +602,14 @@ public class ClassVerifier extends Node {
 					Client.anInt2097 = 0;
 					var12 = Client.npcArray[var3];
 					if (var12 != null) {
-						NpcDefinition var15 = var12.definition;
+						NpcType var15 = var12.definition;
 						if (var15.transformIds != null) {
 							var15 = var15.transform();
 						}
 
 						if (var15 != null) {
 							Client.outBuffer.putHeader(111);
-							Client.outBuffer.putLEShortA(-2095462435 * var15.anInt1579);
+							Client.outBuffer.putLEShortA(-2095462435 * var15.id);
 						}
 					}
 				}
@@ -647,7 +647,7 @@ public class ClassVerifier extends Node {
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(109);
 					Client.outBuffer.putShortA(Node_Sub10.regionBaseX * 1426698711 + var0);
-					Client.outBuffer.putLEShort(var1 + 714823515 * Class28.regionBaseY);
+					Client.outBuffer.putLEShort(var1 + 714823515 * VarClientHub.regionBaseY);
 					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putShort(var3);
 				}
@@ -693,7 +693,7 @@ public class ClassVerifier extends Node {
 					Client.outBuffer.putLEShortA(var3);
 					Client.outBuffer.putShortA(var0 + Node_Sub10.regionBaseX * 1426698711);
 					Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
-					Client.outBuffer.putLEShortA(714823515 * Class28.regionBaseY + var1);
+					Client.outBuffer.putLEShortA(714823515 * VarClientHub.regionBaseY + var1);
 				}
 
 				if (var2 == 45) {
@@ -737,7 +737,7 @@ public class ClassVerifier extends Node {
 						Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putShortA(Client.anInt2128 * 1149825709);
 						Client.outBuffer.putShort(var3);
-						Client.outBuffer.putInt(DualNode_Sub3.anInt1488 * -1195336111);
+						Client.outBuffer.putInt(SequenceType.anInt1488 * -1195336111);
 					}
 				}
 
@@ -762,7 +762,7 @@ public class ClassVerifier extends Node {
 						Client.outBuffer.putHeader(61);
 						Client.outBuffer.putShort(var0);
 						Client.outBuffer.putLEShortA(-1609091953 * Client.anInt2129);
-						Client.outBuffer.putMEInt(-1195336111 * DualNode_Sub3.anInt1488);
+						Client.outBuffer.putMEInt(-1195336111 * SequenceType.anInt1488);
 						Client.outBuffer.putLEInt(var1);
 						Client.outBuffer.putShort(var8.itemId * 813479615);
 						Client.outBuffer.putLEShortA(1149825709 * Client.anInt2128);
@@ -777,7 +777,7 @@ public class ClassVerifier extends Node {
 					Client.destinationX = -1943900347 * var0;
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(27);
-					Client.outBuffer.putShortA(var1 + Class28.regionBaseY * 714823515);
+					Client.outBuffer.putShortA(var1 + VarClientHub.regionBaseY * 714823515);
 					Client.outBuffer.putShort(1426698711 * Node_Sub10.regionBaseX + var0);
 					Client.outBuffer.putLEShortA(var3);
 					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
@@ -824,7 +824,7 @@ public class ClassVerifier extends Node {
 					Client.destinationX = var0 * -1943900347;
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(147);
-					Client.outBuffer.putLEShort(Class28.regionBaseY * 714823515 + var1);
+					Client.outBuffer.putLEShort(VarClientHub.regionBaseY * 714823515 + var1);
 					Client.outBuffer.putLEShort(var3 >> 14 & 32767);
 					Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putShortA(var0 + 1426698711 * Node_Sub10.regionBaseX);
@@ -860,7 +860,7 @@ public class ClassVerifier extends Node {
 					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putLEShortA(var3 >> 14 & 32767);
 					Client.outBuffer.putShortA(Node_Sub10.regionBaseX * 1426698711 + var0);
-					Client.outBuffer.putShort(Class28.regionBaseY * 714823515 + var1);
+					Client.outBuffer.putShort(VarClientHub.regionBaseY * 714823515 + var1);
 				}
 
 				if (-1110581093 * Client.itemSelectionStatus != 0) {
@@ -869,7 +869,7 @@ public class ClassVerifier extends Node {
 				}
 
 				if (Client.spellSelected) {
-					DualNode_Sub2.method672();
+					IdentKitType.method672();
 				}
 
 				if (Class30.aWidget339 != null && -1044454887 * Client.anInt2098 == 0) {

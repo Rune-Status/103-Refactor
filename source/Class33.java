@@ -5,15 +5,15 @@ public class Class33 {
 	RuneScript aRuneScript361;
 	int[] anIntArray362;
 	int anInt363 = -954144041;
-	static Class28 aClass28_364;
+	static VarClientHub aClass28_364;
 	static int[] anIntArray365;
 
 	static final int method197(int var0, int var1) {
-		int var2 = DualNode_Sub10.method721(var0 - 1, var1 - 1) + DualNode_Sub10.method721(var0 + 1, var1 - 1)
-				+ DualNode_Sub10.method721(var0 - 1, 1 + var1) + DualNode_Sub10.method721(var0 + 1, var1 + 1);
-		int var4 = DualNode_Sub10.method721(var0 - 1, var1) + DualNode_Sub10.method721(1 + var0, var1)
-				+ DualNode_Sub10.method721(var0, var1 - 1) + DualNode_Sub10.method721(var0, 1 + var1);
-		int var3 = DualNode_Sub10.method721(var0, var1);
+		int var2 = VarClientType.method721(var0 - 1, var1 - 1) + VarClientType.method721(var0 + 1, var1 - 1)
+				+ VarClientType.method721(var0 - 1, 1 + var1) + VarClientType.method721(var0 + 1, var1 + 1);
+		int var4 = VarClientType.method721(var0 - 1, var1) + VarClientType.method721(1 + var0, var1)
+				+ VarClientType.method721(var0, var1 - 1) + VarClientType.method721(var0, 1 + var1);
+		int var3 = VarClientType.method721(var0, var1);
 		return var3 / 4 + var4 / 8 + var2 / 16;
 	}
 

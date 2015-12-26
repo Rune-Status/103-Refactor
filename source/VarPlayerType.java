@@ -1,13 +1,13 @@
 
-public class DualNode_Sub11 extends DualNode {
+public class VarPlayerType extends DualNode {
 
 	public static int[] anIntArray1544;
-	static Class106 aClass106_1545 = new Class106(64);
+	static Class106 varplayers = new Class106(64);
 	public int anInt1546 = 0;
 	public static int anInt1547;
-	static Class87 aClass87_1548;
+	static AbstractIndex varplayer_ref;
 
-	void method723(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {
@@ -46,7 +46,7 @@ public class DualNode_Sub11 extends DualNode {
 	}
 
 	public static void method727() {
-		aClass106_1545.method429();
+		varplayers.method429();
 	}
 
 	public static String method728(CharSequence var0, Class124 var1) {
@@ -56,16 +56,16 @@ public class DualNode_Sub11 extends DualNode {
 			int var4 = 0;
 
 			int var5;
-			for (var5 = var0.length(); var4 < var5 && DualNode_Sub4.method688(var0.charAt(var4)); ++var4) {
+			for (var5 = var0.length(); var4 < var5 && EnumType.method688(var0.charAt(var4)); ++var4) {
 				;
 			}
 
-			while (var5 > var4 && DualNode_Sub4.method688(var0.charAt(var5 - 1))) {
+			while (var5 > var4 && EnumType.method688(var0.charAt(var5 - 1))) {
 				--var5;
 			}
 
 			int var2 = var5 - var4;
-			if (var2 >= 1 && var2 <= DualNode_Sub5.method693(var1)) {
+			if (var2 >= 1 && var2 <= InvType.method693(var1)) {
 				StringBuilder var3 = new StringBuilder(var2);
 
 				for (int var8 = var4; var8 < var5; ++var8) {
@@ -89,21 +89,21 @@ public class DualNode_Sub11 extends DualNode {
 		}
 	}
 
-	public static NpcDefinition getNpcDefinition(int var0) {
-		NpcDefinition var1 = (NpcDefinition) NpcDefinition.aClass106_1580.method427((long) var0);
-		if (var1 == null) {
-			byte[] var2 = Class84.aClass87_689.getFile(9, var0);
-			var1 = new NpcDefinition();
-			var1.anInt1579 = 95406197 * var0;
-			if (var2 != null) {
-				var1.method801(new ByteBuf(var2));
+	public static NpcType getNpcType(int id) {
+		NpcType type = (NpcType) NpcType.npcs.get((long) id);
+		if (type == null) {
+			byte[] bytes = Class84.npc_ref.getFile(9, id);
+			type = new NpcType();
+			type.id = 95406197 * id;
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			var1.method798();
-			NpcDefinition.aClass106_1580.method428(var1, (long) var0);
-			return var1;
+			type.post();
+			NpcType.npcs.put(type, (long) id);
+			return type;
 		} else {
-			return var1;
+			return type;
 		}
 	}
 }

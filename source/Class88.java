@@ -15,9 +15,9 @@ public class Class88 {
 			Client.membersWorld = world.method477();
 			boolean var1 = world.method477();
 			if (var1 != Class94.aBool735) {
-				ItemDefinition.aClass106_1606.method429();
-				ItemDefinition.aClass106_1607.method429();
-				ItemDefinition.aClass106_1620.method429();
+				ItemType.items.method429();
+				ItemType.aClass106_1607.method429();
+				ItemType.aClass106_1620.method429();
 				Class94.aBool735 = var1;
 			}
 		}

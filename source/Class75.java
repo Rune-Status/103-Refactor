@@ -12,7 +12,7 @@ public class Class75 {
 	static int anInt638;
 
 	static void method334(int var0, String var1, String var2) {
-		DualNode_Sub1.method658(var0, var1, var2, (String) null);
+		SpotAnimType.method658(var0, var1, var2, (String) null);
 	}
 
 	static void method335() {
@@ -41,7 +41,7 @@ public class Class75 {
 	}
 
 	public static void method336(int var0, int var1) {
-		Varpbit var2 = CacheIndex.getVarpbit(var0);
+		VarBitType var2 = CacheIndex.getVarBitType(var0);
 		int var6 = 12908597 * var2.varp;
 		int var5 = -585070571 * var2.lowBit;
 		int var3 = var2.highBit * 984543857;

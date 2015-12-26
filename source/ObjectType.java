@@ -1,12 +1,12 @@
 
-public class ObjectDefinition extends DualNode {
+public class ObjectType extends DualNode {
 
 	public int sizeX = 1223037583;
-	static Class87 aClass87_1682;
-	static Class87 aClass87_1683;
+	static AbstractIndex objects_ref;
+	static AbstractIndex aClass87_1683;
 	public boolean modelClipped = false;
 	public static Class106 aClass106_1684 = new Class106(500);
-	public static Class106 aClass106_1685 = new Class106(64);
+	public static Class106 objects = new Class106(64);
 	public static Class106 aClass106_1686 = new Class106(30);
 	public int anInt1687 = 0;
 	public String name = "null";
@@ -50,11 +50,11 @@ public class ObjectDefinition extends DualNode {
 	public int anInt1716 = 0;
 	public int mapFunction = 1295419843;
 	public int anInt1717 = 0;
-	public int anInt1718;
+	public int id;
 	static Widget aWidget1719;
 	boolean aBool1720 = false;
 
-	void method857() {
+	void post() {
 		if (this.anInt1692 * -839074197 == -1) {
 			this.anInt1692 = 0;
 			if (this.anIntArray1688 != null && (this.anIntArray1689 == null || this.anIntArray1689[0] == 10)) {
@@ -74,7 +74,7 @@ public class ObjectDefinition extends DualNode {
 
 	}
 
-	void method858(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {
@@ -242,12 +242,12 @@ public class ObjectDefinition extends DualNode {
 	public final Entity method860(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
 		long var7;
 		if (this.anIntArray1689 == null) {
-			var7 = (long) (var2 + (this.anInt1718 * -521826339 << 10));
+			var7 = (long) (var2 + (this.id * -521826339 << 10));
 		} else {
-			var7 = (long) (var2 + (this.anInt1718 * -521826339 << 10) + (var1 << 3));
+			var7 = (long) (var2 + (this.id * -521826339 << 10) + (var1 << 3));
 		}
 
-		Object var10 = (Entity) aClass106_1693.method427(var7);
+		Object var10 = (Entity) aClass106_1693.get(var7);
 		if (var10 == null) {
 			Entity_Sub1 var9 = this.method863(var1, var2);
 			if (var9 == null) {
@@ -264,7 +264,7 @@ public class ObjectDefinition extends DualNode {
 				var10 = var9;
 			}
 
-			aClass106_1693.method428((DualNode) var10, var7);
+			aClass106_1693.put((DualNode) var10, var7);
 		}
 
 		if (this.aBool1702) {
@@ -287,12 +287,12 @@ public class ObjectDefinition extends DualNode {
 	public final Model method861(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
 		long var9;
 		if (this.anIntArray1689 == null) {
-			var9 = (long) (var2 + (-521826339 * this.anInt1718 << 10));
+			var9 = (long) (var2 + (-521826339 * this.id << 10));
 		} else {
-			var9 = (long) (var2 + (var1 << 3) + (this.anInt1718 * -521826339 << 10));
+			var9 = (long) (var2 + (var1 << 3) + (this.id * -521826339 << 10));
 		}
 
-		Model var8 = (Model) aClass106_1686.method427(var9);
+		Model var8 = (Model) aClass106_1686.get(var9);
 		if (var8 == null) {
 			Entity_Sub1 var7 = this.method863(var1, var2);
 			if (var7 == null) {
@@ -300,7 +300,7 @@ public class ObjectDefinition extends DualNode {
 			}
 
 			var8 = var7.method902(this.anInt1700 * 1607505281 + 64, this.anInt1701 * 1352261597 + 768, -50, -10, -50);
-			aClass106_1686.method428(var8, var9);
+			aClass106_1686.put(var8, var9);
 		}
 
 		if (this.clipType * 912005101 >= 0) {
@@ -310,16 +310,16 @@ public class ObjectDefinition extends DualNode {
 		return var8;
 	}
 
-	public final Model method862(int var1, int var2, int[][] var3, int var4, int var5, int var6, DualNode_Sub3 var7,
+	public final Model method862(int var1, int var2, int[][] var3, int var4, int var5, int var6, SequenceType var7,
 			int var8) {
 		long var9;
 		if (this.anIntArray1689 == null) {
-			var9 = (long) ((-521826339 * this.anInt1718 << 10) + var2);
+			var9 = (long) ((-521826339 * this.id << 10) + var2);
 		} else {
-			var9 = (long) ((var1 << 3) + (-521826339 * this.anInt1718 << 10) + var2);
+			var9 = (long) ((var1 << 3) + (-521826339 * this.id << 10) + var2);
 		}
 
-		Model var11 = (Model) aClass106_1686.method427(var9);
+		Model var11 = (Model) aClass106_1686.get(var9);
 		if (var11 == null) {
 			Entity_Sub1 var12 = this.method863(var1, var2);
 			if (var12 == null) {
@@ -327,7 +327,7 @@ public class ObjectDefinition extends DualNode {
 			}
 
 			var11 = var12.method902(this.anInt1700 * 1607505281 + 64, this.anInt1701 * 1352261597 + 768, -50, -10, -50);
-			aClass106_1686.method428(var11, var9);
+			aClass106_1686.put(var11, var9);
 		}
 
 		if (var7 == null && this.clipType * 912005101 == -1) {
@@ -374,7 +374,7 @@ public class ObjectDefinition extends DualNode {
 					var4 += 65536;
 				}
 
-				var3 = (Entity_Sub1) aClass106_1684.method427((long) var4);
+				var3 = (Entity_Sub1) aClass106_1684.get((long) var4);
 				if (var3 == null) {
 					var3 = Entity_Sub1.method887(aClass87_1683, var4 & '\uffff', 0);
 					if (var3 == null) {
@@ -385,7 +385,7 @@ public class ObjectDefinition extends DualNode {
 						var3.method897();
 					}
 
-					aClass106_1684.method428(var3, (long) var4);
+					aClass106_1684.put(var3, (long) var4);
 				}
 
 				if (var5 > 1) {
@@ -416,7 +416,7 @@ public class ObjectDefinition extends DualNode {
 				var5 += 65536;
 			}
 
-			var3 = (Entity_Sub1) aClass106_1684.method427((long) var5);
+			var3 = (Entity_Sub1) aClass106_1684.get((long) var5);
 			if (var3 == null) {
 				var3 = Entity_Sub1.method887(aClass87_1683, var5 & '\uffff', 0);
 				if (var3 == null) {
@@ -427,7 +427,7 @@ public class ObjectDefinition extends DualNode {
 					var3.method897();
 				}
 
-				aClass106_1684.method428(var3, (long) var5);
+				aClass106_1684.put(var3, (long) var5);
 			}
 		}
 
@@ -500,7 +500,7 @@ public class ObjectDefinition extends DualNode {
 		} else {
 			for (int var1 = 0; var1 < this.transformIds.length; ++var1) {
 				if (this.transformIds[var1] != -1) {
-					ObjectDefinition var2 = Class37.getObjectDefinition(this.transformIds[var1]);
+					ObjectType var2 = Class37.getObjectType(this.transformIds[var1]);
 					if (-874560339 * var2.anInt1715 != -1 || var2.anIntArray1697 != null) {
 						return true;
 					}
@@ -549,7 +549,7 @@ public class ObjectDefinition extends DualNode {
 		}
 	}
 
-	public final ObjectDefinition transform() {
+	public final ObjectType transform() {
 		int var1 = -1;
 		if (this.varpIndex * -560193431 != -1) {
 			var1 = Class91.method401(-560193431 * this.varpIndex);
@@ -558,12 +558,12 @@ public class ObjectDefinition extends DualNode {
 		}
 
 		return var1 >= 0 && var1 < this.transformIds.length && this.transformIds[var1] != -1
-				? Class37.getObjectDefinition(this.transformIds[var1]) : null;
+				? Class37.getObjectType(this.transformIds[var1]) : null;
 	}
 
-	public static DualNode_Sub13_Sub2[] method868(Class87 var0, String var1, String var2) {
-		int var3 = var0.method383(var1);
-		int var4 = var0.method384(var3, var2);
+	public static DualNode_Sub13_Sub2[] method868(AbstractIndex var0, String var1, String var2) {
+		int var3 = var0.getFile(var1);
+		int var4 = var0.getChild(var3, var2);
 		DualNode_Sub13_Sub2[] var5;
 		if (!Class35.method202(var0, var3, var4)) {
 			var5 = null;
@@ -675,19 +675,19 @@ public class ObjectDefinition extends DualNode {
 
 	}
 
-	public static DualNode_Sub4 method871(int var0) {
-		DualNode_Sub4 var1 = (DualNode_Sub4) DualNode_Sub4.aClass106_1491.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static EnumType getEnumType(int id) {
+		EnumType type = (EnumType) EnumType.enums.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = DualNode_Sub4.aClass87_1492.getFile(8, var0);
-			var1 = new DualNode_Sub4();
-			if (var2 != null) {
-				var1.method686(new ByteBuf(var2));
+			byte[] bytes = EnumType.enum_ref.getFile(8, id);
+			type = new EnumType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			DualNode_Sub4.aClass106_1491.method428(var1, (long) var0);
-			return var1;
+			EnumType.enums.put(type, (long) id);
+			return type;
 		}
 	}
 }

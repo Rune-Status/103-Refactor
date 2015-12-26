@@ -14,8 +14,8 @@ public final class Class31 {
 	static int anInt352;
 	int anInt353;
 
-	public static void method190(Class87 var0) {
-		Class112.aClass87_789 = var0;
+	public static void method190(AbstractIndex var0) {
+		Class112.inv_ref = var0;
 	}
 
 	public static int method191(int var0, int var1) {

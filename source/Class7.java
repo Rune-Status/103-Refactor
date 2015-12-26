@@ -37,7 +37,7 @@ public class Class7 {
 
 			Client.regionIds = new int[region_count];
 			Class69.mapRegionFileIds = new int[region_count];
-			DualNode_Sub5.landRegionFielIds = new int[region_count];
+			InvType.landRegionFielIds = new int[region_count];
 			aByteArrayArray152 = new byte[region_count][];
 			LandscapeTile.aByteArrayArray1406 = new byte[region_count][];
 			boolean var13 = false;
@@ -62,10 +62,10 @@ public class Class7 {
 						GameClient.dumpMap(var9, DualNode_Sub12.regionXTEAs[region_count]);
 						Client.regionIds[region_count] = var9;
 						System.out.println("blahhh:" + Client.regionIds[region_count] + "," + var9);
-						Class69.mapRegionFileIds[region_count] = Class48_Sub1.aClass87_Sub1_1295
-								.method383("m" + plane + "_" + var1);
-						DualNode_Sub5.landRegionFielIds[region_count] = Class48_Sub1.aClass87_Sub1_1295
-								.method383("l" + plane + "_" + var1);
+						Class69.mapRegionFileIds[region_count] = Class48_Sub1.landscapesIndex
+								.getFile("m" + plane + "_" + var1);
+						InvType.landRegionFielIds[region_count] = Class48_Sub1.landscapesIndex
+								.getFile("l" + plane + "_" + var1);
 						++region_count;
 					}
 				}
@@ -102,7 +102,7 @@ public class Class7 {
 
 			Client.regionIds = new int[region_count];
 			Class69.mapRegionFileIds = new int[region_count];
-			DualNode_Sub5.landRegionFielIds = new int[region_count];
+			InvType.landRegionFielIds = new int[region_count];
 			aByteArrayArray152 = new byte[region_count][];
 			LandscapeTile.aByteArrayArray1406 = new byte[region_count][];
 			region_count = 0;
@@ -128,10 +128,10 @@ public class Class7 {
 								Client.regionIds[region_count] = var8;
 								var4 = var8 >> 8 & 255;
 								int var10 = var8 & 255;
-								Class69.mapRegionFileIds[region_count] = Class48_Sub1.aClass87_Sub1_1295
-										.method383("m" + var4 + "_" + var10);
-								DualNode_Sub5.landRegionFielIds[region_count] = Class48_Sub1.aClass87_Sub1_1295
-										.method383("l" + var4 + "_" + var10);
+								Class69.mapRegionFileIds[region_count] = Class48_Sub1.landscapesIndex
+										.getFile("m" + var4 + "_" + var10);
+								InvType.landRegionFielIds[region_count] = Class48_Sub1.landscapesIndex
+										.getFile("l" + var4 + "_" + var10);
 								++region_count;
 							}
 						}
@@ -293,7 +293,7 @@ public class Class7 {
 					}
 				}
 
-				var11.definition = DualNode_Sub11.getNpcDefinition(Client.inBuffer.getBits(14));
+				var11.definition = VarPlayerType.getNpcType(Client.inBuffer.getBits(14));
 				var3 = Client.directionAngles[Client.inBuffer.getBits(3)];
 				if (var10) {
 					var11.anInt1953 = (var11.anInt1937 = var3 * 518992781) * -1253637257;
@@ -323,7 +323,7 @@ public class Class7 {
 			}
 
 			Client.inBuffer.byteAccess();
-			DualNode_Sub2.decodeNpcFlags();
+			IdentKitType.decodeNpcFlags();
 
 			for (var1 = 0; var1 < Client.anInt2105 * 1457329839; ++var1) {
 				var4 = Client.anIntArray2107[var1];

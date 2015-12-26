@@ -1,10 +1,10 @@
 
-public class DualNode_Sub3 extends DualNode {
+public class SequenceType extends DualNode {
 
 	public int anInt1469 = 1379256319;
-	static Class87 aClass87_1470;
-	static Class87 aClass87_1471;
-	public static Class106 aClass106_1472 = new Class106(64);
+	static AbstractIndex aClass87_1470;
+	static AbstractIndex aClass87_1471;
+	public static Class106 sequences = new Class106(64);
 	public static Class106 aClass106_1473 = new Class106(100);
 	public int[] anIntArray1474;
 	public boolean aBool1475 = false;
@@ -21,9 +21,9 @@ public class DualNode_Sub3 extends DualNode {
 	public int anInt1486 = 1981711194;
 	public int[] anIntArray1487;
 	static int anInt1488;
-	static Class87 aClass87_1489;
+	static AbstractIndex seq_ref;
 
-	void method673(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {
@@ -103,7 +103,7 @@ public class DualNode_Sub3 extends DualNode {
 
 	}
 
-	void method675() {
+	void post() {
 		if (this.anInt1484 * -1948482873 == -1) {
 			if (this.anIntArray1478 == null) {
 				this.anInt1484 = 0;
@@ -165,7 +165,7 @@ public class DualNode_Sub3 extends DualNode {
 		}
 	}
 
-	public Model method678(Model var1, int var2, DualNode_Sub3 var3, int var4) {
+	public Model method678(Model var1, int var2, SequenceType var3, int var4) {
 		var2 = this.anIntArray1474[var2];
 		DualNode_Sub12 var6 = method685(var2 >> 16);
 		var2 &= '\uffff';
@@ -217,9 +217,9 @@ public class DualNode_Sub3 extends DualNode {
 		}
 	}
 
-	public static DualNode_Sub13_Sub2 method680(Class87 var0, String var1, String var2) {
-		int var3 = var0.method383(var1);
-		int var5 = var0.method384(var3, var2);
+	public static DualNode_Sub13_Sub2 method680(AbstractIndex var0, String var1, String var2) {
+		int var3 = var0.getFile(var1);
+		int var5 = var0.getChild(var3, var2);
 		DualNode_Sub13_Sub2 var4;
 		if (!Class35.method202(var0, var3, var5)) {
 			var4 = null;
@@ -290,7 +290,7 @@ public class DualNode_Sub3 extends DualNode {
 
 	}
 
-	public static int method683(CharSequence var0) {
+	public static int djb2Hash(CharSequence var0) {
 		int var1 = var0.length();
 		int var3 = 0;
 
@@ -303,12 +303,12 @@ public class DualNode_Sub3 extends DualNode {
 
 	static final void method684(String var0) {
 		if (var0 != null) {
-			String var3 = DualNode_Sub11.method728(var0, Class48_Sub1.aClass124_1297);
+			String var3 = VarPlayerType.method728(var0, Class48_Sub1.aClass124_1297);
 			if (var3 != null) {
 				for (int var1 = 0; var1 < -1616775607 * Client.anInt2184; ++var1) {
 					FriendedPlayer var2 = Client.friendedPlayers[var1];
 					String var4 = var2.displayName;
-					String var5 = DualNode_Sub11.method728(var4, Class48_Sub1.aClass124_1297);
+					String var5 = VarPlayerType.method728(var4, Class48_Sub1.aClass124_1297);
 					if (ItemTable.method646(var0, var3, var4, var5)) {
 						Client.anInt2184 -= -1013982215;
 
@@ -329,12 +329,12 @@ public class DualNode_Sub3 extends DualNode {
 	}
 
 	static DualNode_Sub12 method685(int var0) {
-		DualNode_Sub12 var1 = (DualNode_Sub12) aClass106_1473.method427((long) var0);
+		DualNode_Sub12 var1 = (DualNode_Sub12) aClass106_1473.get((long) var0);
 		if (var1 != null) {
 			return var1;
 		} else {
-			Class87 var2 = aClass87_1470;
-			Class87 var3 = aClass87_1471;
+			AbstractIndex var2 = aClass87_1470;
+			AbstractIndex var3 = aClass87_1471;
 			boolean var4 = true;
 			int[] var5 = var2.method394(var0);
 
@@ -363,7 +363,7 @@ public class DualNode_Sub3 extends DualNode {
 			}
 
 			if (var10 != null) {
-				aClass106_1473.method428(var10, (long) var0);
+				aClass106_1473.put(var10, (long) var0);
 			}
 
 			return var10;

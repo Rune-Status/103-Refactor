@@ -1,15 +1,15 @@
 
 public class Class2 {
 
-	static CacheIndex aClass87_Sub1_76;
+	static CacheIndex fontMetricsIndex;
 	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array77;
 	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array78;
-	static CacheIndex aClass87_Sub1_79;
+	static CacheIndex midiTrack1Index;
 	public static char aChar80;
 
-	public static void method60(Class87 var0, Class87 var1) {
-		Class84.aClass87_689 = var0;
-		NpcDefinition.aClass87_1596 = var1;
+	public static void method60(AbstractIndex var0, AbstractIndex var1) {
+		Class84.npc_ref = var0;
+		NpcType.aClass87_1596 = var1;
 	}
 
 	Class2() throws Throwable {
@@ -33,7 +33,7 @@ public class Class2 {
 
 	static final void method62(int var0, int var1, int var2) {
 		if (var0 >= 128 && var1 >= 128 && var0 <= 13056 && var1 <= 13056) {
-			int var4 = NpcDefinition.method802(var0, var1, -747958745 * InterfaceNode.floorLevel) - var2;
+			int var4 = NpcType.method802(var0, var1, -747958745 * InterfaceNode.floorLevel) - var2;
 			var0 -= 282154897 * Projectile.cameraX;
 			var4 -= 1447873857 * FriendedPlayer.cameraZ;
 			var1 -= -324676025 * Class72.cameraY;

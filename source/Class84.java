@@ -1,7 +1,7 @@
 
 public class Class84 {
 
-	static Class87 aClass87_689;
+	static AbstractIndex npc_ref;
 
 	Class84() throws Throwable {
 		throw new Error();

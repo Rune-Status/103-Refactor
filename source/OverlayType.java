@@ -1,8 +1,8 @@
 
-public class DualNode_Sub9 extends DualNode {
+public class OverlayType extends DualNode {
 
 	public int anInt1522 = -978001323;
-	public static Class106 aClass106_1523 = new Class106(64);
+	public static Class106 overlays = new Class106(64);
 	public int anInt1524;
 	public int anInt1525;
 	public int anInt1526 = 0;
@@ -12,9 +12,9 @@ public class DualNode_Sub9 extends DualNode {
 	public int anInt1530;
 	public int anInt1531;
 	public int anInt1532;
-	public static Class87 aClass87_1533;
+	public static AbstractIndex overlay_ref;
 
-	void method712(ByteBuf var1, int var2) {
+	void decode(ByteBuf var1, int var2) {
 		while (true) {
 			int var3 = var1.getUByte();
 			if (var3 == 0) {
@@ -101,7 +101,7 @@ public class DualNode_Sub9 extends DualNode {
 
 	}
 
-	void method715() {
+	void post() {
 		if (this.anInt1527 * -105977311 != -1) {
 			this.method714(this.anInt1527 * -105977311);
 			this.anInt1525 = 61882287 * this.anInt1531;

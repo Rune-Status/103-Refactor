@@ -52,7 +52,7 @@ public class Class16 {
 				Node_Sub5.aClass24_1265.aBool303 = !Node_Sub5.aClass24_1265.aBool303;
 				Class75.method335();
 				if (!Node_Sub5.aClass24_1265.aBool303) {
-					PlayerConfig.method271(Class2.aClass87_Sub1_79, "scape main", "", 255, false);
+					PlayerConfig.method271(Class2.midiTrack1Index, "scape main", "", 255, false);
 				} else {
 					Class110.aNode_Sub4_Sub4_784.method856();
 					Class110.anInt782 = 325298615;

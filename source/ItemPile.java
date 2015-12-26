@@ -42,10 +42,10 @@ public final class ItemPile {
 				int var32 = var7 >> 14 & 32767;
 				int var33 = var14 & 31;
 				int var34 = var14 >> 6 & 3;
-				ObjectDefinition var16;
+				ObjectType var16;
 				if (var1 == 0) {
 					InterfaceNode.landscape.method56(var0, var2, var3);
-					var16 = Class37.getObjectDefinition(var32);
+					var16 = Class37.getObjectType(var32);
 					if (-1030255905 * var16.anInt1690 != 0) {
 						Client.collisionMaps[var0].method238(var2, var3, var33, var34, var16.aBool1714);
 					}
@@ -57,7 +57,7 @@ public final class ItemPile {
 
 				if (var1 == 2) {
 					InterfaceNode.landscape.method26(var0, var2, var3);
-					var16 = Class37.getObjectDefinition(var32);
+					var16 = Class37.getObjectType(var32);
 					if (1162660975 * var16.sizeX + var2 > 103 || var3 + 1162660975 * var16.sizeX > 103
 							|| var2 + -1976023901 * var16.sizeY > 103 || var16.sizeY * -1976023901 + var3 > 103) {
 						return;
@@ -71,7 +71,7 @@ public final class ItemPile {
 
 				if (var1 == 3) {
 					InterfaceNode.landscape.method27(var0, var2, var3);
-					var16 = Class37.getObjectDefinition(var32);
+					var16 = Class37.getObjectType(var32);
 					if (var16.anInt1690 * -1030255905 == 1) {
 						Client.collisionMaps[var0].method241(var2, var3);
 					}
@@ -86,7 +86,7 @@ public final class ItemPile {
 
 				Landscape var36 = InterfaceNode.landscape;
 				CollisionMap var21 = Client.collisionMaps[var0];
-				ObjectDefinition var8 = Class37.getObjectDefinition(var4);
+				ObjectType var8 = Class37.getObjectType(var4);
 				int var12;
 				int var27;
 				if (var5 != 1 && var5 != 3) {
@@ -245,7 +245,7 @@ public final class ItemPile {
 								var37 = 16;
 								var35 = var36.method53(var0, var2, var3);
 								if (var35 != 0) {
-									var37 = Class37.getObjectDefinition(var35 >> 14 & 32767).anInt1699 * 1063235335;
+									var37 = Class37.getObjectType(var35 >> 14 & 32767).anInt1699 * 1063235335;
 								}
 
 								if (-100857069 * var8.anInt1698 == -1 && var8.transformIds == null) {
@@ -262,7 +262,7 @@ public final class ItemPile {
 								var37 = 8;
 								var35 = var36.method53(var0, var2, var3);
 								if (var35 != 0) {
-									var37 = Class37.getObjectDefinition(var35 >> 14 & 32767).anInt1699 * 1063235335 / 2;
+									var37 = Class37.getObjectType(var35 >> 14 & 32767).anInt1699 * 1063235335 / 2;
 								}
 
 								if (var8.anInt1698 * -100857069 == -1 && var8.transformIds == null) {
@@ -290,7 +290,7 @@ public final class ItemPile {
 								var37 = 8;
 								var35 = var36.method53(var0, var2, var3);
 								if (var35 != 0) {
-									var37 = Class37.getObjectDefinition(var35 >> 14 & 32767).anInt1699 * 1063235335 / 2;
+									var37 = Class37.getObjectType(var35 >> 14 & 32767).anInt1699 * 1063235335 / 2;
 								}
 
 								int var25 = 2 + var5 & 3;

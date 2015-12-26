@@ -10,7 +10,7 @@ public class Class32 {
 	static int anInt358 = 0;
 	static Map aMap359 = new HashMap();
 
-	public static void method193(Class87 var0, Class87 var1, Class87 var2, Class87 var3) {
+	public static void method193(AbstractIndex var0, AbstractIndex var1, AbstractIndex var2, AbstractIndex var3) {
 		Widget.widgetIndex = var0;
 		Widget.aClass87_1131 = var1;
 		Npc.aClass87_1967 = var2;
@@ -49,7 +49,7 @@ public class Class32 {
 
 			GroundItem var3;
 			for (var3 = (GroundItem) var2.method471(); var3 != null; var3 = (GroundItem) var2.method473()) {
-				ItemDefinition var4 = FriendedPlayer.getItemDefinition(-848428919 * var3.anInt1842);
+				ItemType var4 = FriendedPlayer.getItemType(-848428919 * var3.anInt1842);
 				long var5 = (long) (60742695 * var4.storeValue);
 				if (var4.stackable * 1303294175 == 1) {
 					var5 *= (long) (1308808435 * var3.quantity + 1);
@@ -81,14 +81,14 @@ public class Class32 {
 				}
 
 				int var10 = var0 + (var1 << 7) + 1610612736;
-				InterfaceNode.landscape.addItemPile(-747958745 * InterfaceNode.floorLevel, var0, var1, NpcDefinition
+				InterfaceNode.landscape.addItemPile(-747958745 * InterfaceNode.floorLevel, var0, var1, NpcType
 						.method802(var0 * 128 + 64, var1 * 128 + 64, -747958745 * InterfaceNode.floorLevel), var9,
 						var10, var12, var11);
 			}
 		}
 	}
 
-	public static void method196(Class87 var0) {
-		DualNode_Sub10.aClass87_1536 = var0;
+	public static void method196(AbstractIndex var0) {
+		VarClientType.varclient_ref = var0;
 	}
 }

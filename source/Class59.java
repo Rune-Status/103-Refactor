@@ -2,7 +2,7 @@
 public class Class59 {
 
 	static Class16 aClass16_548;
-	static CacheIndex aClass87_Sub1_549;
+	static CacheIndex midiInstrumentsIndex;
 
 	Class59() throws Throwable {
 		throw new Error();

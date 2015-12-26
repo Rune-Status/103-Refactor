@@ -76,19 +76,19 @@ public class Class66_Sub2 extends Class66 {
 
 	}
 
-	public static DualNode_Sub10 method552(int var0, int var1) {
-		DualNode_Sub10 var2 = (DualNode_Sub10) DualNode_Sub10.aClass106_1534.method427((long) var0);
-		if (var2 != null) {
-			return var2;
+	public static VarClientType getClientType(int id) {
+		VarClientType type = (VarClientType) VarClientType.varclients.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var3 = DualNode_Sub10.aClass87_1536.getFile(19, var0);
-			var2 = new DualNode_Sub10();
-			if (var3 != null) {
-				var2.method717(new ByteBuf(var3));
+			byte[] bytes = VarClientType.varclient_ref.getFile(19, id);
+			type = new VarClientType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			DualNode_Sub10.aClass106_1534.method428(var2, (long) var0);
-			return var2;
+			VarClientType.varclients.put(type, (long) id);
+			return type;
 		}
 	}
 
@@ -97,12 +97,12 @@ public class Class66_Sub2 extends Class66 {
 	}
 
 	static final void method554(int var0, int var1) {
-		int var2 = Class35.aDualNode_Sub13_Sub3_Sub1_386.method967(GameStrings.aString996);
+		int var2 = Class35.b12_full.method967(GameStrings.aString996);
 
 		int var3;
 		int var4;
 		for (var3 = 0; var3 < Client.menuItemCount * 1768430155; ++var3) {
-			var4 = Class35.aDualNode_Sub13_Sub3_Sub1_386.method967(Class25.method165(var3));
+			var4 = Class35.b12_full.method967(Class25.method165(var3));
 			if (var4 > var2) {
 				var2 = var4;
 			}
@@ -130,7 +130,7 @@ public class Class66_Sub2 extends Class66 {
 
 		Client.menuOpen = true;
 		Class7.menuX = var4 * -947513225;
-		DualNode_Sub5.menuY = -919188011 * var5;
+		InvType.menuY = -919188011 * var5;
 		Class4.menuWidth = 1685804945 * var2;
 		Class4.menuHeight = 1989334774 + 423879157 * Client.menuItemCount;
 	}

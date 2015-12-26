@@ -49,7 +49,7 @@ final class Class122 implements Comparator {
 
 				if (var7 <= 49) {
 					Class39.aByteArrayArrayArray429[var1][var2][var3] = var0.getByte();
-					DualNode_Sub6.aByteArrayArrayArray1507[var1][var2][var3] = (byte) ((var7 - 2) / 4);
+					VarClientStringType.aByteArrayArrayArray1507[var1][var2][var3] = (byte) ((var7 - 2) / 4);
 					Class49.aByteArrayArrayArray514[var1][var2][var3] = (byte) (var7 - 2 + var6 & 3);
 				} else if (var7 <= 81) {
 					Class39.renderRules[var1][var2][var3] = (byte) (var7 - 49);

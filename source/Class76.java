@@ -84,15 +84,15 @@ public class Class76 {
 		Client.anInt2184 = 0;
 		Client.anInt2229 = 0;
 
-		for (var0 = 0; var0 < -1248800389 * DualNode_Sub11.anInt1547; ++var0) {
-			DualNode_Sub11 var3 = Class37.method209(var0);
+		for (var0 = 0; var0 < -1248800389 * VarPlayerType.anInt1547; ++var0) {
+			VarPlayerType var3 = Class37.getVarPlayerType(var0);
 			if (var3 != null) {
 				Class94.engineVars[var0] = 0;
 				Class94.tempVars[var0] = 0;
 			}
 		}
 
-		Class33.aClass28_364.method178();
+		Class33.aClass28_364.reset();
 		Client.anInt2136 = -218906203;
 		if (-1074177723 * Client.anInt2226 != -1) {
 			Class53.method275(Client.anInt2226 * -1074177723);
@@ -100,7 +100,7 @@ public class Class76 {
 
 		for (InterfaceNode var4 = (InterfaceNode) Client.interfaceNodes
 				.method150(); var4 != null; var4 = (InterfaceNode) Client.interfaceNodes.method151()) {
-			DualNode_Sub4.method691(var4, true);
+			EnumType.method691(var4, true);
 		}
 
 		Client.anInt2226 = 605073011;

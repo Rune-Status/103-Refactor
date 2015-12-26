@@ -24,13 +24,13 @@ public final class Node_Sub8 extends Node {
 			method550(25);
 			Class82.method363(GameStrings.aString852, true);
 			int var5 = 1426698711 * Node_Sub10.regionBaseX;
-			int var9 = 714823515 * Class28.regionBaseY;
+			int var9 = 714823515 * VarClientHub.regionBaseY;
 			Node_Sub10.regionBaseX = (var0 - 6) * -1551462600;
-			Class28.regionBaseY = (var1 - 6) * -190314856;
+			VarClientHub.regionBaseY = (var1 - 6) * -190314856;
 			int var7 = 1426698711 * Node_Sub10.regionBaseX - var5;
-			int var3 = 714823515 * Class28.regionBaseY - var9;
+			int var3 = 714823515 * VarClientHub.regionBaseY - var9;
 			var5 = Node_Sub10.regionBaseX * 1426698711;
-			var9 = 714823515 * Class28.regionBaseY;
+			var9 = 714823515 * VarClientHub.regionBaseY;
 
 			int var10;
 			int var11;
@@ -160,7 +160,7 @@ public final class Node_Sub8 extends Node {
 				for (var10 = 0; var10 < Client.anInt2225 * 727116725; ++var10) {
 					Npc var22 = Client.npcArray[Client.npcIndices[var10]];
 					if (var22 != null && var22.method1017((byte) 60)) {
-						NpcDefinition var18 = var22.definition;
+						NpcType var18 = var22.definition;
 						if (var18 != null && var18.transformIds != null) {
 							var18 = var18.transform();
 						}
@@ -227,7 +227,7 @@ public final class Node_Sub8 extends Node {
 					if (314519437 * Client.anInt2075 == 2) {
 						var4 = 2 + (-751140636 * Client.hintArrowX - 1411827548 * Node_Sub10.regionBaseX)
 								- 1272643751 * Class68.myPlayer.strictX / 32;
-						var5 = 2 + (Client.hintArrowY * 985346372 - Class28.regionBaseY * -1435673236)
+						var5 = 2 + (Client.hintArrowY * 985346372 - VarClientHub.regionBaseY * -1435673236)
 								- Class68.myPlayer.strictY * -1801433343 / 32;
 						Class7.method77(var1, var2, var4, var5, Class72.aSpriteArray604[1], var6);
 					}
@@ -261,7 +261,7 @@ public final class Node_Sub8 extends Node {
 		}
 	}
 
-	static int method548(Class87 var0, Class87 var1) {
+	static int method548(AbstractIndex var0, AbstractIndex var1) {
 		int var2 = 0;
 		if (var0.method385("title.jpg", "")) {
 			++var2;
@@ -307,9 +307,9 @@ public final class Node_Sub8 extends Node {
 		return var2;
 	}
 
-	public static void method549(Class87 var0) {
-		DualNode_Sub11.aClass87_1548 = var0;
-		DualNode_Sub11.anInt1547 = DualNode_Sub11.aClass87_1548.fileCount(16) * 1942513075;
+	public static void method549(AbstractIndex var0) {
+		VarPlayerType.varplayer_ref = var0;
+		VarPlayerType.anInt1547 = VarPlayerType.varplayer_ref.fileCount(16) * 1942513075;
 	}
 
 	static void method550(int var0) {
@@ -339,11 +339,11 @@ public final class Node_Sub8 extends Node {
 
 			if (var0 != 5 && var0 != 10) {
 				if (var0 == 20) {
-					DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.aClass87_Sub1_445,
-							Node_Sub5.aClass87_Sub1_1266, true, 846055547 * Client.anInt2113 == 11 ? 4 : 0);
+					DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.binaryIndex,
+							Node_Sub5.spritesIndex, true, 846055547 * Client.anInt2113 == 11 ? 4 : 0);
 				} else if (var0 == 11) {
-					DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.aClass87_Sub1_445,
-							Node_Sub5.aClass87_Sub1_1266, false, 4);
+					DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.binaryIndex,
+							Node_Sub5.spritesIndex, false, 4);
 				} else if (Class6.aBool142) {
 					Class6.aDualNode_Sub13_Sub2_147 = null;
 					Class6.aDualNode_Sub13_Sub2_117 = null;
@@ -372,8 +372,8 @@ public final class Node_Sub8 extends Node {
 					Class6.aBool142 = false;
 				}
 			} else {
-				DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.aClass87_Sub1_445,
-						Node_Sub5.aClass87_Sub1_1266, true, 0);
+				DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.binaryIndex,
+						Node_Sub5.spritesIndex, true, 0);
 			}
 
 			Client.anInt2113 = -317532493 * var0;

@@ -1,15 +1,15 @@
 import java.io.File;
 import java.io.RandomAccessFile;
 
-public class DualNode_Sub6 extends DualNode {
+public class VarClientStringType extends DualNode {
 
-	static Class106 aClass106_1504 = new Class106(64);
+	static Class106 varclientstrings = new Class106(64);
 	protected static int anInt1505;
-	public static Class87 aClass87_1506;
+	public static AbstractIndex varclientstring_ref;
 	static byte[][][] aByteArrayArrayArray1507;
-	public boolean aBool1508 = false;
+	public boolean serialize = false;
 
-	void method696(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {
@@ -22,7 +22,7 @@ public class DualNode_Sub6 extends DualNode {
 
 	void method697(ByteBuf var1, int var2) {
 		if (var2 == 2) {
-			this.aBool1508 = true;
+			this.serialize = true;
 		}
 
 	}
@@ -43,10 +43,10 @@ public class DualNode_Sub6 extends DualNode {
 		}
 	}
 
-	public static void method699(Class87 var0, Class87 var1, Class87 var2) {
-		DualNode_Sub3.aClass87_1489 = var0;
-		DualNode_Sub3.aClass87_1470 = var1;
-		DualNode_Sub3.aClass87_1471 = var2;
+	public static void method699(AbstractIndex var0, AbstractIndex var1, AbstractIndex var2) {
+		SequenceType.seq_ref = var0;
+		SequenceType.aClass87_1470 = var1;
+		SequenceType.aClass87_1471 = var2;
 	}
 
 	static File method700(String var0) {

@@ -21,6 +21,6 @@ public final class GroundItem extends Entity {
 	}
 
 	protected final Model method654(byte var1) {
-		return FriendedPlayer.getItemDefinition(this.anInt1842 * -848428919).method811(1308808435 * this.quantity);
+		return FriendedPlayer.getItemType(this.anInt1842 * -848428919).method811(1308808435 * this.quantity);
 	}
 }

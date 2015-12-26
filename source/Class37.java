@@ -6,26 +6,26 @@ final class Class37 implements Comparator {
 	// $FF: synthetic field
 	boolean val$preferOwnWorld;
 
-	public static ObjectDefinition getObjectDefinition(int var0) {
-		ObjectDefinition var1 = (ObjectDefinition) ObjectDefinition.aClass106_1685.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static ObjectType getObjectType(int id) {
+		ObjectType type = (ObjectType) ObjectType.objects.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = ObjectDefinition.aClass87_1682.getFile(6, var0);
-			var1 = new ObjectDefinition();
-			var1.anInt1718 = -55164811 * var0;
-			if (var2 != null) {
-				var1.method858(new ByteBuf(var2));
+			byte[] bytes = ObjectType.objects_ref.getFile(6, id);
+			type = new ObjectType();
+			type.id = -55164811 * id;
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			var1.method857();
-			if (var1.aBool1720) {
-				var1.anInt1690 = 0;
-				var1.aBool1714 = false;
+			type.post();
+			if (type.aBool1720) {
+				type.anInt1690 = 0;
+				type.aBool1714 = false;
 			}
 
-			ObjectDefinition.aClass106_1685.method428(var1, (long) var0);
-			return var1;
+			ObjectType.objects.put(type, (long) id);
+			return type;
 		}
 	}
 
@@ -47,19 +47,19 @@ final class Class37 implements Comparator {
 		}
 	}
 
-	public static DualNode_Sub11 method209(int var0) {
-		DualNode_Sub11 var1 = (DualNode_Sub11) DualNode_Sub11.aClass106_1545.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static VarPlayerType getVarPlayerType(int id) {
+		VarPlayerType type = (VarPlayerType) VarPlayerType.varplayers.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = DualNode_Sub11.aClass87_1548.getFile(16, var0);
-			var1 = new DualNode_Sub11();
-			if (var2 != null) {
-				var1.method723(new ByteBuf(var2));
+			byte[] bytes = VarPlayerType.varplayer_ref.getFile(16, id);
+			type = new VarPlayerType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			DualNode_Sub11.aClass106_1545.method428(var1, (long) var0);
-			return var1;
+			VarPlayerType.varplayers.put(type, (long) id);
+			return type;
 		}
 	}
 

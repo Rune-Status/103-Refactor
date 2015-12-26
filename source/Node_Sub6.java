@@ -18,11 +18,11 @@ public final class Node_Sub6 extends Node {
 	Node_Sub4_Sub2 aNode_Sub4_Sub2_1280;
 	int anInt1281;
 	int anInt1282;
-	ObjectDefinition anObjectDefinition1283;
+	ObjectType anObjectDefinition1283;
 
 	void method536(int var1) {
 		int var2 = this.anInt1281 * -1177973365;
-		ObjectDefinition var3 = this.anObjectDefinition1283.transform();
+		ObjectType var3 = this.anObjectDefinition1283.transform();
 		if (var3 != null) {
 			this.anInt1281 = var3.anInt1715 * 802663847;
 			this.anInt1282 = var3.anInt1716 * 401668736;
@@ -45,7 +45,7 @@ public final class Node_Sub6 extends Node {
 	}
 
 	public static void method537() {
-		DualNode_Sub7.aClass106_1509.method429();
+		UnderlayType.underlays.method429();
 	}
 
 	public static Object method538(byte[] var0, boolean var1) {
@@ -133,7 +133,7 @@ public final class Node_Sub6 extends Node {
 				}
 
 				File var8 = var6[var7];
-				if (!Class87.method393(var8, false)) {
+				if (!AbstractIndex.method393(var8, false)) {
 					++var4;
 					break;
 				}
@@ -176,32 +176,32 @@ public final class Node_Sub6 extends Node {
 		}
 
 		Class75.cacheDataFile = new CacheFile(
-				new CacheFileAccessor(DualNode_Sub6.method700("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
+				new CacheFileAccessor(VarClientStringType.method700("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
 		Class75.aClass121_636 = new CacheFile(
-				new CacheFileAccessor(DualNode_Sub6.method700("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+				new CacheFileAccessor(VarClientStringType.method700("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
 		Class39.cacheIndexFiles = new CacheFile[Class75.anInt638 * 855046563];
 
 		for (var4 = 0; var4 < Class75.anInt638 * 855046563; ++var4) {
 			Class39.cacheIndexFiles[var4] = new CacheFile(
-					new CacheFileAccessor(DualNode_Sub6.method700("main_file_cache.idx" + var4), "rw", 1048576L), 6000, 0);
+					new CacheFileAccessor(VarClientStringType.method700("main_file_cache.idx" + var4), "rw", 1048576L), 6000, 0);
 		}
 
 	}
 
-	public static DualNode_Sub3 method540(int var0, int var1) {
-		DualNode_Sub3 var2 = (DualNode_Sub3) DualNode_Sub3.aClass106_1472.method427((long) var0);
-		if (var2 != null) {
-			return var2;
+	public static SequenceType getSequenceType(int id) {
+		SequenceType type = (SequenceType) SequenceType.sequences.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var3 = DualNode_Sub3.aClass87_1489.getFile(12, var0);
-			var2 = new DualNode_Sub3();
-			if (var3 != null) {
-				var2.method673(new ByteBuf(var3));
+			byte[] bytes = SequenceType.seq_ref.getFile(12, id);
+			type = new SequenceType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			var2.method675();
-			DualNode_Sub3.aClass106_1472.method428(var2, (long) var0);
-			return var2;
+			type.post();
+			SequenceType.sequences.put(type, (long) id);
+			return type;
 		}
 	}
 }

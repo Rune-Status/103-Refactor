@@ -19,7 +19,7 @@ public final class BoundaryStub {
 		var0.anInt1804 = Class7.anInt148 * -749860951;
 		var0.anInt1805 = -1945497809 * Class7.anInt155;
 		var0.anInt1803 = Class7.anIntArray149[0];
-		var0.anInt1802 = DualNode_Sub11.anIntArray1544[0];
+		var0.anInt1802 = VarPlayerType.anIntArray1544[0];
 		var0.anInt1800 = Class7.anIntArray150[0];
 		var0.anInt1801 = Class7.anIntArray151[0];
 		var0.anIntArray1798 = Class85.anIntArray690;

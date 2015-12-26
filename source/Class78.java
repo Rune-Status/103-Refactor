@@ -35,7 +35,7 @@ public abstract class Class78 {
 				Class14 var10 = Client.aClass14Array2210[var0];
 				if (var10 == null) {
 					Class14 var10000 = (Class14) null;
-					var10 = Class14.method119(DualNode_Sub10.aClass87_Sub1_1537, Client.anIntArray2206[var0], 0);
+					var10 = Class14.method119(VarClientType.sfxIndex, Client.anIntArray2206[var0], 0);
 					if (var10 == null) {
 						continue;
 					}
@@ -97,7 +97,7 @@ public abstract class Class78 {
 
 			if (!var9) {
 				if (Client.anInt2201 * -1994948003 != 0 && 850867613 * Client.anInt2202 != -1) {
-					Class69.method328(Class2.aClass87_Sub1_79, Client.anInt2202 * 850867613, 0,
+					Class69.method328(Class2.midiTrack1Index, Client.anInt2202 * 850867613, 0,
 							Client.anInt2201 * -1994948003, false);
 				}
 

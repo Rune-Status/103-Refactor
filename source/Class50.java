@@ -9,7 +9,7 @@ public class Class50 {
 	static byte[][] aByteArrayArray522 = new byte[50][];
 
 	public static void method251() {
-		DualNode_Sub2.aClass106_1458.method429();
+		IdentKitType.identKits.method429();
 	}
 
 	static synchronized byte[] unpooled(int var0) {
@@ -43,7 +43,7 @@ public class Class50 {
 		int var1;
 		if (-1074177723 * Client.anInt2226 != -1) {
 			var1 = Client.anInt2226 * -1074177723;
-			if (DualNode_Sub2.loadWidget(var1)) {
+			if (IdentKitType.loadWidget(var1)) {
 				Class77.method338(Widget.interfaces[var1], -1);
 			}
 		}
@@ -91,7 +91,7 @@ public class Class50 {
 								+ (Client.menuItemCount * 1768430155 - 2) + GameStrings.aString1051;
 					}
 
-					Class35.aDualNode_Sub13_Sub3_Sub1_386.method966(var5, var1 + 4, var7 + 15, 16777215, 0,
+					Class35.b12_full.method966(var5, var1 + 4, var7 + 15, 16777215, 0,
 							Client.engineCycle * -1040073859 / 1000);
 				}
 			}
@@ -145,7 +145,7 @@ public class Class50 {
 					if (var2.aNode_Sub4_Sub2_1276 == null) {
 						if (var2.anInt1281 * -1177973365 >= 0) {
 							var10000 = (Class14) null;
-							Class14 var3 = Class14.method119(DualNode_Sub10.aClass87_Sub1_1537,
+							Class14 var3 = Class14.method119(VarClientType.sfxIndex,
 									-1177973365 * var2.anInt1281, 0);
 							if (var3 != null) {
 								Node_Sub2_Sub1 var9 = var3.method122().method722(Class59.aClass16_548);
@@ -163,7 +163,7 @@ public class Class50 {
 						if (var2.anIntArray1273 != null && (var2.anInt1274 -= var8 * -2049360189) * -2041650709 <= 0) {
 							int var11 = (int) (Math.random() * (double) var2.anIntArray1273.length);
 							var10000 = (Class14) null;
-							Class14 var14 = Class14.method119(DualNode_Sub10.aClass87_Sub1_1537,
+							Class14 var14 = Class14.method119(VarClientType.sfxIndex,
 									var2.anIntArray1273[var11], 0);
 							if (var14 != null) {
 								Node_Sub2_Sub1 var12 = var14.method122().method722(Class59.aClass16_548);

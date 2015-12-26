@@ -27,13 +27,13 @@ public abstract class Entity extends DualNode {
 		long var9 = ((long) var3 << 42) + ((long) var2 << 38) + ((long) var1 << 16) + (long) var0 + ((long) var4 << 40);
 		Sprite var6;
 		if (!var5) {
-			var6 = (Sprite) ItemDefinition.aClass106_1620.method427(var9);
+			var6 = (Sprite) ItemType.aClass106_1620.get(var9);
 			if (var6 != null) {
 				return var6;
 			}
 		}
 
-		ItemDefinition var7 = FriendedPlayer.getItemDefinition(var0);
+		ItemType var7 = FriendedPlayer.getItemType(var0);
 		if (var1 > 1 && var7.anIntArray1631 != null) {
 			int var11 = -1;
 
@@ -44,7 +44,7 @@ public abstract class Entity extends DualNode {
 			}
 
 			if (var11 != -1) {
-				var7 = FriendedPlayer.getItemDefinition(var11);
+				var7 = FriendedPlayer.getItemType(var11);
 			}
 		}
 
@@ -116,7 +116,7 @@ public abstract class Entity extends DualNode {
 			}
 
 			if (!var5) {
-				ItemDefinition.aClass106_1620.method428(var6, var9);
+				ItemType.aClass106_1620.put(var6, var9);
 			}
 
 			RSGraphics.setRaster(var15, var16, var17);

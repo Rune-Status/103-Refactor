@@ -3,14 +3,14 @@ import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Insets;
 
-public class DualNode_Sub1 extends DualNode {
+public class SpotAnimType extends DualNode {
 
-	public static Class87 aClass87_1440;
+	public static AbstractIndex aClass87_1440;
 	public int anInt1441 = 1973532945;
 	static Class106 aClass106_1442 = new Class106(30);
-	int anInt1443;
+	int id;
 	int anInt1444;
-	static Class106 aClass106_1445 = new Class106(64);
+	static Class106 spotanims = new Class106(64);
 	static Widget aWidget1446;
 	int anInt1447 = 0;
 	short[] aShortArray1448;
@@ -21,9 +21,9 @@ public class DualNode_Sub1 extends DualNode {
 	int anInt1453 = 0;
 	short[] aShortArray1454;
 	int anInt1455 = -1396281216;
-	public static Class87 aClass87_1456;
+	public static AbstractIndex anim_ref;
 
-	void method655(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {
@@ -35,7 +35,7 @@ public class DualNode_Sub1 extends DualNode {
 	}
 
 	public final Model method656(int var1) {
-		Model var2 = (Model) aClass106_1442.method427((long) (this.anInt1443 * 189082171));
+		Model var2 = (Model) aClass106_1442.get((long) (this.id * 189082171));
 		if (var2 == null) {
 			Entity_Sub1 var3 = Entity_Sub1.method887(aClass87_1440, this.anInt1444 * 1407877429, 0);
 			if (var3 == null) {
@@ -56,12 +56,12 @@ public class DualNode_Sub1 extends DualNode {
 			}
 
 			var2 = var3.method902(64 + -1189221219 * this.anInt1453, 850 + 443559011 * this.anInt1447, -30, -50, -30);
-			aClass106_1442.method428(var2, (long) (this.anInt1443 * 189082171));
+			aClass106_1442.put(var2, (long) (this.id * 189082171));
 		}
 
 		Model var5;
 		if (this.anInt1441 * -521951217 != -1 && var1 != -1) {
-			var5 = Node_Sub6.method540(this.anInt1441 * -521951217, -34560206).method677(var2, var1);
+			var5 = Node_Sub6.getSequenceType(this.anInt1441 * -521951217).method677(var2, var1);
 		} else {
 			var5 = var2.method996(true);
 		}
@@ -149,15 +149,15 @@ public class DualNode_Sub1 extends DualNode {
 	static void method659() {
 		int var0 = Client.anInt1983 * 76231581;
 		int var1 = Client.anInt1978 * -225353991;
-		int var2 = -1830553327 * DualNode_Sub6.anInt1505 - -452716157 * Class34.gameWidth - var0;
+		int var2 = -1830553327 * VarClientStringType.anInt1505 - -452716157 * Class34.gameWidth - var0;
 		int var3 = 2045896553 * Class21.anInt281 - 674167779 * Node_Sub9.gameHeight - var1;
 		if (var0 > 0 || var2 > 0 || var1 > 0 || var3 > 0) {
 			try {
 				Container var4 = Client.aClient2005.method1033();
 				int var5 = 0;
 				int var6 = 0;
-				if (var4 == DualNode_Sub10.aFrame1538) {
-					Insets var7 = DualNode_Sub10.aFrame1538.getInsets();
+				if (var4 == VarClientType.aFrame1538) {
+					Insets var7 = VarClientType.aFrame1538.getInsets();
 					var5 = var7.left;
 					var6 = var7.top;
 				}
@@ -169,17 +169,17 @@ public class DualNode_Sub1 extends DualNode {
 				}
 
 				if (var1 > 0) {
-					var9.fillRect(var5, var6, -1830553327 * DualNode_Sub6.anInt1505, var1);
+					var9.fillRect(var5, var6, -1830553327 * VarClientStringType.anInt1505, var1);
 				}
 
 				if (var2 > 0) {
-					var9.fillRect(var5 + DualNode_Sub6.anInt1505 * -1830553327 - var2, var6, var2,
+					var9.fillRect(var5 + VarClientStringType.anInt1505 * -1830553327 - var2, var6, var2,
 							Class21.anInt281 * 2045896553);
 				}
 
 				if (var3 > 0) {
 					var9.fillRect(var5, Class21.anInt281 * 2045896553 + var6 - var3,
-							DualNode_Sub6.anInt1505 * -1830553327, var3);
+							VarClientStringType.anInt1505 * -1830553327, var3);
 				}
 			} catch (Exception var8) {
 				;

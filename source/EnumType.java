@@ -1,9 +1,9 @@
 
-public class DualNode_Sub4 extends DualNode {
+public class EnumType extends DualNode {
 
 	public int anInt1490 = 0;
-	static Class106 aClass106_1491 = new Class106(64);
-	static Class87 aClass87_1492;
+	static Class106 enums = new Class106(64);
+	static AbstractIndex enum_ref;
 	public char aChar1493;
 	public char aChar1494;
 	public int anInt1495;
@@ -12,7 +12,7 @@ public class DualNode_Sub4 extends DualNode {
 	public String[] aStringArray1498;
 	public String aString1499 = "null";
 
-	void method686(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {
@@ -64,8 +64,8 @@ public class DualNode_Sub4 extends DualNode {
 	}
 
 	public static void method689() {
-		DualNode_Sub1.aClass106_1445.method429();
-		DualNode_Sub1.aClass106_1442.method429();
+		SpotAnimType.spotanims.method429();
+		SpotAnimType.aClass106_1442.method429();
 	}
 
 	static final String method690(int var0) {
@@ -104,7 +104,7 @@ public class DualNode_Sub4 extends DualNode {
 			Class68.method326(var5);
 		}
 
-		DualNode_Sub7.method705();
+		UnderlayType.method705();
 		if (-1074177723 * Client.anInt2226 != -1) {
 			Class65.method319(-1074177723 * Client.anInt2226, 1);
 		}

@@ -82,6 +82,6 @@ public class ExchangeOffer {
 	}
 
 	public static void method373() {
-		Varpbit.aClass106_1726.method429();
+		VarBitType.varbits.method429();
 	}
 }

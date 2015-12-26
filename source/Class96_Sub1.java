@@ -8,29 +8,29 @@ public class Class96_Sub1 extends Class96 {
 	static Sprite[] aSpriteArray1204;
 	short aShort1205;
 	int anInt1206 = (int) (Node_Sub5.currentTimeMs() / 1000L) * 1225451051;
-	static Class87 aClass87_1207;
+	static AbstractIndex aClass87_1207;
 	static Class61 aClass61_1208;
 
-	public static void method498(Class87 var0, Class87 var1, boolean var2) {
-		ObjectDefinition.aClass87_1682 = var0;
-		ObjectDefinition.aClass87_1683 = var1;
-		ObjectDefinition.aBool1696 = var2;
+	public static void method498(AbstractIndex var0, AbstractIndex var1, boolean var2) {
+		ObjectType.objects_ref = var0;
+		ObjectType.aClass87_1683 = var1;
+		ObjectType.aBool1696 = var2;
 	}
 
-	public static DualNode_Sub1 method499(int var0, byte var1) {
-		DualNode_Sub1 var2 = (DualNode_Sub1) DualNode_Sub1.aClass106_1445.method427((long) var0);
-		if (var2 != null) {
-			return var2;
+	public static SpotAnimType getSpotAnimType(int id) {
+		SpotAnimType type = (SpotAnimType) SpotAnimType.spotanims.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var3 = DualNode_Sub1.aClass87_1456.getFile(13, var0);
-			var2 = new DualNode_Sub1();
-			var2.anInt1443 = var0 * -892199181;
-			if (var3 != null) {
-				var2.method655(new ByteBuf(var3));
+			byte[] bytes = SpotAnimType.anim_ref.getFile(13, id);
+			type = new SpotAnimType();
+			type.id = id * -892199181;
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			DualNode_Sub1.aClass106_1445.method428(var2, (long) var0);
-			return var2;
+			SpotAnimType.spotanims.put(type, (long) id);
+			return type;
 		}
 	}
 
@@ -163,13 +163,13 @@ public class Class96_Sub1 extends Class96 {
 			}
 
 			var8 = var6;
-			var12 = DualNode_Sub5.method695(var12, var2);
-			var13 = DualNode_Sub5.method695(var13, var2);
+			var12 = InvType.method695(var12, var2);
+			var13 = InvType.method695(var13, var2);
 			if (var13 != var12 && java.lang.Character.toUpperCase(var12) != java.lang.Character.toUpperCase(var13)) {
 				var12 = java.lang.Character.toLowerCase(var12);
 				var13 = java.lang.Character.toLowerCase(var13);
 				if (var12 != var13) {
-					return ObjectDefinition.method864(var12, var2) - ObjectDefinition.method864(var13, var2);
+					return ObjectType.method864(var12, var2) - ObjectType.method864(var13, var2);
 				}
 			}
 		}
@@ -185,7 +185,7 @@ public class Class96_Sub1 extends Class96 {
 				var14 = java.lang.Character.toLowerCase(var14);
 				var17 = java.lang.Character.toLowerCase(var17);
 				if (var17 != var14) {
-					return ObjectDefinition.method864(var14, var2) - ObjectDefinition.method864(var17, var2);
+					return ObjectType.method864(var14, var2) - ObjectType.method864(var17, var2);
 				}
 			}
 		}
@@ -198,7 +198,7 @@ public class Class96_Sub1 extends Class96 {
 				var17 = var0.charAt(var15);
 				char var5 = var1.charAt(var15);
 				if (var17 != var5) {
-					return ObjectDefinition.method864(var17, var2) - ObjectDefinition.method864(var5, var2);
+					return ObjectType.method864(var17, var2) - ObjectType.method864(var5, var2);
 				}
 			}
 
@@ -348,7 +348,7 @@ public class Class96_Sub1 extends Class96 {
 										Client.outBuffer.putByteC(
 												Class71.aBoolArray593[82] ? (Class71.aBoolArray593[81] ? 2 : 1) : 0);
 										Client.outBuffer.putLEShortA(Node_Sub10.regionBaseX * 1426698711 + var53);
-										Client.outBuffer.putLEShort(Class28.regionBaseY * 714823515 + var18);
+										Client.outBuffer.putLEShort(VarClientHub.regionBaseY * 714823515 + var18);
 										Client.outBuffer.putByte(var11);
 										Client.outBuffer.putByte(var46);
 										Client.outBuffer.putShort(-1916997753 * Client.minimapRotation);
@@ -423,8 +423,8 @@ public class Class96_Sub1 extends Class96 {
 												TileDecorationStub.aWidget838 = var13;
 												if (var13.itemIds[var46] > 0) {
 													label1179: {
-														ItemDefinition var29 = FriendedPlayer
-																.getItemDefinition(var13.itemIds[var46] - 1);
+														ItemType var29 = FriendedPlayer
+																.getItemType(var13.itemIds[var46] - 1);
 														boolean var28;
 														if (Client.itemSelectionStatus * -1110581093 == 1) {
 															var18 = Class30.getWidgetConfig(var13);
@@ -439,7 +439,7 @@ public class Class96_Sub1 extends Class96 {
 																					+ Class35.aString391 + " "
 																					+ Class48_Sub1.method545(16748608)
 																					+ var29.name,
-																			31, 1548676283 * var29.anInt1609, var46,
+																			31, 1548676283 * var29.id, var46,
 																			var13.anInt1129 * -1536575275);
 																}
 																break label1179;
@@ -457,7 +457,7 @@ public class Class96_Sub1 extends Class96 {
 																					+ Class35.aString391 + " "
 																					+ Class48_Sub1.method545(16748608)
 																					+ var29.name,
-																			32, 1548676283 * var29.anInt1609, var46,
+																			32, 1548676283 * var29.id, var46,
 																			var13.anInt1129 * -1536575275);
 																}
 																break label1179;
@@ -484,13 +484,13 @@ public class Class96_Sub1 extends Class96 {
 																	FriendedPlayer.addMenuRow(var51[var9],
 																			Class48_Sub1.method545(16748608)
 																					+ var29.name,
-																			var33, 1548676283 * var29.anInt1609, var46,
+																			var33, 1548676283 * var29.id, var46,
 																			var13.anInt1129 * -1536575275);
 																} else if (var9 == 4) {
 																	FriendedPlayer.addMenuRow(GameStrings.aString844,
 																			Class48_Sub1.method545(16748608)
 																					+ var29.name,
-																			37, var29.anInt1609 * 1548676283, var46,
+																			37, var29.id * 1548676283, var46,
 																			var13.anInt1129 * -1536575275);
 																}
 															}
@@ -501,7 +501,7 @@ public class Class96_Sub1 extends Class96 {
 														if (var35) {
 															FriendedPlayer.addMenuRow(GameStrings.aString993,
 																	Class48_Sub1.method545(16748608) + var29.name, 38,
-																	var29.anInt1609 * 1548676283, var46,
+																	var29.id * 1548676283, var46,
 																	var13.anInt1129 * -1536575275);
 														}
 
@@ -528,7 +528,7 @@ public class Class96_Sub1 extends Class96 {
 																	FriendedPlayer.addMenuRow(var51[var30],
 																			Class48_Sub1.method545(16748608)
 																					+ var29.name,
-																			var14, 1548676283 * var29.anInt1609, var46,
+																			var14, 1548676283 * var29.id, var46,
 																			-1536575275 * var13.anInt1129);
 																}
 															}
@@ -566,7 +566,7 @@ public class Class96_Sub1 extends Class96 {
 																	FriendedPlayer.addMenuRow(var51[var30],
 																			Class48_Sub1.method545(16748608)
 																					+ var29.name,
-																			var14, var29.anInt1609 * 1548676283, var46,
+																			var14, var29.id * 1548676283, var46,
 																			-1536575275 * var13.anInt1129);
 																}
 															}
@@ -574,7 +574,7 @@ public class Class96_Sub1 extends Class96 {
 
 														FriendedPlayer.addMenuRow(GameStrings.aString994,
 																Class48_Sub1.method545(16748608) + var29.name, 1005,
-																1548676283 * var29.anInt1609, var46,
+																1548676283 * var29.id, var46,
 																-1536575275 * var13.anInt1129);
 													}
 												}
@@ -628,7 +628,7 @@ public class Class96_Sub1 extends Class96 {
 
 							if (-1305917269 * var13.type == 0) {
 								if (!var13.interactable && IsaacRandom.method68(var13)
-										&& ObjectDefinition.aWidget1719 != var13) {
+										&& ObjectType.aWidget1719 != var13) {
 									continue;
 								}
 
@@ -768,7 +768,7 @@ public class Class96_Sub1 extends Class96 {
 										Client.aDeque2164.method475(var38);
 									}
 
-									if (Client.aWidget2141 != null || DualNode_Sub1.aWidget1446 != null
+									if (Client.aWidget2141 != null || SpotAnimType.aWidget1446 != null
 											|| Client.menuOpen) {
 										var47 = false;
 										var40 = false;
@@ -1011,7 +1011,7 @@ public class Class96_Sub1 extends Class96 {
 								}
 							}
 
-							if (!var13.interactable && Client.aWidget2141 == null && DualNode_Sub1.aWidget1446 == null
+							if (!var13.interactable && Client.aWidget2141 == null && SpotAnimType.aWidget1446 == null
 									&& !Client.menuOpen) {
 								if ((var13.anInt1153 * -700429819 >= 0 || 301172361 * var13.anInt1140 != 0)
 										&& -453286219 * Class74.anInt621 >= var23
@@ -1019,9 +1019,9 @@ public class Class96_Sub1 extends Class96 {
 										&& Class74.anInt621 * -453286219 < var16
 										&& Class74.anInt622 * 103771565 < var17) {
 									if (-700429819 * var13.anInt1153 >= 0) {
-										ObjectDefinition.aWidget1719 = var0[var13.anInt1153 * -700429819];
+										ObjectType.aWidget1719 = var0[var13.anInt1153 * -700429819];
 									} else {
-										ObjectDefinition.aWidget1719 = var13;
+										ObjectType.aWidget1719 = var13;
 									}
 								}
 

@@ -22,7 +22,7 @@ public final class Projectile extends Entity {
 	double aDouble1853;
 	double aDouble1854;
 	int anInt1855;
-	DualNode_Sub3 aDualNode_Sub3_1856;
+	SequenceType aDualNode_Sub3_1856;
 	int anInt1857 = 0;
 	int anInt1858 = 0;
 	int slope;
@@ -79,7 +79,7 @@ public final class Projectile extends Entity {
 	}
 
 	protected final Model method654(byte var1) {
-		DualNode_Sub1 var2 = Class96_Sub1.method499(this.anInt1845 * 934846163, (byte) 1);
+		SpotAnimType var2 = Class96_Sub1.getSpotAnimType(this.anInt1845 * 934846163);
 		Model var3 = var2.method656(-46564401 * this.anInt1857);
 		if (var3 == null) {
 			return null;
@@ -103,9 +103,9 @@ public final class Projectile extends Entity {
 		this.targetIndex = -206837249 * var10;
 		this.endHeight = -970910407 * var11;
 		this.aBool1847 = false;
-		int var12 = Class96_Sub1.method499(934846163 * this.anInt1845, (byte) 1).anInt1441 * -521951217;
+		int var12 = Class96_Sub1.getSpotAnimType(934846163 * this.anInt1845).anInt1441 * -521951217;
 		if (var12 != -1) {
-			this.aDualNode_Sub3_1856 = Node_Sub6.method540(var12, -978454526);
+			this.aDualNode_Sub3_1856 = Node_Sub6.getSequenceType(var12);
 		} else {
 			this.aDualNode_Sub3_1856 = null;
 		}

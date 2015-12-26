@@ -3,7 +3,7 @@ public class Class99 {
 
 	int[] anIntArray749;
 
-	public int method413(int var1) {
+	public int getFile(int var1) {
 		int var2 = (this.anIntArray749.length >> 1) - 1;
 		int var3 = var1 & var2;
 

@@ -20,7 +20,7 @@ public class Class22 {
 			Class110.aClass87_783 = null;
 		} else if (var0 != -1 && var0 != Client.anInt2202 * 850867613 && Client.anInt2201 * -1994948003 != 0
 				&& !Client.aBool2191) {
-			CacheIndex var2 = Class2.aClass87_Sub1_79;
+			CacheIndex var2 = Class2.midiTrack1Index;
 			int var1 = Client.anInt2201 * -1994948003;
 			Class110.anInt782 = 325298615;
 			Class110.aClass87_783 = var2;

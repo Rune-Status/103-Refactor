@@ -403,7 +403,7 @@ public class Node_Sub11 extends Node {
 		this.aNodeTable1365 = null;
 	}
 
-	public static Node_Sub11 method572(Class87 var0, int var1, int var2) {
+	public static Node_Sub11 method572(AbstractIndex var0, int var1, int var2) {
 		byte[] var3 = var0.getFile(var1, var2);
 		return var3 == null ? null : new Node_Sub11(new ByteBuf(var3));
 	}

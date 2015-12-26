@@ -19,7 +19,7 @@ public class Class6 {
 	static String aString128 = "1234567890";
 	static int anInt129 = 0;
 	static int anInt130 = 0;
-	static String aString131 = "";
+	static String bootMessage = "";
 	static String aString133 = "";
 	static String aString134 = "";
 	static String aString135 = "";

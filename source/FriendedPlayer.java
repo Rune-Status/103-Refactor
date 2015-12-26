@@ -49,44 +49,44 @@ public class FriendedPlayer {
 	}
 
 	static final void method409(int var0, int var1, int var2, boolean var3) {
-		if (DualNode_Sub2.loadWidget(var0)) {
+		if (IdentKitType.loadWidget(var0)) {
 			Class4.method70(Widget.interfaces[var0], -1, var1, var2, var3);
 		}
 	}
 
-	public static ItemDefinition getItemDefinition(int var0) {
-		ItemDefinition var1 = (ItemDefinition) ItemDefinition.aClass106_1606.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static ItemType getItemType(int var0) {
+		ItemType type = (ItemType) ItemType.items.get((long) var0);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = ItemDefinition.aClass87_1622.getFile(10, var0);
-			var1 = new ItemDefinition();
-			var1.anInt1609 = var0 * 763132019;
+			byte[] var2 = ItemType.item_ref.getFile(10, var0);
+			type = new ItemType();
+			type.id = var0 * 763132019;
 			if (var2 != null) {
-				var1.method808(new ByteBuf(var2));
+				type.decode(new ByteBuf(var2));
 			}
 
-			var1.method807();
-			if (var1.anInt1633 * -507524473 != -1) {
-				var1.method819(getItemDefinition(-507524473 * var1.anInt1633),
-						getItemDefinition(-322771797 * var1.anInt1640));
+			type.post();
+			if (type.anInt1633 * -507524473 != -1) {
+				type.method819(getItemType(-507524473 * type.anInt1633),
+						getItemType(-322771797 * type.anInt1640));
 			}
 
-			if (125334003 * var1.notedId != -1) {
-				var1.method816(getItemDefinition(125334003 * var1.notedId),
-						getItemDefinition(1428864645 * var1.unnotedId));
+			if (125334003 * type.notedId != -1) {
+				type.method816(getItemType(125334003 * type.notedId),
+						getItemType(1428864645 * type.unnotedId));
 			}
 
-			if (!Class94.aBool735 && var1.aBool1618) {
-				var1.name = GameStrings.aString956;
-				var1.aBool1624 = false;
-				var1.groundActions = null;
-				var1.actions = null;
-				var1.anInt1639 = 0;
+			if (!Class94.aBool735 && type.aBool1618) {
+				type.name = GameStrings.aString956;
+				type.aBool1624 = false;
+				type.groundActions = null;
+				type.actions = null;
+				type.anInt1639 = 0;
 			}
 
-			ItemDefinition.aClass106_1606.method428(var1, (long) var0);
-			return var1;
+			ItemType.items.put(type, (long) var0);
+			return type;
 		}
 	}
 

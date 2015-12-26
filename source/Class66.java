@@ -223,38 +223,38 @@ public abstract class Class66 {
 	}
 
 	static final void method325() {
-		DualNode_Sub9.aClass106_1523.method429();
+		OverlayType.overlays.method429();
 		Node_Sub6.method537();
 		Class50.method251();
-		ObjectDefinition.aClass106_1685.method429();
-		ObjectDefinition.aClass106_1684.method429();
-		ObjectDefinition.aClass106_1693.method429();
-		ObjectDefinition.aClass106_1686.method429();
-		NpcDefinition.aClass106_1580.method429();
-		NpcDefinition.aClass106_1578.method429();
-		ItemDefinition.aClass106_1606.method429();
-		ItemDefinition.aClass106_1607.method429();
-		ItemDefinition.aClass106_1620.method429();
-		DualNode_Sub3.aClass106_1472.method429();
-		DualNode_Sub3.aClass106_1473.method429();
-		DualNode_Sub4.method689();
+		ObjectType.objects.method429();
+		ObjectType.aClass106_1684.method429();
+		ObjectType.aClass106_1693.method429();
+		ObjectType.aClass106_1686.method429();
+		NpcType.npcs.method429();
+		NpcType.aClass106_1578.method429();
+		ItemType.items.method429();
+		ItemType.aClass106_1607.method429();
+		ItemType.aClass106_1620.method429();
+		SequenceType.sequences.method429();
+		SequenceType.aClass106_1473.method429();
+		EnumType.method689();
 		ExchangeOffer.method373();
-		DualNode_Sub11.method727();
+		VarPlayerType.method727();
 		Class91.method398();
 		Class36.method206();
 		((Class29) DualNode_Sub13_Sub1.anInterface3_1796).method187();
 		RuneScript.aClass106_1725.method429();
-		Class34.aClass87_Sub1_385.method381();
-		Client.aClass87_Sub1_2022.method381();
+		Class34.skeletonsIndex.method381();
+		Client.meshesIndex.method381();
 		RuneScript.interfaceIndex.method381();
-		DualNode_Sub10.aClass87_Sub1_1537.method381();
-		Class48_Sub1.aClass87_Sub1_1295.method381();
-		Class2.aClass87_Sub1_79.method381();
-		Class3.aClass87_Sub1_93.method381();
-		Node_Sub5.aClass87_Sub1_1266.method381();
-		Class1.aClass87_Sub1_4.method381();
-		Class40.aClass87_Sub1_445.method381();
-		PlayerConfig.aClass87_Sub1_535.method381();
-		DualNode_Sub5.aClass87_Sub1_1502.method381();
+		VarClientType.sfxIndex.method381();
+		Class48_Sub1.landscapesIndex.method381();
+		Class2.midiTrack1Index.method381();
+		Class3.modelsIndex.method381();
+		Node_Sub5.spritesIndex.method381();
+		Class1.texturesIndex.method381();
+		Class40.binaryIndex.method381();
+		PlayerConfig.midiTack2Index.method381();
+		InvType.clientScriptsIndex.method381();
 	}
 }

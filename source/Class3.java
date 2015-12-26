@@ -15,7 +15,7 @@ public class Class3 {
 			"Oct", "Nov", "Dec" };
 	static int anInt91 = 0;
 	static IndexTable aClass62_92;
-	static CacheIndex aClass87_Sub1_93;
+	static CacheIndex modelsIndex;
 	static int anInt94;
 	static int[] anIntArray95 = new int[1000];
 

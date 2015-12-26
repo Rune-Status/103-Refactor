@@ -1,7 +1,7 @@
 import java.awt.datatransfer.Clipboard;
 import java.util.zip.CRC32;
 
-public class CacheIndex extends Class87 {
+public class CacheIndex extends AbstractIndex {
 
 	IndexTable aClass62_1324;
 	int anInt1325;
@@ -20,13 +20,13 @@ public class CacheIndex extends Class87 {
 		return var0 >> 17 & 7;
 	}
 
-	public int method556() {
+	public int percentage() {
 		if (this.aBool1330) {
 			return 100;
 		} else if (this.anObjectArray704 != null) {
 			return 99;
 		} else {
-			int var1 = NpcDefinition.method804(255, -1858370801 * this.anInt1325);
+			int var1 = NpcType.method804(255, -1858370801 * this.anInt1325);
 			if (var1 >= 100) {
 				var1 = 99;
 			}
@@ -204,19 +204,19 @@ public class CacheIndex extends Class87 {
 
 	}
 
-	public static Varpbit getVarpbit(int var0) {
-		Varpbit var1 = (Varpbit) Varpbit.aClass106_1726.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static VarBitType getVarBitType(int id) {
+		VarBitType type = (VarBitType) VarBitType.varbits.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = Varpbit.aClass87_1727.getFile(14, var0);
-			var1 = new Varpbit();
-			if (var2 != null) {
-				var1.method874(new ByteBuf(var2));
+			byte[] bytes = VarBitType.varbit_ref.getFile(14, id);
+			type = new VarBitType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			Varpbit.aClass106_1726.method428(var1, (long) var0);
-			return var1;
+			VarBitType.varbits.put(type, (long) id);
+			return type;
 		}
 	}
 
@@ -235,7 +235,7 @@ public class CacheIndex extends Class87 {
 			aCRC32_1328.reset();
 			aCRC32_1328.update(var3, 0, var3.length);
 			var6 = (int) aCRC32_1328.getValue();
-			ByteBuf var7 = new ByteBuf(DualNode_Sub7.method707(var3));
+			ByteBuf var7 = new ByteBuf(UnderlayType.method707(var3));
 			int var5 = var7.getUByte();
 			if (var5 != 5 && var5 != 6) {
 				throw new RuntimeException(var5 + "," + this.anInt1325 * -1858370801 + "," + var2);
@@ -303,6 +303,6 @@ public class CacheIndex extends Class87 {
 
 	int method562(int var1) {
 		return this.anObjectArray704[var1] != null ? 100
-				: (this.aBoolArray1326[var1] ? 100 : NpcDefinition.method804(this.anInt1325 * -1858370801, var1));
+				: (this.aBoolArray1326[var1] ? 100 : NpcType.method804(this.anInt1325 * -1858370801, var1));
 	}
 }

@@ -1,10 +1,10 @@
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-public class DualNode_Sub2 extends DualNode {
+public class IdentKitType extends DualNode {
 
 	public static int anInt1457;
-	static Class106 aClass106_1458 = new Class106(64);
+	static Class106 identKits = new Class106(64);
 	public int anInt1459 = 188525871;
 	int[] anIntArray1460;
 	short[] aShortArray1461;
@@ -14,7 +14,7 @@ public class DualNode_Sub2 extends DualNode {
 	short[] aShortArray1465;
 	public boolean aBool1466 = false;
 	static Node_Sub10 aNode_Sub10_1467;
-	static Class87 aClass87_1468;
+	static AbstractIndex identKit_ref;
 
 	public Entity_Sub1 method660() {
 		if (this.anIntArray1460 == null) {
@@ -159,7 +159,7 @@ public class DualNode_Sub2 extends DualNode {
 				var6 = npc.strictX * 1272643751
 						- (var5 - 1426698711 * Node_Sub10.regionBaseX - Node_Sub10.regionBaseX * 1426698711) * 64;
 				int var7 = npc.strictY * -1801433343
-						- (var4 - 714823515 * Class28.regionBaseY - Class28.regionBaseY * 714823515) * 64;
+						- (var4 - 714823515 * VarClientHub.regionBaseY - VarClientHub.regionBaseY * 714823515) * 64;
 				if (var6 != 0 || var7 != 0) {
 					npc.anInt1931 = ((int) (Math.atan2((double) var6, (double) var7) * 325.949D) & 2047) * -316267887;
 				}
@@ -200,7 +200,7 @@ public class DualNode_Sub2 extends DualNode {
 			}
 
 			if ((flags & 8) != 0) {
-				npc.definition = DualNode_Sub11.getNpcDefinition(Client.inBuffer.getULEShortA());
+				npc.definition = VarPlayerType.getNpcType(Client.inBuffer.getULEShortA());
 				npc.anInt1915 = npc.definition.anInt1589 * 1447916577;
 				npc.orientation = npc.definition.anInt1599 * 506128019;
 				npc.anInt1918 = -147360311 * npc.definition.anInt1585;
@@ -220,7 +220,7 @@ public class DualNode_Sub2 extends DualNode {
 
 				var4 = Client.inBuffer.getUByteA();
 				if (-922607859 * npc.animation == var5 && var5 != -1) {
-					var6 = Node_Sub6.method540(var5, -1164132528).anInt1486 * 972933669;
+					var6 = Node_Sub6.getSequenceType(var5).anInt1486 * 972933669;
 					if (var6 == 1) {
 						npc.anInt1934 = 0;
 						npc.anInt1935 = 0;
@@ -232,8 +232,8 @@ public class DualNode_Sub2 extends DualNode {
 						npc.anInt1958 = 0;
 					}
 				} else if (var5 == -1 || npc.animation * -922607859 == -1
-						|| Node_Sub6.method540(var5, -1128772943).anInt1480
-								* -610992485 >= Node_Sub6.method540(-922607859 * npc.animation, -1033165080).anInt1480
+						|| Node_Sub6.getSequenceType(var5).anInt1480
+								* -610992485 >= Node_Sub6.getSequenceType(-922607859 * npc.animation).anInt1480
 										* -610992485) {
 					npc.animation = -1587034171 * var5;
 					npc.anInt1934 = 0;
@@ -247,7 +247,7 @@ public class DualNode_Sub2 extends DualNode {
 
 	}
 
-	void method665(ByteBuf var1, int var2) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var3 = var1.getUByte();
 			if (var3 == 0) {
@@ -472,7 +472,7 @@ public class DualNode_Sub2 extends DualNode {
 
 	static void method672() {
 		if (Client.spellSelected) {
-			Widget var0 = Class20.method146(DualNode_Sub3.anInt1488 * -1195336111, 1149825709 * Client.anInt2128);
+			Widget var0 = Class20.method146(SequenceType.anInt1488 * -1195336111, 1149825709 * Client.anInt2128);
 			if (var0 != null && var0.anObjectArray1178 != null) {
 				ScriptEvent var1 = new ScriptEvent();
 				var1.aWidget1430 = var0;

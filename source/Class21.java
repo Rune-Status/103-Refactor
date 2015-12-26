@@ -44,7 +44,7 @@ public class Class21 {
 					int var10 = var9 + var1;
 					int var13 = var2 + var12;
 					if (var10 > 0 && var13 > 0 && var10 < 103 && var13 < 103) {
-						ObjectDefinition var15 = Class37.getObjectDefinition(var7);
+						ObjectType var15 = Class37.getObjectType(var7);
 						if (var14 != 22 || !Client.aBool2010 || var15.anInt1692 * -839074197 != 0
 								|| -1030255905 * var15.anInt1690 == 1 || var15.aBool1711) {
 							if (!var15.method867()) {

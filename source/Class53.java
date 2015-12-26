@@ -150,7 +150,7 @@ public class Class53 {
 							if (var15.contentType * -179718399 == 1336) {
 								if (Client.displayFps) {
 									var11 += 15;
-									Client.aDualNode_Sub13_Sub3_Sub1_2047.method972(
+									Client.p12_full.method972(
 											"Fps:" + Client.anInt1976 * 305420995, var10 + 1645211541 * var15.width,
 											var11, 16776960, -1);
 									var11 += 15;
@@ -165,7 +165,7 @@ public class Class53 {
 										var13 = 16711680;
 									}
 
-									Client.aDualNode_Sub13_Sub3_Sub1_2047.method972("Mem:" + var16 + "k",
+									Client.p12_full.method972("Mem:" + var16 + "k",
 											var10 + 1645211541 * var15.width, var11, var13, -1);
 									var11 += 15;
 								}
@@ -199,7 +199,7 @@ public class Class53 {
 								Class49.method249(true);
 								EntityMarker.method140(var59 ? Class1.aClass1_6 : Class1.aClass1_2);
 								Class49.method249(false);
-								Class28.method184();
+								VarClientHub.method184();
 								Class24.method162();
 								Class13.method118(var10, var11, var13, var31, true);
 								var9 = 1146064501 * Client.anInt2223;
@@ -222,10 +222,10 @@ public class Class53 {
 									var38 = Client.anInt2060 * -1913217891 + Client.minimapRotation * -1916997753
 											& 2047;
 									var24 = -2122646045 * GPI.anInt461;
-									var40 = NpcDefinition.method802(1272643751 * Class68.myPlayer.strictX,
+									var40 = NpcType.method802(1272643751 * Class68.myPlayer.strictX,
 											Class68.myPlayer.strictY * -1801433343,
 											-747958745 * InterfaceNode.floorLevel) - Client.anInt2185 * -868608503;
-									var25 = 1406199355 * DualNode_Sub3.anInt1476;
+									var25 = 1406199355 * SequenceType.anInt1476;
 									var26 = 3 * var30 + 600;
 									var27 = 2048 - var30 & 2047;
 									var37 = 2048 - var38 & 2047;
@@ -441,27 +441,27 @@ public class Class53 {
 										}
 
 										if (Client.anIntArray2089[var20] == 0) {
-											Class35.aDualNode_Sub13_Sub3_Sub1_386.method982(var71,
+											Class35.b12_full.method982(var71,
 													Client.anInt2093 * -94432357 + var9,
 													Client.anInt2094 * -770682383 + var16, var12, 0);
 										}
 
 										if (Client.anIntArray2089[var20] == 1) {
-											Class35.aDualNode_Sub13_Sub3_Sub1_386.method964(var71,
+											Class35.b12_full.method964(var71,
 													var9 + Client.anInt2093 * -94432357,
 													Client.anInt2094 * -770682383 + var16, var12, 0,
 													Client.anInt2208 * -1317183381);
 										}
 
 										if (Client.anIntArray2089[var20] == 2) {
-											Class35.aDualNode_Sub13_Sub3_Sub1_386.method973(var71,
+											Class35.b12_full.method973(var71,
 													var9 + -94432357 * Client.anInt2093,
 													var16 + Client.anInt2094 * -770682383, var12, 0,
 													-1317183381 * Client.anInt2208);
 										}
 
 										if (Client.anIntArray2089[var20] == 3) {
-											Class35.aDualNode_Sub13_Sub3_Sub1_386.method974(var71,
+											Class35.b12_full.method974(var71,
 													var9 + -94432357 * Client.anInt2093,
 													var16 + -770682383 * Client.anInt2094, var12, 0,
 													-1317183381 * Client.anInt2208, 150 - Client.anIntArray2132[var20]);
@@ -469,11 +469,11 @@ public class Class53 {
 
 										if (Client.anIntArray2089[var20] == 4) {
 											var32 = (150 - Client.anIntArray2132[var20])
-													* (Class35.aDualNode_Sub13_Sub3_Sub1_386.method967(var71) + 100)
+													* (Class35.b12_full.method967(var71) + 100)
 													/ 150;
 											RSGraphics.setInnerDrawRegion(Client.anInt2093 * -94432357 + var9 - 50, var16,
 													var9 + Client.anInt2093 * -94432357 + 50, var16 + var31);
-											Class35.aDualNode_Sub13_Sub3_Sub1_386.method980(var71,
+											Class35.b12_full.method980(var71,
 													-94432357 * Client.anInt2093 + var9 + 50 - var32,
 													var16 + -770682383 * Client.anInt2094, var12, 0);
 											RSGraphics.setDrawRegion(var9, var16, var9 + var13, var16 + var31);
@@ -490,15 +490,15 @@ public class Class53 {
 
 											RSGraphics.setInnerDrawRegion(var9,
 													-770682383 * Client.anInt2094 + var16
-															- Class35.aDualNode_Sub13_Sub3_Sub1_386.anInt1824 - 1,
+															- Class35.b12_full.anInt1824 - 1,
 													var13 + var9, 5 + var16 + -770682383 * Client.anInt2094);
-											Class35.aDualNode_Sub13_Sub3_Sub1_386.method982(var71,
+											Class35.b12_full.method982(var71,
 													var9 + Client.anInt2093 * -94432357,
 													Client.anInt2094 * -770682383 + var16 + var42, var12, 0);
 											RSGraphics.setDrawRegion(var9, var16, var13 + var9, var31 + var16);
 										}
 									} else {
-										Class35.aDualNode_Sub13_Sub3_Sub1_386.method982(var71,
+										Class35.b12_full.method982(var71,
 												var9 + Client.anInt2093 * -94432357,
 												-770682383 * Client.anInt2094 + var16, 16776960, 0);
 									}
@@ -508,7 +508,7 @@ public class Class53 {
 									Class2.method62(
 											Client.anInt2116 * -1809686571 + (-1261526983 * Client.hintArrowX
 													- 1426698711 * Node_Sub10.regionBaseX << 7),
-											(Client.hintArrowY * -1901147055 - Class28.regionBaseY * 714823515 << 7)
+											(Client.hintArrowY * -1901147055 - VarClientHub.regionBaseY * 714823515 << 7)
 													+ -1460280361 * Client.anInt2025,
 											1818880718 * Client.anInt2032);
 									if (-94432357 * Client.anInt2093 > -1
@@ -571,7 +571,7 @@ public class Class53 {
 
 						if (var15.type * -1305917269 == 0) {
 							if (!var15.interactable && IsaacRandom.method68(var15)
-									&& ObjectDefinition.aWidget1719 != var15) {
+									&& ObjectType.aWidget1719 != var15) {
 								continue;
 							}
 
@@ -657,7 +657,7 @@ public class Class53 {
 												var24 = var15.itemIds[var9] - 1;
 												if (var31 + 32 > var2 && var31 < var4 && var17 + 32 > var3
 														&& var17 < var5
-														|| var15 == DualNode_Sub1.aWidget1446
+														|| var15 == SpotAnimType.aWidget1446
 																&& 1979905201 * Client.anInt2100 == var9) {
 													Sprite var70;
 													if (Client.itemSelectionStatus * -1110581093 == 1
@@ -672,7 +672,7 @@ public class Class53 {
 													}
 
 													if (var70 != null) {
-														if (DualNode_Sub1.aWidget1446 == var15
+														if (SpotAnimType.aWidget1446 == var15
 																&& Client.anInt2100 * 1979905201 == var9) {
 															var30 = Class74.anInt621 * -453286219
 																	- Client.anInt2131 * -827759387;
@@ -761,13 +761,13 @@ public class Class53 {
 								} else if (-1305917269 * var15.type == 3) {
 									if (RuntimeException_Sub1.method932(var15)) {
 										var9 = 2125719227 * var15.anInt1139;
-										if (ObjectDefinition.aWidget1719 == var15
+										if (ObjectType.aWidget1719 == var15
 												&& var15.anInt1141 * -528196075 != 0) {
 											var9 = -528196075 * var15.anInt1141;
 										}
 									} else {
 										var9 = 1384750979 * var15.textColor;
-										if (ObjectDefinition.aWidget1719 == var15 && var15.anInt1140 * 301172361 != 0) {
+										if (ObjectType.aWidget1719 == var15 && var15.anInt1140 * 301172361 != 0) {
 											var9 = var15.anInt1140 * 301172361;
 										}
 									}
@@ -799,7 +799,7 @@ public class Class53 {
 											String var57 = var15.text;
 											if (RuntimeException_Sub1.method932(var15)) {
 												var16 = var15.anInt1139 * 2125719227;
-												if (ObjectDefinition.aWidget1719 == var15
+												if (ObjectType.aWidget1719 == var15
 														&& var15.anInt1141 * -528196075 != 0) {
 													var16 = -528196075 * var15.anInt1141;
 												}
@@ -809,15 +809,15 @@ public class Class53 {
 												}
 											} else {
 												var16 = 1384750979 * var15.textColor;
-												if (var15 == ObjectDefinition.aWidget1719
+												if (var15 == ObjectType.aWidget1719
 														&& 301172361 * var15.anInt1140 != 0) {
 													var16 = 301172361 * var15.anInt1140;
 												}
 											}
 
 											if (var15.interactable && var15.itemId * 813479615 != -1) {
-												ItemDefinition var68 = FriendedPlayer
-														.getItemDefinition(var15.itemId * 813479615);
+												ItemType var68 = FriendedPlayer
+														.getItemType(var15.itemId * 813479615);
 												var57 = var68.name;
 												if (var57 == null) {
 													var57 = "null";
@@ -828,7 +828,7 @@ public class Class53 {
 														&& 1393082105 * var15.itemQuantity != -1) {
 													var57 = Class48_Sub1.method545(16748608) + var57
 															+ Class35.aString393 + " " + 'x'
-															+ DualNode_Sub4.method690(var15.itemQuantity * 1393082105);
+															+ EnumType.method690(var15.itemQuantity * 1393082105);
 												}
 											}
 
@@ -918,7 +918,7 @@ public class Class53 {
 											}
 										}
 									} else {
-										ItemDefinition var53;
+										ItemType var53;
 										if (var15.type * -1305917269 == 6) {
 											boolean var49 = RuntimeException_Sub1.method932(var15);
 											if (var49) {
@@ -930,7 +930,7 @@ public class Class53 {
 											Model var52 = null;
 											var31 = 0;
 											if (var15.itemId * 813479615 != -1) {
-												var53 = FriendedPlayer.getItemDefinition(813479615 * var15.itemId);
+												var53 = FriendedPlayer.getItemType(813479615 * var15.itemId);
 												if (var53 != null) {
 													var53 = var53.method812(var15.itemQuantity * 1393082105);
 													var52 = var53.method811(1);
@@ -943,19 +943,19 @@ public class Class53 {
 												}
 											} else if (var15.modelType * -768837131 == 5) {
 												if (686060225 * var15.modelId == 0) {
-													var52 = Client.aPlayerConfig2138.method268((DualNode_Sub3) null, -1,
-															(DualNode_Sub3) null, -1);
+													var52 = Client.aPlayerConfig2138.method268((SequenceType) null, -1,
+															(SequenceType) null, -1);
 												} else {
 													var52 = Class68.myPlayer.method654((byte) 13);
 												}
 											} else if (var16 == -1) {
-												var52 = var15.method492((DualNode_Sub3) null, -1, var49,
+												var52 = var15.method492((SequenceType) null, -1, var49,
 														Class68.myPlayer.config);
 												if (var52 == null && Widget.aBool1128) {
 													Class68.method326(var15);
 												}
 											} else {
-												DualNode_Sub3 var58 = Node_Sub6.method540(var16, -1992589394);
+												SequenceType var58 = Node_Sub6.getSequenceType(var16);
 												var52 = var15.method492(var58, var15.anInt1194 * 627142311, var49,
 														Class68.myPlayer.config);
 												if (var52 == null && Widget.aBool1128) {
@@ -1013,7 +1013,7 @@ public class Class53 {
 													for (var31 = 0; var31 < 124195285 * var15.anInt1135; ++var31) {
 														if (var15.itemIds[var16] > 0) {
 															var53 = FriendedPlayer
-																	.getItemDefinition(var15.itemIds[var16] - 1);
+																	.getItemType(var15.itemIds[var16] - 1);
 															String var61;
 															if (1303294175 * var53.stackable != 1
 																	&& var15.itemQuantities[var16] == 1) {
@@ -1021,7 +1021,7 @@ public class Class53 {
 																		+ Class35.aString393;
 															} else {
 																var61 = Class48_Sub1.method545(16748608) + var53.name
-																		+ Class35.aString393 + " " + 'x' + DualNode_Sub4
+																		+ Class35.aString393 + " " + 'x' + EnumType
 																				.method690(var15.itemQuantities[var16]);
 															}
 
@@ -1055,7 +1055,7 @@ public class Class53 {
 													&& Client.anInt2008 * 1149981077 == 1046829805 * Client.anInt2117) {
 												var9 = 0;
 												var16 = 0;
-												DualNode_Sub13_Sub3_Sub1 var51 = Client.aDualNode_Sub13_Sub3_Sub1_2047;
+												DualNode_Sub13_Sub3_Sub1 var51 = Client.p12_full;
 												String var62 = var15.text;
 
 												String var54;

@@ -4,7 +4,7 @@ public class Class1 {
 	static Class1 aClass1_1 = new Class1();
 	static Class1 aClass1_2 = new Class1();
 	static Class1 aClass1_3 = new Class1();
-	static CacheIndex aClass87_Sub1_4;
+	static CacheIndex texturesIndex;
 	public static DualNode_Sub15 aDualNode_Sub15_5;
 	static Class1 aClass1_6 = new Class1();
 
@@ -21,7 +21,7 @@ public class Class1 {
 		if (-1479972487 * Class6.anInt114 > Class33.anIntArray365.length) {
 			Class6.anInt114 -= Class33.anIntArray365.length * 266449097;
 			var2 = (int) (Math.random() * 12.0D);
-			Varpbit.method877(Class6.aDualNode_Sub13_Sub2Array118[var2]);
+			VarBitType.method877(Class6.aDualNode_Sub13_Sub2Array118[var2]);
 		}
 
 		var2 = 0;

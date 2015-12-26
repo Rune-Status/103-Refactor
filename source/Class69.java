@@ -7,7 +7,7 @@ public class Class69 {
 		throw new Error();
 	}
 
-	public static void method328(Class87 var0, int var1, int var2, int var3, boolean var4) {
+	public static void method328(AbstractIndex var0, int var1, int var2, int var3, boolean var4) {
 		Class110.anInt782 = 325298615;
 		Class110.aClass87_783 = var0;
 		Class98.anInt748 = 18032949 * var1;
@@ -19,7 +19,7 @@ public class Class69 {
 
 	static final void method329(Character var0, int var1) {
 		int var2;
-		DualNode_Sub3 var11;
+		SequenceType var11;
 		if (-2112283241 * var0.anInt1928 > -1040073859 * Client.engineCycle) {
 			FriendedPlayer.method408(var0);
 		} else {
@@ -30,8 +30,7 @@ public class Class69 {
 			if (var0.anInt1947 * -1158366777 >= Client.engineCycle * -1040073859) {
 				if (-1158366777 * var0.anInt1947 == Client.engineCycle * -1040073859
 						|| var0.animation * -922607859 == -1 || 1301453073 * var0.anInt1936 != 0
-						|| var0.anInt1935 * -1968895439 + 1 > Node_Sub6.method540(var0.animation * -922607859,
-								-763165684).anIntArray1481[1402685833 * var0.anInt1934]) {
+						|| var0.anInt1935 * -1968895439 + 1 > Node_Sub6.getSequenceType(var0.animation * -922607859).anIntArray1481[1402685833 * var0.anInt1934]) {
 					var2 = var0.anInt1947 * -1158366777 - var0.anInt1928 * -2112283241;
 					var4 = -1040073859 * Client.engineCycle - -2112283241 * var0.anInt1928;
 					var6 = -2013728192 * var0.anInt1915 + -777033600 * var0.anInt1954;
@@ -52,7 +51,7 @@ public class Class69 {
 				} else {
 					label446: {
 						if (-922607859 * var0.animation != -1 && 1301453073 * var0.anInt1936 == 0) {
-							var11 = Node_Sub6.method540(-922607859 * var0.animation, -106152729);
+							var11 = Node_Sub6.getSequenceType(-922607859 * var0.animation);
 							if (-206216795 * var0.anInt1957 > 0 && -1948482873 * var11.anInt1484 == 0) {
 								var0.anInt1956 += 1675246587;
 								break label446;
@@ -229,7 +228,7 @@ public class Class69 {
 		DualNode_Sub8.method710(var0);
 		var0.aBool1919 = false;
 		if (var0.anInt1932 * 57983255 != -1) {
-			var11 = Node_Sub6.method540(var0.anInt1932 * 57983255, 470649332);
+			var11 = Node_Sub6.getSequenceType(var0.anInt1932 * 57983255);
 			if (var11 != null && var11.anIntArray1474 != null) {
 				var0.anInt1933 += 1363672495;
 				if (var0.anInt1914 * -1199565973 < var11.anIntArray1474.length
@@ -256,9 +255,9 @@ public class Class69 {
 				var0.anInt1925 = 0;
 			}
 
-			var2 = Class96_Sub1.method499(1631645159 * var0.anInt1938, (byte) 1).anInt1441 * -521951217;
+			var2 = Class96_Sub1.getSpotAnimType(1631645159 * var0.anInt1938).anInt1441 * -521951217;
 			if (var2 != -1) {
-				DualNode_Sub3 var13 = Node_Sub6.method540(var2, -665663329);
+				SequenceType var13 = Node_Sub6.getSequenceType(var2);
 				if (var13 != null && var13.anIntArray1474 != null) {
 					var0.anInt1940 += -1629498229;
 					if (var0.anInt1925 * -1255206495 < var13.anIntArray1474.length
@@ -282,7 +281,7 @@ public class Class69 {
 		}
 
 		if (-922607859 * var0.animation != -1 && var0.anInt1936 * 1301453073 <= 1) {
-			var11 = Node_Sub6.method540(var0.animation * -922607859, 372703114);
+			var11 = Node_Sub6.getSequenceType(var0.animation * -922607859);
 			if (-1948482873 * var11.anInt1484 == 1 && var0.anInt1957 * -206216795 > 0
 					&& var0.anInt1928 * -2112283241 <= -1040073859 * Client.engineCycle
 					&& -1158366777 * var0.anInt1947 < Client.engineCycle * -1040073859) {
@@ -292,7 +291,7 @@ public class Class69 {
 		}
 
 		if (-922607859 * var0.animation != -1 && 1301453073 * var0.anInt1936 == 0) {
-			var11 = Node_Sub6.method540(var0.animation * -922607859, -995326961);
+			var11 = Node_Sub6.getSequenceType(var0.animation * -922607859);
 			if (var11 != null && var11.anIntArray1474 != null) {
 				var0.anInt1935 += -1292628271;
 				if (1402685833 * var0.anInt1934 < var11.anIntArray1474.length

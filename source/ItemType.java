@@ -2,13 +2,13 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.io.IOException;
 
-public class ItemDefinition extends DualNode {
+public class ItemType extends DualNode {
 
 	int anInt1605;
-	public static Class106 aClass106_1606 = new Class106(64);
+	public static Class106 items = new Class106(64);
 	public static Class106 aClass106_1607 = new Class106(50);
 	int anInt1608;
-	public int anInt1609;
+	public int id;
 	short[] aShortArray1610;
 	public String name = "null";
 	short[] colors;
@@ -26,7 +26,7 @@ public class ItemDefinition extends DualNode {
 	static Sprite[] aSpriteArray1619;
 	public static Class106 aClass106_1620 = new Class106(200);
 	int anInt1621;
-	public static Class87 aClass87_1622;
+	public static AbstractIndex item_ref;
 	int anInt1623;
 	public boolean aBool1624;
 	int unnotedId;
@@ -53,10 +53,10 @@ public class ItemDefinition extends DualNode {
 	public int anInt1642 = 0;
 	int anInt1643;
 
-	void method807() {
+	void post() {
 	}
 
-	void method808(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {
@@ -79,7 +79,7 @@ public class ItemDefinition extends DualNode {
 			}
 
 			if (var2 != -1) {
-				return FriendedPlayer.getItemDefinition(var2).method809(1);
+				return FriendedPlayer.getItemType(var2).method809(1);
 			}
 		}
 
@@ -121,7 +121,7 @@ public class ItemDefinition extends DualNode {
 
 		Client.aClient2005.method1027();
 		LandscapeTile.aCanvas1417.setBackground(Color.black);
-		Varpbit.method876(LandscapeTile.aCanvas1417);
+		VarBitType.method876(LandscapeTile.aCanvas1417);
 		Canvas var1 = LandscapeTile.aCanvas1417;
 		var1.addMouseListener(Class74.aClass74_618);
 		var1.addMouseMotionListener(Class74.aClass74_618);
@@ -148,11 +148,11 @@ public class ItemDefinition extends DualNode {
 			}
 
 			if (var3 != -1) {
-				return FriendedPlayer.getItemDefinition(var3).method811(1);
+				return FriendedPlayer.getItemType(var3).method811(1);
 			}
 		}
 
-		Model var6 = (Model) aClass106_1607.method427((long) (this.anInt1609 * 1548676283));
+		Model var6 = (Model) aClass106_1607.get((long) (this.id * 1548676283));
 		if (var6 != null) {
 			return var6;
 		} else {
@@ -182,13 +182,13 @@ public class ItemDefinition extends DualNode {
 				var6 = var5.method902(-1058514191 * this.anInt1617 + 64, 768 + this.anInt1638 * 1955247405, -50, -10,
 						-50);
 				var6.allowClickBounds = true;
-				aClass106_1607.method428(var6, (long) (this.anInt1609 * 1548676283));
+				aClass106_1607.put(var6, (long) (this.id * 1548676283));
 				return var6;
 			}
 		}
 	}
 
-	public ItemDefinition method812(int var1) {
+	public ItemType method812(int var1) {
 		if (this.anIntArray1631 != null && var1 > 1) {
 			int var3 = -1;
 
@@ -199,7 +199,7 @@ public class ItemDefinition extends DualNode {
 			}
 
 			if (var3 != -1) {
-				return FriendedPlayer.getItemDefinition(var3);
+				return FriendedPlayer.getItemType(var3);
 			}
 		}
 
@@ -311,7 +311,7 @@ public class ItemDefinition extends DualNode {
 		}
 	}
 
-	void method816(ItemDefinition var1, ItemDefinition var2) {
+	void method816(ItemType var1, ItemType var2) {
 		this.anInt1630 = var1.anInt1630 * 1;
 		this.anInt1637 = var1.anInt1637 * 1;
 		this.anInt1612 = var1.anInt1612 * 1;
@@ -463,7 +463,7 @@ public class ItemDefinition extends DualNode {
 
 	}
 
-	ItemDefinition() {
+	ItemType() {
 		this.groundActions = new String[] { null, null, GameStrings.aString1084, null, null };
 		this.actions = new String[] { null, null, null, null, GameStrings.aString844 };
 		this.anInt1641 = -1910868069;
@@ -526,7 +526,7 @@ public class ItemDefinition extends DualNode {
 		}
 	}
 
-	void method819(ItemDefinition var1, ItemDefinition var2) {
+	void method819(ItemType var1, ItemType var2) {
 		this.anInt1630 = var1.anInt1630 * 1;
 		this.anInt1637 = var1.anInt1637 * 1;
 		this.anInt1612 = var1.anInt1612 * 1;

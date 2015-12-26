@@ -1,12 +1,12 @@
 
-public class NpcDefinition extends DualNode {
+public class NpcType extends DualNode {
 
 	public int anInt1577 = 1076528657;
 	short[] colors;
 	public static Class106 aClass106_1578 = new Class106(50);
-	public int anInt1579;
+	public int id;
 	int varpIndex = 341695561;
-	public static Class106 aClass106_1580 = new Class106(64);
+	public static Class106 npcs = new Class106(64);
 	int[] anIntArray1581;
 	int[] anIntArray1582;
 	public int[] transformIds;
@@ -25,7 +25,7 @@ public class NpcDefinition extends DualNode {
 	public int combatLevel = 634114841;
 	int anInt1594 = -787489920;
 	int anInt1595 = 1544651392;
-	static Class87 aClass87_1596;
+	static AbstractIndex aClass87_1596;
 	short[] modifiedColors;
 	int anInt1597 = 0;
 	int anInt1598 = 0;
@@ -145,15 +145,15 @@ public class NpcDefinition extends DualNode {
 
 	}
 
-	void method798() {
+	void post() {
 	}
 
-	public final Model method799(DualNode_Sub3 var1, int var2, DualNode_Sub3 var3, int var4) {
+	public final Model method799(SequenceType var1, int var2, SequenceType var3, int var4) {
 		if (this.transformIds != null) {
-			NpcDefinition var10 = this.transform();
+			NpcType var10 = this.transform();
 			return var10 == null ? null : var10.method799(var1, var2, var3, var4);
 		} else {
-			Model var5 = (Model) aClass106_1578.method427((long) (this.anInt1579 * -2095462435));
+			Model var5 = (Model) aClass106_1578.get((long) (this.id * -2095462435));
 			if (var5 == null) {
 				boolean var9 = false;
 
@@ -195,7 +195,7 @@ public class NpcDefinition extends DualNode {
 
 				var5 = var11.method902(this.anInt1598 * 482615523 + 64, 850 + this.anInt1597 * -1720520219, -30, -50,
 						-30);
-				aClass106_1578.method428(var5, (long) (-2095462435 * this.anInt1579));
+				aClass106_1578.put(var5, (long) (-2095462435 * this.id));
 			}
 
 			Model var12;
@@ -220,7 +220,7 @@ public class NpcDefinition extends DualNode {
 
 	public final Entity_Sub1 method800() {
 		if (this.transformIds != null) {
-			NpcDefinition var5 = this.transform();
+			NpcType var5 = this.transform();
 			return var5 == null ? null : var5.method800();
 		} else if (this.anIntArray1582 == null) {
 			return null;
@@ -267,7 +267,7 @@ public class NpcDefinition extends DualNode {
 		}
 	}
 
-	public final NpcDefinition transform() {
+	public final NpcType transform() {
 		int var1 = -1;
 		if (this.varpIndex * 1660103175 != -1) {
 			var1 = Class91.method401(this.varpIndex * 1660103175);
@@ -276,10 +276,10 @@ public class NpcDefinition extends DualNode {
 		}
 
 		return var1 >= 0 && var1 < this.transformIds.length && this.transformIds[var1] != -1
-				? DualNode_Sub11.getNpcDefinition(this.transformIds[var1]) : null;
+				? VarPlayerType.getNpcType(this.transformIds[var1]) : null;
 	}
 
-	void method801(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {

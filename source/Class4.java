@@ -48,7 +48,7 @@ public class Class4 {
 				var11.aByteArray1951[0] = GPI.movementTypes[var1];
 				var11.anInt2004 = -1668953739 * (byte) var3;
 				var11.method1043(var4 + (var6 << 6) - 1426698711 * Node_Sub10.regionBaseX,
-						var7 + (var8 << 6) - 714823515 * Class28.regionBaseY);
+						var7 + (var8 << 6) - 714823515 * VarClientHub.regionBaseY);
 				var11.aBool1999 = false;
 				return true;
 			}
@@ -125,8 +125,8 @@ public class Class4 {
 		for (int var5 = 0; var5 < var0.length; ++var5) {
 			Widget var6 = var0[var5];
 			if (var6 != null && var1 == var6.parentId * -1652479707) {
-				Class28.method183(var6, var2, var3, var4);
-				DualNode_Sub3.method682(var6, var2, var3);
+				VarClientHub.method183(var6, var2, var3, var4);
+				SequenceType.method682(var6, var2, var3);
 				if (var6.insetX * -352661099 > var6.viewportWidth * -302755437 - var6.width * 1645211541) {
 					var6.insetX = -539648889 * var6.viewportWidth - var6.width * -1344985599;
 				}
@@ -144,7 +144,7 @@ public class Class4 {
 				}
 
 				if (var6.type * -1305917269 == 0) {
-					ObjectDefinition.method870(var0, var6, var4);
+					ObjectType.method870(var0, var6, var4);
 				}
 			}
 		}

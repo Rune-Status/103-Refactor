@@ -1,15 +1,15 @@
 import java.awt.Component;
 
-public class Varpbit extends DualNode {
+public class VarBitType extends DualNode {
 
 	public int lowBit;
-	static Class106 aClass106_1726 = new Class106(64);
+	static Class106 varbits = new Class106(64);
 	public int varp;
-	public static Class87 aClass87_1727;
+	public static AbstractIndex varbit_ref;
 	static Sprite[] aSpriteArray1728;
 	public int highBit;
 
-	void method874(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {

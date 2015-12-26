@@ -23,14 +23,14 @@ public class Class36 implements Interface5 {
 
 	static final void method207() {
 		int var0 = -1905311417 * Class7.menuX;
-		int var1 = DualNode_Sub5.menuY * 1745388413;
+		int var1 = InvType.menuY * 1745388413;
 		int var3 = 1899383153 * Class4.menuWidth;
 		int var4 = 1426002097 * Class4.menuHeight;
 		int var2 = 6116423;
 		RSGraphics.method793(var0, var1, var3, var4, var2);
 		RSGraphics.method793(1 + var0, var1 + 1, var3 - 2, 16, 0);
 		RSGraphics.drawRectangle(1 + var0, 18 + var1, var3 - 2, var4 - 19, 0);
-		Class35.aDualNode_Sub13_Sub3_Sub1_386.method980(GameStrings.aString996, var0 + 3, var1 + 14, var2, -1);
+		Class35.b12_full.method980(GameStrings.aString996, var0 + 3, var1 + 14, var2, -1);
 		int var5 = -453286219 * Class74.anInt621;
 		int var9 = Class74.anInt622 * 103771565;
 
@@ -44,11 +44,11 @@ public class Class36 implements Interface5 {
 				var10 = 16776960;
 			}
 
-			Class35.aDualNode_Sub13_Sub3_Sub1_386.method980(Class25.method165(var8), var0 + 3, var7, var10, 0);
+			Class35.b12_full.method980(Class25.method165(var8), var0 + 3, var7, var10, 0);
 		}
 
 		var8 = Class7.menuX * -1905311417;
-		var7 = DualNode_Sub5.menuY * 1745388413;
+		var7 = InvType.menuY * 1745388413;
 		var10 = Class4.menuWidth * 1899383153;
 		int var11 = Class4.menuHeight * 1426002097;
 

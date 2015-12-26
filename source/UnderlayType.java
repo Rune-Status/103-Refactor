@@ -1,19 +1,19 @@
 
-public class DualNode_Sub7 extends DualNode {
+public class UnderlayType extends DualNode {
 
-	static Class106 aClass106_1509 = new Class106(64);
+	static Class106 underlays = new Class106(64);
 	int anInt1510 = 0;
-	static Class87 aClass87_1511;
+	static AbstractIndex underlay_ref;
 	public int anInt1512;
 	public int anInt1513;
 	public int anInt1514;
 	public int anInt1515;
 
-	void method701() {
+	void post() {
 		this.method703(this.anInt1510 * -1160088629);
 	}
 
-	void method702(ByteBuf var1, int var2) {
+	void decode(ByteBuf var1, int var2) {
 		while (true) {
 			int var3 = var1.getUByte();
 			if (var3 == 0) {
@@ -146,19 +146,19 @@ public class DualNode_Sub7 extends DualNode {
 		ByteBuf var1 = new ByteBuf(var0);
 		int var4 = var1.getUByte();
 		int var3 = var1.getInt();
-		if (var3 >= 0 && (-1150359653 * Class87.anInt710 == 0 || var3 <= -1150359653 * Class87.anInt710)) {
+		if (var3 >= 0 && (-1150359653 * AbstractIndex.anInt710 == 0 || var3 <= -1150359653 * AbstractIndex.anInt710)) {
 			if (var4 == 0) {
 				byte[] var6 = new byte[var3];
 				var1.getBytes(var6, 0, var3);
 				return var6;
 			} else {
 				int var2 = var1.getInt();
-				if (var2 >= 0 && (-1150359653 * Class87.anInt710 == 0 || var2 <= Class87.anInt710 * -1150359653)) {
+				if (var2 >= 0 && (-1150359653 * AbstractIndex.anInt710 == 0 || var2 <= AbstractIndex.anInt710 * -1150359653)) {
 					byte[] var5 = new byte[var2];
 					if (var4 == 1) {
 						Class55.method276(var5, var2, var0, var3, 9);
 					} else {
-						Class87.aClass49_699.method248(var1, var5);
+						AbstractIndex.aClass49_699.method248(var1, var5);
 					}
 
 					return var5;

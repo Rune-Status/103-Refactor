@@ -5,16 +5,16 @@ public abstract class Class52 {
 
 	static boolean aBool528 = false;
 
-	public static Sprite method257(Class87 var0, String var1, String var2) {
-		int var3 = var0.method383(var1);
-		int var5 = var0.method384(var3, var2);
+	public static Sprite method257(AbstractIndex var0, String var1, String var2) {
+		int var3 = var0.getFile(var1);
+		int var5 = var0.getChild(var3, var2);
 		Sprite var9;
 		if (Class35.method202(var0, var3, var5)) {
 			Sprite var4 = new Sprite();
 			var4.anInt1815 = -749860951 * Class7.anInt148;
 			var4.anInt1816 = -1945497809 * Class7.anInt155;
 			var4.anInt1814 = Class7.anIntArray149[0];
-			var4.anInt1817 = DualNode_Sub11.anIntArray1544[0];
+			var4.anInt1817 = VarPlayerType.anIntArray1544[0];
 			var4.height = Class7.anIntArray150[0];
 			var4.width = Class7.anIntArray151[0];
 			int var7 = var4.height * var4.width;
@@ -314,14 +314,14 @@ public abstract class Class52 {
 						}
 
 						if (var31 == 42) {
-							Class3.anIntArray95[var5++] = Class33.aClass28_364.method180(var9[var7]);
+							Class3.anIntArray95[var5++] = Class33.aClass28_364.getVarc(var9[var7]);
 							continue;
 						}
 
 						if (var31 == 43) {
 							var10001 = var9[var7];
 							--var5;
-							Class33.aClass28_364.method171(var10001, Class3.anIntArray95[var5]);
+							Class33.aClass28_364.putVarc(var10001, Class3.anIntArray95[var5]);
 							continue;
 						}
 
@@ -377,7 +377,7 @@ public abstract class Class52 {
 						}
 
 						if (var31 == 47) {
-							var43 = Class33.aClass28_364.method172(var9[var7]);
+							var43 = Class33.aClass28_364.getVarcString(var9[var7]);
 							if (var43 == null) {
 								var43 = "null";
 							}
@@ -389,7 +389,7 @@ public abstract class Class52 {
 						if (var31 == 48) {
 							var10001 = var9[var7];
 							--var6;
-							Class33.aClass28_364.method181(var10001, Class3.aStringArray85[var6]);
+							Class33.aClass28_364.putVarcString(var10001, Class3.aStringArray85[var6]);
 							continue;
 						}
 					}
@@ -1210,7 +1210,7 @@ public abstract class Class52 {
 														var33 = Class3.anIntArray95[var5];
 														int var10000 = Class3.anIntArray95[1 + var5];
 														if (-1994948003 * Client.anInt2201 != 0 && var33 != -1) {
-															Class69.method328(PlayerConfig.aClass87_Sub1_535, var33, 0,
+															Class69.method328(PlayerConfig.midiTack2Index, var33, 0,
 																	Client.anInt2201 * -1994948003, false);
 															Client.aBool2191 = true;
 														}
@@ -1280,7 +1280,7 @@ public abstract class Class52 {
 													if (var31 == 3304) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
-														Class3.anIntArray95[var5++] = Class91.method399(var33).anInt1501
+														Class3.anIntArray95[var5++] = Class91.getInvType(var33).anInt1501
 																* -612948537;
 														continue;
 													}
@@ -1311,7 +1311,7 @@ public abstract class Class52 {
 														var16 = 1426698711 * Node_Sub10.regionBaseX
 																+ (1272643751 * Class68.myPlayer.strictX >> 7);
 														var35 = (Class68.myPlayer.strictY * -1801433343 >> 7)
-																+ Class28.regionBaseY * 714823515;
+																+ VarClientHub.regionBaseY * 714823515;
 														Class3.anIntArray95[var5++] = (var16 << 14) + (var33 << 28)
 																+ var35;
 														continue;
@@ -1444,7 +1444,7 @@ public abstract class Class52 {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[1 + var5];
-														DualNode_Sub4 var53 = ObjectDefinition.method871(var33);
+														EnumType var53 = ObjectType.getEnumType(var33);
 														if (var53.aChar1493 != 115) {
 															;
 														}
@@ -1469,7 +1469,7 @@ public abstract class Class52 {
 														var16 = Class3.anIntArray95[var5 + 1];
 														var35 = Class3.anIntArray95[var5 + 2];
 														var45 = Class3.anIntArray95[var5 + 3];
-														DualNode_Sub4 var66 = ObjectDefinition.method871(var35);
+														EnumType var66 = ObjectType.getEnumType(var35);
 														if (var33 == var66.aChar1494 && var66.aChar1493 == var16) {
 															for (var20 = 0; var20 < var66.anInt1490
 																	* 557176427; ++var20) {
@@ -1587,7 +1587,7 @@ public abstract class Class52 {
 															if ((-1616775607 * Client.anInt2184 < 200
 																	|| -905152705 * Client.anInt2106 == 1)
 																	&& -1616775607 * Client.anInt2184 < 400) {
-																var54 = DualNode_Sub11.method728(var83,
+																var54 = VarPlayerType.method728(var83,
 																		Class48_Sub1.aClass124_1297);
 																if (var54 == null) {
 																	continue;
@@ -1596,7 +1596,7 @@ public abstract class Class52 {
 																for (var35 = 0; var35 < Client.anInt2184
 																		* -1616775607; ++var35) {
 																	var65 = Client.friendedPlayers[var35];
-																	var67 = DualNode_Sub11.method728(var65.displayName,
+																	var67 = VarPlayerType.method728(var65.displayName,
 																			Class48_Sub1.aClass124_1297);
 																	if (var67 != null && var67.equals(var54)) {
 																		Class75.method334(30, "",
@@ -1605,7 +1605,7 @@ public abstract class Class52 {
 																	}
 
 																	if (var65.previousName != null) {
-																		var60 = DualNode_Sub11.method728(
+																		var60 = VarPlayerType.method728(
 																				var65.previousName,
 																				Class48_Sub1.aClass124_1297);
 																		if (var60 != null && var60.equals(var54)) {
@@ -1619,7 +1619,7 @@ public abstract class Class52 {
 																for (var35 = 0; var35 < Client.anInt2229
 																		* 1820302153; ++var35) {
 																	var63 = Client.ignoredPlayers[var35];
-																	var67 = DualNode_Sub11.method728(var63.displayName,
+																	var67 = VarPlayerType.method728(var63.displayName,
 																			Class48_Sub1.aClass124_1297);
 																	if (var67 != null && var67.equals(var54)) {
 																		Class75.method334(30, "",
@@ -1629,7 +1629,7 @@ public abstract class Class52 {
 																	}
 
 																	if (var63.previousName != null) {
-																		var60 = DualNode_Sub11.method728(
+																		var60 = VarPlayerType.method728(
 																				var63.previousName,
 																				Class48_Sub1.aClass124_1297);
 																		if (var60 != null && var60.equals(var54)) {
@@ -1641,7 +1641,7 @@ public abstract class Class52 {
 																	}
 																}
 
-																if (DualNode_Sub11
+																if (VarPlayerType
 																		.method728(Class68.myPlayer.name,
 																				Class48_Sub1.aClass124_1297)
 																		.equals(var54)) {
@@ -1662,7 +1662,7 @@ public abstract class Class52 {
 														if (var31 == 3606) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
-															DualNode_Sub3.method684(var83);
+															SequenceType.method684(var83);
 															continue;
 														}
 
@@ -1676,7 +1676,7 @@ public abstract class Class52 {
 															if ((1820302153 * Client.anInt2229 < 100
 																	|| Client.anInt2106 * -905152705 == 1)
 																	&& Client.anInt2229 * 1820302153 < 400) {
-																var54 = DualNode_Sub11.method728(var83,
+																var54 = VarPlayerType.method728(var83,
 																		Class48_Sub1.aClass124_1297);
 																if (var54 == null) {
 																	continue;
@@ -1685,7 +1685,7 @@ public abstract class Class52 {
 																for (var35 = 0; var35 < Client.anInt2229
 																		* 1820302153; ++var35) {
 																	var63 = Client.ignoredPlayers[var35];
-																	var67 = DualNode_Sub11.method728(var63.displayName,
+																	var67 = VarPlayerType.method728(var63.displayName,
 																			Class48_Sub1.aClass124_1297);
 																	if (var67 != null && var67.equals(var54)) {
 																		Class75.method334(31, "",
@@ -1694,7 +1694,7 @@ public abstract class Class52 {
 																	}
 
 																	if (var63.previousName != null) {
-																		var60 = DualNode_Sub11.method728(
+																		var60 = VarPlayerType.method728(
 																				var63.previousName,
 																				Class48_Sub1.aClass124_1297);
 																		if (var60 != null && var60.equals(var54)) {
@@ -1708,7 +1708,7 @@ public abstract class Class52 {
 																for (var35 = 0; var35 < -1616775607
 																		* Client.anInt2184; ++var35) {
 																	var65 = Client.friendedPlayers[var35];
-																	var67 = DualNode_Sub11.method728(var65.displayName,
+																	var67 = VarPlayerType.method728(var65.displayName,
 																			Class48_Sub1.aClass124_1297);
 																	if (var67 != null && var67.equals(var54)) {
 																		Class75.method334(31, "", GameStrings.aString883
@@ -1717,7 +1717,7 @@ public abstract class Class52 {
 																	}
 
 																	if (var65.previousName != null) {
-																		var60 = DualNode_Sub11.method728(
+																		var60 = VarPlayerType.method728(
 																				var65.previousName,
 																				Class48_Sub1.aClass124_1297);
 																		if (var60 != null && var60.equals(var54)) {
@@ -1729,7 +1729,7 @@ public abstract class Class52 {
 																	}
 																}
 
-																if (DualNode_Sub11
+																if (VarPlayerType
 																		.method728(Class68.myPlayer.name,
 																				Class48_Sub1.aClass124_1297)
 																		.equals(var54)) {
@@ -1754,7 +1754,7 @@ public abstract class Class52 {
 																continue;
 															}
 
-															var54 = DualNode_Sub11.method728(var83,
+															var54 = VarPlayerType.method728(var83,
 																	Class48_Sub1.aClass124_1297);
 															if (var54 == null) {
 																continue;
@@ -1769,7 +1769,7 @@ public abstract class Class52 {
 
 																var63 = Client.ignoredPlayers[var35];
 																var67 = var63.displayName;
-																var60 = DualNode_Sub11.method728(var67,
+																var60 = VarPlayerType.method728(var67,
 																		Class48_Sub1.aClass124_1297);
 																if (ItemTable.method646(var83, var54, var67, var60)) {
 																	Client.anInt2229 -= -334739719;
@@ -1828,7 +1828,7 @@ public abstract class Class52 {
 																var91 = Class3.aStringArray85;
 																var16 = var6++;
 																var59 = Client.clanChatOwner;
-																var67 = DualNode_Sub9
+																var67 = OverlayType
 																		.method716(Class49.method250(var59));
 																if (var67 == null) {
 																	var67 = "";
@@ -1990,7 +1990,7 @@ public abstract class Class52 {
 																var91 = Class3.aStringArray85;
 																var16 = var6++;
 																var59 = Client.clanChatName;
-																var67 = DualNode_Sub9
+																var67 = OverlayType
 																		.method716(Class49.method250(var59));
 																if (var67 == null) {
 																	var67 = "";
@@ -2454,7 +2454,7 @@ public abstract class Class52 {
 															var5 -= 2;
 															var16 = Class3.anIntArray95[var5];
 															var35 = Class3.anIntArray95[var5 + 1];
-															var71 = Class2.aClass87_Sub1_76.getFile(var35, 0);
+															var71 = Class2.fontMetricsIndex.getFile(var35, 0);
 															var79 = new DualNode_Sub13_Sub3_Sub1(var71);
 															Class3.anIntArray95[var5++] = var79.method970(var83, var16);
 															continue;
@@ -2466,7 +2466,7 @@ public abstract class Class52 {
 															var5 -= 2;
 															var16 = Class3.anIntArray95[var5];
 															var35 = Class3.anIntArray95[var5 + 1];
-															var71 = Class2.aClass87_Sub1_76.getFile(var35, 0);
+															var71 = Class2.fontMetricsIndex.getFile(var35, 0);
 															var79 = new DualNode_Sub13_Sub3_Sub1(var71);
 															Class3.anIntArray95[var5++] = var79.method969(var83, var16);
 															continue;
@@ -2619,16 +2619,16 @@ public abstract class Class52 {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.aStringArray85[var6++] = FriendedPlayer
-																	.getItemDefinition(var33).name;
+																	.getItemType(var33).name;
 															continue;
 														}
 
-														ItemDefinition var74;
+														ItemType var74;
 														if (var31 == 4201) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[1 + var5];
-															var74 = FriendedPlayer.getItemDefinition(var33);
+															var74 = FriendedPlayer.getItemType(var33);
 															if (var16 >= 1 && var16 <= 5
 																	&& var74.groundActions[var16 - 1] != null) {
 																Class3.aStringArray85[var6++] = var74.groundActions[var16
@@ -2644,7 +2644,7 @@ public abstract class Class52 {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
-															var74 = FriendedPlayer.getItemDefinition(var33);
+															var74 = FriendedPlayer.getItemType(var33);
 															if (var16 >= 1 && var16 <= 5
 																	&& var74.actions[var16 - 1] != null) {
 																Class3.aStringArray85[var6++] = var74.actions[var16
@@ -2660,7 +2660,7 @@ public abstract class Class52 {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = FriendedPlayer
-																	.getItemDefinition(var33).storeValue * 60742695;
+																	.getItemType(var33).storeValue * 60742695;
 															continue;
 														}
 
@@ -2668,16 +2668,16 @@ public abstract class Class52 {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = FriendedPlayer
-																	.getItemDefinition(var33).stackable
+																	.getItemType(var33).stackable
 																	* 1303294175 == 1 ? 1 : 0;
 															continue;
 														}
 
-														ItemDefinition var92;
+														ItemType var92;
 														if (var31 == 4205) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
-															var92 = FriendedPlayer.getItemDefinition(var33);
+															var92 = FriendedPlayer.getItemType(var33);
 															if (-507524473 * var92.anInt1633 == -1
 																	&& var92.anInt1640 * -322771797 >= 0) {
 																Class3.anIntArray95[var5++] = -322771797
@@ -2692,7 +2692,7 @@ public abstract class Class52 {
 														if (var31 == 4206) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
-															var92 = FriendedPlayer.getItemDefinition(var33);
+															var92 = FriendedPlayer.getItemType(var33);
 															if (-507524473 * var92.anInt1633 >= 0
 																	&& -322771797 * var92.anInt1640 >= 0) {
 																Class3.anIntArray95[var5++] = var92.anInt1640
@@ -2708,7 +2708,7 @@ public abstract class Class52 {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = FriendedPlayer
-																	.getItemDefinition(var33).aBool1618 ? 1 : 0;
+																	.getItemType(var33).aBool1618 ? 1 : 0;
 															continue;
 														}
 
@@ -2724,7 +2724,7 @@ public abstract class Class52 {
 															var48 = 0;
 
 															while (true) {
-																if (var48 >= Class13.anInt229 * -1396045331) {
+																if (var48 >= Class13.itemsSize * -1396045331) {
 																	Connection.aShortArray560 = var80;
 																	Class24.anInt305 = 0;
 																	GroundItem.anInt1840 = var20 * -980225491;
@@ -2734,15 +2734,15 @@ public abstract class Class52 {
 																	for (var22 = 0; var22 < GroundItem.anInt1840
 																			* -845664859; ++var22) {
 																		var64[var22] = FriendedPlayer
-																				.getItemDefinition(var80[var22]).name;
+																				.getItemType(var80[var22]).name;
 																	}
 
 																	Class65.method317(var64, Connection.aShortArray560);
 																	break;
 																}
 
-																ItemDefinition var61 = FriendedPlayer
-																		.getItemDefinition(var48);
+																ItemType var61 = FriendedPlayer
+																		.getItemType(var48);
 																if ((!var41 || var61.aBool1624)
 																		&& -507524473 * var61.anInt1633 == -1
 																		&& var61.name.toLowerCase()
@@ -2819,9 +2819,9 @@ public abstract class Class52 {
 																++var45;
 															}
 
-															Class28.aClass51_320 = var100;
-															if (Class28.aClass51_320 == null) {
-																Class28.aClass51_320 = Class51.aClass51_524;
+															VarClientHub.aClass51_320 = var100;
+															if (VarClientHub.aClass51_320 == null) {
+																VarClientHub.aClass51_320 = Class51.aClass51_524;
 															}
 
 															Client.anInt2182 = -1946178403
@@ -2829,7 +2829,7 @@ public abstract class Class52 {
 															Client.outBuffer.putHeader(44);
 															Client.outBuffer.putByte(-400704361 * Client.anInt2110);
 															Client.outBuffer.putByte(
-																	Class28.aClass51_320.anInt525 * -1916029001);
+																	VarClientHub.aClass51_320.anInt525 * -1916029001);
 															Client.outBuffer.putByte(-1975764555 * Client.anInt2182);
 															continue;
 														}
@@ -2903,10 +2903,10 @@ public abstract class Class52 {
 														}
 
 														if (var31 == 5005) {
-															if (Class28.aClass51_320 == null) {
+															if (VarClientHub.aClass51_320 == null) {
 																Class3.anIntArray95[var5++] = -1;
 															} else {
-																Class3.anIntArray95[var5++] = Class28.aClass51_320.anInt525
+																Class3.anIntArray95[var5++] = VarClientHub.aClass51_320.anInt525
 																		* -1916029001;
 															}
 															continue;
@@ -3306,7 +3306,7 @@ public abstract class Class52 {
 										var35 = Class3.anIntArray95[var5 + 1];
 										var15.itemId = -444483265 * var16;
 										var15.itemQuantity = var35 * 1567728457;
-										ItemDefinition var38 = FriendedPlayer.getItemDefinition(var16);
+										ItemType var38 = FriendedPlayer.getItemType(var16);
 										var15.rotationX = var38.anInt1612 * 1778672027;
 										var15.rotationZ = var38.anInt1613 * -438177483;
 										var15.rotationY = 292702103 * var38.anInt1634;
@@ -3536,7 +3536,7 @@ public abstract class Class52 {
 									var15.viewportHeight = Class3.anIntArray95[var5 + 1] * 2144421371;
 									Class68.method326(var15);
 									if (var16 != -1 && -1305917269 * var15.type == 0) {
-										ObjectDefinition.method870(Widget.interfaces[var16 >> 16], var15, false);
+										ObjectType.method870(Widget.interfaces[var16 >> 16], var15, false);
 									}
 									continue;
 								}
@@ -3575,7 +3575,7 @@ public abstract class Class52 {
 								Class68.method326(var34);
 								Player.method1048(var34);
 								if (var33 != -1 && -1305917269 * var34.type == 0) {
-									ObjectDefinition.method870(Widget.interfaces[var33 >> 16], var34, false);
+									ObjectType.method870(Widget.interfaces[var33 >> 16], var34, false);
 								}
 								continue;
 							}
@@ -3589,7 +3589,7 @@ public abstract class Class52 {
 								Class68.method326(var34);
 								Player.method1048(var34);
 								if (var33 != -1 && -1305917269 * var34.type == 0) {
-									ObjectDefinition.method870(Widget.interfaces[var33 >> 16], var34, false);
+									ObjectType.method870(Widget.interfaces[var33 >> 16], var34, false);
 								}
 								continue;
 							}

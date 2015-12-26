@@ -1,14 +1,14 @@
 import java.awt.Frame;
 
-public class DualNode_Sub10 extends DualNode {
+public class VarClientType extends DualNode {
 
-	static Class106 aClass106_1534 = new Class106(64);
-	public boolean aBool1535 = false;
-	static Class87 aClass87_1536;
-	static CacheIndex aClass87_Sub1_1537;
+	static Class106 varclients = new Class106(64);
+	public boolean serialize = false;
+	static AbstractIndex varclient_ref;
+	static CacheIndex sfxIndex;
 	protected static Frame aFrame1538;
 
-	void method717(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		while (true) {
 			int var2 = var1.getUByte();
 			if (var2 == 0) {
@@ -21,7 +21,7 @@ public class DualNode_Sub10 extends DualNode {
 
 	void method718(ByteBuf var1, int var2) {
 		if (var2 == 2) {
-			this.aBool1535 = true;
+			this.serialize = true;
 		}
 
 	}

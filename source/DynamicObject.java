@@ -7,7 +7,7 @@ public class DynamicObject extends Entity {
 	int floorLevel;
 	int regionX;
 	int regionY;
-	DualNode_Sub3 aDualNode_Sub3_1961;
+	SequenceType aDualNode_Sub3_1961;
 	int anInt1962;
 	int anInt1963;
 	public static String aString1964;
@@ -21,7 +21,7 @@ public class DynamicObject extends Entity {
 		this.regionX = -1322341781 * var5;
 		this.regionY = var6 * -1552283421;
 		if (var7 != -1) {
-			this.aDualNode_Sub3_1961 = Node_Sub6.method540(var7, -1502270040);
+			this.aDualNode_Sub3_1961 = Node_Sub6.getSequenceType(var7);
 			this.anInt1960 = 0;
 			this.anInt1963 = Client.engineCycle * -1207738427 - 932026345;
 			if (this.aDualNode_Sub3_1961.anInt1486 * 972933669 == 0 && var9 != null && var9 instanceof DynamicObject) {
@@ -66,7 +66,7 @@ public class DynamicObject extends Entity {
 			this.anInt1963 = 932026345 * (-1040073859 * Client.engineCycle - var4);
 		}
 
-		ObjectDefinition var13 = Class37.getObjectDefinition(-1889540595 * this.anInt1962);
+		ObjectType var13 = Class37.getObjectType(-1889540595 * this.anInt1962);
 		if (var13.transformIds != null) {
 			var13 = var13.transform();
 		}
@@ -97,7 +97,7 @@ public class DynamicObject extends Entity {
 		}
 	}
 
-	static void method1022(Component var0, Class87 var1, Class87 var2, boolean var3, int var4) {
+	static void method1022(Component var0, AbstractIndex var1, AbstractIndex var2, boolean var3, int var4) {
 		if (Class6.aBool142) {
 			if (var4 == 4) {
 				Class6.anInt116 = -868668484;
@@ -110,17 +110,17 @@ public class DynamicObject extends Entity {
 			Class56.aSprite542 = new Sprite(var6, var0);
 			Class6.aSprite137 = Class56.aSprite542.method937();
 			if ((Client.myWorldFlags * 1115656689 & 536870912) != 0) {
-				IgnoredPlayer.aDualNode_Sub13_Sub2_754 = DualNode_Sub3.method680(var2, "logo_deadman_mode", "");
+				IgnoredPlayer.aDualNode_Sub13_Sub2_754 = SequenceType.method680(var2, "logo_deadman_mode", "");
 			} else {
-				IgnoredPlayer.aDualNode_Sub13_Sub2_754 = DualNode_Sub3.method680(var2, "logo", "");
+				IgnoredPlayer.aDualNode_Sub13_Sub2_754 = SequenceType.method680(var2, "logo", "");
 			}
 
-			Class6.aDualNode_Sub13_Sub2_147 = DualNode_Sub3.method680(var2, "titlebox", "");
-			Class6.aDualNode_Sub13_Sub2_117 = DualNode_Sub3.method680(var2, "titlebutton", "");
-			Class6.aDualNode_Sub13_Sub2Array118 = ObjectDefinition.method868(var2, "runes", "");
-			FriendedPlayer.aDualNode_Sub13_Sub2Array741 = ObjectDefinition.method868(var2, "title_mute", "");
-			Class6.aDualNode_Sub13_Sub2_120 = DualNode_Sub3.method680(var2, "options_radio_buttons,0", "");
-			Class6.aDualNode_Sub13_Sub2_121 = DualNode_Sub3.method680(var2, "options_radio_buttons,2", "");
+			Class6.aDualNode_Sub13_Sub2_147 = SequenceType.method680(var2, "titlebox", "");
+			Class6.aDualNode_Sub13_Sub2_117 = SequenceType.method680(var2, "titlebutton", "");
+			Class6.aDualNode_Sub13_Sub2Array118 = ObjectType.method868(var2, "runes", "");
+			FriendedPlayer.aDualNode_Sub13_Sub2Array741 = ObjectType.method868(var2, "title_mute", "");
+			Class6.aDualNode_Sub13_Sub2_120 = SequenceType.method680(var2, "options_radio_buttons,0", "");
+			Class6.aDualNode_Sub13_Sub2_121 = SequenceType.method680(var2, "options_radio_buttons,2", "");
 			TileDecorationStub.anIntArray841 = new int[256];
 
 			int var5;
@@ -179,7 +179,7 @@ public class DynamicObject extends Entity {
 			Class6.anIntArray124 = new int[256];
 			Class33.anIntArray365 = new int['\u8000'];
 			Class73.anIntArray605 = new int['\u8000'];
-			Varpbit.method877((DualNode_Sub13_Sub2) null);
+			VarBitType.method877((DualNode_Sub13_Sub2) null);
 			Class122.anIntArray818 = new int['\u8000'];
 			Class4.anIntArray110 = new int['\u8000'];
 			if (var3) {
@@ -192,7 +192,7 @@ public class DynamicObject extends Entity {
 			Class6.aBool139 = true;
 			Class6.loadedWorlds = false;
 			if (!Node_Sub5.aClass24_1265.aBool303) {
-				Class91.method402(2, Class2.aClass87_Sub1_79, "scape main", "", 255, false);
+				Class91.method402(2, Class2.midiTrack1Index, "scape main", "", 255, false);
 			} else {
 				Class65.method320(2);
 			}
@@ -208,9 +208,9 @@ public class DynamicObject extends Entity {
 		}
 	}
 
-	public static Sprite[] method1023(Class87 var0, String var1, String var2) {
-		int var3 = var0.method383(var1);
-		int var4 = var0.method384(var3, var2);
+	public static Sprite[] method1023(AbstractIndex var0, String var1, String var2) {
+		int var3 = var0.getFile(var1);
+		int var4 = var0.getChild(var3, var2);
 		return Class20_Sub1.method510(var0, var3, var4);
 	}
 }

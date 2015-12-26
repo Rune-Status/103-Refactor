@@ -9,7 +9,7 @@ public final class GraphicsStub extends Entity {
 	int regionX;
 	int regionY;
 	int height;
-	DualNode_Sub3 aDualNode_Sub3_1810;
+	SequenceType aDualNode_Sub3_1810;
 	int anInt1811 = 0;
 	int anInt1812;
 	boolean finished = false;
@@ -75,7 +75,7 @@ public final class GraphicsStub extends Entity {
 
 			if (var4 != null) {
 				var20 = new File(var4, "test.dat");
-				if (!Class87.method393(var20, true)) {
+				if (!AbstractIndex.method393(var20, true)) {
 					var4 = null;
 				}
 			}
@@ -86,7 +86,7 @@ public final class GraphicsStub extends Entity {
 				for (int var21 = 0; var21 < BoundaryDecorationStub.aStringArray217.length; ++var21) {
 					File var22 = new File(BoundaryDecorationStub.aStringArray217[var21] + Class67.aStringArray584[var18]
 							+ File.separatorChar + var0 + File.separatorChar);
-					if (var22.exists() && Class87.method393(new File(var22, "test.dat"), true)) {
+					if (var22.exists() && AbstractIndex.method393(new File(var22, "test.dat"), true)) {
 						var4 = var22.toString();
 						var6 = true;
 						break label113;
@@ -146,7 +146,7 @@ public final class GraphicsStub extends Entity {
 	}
 
 	protected final Model method654(byte var1) {
-		DualNode_Sub1 var2 = Class96_Sub1.method499(1099063177 * this.anInt1812, (byte) 1);
+		SpotAnimType var2 = Class96_Sub1.getSpotAnimType(1099063177 * this.anInt1812);
 		Model var3;
 		if (!this.finished) {
 			var3 = var2.method656(this.anInt1811 * 155883933);
@@ -180,10 +180,10 @@ public final class GraphicsStub extends Entity {
 		this.regionY = 1007615891 * var4;
 		this.height = -144474123 * var5;
 		this.startCycle = (var6 + var7) * -1971277335;
-		int var8 = Class96_Sub1.method499(1099063177 * this.anInt1812, (byte) 1).anInt1441 * -521951217;
+		int var8 = Class96_Sub1.getSpotAnimType(1099063177 * this.anInt1812).anInt1441 * -521951217;
 		if (var8 != -1) {
 			this.finished = false;
-			this.aDualNode_Sub3_1810 = Node_Sub6.method540(var8, -922230802);
+			this.aDualNode_Sub3_1810 = Node_Sub6.getSequenceType(var8);
 		} else {
 			this.finished = true;
 		}

@@ -1,7 +1,7 @@
 
 public class Class35 {
 
-	static DualNode_Sub13_Sub3_Sub1 aDualNode_Sub13_Sub3_Sub1_386;
+	static DualNode_Sub13_Sub3_Sub1 b12_full;
 	static String aString387 = ",";
 	static String aString388 = "|";
 	static String aString389 = " (";
@@ -13,7 +13,7 @@ public class Class35 {
 	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array395;
 	static String aString396 = "true";
 
-	public static boolean method202(Class87 var0, int var1, int var2) {
+	public static boolean method202(AbstractIndex var0, int var1, int var2) {
 		byte[] var3 = var0.getFile(var1, var2);
 		if (var3 == null) {
 			return false;
@@ -27,10 +27,10 @@ public class Class35 {
 		throw new Error();
 	}
 
-	public static void method203(Class87 var0, Class87 var1) {
-		DualNode_Sub2.aClass87_1468 = var0;
+	public static void method203(AbstractIndex var0, AbstractIndex var1) {
+		IdentKitType.identKit_ref = var0;
 		Class120.aClass87_805 = var1;
-		DualNode_Sub2.anInt1457 = DualNode_Sub2.aClass87_1468.fileCount(3) * 1406368173;
+		IdentKitType.anInt1457 = IdentKitType.identKit_ref.fileCount(3) * 1406368173;
 	}
 
 	public static RuntimeException_Sub1 method204(Throwable var0, String var1) {

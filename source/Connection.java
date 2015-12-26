@@ -187,7 +187,7 @@ public final class Connection implements Runnable {
 
 	static final void method301() {
 		CollisionMap.method243();
-		if (DualNode_Sub1.aWidget1446 == null) {
+		if (SpotAnimType.aWidget1446 == null) {
 			if (Client.aWidget2141 == null) {
 				int var2 = 823601801 * Class74.anInt627;
 				int var0;
@@ -202,17 +202,17 @@ public final class Connection implements Runnable {
 						var3 = Class74.anInt622 * 103771565;
 						if (var1 < -1905311417 * Class7.menuX - 10
 								|| var1 > 10 + -1905311417 * Class7.menuX + Class4.menuWidth * 1899383153
-								|| var3 < DualNode_Sub5.menuY * 1745388413 - 10
-								|| var3 > 10 + Class4.menuHeight * 1426002097 + DualNode_Sub5.menuY * 1745388413) {
+								|| var3 < InvType.menuY * 1745388413 - 10
+								|| var3 > 10 + Class4.menuHeight * 1426002097 + InvType.menuY * 1745388413) {
 							Client.menuOpen = false;
-							DualNode_Sub2.method668(-1905311417 * Class7.menuX, 1745388413 * DualNode_Sub5.menuY,
+							IdentKitType.method668(-1905311417 * Class7.menuX, 1745388413 * InvType.menuY,
 									Class4.menuWidth * 1899383153, Class4.menuHeight * 1426002097);
 						}
 					}
 
 					if (var2 == 1 || !ClanMate.aBool1221 && var2 == 4) {
 						var1 = Class7.menuX * -1905311417;
-						var3 = 1745388413 * DualNode_Sub5.menuY;
+						var3 = 1745388413 * InvType.menuY;
 						var4 = 1899383153 * Class4.menuWidth;
 						int var5 = -2040065729 * Class74.anInt628;
 						int var7 = 2090526775 * Class74.anInt629;
@@ -230,7 +230,7 @@ public final class Connection implements Runnable {
 						}
 
 						Client.menuOpen = false;
-						DualNode_Sub2.method668(Class7.menuX * -1905311417, DualNode_Sub5.menuY * 1745388413,
+						IdentKitType.method668(Class7.menuX * -1905311417, InvType.menuY * 1745388413,
 								Class4.menuWidth * 1899383153, 1426002097 * Class4.menuHeight);
 					}
 				} else {
@@ -251,7 +251,7 @@ public final class Connection implements Runnable {
 									}
 								}
 
-								if (DualNode_Sub1.aWidget1446 != null && !Client.aBool2103
+								if (SpotAnimType.aWidget1446 != null && !Client.aBool2103
 										&& Client.anInt2144 * 1052316233 != 1
 										&& !Class39.method217(1768430155 * Client.menuItemCount - 1)
 										&& Client.menuItemCount * 1768430155 > 0) {
@@ -263,11 +263,11 @@ public final class Connection implements Runnable {
 
 								Client.aBool2103 = false;
 								Client.anInt2092 = 0;
-								if (DualNode_Sub1.aWidget1446 != null) {
-									Class68.method326(DualNode_Sub1.aWidget1446);
+								if (SpotAnimType.aWidget1446 != null) {
+									Class68.method326(SpotAnimType.aWidget1446);
 								}
 
-								DualNode_Sub1.aWidget1446 = Class94.getWidget(var4);
+								SpotAnimType.aWidget1446 = Class94.getWidget(var4);
 								Client.anInt2100 = 1355732049 * var3;
 								Client.anInt2131 = -744800429 * Class74.anInt628;
 								Client.anInt2101 = Class74.anInt629 * -1619983687;
@@ -281,7 +281,7 @@ public final class Connection implements Runnable {
 									CacheIndex.aClass4_1333.aString108 = Client.menuActions[var0];
 								}
 
-								Class68.method326(DualNode_Sub1.aWidget1446);
+								Class68.method326(SpotAnimType.aWidget1446);
 								return;
 							}
 						}

@@ -21,7 +21,7 @@ public class Class77 implements Interface5 {
 					&& (!var5.interactable || !IsaacRandom.method68(var5))) {
 				int var4;
 				if (var5.type * -1305917269 == 0) {
-					if (!var5.interactable && IsaacRandom.method68(var5) && ObjectDefinition.aWidget1719 != var5) {
+					if (!var5.interactable && IsaacRandom.method68(var5) && ObjectType.aWidget1719 != var5) {
 						continue;
 					}
 
@@ -34,7 +34,7 @@ public class Class77 implements Interface5 {
 							.get((long) (-1536575275 * var5.anInt1129));
 					if (var3 != null) {
 						var4 = 226793949 * var3.type;
-						if (DualNode_Sub2.loadWidget(var4)) {
+						if (IdentKitType.loadWidget(var4)) {
 							method338(Widget.interfaces[var4], -1);
 						}
 					}
@@ -50,7 +50,7 @@ public class Class77 implements Interface5 {
 						}
 
 						if (var4 != -1) {
-							DualNode_Sub3 var6 = Node_Sub6.method540(var4, -193577063);
+							SequenceType var6 = Node_Sub6.getSequenceType(var4);
 
 							for (var5.anInt1126 += Client.anInt2066 * -1534081229; -688156249
 									* var5.anInt1126 > var6.anIntArray1481[627142311 * var5.anInt1194]; Class68
@@ -91,7 +91,7 @@ public class Class77 implements Interface5 {
 	static final void method339() {
 		Client.anInt2183 = 0;
 		int var1 = (1272643751 * Class68.myPlayer.strictX >> 7) + Node_Sub10.regionBaseX * 1426698711;
-		int var0 = (Class68.myPlayer.strictY * -1801433343 >> 7) + Class28.regionBaseY * 714823515;
+		int var0 = (Class68.myPlayer.strictY * -1801433343 >> 7) + VarClientHub.regionBaseY * 714823515;
 		if (var1 >= 3053 && var1 <= 3156 && var0 >= 3056 && var0 <= 3136) {
 			Client.anInt2183 = 450862527;
 		}

@@ -7,7 +7,7 @@ public class Class29 implements Interface3 {
 	int anInt330 = 0;
 	double aDouble331 = 1.0D;
 	Node_Sub7[] aNode_Sub7Array332;
-	Class87 aClass87_333;
+	AbstractIndex aClass87_333;
 	static int anInt334;
 	static int anInt335;
 
@@ -51,7 +51,7 @@ public class Class29 implements Interface3 {
 		return 403475855 * this.anInt327 == 64;
 	}
 
-	public Class29(Class87 var1, Class87 var2, int var3, double var4, int var6) {
+	public Class29(AbstractIndex var1, AbstractIndex var2, int var3, double var4, int var6) {
 		this.aClass87_333 = var2;
 		this.anInt329 = -393029919 * var3;
 		this.anInt330 = this.anInt329 * 1019426653;

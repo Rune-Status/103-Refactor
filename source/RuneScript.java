@@ -215,7 +215,7 @@ public class RuneScript extends DualNode {
 					var5 = var3 & 3;
 					var6 = Client.anIntArray2056[var4];
 					if (var1 >= 0 && var2 >= 0 && var1 < 104 && var2 < 104) {
-						NpcDefinition.method805(InterfaceNode.floorLevel * -747958745, var1, var2, var6, -1, var4, var5,
+						NpcType.method805(InterfaceNode.floorLevel * -747958745, var1, var2, var6, -1, var4, var5,
 								0, -1);
 					}
 
@@ -230,7 +230,7 @@ public class RuneScript extends DualNode {
 						var1 = var1 * 128 + 64;
 						var2 = 128 * var2 + 64;
 						GraphicsStub var31 = new GraphicsStub(var3, InterfaceNode.floorLevel * -747958745, var1, var2,
-								NpcDefinition.method802(var1, var2, -747958745 * InterfaceNode.floorLevel) - var4, var5,
+								NpcType.method802(var1, var2, -747958745 * InterfaceNode.floorLevel) - var4, var5,
 								Client.engineCycle * -1040073859);
 						Client.graphicsObjectDeque.method475(var31);
 					}
@@ -259,11 +259,11 @@ public class RuneScript extends DualNode {
 							var3 = var3 * 128 + 64;
 							var4 = 64 + 128 * var4;
 							Projectile var38 = new Projectile(var6, InterfaceNode.floorLevel * -747958745, var1, var2,
-									NpcDefinition.method802(var1, var2, InterfaceNode.floorLevel * -747958745) - var9,
+									NpcType.method802(var1, var2, InterfaceNode.floorLevel * -747958745) - var9,
 									-1040073859 * Client.engineCycle + var40, var41 + Client.engineCycle * -1040073859,
 									var23, var8, var5, var7);
 							var38.method992(var3, var4,
-									NpcDefinition.method802(var3, var4, InterfaceNode.floorLevel * -747958745) - var7,
+									NpcType.method802(var3, var4, InterfaceNode.floorLevel * -747958745) - var7,
 									Client.engineCycle * -1040073859 + var40);
 							Client.projectileDeque.method475(var38);
 						}
@@ -293,7 +293,7 @@ public class RuneScript extends DualNode {
 							}
 
 							if (var12 != null) {
-								ObjectDefinition var16 = Class37.getObjectDefinition(var10);
+								ObjectType var16 = Class37.getObjectType(var10);
 								int var13;
 								int var24;
 								if (var2 != 1 && var2 != 3) {
@@ -315,7 +315,7 @@ public class RuneScript extends DualNode {
 								int var20 = (var13 << 6) + (var6 << 7);
 								Model var15 = var16.method861(var1, var2, var17, var18, var19, var20);
 								if (var15 != null) {
-									NpcDefinition.method805(-747958745 * InterfaceNode.floorLevel, var5, var6, var3, -1,
+									NpcType.method805(-747958745 * InterfaceNode.floorLevel, var5, var6, var3, -1,
 											0, 0, var7 + 1, 1 + var23);
 									var12.anInt1989 = (-1040073859 * Client.engineCycle + var7) * -1231551829;
 									var12.anInt1990 = -802785219 * (var23 + Client.engineCycle * -1040073859);
@@ -354,7 +354,7 @@ public class RuneScript extends DualNode {
 							var6 = Client.anIntArray2056[var4];
 							var9 = Client.inBuffer.getUShort();
 							if (var1 >= 0 && var2 >= 0 && var1 < 104 && var2 < 104) {
-								NpcDefinition.method805(InterfaceNode.floorLevel * -747958745, var1, var2, var6, var9,
+								NpcType.method805(InterfaceNode.floorLevel * -747958745, var1, var2, var6, var9,
 										var4, var5, 0, -1);
 							}
 

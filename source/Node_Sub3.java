@@ -183,7 +183,7 @@ public class Node_Sub3 extends Node {
 		return var1;
 	}
 
-	static boolean method518(Class87 var0) {
+	static boolean method518(AbstractIndex var0) {
 		if (!aBool1241) {
 			byte[] var1 = var0.getFile(0, 0);
 			if (var1 == null) {
@@ -282,7 +282,7 @@ public class Node_Sub3 extends Node {
 		anInt1232 = 0;
 	}
 
-	static Node_Sub3 method522(Class87 var0, int var1, int var2) {
+	static Node_Sub3 method522(AbstractIndex var0, int var1, int var2) {
 		if (!method518(var0)) {
 			var0.method388(var1, var2);
 			return null;

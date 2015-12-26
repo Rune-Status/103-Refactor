@@ -5,7 +5,7 @@ public class Class43 {
 
 	static void method229(Player var0, int var1, int var2) {
 		if (var0.animation * -922607859 == var1 && var1 != -1) {
-			int var3 = Node_Sub6.method540(var1, -1305056426).anInt1486 * 972933669;
+			int var3 = Node_Sub6.getSequenceType(var1).anInt1486 * 972933669;
 			if (var3 == 1) {
 				var0.anInt1934 = 0;
 				var0.anInt1935 = 0;
@@ -16,8 +16,8 @@ public class Class43 {
 			if (var3 == 2) {
 				var0.anInt1958 = 0;
 			}
-		} else if (var1 == -1 || -922607859 * var0.animation == -1 || Node_Sub6.method540(var1, -1434820461).anInt1480
-				* -610992485 >= Node_Sub6.method540(var0.animation * -922607859, -1252576004).anInt1480 * -610992485) {
+		} else if (var1 == -1 || -922607859 * var0.animation == -1 || Node_Sub6.getSequenceType(var1).anInt1480
+				* -610992485 >= Node_Sub6.getSequenceType(var0.animation * -922607859).anInt1480 * -610992485) {
 			var0.animation = -1587034171 * var1;
 			var0.anInt1934 = 0;
 			var0.anInt1935 = 0;

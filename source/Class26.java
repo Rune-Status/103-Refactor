@@ -14,7 +14,7 @@ public class Class26 {
 	static Class78 aClass78_313;
 	int anInt314;
 	Class61 aClass61_315;
-	static CacheIndex aClass87_Sub1_316;
+	static CacheIndex vorbisIndex;
 
 	byte[] method167() throws IOException {
 		if (Node_Sub5.currentTimeMs() > this.aLong311 * 5610376891018015397L) {
@@ -101,7 +101,7 @@ public class Class26 {
 		this.aLong311 = (Node_Sub5.currentTimeMs() + 30000L) * -4402853478160784083L;
 	}
 
-	public static void method170(Class87 var0) {
-		DualNode_Sub7.aClass87_1511 = var0;
+	public static void method170(AbstractIndex var0) {
+		UnderlayType.underlay_ref = var0;
 	}
 }

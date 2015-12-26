@@ -8,19 +8,19 @@ public class ClanMate extends Node {
 	String aString1223;
 	String displayName;
 
-	public static DualNode_Sub6 method514(int var0) {
-		DualNode_Sub6 var1 = (DualNode_Sub6) DualNode_Sub6.aClass106_1504.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static VarClientStringType getVarClientStringType(int var0) {
+		VarClientStringType type = (VarClientStringType) VarClientStringType.varclientstrings.get((long) var0);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = DualNode_Sub6.aClass87_1506.getFile(15, var0);
-			var1 = new DualNode_Sub6();
-			if (var2 != null) {
-				var1.method696(new ByteBuf(var2));
+			byte[] bytes = VarClientStringType.varclientstring_ref.getFile(15, var0);
+			type = new VarClientStringType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			DualNode_Sub6.aClass106_1504.method428(var1, (long) var0);
-			return var1;
+			VarClientStringType.varclientstrings.put(type, (long) var0);
+			return type;
 		}
 	}
 }

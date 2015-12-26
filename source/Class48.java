@@ -17,7 +17,7 @@ public abstract class Class48 {
 			char var2 = var0.charAt(var5);
 			if (var3 != 0) {
 				if (var3 == 2 || java.lang.Character.isUpperCase(var2)) {
-					var2 = Varpbit.method878(var2);
+					var2 = VarBitType.method878(var2);
 				}
 			} else {
 				var2 = java.lang.Character.toLowerCase(var2);

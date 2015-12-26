@@ -11,20 +11,20 @@ public class InterfaceNode extends Node {
 	int type;
 	int owner;
 
-	public static DualNode_Sub7 method577(int var0) {
-		DualNode_Sub7 var1 = (DualNode_Sub7) DualNode_Sub7.aClass106_1509.method427((long) var0);
-		if (var1 != null) {
-			return var1;
+	public static UnderlayType getUnderlayType(int id) {
+		UnderlayType type = (UnderlayType) UnderlayType.underlays.get((long) id);
+		if (type != null) {
+			return type;
 		} else {
-			byte[] var2 = DualNode_Sub7.aClass87_1511.getFile(1, var0);
-			var1 = new DualNode_Sub7();
-			if (var2 != null) {
-				var1.method702(new ByteBuf(var2), var0);
+			byte[] bytes = UnderlayType.underlay_ref.getFile(1, id);
+			type = new UnderlayType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes), id);
 			}
 
-			var1.method701();
-			DualNode_Sub7.aClass106_1509.method428(var1, (long) var0);
-			return var1;
+			type.post();
+			UnderlayType.underlays.put(type, (long) id);
+			return type;
 		}
 	}
 
@@ -38,7 +38,7 @@ public class InterfaceNode extends Node {
 		var3.type = -1987279243 * var1;
 		var3.owner = 296579435 * var2;
 		Client.interfaceNodes.put(var3, (long) var0);
-		Class28.method173(var1);
+		VarClientHub.method173(var1);
 		Widget var4 = Class94.getWidget(var0);
 		Class68.method326(var4);
 		if (Client.aWidget2135 != null) {
@@ -46,8 +46,8 @@ public class InterfaceNode extends Node {
 			Client.aWidget2135 = null;
 		}
 
-		DualNode_Sub7.method705();
-		ObjectDefinition.method870(Widget.interfaces[var0 >> 16], var4, false);
+		UnderlayType.method705();
+		ObjectType.method870(Widget.interfaces[var0 >> 16], var4, false);
 		Class24.method160(var1);
 		if (-1074177723 * Client.anInt2226 != -1) {
 			Class65.method319(Client.anInt2226 * -1074177723, 1);

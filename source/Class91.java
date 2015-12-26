@@ -13,19 +13,19 @@ public final class Class91 {
 		throw new Error();
 	}
 
-	public static DualNode_Sub5 method399(int var0) {
-		DualNode_Sub5 var1 = (DualNode_Sub5) DualNode_Sub5.aClass106_1500.method427((long) var0);
-		if (var1 == null) {
-			byte[] var2 = Class112.aClass87_789.getFile(5, var0);
-			var1 = new DualNode_Sub5();
-			if (var2 != null) {
-				var1.method694(new ByteBuf(var2));
+	public static InvType getInvType(int id) {
+		InvType type = (InvType) InvType.invs.get((long) id);
+		if (type == null) {
+			byte[] bytes = Class112.inv_ref.getFile(5, id);
+			type = new InvType();
+			if (bytes != null) {
+				type.decode(new ByteBuf(bytes));
 			}
 
-			DualNode_Sub5.aClass106_1500.method428(var1, (long) var0);
-			return var1;
+			InvType.invs.put(type, (long) id);
+			return type;
 		} else {
-			return var1;
+			return type;
 		}
 	}
 
@@ -41,7 +41,7 @@ public final class Class91 {
 	}
 
 	public static int method401(int var0) {
-		Varpbit var1 = CacheIndex.getVarpbit(var0);
+		VarBitType var1 = CacheIndex.getVarBitType(var0);
 		int var4 = var1.varp * 12908597;
 		int var3 = var1.lowBit * -585070571;
 		int var2 = 984543857 * var1.highBit;
@@ -49,9 +49,9 @@ public final class Class91 {
 		return Class94.tempVars[var4] >> var3 & var5;
 	}
 
-	public static void method402(int var0, Class87 var1, String var2, String var3, int var4, boolean var5) {
-		int var6 = var1.method383(var2);
-		int var7 = var1.method384(var6, var3);
+	public static void method402(int var0, AbstractIndex var1, String var2, String var3, int var4, boolean var5) {
+		int var6 = var1.getFile(var2);
+		int var7 = var1.getChild(var6, var3);
 		Class110.anInt782 = 325298615;
 		Class110.aClass87_783 = var1;
 		Class98.anInt748 = 18032949 * var6;

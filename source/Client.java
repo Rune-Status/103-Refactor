@@ -46,7 +46,7 @@ public final class Client extends GameEngine {
 	static int anInt2021 = 0;
 	static int[] levels = new int[25];
 	static int hintArrowX = 0;
-	static CacheIndex aClass87_Sub1_2022;
+	static CacheIndex meshesIndex;
 	static int[] anIntArray2023 = new int[] { 16776960, 16711680, '\uff00', '\uffff', 16711935, 16777215 };
 	static boolean aBool2024 = false;
 	static int anInt2025 = 0;
@@ -79,7 +79,7 @@ public final class Client extends GameEngine {
 	static int screenWidth = 0;
 	static int anInt2045 = 0;
 	static boolean aBool2046 = false;
-	static DualNode_Sub13_Sub3_Sub1 aDualNode_Sub13_Sub3_Sub1_2047;
+	static DualNode_Sub13_Sub3_Sub1 p12_full;
 	static int anInt2048 = 0;
 	static int itemSelectionStatus = 0;
 	static int anInt2049 = 0;
@@ -143,7 +143,7 @@ public final class Client extends GameEngine {
 	static int anInt2101 = 0;
 	static boolean aBool2102 = false;
 	static boolean aBool2103 = false;
-	static CacheIndex aClass87_Sub1_2104;
+	static CacheIndex configsIndex;
 	static int anInt2105 = 0;
 	static Player[] playerArray = new Player[2048];
 	static int myPlayerIndex = 313169887;
@@ -415,7 +415,7 @@ public final class Client extends GameEngine {
 	protected final void processLogic() {
 		engineCycle += 1724962261;
 		this.processJS5Connection();
-		DualNode_Sub6.method698();
+		VarClientStringType.method698();
 
 		int var2;
 		try {
@@ -504,7 +504,7 @@ public final class Client extends GameEngine {
 
 				for (var3 = 0; var3 < Class7.aByteArrayArray152.length; ++var3) {
 					if (Class69.mapRegionFileIds[var3] != -1 && Class7.aByteArrayArray152[var3] == null) {
-						Class7.aByteArrayArray152[var3] = Class48_Sub1.aClass87_Sub1_1295
+						Class7.aByteArrayArray152[var3] = Class48_Sub1.landscapesIndex
 								.getFile(Class69.mapRegionFileIds[var3], 0);
 						if (Class7.aByteArrayArray152[var3] == null) {
 							var82 = false;
@@ -512,10 +512,10 @@ public final class Client extends GameEngine {
 						}
 					}
 
-					if (DualNode_Sub5.landRegionFielIds[var3] != -1
+					if (InvType.landRegionFielIds[var3] != -1
 							&& LandscapeTile.aByteArrayArray1406[var3] == null) {
-						LandscapeTile.aByteArrayArray1406[var3] = Class48_Sub1.aClass87_Sub1_1295
-								.method375(DualNode_Sub5.landRegionFielIds[var3], 0, DualNode_Sub12.regionXTEAs[var3]);
+						LandscapeTile.aByteArrayArray1406[var3] = Class48_Sub1.landscapesIndex
+								.method375(InvType.landRegionFielIds[var3], 0, DualNode_Sub12.regionXTEAs[var3]);
 						if (LandscapeTile.aByteArrayArray1406[var3] == null) {
 							var82 = false;
 							anInt2120 += 1643775755;
@@ -533,7 +533,7 @@ public final class Client extends GameEngine {
 						byte[] var4 = LandscapeTile.aByteArrayArray1406[var3];
 						if (var4 != null) {
 							var5 = 64 * (regionIds[var3] >> 8) - Node_Sub10.regionBaseX * 1426698711;
-							var6 = 64 * (regionIds[var3] & 255) - Class28.regionBaseY * 714823515;
+							var6 = 64 * (regionIds[var3] & 255) - VarClientHub.regionBaseY * 714823515;
 							if (dynamicRegion) {
 								var5 = 10;
 								var6 = 10;
@@ -574,7 +574,7 @@ public final class Client extends GameEngine {
 						Class39.anInt438 = 1869228033;
 						Class118.aByteArrayArrayArray802 = new byte[4][104][104];
 						Class39.aByteArrayArrayArray429 = new byte[4][104][104];
-						DualNode_Sub6.aByteArrayArrayArray1507 = new byte[4][104][104];
+						VarClientStringType.aByteArrayArrayArray1507 = new byte[4][104][104];
 						Class49.aByteArrayArrayArray514 = new byte[4][104][104];
 						Class39.anIntArrayArrayArray433 = new int[4][105][105];
 						Class39.aByteArrayArrayArray430 = new byte[4][105][105];
@@ -605,7 +605,7 @@ public final class Client extends GameEngine {
 							byte[] var7;
 							for (var83 = 0; var83 < var3; ++var83) {
 								var5 = (regionIds[var83] >> 8) * 64 - 1426698711 * Node_Sub10.regionBaseX;
-								var6 = 64 * (regionIds[var83] & 255) - Class28.regionBaseY * 714823515;
+								var6 = 64 * (regionIds[var83] & 255) - VarClientHub.regionBaseY * 714823515;
 								var7 = Class7.aByteArrayArray152[var83];
 								if (var7 != null) {
 									Class34.method201();
@@ -616,11 +616,11 @@ public final class Client extends GameEngine {
 
 							for (var83 = 0; var83 < var3; ++var83) {
 								var5 = (regionIds[var83] >> 8) * 64 - 1426698711 * Node_Sub10.regionBaseX;
-								var6 = 64 * (regionIds[var83] & 255) - Class28.regionBaseY * 714823515;
+								var6 = 64 * (regionIds[var83] & 255) - VarClientHub.regionBaseY * 714823515;
 								var7 = Class7.aByteArrayArray152[var83];
 								if (var7 == null && 1249154187 * Class90.anInt722 < 800) {
 									Class34.method201();
-									Class28.method182(var5, var6, 64, 64);
+									VarClientHub.method182(var5, var6, 64, 64);
 								}
 							}
 
@@ -630,7 +630,7 @@ public final class Client extends GameEngine {
 								byte[] var87 = LandscapeTile.aByteArrayArray1406[var83];
 								if (var87 != null) {
 									var6 = 64 * (regionIds[var83] >> 8) - Node_Sub10.regionBaseX * 1426698711;
-									var89 = 64 * (regionIds[var83] & 255) - 714823515 * Class28.regionBaseY;
+									var89 = 64 * (regionIds[var83] & 255) - 714823515 * VarClientHub.regionBaseY;
 									Class34.method201();
 									BoundaryDecorationStub.method106(var87, var6, var89, InterfaceNode.landscape,
 											collisionMaps);
@@ -690,7 +690,7 @@ public final class Client extends GameEngine {
 															for (var24 = 0; var24 < 64; ++var24) {
 																if (var9 == var22 && var23 >= var18 && var23 < 8 + var18
 																		&& var24 >= var19 && var24 < 8 + var19) {
-																	var27 = var16 + DualNode_Sub2.method670(var23 & 7,
+																	var27 = var16 + IdentKitType.method670(var23 & 7,
 																			var24 & 7, var10);
 																	var29 = var23 & 7;
 																	var30 = var24 & 7;
@@ -731,7 +731,7 @@ public final class Client extends GameEngine {
 								for (var5 = 0; var5 < 13; ++var5) {
 									var6 = anIntArrayArrayArray2055[0][var83][var5];
 									if (var6 == -1) {
-										Class28.method182(8 * var83, 8 * var5, 8, 8);
+										VarClientHub.method182(8 * var83, 8 * var5, 8, 8);
 									}
 								}
 							}
@@ -844,7 +844,7 @@ public final class Client extends GameEngine {
 									if (var17 >= 0 && var17 < 104) {
 										var18 = Class118.aByteArrayArrayArray802[var6][var17][var16] & 255;
 										if (var18 > 0) {
-											DualNode_Sub7 var143 = InterfaceNode.method577(var18 - 1);
+											UnderlayType var143 = InterfaceNode.getUnderlayType(var18 - 1);
 											Class73.anIntArray614[var16] += var143.anInt1512 * -389568753;
 											Class51.anIntArray526[var16] += 1757454653 * var143.anInt1514;
 											Class39.anIntArray432[var16] += var143.anInt1513 * 789203561;
@@ -857,7 +857,7 @@ public final class Client extends GameEngine {
 									if (var18 >= 0 && var18 < 104) {
 										var19 = Class118.aByteArrayArrayArray802[var6][var18][var16] & 255;
 										if (var19 > 0) {
-											DualNode_Sub7 var146 = InterfaceNode.method577(var19 - 1);
+											UnderlayType var146 = InterfaceNode.getUnderlayType(var19 - 1);
 											Class73.anIntArray614[var16] -= var146.anInt1512 * -389568753;
 											Class51.anIntArray526[var16] -= var146.anInt1514 * 1757454653;
 											Class39.anIntArray432[var16] -= 789203561 * var146.anInt1513;
@@ -934,11 +934,11 @@ public final class Client extends GameEngine {
 												if (var6 > 0) {
 													boolean var179 = true;
 													if (var24 == 0
-															&& DualNode_Sub6.aByteArrayArrayArray1507[var6][var114][var21] != 0) {
+															&& VarClientStringType.aByteArrayArrayArray1507[var6][var114][var21] != 0) {
 														var179 = false;
 													}
 
-													if (var25 > 0 && !Class8.method95(var25 - 1).aBool1529) {
+													if (var25 > 0 && !Class8.getOverlayType(var25 - 1).aBool1529) {
 														var179 = false;
 													}
 
@@ -961,9 +961,9 @@ public final class Client extends GameEngine {
 															Class86.method366(var34, var33), 0, 0, 0, 0, var36, 0);
 												} else {
 													var37 = 1
-															+ DualNode_Sub6.aByteArrayArrayArray1507[var6][var114][var21];
+															+ VarClientStringType.aByteArrayArrayArray1507[var6][var114][var21];
 													byte var180 = Class49.aByteArrayArrayArray514[var6][var114][var21];
-													DualNode_Sub9 var39 = Class8.method95(var25 - 1);
+													OverlayType var39 = Class8.getOverlayType(var25 - 1);
 													int var40 = var39.anInt1522 * 1261368579;
 													int var41;
 													int var42;
@@ -1043,7 +1043,7 @@ public final class Client extends GameEngine {
 
 							Class118.aByteArrayArrayArray802[var6] = (byte[][]) null;
 							Class39.aByteArrayArrayArray429[var6] = (byte[][]) null;
-							DualNode_Sub6.aByteArrayArrayArray1507[var6] = (byte[][]) null;
+							VarClientStringType.aByteArrayArrayArray1507[var6] = (byte[][]) null;
 							Class49.aByteArrayArrayArray514[var6] = (byte[][]) null;
 							Class39.aByteArrayArrayArray430[var6] = (byte[][]) null;
 						}
@@ -1273,8 +1273,8 @@ public final class Client extends GameEngine {
 							}
 						}
 
-						ObjectDefinition.aClass106_1684.method429();
-						if (DualNode_Sub10.aFrame1538 != null) {
+						ObjectType.aClass106_1684.method429();
+						if (VarClientType.aFrame1538 != null) {
 							outBuffer.putHeader(245);
 							outBuffer.putInt(1057001181);
 						}
@@ -1288,8 +1288,8 @@ public final class Client extends GameEngine {
 							for (var11 = var89 - 1; var11 <= var8 + 1; ++var11) {
 								for (var12 = var9 - 1; var12 <= 1 + var10; ++var12) {
 									if (var11 < var89 || var11 > var8 || var12 < var9 || var12 > var10) {
-										Class48_Sub1.aClass87_Sub1_1295.method387("m" + var11 + "_" + var12);
-										Class48_Sub1.aClass87_Sub1_1295.method387("l" + var11 + "_" + var12);
+										Class48_Sub1.landscapesIndex.method387("m" + var11 + "_" + var12);
+										Class48_Sub1.landscapesIndex.method387("l" + var11 + "_" + var12);
 									}
 								}
 							}
@@ -1434,7 +1434,7 @@ public final class Client extends GameEngine {
 									var89 = inBuffer.getUByteS();
 									var163 = (InterfaceNode) interfaceNodes.get((long) var6);
 									if (var163 != null) {
-										DualNode_Sub4.method691(var163, var163.type * 226793949 != var5);
+										EnumType.method691(var163, var163.type * 226793949 != var5);
 									}
 
 									InterfaceNode.method579(var6, var5, var89);
@@ -1463,17 +1463,11 @@ public final class Client extends GameEngine {
 									if (var89 == '\uffff') {
 										var89 = -1;
 									}
-									//89 item id
-									//5 interface id
-									System.out.println("SendInterfaceModel(" + var5 + "," + (var6 >> 16) + "," + var89 + ")");
-									//var105 = Class94.method406(var6);
-									int t1 = var6 >> 16;
-									int t2 = var6 & 0xffff;
-									System.out.println(t1 + "," + t2);
+									
 									System.out.println("sendInterfaceModel(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", " + var89 + ", " + var5 + ");");
 									
 									var105 = Class94.getWidget(var6);
-									ItemDefinition var149;
+									ItemType var149;
 									if (!var105.interactable) {
 										if (var89 == -1) {
 											var105.modelType = 0;
@@ -1482,25 +1476,23 @@ public final class Client extends GameEngine {
 											break label3092;
 										}
 
-										var149 = FriendedPlayer.getItemDefinition(var89);
+										var149 = FriendedPlayer.getItemType(var89);
 										var105.modelType = -1505842828;
 										var105.modelId = var89 * -541123263;
 										var105.rotationX = var149.anInt1612 * 1778672027;
 										var105.rotationZ = var149.anInt1613 * -438177483;
 										var105.modelZoom = -438091779 * (1568478228 * var149.anInt1637 / var5);
 										Class68.method326(var105);
-										//System.out.println("SendInterfaceModel(" + var105.modelZoom + ")");
 									} else {
 										var105.itemId = var89 * -444483265;
 										var105.itemQuantity = var5 * 1567728457;
-										var149 = FriendedPlayer.getItemDefinition(var89);
+										var149 = FriendedPlayer.getItemType(var89);
 										var105.rotationX = 1778672027 * var149.anInt1612;
 										var105.rotationZ = -438177483 * var149.anInt1613;
 										var105.rotationY = 292702103 * var149.anInt1634;
 										var105.anInt1198 = 889655743 * var149.anInt1642;
 										var105.anInt1151 = var149.anInt1616 * -738298705;
 										var105.modelZoom = -1079397735 * var149.anInt1637;
-										System.out.println("SendInterfaceModel2(" + var105.itemId + "," + (var6 >> 16) + ")");
 										if (var149.stackable * 1303294175 == 1) {
 											var105.anInt1155 = -1548696853;
 										} else {
@@ -1573,7 +1565,7 @@ public final class Client extends GameEngine {
 									if (var6 != anInt2226 * -1074177723) {
 										anInt2226 = var6 * -605073011;
 										ItemTable.method647(false);
-										Class28.method173(anInt2226 * -1074177723);
+										VarClientHub.method173(anInt2226 * -1074177723);
 										Class24.method160(-1074177723 * anInt2226);
 
 										for (var8 = 0; var8 < 100; ++var8) {
@@ -1588,7 +1580,7 @@ public final class Client extends GameEngine {
 										var10 = inBuffer.getUByte();
 										var131 = (InterfaceNode) interfaceNodes.get((long) var8);
 										if (var131 != null && 226793949 * var131.type != var9) {
-											DualNode_Sub4.method691(var131, true);
+											EnumType.method691(var131, true);
 											var131 = null;
 										}
 
@@ -1603,7 +1595,7 @@ public final class Client extends GameEngine {
 										if (var163.aBool1398) {
 											var163.aBool1398 = false;
 										} else {
-											DualNode_Sub4.method691(var163, true);
+											EnumType.method691(var163, true);
 										}
 									}
 
@@ -1877,7 +1869,7 @@ public final class Client extends GameEngine {
 									if (549132187 * Class29.anInt334 >= 100) {
 										var5 = 64 + 1908651904 * Class48_Sub1.anInt1299;
 										var6 = 64 + 107932800 * anInt2211;
-										var89 = NpcDefinition.method802(var5, var6,
+										var89 = NpcType.method802(var5, var6,
 												-747958745 * InterfaceNode.floorLevel)
 												- GraphicsStub.anInt1813 * 715633123;
 										var8 = var5 - Projectile.cameraX * 282154897;
@@ -1932,7 +1924,7 @@ public final class Client extends GameEngine {
 									InterfaceNode var169 = (InterfaceNode) interfaceNodes.get((long) var6);
 									var163 = (InterfaceNode) interfaceNodes.get((long) var5);
 									if (var163 != null) {
-										DualNode_Sub4.method691(var163,
+										EnumType.method691(var163,
 												var169 == null || var163.type * 226793949 != var169.type * 226793949);
 									}
 
@@ -1949,7 +1941,7 @@ public final class Client extends GameEngine {
 									var141 = Class94.getWidget(var5);
 									if (var141 != null) {
 										Class68.method326(var141);
-										ObjectDefinition.method870(
+										ObjectType.method870(
 												Widget.interfaces[var141.anInt1129 * -1536575275 >>> 16], var141, true);
 									}
 
@@ -2030,13 +2022,13 @@ public final class Client extends GameEngine {
 
 										var158 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var158));
 										if (var136.anInt606 * -2127218069 != -1) {
-											DualNode_Sub1
+											SpotAnimType
 													.method658(9,
 															Class41.method223(-2127218069 * var136.anInt606,
 																	(short) -12678) + var94,
-															var158, DualNode_Sub9.method716(var50));
+															var158, OverlayType.method716(var50));
 										} else {
-											DualNode_Sub1.method658(9, var94, var158, DualNode_Sub9.method716(var50));
+											SpotAnimType.method658(9, var94, var158, OverlayType.method716(var50));
 										}
 									}
 
@@ -2195,7 +2187,7 @@ public final class Client extends GameEngine {
 								}
 
 								if (793368497 * frameId == 242) {
-									DualNode_Sub2.decodeClassVerifier(inBuffer, frameSize * 371800591, -1457674298);
+									IdentKitType.decodeClassVerifier(inBuffer, frameSize * 371800591, -1457674298);
 									frameId = -726667601;
 									var85 = true;
 									break label3092;
@@ -2237,7 +2229,7 @@ public final class Client extends GameEngine {
 										++var8;
 									}
 
-									Class28.aClass51_320 = var170;
+									VarClientHub.aClass51_320 = var170;
 									frameId = -726667601;
 									var85 = true;
 									break label3092;
@@ -2263,7 +2255,7 @@ public final class Client extends GameEngine {
 
 									var6 = inBuffer.getMEMedium();
 									if (anInt2201 * -1994948003 != 0 && var5 != -1) {
-										Class69.method328(PlayerConfig.aClass87_Sub1_535, var5, 0,
+										Class69.method328(PlayerConfig.midiTack2Index, var5, 0,
 												anInt2201 * -1994948003, false);
 										aBool2191 = true;
 									}
@@ -2345,7 +2337,7 @@ public final class Client extends GameEngine {
 											for (var12 = 0; var12 < -1304125287 * Class86.clanChatSize; ++var12) {
 												var122[var12] = new ClanMate();
 												var122[var12].displayName = inBuffer.getString();
-												var122[var12].aString1223 = DualNode_Sub11.method728(
+												var122[var12].aString1223 = VarPlayerType.method728(
 														var122[var12].displayName, Class48_Sub1.aClass124_1297);
 												var122[var12].world = inBuffer.getUShort() * 967496063;
 												var122[var12].rank = inBuffer.getByte();
@@ -2389,7 +2381,7 @@ public final class Client extends GameEngine {
 									var5 = inBuffer.getULEShort();
 									anInt2226 = -605073011 * var5;
 									ItemTable.method647(false);
-									Class28.method173(var5);
+									VarClientHub.method173(var5);
 									Class24.method160(-1074177723 * anInt2226);
 
 									for (var6 = 0; var6 < 100; ++var6) {
@@ -2501,7 +2493,7 @@ public final class Client extends GameEngine {
 									var5 = inBuffer.getInt();
 									InterfaceNode var160 = (InterfaceNode) interfaceNodes.get((long) var5);
 									if (var160 != null) {
-										DualNode_Sub4.method691(var160, true);
+										EnumType.method691(var160, true);
 									}
 
 									if (aWidget2135 != null) {
@@ -2527,7 +2519,7 @@ public final class Client extends GameEngine {
 										var109 = null;
 									}
 
-									for (; 314639891 * inBuffer.position < 371800591 * frameSize; ItemDefinition
+									for (; 314639891 * inBuffer.position < 371800591 * frameSize; ItemType
 											.method820(var6, var8, var9 - 1, var10)) {
 										var8 = inBuffer.getUSmart();
 										var9 = inBuffer.getUShort();
@@ -2585,8 +2577,8 @@ public final class Client extends GameEngine {
 								}
 
 								if (frameId * 793368497 == 137) {
-									for (var5 = 0; var5 < -1248800389 * DualNode_Sub11.anInt1547; ++var5) {
-										DualNode_Sub11 var148 = Class37.method209(var5);
+									for (var5 = 0; var5 < -1248800389 * VarPlayerType.anInt1547; ++var5) {
+										VarPlayerType var148 = Class37.getVarPlayerType(var5);
 										if (var148 != null) {
 											Class94.engineVars[var5] = 0;
 											Class94.tempVars[var5] = 0;
@@ -2647,7 +2639,7 @@ public final class Client extends GameEngine {
 											var109.itemQuantities[var9] = var11;
 										}
 
-										ItemDefinition.method820(var6, var9, var10 - 1, var11);
+										ItemType.method820(var6, var9, var10 - 1, var11);
 									}
 
 									if (var109 != null) {
@@ -2694,12 +2686,12 @@ public final class Client extends GameEngine {
 									BoundaryDecorationStub.anInt216 = inBuffer.getUByte() * -1737876805;
 									Class26.anInt310 = inBuffer.getUByte() * -1608345747;
 									Class3.anInt94 = inBuffer.getUShort() * 1185326837;
-									ObjectDefinition.anInt1695 = inBuffer.getUByte() * 1146873531;
+									ObjectType.anInt1695 = inBuffer.getUByte() * 1146873531;
 									RuneScript.anInt1722 = inBuffer.getUByte() * -714496409;
 									if (-2101471913 * RuneScript.anInt1722 >= 100) {
 										Projectile.cameraX = -910433920 * BoundaryDecorationStub.anInt216 + -401449920;
 										Class72.cameraY = -1084622464 * Class26.anInt310 + 1463606720;
-										FriendedPlayer.cameraZ = (NpcDefinition.method802(
+										FriendedPlayer.cameraZ = (NpcType.method802(
 												Projectile.cameraX * 282154897, -324676025 * Class72.cameraY,
 												InterfaceNode.floorLevel * -747958745) - 3036509 * Class3.anInt94)
 												* -1022442815;
@@ -2884,7 +2876,7 @@ public final class Client extends GameEngine {
 										Class68.method326(var105);
 										Player.method1048(var105);
 										if (-1305917269 * var105.type == 0) {
-											ObjectDefinition.method870(Widget.interfaces[var5 >> 16], var105, false);
+											ObjectType.method870(Widget.interfaces[var5 >> 16], var105, false);
 										}
 									}
 
@@ -2940,7 +2932,7 @@ public final class Client extends GameEngine {
 										inBuffer.getString();
 										ClanMate var110 = new ClanMate();
 										var110.displayName = var94;
-										var110.aString1223 = DualNode_Sub11.method728(var110.displayName,
+										var110.aString1223 = VarPlayerType.method728(var110.displayName,
 												Class48_Sub1.aClass124_1297);
 										var110.world = 967496063 * var6;
 										var110.rank = var120;
@@ -3210,7 +3202,7 @@ public final class Client extends GameEngine {
 										+ frameSize * 371800591 + Class35.aString387
 										+ (Class68.myPlayer.anIntArray1945[0] + Node_Sub10.regionBaseX * 1426698711)
 										+ Class35.aString387
-										+ (714823515 * Class28.regionBaseY + Class68.myPlayer.anIntArray1955[0])
+										+ (714823515 * VarClientHub.regionBaseY + Class68.myPlayer.anIntArray1955[0])
 										+ Class35.aString387;
 
 								for (var6 = 0; var6 < 371800591 * frameSize && var6 < 50; ++var6) {
@@ -3448,7 +3440,7 @@ public final class Client extends GameEngine {
 										var8);
 								if (var9 != 0) {
 									var9 = var9 >> 14 & 32767;
-									var10 = Class37.getObjectDefinition(var9).mapFunction * 1951420693;
+									var10 = Class37.getObjectType(var9).mapFunction * 1951420693;
 									if (var10 >= 0) {
 										var11 = var89;
 										var12 = var8;
@@ -3500,12 +3492,12 @@ public final class Client extends GameEngine {
 								var88.anInt1311 -= -622541955;
 							}
 
-							ObjectDefinition var175;
+							ObjectType var175;
 							if (1030491605 * var88.anInt1311 == 0) {
 								if (-1525381273 * var88.anInt1304 >= 0) {
 									var83 = var88.anInt1304 * -1525381273;
 									var5 = -2072747651 * var88.anInt1313;
-									var175 = Class37.getObjectDefinition(var83);
+									var175 = Class37.getObjectType(var83);
 									if (var5 == 11) {
 										var5 = 10;
 									}
@@ -3536,7 +3528,7 @@ public final class Client extends GameEngine {
 									if (-1987202069 * var88.anInt1307 >= 0) {
 										var83 = var88.anInt1307 * -1987202069;
 										var5 = -227757021 * var88.anInt1305;
-										var175 = Class37.getObjectDefinition(var83);
+										var175 = Class37.getObjectType(var83);
 										if (var5 == 11) {
 											var5 = 10;
 										}
@@ -3592,9 +3584,9 @@ public final class Client extends GameEngine {
 								}
 							}
 
-							Widget var91 = ObjectDefinition.aWidget1719;
+							Widget var91 = ObjectType.aWidget1719;
 							Widget var176 = ScriptEvent.aWidget1437;
-							ObjectDefinition.aWidget1719 = null;
+							ObjectType.aWidget1719 = null;
 							ScriptEvent.aWidget1437 = null;
 							aWidget2009 = null;
 							aBool2148 = false;
@@ -3708,7 +3700,7 @@ public final class Client extends GameEngine {
 																		Class96_Sub1.method504(var151);
 																	}
 
-																	if (aWidget2009 != null && DualNode_Sub11
+																	if (aWidget2009 != null && VarPlayerType
 																			.method725(aWidget2141) != null) {
 																		outBuffer.putHeader(216);
 																		outBuffer.putShort(
@@ -3749,15 +3741,15 @@ public final class Client extends GameEngine {
 														}
 													}
 
-													if (DualNode_Sub1.aWidget1446 != null) {
-														Class68.method326(DualNode_Sub1.aWidget1446);
+													if (SpotAnimType.aWidget1446 != null) {
+														Class68.method326(SpotAnimType.aWidget1446);
 														anInt2092 += -1664677949;
 														if (-562612321 * Class74.anInt624 == 0) {
 															if (aBool2103) {
-																if (DualNode_Sub1.aWidget1446 == TileDecorationStub.aWidget838
+																if (SpotAnimType.aWidget1446 == TileDecorationStub.aWidget838
 																		&& anInt2100 * 1979905201 != anInt2124
 																				* -408071259) {
-																	Widget var139 = DualNode_Sub1.aWidget1446;
+																	Widget var139 = SpotAnimType.aWidget1446;
 																	byte var183 = 0;
 																	if (anInt2134 * -137828697 == 1
 																			&& -179718399 * var139.contentType == 206) {
@@ -3800,7 +3792,7 @@ public final class Client extends GameEngine {
 																	outBuffer.putByteC(var183);
 																	outBuffer.putShortA(anInt2100 * 1979905201);
 																	outBuffer.putIMEInt(
-																			DualNode_Sub1.aWidget1446.anInt1129
+																			SpotAnimType.aWidget1446.anInt1129
 																					* -1536575275);
 																}
 															} else if ((anInt2144 * 1052316233 == 1 || Class39
@@ -3818,7 +3810,7 @@ public final class Client extends GameEngine {
 
 															anInt2098 = 503154074;
 															Class74.anInt627 = 0;
-															DualNode_Sub1.aWidget1446 = null;
+															SpotAnimType.aWidget1446 = null;
 														} else if (950444267 * anInt2092 >= 5 && (-453286219
 																* Class74.anInt621 > -827759387 * anInt2131 + 5
 																|| Class74.anInt621
@@ -3840,7 +3832,7 @@ public final class Client extends GameEngine {
 																? (Class71.aBoolArray593[81] ? 2 : 1) : 0);
 														outBuffer.putLEShortA(
 																Node_Sub10.regionBaseX * 1426698711 + var83);
-														outBuffer.putLEShort(Class28.regionBaseY * 714823515 + var5);
+														outBuffer.putLEShort(VarClientHub.regionBaseY * 714823515 + var5);
 														Landscape.anInt53 = -1;
 														anInt2095 = Class74.anInt628 * -1489075687;
 														anInt2096 = -250191479 * Class74.anInt629;
@@ -3850,13 +3842,13 @@ public final class Client extends GameEngine {
 														destinationY = var5 * 317027045;
 													}
 
-													if (var91 != ObjectDefinition.aWidget1719) {
+													if (var91 != ObjectType.aWidget1719) {
 														if (var91 != null) {
 															Class68.method326(var91);
 														}
 
-														if (ObjectDefinition.aWidget1719 != null) {
-															Class68.method326(ObjectDefinition.aWidget1719);
+														if (ObjectType.aWidget1719 != null) {
+															Class68.method326(ObjectType.aWidget1719);
 														}
 													}
 
@@ -3888,10 +3880,10 @@ public final class Client extends GameEngine {
 															+ -1801433343 * Class68.myPlayer.strictY;
 													if (-2122646045 * GPI.anInt461 - var83 < -500
 															|| GPI.anInt461 * -2122646045 - var83 > 500
-															|| DualNode_Sub3.anInt1476 * 1406199355 - var5 < -500
-															|| 1406199355 * DualNode_Sub3.anInt1476 - var5 > 500) {
+															|| SequenceType.anInt1476 * 1406199355 - var5 < -500
+															|| 1406199355 * SequenceType.anInt1476 - var5 > 500) {
 														GPI.anInt461 = var83 * -1133236277;
-														DualNode_Sub3.anInt1476 = 959120115 * var5;
+														SequenceType.anInt1476 = 959120115 * var5;
 													}
 
 													if (-2122646045 * GPI.anInt461 != var83) {
@@ -3899,9 +3891,9 @@ public final class Client extends GameEngine {
 																* ((var83 - GPI.anInt461 * -2122646045) / 16);
 													}
 
-													if (1406199355 * DualNode_Sub3.anInt1476 != var5) {
-														DualNode_Sub3.anInt1476 += (var5
-																- 1406199355 * DualNode_Sub3.anInt1476) / 16
+													if (1406199355 * SequenceType.anInt1476 != var5) {
+														SequenceType.anInt1476 += (var5
+																- 1406199355 * SequenceType.anInt1476) / 16
 																* 959120115;
 													}
 
@@ -3953,9 +3945,9 @@ public final class Client extends GameEngine {
 													}
 
 													var6 = GPI.anInt461 * -2122646045 >> 7;
-													var89 = 1406199355 * DualNode_Sub3.anInt1476 >> 7;
-													var8 = NpcDefinition.method802(-2122646045 * GPI.anInt461,
-															DualNode_Sub3.anInt1476 * 1406199355,
+													var89 = 1406199355 * SequenceType.anInt1476 >> 7;
+													var8 = NpcType.method802(-2122646045 * GPI.anInt461,
+															SequenceType.anInt1476 * 1406199355,
 															-747958745 * InterfaceNode.floorLevel);
 													var9 = 0;
 													if (var6 > 3 && var89 > 3 && var6 < 100 && var89 < 100) {
@@ -3993,14 +3985,14 @@ public final class Client extends GameEngine {
 													if (aBool2046) {
 														var83 = BoundaryDecorationStub.anInt216 * 915224960 + 64;
 														var5 = Class26.anInt310 * 402993792 + 64;
-														var6 = NpcDefinition.method802(var83, var5,
+														var6 = NpcType.method802(var83, var5,
 																-747958745 * InterfaceNode.floorLevel)
 																- Class3.anInt94 * 3036509;
 														if (282154897 * Projectile.cameraX < var83) {
 															Projectile.cameraX += 933251441
 																	* ((var83 - Projectile.cameraX * 282154897)
 																			* -2101471913 * RuneScript.anInt1722 / 1000
-																			+ ObjectDefinition.anInt1695 * -2096533901);
+																			+ ObjectType.anInt1695 * -2096533901);
 															if (282154897 * Projectile.cameraX > var83) {
 																Projectile.cameraX = var83 * 933251441;
 															}
@@ -4010,14 +4002,14 @@ public final class Client extends GameEngine {
 															Projectile.cameraX -= 933251441
 																	* ((Projectile.cameraX * 282154897 - var83)
 																			* RuneScript.anInt1722 * -2101471913 / 1000
-																			+ ObjectDefinition.anInt1695 * -2096533901);
+																			+ ObjectType.anInt1695 * -2096533901);
 															if (282154897 * Projectile.cameraX < var83) {
 																Projectile.cameraX = 933251441 * var83;
 															}
 														}
 
 														if (FriendedPlayer.cameraZ * 1447873857 < var6) {
-															FriendedPlayer.cameraZ += (ObjectDefinition.anInt1695
+															FriendedPlayer.cameraZ += (ObjectType.anInt1695
 																	* -2096533901
 																	+ RuneScript.anInt1722 * -2101471913 * (var6
 																			- FriendedPlayer.cameraZ * 1447873857)
@@ -4030,7 +4022,7 @@ public final class Client extends GameEngine {
 
 														if (1447873857 * FriendedPlayer.cameraZ > var6) {
 															FriendedPlayer.cameraZ -= -1022442815 * (-2096533901
-																	* ObjectDefinition.anInt1695
+																	* ObjectType.anInt1695
 																	+ (1447873857 * FriendedPlayer.cameraZ - var6)
 																			* RuneScript.anInt1722 * -2101471913
 																			/ 1000);
@@ -4041,7 +4033,7 @@ public final class Client extends GameEngine {
 
 														if (-324676025 * Class72.cameraY < var5) {
 															Class72.cameraY += 1432154999
-																	* (-2096533901 * ObjectDefinition.anInt1695
+																	* (-2096533901 * ObjectType.anInt1695
 																			+ (var5 - -324676025 * Class72.cameraY)
 																					* RuneScript.anInt1722 * -2101471913
 																					/ 1000);
@@ -4053,7 +4045,7 @@ public final class Client extends GameEngine {
 														if (Class72.cameraY * -324676025 > var5) {
 															Class72.cameraY -= (RuneScript.anInt1722 * -2101471913
 																	* (-324676025 * Class72.cameraY - var5) / 1000
-																	+ ObjectDefinition.anInt1695 * -2096533901)
+																	+ ObjectType.anInt1695 * -2096533901)
 																	* 1432154999;
 															if (-324676025 * Class72.cameraY < var5) {
 																Class72.cameraY = 1432154999 * var5;
@@ -4062,7 +4054,7 @@ public final class Client extends GameEngine {
 
 														var83 = 64 + Class48_Sub1.anInt1299 * 1908651904;
 														var5 = anInt2211 * 107932800 + 64;
-														var6 = NpcDefinition.method802(var83, var5,
+														var6 = NpcType.method802(var83, var5,
 																-747958745 * InterfaceNode.floorLevel)
 																- GraphicsStub.anInt1813 * 715633123;
 														var89 = var83 - Projectile.cameraX * 282154897;
@@ -4142,8 +4134,8 @@ public final class Client extends GameEngine {
 														++anIntArray2215[var83];
 													}
 
-													Class33.aClass28_364.method176();
-													var83 = DualNode_Sub10.method719();
+													Class33.aClass28_364.process();
+													var83 = VarClientType.method719();
 													var5 = 689796811 * Class71.anInt601;
 													if (var83 > 15000 && var5 > 15000) {
 														anInt2045 = -453788862;
@@ -4659,8 +4651,8 @@ public final class Client extends GameEngine {
 	}
 
 	protected final void method1038(int var1) {
-		if (Class33.aClass28_364.method177()) {
-			Class33.aClass28_364.method174();
+		if (Class33.aClass28_364.changed()) {
+			Class33.aClass28_364.serialize();
 		}
 
 		if (Npc.aClass30_1968 != null) {
@@ -4725,7 +4717,7 @@ public final class Client extends GameEngine {
 		Colors.aShortArray837 = Colors.colorsToFind1;
 		Class85.aShortArrayArray691 = Colors.colorsToReplace1;
 		Class96_Sub1.method501(83176752);
-		Varpbit.method876(LandscapeTile.aCanvas1417);
+		VarBitType.method876(LandscapeTile.aCanvas1417);
 		Canvas var2 = LandscapeTile.aCanvas1417;
 		var2.addMouseListener(Class74.aClass74_618);
 		var2.addMouseMotionListener(Class74.aClass74_618);
@@ -4744,7 +4736,7 @@ public final class Client extends GameEngine {
 		}
 
 		Class3.aClass62_92 = new IndexTable(255, Class75.cacheDataFile, Class75.aClass121_636, 500000);
-		Node_Sub5.aClass24_1265 = ItemDefinition.method821();
+		Node_Sub5.aClass24_1265 = ItemType.method821();
 		CacheIndex.aClipboard1329 = this.getToolkit().getSystemClipboard();
 		Class52.method260(this, Class31.aString349);
 		if (anInt2074 * 1082541889 != 0) {
@@ -4787,10 +4779,10 @@ public final class Client extends GameEngine {
 					}
 
 					if (RuneScript.aClass13_1721 == null) {
-						RuneScript.aClass13_1721 = new Class13(Class110.aClass87_781, Class110.aClass87_786);
+						RuneScript.aClass13_1721 = new Class13(Class110.sfx_ref, Class110.vorbis_ref);
 					}
 
-					if (Class110.aNode_Sub4_Sub4_784.method829(Class86.aNode_Sub11_693, Class89.aClass87_716,
+					if (Class110.aNode_Sub4_Sub4_784.method829(Class86.aNode_Sub11_693, Class89.midiInstruments_ref,
 							RuneScript.aClass13_1721, 22050)) {
 						Class110.aNode_Sub4_Sub4_784.method830();
 						Class110.aNode_Sub4_Sub4_784.method827(1705221873 * Class110.anInt787);
@@ -4842,12 +4834,12 @@ public final class Client extends GameEngine {
 
 				aBool1979 = true;
 			} else if (aBool1982) {
-				ItemDefinition.method810();
+				ItemType.method810();
 			}
 		}
 
 		Dimension var18 = this.method1034();
-		if (var18.width != -1830553327 * DualNode_Sub6.anInt1505 || var18.height != Class21.anInt281 * 2045896553
+		if (var18.width != -1830553327 * VarClientStringType.anInt1505 || var18.height != Class21.anInt281 * 2045896553
 				|| aBool1981) {
 			Node_Sub5.method534();
 			aLong2035 = (Node_Sub5.currentTimeMs() + 500L) * 276652985331671983L;
@@ -4865,12 +4857,12 @@ public final class Client extends GameEngine {
 		}
 
 		if (var19) {
-			DualNode_Sub1.method659();
+			SpotAnimType.method659();
 		}
 
 		if (846055547 * anInt2113 == 0) {
 			var6 = -1478431965 * Class6.anInt122;
-			String var7 = Class6.aString131;
+			String var7 = Class6.bootMessage;
 			Color var8 = null;
 
 			try {
@@ -4923,12 +4915,12 @@ public final class Client extends GameEngine {
 				LandscapeTile.aCanvas1417.repaint();
 			}
 		} else if (846055547 * anInt2113 == 5) {
-			Class86.method367(Class35.aDualNode_Sub13_Sub3_Sub1_386, Class20_Sub1.aDualNode_Sub13_Sub3_Sub1_1214,
-					aDualNode_Sub13_Sub3_Sub1_2047, var19);
+			Class86.method367(Class35.b12_full, Class20_Sub1.p11_full,
+					p12_full, var19);
 		} else if (846055547 * anInt2113 != 10 && 846055547 * anInt2113 != 11) {
 			if (846055547 * anInt2113 == 20) {
-				Class86.method367(Class35.aDualNode_Sub13_Sub3_Sub1_386, Class20_Sub1.aDualNode_Sub13_Sub3_Sub1_1214,
-						aDualNode_Sub13_Sub3_Sub1_2047, var19);
+				Class86.method367(Class35.b12_full, Class20_Sub1.p11_full,
+						p12_full, var19);
 			} else if (846055547 * anInt2113 == 25) {
 				if (anInt2130 * 252312367 == 1) {
 					if (anInt2120 * -938799965 > anInt2140 * -52271427) {
@@ -4957,8 +4949,8 @@ public final class Client extends GameEngine {
 				Class82.method363(GameStrings.aString945, false);
 			}
 		} else {
-			Class86.method367(Class35.aDualNode_Sub13_Sub3_Sub1_386, Class20_Sub1.aDualNode_Sub13_Sub3_Sub1_1214,
-					aDualNode_Sub13_Sub3_Sub1_2047, var19);
+			Class86.method367(Class35.b12_full, Class20_Sub1.p11_full,
+					p12_full, var19);
 		}
 
 		int var20;
@@ -5012,7 +5004,7 @@ public final class Client extends GameEngine {
 			int[] var9 = RuneScript.minimapSprite.pixels;
 			var6 = 4 * var1 + 24624 + 2048 * (103 - var2);
 			var11 = var5 >> 14 & 32767;
-			ObjectDefinition var12 = Class37.getObjectDefinition(var11);
+			ObjectType var12 = Class37.getObjectType(var11);
 			if (var12.anInt1703 * -1798686461 != -1) {
 				DualNode_Sub13_Sub2 var13 = Class2.aDualNode_Sub13_Sub2Array77[var12.anInt1703 * -1798686461];
 				if (var13 != null) {
@@ -5089,7 +5081,7 @@ public final class Client extends GameEngine {
 			var14 = var7 >> 6 & 3;
 			var8 = var7 & 31;
 			var10 = var5 >> 14 & 32767;
-			ObjectDefinition var19 = Class37.getObjectDefinition(var10);
+			ObjectType var19 = Class37.getObjectType(var10);
 			int var22;
 			if (var19.anInt1703 * -1798686461 != -1) {
 				DualNode_Sub13_Sub2 var17 = Class2.aDualNode_Sub13_Sub2Array77[-1798686461 * var19.anInt1703];
@@ -5123,7 +5115,7 @@ public final class Client extends GameEngine {
 		var5 = InterfaceNode.landscape.method33(var0, var1, var2);
 		if (var5 != 0) {
 			var7 = var5 >> 14 & 32767;
-			ObjectDefinition var23 = Class37.getObjectDefinition(var7);
+			ObjectType var23 = Class37.getObjectType(var7);
 			if (var23.anInt1703 * -1798686461 != -1) {
 				DualNode_Sub13_Sub2 var18 = Class2.aDualNode_Sub13_Sub2Array77[var23.anInt1703 * -1798686461];
 				if (var18 != null) {

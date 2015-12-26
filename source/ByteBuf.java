@@ -591,7 +591,7 @@ public class ByteBuf extends Node {
 		for (InterfaceNode var0 = (InterfaceNode) Client.interfaceNodes
 				.method150(); var0 != null; var0 = (InterfaceNode) Client.interfaceNodes.method151()) {
 			int var3 = var0.type * 226793949;
-			if (DualNode_Sub2.loadWidget(var3)) {
+			if (IdentKitType.loadWidget(var3)) {
 				boolean var1 = true;
 				Widget[] var4 = Widget.interfaces[var3];
 

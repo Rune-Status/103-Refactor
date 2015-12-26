@@ -3,7 +3,7 @@ public class Widget extends Node {
 
 	public int anInt1122 = 0;
 	static boolean[] loadedInterfaces;
-	static Class87 widgetIndex;
+	static AbstractIndex widgetIndex;
 	public String aString1125 = "";
 	public int anInt1126;
 	static Class106 aClass106_1127 = new Class106(50);
@@ -15,7 +15,7 @@ public class Widget extends Node {
 	public int index = -938225275;
 	public Object[] anObjectArray1130;
 	public int columnPadding = 0;
-	static Class87 aClass87_1131;
+	static AbstractIndex aClass87_1131;
 	public int anInt1132 = 0;
 	public Object[] mouseHoverListener;
 	public int anInt1133 = 0;
@@ -301,11 +301,11 @@ public class Widget extends Node {
 		if (var1 >= 0 && var1 < this.anIntArray1164.length) {
 			int var2 = this.anIntArray1164[var1];
 			if (var2 != -1) {
-				Sprite var3 = (Sprite) aClass106_1167.method427((long) var2);
+				Sprite var3 = (Sprite) aClass106_1167.get((long) var2);
 				if (var3 != null) {
 					return var3;
 				} else {
-					Class87 var4 = Npc.aClass87_1967;
+					AbstractIndex var4 = Npc.aClass87_1967;
 					Sprite var6;
 					if (!Class35.method202(var4, var2, 0)) {
 						var6 = null;
@@ -314,7 +314,7 @@ public class Widget extends Node {
 						var5.anInt1815 = -749860951 * Class7.anInt148;
 						var5.anInt1816 = -1945497809 * Class7.anInt155;
 						var5.anInt1814 = Class7.anIntArray149[0];
-						var5.anInt1817 = DualNode_Sub11.anIntArray1544[0];
+						var5.anInt1817 = VarPlayerType.anIntArray1544[0];
 						var5.height = Class7.anIntArray150[0];
 						var5.width = Class7.anIntArray151[0];
 						int var8 = var5.height * var5.width;
@@ -330,7 +330,7 @@ public class Widget extends Node {
 					}
 
 					if (var6 != null) {
-						aClass106_1167.method428(var6, (long) var2);
+						aClass106_1167.put(var6, (long) var2);
 					} else {
 						aBool1128 = true;
 					}
@@ -360,11 +360,11 @@ public class Widget extends Node {
 			long var8 = ((long) (2139159057 * this.shadowColor) << 40) + ((this.flippedVertically ? 1L : 0L) << 38)
 					+ (long) var11 + ((long) (-357503007 * this.borderThickness) << 36)
 					+ ((this.flippedHorizontally ? 1L : 0L) << 39);
-			Sprite var2 = (Sprite) aClass106_1167.method427(var8);
+			Sprite var2 = (Sprite) aClass106_1167.get(var8);
 			if (var2 != null) {
 				return var2;
 			} else {
-				Class87 var10 = Npc.aClass87_1967;
+				AbstractIndex var10 = Npc.aClass87_1967;
 				Sprite var7;
 				if (!Class35.method202(var10, var11, 0)) {
 					var7 = null;
@@ -373,7 +373,7 @@ public class Widget extends Node {
 					var3.anInt1815 = -749860951 * Class7.anInt148;
 					var3.anInt1816 = Class7.anInt155 * -1945497809;
 					var3.anInt1814 = Class7.anIntArray149[0];
-					var3.anInt1817 = DualNode_Sub11.anIntArray1544[0];
+					var3.anInt1817 = VarPlayerType.anIntArray1544[0];
 					var3.height = Class7.anIntArray150[0];
 					var3.width = Class7.anIntArray151[0];
 					int var5 = var3.height * var3.width;
@@ -416,7 +416,7 @@ public class Widget extends Node {
 						var7.method962(this.shadowColor * 2139159057);
 					}
 
-					aClass106_1167.method428(var7, var8);
+					aClass106_1167.put(var7, var8);
 					return var7;
 				}
 			}
@@ -429,10 +429,10 @@ public class Widget extends Node {
 			return null;
 		} else {
 			DualNode_Sub13_Sub3_Sub1 var1 = (DualNode_Sub13_Sub3_Sub1) aClass106_1192
-					.method427((long) (-335454051 * this.fontId));
+					.get((long) (-335454051 * this.fontId));
 			if (var1 == null) {
-				Class87 var3 = Npc.aClass87_1967;
-				Class87 var4 = Class96_Sub1.aClass87_1207;
+				AbstractIndex var3 = Npc.aClass87_1967;
+				AbstractIndex var4 = Class96_Sub1.aClass87_1207;
 				int var5 = -335454051 * this.fontId;
 				DualNode_Sub13_Sub3_Sub1 var2;
 				if (!Class35.method202(var3, var5, 0)) {
@@ -442,7 +442,7 @@ public class Widget extends Node {
 				}
 
 				if (var2 != null) {
-					aClass106_1192.method428(var2, (long) (this.fontId * -335454051));
+					aClass106_1192.put(var2, (long) (this.fontId * -335454051));
 				} else {
 					aBool1128 = true;
 				}
@@ -466,7 +466,7 @@ public class Widget extends Node {
 			long var7 = ((long) (-357503007 * this.borderThickness) << 36) + (long) var2
 					+ ((this.flippedVertically ? 1L : 0L) << 38) + ((this.flippedHorizontally ? 1L : 0L) << 39)
 					+ ((long) (this.shadowColor * 2139159057) << 40);
-			DualNode_Sub14 var9 = (DualNode_Sub14) aClass106_1202.method427(var7);
+			DualNode_Sub14 var9 = (DualNode_Sub14) aClass106_1202.get(var7);
 			if (var9 != null) {
 				return var9;
 			} else {
@@ -509,14 +509,14 @@ public class Widget extends Node {
 					}
 
 					var9 = new DualNode_Sub14(var5.height, var5.width, var6, var10, var2);
-					aClass106_1202.method428(var9, var7);
+					aClass106_1202.put(var9, var7);
 					return var9;
 				}
 			}
 		}
 	}
 
-	public Model method492(DualNode_Sub3 var1, int var2, boolean var3, PlayerConfig var4) {
+	public Model method492(SequenceType var1, int var2, boolean var3, PlayerConfig var4) {
 		aBool1128 = false;
 		int var6;
 		int var7;
@@ -533,7 +533,7 @@ public class Widget extends Node {
 		} else if (var6 == 1 && var7 == -1) {
 			return null;
 		} else {
-			Model var8 = (Model) aClass106_1127.method427((long) (var7 + (var6 << 16)));
+			Model var8 = (Model) aClass106_1127.get((long) (var7 + (var6 << 16)));
 			if (var8 == null) {
 				Entity_Sub1 var5;
 				if (var6 == 1) {
@@ -547,7 +547,7 @@ public class Widget extends Node {
 				}
 
 				if (var6 == 2) {
-					var5 = DualNode_Sub11.getNpcDefinition(var7).method800();
+					var5 = VarPlayerType.getNpcType(var7).method800();
 					if (var5 == null) {
 						aBool1128 = true;
 						return null;
@@ -571,7 +571,7 @@ public class Widget extends Node {
 				}
 
 				if (var6 == 4) {
-					ItemDefinition var9 = FriendedPlayer.getItemDefinition(var7);
+					ItemType var9 = FriendedPlayer.getItemType(var7);
 					var5 = var9.method809(10);
 					if (var5 == null) {
 						aBool1128 = true;
@@ -582,7 +582,7 @@ public class Widget extends Node {
 							-10, -50);
 				}
 
-				aClass106_1127.method428(var8, (long) ((var6 << 16) + var7));
+				aClass106_1127.put(var8, (long) ((var6 << 16) + var7));
 			}
 
 			if (var1 != null) {

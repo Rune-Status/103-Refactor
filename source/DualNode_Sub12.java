@@ -8,7 +8,7 @@ public class DualNode_Sub12 extends DualNode {
 		return this.aClass23Array1568[var1].aBool297;
 	}
 
-	public DualNode_Sub12(Class87 var1, Class87 var2, int var3, boolean var4) {
+	public DualNode_Sub12(AbstractIndex var1, AbstractIndex var2, int var3, boolean var4) {
 		Deque var5 = new Deque();
 		int var6 = var1.fileCount(var3);
 		this.aClass23Array1568 = new Class23[var6];

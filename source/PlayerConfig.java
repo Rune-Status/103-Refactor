@@ -11,15 +11,15 @@ public class PlayerConfig {
 	long aLong533;
 	static int[] anIntArray534 = new int[] { 8, 11, 4, 6, 9, 7, 10 };
 	int[] appearance;
-	static CacheIndex aClass87_Sub1_535;
+	static CacheIndex midiTack2Index;
 
 	public void method262(int[] var1, int[] var2, boolean var3, int var4) {
 		if (var1 == null) {
 			var1 = new int[12];
 
 			for (int var6 = 0; var6 < 7; ++var6) {
-				for (int var7 = 0; var7 < DualNode_Sub2.anInt1457 * 906908197; ++var7) {
-					DualNode_Sub2 var5 = Class20_Sub1.method511(var7);
+				for (int var7 = 0; var7 < IdentKitType.anInt1457 * 906908197; ++var7) {
+					IdentKitType var5 = Class20_Sub1.getIdentKitType(var7);
 					if (var5 != null && !var5.aBool1466 && (var3 ? 7 : 0) + var6 == 746079793 * var5.anInt1459) {
 						var1[anIntArray534[var6]] = 256 + var7;
 						break;
@@ -63,21 +63,21 @@ public class PlayerConfig {
 			if (var4 != 0) {
 				var4 -= 256;
 
-				DualNode_Sub2 var3;
+				IdentKitType var3;
 				do {
 					if (!var2) {
 						--var4;
 						if (var4 < 0) {
-							var4 = 906908197 * DualNode_Sub2.anInt1457 - 1;
+							var4 = 906908197 * IdentKitType.anInt1457 - 1;
 						}
 					} else {
 						++var4;
-						if (var4 >= 906908197 * DualNode_Sub2.anInt1457) {
+						if (var4 >= 906908197 * IdentKitType.anInt1457) {
 							var4 = 0;
 						}
 					}
 
-					var3 = Class20_Sub1.method511(var4);
+					var3 = Class20_Sub1.getIdentKitType(var4);
 				} while (var3 == null || var3.aBool1466 || (this.female ? 7 : 0) + var1 != var3.anInt1459 * 746079793);
 
 				this.appearance[anIntArray534[var1]] = 256 + var4;
@@ -150,9 +150,9 @@ public class PlayerConfig {
 
 	}
 
-	public Model method268(DualNode_Sub3 var1, int var2, DualNode_Sub3 var3, int var4) {
+	public Model method268(SequenceType var1, int var2, SequenceType var3, int var4) {
 		if (-84158433 * this.npcId != -1) {
-			return DualNode_Sub11.getNpcDefinition(-84158433 * this.npcId).method799(var1, var2, var3, var4);
+			return VarPlayerType.getNpcType(-84158433 * this.npcId).method799(var1, var2, var3, var4);
 		} else {
 			long var8 = this.aLong533 * -7792981304576825055L;
 			int[] var5 = this.appearance;
@@ -174,25 +174,25 @@ public class PlayerConfig {
 				}
 			}
 
-			Model var15 = (Model) aClass106_531.method427(var8);
+			Model var15 = (Model) aClass106_531.get(var8);
 			if (var15 == null) {
 				boolean var12 = false;
 
 				int var11;
 				for (int var13 = 0; var13 < 12; ++var13) {
 					var11 = var5[var13];
-					if (var11 >= 256 && var11 < 512 && !Class20_Sub1.method511(var11 - 256).method662()) {
+					if (var11 >= 256 && var11 < 512 && !Class20_Sub1.getIdentKitType(var11 - 256).method662()) {
 						var12 = true;
 					}
 
-					if (var11 >= 512 && !FriendedPlayer.getItemDefinition(var11 - 512).method813(this.female)) {
+					if (var11 >= 512 && !FriendedPlayer.getItemType(var11 - 512).method813(this.female)) {
 						var12 = true;
 					}
 				}
 
 				if (var12) {
 					if (this.aLong532 * 3298979106963370435L != -1L) {
-						var15 = (Model) aClass106_531.method427(3298979106963370435L * this.aLong532);
+						var15 = (Model) aClass106_531.get(3298979106963370435L * this.aLong532);
 					}
 
 					if (var15 == null) {
@@ -209,14 +209,14 @@ public class PlayerConfig {
 						var10 = var5[var7];
 						Entity_Sub1 var14;
 						if (var10 >= 256 && var10 < 512) {
-							var14 = Class20_Sub1.method511(var10 - 256).method660();
+							var14 = Class20_Sub1.getIdentKitType(var10 - 256).method660();
 							if (var14 != null) {
 								var18[var11++] = var14;
 							}
 						}
 
 						if (var10 >= 512) {
-							var14 = FriendedPlayer.getItemDefinition(var10 - 512).method814(this.female);
+							var14 = FriendedPlayer.getItemType(var10 - 512).method814(this.female);
 							if (var14 != null) {
 								var18[var11++] = var14;
 							}
@@ -238,7 +238,7 @@ public class PlayerConfig {
 					}
 
 					var15 = var16.method902(64, 850, -30, -50, -30);
-					aClass106_531.method428(var15, var8);
+					aClass106_531.put(var15, var8);
 					this.aLong532 = var8 * 3382972943993980651L;
 				}
 			}
@@ -262,25 +262,25 @@ public class PlayerConfig {
 
 	public int method269() {
 		return this.npcId * -84158433 != -1
-				? 305419896 + DualNode_Sub11.getNpcDefinition(-84158433 * this.npcId).anInt1579 * -2095462435
+				? 305419896 + VarPlayerType.getNpcType(-84158433 * this.npcId).id * -2095462435
 				: (this.appearance[11] << 5) + (this.appearanceColors[0] << 25) + (this.appearanceColors[4] << 20)
 						+ (this.appearance[0] << 15) + (this.appearance[8] << 10) + this.appearance[1];
 	}
 
 	Entity_Sub1 method270() {
 		if (this.npcId * -84158433 != -1) {
-			return DualNode_Sub11.getNpcDefinition(this.npcId * -84158433).method800();
+			return VarPlayerType.getNpcType(this.npcId * -84158433).method800();
 		} else {
 			boolean var4 = false;
 
 			int var3;
 			for (int var1 = 0; var1 < 12; ++var1) {
 				var3 = this.appearance[var1];
-				if (var3 >= 256 && var3 < 512 && !Class20_Sub1.method511(var3 - 256).method669()) {
+				if (var3 >= 256 && var3 < 512 && !Class20_Sub1.getIdentKitType(var3 - 256).method669()) {
 					var4 = true;
 				}
 
-				if (var3 >= 512 && !FriendedPlayer.getItemDefinition(var3 - 512).method815(this.female)) {
+				if (var3 >= 512 && !FriendedPlayer.getItemType(var3 - 512).method815(this.female)) {
 					var4 = true;
 				}
 			}
@@ -296,14 +296,14 @@ public class PlayerConfig {
 					var2 = this.appearance[var5];
 					Entity_Sub1 var6;
 					if (var2 >= 256 && var2 < 512) {
-						var6 = Class20_Sub1.method511(var2 - 256).method663();
+						var6 = Class20_Sub1.getIdentKitType(var2 - 256).method663();
 						if (var6 != null) {
 							var7[var3++] = var6;
 						}
 					}
 
 					if (var2 >= 512) {
-						var6 = FriendedPlayer.getItemDefinition(var2 - 512).method818(this.female);
+						var6 = FriendedPlayer.getItemType(var2 - 512).method818(this.female);
 						if (var6 != null) {
 							var7[var3++] = var6;
 						}
@@ -328,9 +328,9 @@ public class PlayerConfig {
 		}
 	}
 
-	public static void method271(Class87 var0, String var1, String var2, int var3, boolean var4) {
-		int var5 = var0.method383(var1);
-		int var6 = var0.method384(var5, var2);
+	public static void method271(AbstractIndex var0, String var1, String var2, int var3, boolean var4) {
+		int var5 = var0.getFile(var1);
+		int var6 = var0.getChild(var5, var2);
 		Class69.method328(var0, var5, var6, var3, var4);
 	}
 }
