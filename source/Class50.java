@@ -43,7 +43,7 @@ public class Class50 {
 		int var1;
 		if (-1074177723 * Client.anInt2226 != -1) {
 			var1 = Client.anInt2226 * -1074177723;
-			if (DualNode_Sub2.method666(var1)) {
+			if (DualNode_Sub2.loadWidget(var1)) {
 				Class77.method338(Widget.interfaces[var1], -1);
 			}
 		}

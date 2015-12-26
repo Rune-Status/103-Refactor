@@ -123,7 +123,7 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = DualNode_Sub2.aClass87_1468.method391(3, var0);
+			byte[] var2 = DualNode_Sub2.aClass87_1468.getFile(3, var0);
 			var1 = new DualNode_Sub2();
 			if (var2 != null) {
 				var1.method665(new ByteBuf(var2), 2124429388);

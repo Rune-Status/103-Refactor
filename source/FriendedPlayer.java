@@ -49,7 +49,7 @@ public class FriendedPlayer {
 	}
 
 	static final void method409(int var0, int var1, int var2, boolean var3) {
-		if (DualNode_Sub2.method666(var0)) {
+		if (DualNode_Sub2.loadWidget(var0)) {
 			Class4.method70(Widget.interfaces[var0], -1, var1, var2, var3);
 		}
 	}
@@ -59,7 +59,7 @@ public class FriendedPlayer {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = ItemDefinition.aClass87_1622.method391(10, var0);
+			byte[] var2 = ItemDefinition.aClass87_1622.getFile(10, var0);
 			var1 = new ItemDefinition();
 			var1.anInt1609 = var0 * 763132019;
 			if (var2 != null) {

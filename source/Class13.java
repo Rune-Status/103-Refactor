@@ -8,9 +8,9 @@ public class Class13 {
 	public static int anInt229;
 
 	public Node_Sub2_Sub1 method113(int var1, int[] var2) {
-		if (this.aClass87_228.method397() == 1) {
+		if (this.aClass87_228.size() == 1) {
 			return this.method116(0, var1, var2);
-		} else if (this.aClass87_228.method380(var1) == 1) {
+		} else if (this.aClass87_228.fileCount(var1) == 1) {
 			return this.method116(var1, 0, var2);
 		} else {
 			throw new RuntimeException();
@@ -49,8 +49,8 @@ public class Class13 {
 	}
 
 	public Node_Sub2_Sub1 method115(int var1, int[] var2) {
-		if (this.aClass87_225.method397() != 1) {
-			if (this.aClass87_225.method380(var1) == 1) {
+		if (this.aClass87_225.size() != 1) {
+			if (this.aClass87_225.fileCount(var1) == 1) {
 				return this.method114(var1, 0, var2);
 			} else {
 				throw new RuntimeException();

@@ -215,7 +215,7 @@ public class Class58 {
 				Client.aPacketBuffer2115.putInt(Class34.aClass87_Sub1_385.anInt695 * 1153748675);
 				Client.aPacketBuffer2115.putInt(Client.aClass87_Sub1_2022.anInt695 * 1153748675);
 				Client.aPacketBuffer2115.putInt(1153748675 * Client.aClass87_Sub1_2104.anInt695);
-				Client.aPacketBuffer2115.putInt(1153748675 * RuneScript.aClass87_Sub1_1723.anInt695);
+				Client.aPacketBuffer2115.putInt(1153748675 * RuneScript.interfaceIndex.anInt695);
 				Client.aPacketBuffer2115.putInt(1153748675 * DualNode_Sub10.aClass87_Sub1_1537.anInt695);
 				Client.aPacketBuffer2115.putInt(Class48_Sub1.aClass87_Sub1_1295.anInt695 * 1153748675);
 				Client.aPacketBuffer2115.putInt(1153748675 * Class2.aClass87_Sub1_79.anInt695);

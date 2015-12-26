@@ -91,7 +91,7 @@ public abstract class Class20 {
 	public abstract void method145(int var1, int var2, Component var3, byte var4);
 
 	public static Widget method146(int var0, int var1) {
-		Widget var2 = Class94.method406(var0);
+		Widget var2 = Class94.getWidget(var0);
 		return var1 == -1 ? var2
 				: (var2 != null && var2.children != null && var1 < var2.children.length ? var2.children[var1] : null);
 	}

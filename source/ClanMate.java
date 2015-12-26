@@ -13,7 +13,7 @@ public class ClanMate extends Node {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = DualNode_Sub6.aClass87_1506.method391(15, var0);
+			byte[] var2 = DualNode_Sub6.aClass87_1506.getFile(15, var0);
 			var1 = new DualNode_Sub6();
 			if (var2 != null) {
 				var1.method696(new ByteBuf(var2));

@@ -8,7 +8,7 @@ public class Class40 {
 	static CacheIndex aClass87_Sub1_445;
 
 	static final void method222(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-		if (DualNode_Sub2.method666(var0)) {
+		if (DualNode_Sub2.loadWidget(var0)) {
 			Class96_Sub1.method505(Widget.interfaces[var0], -1, var1, var2, var3, var4, var5, var6);
 		}
 	}

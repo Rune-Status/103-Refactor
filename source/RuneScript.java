@@ -9,7 +9,7 @@ public class RuneScript extends DualNode {
 	int intStackCount;
 	static int anInt1722;
 	int[] intOperands;
-	static CacheIndex aClass87_Sub1_1723;
+	static CacheIndex interfaceIndex;
 	static int[] anIntArray1724;
 	static Sprite minimapSprite;
 	static Class106 aClass106_1725 = new Class106(128);

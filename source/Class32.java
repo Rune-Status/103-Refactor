@@ -11,12 +11,12 @@ public class Class32 {
 	static Map aMap359 = new HashMap();
 
 	public static void method193(Class87 var0, Class87 var1, Class87 var2, Class87 var3) {
-		Widget.aClass87_1124 = var0;
+		Widget.widgetIndex = var0;
 		Widget.aClass87_1131 = var1;
 		Npc.aClass87_1967 = var2;
 		Class96_Sub1.aClass87_1207 = var3;
-		Widget.interfaces = new Widget[Widget.aClass87_1124.method397()][];
-		Widget.aBoolArray1123 = new boolean[Widget.aClass87_1124.method397()];
+		Widget.interfaces = new Widget[Widget.widgetIndex.size()][];
+		Widget.loadedInterfaces = new boolean[Widget.widgetIndex.size()];
 	}
 
 	public static void method194() {

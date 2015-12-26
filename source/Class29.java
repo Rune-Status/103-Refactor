@@ -59,10 +59,10 @@ public class Class29 implements Interface3 {
 		this.anInt327 = 1787162991 * var6;
 		int[] var7 = var1.method394(0);
 		int var8 = var7.length;
-		this.aNode_Sub7Array332 = new Node_Sub7[var1.method380(0)];
+		this.aNode_Sub7Array332 = new Node_Sub7[var1.fileCount(0)];
 
 		for (int var9 = 0; var9 < var8; ++var9) {
-			ByteBuf var10 = new ByteBuf(var1.method391(0, var7[var9]));
+			ByteBuf var10 = new ByteBuf(var1.getFile(0, var7[var9]));
 			this.aNode_Sub7Array332[var7[var9]] = new Node_Sub7(var10);
 		}
 

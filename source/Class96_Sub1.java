@@ -22,7 +22,7 @@ public class Class96_Sub1 extends Class96 {
 		if (var2 != null) {
 			return var2;
 		} else {
-			byte[] var3 = DualNode_Sub1.aClass87_1456.method391(13, var0);
+			byte[] var3 = DualNode_Sub1.aClass87_1456.getFile(13, var0);
 			var2 = new DualNode_Sub1();
 			var2.anInt1443 = var0 * -892199181;
 			if (var3 != null) {

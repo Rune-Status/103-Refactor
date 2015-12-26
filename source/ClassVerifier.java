@@ -37,7 +37,7 @@ public class ClassVerifier extends Node {
 
 		Widget var8;
 		if (var2 == 24) {
-			var8 = Class94.method406(var1);
+			var8 = Class94.getWidget(var1);
 			boolean var9 = true;
 			if (-179718399 * var8.contentType > 0) {
 				var9 = DualNode_Sub2.method667(var8);
@@ -55,7 +55,7 @@ public class ClassVerifier extends Node {
 			Client.outBuffer.putShortA(var3);
 			Client.outBuffer.putShort(var0);
 			Client.anInt2098 = 0;
-			Class30.aWidget339 = Class94.method406(var1);
+			Class30.aWidget339 = Class94.getWidget(var1);
 			Client.anInt2099 = var0 * -1119534041;
 		}
 
@@ -65,7 +65,7 @@ public class ClassVerifier extends Node {
 			Client.outBuffer.putLEShortA(var3);
 			Client.outBuffer.putIMEInt(var1);
 			Client.anInt2098 = 0;
-			Class30.aWidget339 = Class94.method406(var1);
+			Class30.aWidget339 = Class94.getWidget(var1);
 			Client.anInt2099 = var0 * -1119534041;
 		}
 
@@ -75,7 +75,7 @@ public class ClassVerifier extends Node {
 			Client.outBuffer.putLEShort(var0);
 			Client.outBuffer.putIMEInt(var1);
 			Client.anInt2098 = 0;
-			Class30.aWidget339 = Class94.method406(var1);
+			Class30.aWidget339 = Class94.getWidget(var1);
 			Client.anInt2099 = -1119534041 * var0;
 		}
 
@@ -268,7 +268,7 @@ public class ClassVerifier extends Node {
 			if (var2 == 28) {
 				Client.outBuffer.putHeader(80);
 				Client.outBuffer.putInt(var1);
-				var8 = Class94.method406(var1);
+				var8 = Class94.getWidget(var1);
 				if (var8.varpOpcodes != null && var8.varpOpcodes[0][0] == 5) {
 					var13 = var8.varpOpcodes[0][1];
 					Class94.tempVars[var13] = 1 - Class94.tempVars[var13];
@@ -298,12 +298,12 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putLEInt(var1);
 				Client.outBuffer.putLEShort(var0);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
 			if (var2 == 1005) {
-				var8 = Class94.method406(var1);
+				var8 = Class94.getWidget(var1);
 				if (var8 != null && var8.itemQuantities[var0] >= 100000) {
 					Class75.method334(27, "",
 							var8.itemQuantities[var0] + " x " + FriendedPlayer.getItemDefinition(var3).name);
@@ -313,7 +313,7 @@ public class ClassVerifier extends Node {
 				}
 
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
@@ -340,7 +340,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putInt(var1);
 				Client.outBuffer.putShortA(var3);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
@@ -369,7 +369,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putLEShortA(Class32.anInt356 * 1905121485);
 				Client.outBuffer.putShort(var3);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
@@ -393,7 +393,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putLEShortA(var0);
 				Client.outBuffer.putMEInt(var1);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = -1119534041 * var0;
 			}
 
@@ -441,7 +441,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putShortA(var3);
 				Client.outBuffer.putLEInt(var1);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
@@ -451,7 +451,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putLEShort(var0);
 				Client.outBuffer.putShortA(var3);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
@@ -481,7 +481,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putShort(var3);
 				Client.outBuffer.putShortA(var0);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
@@ -506,7 +506,7 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putLEShort(var0);
 				Client.outBuffer.putLEShortA(var3);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
@@ -531,13 +531,13 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putMEInt(var1);
 				Client.outBuffer.putLEShortA(var3);
 				Client.anInt2098 = 0;
-				Class30.aWidget339 = Class94.method406(var1);
+				Class30.aWidget339 = Class94.getWidget(var1);
 				Client.anInt2099 = var0 * -1119534041;
 			}
 
 			if (var2 == 38) {
 				DualNode_Sub2.method672();
-				var8 = Class94.method406(var1);
+				var8 = Class94.getWidget(var1);
 				Client.itemSelectionStatus = 2046756243;
 				Class40.selectedItemIndex = var0 * 1705405781;
 				Class22.anInt286 = var1 * 541949719;
@@ -714,7 +714,7 @@ public class ClassVerifier extends Node {
 				if (var2 == 29) {
 					Client.outBuffer.putHeader(80);
 					Client.outBuffer.putInt(var1);
-					var8 = Class94.method406(var1);
+					var8 = Class94.getWidget(var1);
 					if (var8.varpOpcodes != null && var8.varpOpcodes[0][0] == 5) {
 						var13 = var8.varpOpcodes[0][1];
 						if (Class94.tempVars[var13] != var8.anIntArray1168[0]) {
@@ -865,7 +865,7 @@ public class ClassVerifier extends Node {
 
 				if (-1110581093 * Client.itemSelectionStatus != 0) {
 					Client.itemSelectionStatus = 0;
-					Class68.method326(Class94.method406(-47339353 * Class22.anInt286));
+					Class68.method326(Class94.getWidget(-47339353 * Class22.anInt286));
 				}
 
 				if (Client.spellSelected) {

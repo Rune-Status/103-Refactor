@@ -71,7 +71,7 @@ public class Class24 {
 
 	static void method160(int var0) {
 		if (var0 != -1) {
-			if (DualNode_Sub2.method666(var0)) {
+			if (DualNode_Sub2.loadWidget(var0)) {
 				Widget[] var4 = Widget.interfaces[var0];
 
 				for (int var3 = 0; var3 < var4.length; ++var3) {
@@ -118,14 +118,14 @@ public class Class24 {
 		if (!Class35.method202(var0, var4, var6)) {
 			var5 = null;
 		} else {
-			var5 = IgnoredPlayer.method415(var1.method391(var4, var6));
+			var5 = IgnoredPlayer.method415(var1.getFile(var4, var6));
 		}
 
 		return var5;
 	}
 
 	static final void method164(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-		if (DualNode_Sub2.method666(var0)) {
+		if (DualNode_Sub2.loadWidget(var0)) {
 			Class6.aWidgetArray146 = null;
 			Class53.method272(Widget.interfaces[var0], -1, var1, var2, var3, var4, var5, var6, var7);
 			if (Class6.aWidgetArray146 != null) {

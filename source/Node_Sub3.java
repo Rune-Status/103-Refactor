@@ -185,7 +185,7 @@ public class Node_Sub3 extends Node {
 
 	static boolean method518(Class87 var0) {
 		if (!aBool1241) {
-			byte[] var1 = var0.method391(0, 0);
+			byte[] var1 = var0.getFile(0, 0);
 			if (var1 == null) {
 				return false;
 			}
@@ -287,7 +287,7 @@ public class Node_Sub3 extends Node {
 			var0.method388(var1, var2);
 			return null;
 		} else {
-			byte[] var3 = var0.method391(var1, var2);
+			byte[] var3 = var0.getFile(var1, var2);
 			return var3 == null ? null : new Node_Sub3(var3);
 		}
 	}

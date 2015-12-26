@@ -11,7 +11,7 @@ final class Class37 implements Comparator {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = ObjectDefinition.aClass87_1682.method391(6, var0);
+			byte[] var2 = ObjectDefinition.aClass87_1682.getFile(6, var0);
 			var1 = new ObjectDefinition();
 			var1.anInt1718 = -55164811 * var0;
 			if (var2 != null) {
@@ -52,7 +52,7 @@ final class Class37 implements Comparator {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = DualNode_Sub11.aClass87_1548.method391(16, var0);
+			byte[] var2 = DualNode_Sub11.aClass87_1548.getFile(16, var0);
 			var1 = new DualNode_Sub11();
 			if (var2 != null) {
 				var1.method723(new ByteBuf(var2));

@@ -209,7 +209,7 @@ public class CacheIndex extends Class87 {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = Varpbit.aClass87_1727.method391(14, var0);
+			byte[] var2 = Varpbit.aClass87_1727.getFile(14, var0);
 			var1 = new Varpbit();
 			if (var2 != null) {
 				var1.method874(new ByteBuf(var2));

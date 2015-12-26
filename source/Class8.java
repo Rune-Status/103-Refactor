@@ -347,7 +347,7 @@ public class Class8 {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = DualNode_Sub9.aClass87_1533.method391(4, var0);
+			byte[] var2 = DualNode_Sub9.aClass87_1533.getFile(4, var0);
 			var1 = new DualNode_Sub9();
 			if (var2 != null) {
 				var1.method712(new ByteBuf(var2), var0);
