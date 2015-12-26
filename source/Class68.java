@@ -30,7 +30,7 @@ public final class Class68 {
 							break;
 						}
 
-						var5 = Class94.method406(-1652479707 * var5.parentId);
+						var5 = Class94.getWidget(-1652479707 * var5.parentId);
 						if (var5 == null) {
 							var3 = null;
 							break;
@@ -62,7 +62,7 @@ public final class Class68 {
 								break;
 							}
 
-							var5 = Class94.method406(-1652479707 * var5.parentId);
+							var5 = Class94.getWidget(-1652479707 * var5.parentId);
 							if (var5 == null) {
 								var3 = null;
 								break;

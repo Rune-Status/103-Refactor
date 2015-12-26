@@ -404,7 +404,7 @@ public class Node_Sub11 extends Node {
 	}
 
 	public static Node_Sub11 method572(Class87 var0, int var1, int var2) {
-		byte[] var3 = var0.method391(var1, var2);
+		byte[] var3 = var0.getFile(var1, var2);
 		return var3 == null ? null : new Node_Sub11(new ByteBuf(var3));
 	}
 }

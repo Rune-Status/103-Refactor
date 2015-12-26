@@ -14,7 +14,7 @@ public class Class35 {
 	static String aString396 = "true";
 
 	public static boolean method202(Class87 var0, int var1, int var2) {
-		byte[] var3 = var0.method391(var1, var2);
+		byte[] var3 = var0.getFile(var1, var2);
 		if (var3 == null) {
 			return false;
 		} else {
@@ -30,7 +30,7 @@ public class Class35 {
 	public static void method203(Class87 var0, Class87 var1) {
 		DualNode_Sub2.aClass87_1468 = var0;
 		Class120.aClass87_805 = var1;
-		DualNode_Sub2.anInt1457 = DualNode_Sub2.aClass87_1468.method380(3) * 1406368173;
+		DualNode_Sub2.anInt1457 = DualNode_Sub2.aClass87_1468.fileCount(3) * 1406368173;
 	}
 
 	public static RuntimeException_Sub1 method204(Throwable var0, String var1) {

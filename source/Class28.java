@@ -24,7 +24,7 @@ public class Class28 {
 	}
 
 	static final void method173(int var0) {
-		if (DualNode_Sub2.method666(var0)) {
+		if (DualNode_Sub2.loadWidget(var0)) {
 			Widget[] var2 = Widget.interfaces[var0];
 
 			for (int var3 = 0; var3 < var2.length; ++var3) {
@@ -252,8 +252,8 @@ public class Class28 {
 	}
 
 	Class28() {
-		this.anIntArray323 = new int[Client.aClass87_Sub1_2104.method380(19)];
-		this.aStringArray324 = new String[Client.aClass87_Sub1_2104.method380(15)];
+		this.anIntArray323 = new int[Client.aClass87_Sub1_2104.fileCount(19)];
+		this.aStringArray324 = new String[Client.aClass87_Sub1_2104.fileCount(15)];
 		this.aBoolArray321 = new boolean[this.anIntArray323.length];
 
 		int var1;

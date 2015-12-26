@@ -246,7 +246,7 @@ public abstract class Class66 {
 		RuneScript.aClass106_1725.method429();
 		Class34.aClass87_Sub1_385.method381();
 		Client.aClass87_Sub1_2022.method381();
-		RuneScript.aClass87_Sub1_1723.method381();
+		RuneScript.interfaceIndex.method381();
 		DualNode_Sub10.aClass87_Sub1_1537.method381();
 		Class48_Sub1.aClass87_Sub1_1295.method381();
 		Class2.aClass87_Sub1_79.method381();

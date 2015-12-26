@@ -258,37 +258,37 @@ public class DualNode_Sub2 extends DualNode {
 		}
 	}
 
-	public static boolean method666(int var0) {
-		if (Widget.aBoolArray1123[var0]) {
+	public static boolean loadWidget(int parent) {
+		if (Widget.loadedInterfaces[parent]) {
 			return true;
-		} else if (!Widget.aClass87_1124.method395(var0)) {
+		} else if (!Widget.widgetIndex.containsFile(parent)) {
 			return false;
 		} else {
-			int var1 = Widget.aClass87_1124.method380(var0);
-			if (var1 == 0) {
-				Widget.aBoolArray1123[var0] = true;
+			int size = Widget.widgetIndex.fileCount(parent);
+			if (size == 0) {
+				Widget.loadedInterfaces[parent] = true;
 				return true;
 			} else {
-				if (Widget.interfaces[var0] == null) {
-					Widget.interfaces[var0] = new Widget[var1];
+				if (Widget.interfaces[parent] == null) {
+					Widget.interfaces[parent] = new Widget[size];
 				}
 
-				for (int var2 = 0; var2 < var1; ++var2) {
-					if (Widget.interfaces[var0][var2] == null) {
-						byte[] var3 = Widget.aClass87_1124.method391(var0, var2);
+				for (int index = 0; index < size; ++index) {
+					if (Widget.interfaces[parent][index] == null) {
+						byte[] var3 = Widget.widgetIndex.getFile(parent, index);
 						if (var3 != null) {
-							Widget.interfaces[var0][var2] = new Widget();
-							Widget.interfaces[var0][var2].anInt1129 = ((var0 << 16) + var2) * 1463664765;
+							Widget.interfaces[parent][index] = new Widget();
+							Widget.interfaces[parent][index].anInt1129 = ((parent << 16) + index) * 1463664765;
 							if (var3[0] == -1) {
-								Widget.interfaces[var0][var2].method486(new ByteBuf(var3));
+								Widget.interfaces[parent][index].decodeActive(new ByteBuf(var3));
 							} else {
-								Widget.interfaces[var0][var2].method496(new ByteBuf(var3));
+								Widget.interfaces[parent][index].decode(new ByteBuf(var3));
 							}
 						}
 					}
 				}
 
-				Widget.aBoolArray1123[var0] = true;
+				Widget.loadedInterfaces[parent] = true;
 				return true;
 			}
 		}

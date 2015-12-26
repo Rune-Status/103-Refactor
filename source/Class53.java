@@ -1325,8 +1325,8 @@ public class Class53 {
 
 	public static void method275(int var0) {
 		if (var0 != -1) {
-			if (Widget.aBoolArray1123[var0]) {
-				Widget.aClass87_1124.method396(var0);
+			if (Widget.loadedInterfaces[var0]) {
+				Widget.widgetIndex.method396(var0);
 				if (Widget.interfaces[var0] != null) {
 					boolean var1 = true;
 
@@ -1344,7 +1344,7 @@ public class Class53 {
 						Widget.interfaces[var0] = null;
 					}
 
-					Widget.aBoolArray1123[var0] = false;
+					Widget.loadedInterfaces[var0] = false;
 				}
 			}
 		}

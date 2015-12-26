@@ -16,7 +16,7 @@ public class InterfaceNode extends Node {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = DualNode_Sub7.aClass87_1511.method391(1, var0);
+			byte[] var2 = DualNode_Sub7.aClass87_1511.getFile(1, var0);
 			var1 = new DualNode_Sub7();
 			if (var2 != null) {
 				var1.method702(new ByteBuf(var2), var0);
@@ -39,7 +39,7 @@ public class InterfaceNode extends Node {
 		var3.owner = 296579435 * var2;
 		Client.interfaceNodes.put(var3, (long) var0);
 		Class28.method173(var1);
-		Widget var4 = Class94.method406(var0);
+		Widget var4 = Class94.getWidget(var0);
 		Class68.method326(var4);
 		if (Client.aWidget2135 != null) {
 			Class68.method326(Client.aWidget2135);

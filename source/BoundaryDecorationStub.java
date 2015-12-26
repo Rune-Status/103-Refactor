@@ -176,7 +176,7 @@ public final class BoundaryDecorationStub {
 				Class34.aClass87_Sub1_385 = NpcDefinition.openCacheIndex(0, false, true, true);
 				Client.aClass87_Sub1_2022 = NpcDefinition.openCacheIndex(1, false, true, true);
 				Client.aClass87_Sub1_2104 = NpcDefinition.openCacheIndex(2, true, false, true);
-				RuneScript.aClass87_Sub1_1723 = NpcDefinition.openCacheIndex(3, false, true, true);
+				RuneScript.interfaceIndex = NpcDefinition.openCacheIndex(3, false, true, true);
 				DualNode_Sub10.aClass87_Sub1_1537 = NpcDefinition.openCacheIndex(4, false, true, true);
 				Class48_Sub1.aClass87_Sub1_1295 = NpcDefinition.openCacheIndex(5, true, true, true);
 				Class2.aClass87_Sub1_79 = NpcDefinition.openCacheIndex(6, true, true, false);
@@ -197,7 +197,7 @@ public final class BoundaryDecorationStub {
 				var0 = var21 + Class34.aClass87_Sub1_385.method556() * 4 / 100;
 				var0 += Client.aClass87_Sub1_2022.method556() * 4 / 100;
 				var0 += Client.aClass87_Sub1_2104.method556() * 2 / 100;
-				var0 += RuneScript.aClass87_Sub1_1723.method556() * 2 / 100;
+				var0 += RuneScript.interfaceIndex.method556() * 2 / 100;
 				var0 += DualNode_Sub10.aClass87_Sub1_1537.method556() * 6 / 100;
 				var0 += Class48_Sub1.aClass87_Sub1_1295.method556() * 4 / 100;
 				var0 += Class2.aClass87_Sub1_79.method556() * 2 / 100;
@@ -310,7 +310,7 @@ public final class BoundaryDecorationStub {
 						ItemDefinition.aClass87_1622 = var9;
 						Class49.aClass87_516 = var11;
 						Class94.aBool735 = var14;
-						Class13.anInt229 = ItemDefinition.aClass87_1622.method380(10) * -1384530971;
+						Class13.anInt229 = ItemDefinition.aClass87_1622.fileCount(10) * -1384530971;
 						Class31.aDualNode_Sub13_Sub3_Sub1_350 = var12;
 						DualNode_Sub6.method699(Client.aClass87_Sub1_2104, Class34.aClass87_Sub1_385,
 								Client.aClass87_Sub1_2022);
@@ -321,7 +321,7 @@ public final class BoundaryDecorationStub {
 						CacheIndex var7 = Client.aClass87_Sub1_2104;
 						Varpbit.aClass87_1727 = var7;
 						Node_Sub8.method549(Client.aClass87_Sub1_2104);
-						Class32.method193(RuneScript.aClass87_Sub1_1723, Class3.aClass87_Sub1_93,
+						Class32.method193(RuneScript.interfaceIndex, Class3.aClass87_Sub1_93,
 								Node_Sub5.aClass87_Sub1_1266, Class2.aClass87_Sub1_76);
 						Class31.method190(Client.aClass87_Sub1_2104);
 						ItemTable.method648(Client.aClass87_Sub1_2104);
@@ -365,9 +365,9 @@ public final class BoundaryDecorationStub {
 							Client.bootState = -926298570;
 						}
 					} else if (Client.bootState * -773857325 == 130) {
-						if (!RuneScript.aClass87_Sub1_1723.method377()) {
+						if (!RuneScript.interfaceIndex.method377()) {
 							Class6.aString131 = GameStrings.aString874
-									+ RuneScript.aClass87_Sub1_1723.method559() * 4 / 5 + "%";
+									+ RuneScript.interfaceIndex.method559() * 4 / 5 + "%";
 							Class6.anInt122 = 1125197388;
 						} else if (!DualNode_Sub5.aClass87_Sub1_1502.method377()) {
 							Class6.aString131 = GameStrings.aString874

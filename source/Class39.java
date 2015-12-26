@@ -795,7 +795,7 @@ public final class Class39 {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var4 = DualNode_Sub5.aClass87_Sub1_1502.method391(var0, 0);
+			byte[] var4 = DualNode_Sub5.aClass87_Sub1_1502.getFile(var0, 0);
 			if (var4 == null) {
 				return null;
 			} else {

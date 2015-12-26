@@ -6,7 +6,7 @@ public class Class14 {
 	int anInt232;
 
 	public static Class14 method119(Class87 var0, int var1, int var2) {
-		byte[] var3 = var0.method391(var1, var2);
+		byte[] var3 = var0.getFile(var1, var2);
 		return var3 == null ? null : new Class14(new ByteBuf(var3));
 	}
 

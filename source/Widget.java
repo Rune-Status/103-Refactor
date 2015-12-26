@@ -2,8 +2,8 @@
 public class Widget extends Node {
 
 	public int anInt1122 = 0;
-	static boolean[] aBoolArray1123;
-	static Class87 aClass87_1124;
+	static boolean[] loadedInterfaces;
+	static Class87 widgetIndex;
 	public String aString1125 = "";
 	public int anInt1126;
 	static Class106 aClass106_1127 = new Class106(50);
@@ -145,7 +145,7 @@ public class Widget extends Node {
 	public int rotationZ = 0;
 	static Class106 aClass106_1202 = new Class106(8);
 
-	void method486(ByteBuf var1) {
+	void decodeActive(ByteBuf var1) {
 		var1.getUByte();
 		this.interactable = true;
 		this.type = var1.getUByte() * 1702392323;
@@ -438,7 +438,7 @@ public class Widget extends Node {
 				if (!Class35.method202(var3, var5, 0)) {
 					var2 = null;
 				} else {
-					var2 = IgnoredPlayer.method415(var4.method391(var5, 0));
+					var2 = IgnoredPlayer.method415(var4.getFile(var5, 0));
 				}
 
 				if (var2 != null) {
@@ -645,7 +645,7 @@ public class Widget extends Node {
 		}
 	}
 
-	void method496(ByteBuf var1) {
+	void decode(ByteBuf var1) {
 		this.interactable = false;
 		this.type = var1.getUByte() * 1702392323;
 		this.anInt1195 = var1.getUByte() * 1390425787;

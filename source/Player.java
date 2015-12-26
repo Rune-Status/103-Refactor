@@ -557,7 +557,7 @@ public final class Player extends Character {
 	}
 
 	static void method1048(Widget var0) {
-		Widget var3 = -1652479707 * var0.parentId == -1 ? null : Class94.method406(var0.parentId * -1652479707);
+		Widget var3 = -1652479707 * var0.parentId == -1 ? null : Class94.getWidget(var0.parentId * -1652479707);
 		int var1;
 		int var2;
 		if (var3 == null) {

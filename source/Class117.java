@@ -36,7 +36,7 @@ public final class Class117 {
 					if (var6 == 4) {
 						var9 = var2[var4++] << 16;
 						var9 += var2[var4++];
-						var10 = Class94.method406(var9);
+						var10 = Class94.getWidget(var9);
 						var11 = var2[var4++];
 						if (var11 != -1
 								&& (!FriendedPlayer.getItemDefinition(var11).aBool1618 || Client.membersWorld)) {
@@ -75,7 +75,7 @@ public final class Class117 {
 					if (var6 == 10) {
 						var9 = var2[var4++] << 16;
 						var9 += var2[var4++];
-						var10 = Class94.method406(var9);
+						var10 = Class94.getWidget(var9);
 						var11 = var2[var4++];
 						if (var11 != -1
 								&& (!FriendedPlayer.getItemDefinition(var11).aBool1618 || Client.membersWorld)) {

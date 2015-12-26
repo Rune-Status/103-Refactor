@@ -201,18 +201,18 @@ public abstract class Class87 {
 
 	public byte[] method378(int var1) {
 		if (this.anObjectArrayArray705.length == 1) {
-			return this.method391(0, var1);
+			return this.getFile(0, var1);
 		} else if (this.anObjectArrayArray705[var1].length != 1) {
 			throw new RuntimeException();
 		} else {
-			return this.method391(var1, 0);
+			return this.getFile(var1, 0);
 		}
 	}
 
 	void method379(int var1, int var2) {
 	}
 
-	public int method380(int var1) {
+	public int fileCount(int var1) {
 		return this.anObjectArrayArray705[var1].length;
 	}
 
@@ -371,7 +371,7 @@ public abstract class Class87 {
 		var2 = var2.toLowerCase();
 		int var3 = this.aClass99_697.method413(DualNode_Sub3.method683(var1));
 		int var4 = this.aClass99Array694[var3].method413(DualNode_Sub3.method683(var2));
-		return this.method391(var3, var4);
+		return this.getFile(var3, var4);
 	}
 
 	public byte[] method390(int var1, int var2) {
@@ -395,7 +395,7 @@ public abstract class Class87 {
 		}
 	}
 
-	public byte[] method391(int var1, int var2) {
+	public byte[] getFile(int var1, int var2) {
 		return this.method375(var1, var2, (int[]) null);
 	}
 
@@ -431,7 +431,7 @@ public abstract class Class87 {
 		return this.anIntArrayArray701[var1];
 	}
 
-	public boolean method395(int var1) {
+	public boolean containsFile(int var1) {
 		if (this.anObjectArray704[var1] != null) {
 			return true;
 		} else {
@@ -447,7 +447,7 @@ public abstract class Class87 {
 
 	}
 
-	public int method397() {
+	public int size() {
 		return this.anObjectArrayArray705.length;
 	}
 }

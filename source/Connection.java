@@ -241,7 +241,7 @@ public final class Connection implements Runnable {
 							label250: {
 								var3 = Client.menuArg1[1768430155 * Client.menuItemCount - 1];
 								var4 = Client.menuArg2[1768430155 * Client.menuItemCount - 1];
-								Widget var9 = Class94.method406(var4);
+								Widget var9 = Class94.getWidget(var4);
 								var6 = Class30.getWidgetConfig(var9);
 								boolean var10 = (var6 >> 28 & 1) != 0;
 								if (!var10) {
@@ -267,7 +267,7 @@ public final class Connection implements Runnable {
 									Class68.method326(DualNode_Sub1.aWidget1446);
 								}
 
-								DualNode_Sub1.aWidget1446 = Class94.method406(var4);
+								DualNode_Sub1.aWidget1446 = Class94.getWidget(var4);
 								Client.anInt2100 = 1355732049 * var3;
 								Client.anInt2131 = -744800429 * Class74.anInt628;
 								Client.anInt2101 = Class74.anInt629 * -1619983687;

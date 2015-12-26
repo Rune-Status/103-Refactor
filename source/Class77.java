@@ -34,7 +34,7 @@ public class Class77 implements Interface5 {
 							.get((long) (-1536575275 * var5.anInt1129));
 					if (var3 != null) {
 						var4 = 226793949 * var3.type;
-						if (DualNode_Sub2.method666(var4)) {
+						if (DualNode_Sub2.loadWidget(var4)) {
 							method338(Widget.interfaces[var4], -1);
 						}
 					}

@@ -69,7 +69,7 @@ public class GameClient extends JFrame implements AppletStub {
 	private void startApplet() {
 		try {
 			rsps = false;
-			dump = !rsps;
+			dump = true;
 			clnt = new Client();
 			map = new HashMap<>();
 			host = rsps ? new String("http://127.0.0.1") : new String("http://oldschool86.runescape.com");

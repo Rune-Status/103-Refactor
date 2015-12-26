@@ -36,7 +36,7 @@ public class Class65 {
 	}
 
 	static final void method319(int var0, int var1) {
-		if (DualNode_Sub2.method666(var0)) {
+		if (DualNode_Sub2.loadWidget(var0)) {
 			Class86.method365(Widget.interfaces[var0], var1);
 		}
 	}

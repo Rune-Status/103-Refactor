@@ -60,7 +60,7 @@ public class Entity_Sub1 extends Entity {
 	}
 
 	public static Entity_Sub1 method887(Class87 var0, int var1, int var2) {
-		byte[] var3 = var0.method391(var1, var2);
+		byte[] var3 = var0.getFile(var1, var2);
 		return var3 == null ? null : new Entity_Sub1(var3);
 	}
 

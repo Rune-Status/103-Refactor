@@ -31,7 +31,7 @@ public class Class86 {
 
 				if (var1 == 1 && var3.anObjectArray1187 != null) {
 					if (2021294259 * var3.index >= 0) {
-						Widget var6 = Class94.method406(var3.anInt1129 * -1536575275);
+						Widget var6 = Class94.getWidget(var3.anInt1129 * -1536575275);
 						if (var6 == null || var6.children == null || 2021294259 * var3.index >= var6.children.length
 								|| var6.children[var3.index * 2021294259] != var3) {
 							continue;

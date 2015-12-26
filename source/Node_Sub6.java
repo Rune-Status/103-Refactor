@@ -193,7 +193,7 @@ public final class Node_Sub6 extends Node {
 		if (var2 != null) {
 			return var2;
 		} else {
-			byte[] var3 = DualNode_Sub3.aClass87_1489.method391(12, var0);
+			byte[] var3 = DualNode_Sub3.aClass87_1489.getFile(12, var0);
 			var2 = new DualNode_Sub3();
 			if (var3 != null) {
 				var2.method673(new ByteBuf(var3));

@@ -419,7 +419,7 @@ public abstract class Class52 {
 								throw new RuntimeException();
 							}
 
-							var18 = Class94.method406(var33);
+							var18 = Class94.getWidget(var33);
 							if (var18.children == null) {
 								var18.children = new Widget[var35 + 1];
 							}
@@ -456,7 +456,7 @@ public abstract class Class52 {
 
 						if (var31 == 101) {
 							var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
-							var34 = Class94.method406(-1536575275 * var15.anInt1129);
+							var34 = Class94.getWidget(-1536575275 * var15.anInt1129);
 							var34.children[var15.index * 2021294259] = null;
 							Class68.method326(var34);
 							continue;
@@ -464,7 +464,7 @@ public abstract class Class52 {
 
 						if (var31 == 102) {
 							--var5;
-							var15 = Class94.method406(Class3.anIntArray95[var5]);
+							var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 							var15.children = null;
 							Class68.method326(var15);
 							continue;
@@ -491,7 +491,7 @@ public abstract class Class52 {
 
 						if (var31 == 201) {
 							--var5;
-							var15 = Class94.method406(Class3.anIntArray95[var5]);
+							var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 							if (var15 != null) {
 								Class3.anIntArray95[var5++] = 1;
 								if (var46) {
@@ -518,7 +518,7 @@ public abstract class Class52 {
 											if (var31 >= 2000) {
 												var31 -= 1000;
 												--var5;
-												var15 = Class94.method406(Class3.anIntArray95[var5]);
+												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 											} else {
 												var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
 											}
@@ -809,7 +809,7 @@ public abstract class Class52 {
 										} else if ((var31 < 1900 || var31 >= 2000) && (var31 < 2900 || var31 >= 3000)) {
 											if (var31 < 2600) {
 												--var5;
-												var15 = Class94.method406(Class3.anIntArray95[var5]);
+												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 												if (var31 == 2500) {
 													Class3.anIntArray95[var5++] = var15.relativeX * 332168295;
 													continue;
@@ -841,7 +841,7 @@ public abstract class Class52 {
 												}
 											} else if (var31 < 2700) {
 												--var5;
-												var15 = Class94.method406(Class3.anIntArray95[var5]);
+												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 												if (var31 == 2600) {
 													Class3.anIntArray95[var5++] = -352661099 * var15.insetX;
 													continue;
@@ -894,14 +894,14 @@ public abstract class Class52 {
 											} else if (var31 < 2800) {
 												if (var31 == 2700) {
 													--var5;
-													var15 = Class94.method406(Class3.anIntArray95[var5]);
+													var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 													Class3.anIntArray95[var5++] = var15.itemId * 813479615;
 													continue;
 												}
 
 												if (var31 == 2701) {
 													--var5;
-													var15 = Class94.method406(Class3.anIntArray95[var5]);
+													var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 													if (var15.itemId * 813479615 != -1) {
 														Class3.anIntArray95[var5++] = var15.itemQuantity * 1393082105;
 													} else {
@@ -929,7 +929,7 @@ public abstract class Class52 {
 												}
 											} else if (var31 < 2900) {
 												--var5;
-												var15 = Class94.method406(Class3.anIntArray95[var5]);
+												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 												if (var31 == 2800) {
 													Class3.anIntArray95[var5++] = Class63
 															.method314(Class30.getWidgetConfig(var15));
@@ -1123,7 +1123,7 @@ public abstract class Class52 {
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[var5 + 1];
 														var35 = Class3.anIntArray95[2 + var5];
-														var18 = Class94.method406(var35);
+														var18 = Class94.getWidget(var35);
 														Class68.method327(var18, var33, var16);
 														continue;
 													}
@@ -2454,7 +2454,7 @@ public abstract class Class52 {
 															var5 -= 2;
 															var16 = Class3.anIntArray95[var5];
 															var35 = Class3.anIntArray95[var5 + 1];
-															var71 = Class2.aClass87_Sub1_76.method391(var35, 0);
+															var71 = Class2.aClass87_Sub1_76.getFile(var35, 0);
 															var79 = new DualNode_Sub13_Sub3_Sub1(var71);
 															Class3.anIntArray95[var5++] = var79.method970(var83, var16);
 															continue;
@@ -2466,7 +2466,7 @@ public abstract class Class52 {
 															var5 -= 2;
 															var16 = Class3.anIntArray95[var5];
 															var35 = Class3.anIntArray95[var5 + 1];
-															var71 = Class2.aClass87_Sub1_76.method391(var35, 0);
+															var71 = Class2.aClass87_Sub1_76.getFile(var35, 0);
 															var79 = new DualNode_Sub13_Sub3_Sub1(var71);
 															Class3.anIntArray95[var5++] = var79.method969(var83, var16);
 															continue;
@@ -3203,7 +3203,7 @@ public abstract class Class52 {
 											if (var31 >= 2000) {
 												var31 -= 1000;
 												--var5;
-												var15 = Class94.method406(Class3.anIntArray95[var5]);
+												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 											} else {
 												var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
 											}
@@ -3229,7 +3229,7 @@ public abstract class Class52 {
 										if (var31 >= 2000) {
 											var31 -= 1000;
 											--var5;
-											var15 = Class94.method406(Class3.anIntArray95[var5]);
+											var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 										} else {
 											var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
 										}
@@ -3294,7 +3294,7 @@ public abstract class Class52 {
 									if (var31 >= 2000) {
 										var31 -= 1000;
 										--var5;
-										var15 = Class94.method406(Class3.anIntArray95[var5]);
+										var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 									} else {
 										var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
 									}
@@ -3350,7 +3350,7 @@ public abstract class Class52 {
 									var31 -= 1000;
 									--var5;
 									var16 = Class3.anIntArray95[var5];
-									var15 = Class94.method406(var16);
+									var15 = Class94.getWidget(var16);
 								} else {
 									var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
 								}
@@ -3561,7 +3561,7 @@ public abstract class Class52 {
 								var31 -= 1000;
 								--var5;
 								var33 = Class3.anIntArray95[var5];
-								var34 = Class94.method406(var33);
+								var34 = Class94.getWidget(var33);
 							} else {
 								var34 = var46 ? Class24.aWidget304 : Class3.aWidget88;
 							}

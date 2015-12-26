@@ -16,7 +16,7 @@ public final class Class91 {
 	public static DualNode_Sub5 method399(int var0) {
 		DualNode_Sub5 var1 = (DualNode_Sub5) DualNode_Sub5.aClass106_1500.method427((long) var0);
 		if (var1 == null) {
-			byte[] var2 = Class112.aClass87_789.method391(5, var0);
+			byte[] var2 = Class112.aClass87_789.getFile(5, var0);
 			var1 = new DualNode_Sub5();
 			if (var2 != null) {
 				var1.method694(new ByteBuf(var2));

@@ -81,7 +81,7 @@ public class Class66_Sub2 extends Class66 {
 		if (var2 != null) {
 			return var2;
 		} else {
-			byte[] var3 = DualNode_Sub10.aClass87_1536.method391(19, var0);
+			byte[] var3 = DualNode_Sub10.aClass87_1536.getFile(19, var0);
 			var2 = new DualNode_Sub10();
 			if (var3 != null) {
 				var2.method717(new ByteBuf(var3));

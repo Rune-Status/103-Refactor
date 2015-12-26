@@ -99,7 +99,7 @@ public class DualNode_Sub4 extends DualNode {
 			}
 		}
 
-		Widget var5 = Class94.method406(var3);
+		Widget var5 = Class94.getWidget(var3);
 		if (var5 != null) {
 			Class68.method326(var5);
 		}

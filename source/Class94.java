@@ -95,16 +95,16 @@ public class Class94 {
 		}
 	}
 
-	public static Widget method406(int var0) {
-		int var1 = var0 >> 16;
-		int var2 = var0 & '\uffff';
-		if (Widget.interfaces[var1] == null || Widget.interfaces[var1][var2] == null) {
-			boolean var3 = DualNode_Sub2.method666(var1);
-			if (!var3) {
+	public static Widget getWidget(int hash) {
+		int parent = hash >> 16;
+		int child = hash & '\uffff';
+		if (Widget.interfaces[parent] == null || Widget.interfaces[parent][child] == null) {
+			boolean loaded = DualNode_Sub2.loadWidget(parent);
+			if (!loaded) {
 				return null;
 			}
 		}
 
-		return Widget.interfaces[var1][var2];
+		return Widget.interfaces[parent][child];
 	}
 }

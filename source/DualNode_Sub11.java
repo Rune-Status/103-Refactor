@@ -28,7 +28,7 @@ public class DualNode_Sub11 extends DualNode {
 			return null;
 		} else {
 			for (int var2 = 0; var2 < var1; ++var2) {
-				var0 = Class94.method406(var0.parentId * -1652479707);
+				var0 = Class94.getWidget(var0.parentId * -1652479707);
 				if (var0 == null) {
 					return null;
 				}
@@ -92,7 +92,7 @@ public class DualNode_Sub11 extends DualNode {
 	public static NpcDefinition getNpcDefinition(int var0) {
 		NpcDefinition var1 = (NpcDefinition) NpcDefinition.aClass106_1580.method427((long) var0);
 		if (var1 == null) {
-			byte[] var2 = Class84.aClass87_689.method391(9, var0);
+			byte[] var2 = Class84.aClass87_689.getFile(9, var0);
 			var1 = new NpcDefinition();
 			var1.anInt1579 = 95406197 * var0;
 			if (var2 != null) {

@@ -505,7 +505,7 @@ public final class Client extends GameEngine {
 				for (var3 = 0; var3 < Class7.aByteArrayArray152.length; ++var3) {
 					if (Class69.mapRegionFileIds[var3] != -1 && Class7.aByteArrayArray152[var3] == null) {
 						Class7.aByteArrayArray152[var3] = Class48_Sub1.aClass87_Sub1_1295
-								.method391(Class69.mapRegionFileIds[var3], 0);
+								.getFile(Class69.mapRegionFileIds[var3], 0);
 						if (Class7.aByteArrayArray152[var3] == null) {
 							var82 = false;
 							anInt2120 += 1643775755;
@@ -1387,7 +1387,7 @@ public final class Client extends GameEngine {
 								lastFrameId = frameId * -874887809;
 
 								// TODO
-								 System.out.println("Incomming Frame: ( " + (793368497 * frameId) + ", " + (371800591 * frameSize) + " (" + Class100.frameSizes[frameId * 793368497] + ") )");
+								// System.out.println("Incomming Frame: ( " + (793368497 * frameId) + ", " + (371800591 * frameSize) + " (" + Class100.frameSizes[frameId * 793368497] + ") )");
 
 								if (793368497 * frameId == 120) {
 									var5 = inBuffer.getIMEInt();
@@ -1396,7 +1396,7 @@ public final class Client extends GameEngine {
 									var8 = var6 >> 5 & 31;
 									var9 = var6 & 31;
 									var10 = (var9 << 3) + (var8 << 11) + (var89 << 19);
-									Widget var142 = Class94.method406(var5);
+									Widget var142 = Class94.getWidget(var5);
 									if (var142.textColor * 1384750979 != var10) {
 										var142.textColor = 1053943595 * var10;
 										Class68.method326(var142);
@@ -1462,7 +1462,9 @@ public final class Client extends GameEngine {
 										var89 = -1;
 									}
 
-									var105 = Class94.method406(var6);
+									System.out.println("sendInterfaceModel(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", " + var89 + ", " + var5 + ");");
+									
+									var105 = Class94.getWidget(var6);
 									ItemDefinition var149;
 									if (!var105.interactable) {
 										if (var89 == -1) {
@@ -1777,7 +1779,7 @@ public final class Client extends GameEngine {
 								if (793368497 * frameId == 225) {
 									var5 = inBuffer.getUShort();
 									var6 = inBuffer.getMEInt();
-									var109 = Class94.method406(var6);
+									var109 = Class94.getWidget(var6);
 									if (var109 != null && var109.type * -1305917269 == 0) {
 										if (var5 > 177405235 * var109.viewportHeight - 1227800423 * var109.height) {
 											var5 = 177405235 * var109.viewportHeight - 1227800423 * var109.height;
@@ -1900,7 +1902,7 @@ public final class Client extends GameEngine {
 								if (793368497 * frameId == 96) {
 									var5 = inBuffer.getLEShort();
 									var6 = inBuffer.getLEInt();
-									var109 = Class94.method406(var6);
+									var109 = Class94.getWidget(var6);
 									if (var5 != var109.anInt1162 * 467073769 || var5 == -1) {
 										var109.anInt1162 = var5 * 1986493785;
 										var109.anInt1194 = 0;
@@ -1929,12 +1931,12 @@ public final class Client extends GameEngine {
 										interfaceNodes.put(var169, (long) var5);
 									}
 
-									var141 = Class94.method406(var6);
+									var141 = Class94.getWidget(var6);
 									if (var141 != null) {
 										Class68.method326(var141);
 									}
 
-									var141 = Class94.method406(var5);
+									var141 = Class94.getWidget(var5);
 									if (var141 != null) {
 										Class68.method326(var141);
 										ObjectDefinition.method870(
@@ -1958,7 +1960,7 @@ public final class Client extends GameEngine {
 									var6 = inBuffer.getUShort();
 									var89 = inBuffer.getInt();
 									var8 = inBuffer.getUShort();
-									var141 = Class94.method406(var89);
+									var141 = Class94.getWidget(var89);
 									if (var5 != var141.rotationX * 175924351 || 745334365 * var141.rotationZ != var8
 											|| var141.modelZoom * -1472457387 != var6) {
 										var141.rotationX = var5 * 1055873919;
@@ -2124,7 +2126,7 @@ public final class Client extends GameEngine {
 								if (793368497 * frameId == 110) {
 									var5 = inBuffer.getInt();
 									var135 = inBuffer.getString();
-									var109 = Class94.method406(var5);
+									var109 = Class94.getWidget(var5);
 									if (!var135.equals(var109.text)) {
 										var109.text = var135;
 										Class68.method326(var109);
@@ -2191,7 +2193,7 @@ public final class Client extends GameEngine {
 								if (793368497 * frameId == 87) {
 									var5 = inBuffer.getULEShortA();
 									var6 = inBuffer.getIMEInt();
-									var109 = Class94.method406(var6);
+									var109 = Class94.getWidget(var6);
 									if (var109.modelType * -768837131 != 1 || var5 != 686060225 * var109.modelId) {
 										var109.modelType = -376460707;
 										var109.modelId = var5 * -541123263;
@@ -2462,7 +2464,7 @@ public final class Client extends GameEngine {
 								if (793368497 * frameId == 142) {
 									var5 = inBuffer.getLEInt();
 									var124 = inBuffer.getUByteA() == 1;
-									var109 = Class94.method406(var5);
+									var109 = Class94.getWidget(var5);
 									if (var109.hidden != var124) {
 										var109.hidden = var124;
 										Class68.method326(var109);
@@ -2475,7 +2477,7 @@ public final class Client extends GameEngine {
 
 								if (frameId * 793368497 == 29) {
 									var5 = inBuffer.getMEInt();
-									var121 = Class94.method406(var5);
+									var121 = Class94.getWidget(var5);
 									var121.modelType = -1129382121;
 									var121.modelId = Class68.myPlayer.config.method269() * -541123263;
 									Class68.method326(var121);
@@ -2509,7 +2511,7 @@ public final class Client extends GameEngine {
 									}
 
 									if (var5 >= 0) {
-										var109 = Class94.method406(var5);
+										var109 = Class94.getWidget(var5);
 									} else {
 										var109 = null;
 									}
@@ -2607,7 +2609,7 @@ public final class Client extends GameEngine {
 									}
 
 									if (var5 >= 0) {
-										var109 = Class94.method406(var5);
+										var109 = Class94.getWidget(var5);
 									} else {
 										var109 = null;
 									}
@@ -2840,7 +2842,7 @@ public final class Client extends GameEngine {
 									var5 = inBuffer.getUShort();
 									var6 = inBuffer.getUShort();
 									var89 = inBuffer.getInt();
-									var105 = Class94.method406(var89);
+									var105 = Class94.getWidget(var89);
 									var105.anInt1149 = -103301195 * (var6 + (var5 << 16));
 									frameId = -726667601;
 									var85 = true;
@@ -2858,7 +2860,7 @@ public final class Client extends GameEngine {
 									var5 = inBuffer.getIMEInt();
 									var6 = inBuffer.getShortA();
 									var89 = inBuffer.getLEShortA();
-									var105 = Class94.method406(var5);
+									var105 = Class94.getWidget(var5);
 									if (-459849887 * var105.anInt1134 != var6 || var89 != 538516377 * var105.anInt1185
 											|| var105.anInt1132 * -1186475957 != 0
 											|| -306698303 * var105.anInt1122 != 0) {
@@ -3030,7 +3032,7 @@ public final class Client extends GameEngine {
 
 								if (frameId * 793368497 == 185) {
 									var5 = inBuffer.getInt();
-									var121 = Class94.method406(var5);
+									var121 = Class94.getWidget(var5);
 
 									for (var89 = 0; var89 < var121.itemIds.length; ++var89) {
 										var121.itemIds[var89] = -1;
@@ -3078,7 +3080,7 @@ public final class Client extends GameEngine {
 								if (793368497 * frameId == 172) {
 									var5 = inBuffer.getUShort();
 									var6 = inBuffer.getInt();
-									var109 = Class94.method406(var6);
+									var109 = Class94.getWidget(var6);
 									if (var109.modelType * -768837131 != 2 || var5 != var109.modelId * 686060225) {
 										var109.modelType = -752921414;
 										var109.modelId = -541123263 * var5;
@@ -4248,7 +4250,7 @@ public final class Client extends GameEngine {
 
 												var182 = var115.aWidget1430;
 												if (2021294259 * var182.index >= 0) {
-													var121 = Class94.method406(var182.parentId * -1652479707);
+													var121 = Class94.getWidget(var182.parentId * -1652479707);
 													if (var121 == null || var121.children == null
 															|| 2021294259 * var182.index >= var121.children.length
 															|| var121.children[var182.index * 2021294259] != var182) {
@@ -4262,7 +4264,7 @@ public final class Client extends GameEngine {
 
 										var182 = var115.aWidget1430;
 										if (2021294259 * var182.index >= 0) {
-											var121 = Class94.method406(var182.parentId * -1652479707);
+											var121 = Class94.getWidget(var182.parentId * -1652479707);
 											if (var121 == null || var121.children == null
 													|| 2021294259 * var182.index >= var121.children.length
 													|| var121.children[2021294259 * var182.index] != var182) {
@@ -4276,7 +4278,7 @@ public final class Client extends GameEngine {
 
 								var182 = var115.aWidget1430;
 								if (var182.index * 2021294259 >= 0) {
-									var121 = Class94.method406(-1652479707 * var182.parentId);
+									var121 = Class94.getWidget(-1652479707 * var182.parentId);
 									if (var121 == null || var121.children == null
 											|| 2021294259 * var182.index >= var121.children.length
 											|| var121.children[2021294259 * var182.index] != var182) {

@@ -309,7 +309,7 @@ public final class Node_Sub8 extends Node {
 
 	public static void method549(Class87 var0) {
 		DualNode_Sub11.aClass87_1548 = var0;
-		DualNode_Sub11.anInt1547 = DualNode_Sub11.aClass87_1548.method380(16) * 1942513075;
+		DualNode_Sub11.anInt1547 = DualNode_Sub11.aClass87_1548.fileCount(16) * 1942513075;
 	}
 
 	static void method550(int var0) {

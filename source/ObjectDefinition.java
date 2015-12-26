@@ -680,7 +680,7 @@ public class ObjectDefinition extends DualNode {
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = DualNode_Sub4.aClass87_1492.method391(8, var0);
+			byte[] var2 = DualNode_Sub4.aClass87_1492.getFile(8, var0);
 			var1 = new DualNode_Sub4();
 			if (var2 != null) {
 				var1.method686(new ByteBuf(var2));

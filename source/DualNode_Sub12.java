@@ -10,13 +10,13 @@ public class DualNode_Sub12 extends DualNode {
 
 	public DualNode_Sub12(Class87 var1, Class87 var2, int var3, boolean var4) {
 		Deque var5 = new Deque();
-		int var6 = var1.method380(var3);
+		int var6 = var1.fileCount(var3);
 		this.aClass23Array1568 = new Class23[var6];
 		int[] var7 = var1.method394(var3);
 		int var8 = 0;
 
 		while (var8 < var7.length) {
-			byte[] var9 = var1.method391(var3, var7[var8]);
+			byte[] var9 = var1.getFile(var3, var7[var8]);
 			Node_Sub5 var10 = null;
 			int var12 = (var9[0] & 255) << 8 | var9[1] & 255;
 			Node_Sub5 var11 = (Node_Sub5) var5.method471();
