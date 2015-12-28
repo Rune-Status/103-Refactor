@@ -77,7 +77,7 @@ public abstract class Class52 {
 						}
 
 						if (var14 == -2147483645) {
-							var14 = var0.aWidget1430 != null ? -1536575275 * var0.aWidget1430.anInt1129 : -1;
+							var14 = var0.aWidget1430 != null ? -1536575275 * var0.aWidget1430.hash : -1;
 						}
 
 						if (var14 == -2147483644) {
@@ -89,7 +89,7 @@ public abstract class Class52 {
 						}
 
 						if (var14 == -2147483642) {
-							var14 = var0.aWidget1433 != null ? var0.aWidget1433.anInt1129 * -1536575275 : -1;
+							var14 = var0.aWidget1433 != null ? var0.aWidget1433.hash * -1536575275 : -1;
 						}
 
 						if (var14 == -2147483641) {
@@ -440,7 +440,7 @@ public abstract class Class52 {
 
 							Widget var40 = new Widget();
 							var40.type = var16 * 1702392323;
-							var40.parentId = (var40.anInt1129 = 1 * var18.anInt1129) * 1485437425;
+							var40.parentId = (var40.hash = 1 * var18.hash) * 1485437425;
 							var40.index = var35 * 938225275;
 							var40.interactable = true;
 							var18.children[var35] = var40;
@@ -456,7 +456,7 @@ public abstract class Class52 {
 
 						if (var31 == 101) {
 							var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
-							var34 = Class94.getWidget(-1536575275 * var15.anInt1129);
+							var34 = Class94.getWidget(-1536575275 * var15.hash);
 							var34.children[var15.index * 2021294259] = null;
 							Class68.method326(var34);
 							continue;
@@ -1232,8 +1232,8 @@ public abstract class Class52 {
 														var51 = (ItemTable) ItemTable.itemTables.get((long) var33);
 														if (var51 == null) {
 															var49 = -1;
-														} else if (var16 >= 0 && var16 < var51.anIntArray1428.length) {
-															var49 = var51.anIntArray1428[var16];
+														} else if (var16 >= 0 && var16 < var51.ids.length) {
+															var49 = var51.ids[var16];
 														} else {
 															var49 = -1;
 														}
@@ -1265,7 +1265,7 @@ public abstract class Class52 {
 															var48 = 0;
 
 															for (var22 = 0; var22 < var51.quantities.length; ++var22) {
-																if (var16 == var51.anIntArray1428[var22]) {
+																if (var16 == var51.ids[var22]) {
 																	var48 += var51.quantities[var22];
 																}
 															}
@@ -1352,8 +1352,8 @@ public abstract class Class52 {
 														var51 = (ItemTable) ItemTable.itemTables.get((long) var33);
 														if (var51 == null) {
 															var49 = -1;
-														} else if (var16 >= 0 && var16 < var51.anIntArray1428.length) {
-															var49 = var51.anIntArray1428[var16];
+														} else if (var16 >= 0 && var16 < var51.ids.length) {
+															var49 = var51.ids[var16];
 														} else {
 															var49 = -1;
 														}
@@ -1385,7 +1385,7 @@ public abstract class Class52 {
 															var48 = 0;
 
 															for (var22 = 0; var22 < var51.quantities.length; ++var22) {
-																if (var16 == var51.anIntArray1428[var22]) {
+																if (var16 == var51.ids[var22]) {
 																	var48 += var51.quantities[var22];
 																}
 															}
@@ -3542,7 +3542,7 @@ public abstract class Class52 {
 								}
 
 								if (var31 == 1121) {
-									FriendedPlayer.method410(var15.anInt1129 * -1536575275, var15.index * 2021294259);
+									FriendedPlayer.method410(var15.hash * -1536575275, var15.index * 2021294259);
 									Client.aWidget2135 = var15;
 									Class68.method326(var15);
 									continue;

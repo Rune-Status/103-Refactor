@@ -588,23 +588,23 @@ public class ByteBuf extends Node {
 	}
 
 	static void method644() {
-		for (InterfaceNode var0 = (InterfaceNode) Client.interfaceNodes
-				.method150(); var0 != null; var0 = (InterfaceNode) Client.interfaceNodes.method151()) {
-			int var3 = var0.type * 226793949;
-			if (IdentKitType.loadWidget(var3)) {
+		for (InterfaceNode node = (InterfaceNode) Client.interfaceNodes
+				.method150(); node != null; node = (InterfaceNode) Client.interfaceNodes.method151()) {
+			int type = node.type * 226793949;
+			if (IdentKitType.loadWidget(type)) {
 				boolean var1 = true;
-				Widget[] var4 = Widget.interfaces[var3];
+				Widget[] childs = Widget.interfaces[type];
 
 				int var2;
-				for (var2 = 0; var2 < var4.length; ++var2) {
-					if (var4[var2] != null) {
-						var1 = var4[var2].interactable;
+				for (var2 = 0; var2 < childs.length; ++var2) {
+					if (childs[var2] != null) {
+						var1 = childs[var2].interactable;
 						break;
 					}
 				}
 
 				if (!var1) {
-					var2 = (int) var0.key;
+					var2 = (int) node.key;
 					Widget var5 = Class94.getWidget(var2);
 					if (var5 != null) {
 						Class68.method326(var5);

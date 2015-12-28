@@ -1942,7 +1942,7 @@ public final class Client extends GameEngine {
 									if (var141 != null) {
 										Class68.method326(var141);
 										ObjectType.method870(
-												Widget.interfaces[var141.anInt1129 * -1536575275 >>> 16], var141, true);
+												Widget.interfaces[var141.hash * -1536575275 >>> 16], var141, true);
 									}
 
 									if (anInt2226 * -1074177723 != -1) {
@@ -2513,6 +2513,8 @@ public final class Client extends GameEngine {
 										var6 += '\u8000';
 									}
 
+									System.out.println((var5 >> 0x10) + ", " + (var5 & 0xFFFF) + ", " + var6);
+									
 									if (var5 >= 0) {
 										var109 = Class94.getWidget(var5);
 									} else {
@@ -2520,7 +2522,7 @@ public final class Client extends GameEngine {
 									}
 
 									for (; 314639891 * inBuffer.position < 371800591 * frameSize; ItemType
-											.method820(var6, var8, var9 - 1, var10)) {
+											.setItemTableSlot(var6, var8, var9 - 1, var10)) {
 										var8 = inBuffer.getUSmart();
 										var9 = inBuffer.getUShort();
 										var10 = 0;
@@ -2611,6 +2613,8 @@ public final class Client extends GameEngine {
 										var6 += '\u8000';
 									}
 
+									System.out.println((var5 >> 0x10) + ", " + (var5 & 0xFFFF) + ", " + var6);
+									
 									if (var5 >= 0) {
 										var109 = Class94.getWidget(var5);
 									} else {
@@ -2624,7 +2628,7 @@ public final class Client extends GameEngine {
 										}
 									}
 
-									GameCanvas.method884(var6);
+									GameCanvas.resetItemTable(var6);
 									var8 = inBuffer.getUShort();
 
 									for (var9 = 0; var9 < var8; ++var9) {
@@ -2639,7 +2643,7 @@ public final class Client extends GameEngine {
 											var109.itemQuantities[var9] = var11;
 										}
 
-										ItemType.method820(var6, var9, var10 - 1, var11);
+										ItemType.setItemTableSlot(var6, var9, var10 - 1, var11);
 									}
 
 									if (var109 != null) {
@@ -3706,13 +3710,13 @@ public final class Client extends GameEngine {
 																		outBuffer.putShort(
 																				813479615 * aWidget2009.itemId);
 																		outBuffer.putInt(
-																				-1536575275 * aWidget2009.anInt1129);
+																				-1536575275 * aWidget2009.hash);
 																		outBuffer.putLEShortA(
 																				aWidget2009.index * 2021294259);
 																		outBuffer.putShortA(
 																				813479615 * aWidget2141.itemId);
 																		outBuffer.putMEInt(
-																				-1536575275 * aWidget2141.anInt1129);
+																				-1536575275 * aWidget2141.hash);
 																		outBuffer.putLEShortA(
 																				aWidget2141.index * 2021294259);
 																	}
@@ -3749,41 +3753,40 @@ public final class Client extends GameEngine {
 																if (SpotAnimType.aWidget1446 == TileDecorationStub.aWidget838
 																		&& anInt2100 * 1979905201 != anInt2124
 																				* -408071259) {
-																	Widget var139 = SpotAnimType.aWidget1446;
+																	Widget widget = SpotAnimType.aWidget1446;
 																	byte var183 = 0;
 																	if (anInt2134 * -137828697 == 1
-																			&& -179718399 * var139.contentType == 206) {
+																			&& -179718399 * widget.contentType == 206) {
 																		var183 = 1;
 																	}
 
-																	if (var139.itemIds[-408071259 * anInt2124] <= 0) {
+																	if (widget.itemIds[-408071259 * anInt2124] <= 0) {
 																		var183 = 0;
 																	}
 
 																	if (Class58.method291(
-																			Class30.getWidgetConfig(var139),
-																			(byte) 4)) {
+																			Class30.getWidgetConfig(widget))) {
 																		var6 = anInt2100 * 1979905201;
 																		var89 = anInt2124 * -408071259;
-																		var139.itemIds[var89] = var139.itemIds[var6];
-																		var139.itemQuantities[var89] = var139.itemQuantities[var6];
-																		var139.itemIds[var6] = -1;
-																		var139.itemQuantities[var6] = 0;
+																		widget.itemIds[var89] = widget.itemIds[var6];
+																		widget.itemQuantities[var89] = widget.itemQuantities[var6];
+																		widget.itemIds[var6] = -1;
+																		widget.itemQuantities[var6] = 0;
 																	} else if (var183 == 1) {
 																		var6 = anInt2100 * 1979905201;
 																		var89 = anInt2124 * -408071259;
 
 																		while (var6 != var89) {
 																			if (var6 > var89) {
-																				var139.method497(var6 - 1, var6);
+																				widget.method497(var6 - 1, var6);
 																				--var6;
 																			} else if (var6 < var89) {
-																				var139.method497(1 + var6, var6);
+																				widget.method497(1 + var6, var6);
 																				++var6;
 																			}
 																		}
 																	} else {
-																		var139.method497(anInt2124 * -408071259,
+																		widget.method497(anInt2124 * -408071259,
 																				1979905201 * anInt2100);
 																	}
 
@@ -3792,7 +3795,7 @@ public final class Client extends GameEngine {
 																	outBuffer.putByteC(var183);
 																	outBuffer.putShortA(anInt2100 * 1979905201);
 																	outBuffer.putIMEInt(
-																			SpotAnimType.aWidget1446.anInt1129
+																			SpotAnimType.aWidget1446.hash
 																					* -1536575275);
 																}
 															} else if ((anInt2144 * 1052316233 == 1 || Class39

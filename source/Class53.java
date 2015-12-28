@@ -586,15 +586,15 @@ public class Class53 {
 								}
 							}
 
-							method272(var0, var15.anInt1129 * -1536575275, var22, var23, var28, var29,
+							method272(var0, var15.hash * -1536575275, var22, var23, var28, var29,
 									var10 - -352661099 * var15.insetX, var11 - var15.insetY * -1602694527, var18);
 							if (var15.children != null) {
-								method272(var15.children, var15.anInt1129 * -1536575275, var22, var23, var28, var29,
+								method272(var15.children, var15.hash * -1536575275, var22, var23, var28, var29,
 										var10 - var15.insetX * -352661099, var11 - var15.insetY * -1602694527, var18);
 							}
 
 							InterfaceNode var47 = (InterfaceNode) Client.interfaceNodes
-									.get((long) (-1536575275 * var15.anInt1129));
+									.get((long) (-1536575275 * var15.hash));
 							if (var47 != null) {
 								Class24.method164(226793949 * var47.type, var22, var23, var28, var29, var10, var11,
 										var18);
@@ -662,7 +662,7 @@ public class Class53 {
 													Sprite var70;
 													if (Client.itemSelectionStatus * -1110581093 == 1
 															&& var9 == 543565821 * Class40.selectedItemIndex
-															&& -1536575275 * var15.anInt1129 == Class22.anInt286
+															&& -1536575275 * var15.hash == Class22.anInt286
 																	* -47339353) {
 														var70 = Entity.getItemSprite(var24, var15.itemQuantities[var9],
 																2, 0, 2, false);

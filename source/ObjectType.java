@@ -659,12 +659,12 @@ public class ObjectType extends DualNode {
 	static void method870(Widget[] var0, Widget var1, boolean var2) {
 		int var4 = -302755437 * var1.viewportWidth != 0 ? -302755437 * var1.viewportWidth : var1.width * 1645211541;
 		int var3 = 177405235 * var1.viewportHeight != 0 ? 177405235 * var1.viewportHeight : 1227800423 * var1.height;
-		Class4.method70(var0, -1536575275 * var1.anInt1129, var4, var3, var2);
+		Class4.method70(var0, -1536575275 * var1.hash, var4, var3, var2);
 		if (var1.children != null) {
-			Class4.method70(var1.children, var1.anInt1129 * -1536575275, var4, var3, var2);
+			Class4.method70(var1.children, var1.hash * -1536575275, var4, var3, var2);
 		}
 
-		InterfaceNode var5 = (InterfaceNode) Client.interfaceNodes.get((long) (-1536575275 * var1.anInt1129));
+		InterfaceNode var5 = (InterfaceNode) Client.interfaceNodes.get((long) (-1536575275 * var1.hash));
 		if (var5 != null) {
 			FriendedPlayer.method409(var5.type * 226793949, var4, var3, var2);
 		}

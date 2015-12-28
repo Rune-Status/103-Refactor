@@ -124,7 +124,7 @@ public class Class30 implements Runnable {
 
 	static int getWidgetConfig(Widget var0) {
 		WidgetConfig var1 = (WidgetConfig) Client.widgetConfigs
-				.get((long) (2021294259 * var0.index) + ((long) (-1536575275 * var0.anInt1129) << 32));
+				.get((long) (2021294259 * var0.index) + ((long) (-1536575275 * var0.hash) << 32));
 		return var1 != null ? var1.config : var0.config * -1817319735;
 	}
 

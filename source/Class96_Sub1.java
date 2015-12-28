@@ -372,7 +372,7 @@ public class Class96_Sub1 extends Class96 {
 								var11 = var22 - var15;
 								if (-1300193677 * var13.anInt1195 == 1) {
 									FriendedPlayer.addMenuRow(var13.tooltip, "", 24, 0, 0,
-											-1536575275 * var13.anInt1129);
+											-1536575275 * var13.hash);
 								}
 
 								String var19;
@@ -381,28 +381,28 @@ public class Class96_Sub1 extends Class96 {
 									if (var19 != null) {
 										FriendedPlayer.addMenuRow(var19,
 												Class48_Sub1.method545('\uff00') + var13.aString1125, 25, 0, -1,
-												-1536575275 * var13.anInt1129);
+												-1536575275 * var13.hash);
 									}
 								}
 
 								if (var13.anInt1195 * -1300193677 == 3) {
 									FriendedPlayer.addMenuRow(GameStrings.aString1007, "", 26, 0, 0,
-											var13.anInt1129 * -1536575275);
+											var13.hash * -1536575275);
 								}
 
 								if (var13.anInt1195 * -1300193677 == 4) {
 									FriendedPlayer.addMenuRow(var13.tooltip, "", 28, 0, 0,
-											-1536575275 * var13.anInt1129);
+											-1536575275 * var13.hash);
 								}
 
 								if (-1300193677 * var13.anInt1195 == 5) {
 									FriendedPlayer.addMenuRow(var13.tooltip, "", 29, 0, 0,
-											var13.anInt1129 * -1536575275);
+											var13.hash * -1536575275);
 								}
 
 								if (-1300193677 * var13.anInt1195 == 6 && Client.aWidget2135 == null) {
 									FriendedPlayer.addMenuRow(var13.tooltip, "", 30, 0, -1,
-											var13.anInt1129 * -1536575275);
+											var13.hash * -1536575275);
 								}
 
 								if (-1305917269 * var13.type == 2) {
@@ -431,7 +431,7 @@ public class Class96_Sub1 extends Class96 {
 															var28 = (var18 >> 30 & 1) != 0;
 															if (var28) {
 																if (-47339353 * Class22.anInt286 != -1536575275
-																		* var13.anInt1129
+																		* var13.hash
 																		|| 543565821
 																				* Class40.selectedItemIndex != var46) {
 																	FriendedPlayer.addMenuRow(GameStrings.aString993,
@@ -440,7 +440,7 @@ public class Class96_Sub1 extends Class96 {
 																					+ Class48_Sub1.method545(16748608)
 																					+ var29.name,
 																			31, 1548676283 * var29.id, var46,
-																			var13.anInt1129 * -1536575275);
+																			var13.hash * -1536575275);
 																}
 																break label1179;
 															}
@@ -458,7 +458,7 @@ public class Class96_Sub1 extends Class96 {
 																					+ Class48_Sub1.method545(16748608)
 																					+ var29.name,
 																			32, 1548676283 * var29.id, var46,
-																			var13.anInt1129 * -1536575275);
+																			var13.hash * -1536575275);
 																}
 																break label1179;
 															}
@@ -485,13 +485,13 @@ public class Class96_Sub1 extends Class96 {
 																			Class48_Sub1.method545(16748608)
 																					+ var29.name,
 																			var33, 1548676283 * var29.id, var46,
-																			var13.anInt1129 * -1536575275);
+																			var13.hash * -1536575275);
 																} else if (var9 == 4) {
 																	FriendedPlayer.addMenuRow(GameStrings.aString844,
 																			Class48_Sub1.method545(16748608)
 																					+ var29.name,
 																			37, var29.id * 1548676283, var46,
-																			var13.anInt1129 * -1536575275);
+																			var13.hash * -1536575275);
 																}
 															}
 														}
@@ -502,7 +502,7 @@ public class Class96_Sub1 extends Class96 {
 															FriendedPlayer.addMenuRow(GameStrings.aString993,
 																	Class48_Sub1.method545(16748608) + var29.name, 38,
 																	var29.id * 1548676283, var46,
-																	var13.anInt1129 * -1536575275);
+																	var13.hash * -1536575275);
 														}
 
 														int var34 = Class30.getWidgetConfig(var13);
@@ -529,7 +529,7 @@ public class Class96_Sub1 extends Class96 {
 																			Class48_Sub1.method545(16748608)
 																					+ var29.name,
 																			var14, 1548676283 * var29.id, var46,
-																			-1536575275 * var13.anInt1129);
+																			-1536575275 * var13.hash);
 																}
 															}
 														}
@@ -567,7 +567,7 @@ public class Class96_Sub1 extends Class96 {
 																			Class48_Sub1.method545(16748608)
 																					+ var29.name,
 																			var14, var29.id * 1548676283, var46,
-																			-1536575275 * var13.anInt1129);
+																			-1536575275 * var13.hash);
 																}
 															}
 														}
@@ -575,7 +575,7 @@ public class Class96_Sub1 extends Class96 {
 														FriendedPlayer.addMenuRow(GameStrings.aString994,
 																Class48_Sub1.method545(16748608) + var29.name, 1005,
 																1548676283 * var29.id, var46,
-																-1536575275 * var13.anInt1129);
+																-1536575275 * var13.hash);
 													}
 												}
 											}
@@ -593,34 +593,34 @@ public class Class96_Sub1 extends Class96 {
 											FriendedPlayer.addMenuRow(Client.menuActionPrefix,
 													Client.selectedSpellName + " " + Class35.aString391 + " "
 															+ var13.name,
-													58, 0, 2021294259 * var13.index, var13.anInt1129 * -1536575275);
+													58, 0, 2021294259 * var13.index, var13.hash * -1536575275);
 										}
 									} else {
 										for (var46 = 9; var46 >= 5; --var46) {
 											String var36 = Player.method1049(var13, var46);
 											if (var36 != null) {
 												FriendedPlayer.addMenuRow(var36, var13.name, 1007, var46 + 1,
-														var13.index * 2021294259, -1536575275 * var13.anInt1129);
+														var13.index * 2021294259, -1536575275 * var13.hash);
 											}
 										}
 
 										var19 = Class26.method168(var13);
 										if (var19 != null) {
 											FriendedPlayer.addMenuRow(var19, var13.name, 25, 0,
-													2021294259 * var13.index, var13.anInt1129 * -1536575275);
+													2021294259 * var13.index, var13.hash * -1536575275);
 										}
 
 										for (var10 = 4; var10 >= 0; --var10) {
 											String var48 = Player.method1049(var13, var10);
 											if (var48 != null) {
 												FriendedPlayer.addMenuRow(var48, var13.name, 57, var10 + 1,
-														2021294259 * var13.index, -1536575275 * var13.anInt1129);
+														2021294259 * var13.index, -1536575275 * var13.hash);
 											}
 										}
 
 										if (Class7.method78(Class30.getWidgetConfig(var13))) {
 											FriendedPlayer.addMenuRow(GameStrings.aString848, "", 30, 0,
-													2021294259 * var13.index, var13.anInt1129 * -1536575275);
+													2021294259 * var13.index, var13.hash * -1536575275);
 										}
 									}
 								}
@@ -632,15 +632,15 @@ public class Class96_Sub1 extends Class96 {
 									continue;
 								}
 
-								method505(var0, -1536575275 * var13.anInt1129, var23, var25, var16, var17,
+								method505(var0, -1536575275 * var13.hash, var23, var25, var16, var17,
 										var20 - var13.insetX * -352661099, var15 - -1602694527 * var13.insetY);
 								if (var13.children != null) {
-									method505(var13.children, -1536575275 * var13.anInt1129, var23, var25, var16, var17,
+									method505(var13.children, -1536575275 * var13.hash, var23, var25, var16, var17,
 											var20 - var13.insetX * -352661099, var15 - var13.insetY * -1602694527);
 								}
 
 								InterfaceNode var41 = (InterfaceNode) Client.interfaceNodes
-										.get((long) (-1536575275 * var13.anInt1129));
+										.get((long) (-1536575275 * var13.hash));
 								if (var41 != null) {
 									if (var41.owner * -1882639549 == 0 && Class74.anInt621 * -453286219 >= var23
 											&& 103771565 * Class74.anInt622 >= var25

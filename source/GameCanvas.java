@@ -6,12 +6,12 @@ public final class GameCanvas extends Canvas {
 
 	Component component;
 
-	static void method884(int var0) {
-		ItemTable var1 = (ItemTable) ItemTable.itemTables.get((long) var0);
-		if (var1 != null) {
-			for (int var2 = 0; var2 < var1.anIntArray1428.length; ++var2) {
-				var1.anIntArray1428[var2] = -1;
-				var1.quantities[var2] = 0;
+	static void resetItemTable(int var0) {
+		ItemTable table = (ItemTable) ItemTable.itemTables.get((long) var0);
+		if (table != null) {
+			for (int index = 0; index < table.ids.length; ++index) {
+				table.ids[index] = -1;
+				table.quantities[index] = 0;
 			}
 
 		}

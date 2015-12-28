@@ -422,7 +422,7 @@ public class Class58 {
 		}
 	}
 
-	public static boolean method291(int var0, byte var1) {
+	public static boolean method291(int var0) {
 		return (var0 >> 29 & 1) != 0;
 	}
 

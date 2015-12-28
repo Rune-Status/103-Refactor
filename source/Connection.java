@@ -246,7 +246,7 @@ public final class Connection implements Runnable {
 								boolean var10 = (var6 >> 28 & 1) != 0;
 								if (!var10) {
 									Class84 var10000 = (Class84) null;
-									if (!Class58.method291(Class30.getWidgetConfig(var9), (byte) -60)) {
+									if (!Class58.method291(Class30.getWidgetConfig(var9))) {
 										break label250;
 									}
 								}

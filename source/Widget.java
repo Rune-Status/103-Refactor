@@ -11,7 +11,7 @@ public class Widget extends Node {
 	public int spriteId = 0;
 	public static boolean aBool1128 = false;
 	public boolean interactable = false;
-	public int anInt1129 = -1463664765;
+	public int hash = -1463664765;
 	public int index = -938225275;
 	public Object[] anObjectArray1130;
 	public int columnPadding = 0;
@@ -167,7 +167,7 @@ public class Widget extends Node {
 		if (-1652479707 * this.parentId == '\uffff') {
 			this.parentId = -742443693;
 		} else {
-			this.parentId = 742443693 * ((this.anInt1129 * -1536575275 & -65536) + this.parentId * -1652479707);
+			this.parentId = 742443693 * ((this.hash * -1536575275 & -65536) + this.parentId * -1652479707);
 		}
 
 		this.hidden = var1.getUByte() == 1;
@@ -659,7 +659,7 @@ public class Widget extends Node {
 		if (-1652479707 * this.parentId == '\uffff') {
 			this.parentId = -742443693;
 		} else {
-			this.parentId = 742443693 * (this.parentId * -1652479707 + (-1536575275 * this.anInt1129 & -65536));
+			this.parentId = 742443693 * (this.parentId * -1652479707 + (-1536575275 * this.hash & -65536));
 		}
 
 		this.anInt1153 = var1.getUShort() * 1344074445;

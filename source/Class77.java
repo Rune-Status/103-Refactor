@@ -25,13 +25,13 @@ public class Class77 implements Interface5 {
 						continue;
 					}
 
-					method338(var0, -1536575275 * var5.anInt1129);
+					method338(var0, -1536575275 * var5.hash);
 					if (var5.children != null) {
-						method338(var5.children, var5.anInt1129 * -1536575275);
+						method338(var5.children, var5.hash * -1536575275);
 					}
 
 					InterfaceNode var3 = (InterfaceNode) Client.interfaceNodes
-							.get((long) (-1536575275 * var5.anInt1129));
+							.get((long) (-1536575275 * var5.hash));
 					if (var3 != null) {
 						var4 = 226793949 * var3.type;
 						if (IdentKitType.loadWidget(var4)) {

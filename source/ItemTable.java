@@ -3,7 +3,7 @@ public class ItemTable extends Node {
 
 	static NodeTable itemTables = new NodeTable(32);
 	int[] quantities = new int[] { 0 };
-	int[] anIntArray1428 = new int[] { -1 };
+	int[] ids = new int[] { -1 };
 
 	public static final boolean method646(String var0, String var1, String var2, String var3) {
 		return var0 != null && var2 != null

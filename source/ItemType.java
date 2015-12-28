@@ -544,34 +544,34 @@ public class ItemType extends DualNode {
 		this.stackable = 1721830175;
 	}
 
-	static void method820(int var0, int var1, int var2, int var3) {
-		ItemTable var4 = (ItemTable) ItemTable.itemTables.get((long) var0);
-		if (var4 == null) {
-			var4 = new ItemTable();
-			ItemTable.itemTables.put(var4, (long) var0);
+	static void setItemTableSlot(int id, int slot, int itemId, int quantity) {
+		ItemTable table = (ItemTable) ItemTable.itemTables.get((long) id);
+		if (table == null) {
+			table = new ItemTable();
+			ItemTable.itemTables.put(table, (long) id);
 		}
 
-		if (var4.anIntArray1428.length <= var1) {
-			int[] var7 = new int[1 + var1];
-			int[] var5 = new int[var1 + 1];
+		if (table.ids.length <= slot) {
+			int[] ids = new int[1 + slot];
+			int[] quantities = new int[slot + 1];
 
 			int var6;
-			for (var6 = 0; var6 < var4.anIntArray1428.length; ++var6) {
-				var7[var6] = var4.anIntArray1428[var6];
-				var5[var6] = var4.quantities[var6];
+			for (var6 = 0; var6 < table.ids.length; ++var6) {
+				ids[var6] = table.ids[var6];
+				quantities[var6] = table.quantities[var6];
 			}
 
-			for (var6 = var4.anIntArray1428.length; var6 < var1; ++var6) {
-				var7[var6] = -1;
-				var5[var6] = 0;
+			for (var6 = table.ids.length; var6 < slot; ++var6) {
+				ids[var6] = -1;
+				quantities[var6] = 0;
 			}
 
-			var4.anIntArray1428 = var7;
-			var4.quantities = var5;
+			table.ids = ids;
+			table.quantities = quantities;
 		}
 
-		var4.anIntArray1428[var1] = var2;
-		var4.quantities[var1] = var3;
+		table.ids[slot] = itemId;
+		table.quantities[slot] = quantity;
 	}
 
 	static Class24 method821() {

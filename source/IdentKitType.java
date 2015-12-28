@@ -278,7 +278,7 @@ public class IdentKitType extends DualNode {
 						byte[] var3 = Widget.widgetIndex.getFile(parent, index);
 						if (var3 != null) {
 							Widget.interfaces[parent][index] = new Widget();
-							Widget.interfaces[parent][index].anInt1129 = ((parent << 16) + index) * 1463664765;
+							Widget.interfaces[parent][index].hash = ((parent << 16) + index) * 1463664765;
 							if (var3[0] == -1) {
 								Widget.interfaces[parent][index].decodeActive(new ByteBuf(var3));
 							} else {
