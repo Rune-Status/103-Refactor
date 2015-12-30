@@ -197,7 +197,7 @@ public class DynamicObject extends Entity {
 				Class65.method320(2);
 			}
 
-			ScriptEvent.method652(false);
+			ScriptEvent.sendConInfo(false);
 			Class6.aBool142 = true;
 			Class6.anInt132 = 1079825139 * ((-452716157 * Class34.gameWidth - 1468194207 * Client.anInt2233) / 2);
 			Class6.anInt126 = 1843765198 + Class6.anInt132 * 132725497;

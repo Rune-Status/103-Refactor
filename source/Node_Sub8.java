@@ -368,7 +368,7 @@ public final class Node_Sub8 extends Node {
 					Class122.anIntArray818 = null;
 					Class4.anIntArray110 = null;
 					Class65.method320(2);
-					ScriptEvent.method652(true);
+					ScriptEvent.sendConInfo(true);
 					Class6.aBool142 = false;
 				}
 			} else {

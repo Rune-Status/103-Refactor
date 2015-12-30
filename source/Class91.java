@@ -54,7 +54,7 @@ public final class Class91 {
 		int var7 = var1.getChild(var6, var3);
 		Class110.anInt782 = 325298615;
 		Class110.aClass87_783 = var1;
-		Class98.anInt748 = 18032949 * var6;
+		Class98.musicId = 18032949 * var6;
 		Class111.anInt788 = -832158449 * var7;
 		Class110.anInt787 = 827167249 * var4;
 		Class44.aBool464 = var5;

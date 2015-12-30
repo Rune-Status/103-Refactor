@@ -1406,7 +1406,8 @@ public final class Client extends GameEngine {
 								 && frameId * 793368497 != 31
 								 && frameId * 793368497 != 169
 								 && frameId * 793368497 != 242
-								 && frameId * 793368497 != 244)
+								 && frameId * 793368497 != 244
+								 && frameId * 793368497 != 236)
 								System.out.println("Incomming Frame: ( " + (793368497 * frameId) + ", " + (371800591 * frameSize) + " (" + Class100.frameSizes[frameId * 793368497] + ") )");
 
 								if (793368497 * frameId == 120) {
@@ -2533,7 +2534,7 @@ public final class Client extends GameEngine {
 										var6 += '\u8000';
 									}
 
-									System.out.println((var5 >> 0x10) + ", " + (var5 & 0xFFFF) + ", " + var6);
+									System.out.println("sendSlottedItems(" + (var5 >> 0x10) + ", " + (var5 & 0xFFFF) + ", " + var6 + ");");
 									
 									if (var5 >= 0) {
 										var109 = Class94.getWidget(var5);
@@ -2633,7 +2634,7 @@ public final class Client extends GameEngine {
 										var6 += '\u8000';
 									}
 
-									System.out.println((var5 >> 0x10) + ", " + (var5 & 0xFFFF) + ", " + var6);
+									System.out.println("sendItems(" + (var5 >> 0x10) + ", " + (var5 & 0xFFFF) + ", " + var6 + ");");
 									
 									if (var5 >= 0) {
 										var109 = Class94.getWidget(var5);
@@ -4340,7 +4341,7 @@ public final class Client extends GameEngine {
 			if (Class81.anInt669 * -1358134653 == 0 && 1721465631 * Class81.anInt679 == 0
 					&& Class81.anInt674 * 1714437309 == 0 && 1018165549 * Class81.anInt670 == 0) {
 				var4 = true;
-			} else if (Class81.aClass60_666 == null) {
+			} else if (Class81.js5Con == null) {
 				var4 = false;
 			} else {
 				try {
@@ -4348,25 +4349,25 @@ public final class Client extends GameEngine {
 						throw new IOException();
 					}
 
-					DualNode_Sub15 var5;
+					FileRequest var5;
 					ByteBuf var6;
 					while (Class81.anInt679 * 1721465631 < 20 && 1018165549 * Class81.anInt670 > 0) {
-						var5 = (DualNode_Sub15) Class81.aNodeTable685.method150();
+						var5 = (FileRequest) Class81.aNodeTable685.method150();
 						var6 = new ByteBuf(4);
 						var6.putByte(1);
 						var6.putMedium((int) var5.key);
-						Class81.aClass60_666.write(var6.payload, 0, 4);
+						Class81.js5Con.write(var6.payload, 0, 4);
 						Class81.aNodeTable682.put(var5, var5.key);
 						Class81.anInt670 -= -1554399579;
 						Class81.anInt679 += 255344863;
 					}
 
 					while (-1358134653 * Class81.anInt669 < 20 && 1714437309 * Class81.anInt674 > 0) {
-						var5 = (DualNode_Sub15) Class81.aClass105_672.method424();
+						var5 = (FileRequest) Class81.aClass105_672.method424();
 						var6 = new ByteBuf(4);
 						var6.putByte(0);
 						var6.putMedium((int) var5.key);
-						Class81.aClass60_666.write(var6.payload, 0, 4);
+						Class81.js5Con.write(var6.payload, 0, 4);
 						var5.unlinkDual();
 						Class81.aNodeTable675.put(var5, var5.key);
 						Class81.anInt674 -= 556834453;
@@ -4377,56 +4378,56 @@ public final class Client extends GameEngine {
 
 					while (true) {
 						if (var22 < 100) {
-							int var23 = Class81.aClass60_666.avail();
-							if (var23 < 0) {
+							int avail = Class81.js5Con.avail();
+							if (avail < 0) {
 								throw new IOException();
 							}
 
-							if (var23 != 0) {
+							if (avail != 0) {
 								label205: {
 									Class81.anInt667 = 0;
-									byte var7 = 0;
-									if (Class1.aDualNode_Sub15_5 == null) {
-										var7 = 8;
-									} else if (-1986173707 * Class81.anInt676 == 0) {
-										var7 = 1;
+									byte needed = 0;
+									if (Class1.currentRequest == null) {
+										needed = 8;
+									} else if (-1986173707 * Class81.currentPosition == 0) {
+										needed = 1;
 									}
 
 									int var8;
 									int var9;
 									int var10;
 									int var12;
-									if (var7 > 0) {
-										var8 = var7 - 314639891 * Class81.aBuffer677.position;
-										if (var8 > var23) {
-											var8 = var23;
+									if (needed > 0) {
+										var8 = needed - 314639891 * Class81.aBuffer677.position;
+										if (var8 > avail) {
+											var8 = avail;
 										}
 
-										Class81.aClass60_666.read(Class81.aBuffer677.payload,
+										Class81.js5Con.read(Class81.aBuffer677.payload,
 												Class81.aBuffer677.position * 314639891, var8);
-										if (Class81.aByte671 != 0) {
+										if (Class81.xorKey != 0) {
 											for (var9 = 0; var9 < var8; ++var9) {
 												Class81.aBuffer677.payload[Class81.aBuffer677.position * 314639891
-														+ var9] ^= Class81.aByte671;
+														+ var9] ^= Class81.xorKey;
 											}
 										}
 
 										Class81.aBuffer677.position += -184175589 * var8;
-										if (Class81.aBuffer677.position * 314639891 < var7) {
+										if (Class81.aBuffer677.position * 314639891 < needed) {
 											break label205;
 										}
 
-										if (Class1.aDualNode_Sub15_5 == null) {
+										if (Class1.currentRequest == null) {
 											Class81.aBuffer677.position = 0;
 											var9 = Class81.aBuffer677.getUByte();
 											var10 = Class81.aBuffer677.getUShort();
-											int var11 = Class81.aBuffer677.getUByte();
+											int compression = Class81.aBuffer677.getUByte();
 											var12 = Class81.aBuffer677.getInt();
 											long var13 = (long) ((var9 << 16) + var10);
-											DualNode_Sub15 var15 = (DualNode_Sub15) Class81.aNodeTable682.get(var13);
+											FileRequest var15 = (FileRequest) Class81.aNodeTable682.get(var13);
 											Class92.aBool725 = true;
 											if (var15 == null) {
-												var15 = (DualNode_Sub15) Class81.aNodeTable675.get(var13);
+												var15 = (FileRequest) Class81.aNodeTable675.get(var13);
 												Class92.aBool725 = false;
 											}
 
@@ -4434,47 +4435,47 @@ public final class Client extends GameEngine {
 												throw new IOException();
 											}
 
-											int var16 = var11 == 0 ? 5 : 9;
-											Class1.aDualNode_Sub15_5 = var15;
-											Class81.aBuffer678 = new ByteBuf(
-													var16 + var12 + Class1.aDualNode_Sub15_5.aByte1650);
-											Class81.aBuffer678.putByte(var11);
-											Class81.aBuffer678.putInt(var12);
-											Class81.anInt676 = 1483291368;
+											int size = compression == 0 ? 5 : 9;
+											Class1.currentRequest = var15;
+											Class81.currentBuffer = new ByteBuf(
+													size + var12 + Class1.currentRequest.padding);
+											Class81.currentBuffer.putByte(compression);
+											Class81.currentBuffer.putInt(var12);
+											Class81.currentPosition = 1483291368;
 											Class81.aBuffer677.position = 0;
-										} else if (-1986173707 * Class81.anInt676 == 0) {
+										} else if (-1986173707 * Class81.currentPosition == 0) {
 											if (Class81.aBuffer677.payload[0] == -1) {
-												Class81.anInt676 = -351459491;
+												Class81.currentPosition = -351459491;
 												Class81.aBuffer677.position = 0;
 											} else {
-												Class1.aDualNode_Sub15_5 = null;
+												Class1.currentRequest = null;
 											}
 										}
 									} else {
-										var8 = Class81.aBuffer678.payload.length - Class1.aDualNode_Sub15_5.aByte1650;
-										var9 = 512 - Class81.anInt676 * -1986173707;
-										if (var9 > var8 - 314639891 * Class81.aBuffer678.position) {
-											var9 = var8 - 314639891 * Class81.aBuffer678.position;
+										var8 = Class81.currentBuffer.payload.length - Class1.currentRequest.padding;
+										var9 = 512 - Class81.currentPosition * -1986173707;
+										if (var9 > var8 - 314639891 * Class81.currentBuffer.position) {
+											var9 = var8 - 314639891 * Class81.currentBuffer.position;
 										}
 
-										if (var9 > var23) {
-											var9 = var23;
+										if (var9 > avail) {
+											var9 = avail;
 										}
 
-										Class81.aClass60_666.read(Class81.aBuffer678.payload,
-												314639891 * Class81.aBuffer678.position, var9);
-										if (Class81.aByte671 != 0) {
+										Class81.js5Con.read(Class81.currentBuffer.payload,
+												314639891 * Class81.currentBuffer.position, var9);
+										if (Class81.xorKey != 0) {
 											for (var10 = 0; var10 < var9; ++var10) {
-												Class81.aBuffer678.payload[Class81.aBuffer678.position * 314639891
-														+ var10] ^= Class81.aByte671;
+												Class81.currentBuffer.payload[Class81.currentBuffer.position * 314639891
+														+ var10] ^= Class81.xorKey;
 											}
 										}
 
-										Class81.aBuffer678.position += -184175589 * var9;
-										Class81.anInt676 += var9 * -351459491;
-										if (Class81.aBuffer678.position * 314639891 == var8) {
-											if (Class1.aDualNode_Sub15_5.key == 16711935L) {
-												Class93.aBuffer731 = Class81.aBuffer678;
+										Class81.currentBuffer.position += -184175589 * var9;
+										Class81.currentPosition += var9 * -351459491;
+										if (Class81.currentBuffer.position * 314639891 == var8) {
+											if (Class1.currentRequest.key == 16711935L) {
+												Class93.aBuffer731 = Class81.currentBuffer;
 
 												for (var10 = 0; var10 < 256; ++var10) {
 													CacheIndex var24 = Class81.aClass87_Sub1Array681[var10];
@@ -4487,47 +4488,47 @@ public final class Client extends GameEngine {
 												}
 											} else {
 												Class81.aCRC32_680.reset();
-												Class81.aCRC32_680.update(Class81.aBuffer678.payload, 0, var8);
+												Class81.aCRC32_680.update(Class81.currentBuffer.payload, 0, var8);
 												var10 = (int) Class81.aCRC32_680.getValue();
-												if (Class1.aDualNode_Sub15_5.anInt1651 * -2143112411 != var10) {
+												if (Class1.currentRequest.crc * -2143112411 != var10) {
 													try {
-														Class81.aClass60_666.shutdown();
+														Class81.js5Con.shutdown();
 													} catch (Exception var20) {
 														;
 													}
 
 													Class81.anInt683 += 1983812729;
-													Class81.aClass60_666 = null;
-													Class81.aByte671 = (byte) ((int) (Math.random() * 255.0D + 1.0D));
+													Class81.js5Con = null;
+													Class81.xorKey = (byte) ((int) (Math.random() * 255.0D + 1.0D));
 													var4 = false;
 													break;
 												}
 
 												Class81.anInt683 = 0;
 												Class81.anInt684 = 0;
-												Class1.aDualNode_Sub15_5.aClass87_Sub1_1649.method557(
-														(int) (Class1.aDualNode_Sub15_5.key & 65535L),
-														Class81.aBuffer678.payload,
-														16711680L == (Class1.aDualNode_Sub15_5.key & 16711680L),
+												Class1.currentRequest.index.method557(
+														(int) (Class1.currentRequest.key & 65535L),
+														Class81.currentBuffer.payload,
+														16711680L == (Class1.currentRequest.key & 16711680L),
 														Class92.aBool725);
 											}
 
-											Class1.aDualNode_Sub15_5.unlink();
+											Class1.currentRequest.unlink();
 											if (Class92.aBool725) {
 												Class81.anInt679 -= 255344863;
 											} else {
 												Class81.anInt669 -= 30759979;
 											}
 
-											Class81.anInt676 = 0;
-											Class1.aDualNode_Sub15_5 = null;
-											Class81.aBuffer678 = null;
+											Class81.currentPosition = 0;
+											Class1.currentRequest = null;
+											Class81.currentBuffer = null;
 										} else {
-											if (-1986173707 * Class81.anInt676 != 512) {
+											if (-1986173707 * Class81.currentPosition != 512) {
 												break label205;
 											}
 
-											Class81.anInt676 = 0;
+											Class81.currentPosition = 0;
 										}
 									}
 
@@ -4542,13 +4543,13 @@ public final class Client extends GameEngine {
 					}
 				} catch (IOException var21) {
 					try {
-						Class81.aClass60_666.shutdown();
+						Class81.js5Con.shutdown();
 					} catch (Exception var19) {
 						;
 					}
 
 					Class81.anInt684 += -1096754175;
-					Class81.aClass60_666 = null;
+					Class81.js5Con = null;
 					var4 = false;
 				}
 			}
@@ -4565,12 +4566,12 @@ public final class Client extends GameEngine {
 
 	void method1053() {
 		if (-448031287 * Class81.anInt683 >= 4) {
-			this.method1032("js5crc");
+			this.error("js5crc");
 			anInt2113 = 295086904;
 		} else {
 			if (Class81.anInt684 * 1047471105 >= 4) {
 				if (anInt2113 * 846055547 <= 5) {
-					this.method1032("js5io");
+					this.error("js5io");
 					anInt2113 = 295086904;
 					return;
 				}
@@ -4589,7 +4590,7 @@ public final class Client extends GameEngine {
 
 					if (871661897 * anInt2028 == 1) {
 						if (Class96_Sub1.aClass61_1208.anInt563 == 2) {
-							this.method1054(-1);
+							this.error(-1);
 							return;
 						}
 
@@ -4599,26 +4600,26 @@ public final class Client extends GameEngine {
 					}
 
 					if (871661897 * anInt2028 == 2) {
-						Class49.aClass60_513 = new Connection((Socket) Class96_Sub1.aClass61_1208.anObject566,
+						Class49.js5Connection = new Connection((Socket) Class96_Sub1.aClass61_1208.anObject566,
 								IsaacRandom.aClass63_102);
 						ByteBuf var1 = new ByteBuf(5);
 						var1.putByte(15);
 						var1.putInt(103);
-						Class49.aClass60_513.write(var1.payload, 0, 5);
+						Class49.js5Connection.write(var1.payload, 0, 5);
 						anInt2028 += 2080129273;
 						InterfaceNode.aLong1397 = Node_Sub5.currentTimeMs() * 438338058587165431L;
 					}
 
 					if (871661897 * anInt2028 == 3) {
-						if (anInt2113 * 846055547 > 5 && Class49.aClass60_513.avail() <= 0) {
+						if (anInt2113 * 846055547 > 5 && Class49.js5Connection.avail() <= 0) {
 							if (Node_Sub5.currentTimeMs() - InterfaceNode.aLong1397 * 6665081146797919943L > 30000L) {
-								this.method1054(-2);
+								this.error(-2);
 								return;
 							}
 						} else {
-							int var3 = Class49.aClass60_513.method299();
+							int var3 = Class49.js5Connection.read();
 							if (var3 != 0) {
-								this.method1054(var3);
+								this.error(var3);
 								return;
 							}
 
@@ -4627,23 +4628,23 @@ public final class Client extends GameEngine {
 					}
 
 					if (anInt2028 * 871661897 == 4) {
-						Class30.method188(Class49.aClass60_513, anInt2113 * 846055547 > 20);
+						Class30.method188(Class49.js5Connection, anInt2113 * 846055547 > 20);
 						Class96_Sub1.aClass61_1208 = null;
-						Class49.aClass60_513 = null;
+						Class49.js5Connection = null;
 						anInt2028 = 0;
 						anInt2031 = 0;
 					}
 				} catch (IOException var2) {
-					this.method1054(-3);
+					this.error(-3);
 				}
 
 			}
 		}
 	}
 
-	void method1054(int var1) {
+	void error(int var1) {
 		Class96_Sub1.aClass61_1208 = null;
-		Class49.aClass60_513 = null;
+		Class49.js5Connection = null;
 		anInt2028 = 0;
 		if (Class82.anInt686 * 809635993 == 2028673991 * Class24.anInt299) {
 			Class24.anInt299 = Class41.anInt446 * 715804305;
@@ -4654,17 +4655,17 @@ public final class Client extends GameEngine {
 		anInt2031 += -1173968285;
 		if (anInt2031 * -608360629 >= 2 && (var1 == 7 || var1 == 9)) {
 			if (846055547 * anInt2113 <= 5) {
-				this.method1032("js5connect_full");
+				this.error("js5connect_full");
 				anInt2113 = 295086904;
 			} else {
 				anInt2169 = 1244563592;
 			}
 		} else if (-608360629 * anInt2031 >= 2 && var1 == 6) {
-			this.method1032("js5connect_outofdate");
+			this.error("js5connect_outofdate");
 			anInt2113 = 295086904;
 		} else if (-608360629 * anInt2031 >= 4) {
 			if (anInt2113 * 846055547 <= 5) {
-				this.method1032("js5connect");
+				this.error("js5connect");
 				anInt2113 = 295086904;
 			} else {
 				anInt2169 = 1244563592;
@@ -4711,8 +4712,8 @@ public final class Client extends GameEngine {
 			Class30.aClass8_341.method84();
 		}
 
-		if (Class81.aClass60_666 != null) {
-			Class81.aClass60_666.shutdown();
+		if (Class81.js5Con != null) {
+			Class81.js5Con.shutdown();
 		}
 
 		Object var11 = Class90.anObject720;
@@ -4787,14 +4788,14 @@ public final class Client extends GameEngine {
 		aBool1979 = true;
 	}
 
-	protected final void method1037(short var1) {
+	protected final void method1037() {
 		boolean var2;
 		label202: {
 			try {
 				if (-1587772409 * Class110.anInt782 == 2) {
 					if (Class86.aNode_Sub11_693 == null) {
-						Class86.aNode_Sub11_693 = Node_Sub11.method572(Class110.aClass87_783,
-								Class98.anInt748 * 729981213, -664270353 * Class111.anInt788);
+						Class86.aNode_Sub11_693 = MusicFile.getMusicFile(Class110.aClass87_783,
+								Class98.musicId * 729981213, -664270353 * Class111.anInt788);
 						if (Class86.aNode_Sub11_693 == null) {
 							var2 = false;
 							break label202;

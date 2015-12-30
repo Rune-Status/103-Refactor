@@ -482,22 +482,22 @@ public class ScriptEvent extends Node {
 		}
 	}
 
-	public static void method652(boolean var0) {
-		if (Class81.aClass60_666 != null) {
+	public static void sendConInfo(boolean loggedIn) {
+		if (Class81.js5Con != null) {
 			try {
 				ByteBuf var1 = new ByteBuf(4);
-				var1.putByte(var0 ? 2 : 3);
+				var1.putByte(loggedIn ? 2 : 3);
 				var1.putMedium(0);
-				Class81.aClass60_666.write(var1.payload, 0, 4);
+				Class81.js5Con.write(var1.payload, 0, 4);
 			} catch (IOException var4) {
 				try {
-					Class81.aClass60_666.shutdown();
+					Class81.js5Con.shutdown();
 				} catch (Exception var3) {
 					;
 				}
 
 				Class81.anInt684 += -1096754175;
-				Class81.aClass60_666 = null;
+				Class81.js5Con = null;
 			}
 
 		}

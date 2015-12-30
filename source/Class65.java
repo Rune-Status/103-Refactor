@@ -44,7 +44,7 @@ public class Class65 {
 	public static void method320(int var0) {
 		Class110.anInt782 = 325298615;
 		Class110.aClass87_783 = null;
-		Class98.anInt748 = -18032949;
+		Class98.musicId = -18032949;
 		Class111.anInt788 = 832158449;
 		Class110.anInt787 = 0;
 		Class44.aBool464 = false;

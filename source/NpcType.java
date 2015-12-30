@@ -328,9 +328,9 @@ public class NpcType extends DualNode {
 
 	static int method804(int var0, int var1) {
 		long var2 = (long) (var1 + (var0 << 16));
-		return Class1.aDualNode_Sub15_5 != null && Class1.aDualNode_Sub15_5.key == var2
-				? 1084578137 * Class81.aBuffer678.position
-						/ (Class81.aBuffer678.payload.length - Class1.aDualNode_Sub15_5.aByte1650) + 1
+		return Class1.currentRequest != null && Class1.currentRequest.key == var2
+				? 1084578137 * Class81.currentBuffer.position
+						/ (Class81.currentBuffer.payload.length - Class1.currentRequest.padding) + 1
 				: 0;
 	}
 

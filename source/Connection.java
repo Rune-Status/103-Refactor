@@ -165,7 +165,7 @@ public final class Connection implements Runnable {
 		}
 	}
 
-	public int method299() throws IOException {
+	public int read() throws IOException {
 		return !this.closed ? this.inStream.read() : 0;
 	}
 

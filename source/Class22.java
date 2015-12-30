@@ -24,7 +24,7 @@ public class Class22 {
 			int var1 = Client.anInt2201 * -1994948003;
 			Class110.anInt782 = 325298615;
 			Class110.aClass87_783 = var2;
-			Class98.anInt748 = 18032949 * var0;
+			Class98.musicId = 18032949 * var0;
 			Class111.anInt788 = 0;
 			Class110.anInt787 = 827167249 * var1;
 			Class44.aBool464 = false;

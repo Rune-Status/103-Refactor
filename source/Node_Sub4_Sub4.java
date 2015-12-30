@@ -60,7 +60,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 		return this.anInt1656 * 1321975145;
 	}
 
-	public synchronized boolean method829(Node_Sub11 var1, AbstractIndex var2, Class13 var3, int var4) {
+	public synchronized boolean method829(MusicFile var1, AbstractIndex var2, Class13 var3, int var4) {
 		var1.method570();
 		boolean var7 = true;
 		int[] var6 = null;
@@ -833,7 +833,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 		this.anIntArray1672[var1] = (int) (2097152.0D * Math.pow(2.0D, (double) var2 * 5.4931640625E-4D) + 0.5D);
 	}
 
-	public synchronized void method855(Node_Sub11 var1, boolean var2) {
+	public synchronized void method855(MusicFile var1, boolean var2) {
 		this.method856();
 		this.aClass80_1675.method346(var1.aByteArray1366);
 		this.aBool1676 = var2;

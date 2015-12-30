@@ -749,39 +749,39 @@ public final class Class39 {
 
 	}
 
-	static void method221(CacheIndex var0, int var1, int var2, int var3, byte var4, boolean var5) {
-		long var6 = (long) (var2 + (var1 << 16));
-		DualNode_Sub15 var8 = (DualNode_Sub15) Class81.aNodeTable685.get(var6);
-		if (var8 == null) {
-			var8 = (DualNode_Sub15) Class81.aNodeTable682.get(var6);
-			if (var8 == null) {
-				var8 = (DualNode_Sub15) Class81.aNodeTable673.get(var6);
-				if (var8 != null) {
-					if (var5) {
-						var8.unlinkDual();
-						Class81.aNodeTable685.put(var8, var6);
+	static void method221(CacheIndex index, int type, int file, int crc, byte padding, boolean priority) {
+		long hash = (long) (file + (type << 16));
+		FileRequest request = (FileRequest) Class81.aNodeTable685.get(hash);
+		if (request == null) {
+			request = (FileRequest) Class81.aNodeTable682.get(hash);
+			if (request == null) {
+				request = (FileRequest) Class81.aNodeTable673.get(hash);
+				if (request != null) {
+					if (priority) {
+						request.unlinkDual();
+						Class81.aNodeTable685.put(request, hash);
 						Class81.anInt674 -= 556834453;
 						Class81.anInt670 += -1554399579;
 					}
 
 				} else {
-					if (!var5) {
-						var8 = (DualNode_Sub15) Class81.aNodeTable675.get(var6);
-						if (var8 != null) {
+					if (!priority) {
+						request = (FileRequest) Class81.aNodeTable675.get(hash);
+						if (request != null) {
 							return;
 						}
 					}
 
-					var8 = new DualNode_Sub15();
-					var8.aClass87_Sub1_1649 = var0;
-					var8.anInt1651 = -1759629139 * var3;
-					var8.aByte1650 = var4;
-					if (var5) {
-						Class81.aNodeTable685.put(var8, var6);
+					request = new FileRequest();
+					request.index = index;
+					request.crc = -1759629139 * crc;
+					request.padding = padding;
+					if (priority) {
+						Class81.aNodeTable685.put(request, hash);
 						Class81.anInt670 += -1554399579;
 					} else {
-						Class81.aClass105_672.method425(var8);
-						Class81.aNodeTable673.put(var8, var6);
+						Class81.aClass105_672.method425(request);
+						Class81.aNodeTable673.put(request, hash);
 						Class81.anInt674 += 556834453;
 					}
 

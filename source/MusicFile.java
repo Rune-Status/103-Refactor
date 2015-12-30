@@ -1,5 +1,5 @@
 
-public class Node_Sub11 extends Node {
+public class MusicFile extends Node {
 
 	NodeTable aNodeTable1365;
 	byte[] aByteArray1366;
@@ -83,12 +83,12 @@ public class Node_Sub11 extends Node {
 		}
 	}
 
-	Node_Sub11(ByteBuf var1) {
-		var1.position = (var1.payload.length - 3) * -184175589;
-		int var2 = var1.getUByte();
-		int var3 = var1.getUShort();
+	MusicFile(ByteBuf buf) {
+		buf.position = (buf.payload.length - 3) * -184175589;
+		int var2 = buf.getUByte();
+		int var3 = buf.getUShort();
 		int var24 = 14 + var2 * 10;
-		var1.position = 0;
+		buf.position = 0;
 		int var5 = 0;
 		int var6 = 0;
 		int var7 = 0;
@@ -105,7 +105,7 @@ public class Node_Sub11 extends Node {
 			var12 = -1;
 
 			while (true) {
-				var11 = var1.getUByte();
+				var11 = buf.getUByte();
 				if (var11 != var12) {
 					++var24;
 				}
@@ -143,15 +143,15 @@ public class Node_Sub11 extends Node {
 		var24 += 5 * var5;
 		var24 += 2 * (var7 + var8 + var6 + var9 + var25);
 		var24 += var19 + var4;
-		var15 = var1.position * 314639891;
+		var15 = buf.position * 314639891;
 		var12 = var2 + var5 + var6 + var7 + var8 + var9 + var19 + var25 + var4;
 
 		for (var11 = 0; var11 < var12; ++var11) {
-			var1.method632();
+			buf.method632();
 		}
 
-		var24 += var1.position * 314639891 - var15;
-		var11 = var1.position * 314639891;
+		var24 += buf.position * 314639891 - var15;
+		var11 = buf.position * 314639891;
 		int var27 = 0;
 		int var28 = 0;
 		int var16 = 0;
@@ -168,7 +168,7 @@ public class Node_Sub11 extends Node {
 
 		int var37;
 		for (var37 = 0; var37 < var6; ++var37) {
-			var21 = var21 + var1.getUByte() & 127;
+			var21 = var21 + buf.getUByte() & 127;
 			if (var21 != 0 && var21 != 32) {
 				if (var21 == 1) {
 					++var27;
@@ -201,48 +201,48 @@ public class Node_Sub11 extends Node {
 		}
 
 		var37 = 0;
-		int var13 = var1.position * 314639891;
-		var1.position += var35 * -184175589;
-		int var20 = var1.position * 314639891;
-		var1.position += var25 * -184175589;
-		int var23 = var1.position * 314639891;
-		var1.position += var19 * -184175589;
-		int var42 = var1.position * 314639891;
-		var1.position += var9 * -184175589;
-		int var44 = var1.position * 314639891;
-		var1.position += var27 * -184175589;
-		int var43 = var1.position * 314639891;
-		var1.position += var16 * -184175589;
-		int var45 = var1.position * 314639891;
-		var1.position += var30 * -184175589;
-		int var46 = var1.position * 314639891;
-		var1.position += (var7 + var8 + var25) * -184175589;
-		int var47 = var1.position * 314639891;
-		var1.position += var7 * -184175589;
-		int var53 = var1.position * 314639891;
-		var1.position += var36 * -184175589;
-		int var48 = var1.position * 314639891;
-		var1.position += var8 * -184175589;
-		int var64 = var1.position * 314639891;
-		var1.position += var28 * -184175589;
-		int var49 = var1.position * 314639891;
-		var1.position += var29 * -184175589;
-		int var51 = var1.position * 314639891;
-		var1.position += var52 * -184175589;
-		int var50 = var1.position * 314639891;
-		var1.position += var4 * -184175589;
-		int var18 = var1.position * 314639891;
-		var1.position += var9 * -184175589;
-		int var56 = var1.position * 314639891;
-		var1.position += var32 * -184175589;
-		int var38 = var1.position * 314639891;
-		var1.position += var39 * -184175589;
-		int var41 = var1.position * 314639891;
-		var1.position += var40 * -184175589;
-		int var57 = var1.position * 314639891;
-		var1.position += var34 * -184175589;
-		int var58 = var1.position * 314639891;
-		var1.position += var5 * -552526767;
+		int var13 = buf.position * 314639891;
+		buf.position += var35 * -184175589;
+		int var20 = buf.position * 314639891;
+		buf.position += var25 * -184175589;
+		int var23 = buf.position * 314639891;
+		buf.position += var19 * -184175589;
+		int var42 = buf.position * 314639891;
+		buf.position += var9 * -184175589;
+		int var44 = buf.position * 314639891;
+		buf.position += var27 * -184175589;
+		int var43 = buf.position * 314639891;
+		buf.position += var16 * -184175589;
+		int var45 = buf.position * 314639891;
+		buf.position += var30 * -184175589;
+		int var46 = buf.position * 314639891;
+		buf.position += (var7 + var8 + var25) * -184175589;
+		int var47 = buf.position * 314639891;
+		buf.position += var7 * -184175589;
+		int var53 = buf.position * 314639891;
+		buf.position += var36 * -184175589;
+		int var48 = buf.position * 314639891;
+		buf.position += var8 * -184175589;
+		int var64 = buf.position * 314639891;
+		buf.position += var28 * -184175589;
+		int var49 = buf.position * 314639891;
+		buf.position += var29 * -184175589;
+		int var51 = buf.position * 314639891;
+		buf.position += var52 * -184175589;
+		int var50 = buf.position * 314639891;
+		buf.position += var4 * -184175589;
+		int var18 = buf.position * 314639891;
+		buf.position += var9 * -184175589;
+		int var56 = buf.position * 314639891;
+		buf.position += var32 * -184175589;
+		int var38 = buf.position * 314639891;
+		buf.position += var39 * -184175589;
+		int var41 = buf.position * 314639891;
+		buf.position += var40 * -184175589;
+		int var57 = buf.position * 314639891;
+		buf.position += var34 * -184175589;
+		int var58 = buf.position * 314639891;
+		buf.position += var5 * -552526767;
 		this.aByteArray1366 = new byte[var24];
 		ByteBuf var17 = new ByteBuf(this.aByteArray1366);
 		var17.putInt(1297377380);
@@ -250,7 +250,7 @@ public class Node_Sub11 extends Node {
 		var17.putShort(var2 > 1 ? 1 : 0);
 		var17.putShort(var2);
 		var17.putShort(var3);
-		var1.position = var15 * -184175589;
+		buf.position = var15 * -184175589;
 		int var55 = 0;
 		int var66 = 0;
 		int var54 = 0;
@@ -269,9 +269,9 @@ public class Node_Sub11 extends Node {
 			int var33 = -1;
 
 			while (true) {
-				int var63 = var1.method632();
+				int var63 = buf.method632();
 				var17.putFlags(var63);
-				int var65 = var1.payload[var37++] & 255;
+				int var65 = buf.payload[var37++] & 255;
 				boolean var10 = var65 != var33;
 				var33 = var65 & 15;
 				if (var65 == 7) {
@@ -293,9 +293,9 @@ public class Node_Sub11 extends Node {
 
 					var17.putByte(81);
 					var17.putByte(3);
-					var17.putByte(var1.payload[var58++]);
-					var17.putByte(var1.payload[var58++]);
-					var17.putByte(var1.payload[var58++]);
+					var17.putByte(buf.payload[var58++]);
+					var17.putByte(buf.payload[var58++]);
+					var17.putByte(buf.payload[var58++]);
 				} else {
 					var55 ^= var65 >> 4;
 					if (var33 == 0) {
@@ -303,8 +303,8 @@ public class Node_Sub11 extends Node {
 							var17.putByte(144 + var55);
 						}
 
-						var66 += var1.payload[var46++];
-						var54 += var1.payload[var47++];
+						var66 += buf.payload[var46++];
+						var54 += buf.payload[var47++];
 						var17.putByte(var66 & 127);
 						var17.putByte(var54 & 127);
 					} else if (var33 == 1) {
@@ -312,8 +312,8 @@ public class Node_Sub11 extends Node {
 							var17.putByte(128 + var55);
 						}
 
-						var66 += var1.payload[var46++];
-						var31 += var1.payload[var48++];
+						var66 += buf.payload[var46++];
+						var31 += buf.payload[var48++];
 						var17.putByte(var66 & 127);
 						var17.putByte(var31 & 127);
 					} else if (var33 == 2) {
@@ -321,37 +321,37 @@ public class Node_Sub11 extends Node {
 							var17.putByte(176 + var55);
 						}
 
-						var21 = var21 + var1.payload[var11++] & 127;
+						var21 = var21 + buf.payload[var11++] & 127;
 						var17.putByte(var21);
 						byte var14;
 						if (var21 != 0 && var21 != 32) {
 							if (var21 == 1) {
-								var14 = var1.payload[var44++];
+								var14 = buf.payload[var44++];
 							} else if (var21 == 33) {
-								var14 = var1.payload[var64++];
+								var14 = buf.payload[var64++];
 							} else if (var21 == 7) {
-								var14 = var1.payload[var43++];
+								var14 = buf.payload[var43++];
 							} else if (var21 == 39) {
-								var14 = var1.payload[var49++];
+								var14 = buf.payload[var49++];
 							} else if (var21 == 10) {
-								var14 = var1.payload[var45++];
+								var14 = buf.payload[var45++];
 							} else if (var21 == 42) {
-								var14 = var1.payload[var51++];
+								var14 = buf.payload[var51++];
 							} else if (var21 == 99) {
-								var14 = var1.payload[var56++];
+								var14 = buf.payload[var56++];
 							} else if (var21 == 98) {
-								var14 = var1.payload[var38++];
+								var14 = buf.payload[var38++];
 							} else if (var21 == 101) {
-								var14 = var1.payload[var41++];
+								var14 = buf.payload[var41++];
 							} else if (var21 == 100) {
-								var14 = var1.payload[var57++];
+								var14 = buf.payload[var57++];
 							} else if (var21 != 64 && var21 != 65 && var21 != 120 && var21 != 121 && var21 != 123) {
-								var14 = var1.payload[var53++];
+								var14 = buf.payload[var53++];
 							} else {
-								var14 = var1.payload[var13++];
+								var14 = buf.payload[var13++];
 							}
 						} else {
-							var14 = var1.payload[var50++];
+							var14 = buf.payload[var50++];
 						}
 
 						int var67 = var14 + var60[var21];
@@ -362,8 +362,8 @@ public class Node_Sub11 extends Node {
 							var17.putByte(224 + var55);
 						}
 
-						var61 += var1.payload[var18++];
-						var61 += var1.payload[var42++] << 7;
+						var61 += buf.payload[var18++];
+						var61 += buf.payload[var42++] << 7;
 						var17.putByte(var61 & 127);
 						var17.putByte(var61 >> 7 & 127);
 					} else if (var33 == 4) {
@@ -371,15 +371,15 @@ public class Node_Sub11 extends Node {
 							var17.putByte(208 + var55);
 						}
 
-						var22 += var1.payload[var23++];
+						var22 += buf.payload[var23++];
 						var17.putByte(var22 & 127);
 					} else if (var33 == 5) {
 						if (var10) {
 							var17.putByte(160 + var55);
 						}
 
-						var66 += var1.payload[var46++];
-						var26 += var1.payload[var20++];
+						var66 += buf.payload[var46++];
+						var26 += buf.payload[var20++];
 						var17.putByte(var66 & 127);
 						var17.putByte(var26 & 127);
 					} else {
@@ -391,7 +391,7 @@ public class Node_Sub11 extends Node {
 							var17.putByte(192 + var55);
 						}
 
-						var17.putByte(var1.payload[var50++]);
+						var17.putByte(buf.payload[var50++]);
 					}
 				}
 			}
@@ -403,8 +403,8 @@ public class Node_Sub11 extends Node {
 		this.aNodeTable1365 = null;
 	}
 
-	public static Node_Sub11 method572(AbstractIndex var0, int var1, int var2) {
-		byte[] var3 = var0.getFile(var1, var2);
-		return var3 == null ? null : new Node_Sub11(new ByteBuf(var3));
+	public static MusicFile getMusicFile(AbstractIndex index, int file, int child) {
+		byte[] bytes = index.getFile(file, child);
+		return bytes == null ? null : new MusicFile(new ByteBuf(bytes));
 	}
 }

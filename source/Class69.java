@@ -10,7 +10,7 @@ public class Class69 {
 	public static void method328(AbstractIndex var0, int var1, int var2, int var3, boolean var4) {
 		Class110.anInt782 = 325298615;
 		Class110.aClass87_783 = var0;
-		Class98.anInt748 = 18032949 * var1;
+		Class98.musicId = 18032949 * var1;
 		Class111.anInt788 = -832158449 * var2;
 		Class110.anInt787 = var3 * 827167249;
 		Class44.aBool464 = var4;

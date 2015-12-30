@@ -11,46 +11,46 @@ public class Class30 implements Runnable {
 	static Class8 aClass8_341;
 	Object anObject342 = new Object();
 
-	public static void method188(Connection var0, boolean var1) {
-		if (Class81.aClass60_666 != null) {
+	public static void method188(Connection con, boolean login) {
+		if (Class81.js5Con != null) {
 			try {
-				Class81.aClass60_666.shutdown();
+				Class81.js5Con.shutdown();
 			} catch (Exception var6) {
 				;
 			}
 
-			Class81.aClass60_666 = null;
+			Class81.js5Con = null;
 		}
 
-		Class81.aClass60_666 = var0;
-		ScriptEvent.method652(var1);
+		Class81.js5Con = con;
+		ScriptEvent.sendConInfo(login);
 		Class81.aBuffer677.position = 0;
-		Class1.aDualNode_Sub15_5 = null;
-		Class81.aBuffer678 = null;
-		Class81.anInt676 = 0;
+		Class1.currentRequest = null;
+		Class81.currentBuffer = null;
+		Class81.currentPosition = 0;
 
 		while (true) {
-			DualNode_Sub15 var2 = (DualNode_Sub15) Class81.aNodeTable682.method150();
+			FileRequest var2 = (FileRequest) Class81.aNodeTable682.method150();
 			if (var2 == null) {
 				while (true) {
-					var2 = (DualNode_Sub15) Class81.aNodeTable675.method150();
+					var2 = (FileRequest) Class81.aNodeTable675.method150();
 					if (var2 == null) {
-						if (Class81.aByte671 != 0) {
+						if (Class81.xorKey != 0) {
 							try {
 								ByteBuf var7 = new ByteBuf(4);
 								var7.putByte(4);
-								var7.putByte(Class81.aByte671);
+								var7.putByte(Class81.xorKey);
 								var7.putShort(0);
-								Class81.aClass60_666.write(var7.payload, 0, 4);
+								Class81.js5Con.write(var7.payload, 0, 4);
 							} catch (IOException var5) {
 								try {
-									Class81.aClass60_666.shutdown();
+									Class81.js5Con.shutdown();
 								} catch (Exception var4) {
 									;
 								}
 
 								Class81.anInt684 += -1096754175;
-								Class81.aClass60_666 = null;
+								Class81.js5Con = null;
 							}
 						}
 

@@ -38,7 +38,7 @@ public class CacheIndex extends AbstractIndex {
 	void method374(int var1, byte var2) {
 		int var3 = -1858370801 * this.anInt1325;
 		long var4 = (long) (var1 + (var3 << 16));
-		DualNode_Sub15 var6 = (DualNode_Sub15) Class81.aNodeTable673.get(var4);
+		FileRequest var6 = (FileRequest) Class81.aNodeTable673.get(var4);
 		if (var6 != null) {
 			Class81.aClass105_672.method422(var6);
 		}

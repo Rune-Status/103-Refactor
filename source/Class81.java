@@ -2,19 +2,19 @@ import java.util.zip.CRC32;
 
 public class Class81 {
 
-	public static Connection aClass60_666;
+	public static Connection js5Con;
 	public static int anInt667 = 0;
 	public static long aLong668;
 	public static int anInt669 = 0;
 	public static int anInt670 = 0;
-	public static byte aByte671 = 0;
+	public static byte xorKey = 0;
 	public static Class105 aClass105_672 = new Class105();
 	static NodeTable aNodeTable673 = new NodeTable(4096);
 	public static int anInt674 = 0;
 	public static NodeTable aNodeTable675 = new NodeTable(4096);
-	public static int anInt676 = 0;
+	public static int currentPosition = 0;
 	public static ByteBuf aBuffer677 = new ByteBuf(8);
-	public static ByteBuf aBuffer678;
+	public static ByteBuf currentBuffer;
 	public static int anInt679 = 0;
 	public static CRC32 aCRC32_680 = new CRC32();
 	public static CacheIndex[] aClass87_Sub1Array681 = new CacheIndex[256];

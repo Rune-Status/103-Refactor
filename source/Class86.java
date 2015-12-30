@@ -3,7 +3,7 @@ import java.awt.Graphics;
 public class Class86 {
 
 	static int clanChatSize;
-	public static Node_Sub11 aNode_Sub11_693;
+	public static MusicFile aNode_Sub11_693;
 
 	static final void method365(Widget[] var0, int var1) {
 		for (int var2 = 0; var2 < var0.length; ++var2) {

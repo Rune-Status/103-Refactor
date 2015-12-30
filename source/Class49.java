@@ -2,7 +2,7 @@ import java.util.zip.Inflater;
 
 public class Class49 {
 
-	static Connection aClass60_513;
+	static Connection js5Connection;
 	static byte[][][] aByteArrayArrayArray514;
 	Inflater anInflater515;
 	public static AbstractIndex aClass87_516;

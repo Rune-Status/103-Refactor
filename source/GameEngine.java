@@ -102,7 +102,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 						if (var1.endsWith("192.168.1.")) {
 							return true;
 						} else {
-							this.method1032("invalidhost");
+							this.error("invalidhost");
 							return false;
 						}
 					}
@@ -127,7 +127,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 							|| var2.equals("1.3") || var2.startsWith("1.3.") || var2.equals("1.4")
 							|| var2.startsWith("1.4.") || var2.equals("1.5") || var2.startsWith("1.5.")
 							|| var2.equals("1.6.0")) {
-						this.method1032("wrongjava");
+						this.error("wrongjava");
 						return;
 					}
 
@@ -203,7 +203,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 						if (var11) {
 							int var17 = Node_Sub5.method535(var4, 10, true);
 							if (var17 < 10) {
-								this.method1032("wrongjava");
+								this.error("wrongjava");
 								return;
 							}
 						}
@@ -231,7 +231,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			}
 		} catch (Exception var14) {
 			Class79.method345((String) null, var14);
-			this.method1032("crash");
+			this.error("crash");
 		}
 
 		this.method1030();
@@ -337,7 +337,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 	protected abstract void method1031(int var1);
 
-	protected void method1032(String var1) {
+	protected void error(String var1) {
 		if (!this.aBool1971) {
 			this.aBool1971 = true;
 			System.out.println("error_game_" + var1);
@@ -376,7 +376,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			if (shell != null) {
 				anInt1969 += 2053161379;
 				if (-1859094005 * anInt1969 >= 3) {
-					this.method1032("alreadyloaded");
+					this.error("alreadyloaded");
 					return;
 				}
 
@@ -396,12 +396,12 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			IsaacRandom.aClass63_102.method313(this, 1);
 		} catch (Exception var5) {
 			Class79.method345((String) null, var5);
-			this.method1032("crash");
+			this.error("crash");
 		}
 
 	}
 
-	protected abstract void method1037(short var1);
+	protected abstract void method1037();
 
 	public final void focusGained(FocusEvent var1) {
 		focused = true;
@@ -437,7 +437,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			}
 		}
 
-		this.method1037((short) -22689);
+		this.method1037();
 	}
 
 	public void stop() {

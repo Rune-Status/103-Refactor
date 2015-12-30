@@ -5,7 +5,7 @@ public class Class1 {
 	static Class1 aClass1_2 = new Class1();
 	static Class1 aClass1_3 = new Class1();
 	static CacheIndex texturesIndex;
-	public static DualNode_Sub15 aDualNode_Sub15_5;
+	public static FileRequest currentRequest;
 	static Class1 aClass1_6 = new Class1();
 
 	static final String method13(int var0) {

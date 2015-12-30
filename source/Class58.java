@@ -121,7 +121,7 @@ public class Class58 {
 					Class30.aClass8_341.method92();
 				}
 
-				var0 = Class31.gameConnection.method299();
+				var0 = Class31.gameConnection.read();
 				if (DualNode_Sub14.aClass8_1644 != null) {
 					DualNode_Sub14.aClass8_1644.method92();
 				}
@@ -244,7 +244,7 @@ public class Class58 {
 			}
 
 			if (-1250195825 * Client.connectionState == 6 && Class31.gameConnection.avail() > 0) {
-				var0 = Class31.gameConnection.method299();
+				var0 = Class31.gameConnection.read();
 				if (var0 == 21 && Client.anInt2113 * 846055547 == 20) {
 					Client.connectionState = -1121064183;
 				} else if (var0 == 2) {
@@ -266,7 +266,7 @@ public class Class58 {
 			}
 
 			if (Client.connectionState * -1250195825 == 7 && Class31.gameConnection.avail() > 0) {
-				Client.anInt2034 = (Class31.gameConnection.method299() + 3) * -1985668988;
+				Client.anInt2034 = (Class31.gameConnection.read() + 3) * -1985668988;
 				Client.connectionState = -54082696;
 			}
 
@@ -280,7 +280,7 @@ public class Class58 {
 
 			} else {
 				if (-1250195825 * Client.connectionState == 9 && Class31.gameConnection.avail() >= 13) {
-					boolean var12 = Class31.gameConnection.method299() == 1;
+					boolean var12 = Class31.gameConnection.read() == 1;
 					Class31.gameConnection.read(Client.inBuffer.payload, 0, 4);
 					Client.inBuffer.position = 0;
 					boolean var13 = false;
@@ -302,12 +302,12 @@ public class Class58 {
 						Class75.method335();
 					}
 
-					Client.myRights = Class31.gameConnection.method299() * -753281333;
-					Client.aBool2179 = Class31.gameConnection.method299() == 1;
-					Client.myPlayerIndex = Class31.gameConnection.method299() * -313169887;
+					Client.myRights = Class31.gameConnection.read() * -753281333;
+					Client.aBool2179 = Class31.gameConnection.read() == 1;
+					Client.myPlayerIndex = Class31.gameConnection.read() * -313169887;
 					Client.myPlayerIndex = -313169887 * (Client.myPlayerIndex * 1467227105 << 8);
-					Client.myPlayerIndex += Class31.gameConnection.method299() * -313169887;
-					Client.anInt2106 = Class31.gameConnection.method299() * 1163065535;
+					Client.myPlayerIndex += Class31.gameConnection.read() * -313169887;
+					Client.anInt2106 = Class31.gameConnection.read() * 1163065535;
 					Class31.gameConnection.read(Client.inBuffer.payload, 0, 1);
 					Client.inBuffer.position = 0;
 					Client.frameId = Client.inBuffer.getHeader() * 726667601;
