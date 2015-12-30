@@ -30,7 +30,7 @@ public class Class7 {
 			for (index = 0; index < region_count; ++index) {
 				for (plane = 0; plane < 4; ++plane) {
 					DualNode_Sub12.regionXTEAs[index][plane] = Client.inBuffer.getInt();
-					System.out.println("region plane: " + index + "," + plane);
+				//	System.out.println("region plane: " + index + "," + plane);
 				}
 			}
 			//System.out.println("ChunkX: " + var3 + ", ChunkY: " + var2 + ", Count: " + var5 + ", (" + (var3 << 3) + ", " + (var2 << 3) + ")");
@@ -61,7 +61,7 @@ public class Class7 {
 						
 						GameClient.dumpMap(var9, DualNode_Sub12.regionXTEAs[region_count]);
 						Client.regionIds[region_count] = var9;
-						System.out.println("blahhh:" + Client.regionIds[region_count] + "," + var9);
+						//System.out.println("blahhh:" + Client.regionIds[region_count] + "," + var9);
 						Class69.mapRegionFileIds[region_count] = Class48_Sub1.landscapesIndex
 								.getFile("m" + plane + "_" + var1);
 						InvType.landRegionFielIds[region_count] = Class48_Sub1.landscapesIndex
@@ -70,7 +70,7 @@ public class Class7 {
 					}
 				}
 			}
-			System.out.println("MapRegion: " + var3 + "," + var2);
+			//System.out.println("MapRegion: " + var3 + "," + var2);
 			Node_Sub8.method546(var3, var2);
 		} else {
 			var2 = Client.inBuffer.getUShort();

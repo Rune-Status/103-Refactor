@@ -1387,9 +1387,27 @@ public final class Client extends GameEngine {
 								lastFrameId = frameId * -874887809;
 
 								// TODO
-								//System.out.println("Incomming Frame: ( " + (793368497 * frameId) + ", " + (371800591 * frameSize) + " (" + Class100.frameSizes[frameId * 793368497] + ") )");
-
-								 //System.out.println("Incomming Frame: ( " + (793368497 * frameId) + ", " + (371800591 * frameSize) + " (" + Class100.frameSizes[frameId * 793368497] + ") )");
+								if (frameId * 793368497 != 158
+								 && frameId * 793368497 != 152
+								 && frameId * 793368497 != 196
+								 && frameId * 793368497 != 201
+								 && frameId * 793368497 != 192
+								 && frameId * 793368497 != 126
+								 && frameId * 793368497 != 237
+								 && frameId * 793368497 != 110
+								 && frameId * 793368497 != 143
+								 && frameId * 793368497 != 208
+								 && frameId * 793368497 != 82
+								 && frameId * 793368497 != 137
+								 && frameId * 793368497 != 19
+								 && frameId * 793368497 != 158
+								 && frameId * 793368497 != 151
+								 && frameId * 793368497 != 80
+								 && frameId * 793368497 != 31
+								 && frameId * 793368497 != 169
+								 && frameId * 793368497 != 242
+								 && frameId * 793368497 != 244)
+								System.out.println("Incomming Frame: ( " + (793368497 * frameId) + ", " + (371800591 * frameSize) + " (" + Class100.frameSizes[frameId * 793368497] + ") )");
 
 								if (793368497 * frameId == 120) {
 									var5 = inBuffer.getIMEInt();
@@ -1439,7 +1457,7 @@ public final class Client extends GameEngine {
 
 									InterfaceNode.method579(var6, var5, var89);
 
-									/*if (GameClient.dump) */System.out.println("sendInterface(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", "
+									if (GameClient.dump) System.out.println("sendInterface(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", "
 											+ var5 + ", " + (var89 == 1) + ");");
 
 									frameId = -726667601;
@@ -1464,7 +1482,7 @@ public final class Client extends GameEngine {
 										var89 = -1;
 									}
 									
-									System.out.println("sendInterfaceModel(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", " + var89 + ", " + var5 + ");");
+									if (GameClient.dump) System.out.println("sendInterfaceModel(" + (var6 >> 0x10) + ", " + (var6 & 0xFFFF) + ", " + var89 + ", " + var5 + ");");
 									
 									var105 = Class94.getWidget(var6);
 									ItemType var149;
@@ -2098,7 +2116,7 @@ public final class Client extends GameEngine {
 									anInt2114 = -712636309 * anInt2151;
 									frameId = -726667601;
 									var85 = true;
-									System.out.println("Oh hey: " + friendListSize + "," + (-712636309 * anInt2151) + "," + frameId);
+									//System.out.println("Oh hey: " + friendListSize + "," + (-712636309 * anInt2151) + "," + frameId);
 									break label3092;
 								}
 
@@ -2501,6 +2519,8 @@ public final class Client extends GameEngine {
 										aWidget2135 = null;
 									}
 
+									if (GameClient.dump) System.out.println("sendInterfaceClose(" + (var5 >> 0x10) + ", " + (var5 & 0xFFFF) + ");");
+									
 									frameId = -726667601;
 									var85 = true;
 									break label3092;
@@ -2740,7 +2760,7 @@ public final class Client extends GameEngine {
 
 										inBuffer.getString();
 										
-										System.out.println("Friend" + var126 + "," + var135 + "," + var113 + "," + var8 + "," + var9 + "," + var10);
+										//System.out.println("Friend" + var126 + "," + var135 + "," + var113 + "," + var8 + "," + var9 + "," + var10);
 
 										for (var13 = 0; var13 < -1616775607 * anInt2184; ++var13) {
 											FriendedPlayer var128 = friendedPlayers[var13];
