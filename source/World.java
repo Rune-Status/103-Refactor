@@ -62,6 +62,7 @@ public class World {
 					update = buf.getBits(1);
 					if (update == 0) {
 						skipCount = VarClientType.decodeSkipCount(buf);
+						System.out.println("Count: " + skipCount);
 						GPI.skipFlags[playerIndex] = (byte) (GPI.skipFlags[playerIndex] | 2);
 					} else {
 						Player.decodeMovement(buf, playerIndex);
@@ -173,23 +174,23 @@ public class World {
 			int var1 = Class94.tempVars[var0];
 			if (var2 == 1) {
 				if (var1 == 1) {
-					DualNode_Sub13_Sub1.method913(0.9D);
-					((Class29) DualNode_Sub13_Sub1.anInterface3_1796).method185(0.9D);
+					TexturedGraphic.method913(0.9D);
+					((Class29) TexturedGraphic.anInterface3_1796).method185(0.9D);
 				}
 
 				if (var1 == 2) {
-					DualNode_Sub13_Sub1.method913(0.8D);
-					((Class29) DualNode_Sub13_Sub1.anInterface3_1796).method185(0.8D);
+					TexturedGraphic.method913(0.8D);
+					((Class29) TexturedGraphic.anInterface3_1796).method185(0.8D);
 				}
 
 				if (var1 == 3) {
-					DualNode_Sub13_Sub1.method913(0.7D);
-					((Class29) DualNode_Sub13_Sub1.anInterface3_1796).method185(0.7D);
+					TexturedGraphic.method913(0.7D);
+					((Class29) TexturedGraphic.anInterface3_1796).method185(0.7D);
 				}
 
 				if (var1 == 4) {
-					DualNode_Sub13_Sub1.method913(0.6D);
-					((Class29) DualNode_Sub13_Sub1.anInterface3_1796).method185(0.6D);
+					TexturedGraphic.method913(0.6D);
+					((Class29) TexturedGraphic.anInterface3_1796).method185(0.6D);
 				}
 
 				DualNode_Sub8.method711();
@@ -298,7 +299,7 @@ public class World {
 			if (var2 == 18) {
 				var4 = new Class36[] { Class36.aClass36_397, Class36.aClass36_399, Class36.aClass36_403,
 						Class36.aClass36_398 };
-				Client.aClass36_2170 = (Class36) Class30.method189(var4, var1);
+				Client.aClass36_2170 = (Class36) Class30.forOrdinal(var4, var1);
 				if (Client.aClass36_2170 == null) {
 					Client.aClass36_2170 = Class36.aClass36_403;
 				}
@@ -315,7 +316,7 @@ public class World {
 			if (var2 == 22) {
 				var4 = new Class36[] { Class36.aClass36_397, Class36.aClass36_399, Class36.aClass36_403,
 						Class36.aClass36_398 };
-				Client.aClass36_2199 = (Class36) Class30.method189(var4, var1);
+				Client.aClass36_2199 = (Class36) Class30.forOrdinal(var4, var1);
 				if (Client.aClass36_2199 == null) {
 					Client.aClass36_2199 = Class36.aClass36_403;
 				}

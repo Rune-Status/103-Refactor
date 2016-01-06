@@ -66,7 +66,7 @@ public abstract class Character extends Entity {
 		this.anInt1957 = 0;
 	}
 
-	boolean method1017(byte var1) {
+	boolean hasConfig() {
 		return false;
 	}
 

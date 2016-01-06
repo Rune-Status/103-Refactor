@@ -142,7 +142,7 @@ public final class Node_Sub6 extends Node {
 			}
 		}
 
-		Class66.setCacheDirectory(Class75.cacheLocation);
+		Timer.setCacheDirectory(Class75.cacheLocation);
 
 		try {
 			File var13 = new File(BitBuf.aString1729, "random.dat");

@@ -20,10 +20,10 @@ public final class Class82 {
 		IdentKitType.method668(var3 - var2, var4 - var2, var2 + var2 + var5, var2 + var2 + var6);
 		if (var1) {
 			try {
-				Graphics var7 = LandscapeTile.aCanvas1417.getGraphics();
-				IndexTable.aClass20_570.method144(var7, 0, 0, -819332484);
+				Graphics var7 = LandscapeTile.gameCanvas.getGraphics();
+				IndexTable.imageProducer.drawImage(var7, 0, 0);
 			} catch (Exception var12) {
-				LandscapeTile.aCanvas1417.repaint();
+				LandscapeTile.gameCanvas.repaint();
 			}
 		} else {
 			int var13 = var3;

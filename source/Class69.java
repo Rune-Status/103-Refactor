@@ -113,7 +113,7 @@ public class Class69 {
 							int var8 = 4;
 							boolean var10 = true;
 							if (var0 instanceof Npc) {
-								var10 = ((Npc) var0).definition.aBool1590;
+								var10 = ((Npc) var0).type.aBool1590;
 							}
 
 							if (var10) {
@@ -235,14 +235,14 @@ public class Class69 {
 						&& var0.anInt1933 * -1418757809 > var11.anIntArray1481[-1199565973 * var0.anInt1914]) {
 					var0.anInt1933 = 1363672495;
 					var0.anInt1914 += 1687585091;
-					Class20.method147(var11, var0.anInt1914 * -1199565973, var0.strictX * 1272643751,
+					AbstractProducer.method147(var11, var0.anInt1914 * -1199565973, var0.strictX * 1272643751,
 							-1801433343 * var0.strictY);
 				}
 
 				if (-1199565973 * var0.anInt1914 >= var11.anIntArray1474.length) {
 					var0.anInt1933 = 0;
 					var0.anInt1914 = 0;
-					Class20.method147(var11, var0.anInt1914 * -1199565973, var0.strictX * 1272643751,
+					AbstractProducer.method147(var11, var0.anInt1914 * -1199565973, var0.strictX * 1272643751,
 							-1801433343 * var0.strictY);
 				}
 			} else {
@@ -264,7 +264,7 @@ public class Class69 {
 							&& 414380835 * var0.anInt1940 > var13.anIntArray1481[var0.anInt1925 * -1255206495]) {
 						var0.anInt1940 = -1629498229;
 						var0.anInt1925 += 1825378913;
-						Class20.method147(var13, var0.anInt1925 * -1255206495, var0.strictX * 1272643751,
+						AbstractProducer.method147(var13, var0.anInt1925 * -1255206495, var0.strictX * 1272643751,
 								-1801433343 * var0.strictY);
 					}
 
@@ -298,7 +298,7 @@ public class Class69 {
 						&& -1968895439 * var0.anInt1935 > var11.anIntArray1481[var0.anInt1934 * 1402685833]) {
 					var0.anInt1935 = -1292628271;
 					var0.anInt1934 += -1392640839;
-					Class20.method147(var11, var0.anInt1934 * 1402685833, var0.strictX * 1272643751,
+					AbstractProducer.method147(var11, var0.anInt1934 * 1402685833, var0.strictX * 1272643751,
 							var0.strictY * -1801433343);
 				}
 
@@ -309,7 +309,7 @@ public class Class69 {
 						var0.animation = 1587034171;
 					} else if (var0.anInt1934 * 1402685833 >= 0
 							&& 1402685833 * var0.anInt1934 < var11.anIntArray1474.length) {
-						Class20.method147(var11, var0.anInt1934 * 1402685833, 1272643751 * var0.strictX,
+						AbstractProducer.method147(var11, var0.anInt1934 * 1402685833, 1272643751 * var0.strictX,
 								var0.strictY * -1801433343);
 					} else {
 						var0.animation = 1587034171;

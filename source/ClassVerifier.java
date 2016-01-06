@@ -104,10 +104,10 @@ public class ClassVerifier extends Node {
 
 		int var13;
 		if (var2 == 57 || var2 == 1007) {
-			var8 = Class20.method146(var1, var0);
+			var8 = AbstractProducer.method146(var1, var0);
 			if (var8 != null) {
 				var13 = var8.itemId * 813479615;
-				Widget var10 = Class20.method146(var1, var0);
+				Widget var10 = AbstractProducer.method146(var1, var0);
 				if (var10 != null) {
 					if (var10.anObjectArray1180 != null) {
 						ScriptEvent var11 = new ScriptEvent();
@@ -199,7 +199,7 @@ public class ClassVerifier extends Node {
 		}
 
 		if (var2 == 25) {
-			var8 = Class20.method146(var1, var0);
+			var8 = AbstractProducer.method146(var1, var0);
 			if (var8 != null) {
 				IdentKitType.method672();
 				Class8.method96(var1, var0, Class63.method314(Class30.getWidgetConfig(var8)), 813479615 * var8.itemId);
@@ -416,7 +416,7 @@ public class ClassVerifier extends Node {
 
 			if (var2 == 30 && Client.aWidget2135 == null) {
 				FriendedPlayer.method410(var1, var0);
-				Client.aWidget2135 = Class20.method146(var1, var0);
+				Client.aWidget2135 = AbstractProducer.method146(var1, var0);
 				Class68.method326(Client.aWidget2135);
 			}
 
@@ -602,7 +602,7 @@ public class ClassVerifier extends Node {
 					Client.anInt2097 = 0;
 					var12 = Client.npcArray[var3];
 					if (var12 != null) {
-						NpcType var15 = var12.definition;
+						NpcType var15 = var12.type;
 						if (var15.transformIds != null) {
 							var15 = var15.transform();
 						}
@@ -757,7 +757,7 @@ public class ClassVerifier extends Node {
 				}
 
 				if (var2 == 58) {
-					var8 = Class20.method146(var1, var0);
+					var8 = AbstractProducer.method146(var1, var0);
 					if (var8 != null) {
 						Client.outBuffer.putHeader(61);
 						Client.outBuffer.putShort(var0);

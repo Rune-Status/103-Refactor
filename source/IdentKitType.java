@@ -200,16 +200,16 @@ public class IdentKitType extends DualNode {
 			}
 
 			if ((flags & 8) != 0) {
-				npc.definition = VarPlayerType.getNpcType(Client.inBuffer.getULEShortA());
-				npc.anInt1915 = npc.definition.anInt1589 * 1447916577;
-				npc.orientation = npc.definition.anInt1599 * 506128019;
-				npc.anInt1918 = -147360311 * npc.definition.anInt1585;
-				npc.anInt1952 = npc.definition.anInt1584 * 404950129;
-				npc.anInt1913 = 1055000573 * npc.definition.anInt1587;
-				npc.anInt1939 = 985741173 * npc.definition.anInt1588;
-				npc.anInt1959 = 1706784279 * npc.definition.anInt1601;
-				npc.anInt1916 = npc.definition.anInt1583 * -1634865443;
-				npc.anInt1917 = 118379263 * npc.definition.anInt1591;
+				npc.type = VarPlayerType.getNpcType(Client.inBuffer.getULEShortA());
+				npc.anInt1915 = npc.type.anInt1589 * 1447916577;
+				npc.orientation = npc.type.anInt1599 * 506128019;
+				npc.anInt1918 = -147360311 * npc.type.anInt1585;
+				npc.anInt1952 = npc.type.anInt1584 * 404950129;
+				npc.anInt1913 = 1055000573 * npc.type.anInt1587;
+				npc.anInt1939 = 985741173 * npc.type.anInt1588;
+				npc.anInt1959 = 1706784279 * npc.type.anInt1601;
+				npc.anInt1916 = npc.type.anInt1583 * -1634865443;
+				npc.anInt1917 = 118379263 * npc.type.anInt1591;
 			}
 
 			if ((flags & 2) != 0) {
@@ -472,7 +472,7 @@ public class IdentKitType extends DualNode {
 
 	static void method672() {
 		if (Client.spellSelected) {
-			Widget var0 = Class20.method146(SequenceType.anInt1488 * -1195336111, 1149825709 * Client.anInt2128);
+			Widget var0 = AbstractProducer.method146(SequenceType.anInt1488 * -1195336111, 1149825709 * Client.anInt2128);
 			if (var0 != null && var0.anObjectArray1178 != null) {
 				ScriptEvent var1 = new ScriptEvent();
 				var1.aWidget1430 = var0;

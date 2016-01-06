@@ -26,13 +26,13 @@ public class Class51 {
 				+ var7 % 10 + ":" + var8 / 10 + var8 % 10 + " GMT";
 	}
 
-	static final void method256(int var0, int var1, int var2, int var3, Sprite var4, DualNode_Sub14 var5) {
+	static final void drawDot(int var0, int var1, int var2, int var3, Sprite var4, DualNode_Sub14 var5) {
 		if (var4 != null) {
 			int var6 = Client.minimapScale * -1718342721 + -1916997753 * Client.minimapRotation & 2047;
 			int var9 = var2 * var2 + var3 * var3;
 			if (var9 <= 6400) {
-				int var8 = DualNode_Sub13_Sub1.SIN_TABLE[var6];
-				int var7 = DualNode_Sub13_Sub1.COS_TABLE[var6];
+				int var8 = TexturedGraphic.SIN_TABLE[var6];
+				int var7 = TexturedGraphic.COS_TABLE[var6];
 				var8 = 256 * var8 / (Client.viewRotation * -806982331 + 256);
 				var7 = var7 * 256 / (-806982331 * Client.viewRotation + 256);
 				int var10 = var8 * var3 + var2 * var7 >> 16;

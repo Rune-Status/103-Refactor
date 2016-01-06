@@ -474,7 +474,7 @@ public abstract class Class52 {
 							var5 -= 2;
 							var33 = Class3.anIntArray95[var5];
 							var16 = Class3.anIntArray95[var5 + 1];
-							var17 = Class20.method146(var33, var16);
+							var17 = AbstractProducer.method146(var33, var16);
 							if (var17 != null && var16 != -1) {
 								Class3.anIntArray95[var5++] = 1;
 								if (var46) {
@@ -1795,28 +1795,27 @@ public abstract class Class52 {
 														if (var31 == 3609) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
-															Class73[] var69 = new Class73[] { Class73.aClass73_612,
-																	Class73.aClass73_607, Class73.aClass73_613,
-																	Class73.aClass73_608, Class73.aClass73_609 };
-															Class73[] var56 = var69;
+															Permission[] var69 = new Permission[] { Permission.PLAYER,
+																	Permission.PLAYER_MOD, Permission.JAGEX_MOD,
+																	Permission.IRONMAN, Permission.HARDCORE_IRONMAN };
+															Permission[] var56 = var69;
 
 															for (var45 = 0; var45 < var56.length; ++var45) {
-																Class73 var70 = var56[var45];
-																if (var70.anInt606 * -2127218069 != -1
+																Permission var70 = var56[var45];
+																if (var70.sprite * -2127218069 != -1
 																		&& var83.startsWith(Class41.method223(
-																				var70.anInt606 * -2127218069,
-																				(short) -2324))) {
+																				var70.sprite * -2127218069))) {
 																	var83 = var83
 																			.substring(
 																					6 + Integer
 																							.toString(-2127218069
-																									* var70.anInt606)
+																									* var70.sprite)
 																					.length());
 																	break;
 																}
 															}
 
-															Class3.anIntArray95[var5++] = Node_Sub5.method533(var83,
+															Class3.anIntArray95[var5++] = Node_Sub5.isFriended(var83,
 																	false) ? 1 : 0;
 															continue;
 														}
@@ -1959,9 +1958,9 @@ public abstract class Class52 {
 														if (var31 == 3623) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
-															if (var83.startsWith(Class41.method223(0, (short) -6393))
+															if (var83.startsWith(Class41.method223(0))
 																	|| var83.startsWith(
-																			Class41.method223(1, (short) -27072))) {
+																			Class41.method223(1))) {
 																var83 = var83.substring(7);
 															}
 
@@ -2548,7 +2547,7 @@ public abstract class Class52 {
 														if (var31 == 4116) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
-															Class3.anIntArray95[var5++] = Class66_Sub2
+															Class3.anIntArray95[var5++] = MilliTimer
 																	.method553((char) var33) ? 1 : 0;
 															continue;
 														}
@@ -3251,7 +3250,7 @@ public abstract class Class52 {
 											var5 -= 2;
 											var16 = Class3.anIntArray95[var5];
 											var35 = Class3.anIntArray95[1 + var5];
-											var15.parent = Class20.method146(var16, var35);
+											var15.parent = AbstractProducer.method146(var16, var35);
 											continue;
 										}
 

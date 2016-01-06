@@ -27,7 +27,7 @@ public final class Connection implements Runnable {
 
 			if (this.aClass61_555 != null) {
 				while (this.aClass61_555.anInt563 == 0) {
-					Class96_Sub1.method500(1L);
+					Class96_Sub1.sleep(1L);
 				}
 
 				if (this.aClass61_555.anInt563 == 1) {
@@ -298,7 +298,7 @@ public final class Connection implements Runnable {
 					}
 
 					if (var2 == 2 && 1768430155 * Client.menuItemCount > 0) {
-						Class66_Sub2.method554(Class74.anInt628 * -2040065729, 2090526775 * Class74.anInt629);
+						MilliTimer.method554(Class74.anInt628 * -2040065729, 2090526775 * Class74.anInt629);
 					}
 				}
 

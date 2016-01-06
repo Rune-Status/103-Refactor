@@ -1,5 +1,5 @@
 
-public class Class92 implements Interface5 {
+public class Class92 implements IOrdinal {
 
 	public static Class92 aClass92_724 = new Class92(1, 0);
 	public static boolean aBool725;
@@ -9,7 +9,7 @@ public class Class92 implements Interface5 {
 	public static Class92 aClass92_729 = new Class92(2, 1);
 	int anInt730;
 
-	public int method11(int var1) {
+	public int ordinal() {
 		return this.anInt730 * -466235689;
 	}
 

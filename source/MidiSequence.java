@@ -1,5 +1,5 @@
 
-public class Class15 {
+public class MidiSequence {
 
 	int anInt233;
 	int[] anIntArray234 = new int[2];
@@ -47,7 +47,7 @@ public class Class15 {
 		return this.anInt242 - this.anInt241 >> 15;
 	}
 
-	Class15() {
+	MidiSequence() {
 		this.anIntArray234[0] = 0;
 		this.anIntArray234[1] = '\uffff';
 		this.anIntArray243[0] = 0;

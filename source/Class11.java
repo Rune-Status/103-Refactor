@@ -70,7 +70,7 @@ public class Class11 {
 		return var1 * 3.1415927F / 11025.0F;
 	}
 
-	final void method104(ByteBuf var1, Class15 var2) {
+	final void method104(ByteBuf var1, MidiSequence var2) {
 		int var3 = var1.getUByte();
 		this.anIntArray215[0] = var3 >> 4;
 		this.anIntArray215[1] = var3 & 15;

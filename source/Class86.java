@@ -305,10 +305,10 @@ public class Class86 {
 			}
 
 			try {
-				Graphics var35 = LandscapeTile.aCanvas1417.getGraphics();
-				IndexTable.aClass20_570.method144(var35, 0, 0, -819332484);
+				Graphics var35 = LandscapeTile.gameCanvas.getGraphics();
+				IndexTable.imageProducer.drawImage(var35, 0, 0);
 			} catch (Exception var25) {
-				LandscapeTile.aCanvas1417.repaint();
+				LandscapeTile.gameCanvas.repaint();
 			}
 
 		} else {
@@ -578,10 +578,10 @@ public class Class86 {
 			}
 
 			try {
-				Graphics var46 = LandscapeTile.aCanvas1417.getGraphics();
-				IndexTable.aClass20_570.method144(var46, 0, 0, -819332484);
+				Graphics var46 = LandscapeTile.gameCanvas.getGraphics();
+				IndexTable.imageProducer.drawImage(var46, 0, 0);
 			} catch (Exception var26) {
-				LandscapeTile.aCanvas1417.repaint();
+				LandscapeTile.gameCanvas.repaint();
 			}
 
 		}

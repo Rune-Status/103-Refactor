@@ -55,11 +55,11 @@ public class DualNode_Sub12 extends DualNode {
 		Class2.method62(1272643751 * var0.strictX, -1801433343 * var0.strictY, var1);
 	}
 
-	static Class66 method778(int var0) {
+	static Timer method778(int var0) {
 		try {
-			return new Class66_Sub1();
+			return new NanoTimer();
 		} catch (Throwable var2) {
-			return new Class66_Sub2();
+			return new MilliTimer();
 		}
 	}
 }

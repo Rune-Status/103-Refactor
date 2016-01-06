@@ -5,7 +5,7 @@ public class Class90 implements Runnable {
 	static Deque aDeque718 = new Deque();
 	public static int anInt719 = 0;
 	public static Object anObject720 = new Object();
-	static Class66 aClass66_721;
+	static Timer aClass66_721;
 	static int anInt722;
 
 	public void run() {
@@ -44,7 +44,7 @@ public class Class90 implements Runnable {
 						anInt719 = 1666340504;
 					}
 				} else {
-					Class96_Sub1.method500(100L);
+					Class96_Sub1.sleep(100L);
 					var14 = anObject720;
 					synchronized (var14) {
 						if (anInt719 * 1638013353 <= 1) {

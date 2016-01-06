@@ -73,7 +73,7 @@ public class Class30 implements Runnable {
 	}
 
 	public void run() {
-		for (; this.aBool336; Class96_Sub1.method500(50L)) {
+		for (; this.aBool336; Class96_Sub1.sleep(50L)) {
 			Object var1 = this.anObject342;
 			synchronized (var1) {
 				if (this.anInt338 * 598524519 < 500) {
@@ -108,7 +108,7 @@ public class Class30 implements Runnable {
 						var3.index = var2 * -882618271;
 					}
 
-					Class73.method331(World.worlds, 0, World.worlds.length - 1, World.anIntArray1118,
+					Permission.method331(World.worlds, 0, World.worlds.length - 1, World.anIntArray1118,
 							World.anIntArray1119);
 					Class76.aClass26_644 = null;
 					return true;
@@ -128,13 +128,11 @@ public class Class30 implements Runnable {
 		return var1 != null ? var1.config : var0.config * -1817319735;
 	}
 
-	public static Interface5 method189(Interface5[] var0, int var1) {
-		Interface5[] var2 = var0;
-
-		for (int var4 = 0; var4 < var2.length; ++var4) {
-			Interface5 var3 = var2[var4];
-			if (var1 == var3.method11(-2125828334)) {
-				return var3;
+	public static IOrdinal forOrdinal(IOrdinal[] ordinals, int ordinal) {
+		for (int index = 0; index < ordinals.length; ++index) {
+			IOrdinal iordinal = ordinals[index];
+			if (ordinal == iordinal.ordinal()) {
+				return iordinal;
 			}
 		}
 

@@ -618,8 +618,8 @@ public class Landscape {
 		int var5 = var1 * anInt26 + var4 * anInt27 >> 16;
 		int var7 = var1 * anInt27 - var4 * anInt26 >> 16;
 		if (var5 >= 50 && var5 <= 3500) {
-			int var6 = anInt54 + var3 * DualNode_Sub13_Sub1.anInt1784 / var5;
-			int var8 = anInt55 + var7 * DualNode_Sub13_Sub1.anInt1784 / var5;
+			int var6 = anInt54 + var3 * TexturedGraphic.anInt1784 / var5;
+			int var8 = anInt55 + var7 * TexturedGraphic.anInt1784 / var5;
 			return var6 >= anInt33 && var6 <= anInt35 && var8 >= anInt57 && var8 <= anInt59;
 		} else {
 			return false;
@@ -640,10 +640,10 @@ public class Landscape {
 		}
 
 		++anInt19;
-		anInt26 = DualNode_Sub13_Sub1.SIN_TABLE[var4];
-		anInt27 = DualNode_Sub13_Sub1.COS_TABLE[var4];
-		anInt28 = DualNode_Sub13_Sub1.SIN_TABLE[var5];
-		anInt29 = DualNode_Sub13_Sub1.COS_TABLE[var5];
+		anInt26 = TexturedGraphic.SIN_TABLE[var4];
+		anInt27 = TexturedGraphic.COS_TABLE[var4];
+		anInt28 = TexturedGraphic.SIN_TABLE[var5];
+		anInt29 = TexturedGraphic.COS_TABLE[var5];
 		aBoolArrayArray13 = aBoolArrayArrayArrayArray52[(var4 - 128) / 32][var5 / 64];
 		anInt15 = var1;
 		anInt7 = var2;
@@ -1409,11 +1409,11 @@ public class Landscape {
 				Class38.anIntArray408[var9] = var18;
 			}
 
-			Class38.anIntArray420[var9] = DualNode_Sub13_Sub1.anInt1785 + var10 * DualNode_Sub13_Sub1.anInt1784 / var18;
-			Class38.anIntArray421[var9] = DualNode_Sub13_Sub1.anInt1786 + var11 * DualNode_Sub13_Sub1.anInt1784 / var18;
+			Class38.anIntArray420[var9] = TexturedGraphic.anInt1785 + var10 * TexturedGraphic.anInt1784 / var18;
+			Class38.anIntArray421[var9] = TexturedGraphic.anInt1786 + var11 * TexturedGraphic.anInt1784 / var18;
 		}
 
-		DualNode_Sub13_Sub1.anInt1781 = 0;
+		TexturedGraphic.anInt1781 = 0;
 		var8 = var1.anIntArray411.length;
 
 		for (var9 = 0; var9 < var8; ++var9) {
@@ -1427,10 +1427,10 @@ public class Landscape {
 			int var14 = Class38.anIntArray421[var17];
 			int var13 = Class38.anIntArray421[var18];
 			if ((var11 - var12) * (var13 - var14) - (var15 - var14) * (var16 - var12) > 0) {
-				DualNode_Sub13_Sub1.aBool1782 = false;
-				if (var11 < 0 || var12 < 0 || var16 < 0 || var11 > DualNode_Sub13_Sub1.anInt1791
-						|| var12 > DualNode_Sub13_Sub1.anInt1791 || var16 > DualNode_Sub13_Sub1.anInt1791) {
-					DualNode_Sub13_Sub1.aBool1782 = true;
+				TexturedGraphic.aBool1782 = false;
+				if (var11 < 0 || var12 < 0 || var16 < 0 || var11 > TexturedGraphic.anInt1791
+						|| var12 > TexturedGraphic.anInt1791 || var16 > TexturedGraphic.anInt1791) {
+					TexturedGraphic.aBool1782 = true;
 				}
 
 				if (aBool30 && this.method42(anInt36, anInt32, var15, var14, var13, var11, var12, var16)) {
@@ -1441,14 +1441,14 @@ public class Landscape {
 				if (var1.anIntArray414 != null && var1.anIntArray414[var9] != -1) {
 					if (!aBool22) {
 						if (var1.aBool415) {
-							DualNode_Sub13_Sub1.method926(var15, var14, var13, var11, var12, var16,
+							TexturedGraphic.method926(var15, var14, var13, var11, var12, var16,
 									var1.anIntArray417[var9], var1.anIntArray409[var9], var1.anIntArray410[var9],
 									Class38.anIntArray412[0], Class38.anIntArray412[1], Class38.anIntArray412[3],
 									Class38.anIntArray405[0], Class38.anIntArray405[1], Class38.anIntArray405[3],
 									Class38.anIntArray408[0], Class38.anIntArray408[1], Class38.anIntArray408[3],
 									var1.anIntArray414[var9]);
 						} else {
-							DualNode_Sub13_Sub1.method926(var15, var14, var13, var11, var12, var16,
+							TexturedGraphic.method926(var15, var14, var13, var11, var12, var16,
 									var1.anIntArray417[var9], var1.anIntArray409[var9], var1.anIntArray410[var9],
 									Class38.anIntArray412[var10], Class38.anIntArray412[var17],
 									Class38.anIntArray412[var18], Class38.anIntArray405[var10],
@@ -1457,14 +1457,14 @@ public class Landscape {
 									Class38.anIntArray408[var18], var1.anIntArray414[var9]);
 						}
 					} else {
-						int var19 = DualNode_Sub13_Sub1.anInterface3_1796.method7(var1.anIntArray414[var9],
+						int var19 = TexturedGraphic.anInterface3_1796.method7(var1.anIntArray414[var9],
 								-1275367594);
-						DualNode_Sub13_Sub1.method922(var15, var14, var13, var11, var12, var16,
+						TexturedGraphic.method922(var15, var14, var13, var11, var12, var16,
 								method22(var19, var1.anIntArray417[var9]), method22(var19, var1.anIntArray409[var9]),
 								method22(var19, var1.anIntArray410[var9]));
 					}
 				} else if (var1.anIntArray417[var9] != 12345678) {
-					DualNode_Sub13_Sub1.method922(var15, var14, var13, var11, var12, var16, var1.anIntArray417[var9],
+					TexturedGraphic.method922(var15, var14, var13, var11, var12, var16, var1.anIntArray417[var9],
 							var1.anIntArray409[var9], var1.anIntArray410[var9]);
 				}
 			}
@@ -1985,10 +1985,10 @@ public class Landscape {
 		int var12;
 		for (var8 = 128; var8 <= 384; var8 += 32) {
 			for (var9 = 0; var9 < 2048; var9 += 64) {
-				anInt26 = DualNode_Sub13_Sub1.SIN_TABLE[var8];
-				anInt27 = DualNode_Sub13_Sub1.COS_TABLE[var8];
-				anInt28 = DualNode_Sub13_Sub1.SIN_TABLE[var9];
-				anInt29 = DualNode_Sub13_Sub1.COS_TABLE[var9];
+				anInt26 = TexturedGraphic.SIN_TABLE[var8];
+				anInt27 = TexturedGraphic.COS_TABLE[var8];
+				anInt28 = TexturedGraphic.SIN_TABLE[var9];
+				anInt29 = TexturedGraphic.COS_TABLE[var9];
 				var10 = (var8 - 128) / 32;
 				var11 = var9 / 64;
 
@@ -2197,21 +2197,21 @@ public class Landscape {
 					var18 = var28 * var4 - var17 * var3 >> 16;
 					var17 = var28 * var3 + var17 * var4 >> 16;
 					if (var17 >= 50) {
-						int var24 = DualNode_Sub13_Sub1.anInt1785 + var10 * DualNode_Sub13_Sub1.anInt1784 / var20;
-						int var21 = DualNode_Sub13_Sub1.anInt1786 + var15 * DualNode_Sub13_Sub1.anInt1784 / var20;
-						int var25 = DualNode_Sub13_Sub1.anInt1785 + var13 * DualNode_Sub13_Sub1.anInt1784 / var27;
-						int var22 = DualNode_Sub13_Sub1.anInt1786 + var11 * DualNode_Sub13_Sub1.anInt1784 / var27;
-						int var29 = DualNode_Sub13_Sub1.anInt1785 + var12 * DualNode_Sub13_Sub1.anInt1784 / var19;
-						int var30 = DualNode_Sub13_Sub1.anInt1786 + var16 * DualNode_Sub13_Sub1.anInt1784 / var19;
-						int var26 = DualNode_Sub13_Sub1.anInt1785 + var9 * DualNode_Sub13_Sub1.anInt1784 / var17;
-						int var23 = DualNode_Sub13_Sub1.anInt1786 + var18 * DualNode_Sub13_Sub1.anInt1784 / var17;
-						DualNode_Sub13_Sub1.anInt1781 = 0;
+						int var24 = TexturedGraphic.anInt1785 + var10 * TexturedGraphic.anInt1784 / var20;
+						int var21 = TexturedGraphic.anInt1786 + var15 * TexturedGraphic.anInt1784 / var20;
+						int var25 = TexturedGraphic.anInt1785 + var13 * TexturedGraphic.anInt1784 / var27;
+						int var22 = TexturedGraphic.anInt1786 + var11 * TexturedGraphic.anInt1784 / var27;
+						int var29 = TexturedGraphic.anInt1785 + var12 * TexturedGraphic.anInt1784 / var19;
+						int var30 = TexturedGraphic.anInt1786 + var16 * TexturedGraphic.anInt1784 / var19;
+						int var26 = TexturedGraphic.anInt1785 + var9 * TexturedGraphic.anInt1784 / var17;
+						int var23 = TexturedGraphic.anInt1786 + var18 * TexturedGraphic.anInt1784 / var17;
+						TexturedGraphic.anInt1781 = 0;
 						int var14;
 						if ((var29 - var26) * (var22 - var23) - (var30 - var23) * (var25 - var26) > 0) {
-							DualNode_Sub13_Sub1.aBool1782 = false;
-							if (var29 < 0 || var26 < 0 || var25 < 0 || var29 > DualNode_Sub13_Sub1.anInt1791
-									|| var26 > DualNode_Sub13_Sub1.anInt1791 || var25 > DualNode_Sub13_Sub1.anInt1791) {
-								DualNode_Sub13_Sub1.aBool1782 = true;
+							TexturedGraphic.aBool1782 = false;
+							if (var29 < 0 || var26 < 0 || var25 < 0 || var29 > TexturedGraphic.anInt1791
+									|| var26 > TexturedGraphic.anInt1791 || var25 > TexturedGraphic.anInt1791) {
+								TexturedGraphic.aBool1782 = true;
 							}
 
 							if (aBool30 && this.method42(anInt36, anInt32, var30, var23, var22, var29, var26, var25)) {
@@ -2221,26 +2221,26 @@ public class Landscape {
 
 							if (var1.anInt346 * 1798787571 == -1) {
 								if (var1.anInt344 * 457420757 != 12345678) {
-									DualNode_Sub13_Sub1.method922(var30, var23, var22, var29, var26, var25,
+									TexturedGraphic.method922(var30, var23, var22, var29, var26, var25,
 											var1.anInt344 * 457420757, var1.anInt345 * 2026532237,
 											var1.anInt353 * 2017637797);
 								}
 							} else if (!aBool22) {
 								if (var1.aBool343) {
-									DualNode_Sub13_Sub1.method926(var30, var23, var22, var29, var26, var25,
+									TexturedGraphic.method926(var30, var23, var22, var29, var26, var25,
 											var1.anInt344 * 457420757, var1.anInt345 * 2026532237,
 											var1.anInt353 * 2017637797, var10, var13, var9, var15, var11, var18, var20,
 											var27, var17, var1.anInt346 * 1798787571);
 								} else {
-									DualNode_Sub13_Sub1.method926(var30, var23, var22, var29, var26, var25,
+									TexturedGraphic.method926(var30, var23, var22, var29, var26, var25,
 											var1.anInt344 * 457420757, var1.anInt345 * 2026532237,
 											var1.anInt353 * 2017637797, var12, var9, var13, var16, var18, var11, var19,
 											var17, var27, var1.anInt346 * 1798787571);
 								}
 							} else {
-								var14 = DualNode_Sub13_Sub1.anInterface3_1796.method7(var1.anInt346 * 1798787571,
+								var14 = TexturedGraphic.anInterface3_1796.method7(var1.anInt346 * 1798787571,
 										2091687573);
-								DualNode_Sub13_Sub1.method922(var30, var23, var22, var29, var26, var25,
+								TexturedGraphic.method922(var30, var23, var22, var29, var26, var25,
 										method22(var14, var1.anInt344 * 457420757),
 										method22(var14, var1.anInt345 * 2026532237),
 										method22(var14, var1.anInt353 * 2017637797));
@@ -2248,10 +2248,10 @@ public class Landscape {
 						}
 
 						if ((var24 - var25) * (var23 - var22) - (var21 - var22) * (var26 - var25) > 0) {
-							DualNode_Sub13_Sub1.aBool1782 = false;
-							if (var24 < 0 || var25 < 0 || var26 < 0 || var24 > DualNode_Sub13_Sub1.anInt1791
-									|| var25 > DualNode_Sub13_Sub1.anInt1791 || var26 > DualNode_Sub13_Sub1.anInt1791) {
-								DualNode_Sub13_Sub1.aBool1782 = true;
+							TexturedGraphic.aBool1782 = false;
+							if (var24 < 0 || var25 < 0 || var26 < 0 || var24 > TexturedGraphic.anInt1791
+									|| var25 > TexturedGraphic.anInt1791 || var26 > TexturedGraphic.anInt1791) {
+								TexturedGraphic.aBool1782 = true;
 							}
 
 							if (aBool30 && this.method42(anInt36, anInt32, var21, var22, var23, var24, var25, var26)) {
@@ -2261,19 +2261,19 @@ public class Landscape {
 
 							if (var1.anInt346 * 1798787571 == -1) {
 								if (var1.anInt347 * -527486671 != 12345678) {
-									DualNode_Sub13_Sub1.method922(var21, var22, var23, var24, var25, var26,
+									TexturedGraphic.method922(var21, var22, var23, var24, var25, var26,
 											var1.anInt347 * -527486671, var1.anInt353 * 2017637797,
 											var1.anInt345 * 2026532237);
 								}
 							} else if (!aBool22) {
-								DualNode_Sub13_Sub1.method926(var21, var22, var23, var24, var25, var26,
+								TexturedGraphic.method926(var21, var22, var23, var24, var25, var26,
 										var1.anInt347 * -527486671, var1.anInt353 * 2017637797,
 										var1.anInt345 * 2026532237, var10, var13, var9, var15, var11, var18, var20,
 										var27, var17, var1.anInt346 * 1798787571);
 							} else {
-								var14 = DualNode_Sub13_Sub1.anInterface3_1796.method7(var1.anInt346 * 1798787571,
+								var14 = TexturedGraphic.anInterface3_1796.method7(var1.anInt346 * 1798787571,
 										1488423271);
-								DualNode_Sub13_Sub1.method922(var21, var22, var23, var24, var25, var26,
+								TexturedGraphic.method922(var21, var22, var23, var24, var25, var26,
 										method22(var14, var1.anInt347 * -527486671),
 										method22(var14, var1.anInt353 * 2017637797),
 										method22(var14, var1.anInt345 * 2026532237));

@@ -21,11 +21,11 @@ public class Node_Sub5 extends Node {
 		return var0 + 2047833492640657665L * Class54.aLong540;
 	}
 
-	static boolean method533(String var0, boolean var1) {
-		if (var0 == null) {
+	static boolean isFriended(String name, boolean var1) {
+		if (name == null) {
 			return false;
 		} else {
-			String var2 = VarPlayerType.method728(var0, Class48_Sub1.aClass124_1297);
+			String var2 = VarPlayerType.method728(name, Class48_Sub1.aClass124_1297);
 
 			for (int var3 = 0; var3 < Client.anInt2184 * -1616775607; ++var3) {
 				if (var2.equalsIgnoreCase(
@@ -50,8 +50,8 @@ public class Node_Sub5 extends Node {
 			if (var1 != null) {
 				VarClientStringType.anInt1505 = Math.max(var1.getSize().width, CacheFileAccessor.anInt836 * 2055757083) * -1411246095;
 				Class21.anInt281 = Math.max(var1.getSize().height, ClanMate.anInt1222 * -1066486805) * 588847321;
-				if (VarClientType.aFrame1538 == var1) {
-					Insets var2 = VarClientType.aFrame1538.getInsets();
+				if (VarClientType.gameFrame == var1) {
+					Insets var2 = VarClientType.gameFrame.getInsets();
 					VarClientStringType.anInt1505 -= -1411246095 * (var2.left + var2.right);
 					Class21.anInt281 -= 588847321 * (var2.top + var2.bottom);
 				}
@@ -75,29 +75,29 @@ public class Node_Sub5 extends Node {
 				Client.anInt1983 = (-1830553327 * VarClientStringType.anInt1505 - Class34.gameWidth * -452716157) / 2
 						* 1792273077;
 				Client.anInt1978 = 0;
-				LandscapeTile.aCanvas1417.setSize(Class34.gameWidth * -452716157, 674167779 * Node_Sub9.gameHeight);
+				LandscapeTile.gameCanvas.setSize(Class34.gameWidth * -452716157, 674167779 * Node_Sub9.gameHeight);
 				int var3 = Class34.gameWidth * -452716157;
 				int var4 = Node_Sub9.gameHeight * 674167779;
-				Canvas var5 = LandscapeTile.aCanvas1417;
+				Canvas var5 = LandscapeTile.gameCanvas;
 
 				Object var7;
 				try {
-					Class20_Sub2 var6 = new Class20_Sub2();
-					var6.method145(var3, var4, var5, (byte) 1);
+					DirectImageProducer var6 = new DirectImageProducer();
+					var6.initializeProducer(var3, var4, var5);
 					var7 = var6;
 				} catch (Throwable var13) {
-					Class20_Sub1 var8 = new Class20_Sub1();
-					var8.method145(var3, var4, var5, (byte) 1);
+					ConsumingImageProducer var8 = new ConsumingImageProducer();
+					var8.initializeProducer(var3, var4, var5);
 					var7 = var8;
 				}
 
-				IndexTable.aClass20_570 = (Class20) var7;
-				if (var1 == VarClientType.aFrame1538) {
-					Insets var16 = VarClientType.aFrame1538.getInsets();
-					LandscapeTile.aCanvas1417.setLocation(76231581 * Client.anInt1983 + var16.left,
+				IndexTable.imageProducer = (AbstractProducer) var7;
+				if (var1 == VarClientType.gameFrame) {
+					Insets var16 = VarClientType.gameFrame.getInsets();
+					LandscapeTile.gameCanvas.setLocation(76231581 * Client.anInt1983 + var16.left,
 							var16.top + -225353991 * Client.anInt1978);
 				} else {
-					LandscapeTile.aCanvas1417.setLocation(76231581 * Client.anInt1983, Client.anInt1978 * -225353991);
+					LandscapeTile.gameCanvas.setLocation(76231581 * Client.anInt1983, Client.anInt1978 * -225353991);
 				}
 
 				int var17 = Class34.gameWidth * -452716157;

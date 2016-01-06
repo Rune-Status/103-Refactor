@@ -2,7 +2,7 @@
 public class Class14 {
 
 	int anInt230;
-	Class10[] aClass10Array231 = new Class10[10];
+	SoundClip[] aClass10Array231 = new SoundClip[10];
 	int anInt232;
 
 	public static Class14 method119(AbstractIndex var0, int var1, int var2) {
@@ -15,7 +15,7 @@ public class Class14 {
 			int var3 = var1.getUByte();
 			if (var3 != 0) {
 				var1.position -= -184175589;
-				this.aClass10Array231[var2] = new Class10();
+				this.aClass10Array231[var2] = new SoundClip();
 				this.aClass10Array231[var2].method99(var1);
 			}
 		}

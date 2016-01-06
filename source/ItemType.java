@@ -109,25 +109,25 @@ public class ItemType extends DualNode {
 	}
 
 	static void method810() {
-		Class78.method343(LandscapeTile.aCanvas1417);
-		Canvas var0 = LandscapeTile.aCanvas1417;
+		Class78.method343(LandscapeTile.gameCanvas);
+		Canvas var0 = LandscapeTile.gameCanvas;
 		var0.removeMouseListener(Class74.aClass74_618);
 		var0.removeMouseMotionListener(Class74.aClass74_618);
 		var0.removeFocusListener(Class74.aClass74_618);
 		Class74.anInt626 = 0;
 		if (Class26.aClass78_313 != null) {
-			Class26.aClass78_313.method342(LandscapeTile.aCanvas1417, (byte) -9);
+			Class26.aClass78_313.method342(LandscapeTile.gameCanvas, (byte) -9);
 		}
 
 		Client.aClient2005.method1027();
-		LandscapeTile.aCanvas1417.setBackground(Color.black);
-		VarBitType.method876(LandscapeTile.aCanvas1417);
-		Canvas var1 = LandscapeTile.aCanvas1417;
+		LandscapeTile.gameCanvas.setBackground(Color.black);
+		VarBitType.method876(LandscapeTile.gameCanvas);
+		Canvas var1 = LandscapeTile.gameCanvas;
 		var1.addMouseListener(Class74.aClass74_618);
 		var1.addMouseMotionListener(Class74.aClass74_618);
 		var1.addFocusListener(Class74.aClass74_618);
 		if (Class26.aClass78_313 != null) {
-			Class26.aClass78_313.method340(LandscapeTile.aCanvas1417, (short) 22759);
+			Class26.aClass78_313.method340(LandscapeTile.gameCanvas, (short) 22759);
 		}
 
 		if (-1074177723 * Client.anInt2226 != -1) {

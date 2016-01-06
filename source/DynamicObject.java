@@ -178,7 +178,7 @@ public class DynamicObject extends Entity {
 
 			Class6.anIntArray124 = new int[256];
 			Class33.anIntArray365 = new int['\u8000'];
-			Class73.anIntArray605 = new int['\u8000'];
+			Permission.anIntArray605 = new int['\u8000'];
 			VarBitType.method877((DualNode_Sub13_Sub2) null);
 			Class122.anIntArray818 = new int['\u8000'];
 			Class4.anIntArray110 = new int['\u8000'];
@@ -211,6 +211,6 @@ public class DynamicObject extends Entity {
 	public static Sprite[] method1023(AbstractIndex var0, String var1, String var2) {
 		int var3 = var0.getFile(var1);
 		int var4 = var0.getChild(var3, var2);
-		return Class20_Sub1.method510(var0, var3, var4);
+		return ConsumingImageProducer.method510(var0, var3, var4);
 	}
 }

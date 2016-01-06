@@ -164,7 +164,7 @@ public final class BoundaryDecorationStub {
 				for (var1 = 0; var1 < 9; ++var1) {
 					var2 = 128 + 32 * var1 + 15;
 					var4 = var2 * 3 + 600;
-					var3 = DualNode_Sub13_Sub1.SIN_TABLE[var2];
+					var3 = TexturedGraphic.SIN_TABLE[var2];
 					var22[var1] = var4 * var3 >> 16;
 				}
 
@@ -231,7 +231,7 @@ public final class BoundaryDecorationStub {
 					Node_Sub4_Sub4 var10 = new Node_Sub4_Sub4();
 					var10.method832(9, 128);
 					DualNode_Sub14.aClass8_1644 = ScriptEvent.method651(IsaacRandom.aClass63_102,
-							LandscapeTile.aCanvas1417, 0, 22050);
+							LandscapeTile.gameCanvas, 0, 22050);
 					DualNode_Sub14.aClass8_1644.method91(var10);
 					var11 = Class59.midiInstrumentsIndex;
 					CacheIndex var15 = Class26.vorbisIndex;
@@ -240,7 +240,7 @@ public final class BoundaryDecorationStub {
 					Class110.vorbis_ref = var15;
 					Class110.sfx_ref = var13;
 					Class110.aNode_Sub4_Sub4_784 = var10;
-					Class30.aClass8_341 = ScriptEvent.method651(IsaacRandom.aClass63_102, LandscapeTile.aCanvas1417, 1,
+					Class30.aClass8_341 = ScriptEvent.method651(IsaacRandom.aClass63_102, LandscapeTile.gameCanvas, 1,
 							2048);
 					FriendedPlayer.aNode_Sub4_Sub1_740 = new Node_Sub4_Sub1();
 					Class30.aClass8_341.method91(FriendedPlayer.aNode_Sub4_Sub1_740);
@@ -250,8 +250,8 @@ public final class BoundaryDecorationStub {
 					Client.bootState = 965259718;
 				} else if (Client.bootState * -773857325 == 50) {
 					var0 = 0;
-					if (Class20_Sub1.p11_full == null) {
-						Class20_Sub1.p11_full = Class24.method163(Node_Sub5.spritesIndex,
+					if (ConsumingImageProducer.p11_full == null) {
+						ConsumingImageProducer.p11_full = Class24.method163(Node_Sub5.spritesIndex,
 								Class2.fontMetricsIndex, "p11_full", "");
 					} else {
 						++var0;
@@ -306,7 +306,7 @@ public final class BoundaryDecorationStub {
 						CacheIndex var9 = Client.configsIndex;
 						var11 = Class3.modelsIndex;
 						boolean var14 = Client.membersWorld;
-						DualNode_Sub13_Sub3_Sub1 var12 = Class20_Sub1.p11_full;
+						DualNode_Sub13_Sub3_Sub1 var12 = ConsumingImageProducer.p11_full;
 						ItemType.item_ref = var9;
 						Class49.aClass87_516 = var11;
 						Class94.aBool735 = var14;
@@ -341,8 +341,8 @@ public final class BoundaryDecorationStub {
 						} else {
 							Class29 var18 = new Class29(Class1.texturesIndex, Node_Sub5.spritesIndex, 20, 0.8D,
 									Client.aBool2010 ? 64 : 128);
-							DualNode_Sub13_Sub1.method925(var18);
-							DualNode_Sub13_Sub1.method913(0.8D);
+							TexturedGraphic.method925(var18);
+							TexturedGraphic.method913(0.8D);
 							Class6.bootMessage = GameStrings.aString976;
 							Class6.anInt122 = -1993799458;
 							Client.bootState = -453408998;
@@ -454,8 +454,8 @@ public final class BoundaryDecorationStub {
 						++var0;
 					}
 
-					if (Parameters.aSpriteArray69 == null) {
-						Parameters.aSpriteArray69 = DynamicObject.method1023(Node_Sub5.spritesIndex, "mapdots",
+					if (Parameters.mapDots == null) {
+						Parameters.mapDots = DynamicObject.method1023(Node_Sub5.spritesIndex, "mapdots",
 								"");
 					} else {
 						++var0;

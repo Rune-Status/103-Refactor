@@ -146,7 +146,7 @@ public class Class58 {
 						(int) (Math.random() * 9.9999999E7D), (int) (Math.random() * 9.9999999E7D) };
 				Client.outBuffer.position = 0;
 				Client.outBuffer.putByte(1);
-				Client.outBuffer.putByte(Class6.aClass92_119.method11(-1757328916));
+				Client.outBuffer.putByte(Class6.aClass92_119.ordinal());
 				Client.outBuffer.putInt(xteaKeys[0]);
 				Client.outBuffer.putInt(xteaKeys[1]);
 				Client.outBuffer.putInt(xteaKeys[2]);

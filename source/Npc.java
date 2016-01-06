@@ -2,7 +2,7 @@
 public final class Npc extends Character {
 
 	static Sprite aSprite1965;
-	NpcType definition;
+	NpcType type;
 	public static byte[][] aByteArrayArray1966;
 	static AbstractIndex aClass87_1967;
 	static Class30 aClass30_1968;
@@ -67,7 +67,7 @@ public final class Npc extends Character {
 	}
 
 	protected final Model method654(byte var1) {
-		if (this.definition == null) {
+		if (this.type == null) {
 			return null;
 		} else {
 			SequenceType var3 = -922607859 * this.animation != -1 && 1301453073 * this.anInt1936 == 0
@@ -75,7 +75,7 @@ public final class Npc extends Character {
 			SequenceType var4 = 57983255 * this.anInt1932 != -1
 					&& (370127001 * this.anInt1959 != this.anInt1932 * 57983255 || var3 == null)
 							? Node_Sub6.getSequenceType(57983255 * this.anInt1932) : null;
-			Model var2 = this.definition.method799(var3, 1402685833 * this.anInt1934, var4,
+			Model var2 = this.type.method799(var3, 1402685833 * this.anInt1934, var4,
 					-1199565973 * this.anInt1914);
 			if (var2 == null) {
 				return null;
@@ -92,7 +92,7 @@ public final class Npc extends Character {
 					}
 				}
 
-				if (this.definition.anInt1589 * -691506967 == 1) {
+				if (this.type.anInt1589 * -691506967 == 1) {
 					var2.allowClickBounds = true;
 				}
 
@@ -101,8 +101,8 @@ public final class Npc extends Character {
 		}
 	}
 
-	final boolean method1017(byte var1) {
-		return this.definition != null;
+	final boolean hasConfig() {
+		return this.type != null;
 	}
 
 	final void method1025(int var1, int var2, boolean var3) {

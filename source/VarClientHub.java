@@ -258,7 +258,7 @@ public class VarClientHub {
 
 		int index;
 		for (index = 0; index < this.varcs.length; ++index) {
-			VarClientType varc = Class66_Sub2.getClientType(index);
+			VarClientType varc = MilliTimer.getClientType(index);
 			this.varcSerials[index] = varc.serialize;
 		}
 

@@ -2,17 +2,17 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
 
-public abstract class Class20 {
+public abstract class AbstractProducer {
 
-	public int anInt270;
-	public int[] anIntArray271;
-	int anInt272;
-	public Image anImage273;
+	public int width;
+	public int[] dataArray;
+	int height;
+	public Image image;
 
-	public abstract void method141(Graphics var1, int var2, int var3, int var4, int var5, short var6);
+	public abstract void drawImageClip(Graphics g, int x, int y, int width, int height);
 
-	public final void method142() {
-		RSGraphics.setRaster(this.anIntArray271, this.anInt270 * 1154763343, this.anInt272 * -1725941875);
+	public final void setRaster() {
+		RSGraphics.setRaster(this.dataArray, this.width * 1154763343, this.height * -1725941875);
 	}
 
 	static final void method143(Player var0, int var1, int var2, int var3) {
@@ -67,7 +67,6 @@ public abstract class Class20 {
 								var4 = 2000;
 							}
 
-							boolean var7 = false;
 							int var8 = Client.anIntArray2108[var6] + var4;
 							FriendedPlayer.addMenuRow(Client.playerActions[var6],
 									Class48_Sub1.method545(16777215) + var5, var8, var1, var2, var3);
@@ -86,9 +85,9 @@ public abstract class Class20 {
 		}
 	}
 
-	public abstract void method144(Graphics var1, int var2, int var3, int var4);
+	public abstract void drawImage(Graphics g, int x, int y);
 
-	public abstract void method145(int var1, int var2, Component var3, byte var4);
+	public abstract void initializeProducer(int width, int height, Component comp);
 
 	public static Widget method146(int var0, int var1) {
 		Widget var2 = Class94.getWidget(var0);

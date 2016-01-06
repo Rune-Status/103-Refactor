@@ -37,10 +37,10 @@ public class Class2 {
 			var0 -= 282154897 * Projectile.cameraX;
 			var4 -= 1447873857 * FriendedPlayer.cameraZ;
 			var1 -= -324676025 * Class72.cameraY;
-			int var8 = DualNode_Sub13_Sub1.SIN_TABLE[1162853107 * Class67.cameraPitch];
-			int var6 = DualNode_Sub13_Sub1.COS_TABLE[1162853107 * Class67.cameraPitch];
-			int var3 = DualNode_Sub13_Sub1.SIN_TABLE[Class65.cameraYaw * -210812059];
-			int var7 = DualNode_Sub13_Sub1.COS_TABLE[Class65.cameraYaw * -210812059];
+			int var8 = TexturedGraphic.SIN_TABLE[1162853107 * Class67.cameraPitch];
+			int var6 = TexturedGraphic.COS_TABLE[1162853107 * Class67.cameraPitch];
+			int var3 = TexturedGraphic.SIN_TABLE[Class65.cameraYaw * -210812059];
+			int var7 = TexturedGraphic.COS_TABLE[Class65.cameraYaw * -210812059];
 			int var5 = var0 * var7 + var1 * var3 >> 16;
 			var1 = var7 * var1 - var0 * var3 >> 16;
 			var0 = var5;

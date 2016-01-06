@@ -87,7 +87,7 @@ public class Class26 {
 				flags += buf.getUByte() << 8;
 			}
 
-			Class66.decodePlayerFlags(buf, playerIndex, player, flags);
+			Timer.decodePlayerFlags(buf, playerIndex, player, flags);
 		}
 
 		if (size != buf.position * 314639891 - position) {

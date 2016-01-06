@@ -193,7 +193,7 @@ public final class GraphicsStub extends Entity {
 	public static void method935(Class63 var0, Object var1) {
 		if (var0.anEventQueue581 != null) {
 			for (int var2 = 0; var2 < 50 && var0.anEventQueue581.peekEvent() != null; ++var2) {
-				Class96_Sub1.method500(1L);
+				Class96_Sub1.sleep(1L);
 			}
 
 			if (var1 != null) {

@@ -21,9 +21,9 @@ public final class Class39 {
 	static Sprite[] aSpriteArray442;
 
 	static final void method215(Character var0, int var1, int var2, int var3, int var4, int var5) {
-		if (var0 != null && var0.method1017((byte) 60)) {
+		if (var0 != null && var0.hasConfig()) {
 			if (var0 instanceof Npc) {
-				NpcType var7 = ((Npc) var0).definition;
+				NpcType var7 = ((Npc) var0).type;
 				if (var7.transformIds != null) {
 					var7 = var7.transform();
 				}
@@ -39,7 +39,7 @@ public final class Class39 {
 			if (var1 < var10) {
 				var8 = 30;
 				Player var9 = (Player) var0;
-				if (var9.aBool1998) {
+				if (var9.hidden) {
 					return;
 				}
 
@@ -70,7 +70,7 @@ public final class Class39 {
 					}
 				}
 			} else {
-				NpcType var12 = ((Npc) var0).definition;
+				NpcType var12 = ((Npc) var0).type;
 				if (var12.transformIds != null) {
 					var12 = var12.transform();
 				}
@@ -98,7 +98,7 @@ public final class Class39 {
 			if (var0.overheadText != null && (var1 >= var10 || !var0.aBool1923
 					&& (Client.anInt2110 * -400704361 == 4 || !var0.aBool1946 && (Client.anInt2110 * -400704361 == 0
 							|| -400704361 * Client.anInt2110 == 3 || -400704361 * Client.anInt2110 == 1
-									&& Node_Sub5.method533(((Player) var0).name, false))))) {
+									&& Node_Sub5.isFriended(((Player) var0).name, false))))) {
 				DualNode_Sub12.method777(var0, var0.anInt1950 * 1688909931);
 				if (Client.anInt2093 * -94432357 > -1
 						&& -1673918139 * Client.anInt2082 < Client.anInt2083 * -475281231) {
@@ -122,7 +122,7 @@ public final class Class39 {
 					if (var1 < var10) {
 						var8 = 30;
 					} else {
-						NpcType var11 = ((Npc) var0).definition;
+						NpcType var11 = ((Npc) var0).type;
 						var8 = -55339821 * var11.anInt1604;
 					}
 
@@ -160,7 +160,7 @@ public final class Class39 {
 
 						Class96_Sub1.aSpriteArray1204[var0.hitsplatDamages[var8]].method946(
 								-94432357 * Client.anInt2093 + var2 - 12, -770682383 * Client.anInt2094 + var3 - 12);
-						Class20_Sub1.p11_full.method982(
+						ConsumingImageProducer.p11_full.method982(
 								Integer.toString(var0.hitsplatTypes[var8]), var2 + -94432357 * Client.anInt2093 - 1,
 								var3 + -770682383 * Client.anInt2094 + 3, 16777215, 0);
 					}
@@ -520,7 +520,7 @@ public final class Class39 {
 
 			var27 = var29;
 		} else {
-			var27 = Class20_Sub1.method512(var0, var1, var2, var3, var4);
+			var27 = ConsumingImageProducer.method512(var0, var1, var2, var3, var4);
 		}
 
 		var12 = var0 - 64;

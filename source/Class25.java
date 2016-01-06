@@ -14,7 +14,7 @@ public class Class25 {
 		Class39.anIntArrayArrayArray433 = (int[][][]) null;
 		Class39.aByteArrayArrayArray430 = (byte[][][]) null;
 		Class39.anIntArrayArray441 = (int[][]) null;
-		Class73.anIntArray614 = null;
+		Permission.anIntArray614 = null;
 		Class51.anIntArray526 = null;
 		Class39.anIntArray432 = null;
 		Class89.anIntArray715 = null;

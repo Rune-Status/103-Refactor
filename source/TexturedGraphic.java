@@ -1,5 +1,5 @@
 
-public class DualNode_Sub13_Sub1 extends RSGraphics {
+public class TexturedGraphic extends RSGraphics {
 
 	static int anInt1777;
 	static boolean aBool1778 = false;
@@ -790,7 +790,7 @@ public class DualNode_Sub13_Sub1 extends RSGraphics {
 		return (var10 << 16) + (var7 << 8) + var11;
 	}
 
-	DualNode_Sub13_Sub1() throws Throwable {
+	TexturedGraphic() throws Throwable {
 		throw new Error();
 	}
 

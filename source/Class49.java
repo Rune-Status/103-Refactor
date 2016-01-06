@@ -35,8 +35,8 @@ public class Class49 {
 		for (int var1 = 0; var1 < 727116725 * Client.anInt2225; ++var1) {
 			Npc var2 = Client.npcArray[Client.npcIndices[var1]];
 			int var4 = 536870912 + (Client.npcIndices[var1] << 14);
-			if (var2 != null && var2.method1017((byte) 60) && var0 == var2.definition.aBool1586
-					&& var2.definition.method803()) {
+			if (var2 != null && var2.hasConfig() && var0 == var2.type.aBool1586
+					&& var2.type.method803()) {
 				int var5 = 1272643751 * var2.strictX >> 7;
 				int var3 = -1801433343 * var2.strictY >> 7;
 				if (var5 >= 0 && var5 < 104 && var3 >= 0 && var3 < 104) {
@@ -49,7 +49,7 @@ public class Class49 {
 						Client.anIntArrayArray2121[var5][var3] = Client.anInt2208 * -1317183381;
 					}
 
-					if (!var2.definition.aBool1602) {
+					if (!var2.type.aBool1602) {
 						var4 -= Integer.MIN_VALUE;
 					}
 

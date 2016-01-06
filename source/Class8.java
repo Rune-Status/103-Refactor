@@ -178,7 +178,7 @@ public class Class8 {
 				aClass19_156.aBool265 = true;
 
 				while (aClass19_156.aBool266) {
-					Class96_Sub1.method500(50L);
+					Class96_Sub1.sleep(50L);
 				}
 
 				aClass19_156 = null;
@@ -360,7 +360,7 @@ public class Class8 {
 	}
 
 	static void method96(int var0, int var1, int var2, int var3) {
-		Widget var4 = Class20.method146(var0, var1);
+		Widget var4 = AbstractProducer.method146(var0, var1);
 		if (var4 != null && var4.anObjectArray1130 != null) {
 			ScriptEvent var5 = new ScriptEvent();
 			var5.aWidget1430 = var4;

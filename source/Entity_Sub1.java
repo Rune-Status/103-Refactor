@@ -29,7 +29,7 @@ public class Entity_Sub1 extends Entity {
 	short[] aShortArray1755;
 	int[] anIntArray1756;
 	int anInt1757;
-	static int[] anIntArray1758 = DualNode_Sub13_Sub1.SIN_TABLE;
+	static int[] anIntArray1758 = TexturedGraphic.SIN_TABLE;
 	int[][] anIntArrayArray1759;
 	int[][] anIntArrayArray1760;
 	Class27[] aClass27Array1761;
@@ -47,7 +47,7 @@ public class Entity_Sub1 extends Entity {
 	static int[] anIntArray1773 = new int[10000];
 	static int anInt1774 = 0;
 	boolean aBool1775 = false;
-	static int[] anIntArray1776 = DualNode_Sub13_Sub1.COS_TABLE;
+	static int[] anIntArray1776 = TexturedGraphic.COS_TABLE;
 
 	public void method886() {
 		for (int var1 = 0; var1 < this.anInt1770; ++var1) {

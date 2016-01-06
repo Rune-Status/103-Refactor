@@ -34,7 +34,7 @@ public class ItemTable extends Node {
 		var2.strictY = ((var2.anIntArray1955[0] << 7) + (var2.method1046() << 6)) * 1421914369;
 		InterfaceNode.floorLevel = (var2.anInt2004 = var7 * -1668953739) * -1941196453;
 		if (GPI.cachedAppearances[var1] != null) {
-			var2.method1041(GPI.cachedAppearances[var1]);
+			var2.decodeApperance(GPI.cachedAppearances[var1]);
 		}
 
 		GPI.localPlayerCount = 0;

@@ -1,25 +1,25 @@
 
-public class Class73 implements Interface5 {
+public class Permission implements IOrdinal {
 
 	static int[] anIntArray605;
-	public int anInt606;
-	public static Class73 aClass73_607 = new Class73(1, 0, true, true, true);
-	public static Class73 aClass73_608 = new Class73(3, 2, false, false, true);
-	public static Class73 aClass73_609 = new Class73(4, 3, false, false, true);
-	int anInt610;
+	public int sprite;
+	public static Permission PLAYER_MOD = new Permission(1, 0, true, true, true);
+	public static Permission IRONMAN = new Permission(3, 2, false, false, true);
+	public static Permission HARDCORE_IRONMAN = new Permission(4, 3, false, false, true);
+	int rights;
 	public boolean aBool611;
-	public static Class73 aClass73_612 = new Class73(0, -1, true, false, true);
-	public static Class73 aClass73_613 = new Class73(2, 1, true, true, false);
+	public static Permission PLAYER = new Permission(0, -1, true, false, true);
+	public static Permission JAGEX_MOD = new Permission(2, 1, true, true, false);
 	static int[] anIntArray614;
 	public boolean aBool615;
 
-	public int method11(int var1) {
-		return this.anInt610 * -463554219;
+	public int ordinal() {
+		return this.rights * -463554219;
 	}
 
-	Class73(int var1, int var2, boolean var3, boolean var4, boolean var5) {
-		this.anInt610 = var1 * -1040483331;
-		this.anInt606 = var2 * -87121341;
+	Permission(int var1, int var2, boolean var3, boolean var4, boolean var5) {
+		this.rights = var1 * -1040483331;
+		this.sprite = var2 * -87121341;
 		this.aBool611 = var4;
 		this.aBool615 = var5;
 	}

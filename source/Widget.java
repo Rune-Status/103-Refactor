@@ -470,23 +470,23 @@ public class Widget extends Node {
 			if (var9 != null) {
 				return var9;
 			} else {
-				Sprite var12 = this.method489(var1);
-				if (var12 == null) {
+				Sprite sprite = this.method489(var1);
+				if (sprite == null) {
 					return null;
 				} else {
-					Sprite var5 = var12.method938();
-					int[] var10 = new int[var5.width];
-					int[] var6 = new int[var5.width];
+					Sprite copy = sprite.copy();
+					int[] var10 = new int[copy.width];
+					int[] var6 = new int[copy.width];
 					int var11 = 0;
 
-					while (var11 < var5.width) {
+					while (var11 < copy.width) {
 						int var13 = 0;
-						int var4 = var5.height;
+						int var4 = copy.height;
 						int var3 = 0;
 
 						while (true) {
-							if (var3 < var5.height) {
-								if (var5.pixels[var3 + var11 * var5.height] != 0) {
+							if (var3 < copy.height) {
+								if (copy.pixels[var3 + var11 * copy.height] != 0) {
 									++var3;
 									continue;
 								}
@@ -494,8 +494,8 @@ public class Widget extends Node {
 								var13 = var3;
 							}
 
-							for (var3 = var5.height - 1; var3 >= var13; --var3) {
-								if (var5.pixels[var3 + var11 * var5.height] == 0) {
+							for (var3 = copy.height - 1; var3 >= var13; --var3) {
+								if (copy.pixels[var3 + var11 * copy.height] == 0) {
 									var4 = 1 + var3;
 									break;
 								}
@@ -508,7 +508,7 @@ public class Widget extends Node {
 						}
 					}
 
-					var9 = new DualNode_Sub14(var5.height, var5.width, var6, var10, var2);
+					var9 = new DualNode_Sub14(copy.height, copy.width, var6, var10, var2);
 					aClass106_1202.put(var9, var7);
 					return var9;
 				}

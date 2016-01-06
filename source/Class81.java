@@ -39,7 +39,7 @@ public class Class81 {
 			Class31.gameConnection = null;
 		}
 
-		Class66.method325();
+		Timer.method325();
 		InterfaceNode.landscape.method15();
 
 		for (int var0 = 0; var0 < 4; ++var0) {

@@ -1,5 +1,5 @@
 
-public class Class77 implements Interface5 {
+public class Class77 implements IOrdinal {
 
 	public String aString646;
 	static Class77 aClass77_647 = new Class77("stellardawn", "Stellar Dawn", 1);
@@ -10,7 +10,7 @@ public class Class77 implements Interface5 {
 	static Class77 aClass77_652 = new Class77("runescape", "RuneScape", 0);
 	int anInt653;
 
-	public int method11(int var1) {
+	public int ordinal() {
 		return 1118824193 * this.anInt653;
 	}
 

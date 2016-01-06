@@ -23,7 +23,7 @@ public final class Player extends Character {
 	boolean aBool1996;
 	int anInt1997;
 	int team;
-	boolean aBool1998;
+	boolean hidden;
 	boolean aBool1999;
 	int anInt2000;
 	Model aModel2001;
@@ -32,7 +32,7 @@ public final class Player extends Character {
 	int anInt2004;
 	int combatLevel;
 
-	final void method1041(ByteBuf var1) {
+	final void decodeApperance(ByteBuf var1) {
 		var1.position = 0;
 		int var2 = var1.getUByte();
 		this.skullIcon = var1.getByte() * -1894915347;
@@ -118,9 +118,9 @@ public final class Player extends Character {
 
 		this.combatLevel = var1.getUByte() * -811997547;
 		this.totalLevel = var1.getUShort() * -1535283903;
-		this.aBool1998 = var1.getUByte() == 1;
+		this.hidden = var1.getUByte() == 1;
 		if (Client.anInt2074 * 1082541889 == 0 && Client.myRights * 1520983779 >= 2) {
-			this.aBool1998 = false;
+			this.hidden = false;
 		}
 
 		if (this.config == null) {
@@ -297,7 +297,7 @@ public final class Player extends Character {
 		this.aByteArray1951[0] = var3;
 	}
 
-	final boolean method1017(byte var1) {
+	final boolean hasConfig() {
 		return this.config != null;
 	}
 
@@ -336,7 +336,7 @@ public final class Player extends Character {
 		this.anInt1990 = 0;
 		this.aBool1996 = false;
 		this.team = 0;
-		this.aBool1998 = false;
+		this.hidden = false;
 		this.aBool1999 = false;
 	}
 

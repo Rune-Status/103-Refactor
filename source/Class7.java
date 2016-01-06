@@ -173,8 +173,8 @@ public class Class7 {
 		int var6 = var3 * var3 + var2 * var2;
 		if (var6 > 4225 && var6 < 90000) {
 			int var10 = Client.minimapRotation * -1916997753 + Client.minimapScale * -1718342721 & 2047;
-			int var12 = DualNode_Sub13_Sub1.SIN_TABLE[var10];
-			int var11 = DualNode_Sub13_Sub1.COS_TABLE[var10];
+			int var12 = TexturedGraphic.SIN_TABLE[var10];
+			int var11 = TexturedGraphic.COS_TABLE[var10];
 			var12 = 256 * var12 / (256 + -806982331 * Client.viewRotation);
 			var11 = 256 * var11 / (256 + Client.viewRotation * -806982331);
 			int var13 = var11 * var2 + var3 * var12 >> 16;
@@ -184,7 +184,7 @@ public class Class7 {
 			int var9 = (int) (Math.cos(var7) * 57.0D);
 			Npc.aSprite1965.method955(4 + var0 + 94 + var15 - 10, 83 + var1 - var9 - 20, 20, 20, 15, 15, var7, 256);
 		} else {
-			Class51.method256(var0, var1, var2, var3, var4, var5);
+			Class51.drawDot(var0, var1, var2, var3, var4, var5);
 		}
 
 	}
@@ -293,7 +293,7 @@ public class Class7 {
 					}
 				}
 
-				var11.definition = VarPlayerType.getNpcType(Client.inBuffer.getBits(14));
+				var11.type = VarPlayerType.getNpcType(Client.inBuffer.getBits(14));
 				var3 = Client.directionAngles[Client.inBuffer.getBits(3)];
 				if (var10) {
 					var11.anInt1953 = (var11.anInt1937 = var3 * 518992781) * -1253637257;
@@ -305,19 +305,19 @@ public class Class7 {
 					Client.pendingNpcFlagsIndices[(Client.pendingNpcFlagsCount += 2121422091) * -143667549 - 1] = var1;
 				}
 
-				var11.anInt1915 = 1447916577 * var11.definition.anInt1589;
-				var11.orientation = 506128019 * var11.definition.anInt1599;
+				var11.anInt1915 = 1447916577 * var11.type.anInt1589;
+				var11.orientation = 506128019 * var11.type.anInt1599;
 				if (var11.orientation * 1361576967 == 0) {
 					var11.anInt1937 = 0;
 				}
 
-				var11.anInt1918 = var11.definition.anInt1585 * -147360311;
-				var11.anInt1952 = var11.definition.anInt1584 * 404950129;
-				var11.anInt1913 = var11.definition.anInt1587 * 1055000573;
-				var11.anInt1939 = 985741173 * var11.definition.anInt1588;
-				var11.anInt1959 = 1706784279 * var11.definition.anInt1601;
-				var11.anInt1916 = var11.definition.anInt1583 * -1634865443;
-				var11.anInt1917 = var11.definition.anInt1591 * 118379263;
+				var11.anInt1918 = var11.type.anInt1585 * -147360311;
+				var11.anInt1952 = var11.type.anInt1584 * 404950129;
+				var11.anInt1913 = var11.type.anInt1587 * 1055000573;
+				var11.anInt1939 = 985741173 * var11.type.anInt1588;
+				var11.anInt1959 = 1706784279 * var11.type.anInt1601;
+				var11.anInt1916 = var11.type.anInt1583 * -1634865443;
+				var11.anInt1917 = var11.type.anInt1591 * 118379263;
 				var11.method1025(var2 + Class68.myPlayer.anIntArray1945[0], var12 + Class68.myPlayer.anIntArray1955[0],
 						var7 == 1);
 			}
@@ -328,7 +328,7 @@ public class Class7 {
 			for (var1 = 0; var1 < Client.anInt2105 * 1457329839; ++var1) {
 				var4 = Client.anIntArray2107[var1];
 				if (Client.npcArray[var4].anInt1949 * -494855465 != -1040073859 * Client.engineCycle) {
-					Client.npcArray[var4].definition = null;
+					Client.npcArray[var4].type = null;
 					Client.npcArray[var4] = null;
 				}
 			}

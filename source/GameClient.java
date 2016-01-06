@@ -68,7 +68,7 @@ public class GameClient extends JFrame implements AppletStub {
 
 	private void startApplet() {
 		try {
-			rsps = false;
+			rsps = true;
 			//dump = /*!rsps*/true;
 			dump = true;
 			clnt = new Client();

@@ -19,7 +19,7 @@ public class Class19 implements Runnable {
 						}
 					}
 
-					Class96_Sub1.method500(10L);
+					Class96_Sub1.sleep(10L);
 					GraphicsStub.method935(this.aClass63_263, (Object) null);
 				}
 			} catch (Exception var6) {

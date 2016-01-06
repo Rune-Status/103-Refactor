@@ -122,9 +122,9 @@ public final class Node_Sub8 extends Node {
 		}
 	}
 
-	static final void method547(Widget var0, int var1, int var2, int var3) {
+	static final void method547(Widget widget, int var1, int var2, int var3) {
 		Class34.method201();
-		DualNode_Sub14 var6 = var0.method491(false);
+		DualNode_Sub14 var6 = widget.method491(false);
 		if (var6 != null) {
 			RSGraphics.setDrawRegion(var1, var2, var1 + var6.anInt1647 * 662480183, var6.anInt1648 * -988977157 + var2);
 			if (Client.anInt2200 * -1797803011 != 2 && Client.anInt2200 * -1797803011 != 5) {
@@ -141,34 +141,34 @@ public final class Node_Sub8 extends Node {
 				for (var10 = 0; var10 < Client.anInt2195 * -706898549; ++var10) {
 					var9 = 2 + Client.anIntArray2196[var10] * 4 - Class68.myPlayer.strictX * 1272643751 / 32;
 					var4 = Client.anIntArray2197[var10] * 4 + 2 - -1801433343 * Class68.myPlayer.strictY / 32;
-					Class51.method256(var1, var2, var9, var4, Client.aSpriteArray2198[var10], var6);
+					Class51.drawDot(var1, var2, var9, var4, Client.aSpriteArray2198[var10], var6);
 				}
 
 				int var5;
 				int var11;
 				for (var10 = 0; var10 < 104; ++var10) {
 					for (var9 = 0; var9 < 104; ++var9) {
-						Deque var17 = Client.groundItemDeque[InterfaceNode.floorLevel * -747958745][var10][var9];
-						if (var17 != null) {
+						Deque deque = Client.groundItemDeque[InterfaceNode.floorLevel * -747958745][var10][var9];
+						if (deque != null) {
 							var5 = 4 * var10 + 2 - Class68.myPlayer.strictX * 1272643751 / 32;
 							var11 = 2 + var9 * 4 - Class68.myPlayer.strictY * -1801433343 / 32;
-							Class51.method256(var1, var2, var5, var11, Parameters.aSpriteArray69[0], var6);
+							Class51.drawDot(var1, var2, var5, var11, Parameters.mapDots[0], var6);
 						}
 					}
 				}
 
 				for (var10 = 0; var10 < Client.anInt2225 * 727116725; ++var10) {
-					Npc var22 = Client.npcArray[Client.npcIndices[var10]];
-					if (var22 != null && var22.method1017((byte) 60)) {
-						NpcType var18 = var22.definition;
-						if (var18 != null && var18.transformIds != null) {
-							var18 = var18.transform();
+					Npc npc = Client.npcArray[Client.npcIndices[var10]];
+					if (npc != null && npc.hasConfig()) {
+						NpcType type = npc.type;
+						if (type != null && type.transformIds != null) {
+							type = type.transform();
 						}
 
-						if (var18 != null && var18.aBool1593 && var18.aBool1602) {
-							var5 = var22.strictX * 1272643751 / 32 - Class68.myPlayer.strictX * 1272643751 / 32;
-							var11 = -1801433343 * var22.strictY / 32 - -1801433343 * Class68.myPlayer.strictY / 32;
-							Class51.method256(var1, var2, var5, var11, Parameters.aSpriteArray69[1], var6);
+						if (type != null && type.aBool1593 && type.aBool1602) {
+							var5 = npc.strictX * 1272643751 / 32 - Class68.myPlayer.strictX * 1272643751 / 32;
+							var11 = -1801433343 * npc.strictY / 32 - -1801433343 * Class68.myPlayer.strictY / 32;
+							Class51.drawDot(var1, var2, var5, var11, Parameters.mapDots[1], var6);
 						}
 					}
 				}
@@ -177,38 +177,38 @@ public final class Node_Sub8 extends Node {
 				int[] var23 = GPI.localPlayerIndices;
 
 				for (var4 = 0; var4 < var10; ++var4) {
-					Player var19 = Client.playerArray[var23[var4]];
-					if (var19 != null && var19.method1017((byte) 60) && !var19.aBool1998 && var19 != Class68.myPlayer) {
-						var11 = 1272643751 * var19.strictX / 32 - 1272643751 * Class68.myPlayer.strictX / 32;
-						int var16 = -1801433343 * var19.strictY / 32 - -1801433343 * Class68.myPlayer.strictY / 32;
-						boolean var15 = false;
-						if (Node_Sub5.method533(var19.name, true)) {
-							var15 = true;
+					Player player = Client.playerArray[var23[var4]];
+					if (player != null && player.hasConfig() && !player.hidden && player != Class68.myPlayer) {
+						var11 = 1272643751 * player.strictX / 32 - 1272643751 * Class68.myPlayer.strictX / 32;
+						int var16 = -1801433343 * player.strictY / 32 - -1801433343 * Class68.myPlayer.strictY / 32;
+						
+						boolean isFriend = false;
+						if (Node_Sub5.isFriended(player.name, true)) {
+							isFriend = true;
 						}
 
-						boolean var12 = false;
-
+						boolean isClanMate = false;
 						for (int var13 = 0; var13 < -1304125287 * Class86.clanChatSize; ++var13) {
-							if (var19.name.equals(InterfaceNode.clanMates[var13].displayName)) {
-								var12 = true;
+							if (player.name.equals(InterfaceNode.clanMates[var13].displayName)) {
+								isClanMate = true;
 								break;
 							}
 						}
 
-						boolean var24 = false;
-						if (-103629189 * Class68.myPlayer.team != 0 && var19.team * -103629189 != 0
-								&& var19.team * -103629189 == -103629189 * Class68.myPlayer.team) {
-							var24 = true;
+						boolean isTeam = false;
+						if (-103629189 * Class68.myPlayer.team != 0 && player.team * -103629189 != 0
+								&& player.team * -103629189 == -103629189 * Class68.myPlayer.team) {
+							isTeam = true;
 						}
 
-						if (var15) {
-							Class51.method256(var1, var2, var11, var16, Parameters.aSpriteArray69[3], var6);
-						} else if (var24) {
-							Class51.method256(var1, var2, var11, var16, Parameters.aSpriteArray69[4], var6);
-						} else if (var12) {
-							Class51.method256(var1, var2, var11, var16, Parameters.aSpriteArray69[5], var6);
+						if (isFriend) {
+							Class51.drawDot(var1, var2, var11, var16, Parameters.mapDots[3], var6);
+						} else if (isTeam) {
+							Class51.drawDot(var1, var2, var11, var16, Parameters.mapDots[4], var6);
+						} else if (isClanMate) {
+							Class51.drawDot(var1, var2, var11, var16, Parameters.mapDots[5], var6);
 						} else {
-							Class51.method256(var1, var2, var11, var16, Parameters.aSpriteArray69[2], var6);
+							Class51.drawDot(var1, var2, var11, var16, Parameters.mapDots[2], var6);
 						}
 					}
 				}
@@ -246,10 +246,10 @@ public final class Node_Sub8 extends Node {
 				if (Client.destinationX * -1712731251 != 0) {
 					var4 = 2 + 1739009588 * Client.destinationX - 1272643751 * Class68.myPlayer.strictX / 32;
 					var5 = 2 + 1530391476 * Client.destinationY - Class68.myPlayer.strictY * -1801433343 / 32;
-					Class51.method256(var1, var2, var4, var5, Class72.aSpriteArray604[0], var6);
+					Class51.drawDot(var1, var2, var4, var5, Class72.aSpriteArray604[0], var6);
 				}
 
-				if (!Class68.myPlayer.aBool1998) {
+				if (!Class68.myPlayer.hidden) {
 					RSGraphics.method793(var6.anInt1647 * 662480183 / 2 + var1 - 1,
 							var2 + -988977157 * var6.anInt1648 / 2 - 1, 3, 3, 16777215);
 				}
@@ -339,10 +339,10 @@ public final class Node_Sub8 extends Node {
 
 			if (var0 != 5 && var0 != 10) {
 				if (var0 == 20) {
-					DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.binaryIndex,
+					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex,
 							Node_Sub5.spritesIndex, true, 846055547 * Client.anInt2113 == 11 ? 4 : 0);
 				} else if (var0 == 11) {
-					DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.binaryIndex,
+					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex,
 							Node_Sub5.spritesIndex, false, 4);
 				} else if (Class6.aBool142) {
 					Class6.aDualNode_Sub13_Sub2_147 = null;
@@ -364,7 +364,7 @@ public final class Node_Sub8 extends Node {
 					Class6.anIntArray125 = null;
 					Class6.anIntArray124 = null;
 					Class33.anIntArray365 = null;
-					Class73.anIntArray605 = null;
+					Permission.anIntArray605 = null;
 					Class122.anIntArray818 = null;
 					Class4.anIntArray110 = null;
 					Class65.method320(2);
@@ -372,7 +372,7 @@ public final class Node_Sub8 extends Node {
 					Class6.aBool142 = false;
 				}
 			} else {
-				DynamicObject.method1022(LandscapeTile.aCanvas1417, Class40.binaryIndex,
+				DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex,
 						Node_Sub5.spritesIndex, true, 0);
 			}
 
@@ -410,10 +410,10 @@ public final class Node_Sub8 extends Node {
 				}
 
 				String var7 = "";
-				if (Class20_Sub1.aClass61_1215 != null) {
-					var7 = Class63.method315(Class20_Sub1.aClass61_1215.anInt564);
-					if (Class20_Sub1.aClass61_1215.anObject566 != null) {
-						var7 = (String) Class20_Sub1.aClass61_1215.anObject566;
+				if (ConsumingImageProducer.aClass61_1215 != null) {
+					var7 = Class63.method315(ConsumingImageProducer.aClass61_1215.anInt564);
+					if (ConsumingImageProducer.aClass61_1215.anObject566 != null) {
+						var7 = (String) ConsumingImageProducer.aClass61_1215.anObject566;
 					}
 				}
 

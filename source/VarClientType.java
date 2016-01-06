@@ -6,7 +6,7 @@ public class VarClientType extends DualNode {
 	public boolean serialize = false;
 	static AbstractIndex varclient_ref;
 	static CacheIndex sfxIndex;
-	protected static Frame aFrame1538;
+	protected static Frame gameFrame;
 
 	void decode(ByteBuf var1) {
 		while (true) {

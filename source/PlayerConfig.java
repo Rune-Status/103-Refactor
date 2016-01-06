@@ -19,7 +19,7 @@ public class PlayerConfig {
 
 			for (int var6 = 0; var6 < 7; ++var6) {
 				for (int var7 = 0; var7 < IdentKitType.anInt1457 * 906908197; ++var7) {
-					IdentKitType var5 = Class20_Sub1.getIdentKitType(var7);
+					IdentKitType var5 = ConsumingImageProducer.getIdentKitType(var7);
 					if (var5 != null && !var5.aBool1466 && (var3 ? 7 : 0) + var6 == 746079793 * var5.anInt1459) {
 						var1[anIntArray534[var6]] = 256 + var7;
 						break;
@@ -77,7 +77,7 @@ public class PlayerConfig {
 						}
 					}
 
-					var3 = Class20_Sub1.getIdentKitType(var4);
+					var3 = ConsumingImageProducer.getIdentKitType(var4);
 				} while (var3 == null || var3.aBool1466 || (this.female ? 7 : 0) + var1 != var3.anInt1459 * 746079793);
 
 				this.appearance[anIntArray534[var1]] = 256 + var4;
@@ -181,7 +181,7 @@ public class PlayerConfig {
 				int var11;
 				for (int var13 = 0; var13 < 12; ++var13) {
 					var11 = var5[var13];
-					if (var11 >= 256 && var11 < 512 && !Class20_Sub1.getIdentKitType(var11 - 256).method662()) {
+					if (var11 >= 256 && var11 < 512 && !ConsumingImageProducer.getIdentKitType(var11 - 256).method662()) {
 						var12 = true;
 					}
 
@@ -209,7 +209,7 @@ public class PlayerConfig {
 						var10 = var5[var7];
 						Entity_Sub1 var14;
 						if (var10 >= 256 && var10 < 512) {
-							var14 = Class20_Sub1.getIdentKitType(var10 - 256).method660();
+							var14 = ConsumingImageProducer.getIdentKitType(var10 - 256).method660();
 							if (var14 != null) {
 								var18[var11++] = var14;
 							}
@@ -276,7 +276,7 @@ public class PlayerConfig {
 			int var3;
 			for (int var1 = 0; var1 < 12; ++var1) {
 				var3 = this.appearance[var1];
-				if (var3 >= 256 && var3 < 512 && !Class20_Sub1.getIdentKitType(var3 - 256).method669()) {
+				if (var3 >= 256 && var3 < 512 && !ConsumingImageProducer.getIdentKitType(var3 - 256).method669()) {
 					var4 = true;
 				}
 
@@ -296,7 +296,7 @@ public class PlayerConfig {
 					var2 = this.appearance[var5];
 					Entity_Sub1 var6;
 					if (var2 >= 256 && var2 < 512) {
-						var6 = Class20_Sub1.getIdentKitType(var2 - 256).method663();
+						var6 = ConsumingImageProducer.getIdentKitType(var2 - 256).method663();
 						if (var6 != null) {
 							var7[var3++] = var6;
 						}

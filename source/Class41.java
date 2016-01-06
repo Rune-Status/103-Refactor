@@ -10,7 +10,7 @@ public final class Class41 {
 
 	static int anInt446;
 
-	static String method223(int var0, short var1) {
+	static String method223(int var0) {
 		return "<img=" + var0 + ">";
 	}
 

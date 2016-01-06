@@ -17,7 +17,7 @@ public class FriendedPlayer {
 			int var1 = Client.npcIndices[var0];
 			Npc var2 = Client.npcArray[var1];
 			if (var2 != null) {
-				Class69.method329(var2, -691506967 * var2.definition.anInt1589);
+				Class69.method329(var2, -691506967 * var2.type.anInt1589);
 			}
 		}
 

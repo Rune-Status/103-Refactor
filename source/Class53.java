@@ -21,7 +21,7 @@ public class Class53 {
 	static final void method272(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8) {
 		RSGraphics.setDrawRegion(var2, var3, var4, var5);
-		DualNode_Sub13_Sub1.method909();
+		TexturedGraphic.method909();
 
 		for (int var14 = 0; var14 < var0.length; ++var14) {
 			Widget var15 = var0[var14];
@@ -207,7 +207,7 @@ public class Class53 {
 								var13 = 2112468213 * Client.screenHeight;
 								var31 = -336695531 * Client.screenWidth;
 								RSGraphics.setDrawRegion(var9, var16, var9 + var13, var31 + var16);
-								DualNode_Sub13_Sub1.method909();
+								TexturedGraphic.method909();
 								int var20;
 								if (!Client.aBool2046) {
 									var30 = -1992036739 * Client.anInt2051;
@@ -234,16 +234,16 @@ public class Class53 {
 									var36 = var26;
 									int var33;
 									if (var27 != 0) {
-										var35 = DualNode_Sub13_Sub1.SIN_TABLE[var27];
-										var33 = DualNode_Sub13_Sub1.COS_TABLE[var27];
+										var35 = TexturedGraphic.SIN_TABLE[var27];
+										var33 = TexturedGraphic.COS_TABLE[var27];
 										var20 = var33 * var34 - var35 * var26 >> 16;
 										var36 = var33 * var26 + var35 * var34 >> 16;
 										var34 = var20;
 									}
 
 									if (var37 != 0) {
-										var35 = DualNode_Sub13_Sub1.SIN_TABLE[var37];
-										var33 = DualNode_Sub13_Sub1.COS_TABLE[var37];
+										var35 = TexturedGraphic.SIN_TABLE[var37];
+										var33 = TexturedGraphic.COS_TABLE[var37];
 										var20 = var33 * var39 + var35 * var36 >> 16;
 										var36 = var33 * var36 - var39 * var35 >> 16;
 										var39 = var20;
@@ -325,12 +325,12 @@ public class Class53 {
 								Class34.method201();
 								RSGraphics.method793(var9, var16, var13, var31, 0);
 								Class34.method201();
-								var39 = DualNode_Sub13_Sub1.anInt1784;
-								DualNode_Sub13_Sub1.anInt1784 = -478819715 * Client.screenZoom;
+								var39 = TexturedGraphic.anInt1784;
+								TexturedGraphic.anInt1784 = -478819715 * Client.screenZoom;
 								InterfaceNode.landscape.method39(Projectile.cameraX * 282154897,
 										1447873857 * FriendedPlayer.cameraZ, -324676025 * Class72.cameraY,
 										Class67.cameraPitch * 1162853107, Class65.cameraYaw * -210812059, var30);
-								DualNode_Sub13_Sub1.anInt1784 = var39;
+								TexturedGraphic.anInt1784 = var39;
 								Class34.method201();
 								InterfaceNode.landscape.method50();
 								Client.anInt2082 = 0;
@@ -518,7 +518,7 @@ public class Class53 {
 									}
 								}
 
-								((Class29) DualNode_Sub13_Sub1.anInterface3_1796)
+								((Class29) TexturedGraphic.anInterface3_1796)
 										.method186(-1163930299 * Client.anInt2066);
 								Class5.method71(var9, var16, var13, var31);
 								Projectile.cameraX = 933251441 * var38;
@@ -601,7 +601,7 @@ public class Class53 {
 							}
 
 							RSGraphics.setDrawRegion(var2, var3, var4, var5);
-							DualNode_Sub13_Sub1.method909();
+							TexturedGraphic.method909();
 						}
 
 						if (Client.resizable || Client.aBoolArray2137[var18] || 1685649351 * Client.anInt2177 > 1) {
@@ -963,13 +963,13 @@ public class Class53 {
 												}
 											}
 
-											DualNode_Sub13_Sub1.method911(var15.width * 1645211541 / 2 + var10,
+											TexturedGraphic.method911(var15.width * 1645211541 / 2 + var10,
 													1227800423 * var15.height / 2 + var11);
 											var17 = var15.modelZoom * -1472457387
-													* DualNode_Sub13_Sub1.SIN_TABLE[175924351
+													* TexturedGraphic.SIN_TABLE[175924351
 															* var15.rotationX] >> 16;
 											var30 = -1472457387 * var15.modelZoom
-													* DualNode_Sub13_Sub1.COS_TABLE[175924351
+													* TexturedGraphic.COS_TABLE[175924351
 															* var15.rotationX] >> 16;
 											if (var52 != null) {
 												if (!var15.interactable) {
@@ -996,7 +996,7 @@ public class Class53 {
 												}
 											}
 
-											DualNode_Sub13_Sub1.method910();
+											TexturedGraphic.method910();
 										} else {
 											if (var15.type * -1305917269 == 7) {
 												var48 = var15.method490();
@@ -1159,11 +1159,11 @@ public class Class53 {
 														var34 = var11 - var40;
 														var36 = var15.height * 1227800423 + var11 - var40;
 														var35 = var24 + var11 + var15.height * 1227800423;
-														DualNode_Sub13_Sub1.method916(var25, var26, var27);
-														DualNode_Sub13_Sub1.method917(var39, var34, var36, var25, var26,
+														TexturedGraphic.method916(var25, var26, var27);
+														TexturedGraphic.method917(var39, var34, var36, var25, var26,
 																var27, 1384750979 * var15.textColor);
-														DualNode_Sub13_Sub1.method916(var25, var27, var37);
-														DualNode_Sub13_Sub1.method917(var39, var36, var35, var25, var27,
+														TexturedGraphic.method916(var25, var27, var37);
+														TexturedGraphic.method917(var39, var36, var35, var25, var27,
 																var37, var15.textColor * 1384750979);
 													}
 												}

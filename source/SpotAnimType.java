@@ -156,8 +156,8 @@ public class SpotAnimType extends DualNode {
 				Container var4 = Client.aClient2005.method1033();
 				int var5 = 0;
 				int var6 = 0;
-				if (var4 == VarClientType.aFrame1538) {
-					Insets var7 = VarClientType.aFrame1538.getInsets();
+				if (var4 == VarClientType.gameFrame) {
+					Insets var7 = VarClientType.gameFrame.getInsets();
 					var5 = var7.left;
 					var6 = var7.top;
 				}

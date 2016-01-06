@@ -173,7 +173,7 @@ public class Node_Sub7 extends Node {
 			}
 
 			for (var10 = 0; var10 < var9.length; ++var10) {
-				var9[var10] = DualNode_Sub13_Sub1.method915(var9[var10], var1);
+				var9[var10] = TexturedGraphic.method915(var9[var10], var1);
 			}
 
 			if (var7 == 0) {

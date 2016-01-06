@@ -1,8 +1,8 @@
 
-public class Class66_Sub2 extends Class66 {
+public class MilliTimer extends Timer {
 
 	int anInt1317 = -1470624512;
-	long aLong1318 = Node_Sub5.currentTimeMs() * -7851503190461573869L;
+	long milliTime = Node_Sub5.currentTimeMs() * -7851503190461573869L;
 	long[] aLongArray1319 = new long[10];
 	int anInt1320 = 0;
 	int anInt1321;
@@ -20,13 +20,13 @@ public class Class66_Sub2 extends Class66 {
 		int var5 = this.anInt1322 * -546326565;
 		this.anInt1317 = 155660092;
 		this.anInt1322 = -1663734701;
-		this.aLong1318 = Node_Sub5.currentTimeMs() * -7851503190461573869L;
+		this.milliTime = Node_Sub5.currentTimeMs() * -7851503190461573869L;
 		if (this.aLongArray1319[1407235087 * this.anInt1321] == 0L) {
 			this.anInt1317 = var4 * -1817683955;
 			this.anInt1322 = -1663734701 * var5;
-		} else if (40353379429776667L * this.aLong1318 > this.aLongArray1319[1407235087 * this.anInt1321]) {
+		} else if (40353379429776667L * this.milliTime > this.aLongArray1319[1407235087 * this.anInt1321]) {
 			this.anInt1317 = (int) ((long) (2560 * var1)
-					/ (this.aLong1318 * 40353379429776667L - this.aLongArray1319[1407235087 * this.anInt1321]))
+					/ (this.milliTime * 40353379429776667L - this.aLongArray1319[1407235087 * this.anInt1321]))
 					* -1817683955;
 		}
 
@@ -37,14 +37,14 @@ public class Class66_Sub2 extends Class66 {
 		if (-897075515 * this.anInt1317 > 256) {
 			this.anInt1317 = -1470624512;
 			this.anInt1322 = -1663734701 * (int) ((long) var1
-					- (40353379429776667L * this.aLong1318 - this.aLongArray1319[this.anInt1321 * 1407235087]) / 10L);
+					- (40353379429776667L * this.milliTime - this.aLongArray1319[this.anInt1321 * 1407235087]) / 10L);
 		}
 
 		if (-546326565 * this.anInt1322 > var1) {
 			this.anInt1322 = var1 * -1663734701;
 		}
 
-		this.aLongArray1319[1407235087 * this.anInt1321] = this.aLong1318 * 40353379429776667L;
+		this.aLongArray1319[1407235087 * this.anInt1321] = this.milliTime * 40353379429776667L;
 		this.anInt1321 = (1407235087 * this.anInt1321 + 1) % 10 * 1917565679;
 		int var6;
 		if (-546326565 * this.anInt1322 > 1) {
@@ -59,7 +59,7 @@ public class Class66_Sub2 extends Class66 {
 			this.anInt1322 = var2 * -1663734701;
 		}
 
-		Class96_Sub1.method500((long) (this.anInt1322 * -546326565));
+		Class96_Sub1.sleep((long) (this.anInt1322 * -546326565));
 
 		for (var6 = 0; this.anInt1320 * -1165867281 < 256; this.anInt1320 += -1117782645 * this.anInt1317) {
 			++var6;
@@ -69,9 +69,9 @@ public class Class66_Sub2 extends Class66 {
 		return var6;
 	}
 
-	Class66_Sub2() {
+	MilliTimer() {
 		for (int var1 = 0; var1 < 10; ++var1) {
-			this.aLongArray1319[var1] = this.aLong1318 * 40353379429776667L;
+			this.aLongArray1319[var1] = this.milliTime * 40353379429776667L;
 		}
 
 	}

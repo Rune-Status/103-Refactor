@@ -216,7 +216,7 @@ public abstract class AbstractIndex {
 		return this.anObjectArrayArray705[var1].length;
 	}
 
-	public void method381() {
+	public void reset() {
 		for (int var1 = 0; var1 < this.anObjectArrayArray705.length; ++var1) {
 			if (this.anObjectArrayArray705[var1] != null) {
 				for (int var2 = 0; var2 < this.anObjectArrayArray705[var1].length; ++var2) {

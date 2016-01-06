@@ -55,14 +55,14 @@ public class VarBitType extends DualNode {
 			for (var2 = 1; var2 < var1 - 1; ++var2) {
 				for (var3 = 1; var3 < 127; ++var3) {
 					var4 = (var2 << 7) + var3;
-					Class73.anIntArray605[var4] = (Class33.anIntArray365[var4 + 128] + Class33.anIntArray365[var4 - 128]
+					Permission.anIntArray605[var4] = (Class33.anIntArray365[var4 + 128] + Class33.anIntArray365[var4 - 128]
 							+ Class33.anIntArray365[1 + var4] + Class33.anIntArray365[var4 - 1]) / 4;
 				}
 			}
 
 			int[] var8 = Class33.anIntArray365;
-			Class33.anIntArray365 = Class73.anIntArray605;
-			Class73.anIntArray605 = var8;
+			Class33.anIntArray365 = Permission.anIntArray605;
+			Permission.anIntArray605 = var8;
 		}
 
 		if (var0 != null) {

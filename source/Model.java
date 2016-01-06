@@ -57,11 +57,11 @@ public class Model extends Entity {
 	public static int anInt1905 = 0;
 	int[] anIntArray1906;
 	public static int onCursorCount = 0;
-	static int[] anIntArray1907 = DualNode_Sub13_Sub1.anIntArray1793;
-	static int[] anIntArray1908 = DualNode_Sub13_Sub1.SIN_TABLE;
-	static int[] anIntArray1909 = DualNode_Sub13_Sub1.COS_TABLE;
+	static int[] anIntArray1907 = TexturedGraphic.anIntArray1793;
+	static int[] anIntArray1908 = TexturedGraphic.SIN_TABLE;
+	static int[] anIntArray1909 = TexturedGraphic.COS_TABLE;
 	public static int anInt1910 = 0;
-	static int[] anIntArray1911 = DualNode_Sub13_Sub1.anIntArray1795;
+	static int[] anIntArray1911 = TexturedGraphic.anIntArray1795;
 	int anInt1912;
 
 	public Model method994(int[][] var1, int var2, int var3, int var4, boolean var5, int var6) {
@@ -704,17 +704,17 @@ public class Model extends Entity {
 		int var13 = var11 + var12;
 		if (var13 > 50 && var11 < 3500) {
 			int var14 = var8 * var4 + var6 * var5 >> 16;
-			int var15 = (var14 - this.XYZMag) * DualNode_Sub13_Sub1.anInt1784;
-			if (var15 / var13 < DualNode_Sub13_Sub1.anInt1777) {
-				int var16 = (var14 + this.XYZMag) * DualNode_Sub13_Sub1.anInt1784;
-				if (var16 / var13 > DualNode_Sub13_Sub1.anInt1789) {
+			int var15 = (var14 - this.XYZMag) * TexturedGraphic.anInt1784;
+			if (var15 / var13 < TexturedGraphic.anInt1777) {
+				int var16 = (var14 + this.XYZMag) * TexturedGraphic.anInt1784;
+				if (var16 / var13 > TexturedGraphic.anInt1789) {
 					int var17 = var7 * var3 - var10 * var2 >> 16;
 					int var18 = this.XYZMag * var2 >> 16;
-					int var19 = (var17 + var18) * DualNode_Sub13_Sub1.anInt1784;
-					if (var19 / var13 > DualNode_Sub13_Sub1.anInt1797) {
+					int var19 = (var17 + var18) * TexturedGraphic.anInt1784;
+					if (var19 / var13 > TexturedGraphic.anInt1797) {
 						int var20 = var18 + (this.modelHeight * 1812947537 * var3 >> 16);
-						int var21 = (var17 - var20) * DualNode_Sub13_Sub1.anInt1784;
-						if (var21 / var13 < DualNode_Sub13_Sub1.anInt1783) {
+						int var21 = (var17 - var20) * TexturedGraphic.anInt1784;
+						if (var21 / var13 < TexturedGraphic.anInt1783) {
 							int var22 = var12 + (this.modelHeight * 1812947537 * var2 >> 16);
 							boolean var23 = false;
 							boolean var24 = false;
@@ -749,8 +749,8 @@ public class Model extends Entity {
 									var21 /= var27;
 								}
 
-								var28 = anInt1905 - DualNode_Sub13_Sub1.anInt1785;
-								var29 = anInt1910 - DualNode_Sub13_Sub1.anInt1786;
+								var28 = anInt1905 - TexturedGraphic.anInt1785;
+								var29 = anInt1910 - TexturedGraphic.anInt1786;
 								if (var28 > var15 && var28 < var16 && var29 > var21 && var29 < var19) {
 									if (this.allowClickBounds) {
 										onCursorUids[onCursorCount++] = var9;
@@ -760,8 +760,8 @@ public class Model extends Entity {
 								}
 							}
 
-							var27 = DualNode_Sub13_Sub1.anInt1785;
-							var28 = DualNode_Sub13_Sub1.anInt1786;
+							var27 = TexturedGraphic.anInt1785;
+							var28 = TexturedGraphic.anInt1786;
 							var29 = 0;
 							int var30 = 0;
 							if (var1 != 0) {
@@ -790,8 +790,8 @@ public class Model extends Entity {
 								var34 = var33 * var2 + var34 * var3 >> 16;
 								anIntArray1891[var31] = var34 - var11;
 								if (var34 >= 50) {
-									anIntArray1889[var31] = var27 + var32 * DualNode_Sub13_Sub1.anInt1784 / var34;
-									anIntArray1890[var31] = var28 + var35 * DualNode_Sub13_Sub1.anInt1784 / var34;
+									anIntArray1889[var31] = var27 + var32 * TexturedGraphic.anInt1784 / var34;
+									anIntArray1890[var31] = var28 + var35 * TexturedGraphic.anInt1784 / var34;
 								} else {
 									anIntArray1889[var31] = -5000;
 									var23 = true;
@@ -825,8 +825,8 @@ public class Model extends Entity {
 	}
 
 	final void method1010(int var1) {
-		int var2 = DualNode_Sub13_Sub1.anInt1785;
-		int var20 = DualNode_Sub13_Sub1.anInt1786;
+		int var2 = TexturedGraphic.anInt1785;
+		int var20 = TexturedGraphic.anInt1786;
 		int var15 = 0;
 		int var12 = this.anIntArray1867[var1];
 		int var19 = this.anIntArray1868[var1];
@@ -835,9 +835,9 @@ public class Model extends Entity {
 		int var18 = anIntArray1893[var19];
 		int var16 = anIntArray1893[var13];
 		if (this.aByteArray1874 == null) {
-			DualNode_Sub13_Sub1.anInt1781 = 0;
+			TexturedGraphic.anInt1781 = 0;
 		} else {
-			DualNode_Sub13_Sub1.anInt1781 = this.aByteArray1874[var1] & 255;
+			TexturedGraphic.anInt1781 = this.aByteArray1874[var1] & 255;
 		}
 
 		int var3;
@@ -855,18 +855,18 @@ public class Model extends Entity {
 			if (var16 >= 50) {
 				var3 = (50 - var17) * anIntArray1911[var16 - var17];
 				anIntArray1899[var15] = var2
-						+ (var6 + ((yViewportBuffer[var13] - var6) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var6 + ((yViewportBuffer[var13] - var6) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				anIntArray1882[var15] = var20
-						+ (var7 + ((anIntArray1892[var13] - var7) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var7 + ((anIntArray1892[var13] - var7) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				xViewportBuffer[var15++] = var8 + ((this.anIntArray1872[var1] - var8) * var3 >> 16);
 			}
 
 			if (var18 >= 50) {
 				var3 = (50 - var17) * anIntArray1911[var18 - var17];
 				anIntArray1899[var15] = var2
-						+ (var6 + ((yViewportBuffer[var19] - var6) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var6 + ((yViewportBuffer[var19] - var6) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				anIntArray1882[var15] = var20
-						+ (var7 + ((anIntArray1892[var19] - var7) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var7 + ((anIntArray1892[var19] - var7) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				xViewportBuffer[var15++] = var8 + ((this.anIntArray1871[var1] - var8) * var3 >> 16);
 			}
 		}
@@ -882,18 +882,18 @@ public class Model extends Entity {
 			if (var17 >= 50) {
 				var3 = (50 - var18) * anIntArray1911[var17 - var18];
 				anIntArray1899[var15] = var2
-						+ (var6 + ((yViewportBuffer[var12] - var6) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var6 + ((yViewportBuffer[var12] - var6) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				anIntArray1882[var15] = var20
-						+ (var7 + ((anIntArray1892[var12] - var7) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var7 + ((anIntArray1892[var12] - var7) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				xViewportBuffer[var15++] = var8 + ((this.anIntArray1870[var1] - var8) * var3 >> 16);
 			}
 
 			if (var16 >= 50) {
 				var3 = (50 - var18) * anIntArray1911[var16 - var18];
 				anIntArray1899[var15] = var2
-						+ (var6 + ((yViewportBuffer[var13] - var6) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var6 + ((yViewportBuffer[var13] - var6) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				anIntArray1882[var15] = var20
-						+ (var7 + ((anIntArray1892[var13] - var7) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var7 + ((anIntArray1892[var13] - var7) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				xViewportBuffer[var15++] = var8 + ((this.anIntArray1872[var1] - var8) * var3 >> 16);
 			}
 		}
@@ -909,18 +909,18 @@ public class Model extends Entity {
 			if (var18 >= 50) {
 				var3 = (50 - var16) * anIntArray1911[var18 - var16];
 				anIntArray1899[var15] = var2
-						+ (var6 + ((yViewportBuffer[var19] - var6) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var6 + ((yViewportBuffer[var19] - var6) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				anIntArray1882[var15] = var20
-						+ (var7 + ((anIntArray1892[var19] - var7) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var7 + ((anIntArray1892[var19] - var7) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				xViewportBuffer[var15++] = var8 + ((this.anIntArray1871[var1] - var8) * var3 >> 16);
 			}
 
 			if (var17 >= 50) {
 				var3 = (50 - var16) * anIntArray1911[var17 - var16];
 				anIntArray1899[var15] = var2
-						+ (var6 + ((yViewportBuffer[var12] - var6) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var6 + ((yViewportBuffer[var12] - var6) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				anIntArray1882[var15] = var20
-						+ (var7 + ((anIntArray1892[var12] - var7) * var3 >> 16)) * DualNode_Sub13_Sub1.anInt1784 / 50;
+						+ (var7 + ((anIntArray1892[var12] - var7) * var3 >> 16)) * TexturedGraphic.anInt1784 / 50;
 				xViewportBuffer[var15++] = var8 + ((this.anIntArray1870[var1] - var8) * var3 >> 16);
 			}
 		}
@@ -931,15 +931,15 @@ public class Model extends Entity {
 		var3 = anIntArray1882[0];
 		int var4 = anIntArray1882[1];
 		int var5 = anIntArray1882[2];
-		DualNode_Sub13_Sub1.aBool1782 = false;
+		TexturedGraphic.aBool1782 = false;
 		int var9;
 		int var10;
 		int var11;
 		int var14;
 		if (var15 == 3) {
-			if (var6 < 0 || var7 < 0 || var8 < 0 || var6 > DualNode_Sub13_Sub1.anInt1791
-					|| var7 > DualNode_Sub13_Sub1.anInt1791 || var8 > DualNode_Sub13_Sub1.anInt1791) {
-				DualNode_Sub13_Sub1.aBool1782 = true;
+			if (var6 < 0 || var7 < 0 || var8 < 0 || var6 > TexturedGraphic.anInt1791
+					|| var7 > TexturedGraphic.anInt1791 || var8 > TexturedGraphic.anInt1791) {
+				TexturedGraphic.aBool1782 = true;
 			}
 
 			if (this.aShortArray1860 != null && this.aShortArray1860[var1] != -1) {
@@ -955,32 +955,32 @@ public class Model extends Entity {
 				}
 
 				if (this.anIntArray1872[var1] == -1) {
-					DualNode_Sub13_Sub1.method912(var3, var4, var5, var6, var7, var8, this.anIntArray1870[var1],
+					TexturedGraphic.method912(var3, var4, var5, var6, var7, var8, this.anIntArray1870[var1],
 							this.anIntArray1870[var1], this.anIntArray1870[var1], yViewportBuffer[var9],
 							yViewportBuffer[var10], yViewportBuffer[var11], anIntArray1892[var9], anIntArray1892[var10],
 							anIntArray1892[var11], anIntArray1893[var9], anIntArray1893[var10], anIntArray1893[var11],
 							this.aShortArray1860[var1]);
 				} else {
-					DualNode_Sub13_Sub1.method912(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
+					TexturedGraphic.method912(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
 							xViewportBuffer[1], xViewportBuffer[2], yViewportBuffer[var9], yViewportBuffer[var10],
 							yViewportBuffer[var11], anIntArray1892[var9], anIntArray1892[var10], anIntArray1892[var11],
 							anIntArray1893[var9], anIntArray1893[var10], anIntArray1893[var11],
 							this.aShortArray1860[var1]);
 				}
 			} else if (this.anIntArray1872[var1] == -1) {
-				DualNode_Sub13_Sub1.method917(var3, var4, var5, var6, var7, var8,
+				TexturedGraphic.method917(var3, var4, var5, var6, var7, var8,
 						anIntArray1907[this.anIntArray1870[var1]]);
 			} else {
-				DualNode_Sub13_Sub1.method922(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
+				TexturedGraphic.method922(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
 						xViewportBuffer[1], xViewportBuffer[2]);
 			}
 		}
 
 		if (var15 == 4) {
-			if (var6 < 0 || var7 < 0 || var8 < 0 || var6 > DualNode_Sub13_Sub1.anInt1791
-					|| var7 > DualNode_Sub13_Sub1.anInt1791 || var8 > DualNode_Sub13_Sub1.anInt1791
-					|| anIntArray1899[3] < 0 || anIntArray1899[3] > DualNode_Sub13_Sub1.anInt1791) {
-				DualNode_Sub13_Sub1.aBool1782 = true;
+			if (var6 < 0 || var7 < 0 || var8 < 0 || var6 > TexturedGraphic.anInt1791
+					|| var7 > TexturedGraphic.anInt1791 || var8 > TexturedGraphic.anInt1791
+					|| anIntArray1899[3] < 0 || anIntArray1899[3] > TexturedGraphic.anInt1791) {
+				TexturedGraphic.aBool1782 = true;
 			}
 
 			if (this.aShortArray1860 != null && this.aShortArray1860[var1] != -1) {
@@ -997,22 +997,22 @@ public class Model extends Entity {
 
 				short var21 = this.aShortArray1860[var1];
 				if (this.anIntArray1872[var1] == -1) {
-					DualNode_Sub13_Sub1.method912(var3, var4, var5, var6, var7, var8, this.anIntArray1870[var1],
+					TexturedGraphic.method912(var3, var4, var5, var6, var7, var8, this.anIntArray1870[var1],
 							this.anIntArray1870[var1], this.anIntArray1870[var1], yViewportBuffer[var9],
 							yViewportBuffer[var10], yViewportBuffer[var11], anIntArray1892[var9], anIntArray1892[var10],
 							anIntArray1892[var11], anIntArray1893[var9], anIntArray1893[var10], anIntArray1893[var11],
 							var21);
-					DualNode_Sub13_Sub1.method912(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3],
+					TexturedGraphic.method912(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3],
 							this.anIntArray1870[var1], this.anIntArray1870[var1], this.anIntArray1870[var1],
 							yViewportBuffer[var9], yViewportBuffer[var10], yViewportBuffer[var11], anIntArray1892[var9],
 							anIntArray1892[var10], anIntArray1892[var11], anIntArray1893[var9], anIntArray1893[var10],
 							anIntArray1893[var11], var21);
 				} else {
-					DualNode_Sub13_Sub1.method912(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
+					TexturedGraphic.method912(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
 							xViewportBuffer[1], xViewportBuffer[2], yViewportBuffer[var9], yViewportBuffer[var10],
 							yViewportBuffer[var11], anIntArray1892[var9], anIntArray1892[var10], anIntArray1892[var11],
 							anIntArray1893[var9], anIntArray1893[var10], anIntArray1893[var11], var21);
-					DualNode_Sub13_Sub1.method912(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3],
+					TexturedGraphic.method912(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3],
 							xViewportBuffer[0], xViewportBuffer[2], xViewportBuffer[3], yViewportBuffer[var9],
 							yViewportBuffer[var10], yViewportBuffer[var11], anIntArray1892[var9], anIntArray1892[var10],
 							anIntArray1892[var11], anIntArray1893[var9], anIntArray1893[var10], anIntArray1893[var11],
@@ -1020,12 +1020,12 @@ public class Model extends Entity {
 				}
 			} else if (this.anIntArray1872[var1] == -1) {
 				var9 = anIntArray1907[this.anIntArray1870[var1]];
-				DualNode_Sub13_Sub1.method917(var3, var4, var5, var6, var7, var8, var9);
-				DualNode_Sub13_Sub1.method917(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3], var9);
+				TexturedGraphic.method917(var3, var4, var5, var6, var7, var8, var9);
+				TexturedGraphic.method917(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3], var9);
 			} else {
-				DualNode_Sub13_Sub1.method922(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
+				TexturedGraphic.method922(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
 						xViewportBuffer[1], xViewportBuffer[2]);
-				DualNode_Sub13_Sub1.method922(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3],
+				TexturedGraphic.method922(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3],
 						xViewportBuffer[0], xViewportBuffer[2], xViewportBuffer[3]);
 			}
 		}
@@ -1039,11 +1039,11 @@ public class Model extends Entity {
 			int var8 = this.anIntArray1867[var1];
 			int var4 = this.anIntArray1868[var1];
 			int var2 = this.anIntArray1869[var1];
-			DualNode_Sub13_Sub1.aBool1782 = aBoolArray1887[var1];
+			TexturedGraphic.aBool1782 = aBoolArray1887[var1];
 			if (this.aByteArray1874 == null) {
-				DualNode_Sub13_Sub1.anInt1781 = 0;
+				TexturedGraphic.anInt1781 = 0;
 			} else {
-				DualNode_Sub13_Sub1.anInt1781 = this.aByteArray1874[var1] & 255;
+				TexturedGraphic.anInt1781 = this.aByteArray1874[var1] & 255;
 			}
 
 			if (this.aShortArray1860 != null && this.aShortArray1860[var1] != -1) {
@@ -1062,14 +1062,14 @@ public class Model extends Entity {
 				}
 
 				if (this.anIntArray1872[var1] == -1) {
-					DualNode_Sub13_Sub1.method912(anIntArray1890[var8], anIntArray1890[var4], anIntArray1890[var2],
+					TexturedGraphic.method912(anIntArray1890[var8], anIntArray1890[var4], anIntArray1890[var2],
 							anIntArray1889[var8], anIntArray1889[var4], anIntArray1889[var2], this.anIntArray1870[var1],
 							this.anIntArray1870[var1], this.anIntArray1870[var1], yViewportBuffer[var7],
 							yViewportBuffer[var5], yViewportBuffer[var3], anIntArray1892[var7], anIntArray1892[var5],
 							anIntArray1892[var3], anIntArray1893[var7], anIntArray1893[var5], anIntArray1893[var3],
 							this.aShortArray1860[var1]);
 				} else {
-					DualNode_Sub13_Sub1.method912(anIntArray1890[var8], anIntArray1890[var4], anIntArray1890[var2],
+					TexturedGraphic.method912(anIntArray1890[var8], anIntArray1890[var4], anIntArray1890[var2],
 							anIntArray1889[var8], anIntArray1889[var4], anIntArray1889[var2], this.anIntArray1870[var1],
 							this.anIntArray1871[var1], this.anIntArray1872[var1], yViewportBuffer[var7],
 							yViewportBuffer[var5], yViewportBuffer[var3], anIntArray1892[var7], anIntArray1892[var5],
@@ -1077,11 +1077,11 @@ public class Model extends Entity {
 							this.aShortArray1860[var1]);
 				}
 			} else if (this.anIntArray1872[var1] == -1) {
-				DualNode_Sub13_Sub1.method917(anIntArray1890[var8], anIntArray1890[var4], anIntArray1890[var2],
+				TexturedGraphic.method917(anIntArray1890[var8], anIntArray1890[var4], anIntArray1890[var2],
 						anIntArray1889[var8], anIntArray1889[var4], anIntArray1889[var2],
 						anIntArray1907[this.anIntArray1870[var1]]);
 			} else {
-				DualNode_Sub13_Sub1.method922(anIntArray1890[var8], anIntArray1890[var4], anIntArray1890[var2],
+				TexturedGraphic.method922(anIntArray1890[var8], anIntArray1890[var4], anIntArray1890[var2],
 						anIntArray1889[var8], anIntArray1889[var4], anIntArray1889[var2], this.anIntArray1870[var1],
 						this.anIntArray1871[var1], this.anIntArray1872[var1]);
 			}
@@ -1095,8 +1095,8 @@ public class Model extends Entity {
 			this.method999();
 		}
 
-		int var8 = DualNode_Sub13_Sub1.anInt1785;
-		int var9 = DualNode_Sub13_Sub1.anInt1786;
+		int var8 = TexturedGraphic.anInt1785;
+		int var9 = TexturedGraphic.anInt1786;
 		int var10 = anIntArray1908[var1];
 		int var11 = anIntArray1909[var1];
 		int var12 = anIntArray1908[var2];
@@ -1136,8 +1136,8 @@ public class Model extends Entity {
 			var23 = var21 * var17 - var22 * var16 >> 16;
 			var22 = var21 * var16 + var22 * var17 >> 16;
 			anIntArray1891[var19] = var22 - var18;
-			anIntArray1889[var19] = var8 + var20 * DualNode_Sub13_Sub1.anInt1784 / var22;
-			anIntArray1890[var19] = var9 + var23 * DualNode_Sub13_Sub1.anInt1784 / var22;
+			anIntArray1889[var19] = var8 + var20 * TexturedGraphic.anInt1784 / var22;
+			anIntArray1890[var19] = var9 + var23 * TexturedGraphic.anInt1784 / var22;
 			if (this.anInt1878 > 0) {
 				yViewportBuffer[var19] = var20;
 				anIntArray1892[var19] = var23;
@@ -1172,8 +1172,8 @@ public class Model extends Entity {
 			this.method999();
 		}
 
-		int var9 = DualNode_Sub13_Sub1.anInt1785;
-		int var10 = DualNode_Sub13_Sub1.anInt1786;
+		int var9 = TexturedGraphic.anInt1785;
+		int var10 = TexturedGraphic.anInt1786;
 		int var11 = anIntArray1908[var1];
 		int var12 = anIntArray1909[var1];
 		int var13 = anIntArray1908[var2];
@@ -1213,8 +1213,8 @@ public class Model extends Entity {
 			var24 = var22 * var18 - var23 * var17 >> 16;
 			var23 = var22 * var17 + var23 * var18 >> 16;
 			anIntArray1891[var20] = var23 - var19;
-			anIntArray1889[var20] = var9 + var21 * DualNode_Sub13_Sub1.anInt1784 / var8;
-			anIntArray1890[var20] = var10 + var24 * DualNode_Sub13_Sub1.anInt1784 / var8;
+			anIntArray1889[var20] = var9 + var21 * TexturedGraphic.anInt1784 / var8;
+			anIntArray1890[var20] = var10 + var24 * TexturedGraphic.anInt1784 / var8;
 			if (this.anInt1878 > 0) {
 				yViewportBuffer[var20] = var21;
 				anIntArray1892[var20] = var24;
@@ -1290,9 +1290,9 @@ public class Model extends Entity {
 						if ((var5 - var10) * (anIntArray1890[var6] - anIntArray1890[var11])
 								- (anIntArray1890[var7] - anIntArray1890[var11]) * (var12 - var10) > 0) {
 							aBoolArray1902[var9] = false;
-							if (var5 >= 0 && var10 >= 0 && var12 >= 0 && var5 <= DualNode_Sub13_Sub1.anInt1791
-									&& var10 <= DualNode_Sub13_Sub1.anInt1791
-									&& var12 <= DualNode_Sub13_Sub1.anInt1791) {
+							if (var5 >= 0 && var10 >= 0 && var12 >= 0 && var5 <= TexturedGraphic.anInt1791
+									&& var10 <= TexturedGraphic.anInt1791
+									&& var12 <= TexturedGraphic.anInt1791) {
 								aBoolArray1887[var9] = false;
 							} else {
 								aBoolArray1887[var9] = true;

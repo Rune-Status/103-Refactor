@@ -112,7 +112,7 @@ public class UnderlayType extends DualNode {
 
 		World.anIntArray1118 = var2;
 		World.anIntArray1119 = var4;
-		Class73.method331(World.worlds, 0, World.worlds.length - 1, World.anIntArray1118, World.anIntArray1119);
+		Permission.method331(World.worlds, 0, World.worlds.length - 1, World.anIntArray1118, World.anIntArray1119);
 	}
 
 	static void method705() {

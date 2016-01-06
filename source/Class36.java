@@ -1,6 +1,6 @@
 import java.lang.management.GarbageCollectorMXBean;
 
-public class Class36 implements Interface5 {
+public class Class36 implements IOrdinal {
 
 	static Class36 aClass36_397 = new Class36(2);
 	static Class36 aClass36_398 = new Class36(1);
@@ -10,7 +10,7 @@ public class Class36 implements Interface5 {
 	static int anInt402;
 	static Class36 aClass36_403 = new Class36(0);
 
-	public int method11(int var1) {
+	public int ordinal() {
 		return -1221060991 * this.anInt401;
 	}
 

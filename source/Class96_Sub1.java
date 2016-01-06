@@ -34,13 +34,13 @@ public class Class96_Sub1 extends Class96 {
 		}
 	}
 
-	public static final void method500(long var0) {
-		if (var0 > 0L) {
-			if (var0 % 10L == 0L) {
-				long var2 = var0 - 1L;
+	public static final void sleep(long millis) {
+		if (millis > 0L) {
+			if (millis % 10L == 0L) {
+				long actual = millis - 1L;
 
 				try {
-					Thread.sleep(var2);
+					Thread.sleep(actual);
 				} catch (InterruptedException var8) {
 					;
 				}
@@ -52,7 +52,7 @@ public class Class96_Sub1 extends Class96 {
 				}
 			} else {
 				try {
-					Thread.sleep(var0);
+					Thread.sleep(millis);
 				} catch (InterruptedException var6) {
 					;
 				}
@@ -335,8 +335,8 @@ public class Class96_Sub1 extends Class96 {
 										var46 -= var44.anInt1648 * -988977157 / 2;
 										var10 = -1718342721 * Client.minimapScale + Client.minimapRotation * -1916997753
 												& 2047;
-										var24 = DualNode_Sub13_Sub1.SIN_TABLE[var10];
-										var26 = DualNode_Sub13_Sub1.COS_TABLE[var10];
+										var24 = TexturedGraphic.SIN_TABLE[var10];
+										var26 = TexturedGraphic.COS_TABLE[var10];
 										var24 = var24 * (256 + Client.viewRotation * -806982331) >> 8;
 										var26 = var26 * (-806982331 * Client.viewRotation + 256) >> 8;
 										var27 = var11 * var26 + var24 * var46 >> 11;

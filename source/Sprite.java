@@ -38,7 +38,7 @@ public final class Sprite extends RSGraphics {
 		return var1;
 	}
 
-	public Sprite method938() {
+	public Sprite copy() {
 		Sprite var1 = new Sprite(this.anInt1815, this.anInt1816);
 
 		for (int var3 = 0; var3 < this.width; ++var3) {

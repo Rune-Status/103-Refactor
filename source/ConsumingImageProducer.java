@@ -9,39 +9,39 @@ import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
 import java.util.Hashtable;
 
-public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageObserver {
+public final class ConsumingImageProducer extends AbstractProducer implements ImageProducer, ImageObserver {
 
-	ImageConsumer anImageConsumer1213;
+	ImageConsumer consumer;
 	static DualNode_Sub13_Sub3_Sub1 p11_full;
 	static Class61 aClass61_1215;
-	ColorModel aColorModel1216;
+	ColorModel model;
 
-	public final void method145(int var1, int var2, Component var3, byte var4) {
-		this.anInt270 = 409111727 * var1;
-		this.anInt272 = var2 * 1577837381;
-		this.anIntArray271 = new int[1 + var1 * var2];
-		this.aColorModel1216 = new DirectColorModel(32, 16711680, '\uff00', 255);
-		this.anImage273 = var3.createImage(this);
-		this.method508();
-		var3.prepareImage(this.anImage273, this);
-		this.method508();
-		var3.prepareImage(this.anImage273, this);
-		this.method508();
-		var3.prepareImage(this.anImage273, this);
-		this.method142();
+	public final void initializeProducer(int width, int height, Component comp) {
+		this.width = 409111727 * width;
+		this.height = height * 1577837381;
+		this.dataArray = new int[1 + width * height];
+		this.model = new DirectColorModel(32, 16711680, '\uff00', 255);
+		this.image = comp.createImage(this);
+		this.imageComplete();
+		comp.prepareImage(this.image, this);
+		this.imageComplete();
+		comp.prepareImage(this.image, this);
+		this.imageComplete();
+		comp.prepareImage(this.image, this);
+		this.setRaster();
 	}
 
-	public final void method144(Graphics var1, int var2, int var3, int var4) {
-		this.method508();
-		var1.drawImage(this.anImage273, var2, var3, this);
+	public final void drawImage(Graphics g, int x, int y) {
+		this.imageComplete();
+		g.drawImage(this.image, x, y, this);
 	}
 
-	public final void method141(Graphics var1, int var2, int var3, int var4, int var5, short var6) {
-		this.method509(var2, var3, var4, var5);
-		Shape var7 = var1.getClip();
-		var1.clipRect(var2, var3, var4, var5);
-		var1.drawImage(this.anImage273, 0, 0, this);
-		var1.setClip(var7);
+	public final void drawImageClip(Graphics g, int x, int y, int width, int height) {
+		this.imageComplete(x, y, width, height);
+		Shape shape = g.getClip();
+		g.clipRect(x, y, width, height);
+		g.drawImage(this.image, 0, 0, this);
+		g.setClip(shape);
 	}
 
 	public boolean imageUpdate(Image var1, int var2, int var3, int var4, int var5, int var6) {
@@ -49,12 +49,12 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 	}
 
 	public synchronized boolean isConsumer(ImageConsumer var1) {
-		return this.anImageConsumer1213 == var1;
+		return this.consumer == var1;
 	}
 
 	public synchronized void removeConsumer(ImageConsumer var1) {
-		if (var1 == this.anImageConsumer1213) {
-			this.anImageConsumer1213 = null;
+		if (var1 == this.consumer) {
+			this.consumer = null;
 		}
 
 	}
@@ -66,19 +66,19 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 	public void requestTopDownLeftRightResend(ImageConsumer var1) {
 	}
 
-	synchronized void method508() {
-		if (this.anImageConsumer1213 != null) {
-			this.anImageConsumer1213.setPixels(0, 0, 1154763343 * this.anInt270, -1725941875 * this.anInt272,
-					this.aColorModel1216, this.anIntArray271, 0, this.anInt270 * 1154763343);
-			this.anImageConsumer1213.imageComplete(2);
+	synchronized void imageComplete() {
+		if (this.consumer != null) {
+			this.consumer.setPixels(0, 0, 1154763343 * this.width, -1725941875 * this.height,
+					this.model, this.dataArray, 0, this.width * 1154763343);
+			this.consumer.imageComplete(2);
 		}
 	}
 
-	synchronized void method509(int var1, int var2, int var3, int var4) {
-		if (this.anImageConsumer1213 != null) {
-			this.anImageConsumer1213.setPixels(var1, var2, var3, var4, this.aColorModel1216, this.anIntArray271,
-					this.anInt270 * 1154763343 * var2 + var1, 1154763343 * this.anInt270);
-			this.anImageConsumer1213.imageComplete(2);
+	synchronized void imageComplete(int x, int y, int width, int height) {
+		if (this.consumer != null) {
+			this.consumer.setPixels(x, y, width, height, this.model, this.dataArray,
+					this.width * 1154763343 * y + x, 1154763343 * this.width);
+			this.consumer.imageComplete(2);
 		}
 	}
 
@@ -110,12 +110,12 @@ public final class Class20_Sub1 extends Class20 implements ImageProducer, ImageO
 		}
 	}
 
-	public synchronized void addConsumer(ImageConsumer var1) {
-		this.anImageConsumer1213 = var1;
-		var1.setDimensions(1154763343 * this.anInt270, -1725941875 * this.anInt272);
-		var1.setProperties((Hashtable) null);
-		var1.setColorModel(this.aColorModel1216);
-		var1.setHints(14);
+	public synchronized void addConsumer(ImageConsumer consumer) {
+		this.consumer = consumer;
+		consumer.setDimensions(1154763343 * this.width, -1725941875 * this.height);
+		consumer.setProperties((Hashtable<Object, Object>) null);
+		consumer.setColorModel(this.model);
+		consumer.setHints(14);
 	}
 
 	public static IdentKitType getIdentKitType(int id) {

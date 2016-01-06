@@ -1,6 +1,6 @@
 import java.io.File;
 
-public abstract class Class66 {
+public abstract class Timer {
 
 	abstract void method321();
 
@@ -24,7 +24,7 @@ public abstract class Class66 {
 			ByteBuf var7 = new ByteBuf(var6);
 			buf.getBytes(var6, 0, var5);
 			GPI.cachedAppearances[var1] = var7;
-			var2.method1041(var7);
+			var2.decodeApperance(var7);
 		}
 
 		int var19;
@@ -79,9 +79,9 @@ public abstract class Class66 {
 
 		if ((var3 & 8) != 0) {
 			var5 = buf.getUShort();
-			Class73[] var20 = new Class73[] { Class73.aClass73_612, Class73.aClass73_607, Class73.aClass73_613,
-					Class73.aClass73_608, Class73.aClass73_609 };
-			Class73 var21 = (Class73) Class30.method189(var20, buf.getUByte());
+			Permission[] var20 = new Permission[] { Permission.PLAYER, Permission.PLAYER_MOD, Permission.JAGEX_MOD,
+					Permission.IRONMAN, Permission.HARDCORE_IRONMAN };
+			Permission var21 = (Permission) Class30.forOrdinal(var20, buf.getUByte());
 			boolean var8 = buf.getUByte() == 1;
 			int var9 = buf.getUByte();
 			int var10 = 314639891 * buf.position;
@@ -91,7 +91,7 @@ public abstract class Class66 {
 					var11 = true;
 				}
 
-				if (!var11 && Client.anInt2183 * 198136383 == 0 && !var2.aBool1998) {
+				if (!var11 && Client.anInt2183 * 198136383 == 0 && !var2.hidden) {
 					GPI.chatBuffer.position = 0;
 					buf.getBytes(GPI.chatBuffer.payload, 0, var9);
 					GPI.chatBuffer.position = 0;
@@ -128,9 +128,9 @@ public abstract class Class66 {
 						var13 = var8 ? 90 : 2;
 					}
 
-					if (-2127218069 * var21.anInt606 != -1) {
+					if (-2127218069 * var21.sprite != -1) {
 						Class75.method334(var13,
-								Class41.method223(-2127218069 * var21.anInt606, (short) 1915) + var2.name, var16);
+								Class41.method223(-2127218069 * var21.sprite) + var2.name, var16);
 					} else {
 						Class75.method334(var13, var2.name, var16);
 					}
@@ -242,19 +242,19 @@ public abstract class Class66 {
 		VarPlayerType.method727();
 		Class91.method398();
 		Class36.method206();
-		((Class29) DualNode_Sub13_Sub1.anInterface3_1796).method187();
+		((Class29) TexturedGraphic.anInterface3_1796).method187();
 		RuneScript.aClass106_1725.method429();
-		Class34.skeletonsIndex.method381();
-		Client.meshesIndex.method381();
-		RuneScript.interfaceIndex.method381();
-		VarClientType.sfxIndex.method381();
-		Class48_Sub1.landscapesIndex.method381();
-		Class2.midiTrack1Index.method381();
-		Class3.modelsIndex.method381();
-		Node_Sub5.spritesIndex.method381();
-		Class1.texturesIndex.method381();
-		Class40.binaryIndex.method381();
-		PlayerConfig.midiTack2Index.method381();
-		InvType.clientScriptsIndex.method381();
+		Class34.skeletonsIndex.reset();
+		Client.meshesIndex.reset();
+		RuneScript.interfaceIndex.reset();
+		VarClientType.sfxIndex.reset();
+		Class48_Sub1.landscapesIndex.reset();
+		Class2.midiTrack1Index.reset();
+		Class3.modelsIndex.reset();
+		Node_Sub5.spritesIndex.reset();
+		Class1.texturesIndex.reset();
+		Class40.binaryIndex.reset();
+		PlayerConfig.midiTack2Index.reset();
+		InvType.clientScriptsIndex.reset();
 	}
 }

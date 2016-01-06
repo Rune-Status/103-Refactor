@@ -104,14 +104,14 @@ public final class TileDecorationStub {
 						continue;
 					}
 
-					if (var22.definition.anInt1589 * -691506967 == 1 && (var22.strictX * 1272643751 & 127) == 64
+					if (var22.type.anInt1589 * -691506967 == 1 && (var22.strictX * 1272643751 & 127) == 64
 							&& (-1801433343 * var22.strictY & 127) == 64) {
 						for (var25 = 0; var25 < Client.anInt2225 * 727116725; ++var25) {
 							var18 = Client.npcArray[Client.npcIndices[var25]];
-							if (var18 != null && var18 != var22 && -691506967 * var18.definition.anInt1589 == 1
+							if (var18 != null && var18 != var22 && -691506967 * var18.type.anInt1589 == 1
 									&& 1272643751 * var22.strictX == 1272643751 * var18.strictX
 									&& var18.strictY * -1801433343 == -1801433343 * var22.strictY) {
-								Class39.method219(var18.definition, Client.npcIndices[var25], var9, var10);
+								Class39.method219(var18.type, Client.npcIndices[var25], var9, var10);
 							}
 						}
 
@@ -122,12 +122,12 @@ public final class TileDecorationStub {
 							var15 = Client.playerArray[var19[var27]];
 							if (var15 != null && var22.strictX * 1272643751 == var15.strictX * 1272643751
 									&& var22.strictY * -1801433343 == var15.strictY * -1801433343) {
-								Class20.method143(var15, var19[var27], var9, var10);
+								AbstractProducer.method143(var15, var19[var27], var9, var10);
 							}
 						}
 					}
 
-					Class39.method219(var22.definition, var17, var9, var10);
+					Class39.method219(var22.type, var17, var9, var10);
 				}
 
 				if (var16 == 0) {
@@ -139,10 +139,10 @@ public final class TileDecorationStub {
 					if ((1272643751 * var23.strictX & 127) == 64 && (var23.strictY * -1801433343 & 127) == 64) {
 						for (var25 = 0; var25 < 727116725 * Client.anInt2225; ++var25) {
 							var18 = Client.npcArray[Client.npcIndices[var25]];
-							if (var18 != null && -691506967 * var18.definition.anInt1589 == 1
+							if (var18 != null && -691506967 * var18.type.anInt1589 == 1
 									&& var23.strictX * 1272643751 == var18.strictX * 1272643751
 									&& var23.strictY * -1801433343 == -1801433343 * var18.strictY) {
-								Class39.method219(var18.definition, Client.npcIndices[var25], var9, var10);
+								Class39.method219(var18.type, Client.npcIndices[var25], var9, var10);
 							}
 						}
 
@@ -154,13 +154,13 @@ public final class TileDecorationStub {
 							if (var15 != null && var23 != var15
 									&& 1272643751 * var15.strictX == 1272643751 * var23.strictX
 									&& -1801433343 * var15.strictY == var23.strictY * -1801433343) {
-								Class20.method143(var15, var19[var27], var9, var10);
+								AbstractProducer.method143(var15, var19[var27], var9, var10);
 							}
 						}
 					}
 
 					if (var17 != Client.anInt2111 * 971766913) {
-						Class20.method143(var23, var17, var9, var10);
+						AbstractProducer.method143(var23, var17, var9, var10);
 					} else {
 						var5 = var8;
 					}
@@ -237,7 +237,7 @@ public final class TileDecorationStub {
 			var7 = var5 & 127;
 			var8 = var5 >> 7 & 127;
 			Player var21 = Client.playerArray[971766913 * Client.anInt2111];
-			Class20.method143(var21, Client.anInt2111 * 971766913, var7, var8);
+			AbstractProducer.method143(var21, Client.anInt2111 * 971766913, var7, var8);
 		}
 
 	}

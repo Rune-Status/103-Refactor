@@ -1,29 +1,29 @@
 import java.util.Random;
 
-public class Class10 {
+public class SoundClip {
 
 	Class11 aClass11_183;
-	Class15 aClass15_184;
+	MidiSequence aClass15_184;
 	int[] anIntArray185 = new int[] { 0, 0, 0, 0, 0 };
 	static int[] anIntArray186;
-	Class15 aClass15_187;
+	MidiSequence aClass15_187;
 	static int[] anIntArray188;
-	Class15 aClass15_189;
-	Class15 aClass15_190;
+	MidiSequence aClass15_189;
+	MidiSequence aClass15_190;
 	static int[] anIntArray191;
 	int[] anIntArray192 = new int[] { 0, 0, 0, 0, 0 };
 	int[] anIntArray193 = new int[] { 0, 0, 0, 0, 0 };
 	int anInt194 = 0;
 	int anInt195 = 100;
-	Class15 aClass15_196;
-	Class15 aClass15_197;
+	MidiSequence aClass15_196;
+	MidiSequence aClass15_197;
 	int anInt198 = 500;
 	int anInt199 = 0;
-	Class15 aClass15_200;
+	MidiSequence aClass15_200;
 	static int[] anIntArray201 = new int['\u8000'];
 	static int[] anIntArray202;
-	Class15 aClass15_203;
-	Class15 aClass15_204;
+	MidiSequence aClass15_203;
+	MidiSequence aClass15_204;
 	static int[] anIntArray205;
 	static int[] anIntArray206;
 	static int[] anIntArray207;
@@ -262,34 +262,34 @@ public class Class10 {
 	}
 
 	final void method99(ByteBuf var1) {
-		this.aClass15_196 = new Class15();
+		this.aClass15_196 = new MidiSequence();
 		this.aClass15_196.method123(var1);
-		this.aClass15_184 = new Class15();
+		this.aClass15_184 = new MidiSequence();
 		this.aClass15_184.method123(var1);
 		int var3 = var1.getUByte();
 		if (var3 != 0) {
 			var1.position -= -184175589;
-			this.aClass15_204 = new Class15();
+			this.aClass15_204 = new MidiSequence();
 			this.aClass15_204.method123(var1);
-			this.aClass15_190 = new Class15();
+			this.aClass15_190 = new MidiSequence();
 			this.aClass15_190.method123(var1);
 		}
 
 		var3 = var1.getUByte();
 		if (var3 != 0) {
 			var1.position -= -184175589;
-			this.aClass15_187 = new Class15();
+			this.aClass15_187 = new MidiSequence();
 			this.aClass15_187.method123(var1);
-			this.aClass15_200 = new Class15();
+			this.aClass15_200 = new MidiSequence();
 			this.aClass15_200.method123(var1);
 		}
 
 		var3 = var1.getUByte();
 		if (var3 != 0) {
 			var1.position -= -184175589;
-			this.aClass15_189 = new Class15();
+			this.aClass15_189 = new MidiSequence();
 			this.aClass15_189.method123(var1);
-			this.aClass15_203 = new Class15();
+			this.aClass15_203 = new MidiSequence();
 			this.aClass15_203.method123(var1);
 		}
 
@@ -309,7 +309,7 @@ public class Class10 {
 		this.anInt198 = var1.getUShort();
 		this.anInt199 = var1.getUShort();
 		this.aClass11_183 = new Class11();
-		this.aClass15_197 = new Class15();
+		this.aClass15_197 = new MidiSequence();
 		this.aClass11_183.method104(var1, this.aClass15_197);
 	}
 

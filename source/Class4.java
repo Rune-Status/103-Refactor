@@ -36,7 +36,7 @@ public class Class4 {
 				Player var11 = Client.playerArray[var1] = new Player();
 				var11.anInt2000 = var1 * -1055985261;
 				if (GPI.cachedAppearances[var1] != null) {
-					var11.method1041(GPI.cachedAppearances[var1]);
+					var11.decodeApperance(GPI.cachedAppearances[var1]);
 				}
 
 				var11.anInt1953 = GPI.cachedDirections[var1] * 736533899;

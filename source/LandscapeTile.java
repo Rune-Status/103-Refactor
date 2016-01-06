@@ -26,7 +26,7 @@ public final class LandscapeTile extends Node {
 	int anInt1414;
 	LandscapeTile aLandscapeTile1415;
 	int anInt1416;
-	public static Canvas aCanvas1417;
+	public static Canvas gameCanvas;
 
 	public static String method580(CharSequence[] var0, int var1, int var2) {
 		if (var2 == 0) {

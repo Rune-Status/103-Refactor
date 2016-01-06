@@ -7,7 +7,7 @@ public final class IndexTable {
 	int maxSize = 566364424;
 	CacheFile indexFile = null;
 	int index;
-	public static Class20 aClass20_570;
+	public static AbstractProducer imageProducer;
 	static byte[] aByteArray571 = new byte[520];
 	protected static Image anImage572;
 	CacheFile dataFile = null;
