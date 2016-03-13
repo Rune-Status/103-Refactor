@@ -30,7 +30,9 @@ public class Class69 {
 			if (var0.anInt1947 * -1158366777 >= Client.engineCycle * -1040073859) {
 				if (-1158366777 * var0.anInt1947 == Client.engineCycle * -1040073859
 						|| var0.animation * -922607859 == -1 || 1301453073 * var0.anInt1936 != 0
-						|| var0.anInt1935 * -1968895439 + 1 > Node_Sub6.getSequenceType(var0.animation * -922607859).anIntArray1481[1402685833 * var0.anInt1934]) {
+						|| var0.anInt1935 * -1968895439
+								+ 1 > Node_Sub6.getSequenceType(var0.animation * -922607859).anIntArray1481[1402685833
+										* var0.anInt1934]) {
 					var2 = var0.anInt1947 * -1158366777 - var0.anInt1928 * -2112283241;
 					var4 = -1040073859 * Client.engineCycle - -2112283241 * var0.anInt1928;
 					var6 = -2013728192 * var0.anInt1915 + -777033600 * var0.anInt1954;

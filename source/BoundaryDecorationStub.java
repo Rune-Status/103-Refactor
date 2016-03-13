@@ -9,7 +9,7 @@ public final class BoundaryDecorationStub {
 	int insetX;
 	int insetY;
 	static int anInt216;
-	static String[] aStringArray217;
+	static String[] cacheLocations;
 	public int anInt218 = 0;
 	int regionX;
 	int config = 0;
@@ -121,8 +121,8 @@ public final class BoundaryDecorationStub {
 				Class6.loadedWorlds = false;
 				Class56.aSprite542.method958(Class6.anInt132 * 1933284923, 0);
 				Class6.aSprite137.method958(Class6.anInt132 * 1933284923 + 382, 0);
-				IgnoredPlayer.aDualNode_Sub13_Sub2_754.method929(
-						382 + 1933284923 * Class6.anInt132 - IgnoredPlayer.aDualNode_Sub13_Sub2_754.anInt1800 / 2, 18);
+				IgnoredPlayer.logoSprite.method929(
+						382 + 1933284923 * Class6.anInt132 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 				return;
 			}
 
@@ -132,8 +132,8 @@ public final class BoundaryDecorationStub {
 				Class6.loadedWorlds = false;
 				Class56.aSprite542.method958(1933284923 * Class6.anInt132, 0);
 				Class6.aSprite137.method958(382 + Class6.anInt132 * 1933284923, 0);
-				IgnoredPlayer.aDualNode_Sub13_Sub2_754.method929(
-						1933284923 * Class6.anInt132 + 382 - IgnoredPlayer.aDualNode_Sub13_Sub2_754.anInt1800 / 2, 18);
+				IgnoredPlayer.logoSprite.method929(
+						1933284923 * Class6.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 				return;
 			}
 		}
@@ -149,7 +149,7 @@ public final class BoundaryDecorationStub {
 				Client.collisionMaps[var0] = new CollisionMap(104, 104);
 			}
 
-			RuneScript.minimapSprite = new Sprite(512, 512);
+			RuneScript.minimapSprite = new Picture(512, 512);
 			Class6.bootMessage = GameStrings.aString855;
 			Class6.anInt122 = 1559498423;
 			Client.bootState = -472889572;
@@ -181,7 +181,7 @@ public final class BoundaryDecorationStub {
 				Class48_Sub1.landscapesIndex = NpcType.openCacheIndex(5, true, true, true);
 				Class2.midiTrack1Index = NpcType.openCacheIndex(6, true, true, false);
 				Class3.modelsIndex = NpcType.openCacheIndex(7, false, true, true);
-				Node_Sub5.spritesIndex = NpcType.openCacheIndex(8, false, true, true);
+				AnimationSkin.spritesIndex = NpcType.openCacheIndex(8, false, true, true);
 				Class1.texturesIndex = NpcType.openCacheIndex(9, false, true, true);
 				Class40.binaryIndex = NpcType.openCacheIndex(10, false, true, true);
 				PlayerConfig.midiTack2Index = NpcType.openCacheIndex(11, false, true, true);
@@ -193,8 +193,7 @@ public final class BoundaryDecorationStub {
 				Class6.anInt122 = 1943026396;
 				Client.bootState = -945779144;
 			} else if (Client.bootState * -773857325 == 40) {
-				byte var21 = 0;
-				var0 = var21 + Class34.skeletonsIndex.percentage() * 4 / 100;
+				var0 = Class34.skeletonsIndex.percentage() * 4 / 100;
 				var0 += Client.meshesIndex.percentage() * 4 / 100;
 				var0 += Client.configsIndex.percentage() * 2 / 100;
 				var0 += RuneScript.interfaceIndex.percentage() * 2 / 100;
@@ -202,7 +201,7 @@ public final class BoundaryDecorationStub {
 				var0 += Class48_Sub1.landscapesIndex.percentage() * 4 / 100;
 				var0 += Class2.midiTrack1Index.percentage() * 2 / 100;
 				var0 += Class3.modelsIndex.percentage() * 60 / 100;
-				var0 += Node_Sub5.spritesIndex.percentage() * 2 / 100;
+				var0 += AnimationSkin.spritesIndex.percentage() * 2 / 100;
 				var0 += Class1.texturesIndex.percentage() * 2 / 100;
 				var0 += Class40.binaryIndex.percentage() * 2 / 100;
 				var0 += PlayerConfig.midiTack2Index.percentage() * 2 / 100;
@@ -224,13 +223,13 @@ public final class BoundaryDecorationStub {
 			} else {
 				CacheIndex var11;
 				if (Client.bootState * -773857325 == 45) {
-					boolean var20 = !Client.aBool2010;
+					boolean var20 = !Client.lowMemory;
 					Class8.anInt157 = -999529678;
 					Class8.aBool166 = var20;
 					Class8.anInt172 = -179620222;
 					Node_Sub4_Sub4 var10 = new Node_Sub4_Sub4();
 					var10.method832(9, 128);
-					DualNode_Sub14.aClass8_1644 = ScriptEvent.method651(IsaacRandom.aClass63_102,
+					DualNode_Sub14.aClass8_1644 = ScriptEvent.method651(IsaacRandom.taskManager,
 							LandscapeTile.gameCanvas, 0, 22050);
 					DualNode_Sub14.aClass8_1644.method91(var10);
 					var11 = Class59.midiInstrumentsIndex;
@@ -240,7 +239,7 @@ public final class BoundaryDecorationStub {
 					Class110.vorbis_ref = var15;
 					Class110.sfx_ref = var13;
 					Class110.aNode_Sub4_Sub4_784 = var10;
-					Class30.aClass8_341 = ScriptEvent.method651(IsaacRandom.aClass63_102, LandscapeTile.gameCanvas, 1,
+					Class30.aClass8_341 = ScriptEvent.method651(IsaacRandom.taskManager, LandscapeTile.gameCanvas, 1,
 							2048);
 					FriendedPlayer.aNode_Sub4_Sub1_740 = new Node_Sub4_Sub1();
 					Class30.aClass8_341.method91(FriendedPlayer.aNode_Sub4_Sub1_740);
@@ -251,22 +250,22 @@ public final class BoundaryDecorationStub {
 				} else if (Client.bootState * -773857325 == 50) {
 					var0 = 0;
 					if (ConsumingImageProducer.p11_full == null) {
-						ConsumingImageProducer.p11_full = Class24.method163(Node_Sub5.spritesIndex,
+						ConsumingImageProducer.p11_full = ClientSettings.method163(AnimationSkin.spritesIndex,
 								Class2.fontMetricsIndex, "p11_full", "");
 					} else {
 						++var0;
 					}
 
 					if (Client.p12_full == null) {
-						Client.p12_full = Class24.method163(Node_Sub5.spritesIndex,
-								Class2.fontMetricsIndex, "p12_full", "");
+						Client.p12_full = ClientSettings.method163(AnimationSkin.spritesIndex, Class2.fontMetricsIndex, "p12_full",
+								"");
 					} else {
 						++var0;
 					}
 
 					if (Class35.b12_full == null) {
-						Class35.b12_full = Class24.method163(Node_Sub5.spritesIndex,
-								Class2.fontMetricsIndex, "b12_full", "");
+						Class35.b12_full = ClientSettings.method163(AnimationSkin.spritesIndex, Class2.fontMetricsIndex,
+								"b12_full", "");
 					} else {
 						++var0;
 					}
@@ -281,7 +280,7 @@ public final class BoundaryDecorationStub {
 						Client.bootState = -1418668716;
 					}
 				} else if (-773857325 * Client.bootState == 60) {
-					var0 = Node_Sub8.method548(Class40.binaryIndex, Node_Sub5.spritesIndex);
+					var0 = Node_Sub8.method548(Class40.binaryIndex, AnimationSkin.spritesIndex);
 					var1 = Class50.method253();
 					if (var0 < var1) {
 						Class6.bootMessage = GameStrings.aString967 + var0 * 100 / var1 + "%";
@@ -301,19 +300,18 @@ public final class BoundaryDecorationStub {
 						OverlayType.overlay_ref = var19;
 						Class26.method170(Client.configsIndex);
 						Class35.method203(Client.configsIndex, Class3.modelsIndex);
-						Class96_Sub1.method498(Client.configsIndex, Class3.modelsIndex, Client.aBool2010);
+						Class96_Sub1.method498(Client.configsIndex, Class3.modelsIndex, Client.lowMemory);
 						Class2.method60(Client.configsIndex, Class3.modelsIndex);
 						CacheIndex var9 = Client.configsIndex;
 						var11 = Class3.modelsIndex;
 						boolean var14 = Client.membersWorld;
 						DualNode_Sub13_Sub3_Sub1 var12 = ConsumingImageProducer.p11_full;
 						ItemType.item_ref = var9;
-						Class49.aClass87_516 = var11;
+						GZipDecompressor.aClass87_516 = var11;
 						Class94.aBool735 = var14;
 						Class13.itemsSize = ItemType.item_ref.fileCount(10) * -1384530971;
 						Class31.aDualNode_Sub13_Sub3_Sub1_350 = var12;
-						VarClientStringType.method699(Client.configsIndex, Class34.skeletonsIndex,
-								Client.meshesIndex);
+						VarClientStringType.method699(Client.configsIndex, Class34.skeletonsIndex, Client.meshesIndex);
 						CacheIndex var16 = Client.configsIndex;
 						CacheIndex var8 = Class3.modelsIndex;
 						SpotAnimType.anim_ref = var16;
@@ -321,8 +319,8 @@ public final class BoundaryDecorationStub {
 						CacheIndex var7 = Client.configsIndex;
 						VarBitType.varbit_ref = var7;
 						Node_Sub8.method549(Client.configsIndex);
-						Class32.method193(RuneScript.interfaceIndex, Class3.modelsIndex,
-								Node_Sub5.spritesIndex, Class2.fontMetricsIndex);
+						Class32.method193(RuneScript.interfaceIndex, Class3.modelsIndex, AnimationSkin.spritesIndex,
+								Class2.fontMetricsIndex);
 						Class31.method190(Client.configsIndex);
 						ItemTable.method648(Client.configsIndex);
 						Class32.method196(Client.configsIndex);
@@ -339,8 +337,8 @@ public final class BoundaryDecorationStub {
 							Class6.bootMessage = GameStrings.aString869 + Class1.texturesIndex.method559() + "%";
 							Class6.anInt122 = -1993799458;
 						} else {
-							Class29 var18 = new Class29(Class1.texturesIndex, Node_Sub5.spritesIndex, 20, 0.8D,
-									Client.aBool2010 ? 64 : 128);
+							TextureLoader var18 = new TextureLoader(Class1.texturesIndex, AnimationSkin.spritesIndex, 20, 0.8D,
+									Client.lowMemory ? 64 : 128);
 							TexturedGraphic.method925(var18);
 							TexturedGraphic.method913(0.8D);
 							Class6.bootMessage = GameStrings.aString976;
@@ -349,7 +347,7 @@ public final class BoundaryDecorationStub {
 						}
 					} else if (-773857325 * Client.bootState == 110) {
 						Npc.aClass30_1968 = new Class30();
-						IsaacRandom.aClass63_102.method313(Npc.aClass30_1968, 10);
+						IsaacRandom.taskManager.createRunnable(Npc.aClass30_1968, 10);
 						Class6.bootMessage = GameStrings.aString871;
 						Class6.anInt122 = 1830779658;
 						Client.bootState = 1457629864;
@@ -366,16 +364,16 @@ public final class BoundaryDecorationStub {
 						}
 					} else if (Client.bootState * -773857325 == 130) {
 						if (!RuneScript.interfaceIndex.method377()) {
-							Class6.bootMessage = GameStrings.aString874
-									+ RuneScript.interfaceIndex.method559() * 4 / 5 + "%";
+							Class6.bootMessage = GameStrings.aString874 + RuneScript.interfaceIndex.method559() * 4 / 5
+									+ "%";
 							Class6.anInt122 = 1125197388;
 						} else if (!InvType.clientScriptsIndex.method377()) {
 							Class6.bootMessage = GameStrings.aString874
 									+ (80 + InvType.clientScriptsIndex.method559() / 6) + "%";
 							Class6.anInt122 = 1125197388;
 						} else if (!Class2.fontMetricsIndex.method377()) {
-							Class6.bootMessage = GameStrings.aString874 + (96 + Class2.fontMetricsIndex.method559() / 20)
-									+ "%";
+							Class6.bootMessage = GameStrings.aString874
+									+ (96 + Class2.fontMetricsIndex.method559() / 20) + "%";
 							Class6.anInt122 = 1125197388;
 						} else {
 							Class6.bootMessage = GameStrings.aString875;
@@ -388,89 +386,87 @@ public final class BoundaryDecorationStub {
 				} else {
 					var0 = 0;
 					if (Class48_Sub1.aSprite1296 == null) {
-						Class48_Sub1.aSprite1296 = Class52.method257(Node_Sub5.spritesIndex, "compass", "");
+						Class48_Sub1.aSprite1296 = AbstractByteBuffer.method257(AnimationSkin.spritesIndex, "compass", "");
 					} else {
 						++var0;
 					}
 
 					if (Npc.aSprite1965 == null) {
-						Npc.aSprite1965 = Class52.method257(Node_Sub5.spritesIndex, "mapedge", "");
+						Npc.aSprite1965 = AbstractByteBuffer.method257(AnimationSkin.spritesIndex, "mapedge", "");
 					} else {
 						++var0;
 					}
 
 					if (Class2.aDualNode_Sub13_Sub2Array77 == null) {
-						Class2.aDualNode_Sub13_Sub2Array77 = ObjectType.method868(Node_Sub5.spritesIndex,
-								"mapscene", "");
+						Class2.aDualNode_Sub13_Sub2Array77 = ObjectType.method868(AnimationSkin.spritesIndex, "mapscene",
+								"");
 					} else {
 						++var0;
 					}
 
 					if (Node_Sub8.aSpriteArray1309 == null) {
-						Node_Sub8.aSpriteArray1309 = DynamicObject.method1023(Node_Sub5.spritesIndex,
-								"mapfunction", "");
+						Node_Sub8.aSpriteArray1309 = DynamicObject.method1023(AnimationSkin.spritesIndex, "mapfunction",
+								"");
 					} else {
 						++var0;
 					}
 
 					if (Class96_Sub1.aSpriteArray1204 == null) {
-						Class96_Sub1.aSpriteArray1204 = DynamicObject.method1023(Node_Sub5.spritesIndex,
-								"hitmarks", "");
+						Class96_Sub1.aSpriteArray1204 = DynamicObject.method1023(AnimationSkin.spritesIndex, "hitmarks",
+								"");
 					} else {
 						++var0;
 					}
 
 					if (VarBitType.aSpriteArray1728 == null) {
-						VarBitType.aSpriteArray1728 = DynamicObject.method1023(Node_Sub5.spritesIndex,
-								"headicons_pk", "");
+						VarBitType.aSpriteArray1728 = DynamicObject.method1023(AnimationSkin.spritesIndex, "headicons_pk",
+								"");
 					} else {
 						++var0;
 					}
 
 					if (ItemType.aSpriteArray1619 == null) {
-						ItemType.aSpriteArray1619 = DynamicObject.method1023(Node_Sub5.spritesIndex,
-								"headicons_prayer", "");
+						ItemType.aSpriteArray1619 = DynamicObject.method1023(AnimationSkin.spritesIndex, "headicons_prayer",
+								"");
 					} else {
 						++var0;
 					}
 
 					if (Class39.aSpriteArray442 == null) {
-						Class39.aSpriteArray442 = DynamicObject.method1023(Node_Sub5.spritesIndex,
-								"headicons_hint", "");
+						Class39.aSpriteArray442 = DynamicObject.method1023(AnimationSkin.spritesIndex, "headicons_hint",
+								"");
 					} else {
 						++var0;
 					}
 
 					if (Class72.aSpriteArray604 == null) {
-						Class72.aSpriteArray604 = DynamicObject.method1023(Node_Sub5.spritesIndex, "mapmarker",
-								"");
+						Class72.aSpriteArray604 = DynamicObject.method1023(AnimationSkin.spritesIndex, "mapmarker", "");
 					} else {
 						++var0;
 					}
 
 					if (Class88.aSpriteArray712 == null) {
-						Class88.aSpriteArray712 = DynamicObject.method1023(Node_Sub5.spritesIndex, "cross", "");
+						Class88.aSpriteArray712 = DynamicObject.method1023(AnimationSkin.spritesIndex, "cross", "");
 					} else {
 						++var0;
 					}
 
 					if (Parameters.mapDots == null) {
-						Parameters.mapDots = DynamicObject.method1023(Node_Sub5.spritesIndex, "mapdots",
-								"");
+						Parameters.mapDots = DynamicObject.method1023(AnimationSkin.spritesIndex, "mapdots", "");
 					} else {
 						++var0;
 					}
 
 					if (Class35.aDualNode_Sub13_Sub2Array395 == null) {
-						Class35.aDualNode_Sub13_Sub2Array395 = ObjectType.method868(Node_Sub5.spritesIndex,
-								"scrollbar", "");
+						Class35.aDualNode_Sub13_Sub2Array395 = ObjectType.method868(AnimationSkin.spritesIndex, "scrollbar",
+								"");
 					} else {
 						++var0;
 					}
 
 					if (IgnoredPlayer.aDualNode_Sub13_Sub2Array755 == null) {
-						IgnoredPlayer.aDualNode_Sub13_Sub2Array755 = ObjectType
-								.method868(Node_Sub5.spritesIndex, "mod_icons", "");
+						IgnoredPlayer.aDualNode_Sub13_Sub2Array755 = ObjectType.method868(AnimationSkin.spritesIndex,
+								"mod_icons", "");
 					} else {
 						++var0;
 					}

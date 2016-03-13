@@ -1,5 +1,6 @@
 import java.applet.Applet;
 import java.net.URL;
+
 import netscape.javascript.JSObject;
 
 public final class Player extends Character {
@@ -50,7 +51,7 @@ public final class Player extends Character {
 			} else {
 				var7 = var1.getUByte();
 				var6[var4] = var7 + (var5 << 8);
-				if (var4 == 0 && var6[0] == '\uffff') {
+				if (var4 == 0 && var6[0] == 65535) {
 					var3 = var1.getUShort();
 					break;
 				}
@@ -68,7 +69,7 @@ public final class Player extends Character {
 
 		for (var5 = 0; var5 < 5; ++var5) {
 			var7 = var1.getUByte();
-			if (var7 < 0 || var7 >= PlayerConfig.aShortArrayArray529[var5].length) {
+			if (var7 < 0 || var7 >= PlayerConfig.colorsToReplace[var5].length) {
 				var7 = 0;
 			}
 
@@ -76,50 +77,50 @@ public final class Player extends Character {
 		}
 
 		this.anInt1959 = var1.getUShort() * -592731223;
-		if (370127001 * this.anInt1959 == '\uffff') {
+		if (370127001 * this.anInt1959 == 65535) {
 			this.anInt1959 = 592731223;
 		}
 
 		this.anInt1916 = var1.getUShort() * -176841799;
-		if (this.anInt1916 * 711326345 == '\uffff') {
+		if (this.anInt1916 * 711326345 == 65535) {
 			this.anInt1916 = 176841799;
 		}
 
 		this.anInt1917 = 2073877321 * this.anInt1916;
 		this.anInt1918 = var1.getUShort() * -929243503;
-		if (1481286257 * this.anInt1918 == '\uffff') {
+		if (1481286257 * this.anInt1918 == 65535) {
 			this.anInt1918 = 929243503;
 		}
 
 		this.anInt1952 = var1.getUShort() * -951990375;
-		if (-826106711 * this.anInt1952 == '\uffff') {
+		if (-826106711 * this.anInt1952 == 65535) {
 			this.anInt1952 = 951990375;
 		}
 
 		this.anInt1913 = var1.getUShort() * 505909337;
-		if (this.anInt1913 * -897665047 == '\uffff') {
+		if (this.anInt1913 * -897665047 == 65535) {
 			this.anInt1913 = -505909337;
 		}
 
 		this.anInt1939 = var1.getUShort() * 1473487651;
-		if (this.anInt1939 * -1453546357 == '\uffff') {
+		if (this.anInt1939 * -1453546357 == 65535) {
 			this.anInt1939 = -1473487651;
 		}
 
 		this.anInt1921 = var1.getUShort() * 71707737;
-		if (this.anInt1921 * -108110871 == '\uffff') {
+		if (this.anInt1921 * -108110871 == 65535) {
 			this.anInt1921 = -71707737;
 		}
 
 		this.name = var1.getString();
 		if (Class68.myPlayer == this) {
-			RuntimeException_Sub1.aString1807 = this.name;
+			RuntimeException_Sub1.myPlayerName = this.name;
 		}
 
 		this.combatLevel = var1.getUByte() * -811997547;
 		this.totalLevel = var1.getUShort() * -1535283903;
 		this.hidden = var1.getUByte() == 1;
-		if (Client.anInt2074 * 1082541889 == 0 && Client.myRights * 1520983779 >= 2) {
+		if (Client.socketType * 1082541889 == 0 && Client.myRights * 1520983779 >= 2) {
 			this.hidden = false;
 		}
 
@@ -204,65 +205,64 @@ public final class Player extends Character {
 		}
 	}
 
-	static void method1042(byte[] var0) {
-		ByteBuf var1 = new ByteBuf(var0);
-		var1.position = (var0.length - 2) * -184175589;
-		Class7.anInt154 = var1.getUShort() * 2080683417;
-		Class7.anIntArray149 = new int[Class7.anInt154 * 817614505];
-		VarPlayerType.anIntArray1544 = new int[817614505 * Class7.anInt154];
-		Class7.anIntArray150 = new int[817614505 * Class7.anInt154];
-		Class7.anIntArray151 = new int[Class7.anInt154 * 817614505];
-		Npc.aByteArrayArray1966 = new byte[817614505 * Class7.anInt154][];
-		var1.position = -184175589 * (var0.length - 7 - Class7.anInt154 * -2049018552);
-		Class7.anInt148 = var1.getUShort() * -1327133543;
-		Class7.anInt155 = var1.getUShort() * -1754818609;
-		int var3 = (var1.getUByte() & 255) + 1;
+	static void decodeSprite(byte[] bytes) {
+		ByteBuf buf = new ByteBuf(bytes);
+		buf.position = (bytes.length - 2) * -184175589;
+		Class7.size = buf.getUShort() * 2080683417;
+		Class7.offsetsX = new int[Class7.size * 817614505];
+		VarPlayerType.offsetsY = new int[817614505 * Class7.size];
+		Class7.subWidths = new int[817614505 * Class7.size];
+		Class7.subHeights = new int[Class7.size * 817614505];
+		Npc.spritePixels = new byte[817614505 * Class7.size][];
+		buf.position = -184175589 * (bytes.length - 7 - Class7.size * -2049018552);
+		Class7.width = buf.getUShort() * -1327133543;
+		Class7.height = buf.getUShort() * -1754818609;
+		int paletteSize = (buf.getUByte() & 0xFF) + 1;
 
-		int var2;
-		for (var2 = 0; var2 < 817614505 * Class7.anInt154; ++var2) {
-			Class7.anIntArray149[var2] = var1.getUShort();
+		int index;
+		for (index = 0; index < 817614505 * Class7.size; ++index) {
+			Class7.offsetsX[index] = buf.getUShort();
 		}
 
-		for (var2 = 0; var2 < 817614505 * Class7.anInt154; ++var2) {
-			VarPlayerType.anIntArray1544[var2] = var1.getUShort();
+		for (index = 0; index < 817614505 * Class7.size; ++index) {
+			VarPlayerType.offsetsY[index] = buf.getUShort();
 		}
 
-		for (var2 = 0; var2 < 817614505 * Class7.anInt154; ++var2) {
-			Class7.anIntArray150[var2] = var1.getUShort();
+		for (index = 0; index < 817614505 * Class7.size; ++index) {
+			Class7.subWidths[index] = buf.getUShort();
 		}
 
-		for (var2 = 0; var2 < 817614505 * Class7.anInt154; ++var2) {
-			Class7.anIntArray151[var2] = var1.getUShort();
+		for (index = 0; index < 817614505 * Class7.size; ++index) {
+			Class7.subHeights[index] = buf.getUShort();
 		}
 
-		var1.position = (var0.length - 7 - -2049018552 * Class7.anInt154 - (var3 - 1) * 3) * -184175589;
-		Class85.anIntArray690 = new int[var3];
+		buf.position = (bytes.length - 7 - -2049018552 * Class7.size - (paletteSize - 1) * 3) * -184175589;
+		Class85.palette = new int[paletteSize];
 
-		for (var2 = 1; var2 < var3; ++var2) {
-			Class85.anIntArray690[var2] = var1.getMedium();
-			if (Class85.anIntArray690[var2] == 0) {
-				Class85.anIntArray690[var2] = 1;
+		for (index = 1; index < paletteSize; ++index) {
+			Class85.palette[index] = buf.getMedium();
+			if (Class85.palette[index] == 0) {
+				Class85.palette[index] = 1;
 			}
 		}
 
-		var1.position = 0;
+		buf.position = 0;
 
-		for (var2 = 0; var2 < 817614505 * Class7.anInt154; ++var2) {
-			int var5 = Class7.anIntArray150[var2];
-			int var8 = Class7.anIntArray151[var2];
-			int var9 = var8 * var5;
-			byte[] var7 = new byte[var9];
-			Npc.aByteArrayArray1966[var2] = var7;
-			int var6 = var1.getUByte();
-			int var4;
-			if (var6 == 0) {
-				for (var4 = 0; var4 < var9; ++var4) {
-					var7[var4] = var1.getByte();
+		for (index = 0; index < 817614505 * Class7.size; ++index) {
+			int subWidth = Class7.subWidths[index];
+			int subHeight = Class7.subHeights[index];
+			int size = subHeight * subWidth;
+			byte[] pixels = new byte[size];
+			Npc.spritePixels[index] = pixels;
+			int flags = buf.getUByte();
+			if (flags == 0) {
+				for (int i = 0; i < size; ++i) {
+					pixels[i] = buf.getByte();
 				}
-			} else if (var6 == 1) {
-				for (var4 = 0; var4 < var5; ++var4) {
-					for (int var10 = 0; var10 < var8; ++var10) {
-						var7[var5 * var10 + var4] = var1.getByte();
+			} else if (flags == 1) {
+				for (int w = 0; w < subWidth; ++w) {
+					for (int h = 0; h < subHeight; ++h) {
+						pixels[subWidth * h + w] = buf.getByte();
 					}
 				}
 			}
@@ -276,7 +276,7 @@ public final class Player extends Character {
 		this.anInt1956 = 0;
 		this.anIntArray1945[0] = var1;
 		this.anIntArray1955[0] = var2;
-		int var3 = this.method1046();
+		int var3 = this.getSize();
 		this.strictX = 1789511104 * var3 + -715945088 * this.anIntArray1945[0];
 		this.strictY = this.anIntArray1955[0] * 1616412800 + var3 * 808206400;
 	}
@@ -340,7 +340,7 @@ public final class Player extends Character {
 		this.aBool1999 = false;
 	}
 
-	int method1046() {
+	int getSize() {
 		return this.config != null && this.config.npcId * -84158433 != -1
 				? VarPlayerType.getNpcType(this.config.npcId * -84158433).anInt1589 * -691506967 : 1;
 	}
@@ -360,8 +360,8 @@ public final class Player extends Character {
 				throw new RuntimeException();
 			} else {
 				GPI.cachedRegions[var1] = (var3.anInt2004 * -1522270499 << 28)
-						+ (1426698711 * Node_Sub10.regionBaseX + var3.anIntArray1945[0] >> 6 << 14)
-						+ (VarClientHub.regionBaseY * 714823515 + var3.anIntArray1955[0] >> 6);
+						+ (1426698711 * Node_Sub10.chunkLeftX + var3.anIntArray1945[0] >> 6 << 14)
+						+ (VarClientHub.chunkLeftY * 714823515 + var3.anIntArray1955[0] >> 6);
 				if (var3.anInt1931 * -744366479 != -1) {
 					GPI.cachedDirections[var1] = var3.anInt1931 * -744366479;
 				} else {
@@ -528,10 +528,10 @@ public final class Player extends Character {
 					var6 = var4 >> 28;
 					var11 = var4 >> 14 & 16383;
 					var10 = var4 & 16383;
-					var9 = (var11 + Node_Sub10.regionBaseX * 1426698711 + var3.anIntArray1945[0] & 16383)
-							- 1426698711 * Node_Sub10.regionBaseX;
-					var8 = (var10 + VarClientHub.regionBaseY * 714823515 + var3.anIntArray1955[0] & 16383)
-							- 714823515 * VarClientHub.regionBaseY;
+					var9 = (var11 + Node_Sub10.chunkLeftX * 1426698711 + var3.anIntArray1945[0] & 16383)
+							- 1426698711 * Node_Sub10.chunkLeftX;
+					var8 = (var10 + VarClientHub.chunkLeftY * 714823515 + var3.anIntArray1955[0] & 16383)
+							- 714823515 * VarClientHub.chunkLeftY;
 					if (1467227105 * Client.myPlayerIndex == var1
 							&& (1272643751 * var3.strictX < 1536 || -1801433343 * var3.strictY < 1536
 									|| 1272643751 * var3.strictX >= 11776 || var3.strictY * -1801433343 >= 11776)) {
@@ -602,7 +602,7 @@ public final class Player extends Character {
 			}
 		} else if (var1 == 1) {
 			try {
-				Object var10 = Class64.method316(Class70.anApplet587, var2,
+				Object var10 = JSHelper.call(Class70.anApplet587, var2,
 						new Object[] { (new URL(Class70.anApplet587.getCodeBase(), var0)).toString() });
 				return var10 != null;
 			} catch (Throwable var6) {
@@ -636,7 +636,7 @@ public final class Player extends Character {
 		}
 	}
 
-	public static Class76[] method1051() {
-		return new Class76[] { Class76.BUILD_LIVE, Class76.LIVE, Class76.WIP, Class76.RC };
+	public static BuildType[] buildTypes() {
+		return new BuildType[] { BuildType.BUILD_LIVE, BuildType.LIVE, BuildType.WIP, BuildType.RC };
 	}
 }

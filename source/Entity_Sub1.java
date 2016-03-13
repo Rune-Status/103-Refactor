@@ -64,7 +64,7 @@ public class Entity_Sub1 extends Entity {
 		return var3 == null ? null : new Entity_Sub1(var3);
 	}
 
-	void method888(byte[] var1) {
+	void decodeOldFormat(byte[] var1) {
 		boolean var2 = false;
 		boolean var9 = false;
 		ByteBuf var5 = new ByteBuf(var1);
@@ -315,11 +315,11 @@ public class Entity_Sub1 extends Entity {
 			boolean var45 = false;
 
 			for (var31 = 0; var31 < var11; ++var31) {
-				var44 = this.aByteArray1730[var31] & 255;
+				var44 = this.aByteArray1730[var31] & 0xFF;
 				if (var44 != 255) {
-					if ((this.aShortArray1747[var44] & '\uffff') == this.anIntArray1756[var31]
-							&& (this.aShortArray1748[var44] & '\uffff') == this.anIntArray1736[var31]
-							&& (this.aShortArray1738[var44] & '\uffff') == this.anIntArray1737[var31]) {
+					if ((this.aShortArray1747[var44] & 0xFFFF) == this.anIntArray1756[var31]
+							&& (this.aShortArray1748[var44] & 0xFFFF) == this.anIntArray1736[var31]
+							&& (this.aShortArray1738[var44] & 0xFFFF) == this.anIntArray1737[var31]) {
 						this.aByteArray1730[var31] = -1;
 					} else {
 						var45 = true;
@@ -1007,7 +1007,7 @@ public class Entity_Sub1 extends Entity {
 			int var11;
 			for (var11 = 0; var11 < this.anInt1734; ++var11) {
 				if (this.aByteArray1730[var11] != -1) {
-					++var6[this.aByteArray1730[var11] & 255];
+					++var6[this.aByteArray1730[var11] & 0xFF];
 				}
 			}
 
@@ -1027,9 +1027,9 @@ public class Entity_Sub1 extends Entity {
 			int var12;
 			for (var12 = 0; var12 < this.anInt1745; ++var12) {
 				if (var6[var12] > 0 && this.aByteArray1746[var12] == 0) {
-					var10.anIntArray1879[var11] = this.aShortArray1747[var12] & '\uffff';
-					var10.anIntArray1880[var11] = this.aShortArray1748[var12] & '\uffff';
-					var10.anIntArray1906[var11] = this.aShortArray1738[var12] & '\uffff';
+					var10.anIntArray1879[var11] = this.aShortArray1747[var12] & 0xFFFF;
+					var10.anIntArray1880[var11] = this.aShortArray1748[var12] & 0xFFFF;
+					var10.anIntArray1906[var11] = this.aShortArray1738[var12] & 0xFFFF;
 					var6[var12] = var11++;
 				} else {
 					var6[var12] = -1;
@@ -1040,7 +1040,7 @@ public class Entity_Sub1 extends Entity {
 
 			for (var12 = 0; var12 < this.anInt1734; ++var12) {
 				if (this.aByteArray1730[var12] != -1) {
-					var10.aByteArray1875[var12] = (byte) var6[this.aByteArray1730[var12] & 255];
+					var10.aByteArray1875[var12] = (byte) var6[this.aByteArray1730[var12] & 0xFF];
 				} else {
 					var10.aByteArray1875[var12] = -1;
 				}
@@ -1082,7 +1082,7 @@ public class Entity_Sub1 extends Entity {
 			Class27 var17;
 			if (var14 == -1) {
 				if (var18 == 0) {
-					int var13 = this.aShortArray1753[var16] & '\uffff';
+					int var13 = this.aShortArray1753[var16] & 0xFFFF;
 					if (this.aClass21Array1763 != null && this.aClass21Array1763[this.anIntArray1756[var16]] != null) {
 						var7 = this.aClass21Array1763[this.anIntArray1756[var16]];
 					} else {
@@ -1114,7 +1114,7 @@ public class Entity_Sub1 extends Entity {
 					var17 = this.aClass27Array1761[var16];
 					var9 = var1 + (var3 * var17.anInt319 * -1007204591 + var4 * var17.anInt318 * -1133994153
 							+ var5 * var17.anInt317 * -1926770859) / (var8 + var8 / 2);
-					var10.anIntArray1870[var16] = method901(this.aShortArray1753[var16] & '\uffff', var9);
+					var10.anIntArray1870[var16] = method901(this.aShortArray1753[var16] & 0xFFFF, var9);
 					var10.anIntArray1872[var16] = -1;
 				} else if (var18 == 3) {
 					var10.anIntArray1870[var16] = 128;
@@ -1202,11 +1202,11 @@ public class Entity_Sub1 extends Entity {
 		this.method899();
 	}
 
-	Entity_Sub1(byte[] var1) {
-		if (var1[var1.length - 1] == -1 && var1[var1.length - 2] == -1) {
-			this.method907(var1);
+	Entity_Sub1(byte[] bytes) {
+		if (bytes[bytes.length - 1] == -1 && bytes[bytes.length - 2] == -1) {
+			this.decodeNewFormat(bytes);
 		} else {
-			this.method888(var1);
+			this.decodeOldFormat(bytes);
 		}
 
 	}
@@ -1295,7 +1295,7 @@ public class Entity_Sub1 extends Entity {
 		this.method899();
 	}
 
-	void method907(byte[] var1) {
+	void decodeNewFormat(byte[] var1) {
 		ByteBuf var2 = new ByteBuf(var1);
 		ByteBuf var9 = new ByteBuf(var1);
 		ByteBuf var33 = new ByteBuf(var1);
@@ -1304,9 +1304,9 @@ public class Entity_Sub1 extends Entity {
 		ByteBuf var8 = new ByteBuf(var1);
 		ByteBuf var46 = new ByteBuf(var1);
 		var2.position = (var1.length - 23) * -184175589;
-		int var11 = var2.getUShort();
-		int var12 = var2.getUShort();
-		int var27 = var2.getUByte();
+		int numVertices = var2.getUShort();
+		int numTriangles = var2.getUShort();
+		int numTextureTriangles = var2.getUByte();
 		int var13 = var2.getUByte();
 		int var31 = var2.getUByte();
 		int var16 = var2.getUByte();
@@ -1322,11 +1322,11 @@ public class Entity_Sub1 extends Entity {
 		int var3 = 0;
 		int var26 = 0;
 		int var5;
-		if (var27 > 0) {
-			this.aByteArray1746 = new byte[var27];
+		if (numTextureTriangles > 0) {
+			this.aByteArray1746 = new byte[numTextureTriangles];
 			var2.position = 0;
 
-			for (var5 = 0; var5 < var27; ++var5) {
+			for (var5 = 0; var5 < numTextureTriangles; ++var5) {
 				byte var30 = this.aByteArray1746[var5] = var2.getByte();
 				if (var30 == 0) {
 					++var25;
@@ -1342,45 +1342,45 @@ public class Entity_Sub1 extends Entity {
 			}
 		}
 
-		var5 = var27 + var11;
+		var5 = numTextureTriangles + numVertices;
 		int var55 = var5;
 		if (var13 == 1) {
-			var5 += var12;
+			var5 += numTriangles;
 		}
 
 		int var35 = var5;
-		var5 += var12;
+		var5 += numTriangles;
 		int var56 = var5;
 		if (var31 == 255) {
-			var5 += var12;
+			var5 += numTriangles;
 		}
 
 		int var37 = var5;
 		if (var4 == 1) {
-			var5 += var12;
+			var5 += numTriangles;
 		}
 
 		int var48 = var5;
 		if (var19 == 1) {
-			var5 += var11;
+			var5 += numVertices;
 		}
 
 		int var39 = var5;
 		if (var16 == 1) {
-			var5 += var12;
+			var5 += numTriangles;
 		}
 
 		int var40 = var5;
 		var5 += var23;
 		int var57 = var5;
 		if (var18 == 1) {
-			var5 += var12 * 2;
+			var5 += numTriangles * 2;
 		}
 
 		int var42 = var5;
 		var5 += var24;
 		int var50 = var5;
-		var5 += var12 * 2;
+		var5 += numTriangles * 2;
 		int var10 = var5;
 		var5 += var20;
 		int var51 = var5;
@@ -1399,50 +1399,50 @@ public class Entity_Sub1 extends Entity {
 		var5 += var3;
 		int var47 = var5;
 		var5 += var3 * 2 + var26 * 2;
-		this.anInt1770 = var11;
-		this.anInt1734 = var12;
-		this.anInt1745 = var27;
-		this.anIntArray1731 = new int[var11];
-		this.anIntArray1732 = new int[var11];
-		this.anIntArray1733 = new int[var11];
-		this.anIntArray1756 = new int[var12];
-		this.anIntArray1736 = new int[var12];
-		this.anIntArray1737 = new int[var12];
+		this.anInt1770 = numVertices;
+		this.anInt1734 = numTriangles;
+		this.anInt1745 = numTextureTriangles;
+		this.anIntArray1731 = new int[numVertices];
+		this.anIntArray1732 = new int[numVertices];
+		this.anIntArray1733 = new int[numVertices];
+		this.anIntArray1756 = new int[numTriangles];
+		this.anIntArray1736 = new int[numTriangles];
+		this.anIntArray1737 = new int[numTriangles];
 		if (var19 == 1) {
-			this.anIntArray1741 = new int[var11];
+			this.anIntArray1741 = new int[numVertices];
 		}
 
 		if (var13 == 1) {
-			this.aByteArray1744 = new byte[var12];
+			this.aByteArray1744 = new byte[numTriangles];
 		}
 
 		if (var31 == 255) {
-			this.aByteArray1739 = new byte[var12];
+			this.aByteArray1739 = new byte[numTriangles];
 		} else {
 			this.aByte1749 = (byte) var31;
 		}
 
 		if (var16 == 1) {
-			this.aByteArray1752 = new byte[var12];
+			this.aByteArray1752 = new byte[numTriangles];
 		}
 
 		if (var4 == 1) {
-			this.anIntArray1772 = new int[var12];
+			this.anIntArray1772 = new int[numTriangles];
 		}
 
 		if (var18 == 1) {
-			this.aShortArray1743 = new short[var12];
+			this.aShortArray1743 = new short[numTriangles];
 		}
 
-		if (var18 == 1 && var27 > 0) {
-			this.aByteArray1730 = new byte[var12];
+		if (var18 == 1 && numTextureTriangles > 0) {
+			this.aByteArray1730 = new byte[numTriangles];
 		}
 
-		this.aShortArray1753 = new short[var12];
-		if (var27 > 0) {
-			this.aShortArray1747 = new short[var27];
-			this.aShortArray1748 = new short[var27];
-			this.aShortArray1738 = new short[var27];
+		this.aShortArray1753 = new short[numTriangles];
+		if (numTextureTriangles > 0) {
+			this.aShortArray1747 = new short[numTextureTriangles];
+			this.aShortArray1748 = new short[numTextureTriangles];
+			this.aShortArray1738 = new short[numTextureTriangles];
 			if (var3 > 0) {
 				this.aShortArray1750 = new short[var3];
 				this.aShortArray1751 = new short[var3];
@@ -1457,7 +1457,7 @@ public class Entity_Sub1 extends Entity {
 			}
 		}
 
-		var2.position = var27 * -184175589;
+		var2.position = numTextureTriangles * -184175589;
 		var9.position = var10 * -184175589;
 		var33.position = var51 * -184175589;
 		var49.position = var6 * -184175589;
@@ -1471,7 +1471,7 @@ public class Entity_Sub1 extends Entity {
 		int var17;
 		int var29;
 		int var38;
-		for (var15 = 0; var15 < var11; ++var15) {
+		for (var15 = 0; var15 < numVertices; ++var15) {
 			var29 = var2.getUByte();
 			var38 = 0;
 			if ((var29 & 1) != 0) {
@@ -1507,7 +1507,7 @@ public class Entity_Sub1 extends Entity {
 		var8.position = var57 * -184175589;
 		var46.position = var42 * -184175589;
 
-		for (var15 = 0; var15 < var12; ++var15) {
+		for (var15 = 0; var15 < numTriangles; ++var15) {
 			this.aShortArray1753[var15] = (short) var2.getUShort();
 			if (var13 == 1) {
 				this.aByteArray1744[var15] = var9.getByte();
@@ -1542,7 +1542,7 @@ public class Entity_Sub1 extends Entity {
 		var17 = 0;
 
 		int var32;
-		for (var14 = 0; var14 < var12; ++var14) {
+		for (var14 = 0; var14 < numTriangles; ++var14) {
 			var32 = var9.getUByte();
 			if (var32 == 1) {
 				var15 = var2.getSmart() + var17;
@@ -1591,8 +1591,8 @@ public class Entity_Sub1 extends Entity {
 		var7.position = var45 * -184175589;
 		var8.position = var47 * -184175589;
 
-		for (var14 = 0; var14 < var27; ++var14) {
-			var32 = this.aByteArray1746[var14] & 255;
+		for (var14 = 0; var14 < numTextureTriangles; ++var14) {
+			var32 = this.aByteArray1746[var14] & 0xFF;
 			if (var32 == 0) {
 				this.aShortArray1747[var14] = (short) var2.getUShort();
 				this.aShortArray1748[var14] = (short) var2.getUShort();

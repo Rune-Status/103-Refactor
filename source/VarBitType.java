@@ -3,10 +3,10 @@ import java.awt.Component;
 public class VarBitType extends DualNode {
 
 	public int lowBit;
-	static Class106 varbits = new Class106(64);
+	static NodeMap varbits = new NodeMap(64);
 	public int varp;
 	public static AbstractIndex varbit_ref;
-	static Sprite[] aSpriteArray1728;
+	static Picture[] aSpriteArray1728;
 	public int highBit;
 
 	void decode(ByteBuf var1) {
@@ -29,13 +29,13 @@ public class VarBitType extends DualNode {
 
 	}
 
-	public static void method876(Component var0) {
-		var0.setFocusTraversalKeysEnabled(false);
-		var0.addKeyListener(Class71.aClass71_603);
-		var0.addFocusListener(Class71.aClass71_603);
+	public static void setKeyFocusListener(Component comp) {
+		comp.setFocusTraversalKeysEnabled(false);
+		comp.addKeyListener(KeyFocusListener.kfListener);
+		comp.addFocusListener(KeyFocusListener.kfListener);
 	}
 
-	static final void method877(DualNode_Sub13_Sub2 var0) {
+	static final void method877(Sprite var0) {
 		short var1 = 256;
 
 		int var5;
@@ -55,8 +55,9 @@ public class VarBitType extends DualNode {
 			for (var2 = 1; var2 < var1 - 1; ++var2) {
 				for (var3 = 1; var3 < 127; ++var3) {
 					var4 = (var2 << 7) + var3;
-					Permission.anIntArray605[var4] = (Class33.anIntArray365[var4 + 128] + Class33.anIntArray365[var4 - 128]
-							+ Class33.anIntArray365[1 + var4] + Class33.anIntArray365[var4 - 1]) / 4;
+					Permission.anIntArray605[var4] = (Class33.anIntArray365[var4 + 128]
+							+ Class33.anIntArray365[var4 - 128] + Class33.anIntArray365[1 + var4]
+							+ Class33.anIntArray365[var4 - 1]) / 4;
 				}
 			}
 
@@ -68,11 +69,11 @@ public class VarBitType extends DualNode {
 		if (var0 != null) {
 			var5 = 0;
 
-			for (var2 = 0; var2 < var0.anInt1801; ++var2) {
-				for (var3 = 0; var3 < var0.anInt1800; ++var3) {
-					if (var0.aByteArray1799[var5++] != 0) {
-						var4 = var0.anInt1803 + 16 + var3;
-						int var6 = var2 + 16 + var0.anInt1802;
+			for (var2 = 0; var2 < var0.subHeight; ++var2) {
+				for (var3 = 0; var3 < var0.subWidth; ++var3) {
+					if (var0.pixels[var5++] != 0) {
+						var4 = var0.offsetX + 16 + var3;
+						int var6 = var2 + 16 + var0.offsetY;
 						int var7 = var4 + (var6 << 7);
 						Class33.anIntArray365[var7] = 0;
 					}

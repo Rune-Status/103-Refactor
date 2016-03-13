@@ -1,98 +1,98 @@
 
 public class UnderlayType extends DualNode {
 
-	static Class106 underlays = new Class106(64);
-	int anInt1510 = 0;
+	static NodeMap underlays = new NodeMap(64);
+	int rgbColor = 0;
 	static AbstractIndex underlay_ref;
-	public int anInt1512;
-	public int anInt1513;
-	public int anInt1514;
-	public int anInt1515;
+	public int hue;
+	public int lightness;
+	public int saturation;
+	public int pCDivider;
 
 	void post() {
-		this.method703(this.anInt1510 * -1160088629);
+		this.setHSL(this.rgbColor * -1160088629);
 	}
 
-	void decode(ByteBuf var1, int var2) {
+	void decode(ByteBuf buf, int var2) {
 		while (true) {
-			int var3 = var1.getUByte();
-			if (var3 == 0) {
+			int opcode = buf.getUByte();
+			if (opcode == 0) {
 				return;
 			}
 
-			this.method706(var1, var3, var2);
+			this.decode(buf, opcode, var2);
 		}
 	}
 
-	void method703(int var1) {
-		double var2 = (double) (var1 >> 16 & 255) / 256.0D;
-		double var10 = (double) (var1 >> 8 & 255) / 256.0D;
-		double var6 = (double) (var1 & 255) / 256.0D;
-		double var8 = var2;
-		if (var10 < var2) {
-			var8 = var10;
+	void setHSL(int rgbColor) {
+		double red = (double) (rgbColor >> 16 & 0xFF) / 256.0D;
+		double green = (double) (rgbColor >> 8 & 0xFF) / 256.0D;
+		double blue = (double) (rgbColor & 0xFF) / 256.0D;
+		double min = red;
+		if (green < red) {
+			min = green;
 		}
 
-		if (var6 < var8) {
-			var8 = var6;
+		if (blue < min) {
+			min = blue;
 		}
 
-		double var12 = var2;
-		if (var10 > var2) {
-			var12 = var10;
+		double max = red;
+		if (green > red) {
+			max = green;
 		}
 
-		if (var6 > var12) {
-			var12 = var6;
+		if (blue > max) {
+			max = blue;
 		}
 
-		double var14 = 0.0D;
-		double var4 = 0.0D;
-		double var16 = (var8 + var12) / 2.0D;
-		if (var12 != var8) {
-			if (var16 < 0.5D) {
-				var4 = (var12 - var8) / (var12 + var8);
+		double hue = 0.0D;
+		double saturation = 0.0D;
+		double lightness = (min + max) / 2.0D;
+		if (max != min) {
+			if (lightness < 0.5D) {
+				saturation = (max - min) / (max + min);
 			}
 
-			if (var16 >= 0.5D) {
-				var4 = (var12 - var8) / (2.0D - var12 - var8);
+			if (lightness >= 0.5D) {
+				saturation = (max - min) / (2.0D - max - min);
 			}
 
-			if (var12 == var2) {
-				var14 = (var10 - var6) / (var12 - var8);
-			} else if (var12 == var10) {
-				var14 = (var6 - var2) / (var12 - var8) + 2.0D;
-			} else if (var12 == var6) {
-				var14 = 4.0D + (var2 - var10) / (var12 - var8);
+			if (max == red) {
+				hue = (green - blue) / (max - min);
+			} else if (max == green) {
+				hue = (blue - red) / (max - min) + 2.0D;
+			} else if (max == blue) {
+				hue = 4.0D + (red - green) / (max - min);
 			}
 		}
 
-		var14 /= 6.0D;
-		this.anInt1514 = (int) (256.0D * var4) * 203308565;
-		this.anInt1513 = -2128615975 * (int) (256.0D * var16);
-		if (this.anInt1514 * 1757454653 < 0) {
-			this.anInt1514 = 0;
-		} else if (1757454653 * this.anInt1514 > 255) {
-			this.anInt1514 = 304076523;
+		hue /= 6.0D;
+		this.saturation = (int) (256.0D * saturation) * 203308565;
+		this.lightness = -2128615975 * (int) (256.0D * lightness);
+		if (this.saturation * 1757454653 < 0) {
+			this.saturation = 0;
+		} else if (1757454653 * this.saturation > 255) {
+			this.saturation = 304076523;
 		}
 
-		if (this.anInt1513 * 789203561 < 0) {
-			this.anInt1513 = 0;
-		} else if (this.anInt1513 * 789203561 > 255) {
-			this.anInt1513 = -1631194329;
+		if (this.lightness * 789203561 < 0) {
+			this.lightness = 0;
+		} else if (this.lightness * 789203561 > 255) {
+			this.lightness = -1631194329;
 		}
 
-		if (var16 > 0.5D) {
-			this.anInt1515 = 1720480603 * (int) ((1.0D - var16) * var4 * 512.0D);
+		if (lightness > 0.5D) {
+			this.pCDivider = 1720480603 * (int) ((1.0D - lightness) * saturation * 512.0D);
 		} else {
-			this.anInt1515 = (int) (512.0D * var4 * var16) * 1720480603;
+			this.pCDivider = (int) (512.0D * saturation * lightness) * 1720480603;
 		}
 
-		if (this.anInt1515 * 837190867 < 1) {
-			this.anInt1515 = 1720480603;
+		if (this.pCDivider * 837190867 < 1) {
+			this.pCDivider = 1720480603;
 		}
 
-		this.anInt1512 = -1336121361 * (int) (var14 * (double) (837190867 * this.anInt1515));
+		this.hue = -1336121361 * (int) (hue * (double) (837190867 * this.pCDivider));
 	}
 
 	static void method704(int var0, int var1) {
@@ -135,33 +135,34 @@ public class UnderlayType extends DualNode {
 
 	}
 
-	void method706(ByteBuf var1, int var2, int var3) {
-		if (var2 == 1) {
-			this.anInt1510 = var1.getMedium() * -161113629;
+	void decode(ByteBuf buf, int opcode, int var3) {
+		if (opcode == 1) {
+			this.rgbColor = buf.getMedium() * -161113629;
 		}
 
 	}
 
-	static final byte[] method707(byte[] var0) {
-		ByteBuf var1 = new ByteBuf(var0);
-		int var4 = var1.getUByte();
-		int var3 = var1.getInt();
-		if (var3 >= 0 && (-1150359653 * AbstractIndex.anInt710 == 0 || var3 <= -1150359653 * AbstractIndex.anInt710)) {
-			if (var4 == 0) {
-				byte[] var6 = new byte[var3];
-				var1.getBytes(var6, 0, var3);
-				return var6;
+	static final byte[] decodeContainer(byte[] bytes) {
+		ByteBuf buf = new ByteBuf(bytes);
+		int type = buf.getUByte();
+		int size = buf.getInt();
+		if (size >= 0 && (-1150359653 * AbstractIndex.anInt710 == 0 || size <= -1150359653 * AbstractIndex.anInt710)) {
+			if (type == 0) {
+				byte[] data = new byte[size];
+				buf.getBytes(data, 0, size);
+				return data;
 			} else {
-				int var2 = var1.getInt();
-				if (var2 >= 0 && (-1150359653 * AbstractIndex.anInt710 == 0 || var2 <= AbstractIndex.anInt710 * -1150359653)) {
-					byte[] var5 = new byte[var2];
-					if (var4 == 1) {
-						Class55.method276(var5, var2, var0, var3, 9);
+				int uSize = buf.getInt();
+				if (uSize >= 0 && (-1150359653 * AbstractIndex.anInt710 == 0
+						|| uSize <= AbstractIndex.anInt710 * -1150359653)) {
+					byte[] data = new byte[uSize];
+					if (type == 1) {
+						Class55.bunzip2(data, uSize, bytes, size, 9);
 					} else {
-						AbstractIndex.aClass49_699.method248(var1, var5);
+						AbstractIndex.gzip.decompress(buf, data);
 					}
 
-					return var5;
+					return data;
 				} else {
 					throw new RuntimeException();
 				}

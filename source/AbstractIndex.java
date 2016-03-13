@@ -8,9 +8,9 @@ public abstract class AbstractIndex {
 	int[] anIntArray696;
 	Class99 aClass99_697;
 	int[] anIntArray698;
-	static Class49 aClass49_699 = new Class49();
+	static GZipDecompressor gzip = new GZipDecompressor();
 	boolean aBool700;
-	int[][] anIntArrayArray701;
+	int[][] childEntries;
 	int[] anIntArray702;
 	int[] anIntArray703;
 	Object[] anObjectArray704;
@@ -35,7 +35,7 @@ public abstract class AbstractIndex {
 			if (this.anObjectArrayArray705[var1][var2] == null) {
 				boolean var4 = this.method382(var1, var3);
 				if (!var4) {
-					this.method379(var1, -1678922494);
+					this.method379(var1);
 					var4 = this.method382(var1, var3);
 					if (!var4) {
 						return null;
@@ -43,7 +43,7 @@ public abstract class AbstractIndex {
 				}
 			}
 
-			byte[] var5 = GroundItem.method991(this.anObjectArrayArray705[var1][var2], false);
+			byte[] var5 = GroundItem.toByteArray(this.anObjectArrayArray705[var1][var2], false);
 			if (this.aBool700) {
 				this.anObjectArrayArray705[var1][var2] = null;
 			}
@@ -58,7 +58,7 @@ public abstract class AbstractIndex {
 		int var2 = var1.length;
 		int var7 = Class58.getCrc(var1, 0, var2);
 		this.anInt695 = var7 * 1019466219;
-		ByteBuf var3 = new ByteBuf(UnderlayType.method707(var1));
+		ByteBuf var3 = new ByteBuf(UnderlayType.decodeContainer(var1));
 		int var6 = var3.getUByte();
 		if (var6 >= 5 && var6 <= 7) {
 			if (var6 >= 6) {
@@ -95,7 +95,7 @@ public abstract class AbstractIndex {
 			this.anIntArray698 = new int[var5 + 1];
 			this.anIntArray707 = new int[var5 + 1];
 			this.anIntArray702 = new int[1 + var5];
-			this.anIntArrayArray701 = new int[var5 + 1][];
+			this.childEntries = new int[var5 + 1][];
 			this.anObjectArray704 = new Object[1 + var5];
 			this.anObjectArrayArray705 = new Object[1 + var5][];
 			if (var12 != 0) {
@@ -131,10 +131,10 @@ public abstract class AbstractIndex {
 					var9 = this.anIntArray702[var8];
 					var14 = 0;
 					var10 = -1;
-					this.anIntArrayArray701[var8] = new int[var9];
+					this.childEntries[var8] = new int[var9];
 
 					for (var13 = 0; var13 < var9; ++var13) {
-						var11 = this.anIntArrayArray701[var8][var13] = var14 += var3.getLargeSmart();
+						var11 = this.childEntries[var8][var13] = var14 += var3.getLargeSmart();
 						if (var11 > var10) {
 							var10 = var11;
 						}
@@ -148,10 +148,10 @@ public abstract class AbstractIndex {
 					var9 = this.anIntArray702[var8];
 					var14 = 0;
 					var10 = -1;
-					this.anIntArrayArray701[var8] = new int[var9];
+					this.childEntries[var8] = new int[var9];
 
 					for (var13 = 0; var13 < var9; ++var13) {
-						var11 = this.anIntArrayArray701[var8][var13] = var14 += var3.getUShort();
+						var11 = this.childEntries[var8][var13] = var14 += var3.getUShort();
 						if (var11 > var10) {
 							var10 = var11;
 						}
@@ -171,7 +171,7 @@ public abstract class AbstractIndex {
 					this.anIntArrayArray706[var8] = new int[this.anObjectArrayArray705[var8].length];
 
 					for (var10 = 0; var10 < var9; ++var10) {
-						this.anIntArrayArray706[var8][this.anIntArrayArray701[var8][var10]] = var3.getInt();
+						this.anIntArrayArray706[var8][this.childEntries[var8][var10]] = var3.getInt();
 					}
 
 					this.aClass99Array694[var8] = new Class99(this.anIntArrayArray706[var8]);
@@ -189,7 +189,7 @@ public abstract class AbstractIndex {
 		for (int var3 = 0; var3 < this.anIntArray703.length; ++var3) {
 			int var2 = this.anIntArray703[var3];
 			if (this.anObjectArray704[var2] == null) {
-				this.method379(var2, -921963201);
+				this.method379(var2);
 				if (this.anObjectArray704[var2] == null) {
 					var1 = false;
 				}
@@ -209,7 +209,7 @@ public abstract class AbstractIndex {
 		}
 	}
 
-	void method379(int var1, int var2) {
+	void method379(int var1) {
 	}
 
 	public int fileCount(int var1) {
@@ -227,13 +227,13 @@ public abstract class AbstractIndex {
 
 	}
 
-	boolean method382(int var1, int[] var2) {
-		if (this.anObjectArray704[var1] == null) {
+	boolean method382(int file, int[] keys) {
+		if (this.anObjectArray704[file] == null) {
 			return false;
 		} else {
-			int var3 = this.anIntArray702[var1];
-			int[] var4 = this.anIntArrayArray701[var1];
-			Object[] var5 = this.anObjectArrayArray705[var1];
+			int var3 = this.anIntArray702[file];
+			int[] var4 = this.childEntries[file];
+			Object[] var5 = this.anObjectArrayArray705[file];
 			boolean var6 = true;
 
 			for (int var7 = 0; var7 < var3; ++var7) {
@@ -247,25 +247,25 @@ public abstract class AbstractIndex {
 				return true;
 			} else {
 				byte[] var18;
-				if (var2 != null && (var2[0] != 0 || var2[1] != 0 || var2[2] != 0 || var2[3] != 0)) {
-					var18 = GroundItem.method991(this.anObjectArray704[var1], true);
+				if (keys != null && (keys[0] != 0 || keys[1] != 0 || keys[2] != 0 || keys[3] != 0)) {
+					var18 = GroundItem.toByteArray(this.anObjectArray704[file], true);
 					ByteBuf var8 = new ByteBuf(var18);
-					var8.decryptXTEA(var2, 5, var8.payload.length);
+					var8.decryptXTEA(keys, 5, var8.payload.length);
 				} else {
-					var18 = GroundItem.method991(this.anObjectArray704[var1], false);
+					var18 = GroundItem.toByteArray(this.anObjectArray704[file], false);
 				}
 
-				byte[] var19 = UnderlayType.method707(var18);
+				byte[] data = UnderlayType.decodeContainer(var18);
 				if (this.aBool708) {
-					this.anObjectArray704[var1] = null;
+					this.anObjectArray704[file] = null;
 				}
 
 				if (var3 > 1) {
-					int var9 = var19.length;
+					int var9 = data.length;
 					--var9;
-					int var10 = var19[var9] & 255;
+					int var10 = data[var9] & 0xFF;
 					var9 -= var10 * var3 * 4;
-					ByteBuf var11 = new ByteBuf(var19);
+					ByteBuf var11 = new ByteBuf(data);
 					int[] var12 = new int[var3];
 					var11.position = -184175589 * var9;
 
@@ -295,7 +295,7 @@ public abstract class AbstractIndex {
 
 						for (int var17 = 0; var17 < var3; ++var17) {
 							var16 += var11.getInt();
-							System.arraycopy(var19, var14, var20[var17], var12[var17], var16);
+							System.arraycopy(data, var14, var20[var17], var12[var17], var16);
 							var12[var17] += var16;
 							var14 += var16;
 						}
@@ -309,9 +309,9 @@ public abstract class AbstractIndex {
 						}
 					}
 				} else if (!this.aBool700) {
-					var5[var4[0]] = Node_Sub6.method538(var19, false);
+					var5[var4[0]] = Node_Sub6.method538(data, false);
 				} else {
-					var5[var4[0]] = var19;
+					var5[var4[0]] = data;
 				}
 
 				return true;
@@ -358,7 +358,7 @@ public abstract class AbstractIndex {
 			} else if (this.anObjectArray704[var1] != null) {
 				return true;
 			} else {
-				this.method379(var1, -1273643001);
+				this.method379(var1);
 				return this.anObjectArray704[var1] != null;
 			}
 		} else {
@@ -374,21 +374,21 @@ public abstract class AbstractIndex {
 		return this.getFile(var3, var4);
 	}
 
-	public byte[] method390(int var1, int var2) {
-		if (var1 >= 0 && var1 < this.anObjectArrayArray705.length && this.anObjectArrayArray705[var1] != null
-				&& var2 >= 0 && var2 < this.anObjectArrayArray705[var1].length) {
-			if (this.anObjectArrayArray705[var1][var2] == null) {
-				boolean var3 = this.method382(var1, (int[]) null);
+	public byte[] method390(int file, int child) {
+		if (file >= 0 && file < this.anObjectArrayArray705.length && this.anObjectArrayArray705[file] != null
+				&& child >= 0 && child < this.anObjectArrayArray705[file].length) {
+			if (this.anObjectArrayArray705[file][child] == null) {
+				boolean var3 = this.method382(file, (int[]) null);
 				if (!var3) {
-					this.method379(var1, -2032229340);
-					var3 = this.method382(var1, (int[]) null);
+					this.method379(file);
+					var3 = this.method382(file, (int[]) null);
 					if (!var3) {
 						return null;
 					}
 				}
 			}
 
-			byte[] var4 = GroundItem.method991(this.anObjectArrayArray705[var1][var2], false);
+			byte[] var4 = GroundItem.toByteArray(this.anObjectArrayArray705[file][child], false);
 			return var4;
 		} else {
 			return null;
@@ -427,15 +427,15 @@ public abstract class AbstractIndex {
 		}
 	}
 
-	public int[] method394(int var1) {
-		return this.anIntArrayArray701[var1];
+	public int[] getChilds(int var1) {
+		return this.childEntries[var1];
 	}
 
 	public boolean containsFile(int var1) {
 		if (this.anObjectArray704[var1] != null) {
 			return true;
 		} else {
-			this.method379(var1, -1604977202);
+			this.method379(var1);
 			return this.anObjectArray704[var1] != null;
 		}
 	}

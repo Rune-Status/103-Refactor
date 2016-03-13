@@ -232,7 +232,7 @@ public class Huffman {
 		int var13 = var5 << 3;
 
 		for (var3 += var2; var2 < var3; ++var2) {
-			int var10 = var1[var2] & 255;
+			int var10 = var1[var2] & 0xFF;
 			int var11 = this.anIntArray450[var10];
 			byte var12 = this.aByteArray447[var10];
 			if (var12 == 0) {

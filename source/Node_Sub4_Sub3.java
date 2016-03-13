@@ -6,7 +6,7 @@ public class Node_Sub4_Sub3 extends Node_Sub4 {
 	Node_Sub4_Sub4 aNode_Sub4_Sub4_1654;
 
 	protected Node_Sub4 method526() {
-		Node_Sub14 var1 = (Node_Sub14) this.aDeque1652.method471();
+		Node_Sub14 var1 = (Node_Sub14) this.aDeque1652.getFront();
 		return (Node_Sub4) (var1 == null ? null
 				: (var1.aNode_Sub4_Sub2_1394 != null ? var1.aNode_Sub4_Sub2_1394 : this.method529()));
 	}
@@ -14,7 +14,7 @@ public class Node_Sub4_Sub3 extends Node_Sub4 {
 	protected Node_Sub4 method529() {
 		Node_Sub14 var1;
 		do {
-			var1 = (Node_Sub14) this.aDeque1652.method473();
+			var1 = (Node_Sub14) this.aDeque1652.getNext();
 			if (var1 == null) {
 				return null;
 			}
@@ -31,7 +31,7 @@ public class Node_Sub4_Sub3 extends Node_Sub4 {
 		this.aNode_Sub4_Sub1_1653.method530(var1, var2, var3);
 
 		for (Node_Sub14 var5 = (Node_Sub14) this.aDeque1652
-				.method471(); var5 != null; var5 = (Node_Sub14) this.aDeque1652.method473()) {
+				.getFront(); var5 != null; var5 = (Node_Sub14) this.aDeque1652.getNext()) {
 			if (!this.aNode_Sub4_Sub4_1654.method849(var5)) {
 				int var6 = var2;
 				int var4 = var3;
@@ -56,7 +56,7 @@ public class Node_Sub4_Sub3 extends Node_Sub4 {
 		this.aNode_Sub4_Sub1_1653.method528(var1);
 
 		for (Node_Sub14 var2 = (Node_Sub14) this.aDeque1652
-				.method471(); var2 != null; var2 = (Node_Sub14) this.aDeque1652.method473()) {
+				.getFront(); var2 != null; var2 = (Node_Sub14) this.aDeque1652.getNext()) {
 			if (!this.aNode_Sub4_Sub4_1654.method849(var2)) {
 				int var3 = var1;
 

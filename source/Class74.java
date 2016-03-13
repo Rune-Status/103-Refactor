@@ -64,7 +64,7 @@ public class Class74 implements MouseListener, MouseMotionListener, FocusListene
 			anInt617 = 0;
 			anInt631 = var1.getX() * -2121653949;
 			anInt620 = var1.getY() * -1947749793;
-			aLong616 = Node_Sub5.currentTimeMs() * 1504365569888336301L;
+			aLong616 = AnimationSkin.currentTimeMs() * 1504365569888336301L;
 			if (var1.isAltDown()) {
 				anInt623 = -679655996;
 				anInt626 = 1605267244;

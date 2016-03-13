@@ -1,11 +1,11 @@
 
-public class Class23 {
+public class AnimationSkeleton {
 
 	static int[] anIntArray287 = new int[500];
 	int[] anIntArray288;
 	static int[] anIntArray289 = new int[500];
 	static int[] anIntArray290 = new int[500];
-	Node_Sub5 aNode_Sub5_291 = null;
+	AnimationSkin aNode_Sub5_291 = null;
 	int anInt292 = -1;
 	int[] anIntArray293;
 	static int[] anIntArray294 = new int[500];
@@ -13,7 +13,7 @@ public class Class23 {
 	int[] anIntArray296;
 	boolean aBool297 = false;
 
-	Class23(byte[] var1, Node_Sub5 var2) {
+	AnimationSkeleton(byte[] var1, AnimationSkin var2) {
 		this.aNode_Sub5_291 = var2;
 		ByteBuf var6 = new ByteBuf(var1);
 		ByteBuf var9 = new ByteBuf(var1);

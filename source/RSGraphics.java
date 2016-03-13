@@ -10,15 +10,15 @@ public class RSGraphics extends DualNode {
 	protected static int draw_region_max_x = 0;
 
 	public static void setRaster(int[] raster_object, int width, int height) {
-		raster 		 	= raster_object;
-		raster_width  	= width;
-		raster_height 	= height;
+		raster = raster_object;
+		raster_width = width;
+		raster_height = height;
 		setDrawRegion(0, 0, width, height);
 	}
 
 	public static void noClip() {
-		draw_region_x 	  = 0;
-		draw_region_y 	  = 0;
+		draw_region_x = 0;
+		draw_region_y = 0;
 		draw_region_max_x = raster_width;
 		draw_region_max_y = raster_height;
 	}
@@ -50,10 +50,10 @@ public class RSGraphics extends DualNode {
 	}
 
 	public static void setDrawRegion(int[] var0) {
-		draw_region_x 		= var0[0];
-		draw_region_y 		= var0[1];
-		draw_region_max_x 	= var0[2];
-		draw_region_max_y 	= var0[3];
+		draw_region_x = var0[0];
+		draw_region_y = var0[1];
+		draw_region_max_x = var0[2];
+		draw_region_max_y = var0[3];
 	}
 
 	public static void method784(int var0, int var1, int var2, int var3) {
@@ -172,15 +172,15 @@ public class RSGraphics extends DualNode {
 			}
 
 			int var6 = 256 - var4;
-			int var8 = (var3 >> 16 & 255) * var4;
-			int var10 = (var3 >> 8 & 255) * var4;
-			int var11 = (var3 & 255) * var4;
+			int var8 = (var3 >> 16 & 0xFF) * var4;
+			int var10 = (var3 >> 8 & 0xFF) * var4;
+			int var11 = (var3 & 0xFF) * var4;
 			int var5 = var0 + var1 * raster_width;
 
 			for (int var14 = 0; var14 < var2; ++var14) {
-				int var9 = (raster[var5] >> 16 & 255) * var6;
-				int var7 = (raster[var5] >> 8 & 255) * var6;
-				int var12 = (raster[var5] & 255) * var6;
+				int var9 = (raster[var5] >> 16 & 0xFF) * var6;
+				int var7 = (raster[var5] >> 8 & 0xFF) * var6;
+				int var12 = (raster[var5] & 0xFF) * var6;
 				int var13 = (var8 + var9 >> 8 << 16) + (var10 + var7 >> 8 << 8) + (var11 + var12 >> 8);
 				raster[var5++] = var13;
 			}
@@ -205,8 +205,8 @@ public class RSGraphics extends DualNode {
 			var3 = raster_height;
 		}
 
-		draw_region_x 	  = var0;
-		draw_region_y 	  = var1;
+		draw_region_x = var0;
+		draw_region_y = var1;
 		draw_region_max_x = var2;
 		draw_region_max_y = var3;
 	}
@@ -223,15 +223,15 @@ public class RSGraphics extends DualNode {
 			}
 
 			int var5 = 256 - var4;
-			int var14 = (var3 >> 16 & 255) * var4;
-			int var7 = (var3 >> 8 & 255) * var4;
-			int var8 = (var3 & 255) * var4;
+			int var14 = (var3 >> 16 & 0xFF) * var4;
+			int var7 = (var3 >> 8 & 0xFF) * var4;
+			int var8 = (var3 & 0xFF) * var4;
 			int var6 = var0 + var1 * raster_width;
 
 			for (int var9 = 0; var9 < var2; ++var9) {
-				int var10 = (raster[var6] >> 16 & 255) * var5;
-				int var11 = (raster[var6] >> 8 & 255) * var5;
-				int var12 = (raster[var6] & 255) * var5;
+				int var10 = (raster[var6] >> 16 & 0xFF) * var5;
+				int var11 = (raster[var6] >> 8 & 0xFF) * var5;
+				int var12 = (raster[var6] & 0xFF) * var5;
 				int var13 = (var14 + var10 >> 8 << 16) + (var7 + var11 >> 8 << 8) + (var8 + var12 >> 8);
 				raster[var6] = var13;
 				var6 += raster_width;

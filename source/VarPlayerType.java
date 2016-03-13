@@ -1,8 +1,8 @@
 
 public class VarPlayerType extends DualNode {
 
-	public static int[] anIntArray1544;
-	static Class106 varplayers = new Class106(64);
+	public static int[] offsetsY;
+	static NodeMap varplayers = new NodeMap(64);
 	public int anInt1546 = 0;
 	public static int anInt1547;
 	static AbstractIndex varplayer_ref;

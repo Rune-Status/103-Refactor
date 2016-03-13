@@ -14,9 +14,9 @@ public class ByteBuf extends Node {
 
 	public int getMEMedium() {
 		this.position += -552526767;
-		return ((this.payload[this.position * 314639891 - 2] & 255) << 16)
-				+ ((this.payload[this.position * 314639891 - 3] & 255) << 8)
-				+ (this.payload[314639891 * this.position - 1] & 255);
+		return ((this.payload[this.position * 314639891 - 2] & 0xFF) << 16)
+				+ ((this.payload[this.position * 314639891 - 3] & 0xFF) << 8)
+				+ (this.payload[314639891 * this.position - 1] & 0xFF);
 	}
 
 	public void putShort(int var1) {
@@ -124,19 +124,19 @@ public class ByteBuf extends Node {
 	}
 
 	public int getUByte() {
-		return this.payload[(this.position += -184175589) * 314639891 - 1] & 255;
+		return this.payload[(this.position += -184175589) * 314639891 - 1] & 0xFF;
 	}
 
 	public int getUShort() {
 		this.position += -368351178;
-		return ((this.payload[314639891 * this.position - 2] & 255) << 8)
-				+ (this.payload[314639891 * this.position - 1] & 255);
+		return ((this.payload[314639891 * this.position - 2] & 0xFF) << 8)
+				+ (this.payload[314639891 * this.position - 1] & 0xFF);
 	}
 
 	public int getShort() {
 		this.position += -368351178;
-		int var1 = (this.payload[314639891 * this.position - 1] & 255)
-				+ ((this.payload[this.position * 314639891 - 2] & 255) << 8);
+		int var1 = (this.payload[314639891 * this.position - 1] & 0xFF)
+				+ ((this.payload[this.position * 314639891 - 2] & 0xFF) << 8);
 		if (var1 > 32767) {
 			var1 -= 65536;
 		}
@@ -146,17 +146,17 @@ public class ByteBuf extends Node {
 
 	public int getMedium() {
 		this.position += -552526767;
-		return (this.payload[this.position * 314639891 - 1] & 255)
-				+ ((this.payload[314639891 * this.position - 3] & 255) << 16)
-				+ ((this.payload[this.position * 314639891 - 2] & 255) << 8);
+		return (this.payload[this.position * 314639891 - 1] & 0xFF)
+				+ ((this.payload[314639891 * this.position - 3] & 0xFF) << 16)
+				+ ((this.payload[this.position * 314639891 - 2] & 0xFF) << 8);
 	}
 
 	public int getInt() {
 		this.position += -736702356;
-		return (this.payload[this.position * 314639891 - 1] & 255)
-				+ ((this.payload[314639891 * this.position - 4] & 255) << 24)
-				+ ((this.payload[314639891 * this.position - 3] & 255) << 16)
-				+ ((this.payload[this.position * 314639891 - 2] & 255) << 8);
+		return (this.payload[this.position * 314639891 - 1] & 0xFF)
+				+ ((this.payload[314639891 * this.position - 4] & 0xFF) << 24)
+				+ ((this.payload[314639891 * this.position - 3] & 0xFF) << 16)
+				+ ((this.payload[this.position * 314639891 - 2] & 0xFF) << 8);
 	}
 
 	public long getLong() {
@@ -165,7 +165,7 @@ public class ByteBuf extends Node {
 		return (var1 << 32) + var3;
 	}
 
-	public String method599() {
+	public String getNullString() {
 		if (this.payload[this.position * 314639891] == 0) {
 			this.position += -184175589;
 			return null;
@@ -202,7 +202,7 @@ public class ByteBuf extends Node {
 	}
 
 	public int getUSmart() {
-		int var1 = this.payload[314639891 * this.position] & 255;
+		int var1 = this.payload[314639891 * this.position] & 0xFF;
 		return var1 >= 128 ? this.getUShort() - '\u8000' : this.getUByte();
 	}
 
@@ -313,15 +313,15 @@ public class ByteBuf extends Node {
 	}
 
 	public int getUByteA() {
-		return this.payload[(this.position += -184175589) * 314639891 - 1] - 128 & 255;
+		return this.payload[(this.position += -184175589) * 314639891 - 1] - 128 & 0xFF;
 	}
 
 	public int getUByteC() {
-		return 0 - this.payload[(this.position += -184175589) * 314639891 - 1] & 255;
+		return 0 - this.payload[(this.position += -184175589) * 314639891 - 1] & 0xFF;
 	}
 
 	public int getUByteS() {
-		return 128 - this.payload[(this.position += -184175589) * 314639891 - 1] & 255;
+		return 128 - this.payload[(this.position += -184175589) * 314639891 - 1] & 0xFF;
 	}
 
 	public void putByte(int var1) {
@@ -330,27 +330,27 @@ public class ByteBuf extends Node {
 
 	public int getLEInt() {
 		this.position += -736702356;
-		return ((this.payload[this.position * 314639891 - 2] & 255) << 16)
-				+ ((this.payload[this.position * 314639891 - 1] & 255) << 24)
-				+ ((this.payload[this.position * 314639891 - 3] & 255) << 8)
-				+ (this.payload[314639891 * this.position - 4] & 255);
+		return ((this.payload[this.position * 314639891 - 2] & 0xFF) << 16)
+				+ ((this.payload[this.position * 314639891 - 1] & 0xFF) << 24)
+				+ ((this.payload[this.position * 314639891 - 3] & 0xFF) << 8)
+				+ (this.payload[314639891 * this.position - 4] & 0xFF);
 	}
 
 	public int getSmart() {
-		int var1 = this.payload[this.position * 314639891] & 255;
+		int var1 = this.payload[this.position * 314639891] & 0xFF;
 		return var1 < 128 ? this.getUByte() - 64 : this.getUShort() - '\uc000';
 	}
 
 	public int getULEShortA() {
 		this.position += -368351178;
-		return (this.payload[this.position * 314639891 - 2] - 128 & 255)
-				+ ((this.payload[this.position * 314639891 - 1] & 255) << 8);
+		return (this.payload[this.position * 314639891 - 2] - 128 & 0xFF)
+				+ ((this.payload[this.position * 314639891 - 1] & 0xFF) << 8);
 	}
 
 	public int getLEShort() {
 		this.position += -368351178;
-		int var1 = ((this.payload[314639891 * this.position - 1] & 255) << 8)
-				+ (this.payload[this.position * 314639891 - 2] & 255);
+		int var1 = ((this.payload[314639891 * this.position - 1] & 0xFF) << 8)
+				+ (this.payload[this.position * 314639891 - 2] & 0xFF);
 		if (var1 > 32767) {
 			var1 -= 65536;
 		}
@@ -414,18 +414,18 @@ public class ByteBuf extends Node {
 
 	public int getMEInt() {
 		this.position += -736702356;
-		return ((this.payload[this.position * 314639891 - 2] & 255) << 24)
-				+ ((this.payload[this.position * 314639891 - 1] & 255) << 16)
-				+ ((this.payload[this.position * 314639891 - 4] & 255) << 8)
-				+ (this.payload[314639891 * this.position - 3] & 255);
+		return ((this.payload[this.position * 314639891 - 2] & 0xFF) << 24)
+				+ ((this.payload[this.position * 314639891 - 1] & 0xFF) << 16)
+				+ ((this.payload[this.position * 314639891 - 4] & 0xFF) << 8)
+				+ (this.payload[314639891 * this.position - 3] & 0xFF);
 	}
 
 	public int getIMEInt() {
 		this.position += -736702356;
-		return (this.payload[314639891 * this.position - 2] & 255)
-				+ ((this.payload[this.position * 314639891 - 3] & 255) << 24)
-				+ ((this.payload[314639891 * this.position - 4] & 255) << 16)
-				+ ((this.payload[this.position * 314639891 - 1] & 255) << 8);
+		return (this.payload[314639891 * this.position - 2] & 0xFF)
+				+ ((this.payload[this.position * 314639891 - 3] & 0xFF) << 24)
+				+ ((this.payload[314639891 * this.position - 4] & 0xFF) << 16)
+				+ ((this.payload[this.position * 314639891 - 1] & 0xFF) << 8);
 	}
 
 	public ByteBuf(int size) {
@@ -440,8 +440,8 @@ public class ByteBuf extends Node {
 
 	public int getShortA() {
 		this.position += -368351178;
-		int var1 = ((this.payload[this.position * 314639891 - 2] & 255) << 8)
-				+ (this.payload[314639891 * this.position - 1] - 128 & 255);
+		int var1 = ((this.payload[this.position * 314639891 - 2] & 0xFF) << 8)
+				+ (this.payload[314639891 * this.position - 1] - 128 & 0xFF);
 		if (var1 > 32767) {
 			var1 -= 65536;
 		}
@@ -451,8 +451,8 @@ public class ByteBuf extends Node {
 
 	public int getLEShortA() {
 		this.position += -368351178;
-		int var1 = (this.payload[314639891 * this.position - 2] - 128 & 255)
-				+ ((this.payload[314639891 * this.position - 1] & 255) << 8);
+		int var1 = (this.payload[314639891 * this.position - 2] - 128 & 0xFF)
+				+ ((this.payload[314639891 * this.position - 1] & 0xFF) << 8);
 		if (var1 > 32767) {
 			var1 -= 65536;
 		}
@@ -523,8 +523,8 @@ public class ByteBuf extends Node {
 
 	public int getULEShort() {
 		this.position += -368351178;
-		return (this.payload[this.position * 314639891 - 2] & 255)
-				+ ((this.payload[this.position * 314639891 - 1] & 255) << 8);
+		return (this.payload[this.position * 314639891 - 2] & 0xFF)
+				+ ((this.payload[this.position * 314639891 - 1] & 0xFF) << 8);
 	}
 
 	public void putByteS(int var1) {
@@ -574,8 +574,8 @@ public class ByteBuf extends Node {
 
 	public int getUShortA() {
 		this.position += -368351178;
-		return ((this.payload[this.position * 314639891 - 2] & 255) << 8)
-				+ (this.payload[this.position * 314639891 - 1] - 128 & 255);
+		return ((this.payload[this.position * 314639891 - 2] & 0xFF) << 8)
+				+ (this.payload[this.position * 314639891 - 1] - 128 & 0xFF);
 	}
 
 	public void putLEShortA(int var1) {

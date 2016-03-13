@@ -81,7 +81,7 @@ public class Class80 {
 		byte var2 = this.aBuffer662.payload[this.aBuffer662.position * 314639891];
 		int var5;
 		if (var2 < 0) {
-			var5 = var2 & 255;
+			var5 = var2 & 0xFF;
 			this.anIntArray664[var1] = var5;
 			this.aBuffer662.position += -184175589;
 		} else {
@@ -93,7 +93,7 @@ public class Class80 {
 		} else {
 			int var4 = this.aBuffer662.method632();
 			if (var5 == 247 && var4 > 0) {
-				int var3 = this.aBuffer662.payload[this.aBuffer662.position * 314639891] & 255;
+				int var3 = this.aBuffer662.payload[this.aBuffer662.position * 314639891] & 0xFF;
 				if (var3 >= 241 && var3 <= 243 || var3 == 246 || var3 == 248 || var3 >= 250 && var3 <= 252
 						|| var3 == 254) {
 					this.aBuffer662.position += -184175589;

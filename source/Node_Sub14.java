@@ -36,7 +36,7 @@ public class Node_Sub14 extends Node {
 		var0 = var0 + (var0 >>> 4) & 252645135;
 		var0 += var0 >>> 8;
 		var0 += var0 >>> 16;
-		return var0 & 255;
+		return var0 & 0xFF;
 	}
 
 }

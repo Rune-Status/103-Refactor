@@ -2,12 +2,12 @@ import java.awt.Canvas;
 import java.awt.Container;
 import java.awt.Insets;
 
-public class Node_Sub5 extends Node {
+public class AnimationSkin extends Node {
 
 	int[] anIntArray1262;
 	int anInt1263;
 	int[][] anIntArrayArray1264;
-	static Class24 aClass24_1265;
+	static ClientSettings settings;
 	static CacheIndex spritesIndex;
 	int anInt1267;
 
@@ -44,13 +44,14 @@ public class Node_Sub5 extends Node {
 	}
 
 	static void method534() {
-		Client var0 = Client.aClient2005;
-		synchronized (var0) {
-			Container var1 = Client.aClient2005.method1033();
-			if (var1 != null) {
-				VarClientStringType.anInt1505 = Math.max(var1.getSize().width, CacheFileAccessor.anInt836 * 2055757083) * -1411246095;
-				Class21.anInt281 = Math.max(var1.getSize().height, ClanMate.anInt1222 * -1066486805) * 588847321;
-				if (VarClientType.gameFrame == var1) {
+		Client client = Client.clientInstance;
+		synchronized (client) {
+			Container container = Client.clientInstance.container();
+			if (container != null) {
+				VarClientStringType.anInt1505 = Math.max(container.getSize().width, CacheFileAccessor.anInt836 * 2055757083)
+						* -1411246095;
+				Class21.anInt281 = Math.max(container.getSize().height, ClanMate.anInt1222 * -1066486805) * 588847321;
+				if (VarClientType.gameFrame == container) {
 					Insets var2 = VarClientType.gameFrame.getInsets();
 					VarClientStringType.anInt1505 -= -1411246095 * (var2.left + var2.right);
 					Class21.anInt281 -= 588847321 * (var2.top + var2.bottom);
@@ -80,19 +81,16 @@ public class Node_Sub5 extends Node {
 				int var4 = Node_Sub9.gameHeight * 674167779;
 				Canvas var5 = LandscapeTile.gameCanvas;
 
-				Object var7;
+				AbstractProducer producer;
 				try {
-					DirectImageProducer var6 = new DirectImageProducer();
-					var6.initializeProducer(var3, var4, var5);
-					var7 = var6;
+					producer = new DirectImageProducer();
 				} catch (Throwable var13) {
-					ConsumingImageProducer var8 = new ConsumingImageProducer();
-					var8.initializeProducer(var3, var4, var5);
-					var7 = var8;
+					producer = new ConsumingImageProducer();
 				}
+				producer.initializeProducer(var3, var4, var5);
 
-				IndexTable.imageProducer = (AbstractProducer) var7;
-				if (var1 == VarClientType.gameFrame) {
+				IndexTable.imageProducer = producer;
+				if (container == VarClientType.gameFrame) {
 					Insets var16 = VarClientType.gameFrame.getInsets();
 					LandscapeTile.gameCanvas.setLocation(76231581 * Client.anInt1983 + var16.left,
 							var16.top + -225353991 * Client.anInt1978);
@@ -110,11 +108,11 @@ public class Node_Sub5 extends Node {
 					var18 = 2045896553 * Class21.anInt281;
 				}
 
-				if (aClass24_1265 != null) {
+				if (settings != null) {
 					try {
-						Client var9 = Client.aClient2005;
+						Client var9 = Client.clientInstance;
 						int var10 = Client.resizable ? 2 : 1;
-						Class64.method316(var9, "resize", new Object[] { Integer.valueOf(var10) });
+						JSHelper.call(var9, "resize", new Object[] { Integer.valueOf(var10) });
 					} catch (Throwable var12) {
 						;
 					}
@@ -129,7 +127,7 @@ public class Node_Sub5 extends Node {
 		}
 	}
 
-	Node_Sub5(int var1, byte[] var2) {
+	AnimationSkin(int var1, byte[] var2) {
 		this.anInt1263 = -586867395 * var1;
 		ByteBuf var4 = new ByteBuf(var2);
 		this.anInt1267 = var4.getUByte() * 1534158375;

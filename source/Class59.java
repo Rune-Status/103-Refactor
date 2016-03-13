@@ -12,11 +12,11 @@ public class Class59 {
 		byte[] var3 = null;
 		Deque var4 = Class90.aDeque718;
 		synchronized (var4) {
-			Node_Sub9 var5 = (Node_Sub9) Class90.aDeque718.method471();
+			Node_Sub9 var5 = (Node_Sub9) Class90.aDeque718.getFront();
 
 			while (var5 != null) {
 				if (var5.key != (long) var0 || var5.aClass62_1336 != var1 || 1215410337 * var5.anInt1338 != 0) {
-					var5 = (Node_Sub9) Class90.aDeque718.method473();
+					var5 = (Node_Sub9) Class90.aDeque718.getNext();
 				} else {
 					var3 = var5.aByteArray1340;
 					break;

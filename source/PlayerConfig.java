@@ -1,10 +1,10 @@
 
 public class PlayerConfig {
 
-	public static short[][] aShortArrayArray529;
+	public static short[][] colorsToReplace;
 	int[] appearanceColors;
-	public static short[] aShortArray530;
-	static Class106 aClass106_531 = new Class106(260);
+	public static short[] colorsToFind;
+	static NodeMap aClass106_531 = new NodeMap(260);
 	public boolean female;
 	long aLong532;
 	public int npcId;
@@ -40,7 +40,7 @@ public class PlayerConfig {
 		if (var2) {
 			do {
 				++var3;
-				if (var3 >= aShortArrayArray529[var1].length) {
+				if (var3 >= colorsToReplace[var1].length) {
 					var3 = 0;
 				}
 			} while (!GameStrings.method465(var1, var3));
@@ -48,7 +48,7 @@ public class PlayerConfig {
 			do {
 				--var3;
 				if (var3 < 0) {
-					var3 = aShortArrayArray529[var1].length - 1;
+					var3 = colorsToReplace[var1].length - 1;
 				}
 			} while (!GameStrings.method465(var1, var3));
 		}
@@ -181,7 +181,8 @@ public class PlayerConfig {
 				int var11;
 				for (int var13 = 0; var13 < 12; ++var13) {
 					var11 = var5[var13];
-					if (var11 >= 256 && var11 < 512 && !ConsumingImageProducer.getIdentKitType(var11 - 256).method662()) {
+					if (var11 >= 256 && var11 < 512
+							&& !ConsumingImageProducer.getIdentKitType(var11 - 256).method662()) {
 						var12 = true;
 					}
 
@@ -226,14 +227,14 @@ public class PlayerConfig {
 					Entity_Sub1 var16 = new Entity_Sub1(var18, var11);
 
 					for (var10 = 0; var10 < 5; ++var10) {
-						if (this.appearanceColors[var10] < aShortArrayArray529[var10].length) {
-							var16.method895(aShortArray530[var10],
-									aShortArrayArray529[var10][this.appearanceColors[var10]]);
+						if (this.appearanceColors[var10] < colorsToReplace[var10].length) {
+							var16.method895(colorsToFind[var10],
+									colorsToReplace[var10][this.appearanceColors[var10]]);
 						}
 
-						if (this.appearanceColors[var10] < Class85.aShortArrayArray691[var10].length) {
-							var16.method895(Colors.aShortArray837[var10],
-									Class85.aShortArrayArray691[var10][this.appearanceColors[var10]]);
+						if (this.appearanceColors[var10] < Class85.colorsToReplace1[var10].length) {
+							var16.method895(Colors.colorToFind1[var10],
+									Class85.colorsToReplace1[var10][this.appearanceColors[var10]]);
 						}
 					}
 
@@ -313,13 +314,13 @@ public class PlayerConfig {
 				Entity_Sub1 var8 = new Entity_Sub1(var7, var3);
 
 				for (var2 = 0; var2 < 5; ++var2) {
-					if (this.appearanceColors[var2] < aShortArrayArray529[var2].length) {
-						var8.method895(aShortArray530[var2], aShortArrayArray529[var2][this.appearanceColors[var2]]);
+					if (this.appearanceColors[var2] < colorsToReplace[var2].length) {
+						var8.method895(colorsToFind[var2], colorsToReplace[var2][this.appearanceColors[var2]]);
 					}
 
-					if (this.appearanceColors[var2] < Class85.aShortArrayArray691[var2].length) {
-						var8.method895(Colors.aShortArray837[var2],
-								Class85.aShortArrayArray691[var2][this.appearanceColors[var2]]);
+					if (this.appearanceColors[var2] < Class85.colorsToReplace1[var2].length) {
+						var8.method895(Colors.colorToFind1[var2],
+								Class85.colorsToReplace1[var2][this.appearanceColors[var2]]);
 					}
 				}
 

@@ -52,65 +52,65 @@ public final class Node_Sub6 extends Node {
 		if (var0 == null) {
 			return null;
 		} else {
-			if (var0.length > 136 && !Class52.aBool528) {
+			if (var0.length > 136 && !AbstractByteBuffer.aBool528) {
 				try {
-					Class52_Sub1 var2 = new Class52_Sub1();
-					var2.method259(var0, 1668635019);
+					DirectByteBuffer var2 = new DirectByteBuffer();
+					var2.put(var0);
 					return var2;
 				} catch (Throwable var3) {
-					Class52.aBool528 = true;
+					AbstractByteBuffer.aBool528 = true;
 				}
 			}
 
-			return var1 ? Class44.method231(var0) : var0;
+			return var1 ? Class44.arrayCopy(var0) : var0;
 		}
 	}
 
-	public static void method539(String var0, String var1, int var2, int var3) throws IOException {
-		Class75.anInt638 = -1882193397 * var3;
-		Class75.anInt635 = 725192983 * var2;
+	public static void initialize(String var0, String var1, int var2, int var3) throws IOException {
+		Class75.indexCount = -1882193397 * var3;
+		Class75.buildOrdinal = 725192983 * var2;
 
 		try {
-			Class115.aString801 = System.getProperty("os.name");
+			Class115.osName = System.getProperty("os.name");
 		} catch (Exception var11) {
-			Class115.aString801 = "Unknown";
+			Class115.osName = "Unknown";
 		}
 
-		DynamicObject.aString1964 = Class115.aString801.toLowerCase();
+		DynamicObject.osNameLC = Class115.osName.toLowerCase();
 
 		try {
-			BitBuf.aString1729 = System.getProperty("user.home");
-			if (BitBuf.aString1729 != null) {
-				BitBuf.aString1729 = BitBuf.aString1729 + "/";
+			BitBuf.userHome = System.getProperty("user.home");
+			if (BitBuf.userHome != null) {
+				BitBuf.userHome = BitBuf.userHome + "/";
 			}
 		} catch (Exception var10) {
 			;
 		}
 
 		try {
-			if (DynamicObject.aString1964.startsWith("win")) {
-				if (BitBuf.aString1729 == null) {
-					BitBuf.aString1729 = System.getenv("USERPROFILE");
+			if (DynamicObject.osNameLC.startsWith("win")) {
+				if (BitBuf.userHome == null) {
+					BitBuf.userHome = System.getenv("USERPROFILE");
 				}
-			} else if (BitBuf.aString1729 == null) {
-				BitBuf.aString1729 = System.getenv("HOME");
+			} else if (BitBuf.userHome == null) {
+				BitBuf.userHome = System.getenv("HOME");
 			}
 
-			if (BitBuf.aString1729 != null) {
-				BitBuf.aString1729 = BitBuf.aString1729 + "/";
+			if (BitBuf.userHome != null) {
+				BitBuf.userHome = BitBuf.userHome + "/";
 			}
 		} catch (Exception var9) {
 			;
 		}
 
-		if (BitBuf.aString1729 == null) {
-			BitBuf.aString1729 = "~/";
+		if (BitBuf.userHome == null) {
+			BitBuf.userHome = "~/";
 		}
 
-		BoundaryDecorationStub.aStringArray217 = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/",
-				"c:/", BitBuf.aString1729, "/tmp/", "" };
-		Class67.aStringArray584 = new String[] { ".jagex_cache_" + Class75.anInt635 * 1502918311,
-				".file_store_" + 1502918311 * Class75.anInt635 };
+		BoundaryDecorationStub.cacheLocations = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/",
+				"c:/", BitBuf.userHome, "/tmp/", "" };
+		Class67.historicLocations = new String[] { ".jagex_cache_" + Class75.buildOrdinal * 1502918311,
+				".file_store_" + 1502918311 * Class75.buildOrdinal };
 		int var4 = 0;
 
 		label107: while (var4 < 4) {
@@ -145,15 +145,15 @@ public final class Node_Sub6 extends Node {
 		Timer.setCacheDirectory(Class75.cacheLocation);
 
 		try {
-			File var13 = new File(BitBuf.aString1729, "random.dat");
+			File var13 = new File(BitBuf.userHome, "random.dat");
 			int var16;
 			if (var13.exists()) {
 				Class75.randomDat = new CacheFile(new CacheFileAccessor(var13, "rw", 25L), 24, 0);
 			} else {
-				label88: for (int var14 = 0; var14 < Class67.aStringArray584.length; ++var14) {
-					for (var16 = 0; var16 < BoundaryDecorationStub.aStringArray217.length; ++var16) {
-						File var17 = new File(BoundaryDecorationStub.aStringArray217[var16]
-								+ Class67.aStringArray584[var14] + File.separatorChar + "random.dat");
+				label88: for (int var14 = 0; var14 < Class67.historicLocations.length; ++var14) {
+					for (var16 = 0; var16 < BoundaryDecorationStub.cacheLocations.length; ++var16) {
+						File var17 = new File(BoundaryDecorationStub.cacheLocations[var16]
+								+ Class67.historicLocations[var14] + File.separatorChar + "random.dat");
 						if (var17.exists()) {
 							Class75.randomDat = new CacheFile(new CacheFileAccessor(var17, "rw", 25L), 24, 0);
 							break label88;
@@ -176,14 +176,17 @@ public final class Node_Sub6 extends Node {
 		}
 
 		Class75.cacheDataFile = new CacheFile(
-				new CacheFileAccessor(VarClientStringType.method700("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
-		Class75.aClass121_636 = new CacheFile(
-				new CacheFileAccessor(VarClientStringType.method700("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
-		Class39.cacheIndexFiles = new CacheFile[Class75.anInt638 * 855046563];
+				new CacheFileAccessor(VarClientStringType.method700("main_file_cache.dat2"), "rw", 1048576000L), 5200,
+				0);
+		Class75.referenceFile = new CacheFile(
+				new CacheFileAccessor(VarClientStringType.method700("main_file_cache.idx255"), "rw", 1048576L), 6000,
+				0);
+		Class39.cacheIndexFiles = new CacheFile[Class75.indexCount * 855046563];
 
-		for (var4 = 0; var4 < Class75.anInt638 * 855046563; ++var4) {
+		for (var4 = 0; var4 < Class75.indexCount * 855046563; ++var4) {
 			Class39.cacheIndexFiles[var4] = new CacheFile(
-					new CacheFileAccessor(VarClientStringType.method700("main_file_cache.idx" + var4), "rw", 1048576L), 6000, 0);
+					new CacheFileAccessor(VarClientStringType.method700("main_file_cache.idx" + var4), "rw", 1048576L),
+					6000, 0);
 		}
 
 	}

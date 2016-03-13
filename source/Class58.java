@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Iterator;
+import java.util.Map.Entry;
+
 import netscape.javascript.JSObject;
 
 public class Class58 {
@@ -47,14 +49,14 @@ public class Class58 {
 	}
 
 	public static final boolean method289(int var0) {
-		Class71 var1 = Class71.aClass71_603;
+		KeyFocusListener var1 = KeyFocusListener.kfListener;
 		synchronized (var1) {
-			if (-103725771 * Class71.anInt599 == Class71.anInt600 * -831835767) {
+			if (-103725771 * KeyFocusListener.anInt599 == KeyFocusListener.anInt600 * -831835767) {
 				return false;
 			} else {
-				Class5.anInt112 = -1084221539 * Class71.anIntArray598[-103725771 * Class71.anInt599];
-				Class2.aChar80 = Class71.aCharArray597[-103725771 * Class71.anInt599];
-				Class71.anInt599 = (1 + -103725771 * Class71.anInt599 & 127) * 821077277;
+				Class5.anInt112 = -1084221539 * KeyFocusListener.anIntArray598[-103725771 * KeyFocusListener.anInt599];
+				Class2.aChar80 = KeyFocusListener.aCharArray597[-103725771 * KeyFocusListener.anInt599];
+				KeyFocusListener.anInt599 = (1 + -103725771 * KeyFocusListener.anInt599 & 127) * 821077277;
 				return true;
 			}
 		}
@@ -64,7 +66,7 @@ public class Class58 {
 		int val = -1;
 
 		for (int index = offset; index < length; ++index) {
-			val = val >>> 8 ^ ByteBuf.crc32Table[(val ^ bytes[index]) & 255];
+			val = val >>> 8 ^ ByteBuf.crc32Table[(val ^ bytes[index]) & 0xFF];
 		}
 
 		val = ~val;
@@ -79,26 +81,26 @@ public class Class58 {
 					Class31.gameConnection = null;
 				}
 
-				Class71.aClass61_589 = null;
+				KeyFocusListener.socket = null;
 				Client.aBool2102 = false;
 				Client.anInt2180 = 0;
 				Client.connectionState = 1066981487;
 			}
 
 			if (Client.connectionState * -1250195825 == 1) {
-				if (Class71.aClass61_589 == null) {
-					Class71.aClass61_589 = IsaacRandom.aClass63_102.method311(World.myWorldDomain,
-							Class24.anInt299 * 2028673991);
+				if (KeyFocusListener.socket == null) {
+					KeyFocusListener.socket = IsaacRandom.taskManager.createSocket(World.myWorldDomain,
+							ClientSettings.myWorldPort * 2028673991);
 				}
 
-				if (Class71.aClass61_589.anInt563 == 2) {
+				if (KeyFocusListener.socket.status == 2) {
 					throw new IOException();
 				}
 
-				if (Class71.aClass61_589.anInt563 == 1) {
-					Class31.gameConnection = new Connection((Socket) Class71.aClass61_589.anObject566,
-							IsaacRandom.aClass63_102);
-					Class71.aClass61_589 = null;
+				if (KeyFocusListener.socket.status == 1) {
+					Class31.gameConnection = new Connection((Socket) KeyFocusListener.socket.value,
+							IsaacRandom.taskManager);
+					KeyFocusListener.socket = null;
 					Client.connectionState = 2133962974;
 				}
 			}
@@ -146,45 +148,45 @@ public class Class58 {
 						(int) (Math.random() * 9.9999999E7D), (int) (Math.random() * 9.9999999E7D) };
 				Client.outBuffer.position = 0;
 				Client.outBuffer.putByte(1);
-				Client.outBuffer.putByte(Class6.aClass92_119.ordinal());
+				Client.outBuffer.putByte(Class6.blockType.ordinal());
 				Client.outBuffer.putInt(xteaKeys[0]);
 				Client.outBuffer.putInt(xteaKeys[1]);
 				Client.outBuffer.putInt(xteaKeys[2]);
 				Client.outBuffer.putInt(xteaKeys[3]);
-				switch (Class6.aClass92_119.anInt728 * -1271929127) {
+				switch (Class6.blockType.type * -1271929127) {
 				case 0:
 					Client.outBuffer.position += -1473404712;
 					break;
 				case 1:
-					Client.outBuffer.putInt(((Integer) Node_Sub5.aClass24_1265.aLinkedHashMap301
-							.get(Integer.valueOf(Class91.method400(Class6.aString136)))).intValue());
+					Client.outBuffer.putInt(((Integer) AnimationSkin.settings.trustList
+							.get(Integer.valueOf(Class91.bkdrHash(Class6.username)))).intValue());
 					Client.outBuffer.position += -736702356;
 					break;
 				case 2:
 				case 3:
-					Client.outBuffer.putMedium(-898452655 * Class114.anInt795);
+					Client.outBuffer.putMedium(-898452655 * Class114.pin);
 					Client.outBuffer.position += -920877945;
 				}
 
-				Client.outBuffer.putString(Class6.aString123);
+				Client.outBuffer.putString(Class6.password);
 				Client.outBuffer.encryptRSA(Class40.loginExponent, Class40.loginModulus);
-				Client.aPacketBuffer2115.position = 0;
+				Client.loginBuffer.position = 0;
 				if (Client.anInt2113 * 846055547 == 40) {
-					Client.aPacketBuffer2115.putByte(18);
+					Client.loginBuffer.putByte(18);
 				} else {
-					Client.aPacketBuffer2115.putByte(16);
+					Client.loginBuffer.putByte(16);
 				}
 
-				Client.aPacketBuffer2115.putShort(0);
-				varStart = Client.aPacketBuffer2115.position * 314639891;
-				Client.aPacketBuffer2115.putInt(103);
-				Client.aPacketBuffer2115.putBytes(Client.outBuffer.payload, 0, 314639891 * Client.outBuffer.position);
-				xteaStart = 314639891 * Client.aPacketBuffer2115.position;
-				Client.aPacketBuffer2115.putString(Class6.aString136);
-				Client.aPacketBuffer2115.putByte((Client.resizable ? 1 : 0) << 1 | (Client.aBool2010 ? 1 : 0));
-				Client.aPacketBuffer2115.putShort(-452716157 * Class34.gameWidth);
-				Client.aPacketBuffer2115.putShort(Node_Sub9.gameHeight * 674167779);
-				BitBuf var3 = Client.aPacketBuffer2115;
+				Client.loginBuffer.putShort(0);
+				varStart = Client.loginBuffer.position * 314639891;
+				Client.loginBuffer.putInt(103);
+				Client.loginBuffer.putBytes(Client.outBuffer.payload, 0, 314639891 * Client.outBuffer.position);
+				xteaStart = 314639891 * Client.loginBuffer.position;
+				Client.loginBuffer.putString(Class6.username);
+				Client.loginBuffer.putByte((Client.resizable ? 1 : 0) << 1 | (Client.lowMemory ? 1 : 0));
+				Client.loginBuffer.putShort(-452716157 * Class34.gameWidth);
+				Client.loginBuffer.putShort(Node_Sub9.gameHeight * 674167779);
+				BitBuf var3 = Client.loginBuffer;
 				byte[] var4 = new byte[24];
 
 				int var5;
@@ -206,33 +208,31 @@ public class Class58 {
 				}
 
 				var3.putBytes(var4, 0, 24);
-				Client.aPacketBuffer2115.putString(Client.aString2013);
-				Client.aPacketBuffer2115.putInt(-1929163163 * InterfaceNode.anInt1399);
+				Client.loginBuffer.putString(Client.sessionToken);
+				Client.loginBuffer.putInt(-1929163163 * InterfaceNode.anInt1399);
 				ByteBuf var19 = new ByteBuf(IdentKitType.aNode_Sub10_1467.method567());
 				IdentKitType.aNode_Sub10_1467.method566(var19);
-				Client.aPacketBuffer2115.putBytes(var19.payload, 0, var19.payload.length);
-				Client.aPacketBuffer2115.putByte(Class29.anInt335 * -1296445677);
-				Client.aPacketBuffer2115.putInt(Class34.skeletonsIndex.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(Client.meshesIndex.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * Client.configsIndex.anInt695);
-				Client.aPacketBuffer2115.putInt(1153748675 * RuneScript.interfaceIndex.anInt695);
-				Client.aPacketBuffer2115.putInt(1153748675 * VarClientType.sfxIndex.anInt695);
-				Client.aPacketBuffer2115.putInt(Class48_Sub1.landscapesIndex.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class2.midiTrack1Index.anInt695);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class3.modelsIndex.anInt695);
-				Client.aPacketBuffer2115.putInt(Node_Sub5.spritesIndex.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class1.texturesIndex.anInt695);
-				Client.aPacketBuffer2115.putInt(Class40.binaryIndex.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(PlayerConfig.midiTack2Index.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * InvType.clientScriptsIndex.anInt695);
-				Client.aPacketBuffer2115.putInt(Class2.fontMetricsIndex.anInt695 * 1153748675);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class26.vorbisIndex.anInt695);
-				Client.aPacketBuffer2115.putInt(1153748675 * Class59.midiInstrumentsIndex.anInt695);
-				Client.aPacketBuffer2115.encryptXTEA(xteaKeys, xteaStart,
-						314639891 * Client.aPacketBuffer2115.position);
-				Client.aPacketBuffer2115.putVarShort(Client.aPacketBuffer2115.position * 314639891 - varStart);
-				Class31.gameConnection.write(Client.aPacketBuffer2115.payload, 0,
-						Client.aPacketBuffer2115.position * 314639891);
+				Client.loginBuffer.putBytes(var19.payload, 0, var19.payload.length);
+				Client.loginBuffer.putByte(TextureLoader.sessionId * -1296445677);
+				Client.loginBuffer.putInt(Class34.skeletonsIndex.anInt695 * 1153748675);
+				Client.loginBuffer.putInt(Client.meshesIndex.anInt695 * 1153748675);
+				Client.loginBuffer.putInt(1153748675 * Client.configsIndex.anInt695);
+				Client.loginBuffer.putInt(1153748675 * RuneScript.interfaceIndex.anInt695);
+				Client.loginBuffer.putInt(1153748675 * VarClientType.sfxIndex.anInt695);
+				Client.loginBuffer.putInt(Class48_Sub1.landscapesIndex.anInt695 * 1153748675);
+				Client.loginBuffer.putInt(1153748675 * Class2.midiTrack1Index.anInt695);
+				Client.loginBuffer.putInt(1153748675 * Class3.modelsIndex.anInt695);
+				Client.loginBuffer.putInt(AnimationSkin.spritesIndex.anInt695 * 1153748675);
+				Client.loginBuffer.putInt(1153748675 * Class1.texturesIndex.anInt695);
+				Client.loginBuffer.putInt(Class40.binaryIndex.anInt695 * 1153748675);
+				Client.loginBuffer.putInt(PlayerConfig.midiTack2Index.anInt695 * 1153748675);
+				Client.loginBuffer.putInt(1153748675 * InvType.clientScriptsIndex.anInt695);
+				Client.loginBuffer.putInt(Class2.fontMetricsIndex.anInt695 * 1153748675);
+				Client.loginBuffer.putInt(1153748675 * Class26.vorbisIndex.anInt695);
+				Client.loginBuffer.putInt(1153748675 * Class59.midiInstrumentsIndex.anInt695);
+				Client.loginBuffer.encryptXTEA(xteaKeys, xteaStart, 314639891 * Client.loginBuffer.position);
+				Client.loginBuffer.putVarShort(Client.loginBuffer.position * 314639891 - varStart);
+				Class31.gameConnection.write(Client.loginBuffer.payload, 0, Client.loginBuffer.position * 314639891);
 				Client.outBuffer.setRandom(xteaKeys);
 
 				for (var5 = 0; var5 < 4; ++var5) {
@@ -283,23 +283,22 @@ public class Class58 {
 					boolean var12 = Class31.gameConnection.read() == 1;
 					Class31.gameConnection.read(Client.inBuffer.payload, 0, 4);
 					Client.inBuffer.position = 0;
-					boolean var13 = false;
 					if (var12) {
 						varStart = Client.inBuffer.getHeader() << 24;
 						varStart |= Client.inBuffer.getHeader() << 16;
 						varStart |= Client.inBuffer.getHeader() << 8;
 						varStart |= Client.inBuffer.getHeader();
-						xteaStart = Class91.method400(Class6.aString136);
-						if (Node_Sub5.aClass24_1265.aLinkedHashMap301.size() >= 10
-								&& !Node_Sub5.aClass24_1265.aLinkedHashMap301.containsKey(Integer.valueOf(xteaStart))) {
-							Iterator var17 = Node_Sub5.aClass24_1265.aLinkedHashMap301.entrySet().iterator();
-							var17.next();
-							var17.remove();
+						xteaStart = Class91.bkdrHash(Class6.username);
+						if (AnimationSkin.settings.trustList.size() >= 10
+								&& !AnimationSkin.settings.trustList.containsKey(Integer.valueOf(xteaStart))) {
+							Iterator<Entry<Integer, Integer>> iterator = AnimationSkin.settings.trustList.entrySet()
+									.iterator();
+							iterator.next();
+							iterator.remove();
 						}
 
-						Node_Sub5.aClass24_1265.aLinkedHashMap301.put(Integer.valueOf(xteaStart),
-								Integer.valueOf(varStart));
-						Class75.method335();
+						AnimationSkin.settings.trustList.put(Integer.valueOf(xteaStart), Integer.valueOf(varStart));
+						Class75.serializeSettings();
 					}
 
 					Client.myRights = Class31.gameConnection.read() * -753281333;
@@ -317,14 +316,14 @@ public class Class58 {
 					Client var15;
 					if (-905152705 * Client.anInt2106 == 1) {
 						try {
-							var15 = Client.aClient2005;
+							var15 = Client.clientInstance;
 							JSObject.getWindow(var15).call("zap", (Object[]) null);
 						} catch (Throwable var8) {
 							;
 						}
 					} else {
 						try {
-							var15 = Client.aClient2005;
+							var15 = Client.clientInstance;
 							JSObject.getWindow(var15).call("unzap", (Object[]) null);
 						} catch (Throwable var7) {
 							;
@@ -338,9 +337,9 @@ public class Class58 {
 					if (Class31.gameConnection.avail() >= Client.frameSize * 371800591) {
 						Client.inBuffer.position = 0;
 						Class31.gameConnection.read(Client.inBuffer.payload, 0, Client.frameSize * 371800591);
-						Class76.clearCache();
-						ItemTable.method649(Client.inBuffer);
-						TileDecorationStub.anInt840 = -1071803165;
+						BuildType.clearCache();
+						ItemTable.initializeGPI(Client.inBuffer);
+						TileDecorationStub.chunkBaseX = -1071803165;
 						Class7.decodeMapRegion(false);
 						Client.frameId = -726667601;
 					}
@@ -382,7 +381,7 @@ public class Class58 {
 							Client.inBuffer.position = 0;
 							var0 = 371800591 * Client.frameSize;
 							Class37.method214();
-							ItemTable.method649(Client.inBuffer);
+							ItemTable.initializeGPI(Client.inBuffer);
 							if (var0 != Client.inBuffer.position * 314639891) {
 								throw new RuntimeException();
 							}
@@ -391,10 +390,10 @@ public class Class58 {
 						Client.anInt2180 += 995944239;
 						if (Client.anInt2180 * 766230479 > 2000) {
 							if (288795893 * Client.anInt2037 < 1) {
-								if (Class24.anInt299 * 2028673991 == Class82.anInt686 * 809635993) {
-									Class24.anInt299 = 715804305 * Class41.anInt446;
+								if (ClientSettings.myWorldPort * 2028673991 == Class82.mainPort * 809635993) {
+									ClientSettings.myWorldPort = 715804305 * Class41.subPort;
 								} else {
-									Class24.anInt299 = Class82.anInt686 * 1439019167;
+									ClientSettings.myWorldPort = Class82.mainPort * 1439019167;
 								}
 
 								Client.anInt2037 += -260333731;
@@ -408,10 +407,10 @@ public class Class58 {
 			}
 		} catch (IOException var10) {
 			if (288795893 * Client.anInt2037 < 1) {
-				if (2028673991 * Class24.anInt299 == 809635993 * Class82.anInt686) {
-					Class24.anInt299 = 715804305 * Class41.anInt446;
+				if (2028673991 * ClientSettings.myWorldPort == 809635993 * Class82.mainPort) {
+					ClientSettings.myWorldPort = 715804305 * Class41.subPort;
 				} else {
-					Class24.anInt299 = 1439019167 * Class82.anInt686;
+					ClientSettings.myWorldPort = 1439019167 * Class82.mainPort;
 				}
 
 				Client.anInt2037 += -260333731;

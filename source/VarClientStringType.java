@@ -3,10 +3,10 @@ import java.io.RandomAccessFile;
 
 public class VarClientStringType extends DualNode {
 
-	static Class106 varclientstrings = new Class106(64);
+	static NodeMap varclientstrings = new NodeMap(64);
 	protected static int anInt1505;
 	public static AbstractIndex varclientstring_ref;
-	static byte[][][] aByteArrayArrayArray1507;
+	static byte[][][] overlayPaths;
 	public boolean serialize = false;
 
 	void decode(ByteBuf var1) {

@@ -38,8 +38,7 @@ public final class Class117 {
 						var9 += var2[var4++];
 						var10 = Class94.getWidget(var9);
 						var11 = var2[var4++];
-						if (var11 != -1
-								&& (!FriendedPlayer.getItemType(var11).aBool1618 || Client.membersWorld)) {
+						if (var11 != -1 && (!FriendedPlayer.getItemType(var11).aBool1618 || Client.membersWorld)) {
 							for (var12 = 0; var12 < var10.itemIds.length; ++var12) {
 								if (1 + var11 == var10.itemIds[var12]) {
 									var7 += var10.itemQuantities[var12];
@@ -77,8 +76,7 @@ public final class Class117 {
 						var9 += var2[var4++];
 						var10 = Class94.getWidget(var9);
 						var11 = var2[var4++];
-						if (var11 != -1
-								&& (!FriendedPlayer.getItemType(var11).aBool1618 || Client.membersWorld)) {
+						if (var11 != -1 && (!FriendedPlayer.getItemType(var11).aBool1618 || Client.membersWorld)) {
 							for (var12 = 0; var12 < var10.itemIds.length; ++var12) {
 								if (var11 + 1 == var10.itemIds[var12]) {
 									var7 = 999999999;
@@ -120,11 +118,11 @@ public final class Class117 {
 					}
 
 					if (var6 == 18) {
-						var7 = 1426698711 * Node_Sub10.regionBaseX + (1272643751 * Class68.myPlayer.strictX >> 7);
+						var7 = 1426698711 * Node_Sub10.chunkLeftX + (1272643751 * Class68.myPlayer.strictX >> 7);
 					}
 
 					if (var6 == 19) {
-						var7 = (Class68.myPlayer.strictY * -1801433343 >> 7) + 714823515 * VarClientHub.regionBaseY;
+						var7 = (Class68.myPlayer.strictY * -1801433343 >> 7) + 714823515 * VarClientHub.chunkLeftY;
 					}
 
 					if (var6 == 20) {

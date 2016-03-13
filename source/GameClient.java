@@ -25,17 +25,9 @@ import java.applet.AppletContext;
 import java.applet.AppletStub;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.swing.JFrame;
@@ -69,7 +61,7 @@ public class GameClient extends JFrame implements AppletStub {
 	private void startApplet() {
 		try {
 			rsps = true;
-			//dump = /*!rsps*/true;
+			// dump = /*!rsps*/true;
 			dump = true;
 			clnt = new Client();
 			map = new HashMap<>();
@@ -85,11 +77,11 @@ public class GameClient extends JFrame implements AppletStub {
 			map.put("3", "0");
 			map.put("4", "http://www.runescape.com/g=oldscape/slr.ws?order=LPWM");
 			map.put("5", "");
-			map.put("6", "386");
+			map.put("6", "1");
 			map.put("7", "true");
 			map.put("8", "54073");
 			map.put("9", ".runescape.com");
-			map.put("10", "0");
+			map.put("10", "4");
 
 			clnt.setStub(this);
 
@@ -100,20 +92,19 @@ public class GameClient extends JFrame implements AppletStub {
 			clnt.init();
 			clnt.start();
 
-			
-			/*for (int iii = 0; iii < Class100.frameSizes.length; iii++) {
-				int size = Class100.frameSizes[iii];
-				if (size == -1)
-					System.out.println("GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii
-							+ ", FrameType.VARIABLE_BYTE);");
-				else if (size == -2)
-					System.out.println("GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii
-							+ ", FrameType.VARIABLE_SHORT);");
-				else
-					System.out.println(
-							"GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii + ", FrameType.FIXED);");
-			}*/
-			 
+			/*
+			 * for (int iii = 0; iii < Class100.frameSizes.length; iii++) { int
+			 * size = Class100.frameSizes[iii]; if (size == -1)
+			 * System.out.println(
+			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
+			 * ", FrameType.VARIABLE_BYTE);"); else if (size == -2)
+			 * System.out.println(
+			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
+			 * ", FrameType.VARIABLE_SHORT);"); else System.out.println(
+			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
+			 * ", FrameType.FIXED);"); }
+			 */
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -193,42 +184,5 @@ public class GameClient extends JFrame implements AppletStub {
 	}
 
 	public static void dumpMap(int region, int[] keys) {
-		File file = new File("./maps/" + region + ".txt");
-		try {
-			boolean dump = true;
-			
-			if (file.exists()) {
-				boolean mismatch = false;
-				List<Integer> oldKeys = new ArrayList<>(4);
-				Files.lines(Paths.get(".").resolve(file.getPath())).forEach((String line) -> {
-					oldKeys.add(Integer.valueOf(line));
-				});
-				for (int i = 0; i < 4; i++) {
-					if (oldKeys.get(i) != keys[i]) {
-						System.out.println("Replacing Region " + region);
-						mismatch = true;
-						break;
-					}
-				}
-				
-				if (!mismatch)
-					dump = false;
-			}
-			if (dump) {
-				file.createNewFile();
-				try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-					for (int key : keys) {
-						writer.write(String.valueOf(key));
-						writer.newLine();
-					}
-					writer.flush();
-					writer.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 }

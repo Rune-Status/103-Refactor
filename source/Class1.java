@@ -21,7 +21,7 @@ public class Class1 {
 		if (-1479972487 * Class6.anInt114 > Class33.anIntArray365.length) {
 			Class6.anInt114 -= Class33.anIntArray365.length * 266449097;
 			var2 = (int) (Math.random() * 12.0D);
-			VarBitType.method877(Class6.aDualNode_Sub13_Sub2Array118[var2]);
+			VarBitType.method877(Class6.runesSprite[var2]);
 		}
 
 		var2 = 0;

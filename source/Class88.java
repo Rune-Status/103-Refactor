@@ -2,7 +2,7 @@
 public class Class88 {
 
 	static char[] aCharArray711 = new char[64];
-	static Sprite[] aSpriteArray712;
+	static Picture[] aSpriteArray712;
 	static int[] anIntArray713;
 	static char[] aCharArray714;
 
@@ -25,10 +25,9 @@ public class Class88 {
 		World.myWorldDomain = world.domain;
 		Client.myWorld = world.id * 2027760217;
 		Client.myWorldFlags = 1096175283 * world.flags;
-		Class82.anInt686 = -767343703
-				* (1082541889 * Client.anInt2074 == 0 ? '\uaa4a' : '\u9c40' + -145619359 * world.id);
-		Class41.anInt446 = 701960199 * (1082541889 * Client.anInt2074 == 0 ? 443 : world.id * -145619359 + '\uc350');
-		Class24.anInt299 = 1439019167 * Class82.anInt686;
+		Class82.mainPort = -767343703 * (1082541889 * Client.socketType == 0 ? 43594 : 40000 + -145619359 * world.id);
+		Class41.subPort = 701960199 * (1082541889 * Client.socketType == 0 ? 443 : world.id * -145619359 + 50000);
+		ClientSettings.myWorldPort = 1439019167 * Class82.mainPort;
 	}
 
 	static {

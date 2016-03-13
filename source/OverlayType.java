@@ -1,17 +1,17 @@
 
 public class OverlayType extends DualNode {
 
-	public int anInt1522 = -978001323;
-	public static Class106 overlays = new Class106(64);
-	public int anInt1524;
-	public int anInt1525;
-	public int anInt1526 = 0;
-	public int anInt1527 = 511239711;
-	public int anInt1528;
-	public boolean aBool1529 = true;
-	public int anInt1530;
-	public int anInt1531;
-	public int anInt1532;
+	public int texture = -978001323;
+	public static NodeMap overlays = new NodeMap(64);
+	public int saturation;
+	public int otherHue;
+	public int rgbColor = 0;
+	public int otherRgbColor = 511239711;
+	public int otherLightness;
+	public boolean hideUnderlay = true;
+	public int lightness;
+	public int hue;
+	public int otherSaturation;
 	public static AbstractIndex overlay_ref;
 
 	void decode(ByteBuf var1, int var2) {
@@ -27,89 +27,89 @@ public class OverlayType extends DualNode {
 
 	void method713(ByteBuf var1, int var2, int var3) {
 		if (var2 == 1) {
-			this.anInt1526 = var1.getMedium() * 1304176145;
+			this.rgbColor = var1.getMedium() * 1304176145;
 		} else if (var2 == 2) {
-			this.anInt1522 = var1.getUByte() * 978001323;
+			this.texture = var1.getUByte() * 978001323;
 		} else if (var2 == 5) {
-			this.aBool1529 = false;
+			this.hideUnderlay = false;
 		} else if (var2 == 7) {
-			this.anInt1527 = var1.getMedium() * -511239711;
+			this.otherRgbColor = var1.getMedium() * -511239711;
 		} else if (var2 == 8) {
 			;
 		}
 
 	}
 
-	void method714(int var1) {
-		double var2 = (double) (var1 >> 16 & 255) / 256.0D;
-		double var8 = (double) (var1 >> 8 & 255) / 256.0D;
-		double var12 = (double) (var1 & 255) / 256.0D;
-		double var4 = var2;
-		if (var8 < var2) {
-			var4 = var8;
+	void setHSL(int rgb) {
+		double red = (double) (rgb >> 16 & 0xFF) / 256.0D;
+		double green = (double) (rgb >> 8 & 0xFF) / 256.0D;
+		double blue = (double) (rgb & 0xFF) / 256.0D;
+		double min = red;
+		if (green < red) {
+			min = green;
 		}
 
-		if (var12 < var4) {
-			var4 = var12;
+		if (blue < min) {
+			min = blue;
 		}
 
-		double var6 = var2;
-		if (var8 > var2) {
-			var6 = var8;
+		double max = red;
+		if (green > red) {
+			max = green;
 		}
 
-		if (var12 > var6) {
-			var6 = var12;
+		if (blue > max) {
+			max = blue;
 		}
 
-		double var14 = 0.0D;
-		double var10 = 0.0D;
-		double var16 = (var6 + var4) / 2.0D;
-		if (var4 != var6) {
-			if (var16 < 0.5D) {
-				var10 = (var6 - var4) / (var4 + var6);
+		double hue = 0.0D;
+		double saturation = 0.0D;
+		double lightness = (max + min) / 2.0D;
+		if (min != max) {
+			if (lightness < 0.5D) {
+				saturation = (max - min) / (min + max);
 			}
 
-			if (var16 >= 0.5D) {
-				var10 = (var6 - var4) / (2.0D - var6 - var4);
+			if (lightness >= 0.5D) {
+				saturation = (max - min) / (2.0D - max - min);
 			}
 
-			if (var6 == var2) {
-				var14 = (var8 - var12) / (var6 - var4);
-			} else if (var8 == var6) {
-				var14 = 2.0D + (var12 - var2) / (var6 - var4);
-			} else if (var6 == var12) {
-				var14 = (var2 - var8) / (var6 - var4) + 4.0D;
+			if (max == red) {
+				hue = (green - blue) / (max - min);
+			} else if (green == max) {
+				hue = 2.0D + (blue - red) / (max - min);
+			} else if (max == blue) {
+				hue = (red - green) / (max - min) + 4.0D;
 			}
 		}
 
-		var14 /= 6.0D;
-		this.anInt1531 = (int) (var14 * 256.0D) * 817568045;
-		this.anInt1524 = 1558847427 * (int) (var10 * 256.0D);
-		this.anInt1530 = 765744919 * (int) (256.0D * var16);
-		if (-958248725 * this.anInt1524 < 0) {
-			this.anInt1524 = 0;
-		} else if (this.anInt1524 * -958248725 > 255) {
-			this.anInt1524 = -1925864643;
+		hue /= 6.0D;
+		this.hue = (int) (hue * 256.0D) * 817568045;
+		this.saturation = 1558847427 * (int) (saturation * 256.0D);
+		this.lightness = 765744919 * (int) (256.0D * lightness);
+		if (-958248725 * this.saturation < 0) {
+			this.saturation = 0;
+		} else if (this.saturation * -958248725 > 255) {
+			this.saturation = -1925864643;
 		}
 
-		if (this.anInt1530 * 1921798311 < 0) {
-			this.anInt1530 = 0;
-		} else if (1921798311 * this.anInt1530 > 255) {
-			this.anInt1530 = 1991426025;
+		if (this.lightness * 1921798311 < 0) {
+			this.lightness = 0;
+		} else if (1921798311 * this.lightness > 255) {
+			this.lightness = 1991426025;
 		}
 
 	}
 
 	void post() {
-		if (this.anInt1527 * -105977311 != -1) {
-			this.method714(this.anInt1527 * -105977311);
-			this.anInt1525 = 61882287 * this.anInt1531;
-			this.anInt1532 = 1723377719 * this.anInt1524;
-			this.anInt1528 = this.anInt1530 * 1293569841;
+		if (this.otherRgbColor * -105977311 != -1) {
+			this.setHSL(this.otherRgbColor * -105977311);
+			this.otherHue = 61882287 * this.hue;
+			this.otherSaturation = 1723377719 * this.saturation;
+			this.otherLightness = this.lightness * 1293569841;
 		}
 
-		this.method714(2024508145 * this.anInt1526);
+		this.setHSL(2024508145 * this.rgbColor);
 	}
 
 	public static String method716(long var0) {

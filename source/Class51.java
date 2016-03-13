@@ -26,7 +26,7 @@ public class Class51 {
 				+ var7 % 10 + ":" + var8 / 10 + var8 % 10 + " GMT";
 	}
 
-	static final void drawDot(int var0, int var1, int var2, int var3, Sprite var4, DualNode_Sub14 var5) {
+	static final void drawDot(int var0, int var1, int var2, int var3, Picture var4, DualNode_Sub14 var5) {
 		if (var4 != null) {
 			int var6 = Client.minimapScale * -1718342721 + -1916997753 * Client.minimapRotation & 2047;
 			int var9 = var2 * var2 + var3 * var3;
@@ -38,13 +38,13 @@ public class Class51 {
 				int var10 = var8 * var3 + var2 * var7 >> 16;
 				int var11 = var7 * var3 - var8 * var2 >> 16;
 				if (var9 > 2500) {
-					var4.method954(662480183 * var5.anInt1647 / 2 + var10 - var4.anInt1815 / 2,
-							-988977157 * var5.anInt1648 / 2 - var11 - var4.anInt1816 / 2, var0, var1,
+					var4.method954(662480183 * var5.anInt1647 / 2 + var10 - var4.width / 2,
+							-988977157 * var5.anInt1648 / 2 - var11 - var4.height / 2, var0, var1,
 							662480183 * var5.anInt1647, var5.anInt1648 * -988977157, var5.anIntArray1646,
 							var5.anIntArray1645);
 				} else {
-					var4.method946(var10 + 662480183 * var5.anInt1647 / 2 + var0 - var4.anInt1815 / 2,
-							var5.anInt1648 * -988977157 / 2 + var1 - var11 - var4.anInt1816 / 2);
+					var4.method946(var10 + 662480183 * var5.anInt1647 / 2 + var0 - var4.width / 2,
+							var5.anInt1648 * -988977157 / 2 + var1 - var11 - var4.height / 2);
 				}
 
 			}

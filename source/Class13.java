@@ -18,7 +18,7 @@ public class Class13 {
 	}
 
 	Node_Sub2_Sub1 method114(int var1, int var2, int[] var3) {
-		int var4 = var2 ^ (var1 << 4 & '\uffff' | var1 >>> 12);
+		int var4 = var2 ^ (var1 << 4 & 0xFFFF | var1 >>> 12);
 		var4 |= var1 << 16;
 		long var5 = (long) var4 ^ 4294967296L;
 		Node_Sub2_Sub1 var8 = (Node_Sub2_Sub1) this.aNodeTable227.get(var5);
@@ -61,7 +61,7 @@ public class Class13 {
 	}
 
 	Node_Sub2_Sub1 method116(int var1, int var2, int[] var3) {
-		int var4 = var2 ^ (var1 << 4 & '\uffff' | var1 >>> 12);
+		int var4 = var2 ^ (var1 << 4 & 0xFFFF | var1 >>> 12);
 		var4 |= var1 << 16;
 		long var5 = (long) var4;
 		Node_Sub2_Sub1 var7 = (Node_Sub2_Sub1) this.aNodeTable227.get(var5);

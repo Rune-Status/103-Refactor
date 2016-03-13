@@ -1,7 +1,7 @@
 
 public class Class56 {
 
-	static Sprite aSprite542;
+	static Picture aSprite542;
 
 	public static String method284(int var0, int var1, boolean var2) {
 		if (var1 >= 2 && var1 <= 36) {
@@ -62,7 +62,7 @@ public class Class56 {
 	}
 
 	static final int method287() {
-		if (Node_Sub5.aClass24_1265.aBool298) {
+		if (AnimationSkin.settings.hideRoofs) {
 			return InterfaceNode.floorLevel * -747958745;
 		} else {
 			int var4 = 3;

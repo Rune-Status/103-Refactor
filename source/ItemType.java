@@ -5,8 +5,8 @@ import java.io.IOException;
 public class ItemType extends DualNode {
 
 	int anInt1605;
-	public static Class106 items = new Class106(64);
-	public static Class106 aClass106_1607 = new Class106(50);
+	public static NodeMap items = new NodeMap(64);
+	public static NodeMap aClass106_1607 = new NodeMap(50);
 	int anInt1608;
 	public int id;
 	short[] aShortArray1610;
@@ -23,8 +23,8 @@ public class ItemType extends DualNode {
 	public int stackable = 0;
 	public int anInt1617;
 	public boolean aBool1618 = false;
-	static Sprite[] aSpriteArray1619;
-	public static Class106 aClass106_1620 = new Class106(200);
+	static Picture[] aSpriteArray1619;
+	public static NodeMap aClass106_1620 = new NodeMap(200);
 	int anInt1621;
 	public static AbstractIndex item_ref;
 	int anInt1623;
@@ -83,7 +83,7 @@ public class ItemType extends DualNode {
 			}
 		}
 
-		Entity_Sub1 var4 = Entity_Sub1.method887(Class49.aClass87_516, this.anInt1630 * 908818241, 0);
+		Entity_Sub1 var4 = Entity_Sub1.method887(GZipDecompressor.aClass87_516, this.anInt1630 * 908818241, 0);
 		if (var4 == null) {
 			return null;
 		} else {
@@ -109,25 +109,25 @@ public class ItemType extends DualNode {
 	}
 
 	static void method810() {
-		Class78.method343(LandscapeTile.gameCanvas);
+		AbstractWheelListener.removeKeyFocusListener(LandscapeTile.gameCanvas);
 		Canvas var0 = LandscapeTile.gameCanvas;
 		var0.removeMouseListener(Class74.aClass74_618);
 		var0.removeMouseMotionListener(Class74.aClass74_618);
 		var0.removeFocusListener(Class74.aClass74_618);
 		Class74.anInt626 = 0;
-		if (Class26.aClass78_313 != null) {
-			Class26.aClass78_313.method342(LandscapeTile.gameCanvas, (byte) -9);
+		if (Class26.wheelListener != null) {
+			Class26.wheelListener.removeWheelListener(LandscapeTile.gameCanvas);
 		}
 
-		Client.aClient2005.method1027();
+		Client.clientInstance.method1027();
 		LandscapeTile.gameCanvas.setBackground(Color.black);
-		VarBitType.method876(LandscapeTile.gameCanvas);
+		VarBitType.setKeyFocusListener(LandscapeTile.gameCanvas);
 		Canvas var1 = LandscapeTile.gameCanvas;
 		var1.addMouseListener(Class74.aClass74_618);
 		var1.addMouseMotionListener(Class74.aClass74_618);
 		var1.addFocusListener(Class74.aClass74_618);
-		if (Class26.aClass78_313 != null) {
-			Class26.aClass78_313.method340(LandscapeTile.gameCanvas, (short) 22759);
+		if (Class26.wheelListener != null) {
+			Class26.wheelListener.setWheelListener(LandscapeTile.gameCanvas);
 		}
 
 		if (-1074177723 * Client.anInt2226 != -1) {
@@ -156,7 +156,7 @@ public class ItemType extends DualNode {
 		if (var6 != null) {
 			return var6;
 		} else {
-			Entity_Sub1 var5 = Entity_Sub1.method887(Class49.aClass87_516, this.anInt1630 * 908818241, 0);
+			Entity_Sub1 var5 = Entity_Sub1.method887(GZipDecompressor.aClass87_516, this.anInt1630 * 908818241, 0);
 			if (var5 == null) {
 				return null;
 			} else {
@@ -220,15 +220,15 @@ public class ItemType extends DualNode {
 			return true;
 		} else {
 			boolean var5 = true;
-			if (!Class49.aClass87_516.method388(var2, 0)) {
+			if (!GZipDecompressor.aClass87_516.method388(var2, 0)) {
 				var5 = false;
 			}
 
-			if (var3 != -1 && !Class49.aClass87_516.method388(var3, 0)) {
+			if (var3 != -1 && !GZipDecompressor.aClass87_516.method388(var3, 0)) {
 				var5 = false;
 			}
 
-			if (var4 != -1 && !Class49.aClass87_516.method388(var4, 0)) {
+			if (var4 != -1 && !GZipDecompressor.aClass87_516.method388(var4, 0)) {
 				var5 = false;
 			}
 
@@ -249,11 +249,11 @@ public class ItemType extends DualNode {
 		if (var2 == -1) {
 			return null;
 		} else {
-			Entity_Sub1 var6 = Entity_Sub1.method887(Class49.aClass87_516, var2, 0);
+			Entity_Sub1 var6 = Entity_Sub1.method887(GZipDecompressor.aClass87_516, var2, 0);
 			if (var5 != -1) {
-				Entity_Sub1 var3 = Entity_Sub1.method887(Class49.aClass87_516, var5, 0);
+				Entity_Sub1 var3 = Entity_Sub1.method887(GZipDecompressor.aClass87_516, var5, 0);
 				if (var4 != -1) {
-					Entity_Sub1 var7 = Entity_Sub1.method887(Class49.aClass87_516, var4, 0);
+					Entity_Sub1 var7 = Entity_Sub1.method887(GZipDecompressor.aClass87_516, var4, 0);
 					Entity_Sub1[] var8 = new Entity_Sub1[] { var6, var3, var7 };
 					var6 = new Entity_Sub1(var8, 3);
 				} else {
@@ -299,11 +299,11 @@ public class ItemType extends DualNode {
 			return true;
 		} else {
 			boolean var3 = true;
-			if (!Class49.aClass87_516.method388(var2, 0)) {
+			if (!GZipDecompressor.aClass87_516.method388(var2, 0)) {
 				var3 = false;
 			}
 
-			if (var4 != -1 && !Class49.aClass87_516.method388(var4, 0)) {
+			if (var4 != -1 && !GZipDecompressor.aClass87_516.method388(var4, 0)) {
 				var3 = false;
 			}
 
@@ -502,9 +502,9 @@ public class ItemType extends DualNode {
 		if (var2 == -1) {
 			return null;
 		} else {
-			Entity_Sub1 var5 = Entity_Sub1.method887(Class49.aClass87_516, var2, 0);
+			Entity_Sub1 var5 = Entity_Sub1.method887(GZipDecompressor.aClass87_516, var2, 0);
 			if (var4 != -1) {
-				Entity_Sub1 var3 = Entity_Sub1.method887(Class49.aClass87_516, var4, 0);
+				Entity_Sub1 var3 = Entity_Sub1.method887(GZipDecompressor.aClass87_516, var4, 0);
 				Entity_Sub1[] var6 = new Entity_Sub1[] { var5, var3 };
 				var5 = new Entity_Sub1(var6, 2);
 			}
@@ -574,35 +574,35 @@ public class ItemType extends DualNode {
 		table.quantities[slot] = quantity;
 	}
 
-	static Class24 method821() {
-		CacheFileAccessor var0 = null;
-		Class24 var1 = new Class24();
+	static ClientSettings desrializeSettings() {
+		CacheFileAccessor accessor = null;
+		ClientSettings settings = new ClientSettings();
 
 		try {
-			var0 = BoundaryStub.method154("", Client.aClass77_2091.aString646, false);
-			byte[] var2 = new byte[(int) var0.length()];
+			accessor = BoundaryStub.getPreferences("", Client.gameType.identifier, false);
+			byte[] bytes = new byte[(int) accessor.length()];
 
-			int var4;
-			for (int var3 = 0; var3 < var2.length; var3 += var4) {
-				var4 = var0.read(var2, var3, var2.length - var3);
-				if (var4 == -1) {
+			int read;
+			for (int offset = 0; offset < bytes.length; offset += read) {
+				read = accessor.read(bytes, offset, bytes.length - offset);
+				if (read == -1) {
 					throw new IOException();
 				}
 			}
 
-			var1 = new Class24(new ByteBuf(var2));
+			settings = new ClientSettings(new ByteBuf(bytes));
 		} catch (Exception var6) {
 			;
 		}
 
 		try {
-			if (var0 != null) {
-				var0.close();
+			if (accessor != null) {
+				accessor.close();
 			}
 		} catch (Exception var5) {
 			;
 		}
 
-		return var1;
+		return settings;
 	}
 }

@@ -51,7 +51,7 @@ public class TexturedGraphic extends RSGraphics {
 	static final void method912(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17,
 			int var18) {
-		int[] var19 = anInterface3_1796.method10(var18, -1976759906);
+		int[] var19 = anInterface3_1796.method10(var18);
 		int var22;
 		if (var19 == null) {
 			var22 = anInterface3_1796.method7(var18, -1018118266);
@@ -145,8 +145,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method919(raster, var19, 0, 0, var0, var4 >> 14, var5 >> 14, var6,
-													var33, var34, var20, var35, var36, var37, var38);
+											method919(raster, var19, 0, 0, var0, var4 >> 14, var5 >> 14, var6, var33,
+													var34, var20, var35, var36, var37, var38);
 											var5 += var23;
 											var4 += var29;
 											var6 += var25;
@@ -157,8 +157,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method919(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var33,
-											var34, var20, var35, var36, var37, var38);
+									method919(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var33, var34,
+											var20, var35, var36, var37, var38);
 									var5 += var23;
 									var3 += var27;
 									var6 += var25;
@@ -181,8 +181,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method919(raster, var19, 0, 0, var0, var5 >> 14, var4 >> 14, var6,
-													var33, var34, var20, var35, var36, var37, var38);
+											method919(raster, var19, 0, 0, var0, var5 >> 14, var4 >> 14, var6, var33,
+													var34, var20, var35, var36, var37, var38);
 											var5 += var23;
 											var4 += var29;
 											var6 += var25;
@@ -193,8 +193,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method919(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var33,
-											var34, var20, var35, var36, var37, var38);
+									method919(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var33, var34,
+											var20, var35, var36, var37, var38);
 									var5 += var23;
 									var3 += var27;
 									var6 += var25;
@@ -237,8 +237,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method919(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6,
-													var33, var34, var20, var35, var36, var37, var38);
+											method919(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var33,
+													var34, var20, var35, var36, var37, var38);
 											var5 += var29;
 											var3 += var27;
 											var6 += var25;
@@ -249,8 +249,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method919(raster, var19, 0, 0, var0, var3 >> 14, var4 >> 14, var6, var33,
-											var34, var20, var35, var36, var37, var38);
+									method919(raster, var19, 0, 0, var0, var3 >> 14, var4 >> 14, var6, var33, var34,
+											var20, var35, var36, var37, var38);
 									var4 += var23;
 									var3 += var27;
 									var6 += var25;
@@ -273,8 +273,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method919(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6,
-													var33, var34, var20, var35, var36, var37, var38);
+											method919(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var33,
+													var34, var20, var35, var36, var37, var38);
 											var5 += var29;
 											var3 += var27;
 											var6 += var25;
@@ -285,8 +285,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method919(raster, var19, 0, 0, var0, var4 >> 14, var3 >> 14, var6, var33,
-											var34, var20, var35, var36, var37, var38);
+									method919(raster, var19, 0, 0, var0, var4 >> 14, var3 >> 14, var6, var33, var34,
+											var20, var35, var36, var37, var38);
 									var4 += var23;
 									var3 += var27;
 									var6 += var25;
@@ -342,8 +342,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method919(raster, var19, 0, 0, var1, var5 >> 14, var3 >> 14, var7,
-													var33, var34, var20, var35, var36, var37, var38);
+											method919(raster, var19, 0, 0, var1, var5 >> 14, var3 >> 14, var7, var33,
+													var34, var20, var35, var36, var37, var38);
 											var3 += var27;
 											var5 += var23;
 											var7 += var25;
@@ -354,8 +354,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method919(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var33,
-											var34, var20, var35, var36, var37, var38);
+									method919(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var33, var34,
+											var20, var35, var36, var37, var38);
 									var3 += var27;
 									var4 += var29;
 									var7 += var25;
@@ -378,8 +378,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method919(raster, var19, 0, 0, var1, var3 >> 14, var5 >> 14, var7,
-													var33, var34, var20, var35, var36, var37, var38);
+											method919(raster, var19, 0, 0, var1, var3 >> 14, var5 >> 14, var7, var33,
+													var34, var20, var35, var36, var37, var38);
 											var3 += var27;
 											var5 += var23;
 											var7 += var25;
@@ -390,8 +390,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method919(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var33,
-											var34, var20, var35, var36, var37, var38);
+									method919(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var33, var34,
+											var20, var35, var36, var37, var38);
 									var3 += var27;
 									var4 += var29;
 									var7 += var25;
@@ -434,8 +434,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method919(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7,
-													var33, var34, var20, var35, var36, var37, var38);
+											method919(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var33,
+													var34, var20, var35, var36, var37, var38);
 											var3 += var23;
 											var4 += var29;
 											var7 += var25;
@@ -446,8 +446,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method919(raster, var19, 0, 0, var1, var5 >> 14, var4 >> 14, var7, var33,
-											var34, var20, var35, var36, var37, var38);
+									method919(raster, var19, 0, 0, var1, var5 >> 14, var4 >> 14, var7, var33, var34,
+											var20, var35, var36, var37, var38);
 									var5 += var27;
 									var4 += var29;
 									var7 += var25;
@@ -470,8 +470,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method919(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7,
-													var33, var34, var20, var35, var36, var37, var38);
+											method919(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var33,
+													var34, var20, var35, var36, var37, var38);
 											var3 += var23;
 											var4 += var29;
 											var7 += var25;
@@ -482,8 +482,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method919(raster, var19, 0, 0, var1, var4 >> 14, var5 >> 14, var7, var33,
-											var34, var20, var35, var36, var37, var38);
+									method919(raster, var19, 0, 0, var1, var4 >> 14, var5 >> 14, var7, var33, var34,
+											var20, var35, var36, var37, var38);
 									var5 += var27;
 									var4 += var29;
 									var7 += var25;
@@ -538,8 +538,8 @@ public class TexturedGraphic extends RSGraphics {
 											return;
 										}
 
-										method919(raster, var19, 0, 0, var2, var4 >> 14, var3 >> 14, var8,
-												var33, var34, var20, var35, var36, var37, var38);
+										method919(raster, var19, 0, 0, var2, var4 >> 14, var3 >> 14, var8, var33, var34,
+												var20, var35, var36, var37, var38);
 										var4 += var29;
 										var3 += var27;
 										var8 += var25;
@@ -550,8 +550,8 @@ public class TexturedGraphic extends RSGraphics {
 									}
 								}
 
-								method919(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var33, var34,
-										var20, var35, var36, var37, var38);
+								method919(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var33, var34, var20,
+										var35, var36, var37, var38);
 								var4 += var29;
 								var5 += var23;
 								var8 += var25;
@@ -574,8 +574,8 @@ public class TexturedGraphic extends RSGraphics {
 											return;
 										}
 
-										method919(raster, var19, 0, 0, var2, var3 >> 14, var4 >> 14, var8,
-												var33, var34, var20, var35, var36, var37, var38);
+										method919(raster, var19, 0, 0, var2, var3 >> 14, var4 >> 14, var8, var33, var34,
+												var20, var35, var36, var37, var38);
 										var4 += var29;
 										var3 += var27;
 										var8 += var25;
@@ -586,8 +586,8 @@ public class TexturedGraphic extends RSGraphics {
 									}
 								}
 
-								method919(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var33, var34,
-										var20, var35, var36, var37, var38);
+								method919(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var33, var34, var20,
+										var35, var36, var37, var38);
 								var4 += var29;
 								var5 += var23;
 								var8 += var25;
@@ -630,8 +630,8 @@ public class TexturedGraphic extends RSGraphics {
 											return;
 										}
 
-										method919(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8,
-												var33, var34, var20, var35, var36, var37, var38);
+										method919(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var33, var34,
+												var20, var35, var36, var37, var38);
 										var4 += var27;
 										var5 += var23;
 										var8 += var25;
@@ -642,8 +642,8 @@ public class TexturedGraphic extends RSGraphics {
 									}
 								}
 
-								method919(raster, var19, 0, 0, var2, var3 >> 14, var5 >> 14, var8, var33, var34,
-										var20, var35, var36, var37, var38);
+								method919(raster, var19, 0, 0, var2, var3 >> 14, var5 >> 14, var8, var33, var34, var20,
+										var35, var36, var37, var38);
 								var3 += var29;
 								var5 += var23;
 								var8 += var25;
@@ -666,8 +666,8 @@ public class TexturedGraphic extends RSGraphics {
 											return;
 										}
 
-										method919(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8,
-												var33, var34, var20, var35, var36, var37, var38);
+										method919(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var33, var34,
+												var20, var35, var36, var37, var38);
 										var4 += var27;
 										var5 += var23;
 										var8 += var25;
@@ -678,8 +678,8 @@ public class TexturedGraphic extends RSGraphics {
 									}
 								}
 
-								method919(raster, var19, 0, 0, var2, var5 >> 14, var3 >> 14, var8, var33, var34,
-										var20, var35, var36, var37, var38);
+								method919(raster, var19, 0, 0, var2, var5 >> 14, var3 >> 14, var8, var33, var34, var20,
+										var35, var36, var37, var38);
 								var3 += var29;
 								var5 += var23;
 								var8 += var25;
@@ -766,7 +766,7 @@ public class TexturedGraphic extends RSGraphics {
 				int var13 = (int) (var31 * 256.0D);
 				int var14 = (int) (var21 * 256.0D);
 				int var15 = (var12 << 16) + (var13 << 8) + var14;
-				var15 = method915(var15, var0);
+				var15 = adjustRGB(var15, var0);
 				if (var15 == 0) {
 					var15 = 1;
 				}
@@ -777,17 +777,17 @@ public class TexturedGraphic extends RSGraphics {
 
 	}
 
-	static int method915(int var0, double var1) {
-		double var3 = (double) (var0 >> 16) / 256.0D;
-		double var5 = (double) (var0 >> 8 & 255) / 256.0D;
-		double var8 = (double) (var0 & 255) / 256.0D;
-		var3 = Math.pow(var3, var1);
-		var5 = Math.pow(var5, var1);
-		var8 = Math.pow(var8, var1);
-		int var10 = (int) (var3 * 256.0D);
-		int var7 = (int) (var5 * 256.0D);
-		int var11 = (int) (var8 * 256.0D);
-		return (var10 << 16) + (var7 << 8) + var11;
+	static int adjustRGB(int rgb, double brightness) {
+		double red = (double) (rgb >> 16) / 256.0D;
+		double green = (double) (rgb >> 8 & 0xFF) / 256.0D;
+		double blue = (double) (rgb & 0xFF) / 256.0D;
+		red = Math.pow(red, brightness);
+		green = Math.pow(green, brightness);
+		blue = Math.pow(blue, brightness);
+		int aRed = (int) (red * 256.0D);
+		int aGreen = (int) (green * 256.0D);
+		int aBlue = (int) (blue * 256.0D);
+		return (aRed << 16) + (aGreen << 8) + aBlue;
 	}
 
 	TexturedGraphic() throws Throwable {
@@ -1367,7 +1367,6 @@ public class TexturedGraphic extends RSGraphics {
 			int var23 = var6 - var5;
 			int var15;
 			int var16;
-			int var10000;
 			int var17;
 			int var18;
 			int var19;
@@ -1449,7 +1448,6 @@ public class TexturedGraphic extends RSGraphics {
 							var3 = var1[(var2 & 4032) + (var2 >>> 26)];
 							var0[var4++] = ((var3 & 16711935) * var18 & -16711936)
 									+ ((var3 & '\uff00') * var18 & 16711680) >> 8;
-							var10000 = var2 + var17;
 							var16 = var15;
 							var21 = var22;
 							var9 += var12;
@@ -1545,7 +1543,6 @@ public class TexturedGraphic extends RSGraphics {
 							}
 
 							++var4;
-							var10000 = var2 + var17;
 							var16 = var15;
 							var21 = var22;
 							var9 += var12;
@@ -1662,7 +1659,6 @@ public class TexturedGraphic extends RSGraphics {
 							var3 = var1[(var2 & 16256) + (var2 >>> 25)];
 							var0[var4++] = ((var3 & 16711935) * var18 & -16711936)
 									+ ((var3 & '\uff00') * var18 & 16711680) >> 8;
-							var10000 = var2 + var17;
 							var16 = var15;
 							var21 = var22;
 							var9 += var12;
@@ -1758,7 +1754,6 @@ public class TexturedGraphic extends RSGraphics {
 							}
 
 							++var4;
-							var10000 = var2 + var17;
 							var16 = var15;
 							var21 = var22;
 							var9 += var12;
@@ -2822,7 +2817,7 @@ public class TexturedGraphic extends RSGraphics {
 	static final void method926(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17,
 			int var18) {
-		int[] var19 = anInterface3_1796.method10(var18, 2080527932);
+		int[] var19 = anInterface3_1796.method10(var18);
 		int var21;
 		if (var19 == null) {
 			var21 = anInterface3_1796.method7(var18, 1168499268);
@@ -2916,8 +2911,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method920(raster, var19, 0, 0, var0, var4 >> 14, var5 >> 14, var6,
-													var34, var40, var27, var31, var35, var41, var37);
+											method920(raster, var19, 0, 0, var0, var4 >> 14, var5 >> 14, var6, var34,
+													var40, var27, var31, var35, var41, var37);
 											var5 += var26;
 											var4 += var29;
 											var6 += var38;
@@ -2928,8 +2923,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method920(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var34,
-											var40, var27, var31, var35, var41, var37);
+									method920(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var34, var40,
+											var27, var31, var35, var41, var37);
 									var5 += var26;
 									var3 += var20;
 									var6 += var38;
@@ -2952,8 +2947,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method920(raster, var19, 0, 0, var0, var5 >> 14, var4 >> 14, var6,
-													var34, var40, var27, var31, var35, var41, var37);
+											method920(raster, var19, 0, 0, var0, var5 >> 14, var4 >> 14, var6, var34,
+													var40, var27, var31, var35, var41, var37);
 											var5 += var26;
 											var4 += var29;
 											var6 += var38;
@@ -2964,8 +2959,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method920(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var34,
-											var40, var27, var31, var35, var41, var37);
+									method920(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var34, var40,
+											var27, var31, var35, var41, var37);
 									var5 += var26;
 									var3 += var20;
 									var6 += var38;
@@ -3008,8 +3003,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method920(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6,
-													var34, var40, var27, var31, var35, var41, var37);
+											method920(raster, var19, 0, 0, var0, var3 >> 14, var5 >> 14, var6, var34,
+													var40, var27, var31, var35, var41, var37);
 											var5 += var29;
 											var3 += var20;
 											var6 += var38;
@@ -3020,8 +3015,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method920(raster, var19, 0, 0, var0, var3 >> 14, var4 >> 14, var6, var34,
-											var40, var27, var31, var35, var41, var37);
+									method920(raster, var19, 0, 0, var0, var3 >> 14, var4 >> 14, var6, var34, var40,
+											var27, var31, var35, var41, var37);
 									var4 += var26;
 									var3 += var20;
 									var6 += var38;
@@ -3044,8 +3039,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method920(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6,
-													var34, var40, var27, var31, var35, var41, var37);
+											method920(raster, var19, 0, 0, var0, var5 >> 14, var3 >> 14, var6, var34,
+													var40, var27, var31, var35, var41, var37);
 											var5 += var29;
 											var3 += var20;
 											var6 += var38;
@@ -3056,8 +3051,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method920(raster, var19, 0, 0, var0, var4 >> 14, var3 >> 14, var6, var34,
-											var40, var27, var31, var35, var41, var37);
+									method920(raster, var19, 0, 0, var0, var4 >> 14, var3 >> 14, var6, var34, var40,
+											var27, var31, var35, var41, var37);
 									var4 += var26;
 									var3 += var20;
 									var6 += var38;
@@ -3113,8 +3108,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method920(raster, var19, 0, 0, var1, var5 >> 14, var3 >> 14, var7,
-													var34, var40, var27, var31, var35, var41, var37);
+											method920(raster, var19, 0, 0, var1, var5 >> 14, var3 >> 14, var7, var34,
+													var40, var27, var31, var35, var41, var37);
 											var3 += var20;
 											var5 += var26;
 											var7 += var38;
@@ -3125,8 +3120,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method920(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var34,
-											var40, var27, var31, var35, var41, var37);
+									method920(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var34, var40,
+											var27, var31, var35, var41, var37);
 									var3 += var20;
 									var4 += var29;
 									var7 += var38;
@@ -3149,8 +3144,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method920(raster, var19, 0, 0, var1, var3 >> 14, var5 >> 14, var7,
-													var34, var40, var27, var31, var35, var41, var37);
+											method920(raster, var19, 0, 0, var1, var3 >> 14, var5 >> 14, var7, var34,
+													var40, var27, var31, var35, var41, var37);
 											var3 += var20;
 											var5 += var26;
 											var7 += var38;
@@ -3161,8 +3156,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method920(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var34,
-											var40, var27, var31, var35, var41, var37);
+									method920(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var34, var40,
+											var27, var31, var35, var41, var37);
 									var3 += var20;
 									var4 += var29;
 									var7 += var38;
@@ -3205,8 +3200,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method920(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7,
-													var34, var40, var27, var31, var35, var41, var37);
+											method920(raster, var19, 0, 0, var1, var3 >> 14, var4 >> 14, var7, var34,
+													var40, var27, var31, var35, var41, var37);
 											var3 += var26;
 											var4 += var29;
 											var7 += var38;
@@ -3217,8 +3212,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method920(raster, var19, 0, 0, var1, var5 >> 14, var4 >> 14, var7, var34,
-											var40, var27, var31, var35, var41, var37);
+									method920(raster, var19, 0, 0, var1, var5 >> 14, var4 >> 14, var7, var34, var40,
+											var27, var31, var35, var41, var37);
 									var5 += var20;
 									var4 += var29;
 									var7 += var38;
@@ -3241,8 +3236,8 @@ public class TexturedGraphic extends RSGraphics {
 												return;
 											}
 
-											method920(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7,
-													var34, var40, var27, var31, var35, var41, var37);
+											method920(raster, var19, 0, 0, var1, var4 >> 14, var3 >> 14, var7, var34,
+													var40, var27, var31, var35, var41, var37);
 											var3 += var26;
 											var4 += var29;
 											var7 += var38;
@@ -3253,8 +3248,8 @@ public class TexturedGraphic extends RSGraphics {
 										}
 									}
 
-									method920(raster, var19, 0, 0, var1, var4 >> 14, var5 >> 14, var7, var34,
-											var40, var27, var31, var35, var41, var37);
+									method920(raster, var19, 0, 0, var1, var4 >> 14, var5 >> 14, var7, var34, var40,
+											var27, var31, var35, var41, var37);
 									var5 += var20;
 									var4 += var29;
 									var7 += var38;
@@ -3309,8 +3304,8 @@ public class TexturedGraphic extends RSGraphics {
 											return;
 										}
 
-										method920(raster, var19, 0, 0, var2, var4 >> 14, var3 >> 14, var8,
-												var34, var40, var27, var31, var35, var41, var37);
+										method920(raster, var19, 0, 0, var2, var4 >> 14, var3 >> 14, var8, var34, var40,
+												var27, var31, var35, var41, var37);
 										var4 += var29;
 										var3 += var20;
 										var8 += var38;
@@ -3321,8 +3316,8 @@ public class TexturedGraphic extends RSGraphics {
 									}
 								}
 
-								method920(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var34, var40,
-										var27, var31, var35, var41, var37);
+								method920(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var34, var40, var27,
+										var31, var35, var41, var37);
 								var4 += var29;
 								var5 += var26;
 								var8 += var38;
@@ -3345,8 +3340,8 @@ public class TexturedGraphic extends RSGraphics {
 											return;
 										}
 
-										method920(raster, var19, 0, 0, var2, var3 >> 14, var4 >> 14, var8,
-												var34, var40, var27, var31, var35, var41, var37);
+										method920(raster, var19, 0, 0, var2, var3 >> 14, var4 >> 14, var8, var34, var40,
+												var27, var31, var35, var41, var37);
 										var4 += var29;
 										var3 += var20;
 										var8 += var38;
@@ -3357,8 +3352,8 @@ public class TexturedGraphic extends RSGraphics {
 									}
 								}
 
-								method920(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var34, var40,
-										var27, var31, var35, var41, var37);
+								method920(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var34, var40, var27,
+										var31, var35, var41, var37);
 								var4 += var29;
 								var5 += var26;
 								var8 += var38;
@@ -3401,8 +3396,8 @@ public class TexturedGraphic extends RSGraphics {
 											return;
 										}
 
-										method920(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8,
-												var34, var40, var27, var31, var35, var41, var37);
+										method920(raster, var19, 0, 0, var2, var4 >> 14, var5 >> 14, var8, var34, var40,
+												var27, var31, var35, var41, var37);
 										var4 += var20;
 										var5 += var26;
 										var8 += var38;
@@ -3413,8 +3408,8 @@ public class TexturedGraphic extends RSGraphics {
 									}
 								}
 
-								method920(raster, var19, 0, 0, var2, var3 >> 14, var5 >> 14, var8, var34, var40,
-										var27, var31, var35, var41, var37);
+								method920(raster, var19, 0, 0, var2, var3 >> 14, var5 >> 14, var8, var34, var40, var27,
+										var31, var35, var41, var37);
 								var3 += var29;
 								var5 += var26;
 								var8 += var38;
@@ -3437,8 +3432,8 @@ public class TexturedGraphic extends RSGraphics {
 											return;
 										}
 
-										method920(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8,
-												var34, var40, var27, var31, var35, var41, var37);
+										method920(raster, var19, 0, 0, var2, var5 >> 14, var4 >> 14, var8, var34, var40,
+												var27, var31, var35, var41, var37);
 										var4 += var20;
 										var5 += var26;
 										var8 += var38;
@@ -3449,8 +3444,8 @@ public class TexturedGraphic extends RSGraphics {
 									}
 								}
 
-								method920(raster, var19, 0, 0, var2, var5 >> 14, var3 >> 14, var8, var34, var40,
-										var27, var31, var35, var41, var37);
+								method920(raster, var19, 0, 0, var2, var5 >> 14, var3 >> 14, var8, var34, var40, var27,
+										var31, var35, var41, var37);
 								var3 += var29;
 								var5 += var26;
 								var8 += var38;

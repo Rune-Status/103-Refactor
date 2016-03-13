@@ -462,16 +462,16 @@ public class Landscape {
 		LandscapeTile var5 = this.tiles[var1][var2][var3];
 		if (var5 != null) {
 			if (var5.boundaryStub != null && var5.boundaryStub.anInt277 * 785572969 == var4) {
-				return var5.boundaryStub.config * 1069568405 & 255;
+				return var5.boundaryStub.config * 1069568405 & 0xFF;
 			} else if (var5.boundaryDecorationStub != null
 					&& var5.boundaryDecorationStub.anInt218 * 1286385391 == var4) {
-				return var5.boundaryDecorationStub.config * -1177605143 & 255;
+				return var5.boundaryDecorationStub.config * -1177605143 & 0xFF;
 			} else if (var5.tileDecorationStub != null && var5.tileDecorationStub.anInt839 * 827739875 == var4) {
-				return var5.tileDecorationStub.config * 1479784023 & 255;
+				return var5.tileDecorationStub.config * 1479784023 & 0xFF;
 			} else {
 				for (int var6 = 0; var6 < var5.anInt1407 * 1758491173; ++var6) {
 					if (var5.entityMarkers[var6].anInt269 * 714123667 == var4) {
-						return var5.entityMarkers[var6].config * 1464542121 & 255;
+						return var5.entityMarkers[var6].config * 1464542121 & 0xFF;
 					}
 				}
 
@@ -1457,8 +1457,7 @@ public class Landscape {
 									Class38.anIntArray408[var18], var1.anIntArray414[var9]);
 						}
 					} else {
-						int var19 = TexturedGraphic.anInterface3_1796.method7(var1.anIntArray414[var9],
-								-1275367594);
+						int var19 = TexturedGraphic.anInterface3_1796.method7(var1.anIntArray414[var9], -1275367594);
 						TexturedGraphic.method922(var15, var14, var13, var11, var12, var16,
 								method22(var19, var1.anIntArray417[var9]), method22(var19, var1.anIntArray409[var9]),
 								method22(var19, var1.anIntArray410[var9]));
@@ -1646,8 +1645,7 @@ public class Landscape {
 			int var6 = var3 << 7;
 			if (this.method48(var5 + 1, this.tileHeights[var1][var2][var3], var6 + 1)
 					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3], var6 + 1)
-					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3 + 1],
-							var6 + 128 - 1)
+					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3 + 1], var6 + 128 - 1)
 					&& this.method48(var5 + 1, this.tileHeights[var1][var2][var3 + 1], var6 + 128 - 1)) {
 				this.anIntArrayArrayArray14[var1][var2][var3] = anInt19;
 				return true;
@@ -1817,10 +1815,8 @@ public class Landscape {
 			int var6 = var3 << 7;
 			return this.method48(var5 + 1, this.tileHeights[var1][var2][var3] - var4, var6 + 1)
 					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3] - var4, var6 + 1)
-					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3 + 1] - var4,
-							var6 + 128 - 1)
-					&& this.method48(var5 + 1, this.tileHeights[var1][var2][var3 + 1] - var4,
-							var6 + 128 - 1);
+					&& this.method48(var5 + 128 - 1, this.tileHeights[var1][var2 + 1][var3 + 1] - var4, var6 + 128 - 1)
+					&& this.method48(var5 + 1, this.tileHeights[var1][var2][var3 + 1] - var4, var6 + 128 - 1);
 		}
 	}
 
@@ -1834,12 +1830,10 @@ public class Landscape {
 				var8 = var2 << 7;
 				var7 = var4 << 7;
 				return this.method48(var8 + 1, this.tileHeights[var1][var2][var4] - var6, var7 + 1)
-						&& this.method48(var8 + 128 - 1, this.tileHeights[var1][var2 + 1][var4] - var6,
-								var7 + 1)
+						&& this.method48(var8 + 128 - 1, this.tileHeights[var1][var2 + 1][var4] - var6, var7 + 1)
 						&& this.method48(var8 + 128 - 1, this.tileHeights[var1][var2 + 1][var4 + 1] - var6,
 								var7 + 128 - 1)
-						&& this.method48(var8 + 1, this.tileHeights[var1][var2][var4 + 1] - var6,
-								var7 + 128 - 1);
+						&& this.method48(var8 + 1, this.tileHeights[var1][var2][var4 + 1] - var6, var7 + 128 - 1);
 			}
 		} else {
 			for (var8 = var2; var8 <= var3; ++var8) {

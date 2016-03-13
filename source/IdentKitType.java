@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 public class IdentKitType extends DualNode {
 
 	public static int anInt1457;
-	static Class106 identKits = new Class106(64);
+	static NodeMap identKits = new NodeMap(64);
 	public int anInt1459 = 188525871;
 	int[] anIntArray1460;
 	short[] aShortArray1461;
@@ -145,7 +145,7 @@ public class IdentKitType extends DualNode {
 
 			if ((flags & 16) != 0) {
 				npc.targetIndex = Client.inBuffer.getULEShort() * 1611414733;
-				if (734924805 * npc.targetIndex == '\uffff') {
+				if (734924805 * npc.targetIndex == 65535) {
 					npc.targetIndex = -1611414733;
 				}
 			}
@@ -157,9 +157,9 @@ public class IdentKitType extends DualNode {
 				var5 = Client.inBuffer.getULEShortA();
 				var4 = Client.inBuffer.getUShortA();
 				var6 = npc.strictX * 1272643751
-						- (var5 - 1426698711 * Node_Sub10.regionBaseX - Node_Sub10.regionBaseX * 1426698711) * 64;
+						- (var5 - 1426698711 * Node_Sub10.chunkLeftX - Node_Sub10.chunkLeftX * 1426698711) * 64;
 				int var7 = npc.strictY * -1801433343
-						- (var4 - 714823515 * VarClientHub.regionBaseY - VarClientHub.regionBaseY * 714823515) * 64;
+						- (var4 - 714823515 * VarClientHub.chunkLeftY - VarClientHub.chunkLeftY * 714823515) * 64;
 				if (var6 != 0 || var7 != 0) {
 					npc.anInt1931 = ((int) (Math.atan2((double) var6, (double) var7) * 325.949D) & 2047) * -316267887;
 				}
@@ -178,14 +178,14 @@ public class IdentKitType extends DualNode {
 				npc.anInt1938 = Client.inBuffer.getULEShortA() * -1738418729;
 				var5 = Client.inBuffer.getInt();
 				npc.anInt1920 = (var5 >> 16) * 878509897;
-				npc.anInt1941 = 1621235571 * (Client.engineCycle * -1040073859 + (var5 & '\uffff'));
+				npc.anInt1941 = 1621235571 * (Client.engineCycle * -1040073859 + (var5 & 0xFFFF));
 				npc.anInt1925 = 0;
 				npc.anInt1940 = 0;
 				if (489022907 * npc.anInt1941 > -1040073859 * Client.engineCycle) {
 					npc.anInt1925 = -1825378913;
 				}
 
-				if (1631645159 * npc.anInt1938 == '\uffff') {
+				if (1631645159 * npc.anInt1938 == 65535) {
 					npc.anInt1938 = 1738418729;
 				}
 			}
@@ -214,7 +214,7 @@ public class IdentKitType extends DualNode {
 
 			if ((flags & 2) != 0) {
 				var5 = Client.inBuffer.getUShort();
-				if (var5 == '\uffff') {
+				if (var5 == 65535) {
 					var5 = -1;
 				}
 
@@ -231,10 +231,8 @@ public class IdentKitType extends DualNode {
 					if (var6 == 2) {
 						npc.anInt1958 = 0;
 					}
-				} else if (var5 == -1 || npc.animation * -922607859 == -1
-						|| Node_Sub6.getSequenceType(var5).anInt1480
-								* -610992485 >= Node_Sub6.getSequenceType(-922607859 * npc.animation).anInt1480
-										* -610992485) {
+				} else if (var5 == -1 || npc.animation * -922607859 == -1 || Node_Sub6.getSequenceType(var5).anInt1480
+						* -610992485 >= Node_Sub6.getSequenceType(-922607859 * npc.animation).anInt1480 * -610992485) {
 					npc.animation = -1587034171 * var5;
 					npc.anInt1934 = 0;
 					npc.anInt1935 = 0;
@@ -472,10 +470,11 @@ public class IdentKitType extends DualNode {
 
 	static void method672() {
 		if (Client.spellSelected) {
-			Widget var0 = AbstractProducer.method146(SequenceType.anInt1488 * -1195336111, 1149825709 * Client.anInt2128);
+			Widget var0 = AbstractProducer.method146(SequenceType.anInt1488 * -1195336111,
+					1149825709 * Client.anInt2128);
 			if (var0 != null && var0.anObjectArray1178 != null) {
 				ScriptEvent var1 = new ScriptEvent();
-				var1.aWidget1430 = var0;
+				var1.widget = var0;
 				var1.args = var0.anObjectArray1178;
 				Class96_Sub1.method504(var1);
 			}

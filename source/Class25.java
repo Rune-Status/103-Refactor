@@ -6,11 +6,11 @@ public class Class25 {
 				: Client.menuActions[var0] + GameStrings.aString1003 + Client.menuNouns[var0];
 	}
 
-	static void method166() {
-		Class118.aByteArrayArrayArray802 = (byte[][][]) null;
-		Class39.aByteArrayArrayArray429 = (byte[][][]) null;
-		VarClientStringType.aByteArrayArrayArray1507 = (byte[][][]) null;
-		Class49.aByteArrayArrayArray514 = (byte[][][]) null;
+	static void resetMapInfo() {
+		Class118.underlayIds = (byte[][][]) null;
+		Class39.overlayIds = (byte[][][]) null;
+		VarClientStringType.overlayPaths = (byte[][][]) null;
+		GZipDecompressor.overlayRotations = (byte[][][]) null;
 		Class39.anIntArrayArrayArray433 = (int[][][]) null;
 		Class39.aByteArrayArrayArray430 = (byte[][][]) null;
 		Class39.anIntArrayArray441 = (int[][]) null;

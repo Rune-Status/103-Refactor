@@ -5,11 +5,11 @@ import java.net.URI;
 public class Class96_Sub1 extends Class96 {
 
 	String aString1203;
-	static Sprite[] aSpriteArray1204;
+	static Picture[] aSpriteArray1204;
 	short aShort1205;
-	int anInt1206 = (int) (Node_Sub5.currentTimeMs() / 1000L) * 1225451051;
+	int anInt1206 = (int) (AnimationSkin.currentTimeMs() / 1000L) * 1225451051;
 	static AbstractIndex aClass87_1207;
-	static Class61 aClass61_1208;
+	static Task socket;
 
 	public static void method498(AbstractIndex var0, AbstractIndex var1, boolean var2) {
 		ObjectType.objects_ref = var0;
@@ -61,33 +61,33 @@ public class Class96_Sub1 extends Class96 {
 		}
 	}
 
-	public static void method501(int var0) {
-		if (Class63.aString579.toLowerCase().indexOf("microsoft") != -1) {
-			Class71.anIntArray590[186] = 57;
-			Class71.anIntArray590[187] = 27;
-			Class71.anIntArray590[188] = 71;
-			Class71.anIntArray590[189] = 26;
-			Class71.anIntArray590[190] = 72;
-			Class71.anIntArray590[191] = 73;
-			Class71.anIntArray590[192] = 58;
-			Class71.anIntArray590[219] = 42;
-			Class71.anIntArray590[220] = 74;
-			Class71.anIntArray590[221] = 43;
-			Class71.anIntArray590[222] = 59;
-			Class71.anIntArray590[223] = 28;
+	public static void method501() {
+		if (TaskManager.javaVendor.toLowerCase().indexOf("microsoft") != -1) {
+			KeyFocusListener.keyCodes[186] = 57;
+			KeyFocusListener.keyCodes[187] = 27;
+			KeyFocusListener.keyCodes[188] = 71;
+			KeyFocusListener.keyCodes[189] = 26;
+			KeyFocusListener.keyCodes[190] = 72;
+			KeyFocusListener.keyCodes[191] = 73;
+			KeyFocusListener.keyCodes[192] = 58;
+			KeyFocusListener.keyCodes[219] = 42;
+			KeyFocusListener.keyCodes[220] = 74;
+			KeyFocusListener.keyCodes[221] = 43;
+			KeyFocusListener.keyCodes[222] = 59;
+			KeyFocusListener.keyCodes[223] = 28;
 		} else {
-			Class71.anIntArray590[44] = 71;
-			Class71.anIntArray590[45] = 26;
-			Class71.anIntArray590[46] = 72;
-			Class71.anIntArray590[47] = 73;
-			Class71.anIntArray590[59] = 57;
-			Class71.anIntArray590[61] = 27;
-			Class71.anIntArray590[91] = 42;
-			Class71.anIntArray590[92] = 74;
-			Class71.anIntArray590[93] = 43;
-			Class71.anIntArray590[192] = 28;
-			Class71.anIntArray590[222] = 58;
-			Class71.anIntArray590[520] = 59;
+			KeyFocusListener.keyCodes[44] = 71;
+			KeyFocusListener.keyCodes[45] = 26;
+			KeyFocusListener.keyCodes[46] = 72;
+			KeyFocusListener.keyCodes[47] = 73;
+			KeyFocusListener.keyCodes[59] = 57;
+			KeyFocusListener.keyCodes[61] = 27;
+			KeyFocusListener.keyCodes[91] = 42;
+			KeyFocusListener.keyCodes[92] = 74;
+			KeyFocusListener.keyCodes[93] = 43;
+			KeyFocusListener.keyCodes[192] = 28;
+			KeyFocusListener.keyCodes[222] = 58;
+			KeyFocusListener.keyCodes[520] = 59;
 		}
 
 	}
@@ -235,7 +235,7 @@ public class Class96_Sub1 extends Class96 {
 	}
 
 	static void method504(ScriptEvent var0) {
-		Class52.method261(var0, 200000);
+		AbstractByteBuffer.method261(var0, 200000);
 	}
 
 	Class96_Sub1(String var1, int var2) {
@@ -346,9 +346,9 @@ public class Class96_Sub1 extends Class96 {
 										Client.outBuffer.putHeader(239);
 										Client.outBuffer.putByte(18);
 										Client.outBuffer.putByteC(
-												Class71.aBoolArray593[82] ? (Class71.aBoolArray593[81] ? 2 : 1) : 0);
-										Client.outBuffer.putLEShortA(Node_Sub10.regionBaseX * 1426698711 + var53);
-										Client.outBuffer.putLEShort(VarClientHub.regionBaseY * 714823515 + var18);
+												KeyFocusListener.aBoolArray593[82] ? (KeyFocusListener.aBoolArray593[81] ? 2 : 1) : 0);
+										Client.outBuffer.putLEShortA(Node_Sub10.chunkLeftX * 1426698711 + var53);
+										Client.outBuffer.putLEShort(VarClientHub.chunkLeftY * 714823515 + var18);
 										Client.outBuffer.putByte(var11);
 										Client.outBuffer.putByte(var46);
 										Client.outBuffer.putShort(-1916997753 * Client.minimapRotation);
@@ -371,8 +371,7 @@ public class Class96_Sub1 extends Class96 {
 								var12 = var21 - var20;
 								var11 = var22 - var15;
 								if (-1300193677 * var13.anInt1195 == 1) {
-									FriendedPlayer.addMenuRow(var13.tooltip, "", 24, 0, 0,
-											-1536575275 * var13.hash);
+									FriendedPlayer.addMenuRow(var13.tooltip, "", 24, 0, 0, -1536575275 * var13.hash);
 								}
 
 								String var19;
@@ -391,18 +390,15 @@ public class Class96_Sub1 extends Class96 {
 								}
 
 								if (var13.anInt1195 * -1300193677 == 4) {
-									FriendedPlayer.addMenuRow(var13.tooltip, "", 28, 0, 0,
-											-1536575275 * var13.hash);
+									FriendedPlayer.addMenuRow(var13.tooltip, "", 28, 0, 0, -1536575275 * var13.hash);
 								}
 
 								if (-1300193677 * var13.anInt1195 == 5) {
-									FriendedPlayer.addMenuRow(var13.tooltip, "", 29, 0, 0,
-											var13.hash * -1536575275);
+									FriendedPlayer.addMenuRow(var13.tooltip, "", 29, 0, 0, var13.hash * -1536575275);
 								}
 
 								if (-1300193677 * var13.anInt1195 == 6 && Client.aWidget2135 == null) {
-									FriendedPlayer.addMenuRow(var13.tooltip, "", 30, 0, -1,
-											var13.hash * -1536575275);
+									FriendedPlayer.addMenuRow(var13.tooltip, "", 30, 0, -1, var13.hash * -1536575275);
 								}
 
 								if (-1305917269 * var13.type == 2) {
@@ -574,8 +570,7 @@ public class Class96_Sub1 extends Class96 {
 
 														FriendedPlayer.addMenuRow(GameStrings.aString994,
 																Class48_Sub1.method545(16748608) + var29.name, 1005,
-																1548676283 * var29.id, var46,
-																-1536575275 * var13.hash);
+																1548676283 * var29.id, var46, -1536575275 * var13.hash);
 													}
 												}
 											}
@@ -648,11 +643,11 @@ public class Class96_Sub1 extends Class96 {
 											&& Class74.anInt622 * 103771565 < var17 && !Client.menuOpen
 											&& !Client.aBool2024) {
 										for (ScriptEvent var39 = (ScriptEvent) Client.aDeque2164
-												.method471(); var39 != null; var39 = (ScriptEvent) Client.aDeque2164
-														.method473()) {
+												.getFront(); var39 != null; var39 = (ScriptEvent) Client.aDeque2164
+														.getNext()) {
 											if (var39.aBool1432) {
 												var39.unlink();
-												var39.aWidget1430.aBool1165 = false;
+												var39.widget.aBool1165 = false;
 											}
 										}
 
@@ -680,11 +675,11 @@ public class Class96_Sub1 extends Class96 {
 											&& Class74.anInt621 * -453286219 < var16
 											&& 103771565 * Class74.anInt622 < var17) {
 										for (var42 = (ScriptEvent) Client.aDeque2164
-												.method471(); var42 != null; var42 = (ScriptEvent) Client.aDeque2164
-														.method473()) {
+												.getFront(); var42 != null; var42 = (ScriptEvent) Client.aDeque2164
+														.getNext()) {
 											if (var42.aBool1432) {
 												var42.unlink();
-												var42.aWidget1430.aBool1165 = false;
+												var42.widget.aBool1165 = false;
 											}
 										}
 
@@ -705,9 +700,9 @@ public class Class96_Sub1 extends Class96 {
 										&& -453286219 * Class74.anInt621 < var16
 										&& Class74.anInt622 * 103771565 < var17) {
 									for (var42 = (ScriptEvent) Client.aDeque2164
-											.method471(); var42 != null; var42 = (ScriptEvent) Client.aDeque2164
-													.method473()) {
-										if (var42.aBool1432 && var42.args == var42.aWidget1430.scrollListener) {
+											.getFront(); var42 != null; var42 = (ScriptEvent) Client.aDeque2164
+													.getNext()) {
+										if (var42.aBool1432 && var42.args == var42.widget.scrollListener) {
 											var42.unlink();
 										}
 									}
@@ -762,7 +757,7 @@ public class Class96_Sub1 extends Class96 {
 									if (var43 && -1955541359 * Client.anInt2163 != 0 && var13.scrollListener != null) {
 										var38 = new ScriptEvent();
 										var38.aBool1432 = true;
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.anInt1431 = Client.anInt2163 * -528893375;
 										var38.args = var13.scrollListener;
 										Client.aDeque2164.method475(var38);
@@ -780,7 +775,7 @@ public class Class96_Sub1 extends Class96 {
 										if (var13.anObjectArray1171 != null) {
 											var38 = new ScriptEvent();
 											var38.aBool1432 = true;
-											var38.aWidget1430 = var13;
+											var38.widget = var13;
 											var38.anInt1438 = (Class74.anInt628 * -2040065729 - var20) * 1833150263;
 											var38.anInt1431 = 1385195697 * (2090526775 * Class74.anInt629 - var15);
 											var38.args = var13.anObjectArray1171;
@@ -791,7 +786,7 @@ public class Class96_Sub1 extends Class96 {
 									if (var13.aBool1145 && var40 && var13.anObjectArray1172 != null) {
 										var38 = new ScriptEvent();
 										var38.aBool1432 = true;
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.anInt1438 = (Class74.anInt621 * -453286219 - var20) * 1833150263;
 										var38.anInt1431 = (103771565 * Class74.anInt622 - var15) * 1385195697;
 										var38.args = var13.anObjectArray1172;
@@ -803,7 +798,7 @@ public class Class96_Sub1 extends Class96 {
 										if (var13.anObjectArray1173 != null) {
 											var38 = new ScriptEvent();
 											var38.aBool1432 = true;
-											var38.aWidget1430 = var13;
+											var38.widget = var13;
 											var38.anInt1438 = (-453286219 * Class74.anInt621 - var20) * 1833150263;
 											var38.anInt1431 = (103771565 * Class74.anInt622 - var15) * 1385195697;
 											var38.args = var13.anObjectArray1173;
@@ -814,7 +809,7 @@ public class Class96_Sub1 extends Class96 {
 									if (var40 && var13.anObjectArray1174 != null) {
 										var38 = new ScriptEvent();
 										var38.aBool1432 = true;
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.anInt1438 = (-453286219 * Class74.anInt621 - var20) * 1833150263;
 										var38.anInt1431 = (Class74.anInt622 * 103771565 - var15) * 1385195697;
 										var38.args = var13.anObjectArray1174;
@@ -826,7 +821,7 @@ public class Class96_Sub1 extends Class96 {
 										if (var13.mouseEnterListener != null) {
 											var38 = new ScriptEvent();
 											var38.aBool1432 = true;
-											var38.aWidget1430 = var13;
+											var38.widget = var13;
 											var38.anInt1438 = 1833150263 * (Class74.anInt621 * -453286219 - var20);
 											var38.anInt1431 = (Class74.anInt622 * 103771565 - var15) * 1385195697;
 											var38.args = var13.mouseEnterListener;
@@ -837,7 +832,7 @@ public class Class96_Sub1 extends Class96 {
 									if (var13.aBool1165 && var43 && var13.mouseHoverListener != null) {
 										var38 = new ScriptEvent();
 										var38.aBool1432 = true;
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.anInt1438 = (-453286219 * Class74.anInt621 - var20) * 1833150263;
 										var38.anInt1431 = 1385195697 * (Class74.anInt622 * 103771565 - var15);
 										var38.args = var13.mouseHoverListener;
@@ -849,7 +844,7 @@ public class Class96_Sub1 extends Class96 {
 										if (var13.mouseExitListener != null) {
 											var38 = new ScriptEvent();
 											var38.aBool1432 = true;
-											var38.aWidget1430 = var13;
+											var38.widget = var13;
 											var38.anInt1438 = 1833150263 * (-453286219 * Class74.anInt621 - var20);
 											var38.anInt1431 = (Class74.anInt622 * 103771565 - var15) * 1385195697;
 											var38.args = var13.mouseExitListener;
@@ -859,7 +854,7 @@ public class Class96_Sub1 extends Class96 {
 
 									if (var13.renderListener != null) {
 										var38 = new ScriptEvent();
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.args = var13.renderListener;
 										Client.aDeque2165.method475(var38);
 									}
@@ -876,7 +871,7 @@ public class Class96_Sub1 extends Class96 {
 												for (var26 = 0; var26 < var13.configTriggers.length; ++var26) {
 													if (var24 == var13.configTriggers[var26]) {
 														var50 = new ScriptEvent();
-														var50.aWidget1430 = var13;
+														var50.widget = var13;
 														var50.args = var13.configListenerArgs;
 														Client.aDeque2164.method475(var50);
 														break label957;
@@ -885,7 +880,7 @@ public class Class96_Sub1 extends Class96 {
 											}
 										} else {
 											var38 = new ScriptEvent();
-											var38.aWidget1430 = var13;
+											var38.widget = var13;
 											var38.args = var13.configListenerArgs;
 											Client.aDeque2164.method475(var38);
 										}
@@ -904,7 +899,7 @@ public class Class96_Sub1 extends Class96 {
 												for (var26 = 0; var26 < var13.tableModTriggers.length; ++var26) {
 													if (var13.tableModTriggers[var26] == var24) {
 														var50 = new ScriptEvent();
-														var50.aWidget1430 = var13;
+														var50.widget = var13;
 														var50.args = var13.tableListenerArgs;
 														Client.aDeque2164.method475(var50);
 														break label938;
@@ -913,7 +908,7 @@ public class Class96_Sub1 extends Class96 {
 											}
 										} else {
 											var38 = new ScriptEvent();
-											var38.aWidget1430 = var13;
+											var38.widget = var13;
 											var38.args = var13.tableListenerArgs;
 											Client.aDeque2164.method475(var38);
 										}
@@ -932,7 +927,7 @@ public class Class96_Sub1 extends Class96 {
 												for (var26 = 0; var26 < var13.skillTriggers.length; ++var26) {
 													if (var13.skillTriggers[var26] == var24) {
 														var50 = new ScriptEvent();
-														var50.aWidget1430 = var13;
+														var50.widget = var13;
 														var50.args = var13.skillListenerArgs;
 														Client.aDeque2164.method475(var50);
 														break label919;
@@ -941,7 +936,7 @@ public class Class96_Sub1 extends Class96 {
 											}
 										} else {
 											var38 = new ScriptEvent();
-											var38.aWidget1430 = var13;
+											var38.widget = var13;
 											var38.args = var13.skillListenerArgs;
 											Client.aDeque2164.method475(var38);
 										}
@@ -952,7 +947,7 @@ public class Class96_Sub1 extends Class96 {
 									if (Client.anInt2078 * -2089342185 > 1565124835 * var13.anInt1196
 											&& var13.anObjectArray1181 != null) {
 										var38 = new ScriptEvent();
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.args = var13.anObjectArray1181;
 										Client.aDeque2164.method475(var38);
 									}
@@ -960,7 +955,7 @@ public class Class96_Sub1 extends Class96 {
 									if (Client.anInt2114 * -537338829 > 1565124835 * var13.anInt1196
 											&& var13.anObjectArray1183 != null) {
 										var38 = new ScriptEvent();
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.args = var13.anObjectArray1183;
 										Client.aDeque2164.method475(var38);
 									}
@@ -968,7 +963,7 @@ public class Class96_Sub1 extends Class96 {
 									if (Client.anInt2159 * -1898555245 > var13.anInt1196 * 1565124835
 											&& var13.anObjectArray1184 != null) {
 										var38 = new ScriptEvent();
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.args = var13.anObjectArray1184;
 										Client.aDeque2164.method475(var38);
 									}
@@ -976,7 +971,7 @@ public class Class96_Sub1 extends Class96 {
 									if (Client.anInt2160 * 1861004399 > var13.anInt1196 * 1565124835
 											&& var13.anObjectArray1189 != null) {
 										var38 = new ScriptEvent();
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.args = var13.anObjectArray1189;
 										Client.aDeque2164.method475(var38);
 									}
@@ -984,7 +979,7 @@ public class Class96_Sub1 extends Class96 {
 									if (Client.anInt2161 * -596556353 > 1565124835 * var13.anInt1196
 											&& var13.anObjectArray1190 != null) {
 										var38 = new ScriptEvent();
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.args = var13.anObjectArray1190;
 										Client.aDeque2164.method475(var38);
 									}
@@ -992,7 +987,7 @@ public class Class96_Sub1 extends Class96 {
 									if (Client.anInt2155 * -747354515 > 1565124835 * var13.anInt1196
 											&& var13.anObjectArray1156 != null) {
 										var38 = new ScriptEvent();
-										var38.aWidget1430 = var13;
+										var38.widget = var13;
 										var38.args = var13.anObjectArray1156;
 										Client.aDeque2164.method475(var38);
 									}
@@ -1001,7 +996,7 @@ public class Class96_Sub1 extends Class96 {
 									if (var13.anObjectArray1182 != null) {
 										for (var10 = 0; var10 < Client.anInt2188 * -703165807; ++var10) {
 											ScriptEvent var49 = new ScriptEvent();
-											var49.aWidget1430 = var13;
+											var49.widget = var13;
 											var49.anInt1434 = -411848293 * Client.anIntArray2190[var10];
 											var49.anInt1435 = Client.anIntArray2162[var10] * -784457691;
 											var49.args = var13.anObjectArray1182;

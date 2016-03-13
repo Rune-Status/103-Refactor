@@ -2,7 +2,7 @@
 public class Class48_Sub1 extends Class48 {
 
 	static CacheIndex landscapesIndex;
-	static Sprite aSprite1296;
+	static Picture aSprite1296;
 	static Class124 aClass124_1297;
 	static int anInt1298;
 	static int anInt1299;
@@ -12,7 +12,7 @@ public class Class48_Sub1 extends Class48 {
 	}
 
 	static final int method544() {
-		if (Node_Sub5.aClass24_1265.aBool298) {
+		if (AnimationSkin.settings.hideRoofs) {
 			return -747958745 * InterfaceNode.floorLevel;
 		} else {
 			int var0 = NpcType.method802(282154897 * Projectile.cameraX, -324676025 * Class72.cameraY,

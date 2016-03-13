@@ -1,7 +1,7 @@
 
 public class InvType extends DualNode {
 
-	static Class106 invs = new Class106(64);
+	static NodeMap invs = new NodeMap(64);
 	public int anInt1501 = 0;
 	static CacheIndex clientScriptsIndex;
 	static int[] landRegionFielIds;
@@ -18,7 +18,7 @@ public class InvType extends DualNode {
 		if (var0 == null) {
 			return 12;
 		} else {
-			switch (var0.anInt828 * -1635059495) {
+			switch (var0.ordinal * -1635059495) {
 			case 4:
 				return 20;
 			default:

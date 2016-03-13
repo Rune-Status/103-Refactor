@@ -25,7 +25,7 @@ public class Node_Sub10 extends Node {
 	int[] anIntArray1362 = new int[3];
 	int anInt1363;
 	boolean aBool1364;
-	static int regionBaseX;
+	static int chunkLeftX;
 
 	static final boolean method565(char var0) {
 		if (java.lang.Character.isISOControl(var0)) {
@@ -94,11 +94,11 @@ public class Node_Sub10 extends Node {
 
 	public Node_Sub10(boolean var1) {
 		if (var1) {
-			if (DynamicObject.aString1964.startsWith("win")) {
+			if (DynamicObject.osNameLC.startsWith("win")) {
 				this.anInt1343 = 1610480785;
-			} else if (DynamicObject.aString1964.startsWith("mac")) {
+			} else if (DynamicObject.osNameLC.startsWith("mac")) {
 				this.anInt1343 = -1074005726;
-			} else if (DynamicObject.aString1964.startsWith("linux")) {
+			} else if (DynamicObject.osNameLC.startsWith("linux")) {
 				this.anInt1343 = 536475059;
 			} else {
 				this.anInt1343 = 2146955844;

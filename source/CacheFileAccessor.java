@@ -40,10 +40,10 @@ public final class CacheFileAccessor {
 		this.raf = new RandomAccessFile(var1, var2);
 		this.size = var3 * -4964951671876364163L;
 		this.position = 0L;
-		int var5 = this.raf.read();
-		if (var5 != -1 && !var2.equals("r")) {
+		int read = this.raf.read();
+		if (read != -1 && !var2.equals("r")) {
 			this.raf.seek(0L);
-			this.raf.write(var5);
+			this.raf.write(read);
 		}
 
 		this.raf.seek(0L);

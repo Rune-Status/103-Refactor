@@ -8,7 +8,7 @@ public final class TileDecorationStub {
 	public int anInt839;
 	int config;
 	int height;
-	static int anInt840;
+	static int chunkBaseX;
 	static int[] anIntArray841;
 
 	static final void method462(int var0, int var1, int var2, int var3) {
@@ -42,14 +42,14 @@ public final class TileDecorationStub {
 
 					if (-1110581093 * Client.itemSelectionStatus == 1) {
 						FriendedPlayer.addMenuRow(GameStrings.aString993, Client.selectedItemName + " "
-								+ Class35.aString391 + " " + Class48_Sub1.method545('\uffff') + var11.name, 1, var8,
+								+ Class35.aString391 + " " + Class48_Sub1.method545(65535) + var11.name, 1, var8,
 								var9, var10);
 					} else if (Client.spellSelected) {
 						if ((Class31.currentSpellTargets * 2016481409 & 4) == 4) {
 							FriendedPlayer
 									.addMenuRow(Client.menuActionPrefix,
 											Client.selectedSpellName + " " + Class35.aString391 + " "
-													+ Class48_Sub1.method545('\uffff') + var11.name,
+													+ Class48_Sub1.method545(65535) + var11.name,
 											2, var8, var9, var10);
 						}
 					} else {
@@ -83,12 +83,12 @@ public final class TileDecorationStub {
 									}
 
 									FriendedPlayer.addMenuRow(var12[var6],
-											Class48_Sub1.method545('\uffff') + var11.name, var13, var8, var9, var10);
+											Class48_Sub1.method545(65535) + var11.name, var13, var8, var9, var10);
 								}
 							}
 						}
 
-						FriendedPlayer.addMenuRow(GameStrings.aString994, Class48_Sub1.method545('\uffff') + var11.name,
+						FriendedPlayer.addMenuRow(GameStrings.aString994, Class48_Sub1.method545(65535) + var11.name,
 								1002, var11.id * -521826339 << 14, var9, var10);
 					}
 				}

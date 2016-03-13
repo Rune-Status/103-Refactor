@@ -17,7 +17,7 @@ public abstract class Entity extends DualNode {
 		return null;
 	}
 
-	public static final Sprite getItemSprite(int var0, int var1, int var2, int var3, int var4, boolean var5) {
+	public static final Picture getItemSprite(int var0, int var1, int var2, int var3, int var4, boolean var5) {
 		if (var1 == -1) {
 			var4 = 0;
 		} else if (var4 == 2 && var1 != 1) {
@@ -25,9 +25,9 @@ public abstract class Entity extends DualNode {
 		}
 
 		long var9 = ((long) var3 << 42) + ((long) var2 << 38) + ((long) var1 << 16) + (long) var0 + ((long) var4 << 40);
-		Sprite var6;
+		Picture var6;
 		if (!var5) {
-			var6 = (Sprite) ItemType.aClass106_1620.get(var9);
+			var6 = (Picture) ItemType.aClass106_1620.get(var9);
 			if (var6 != null) {
 				return var6;
 			}
@@ -52,7 +52,7 @@ public abstract class Entity extends DualNode {
 		if (var20 == null) {
 			return null;
 		} else {
-			Sprite var19 = null;
+			Picture var19 = null;
 			if (-507524473 * var7.anInt1633 != -1) {
 				var19 = getItemSprite(var7.anInt1640 * -322771797, 10, 1, 0, 0, true);
 				if (var19 == null) {
@@ -70,7 +70,7 @@ public abstract class Entity extends DualNode {
 			int var17 = RSGraphics.raster_height;
 			int[] var12 = new int[4];
 			RSGraphics.copyDrawRegion(var12);
-			var6 = new Sprite(36, 32);
+			var6 = new Picture(36, 32);
 			RSGraphics.setRaster(var6.pixels, 36, 32);
 			RSGraphics.reset();
 			TexturedGraphic.method909();

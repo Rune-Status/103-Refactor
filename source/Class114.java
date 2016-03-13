@@ -10,7 +10,7 @@ public class Class114 {
 	public static Comparator aComparator792;
 	public List aList793;
 	public static Comparator aComparator794;
-	static int anInt795;
+	static int pin;
 
 	public Class114(ByteBuf var1, boolean var2) {
 		int var4 = var1.getUShort();

@@ -271,7 +271,7 @@ public class MusicFile extends Node {
 			while (true) {
 				int var63 = buf.method632();
 				var17.putFlags(var63);
-				int var65 = buf.payload[var37++] & 255;
+				int var65 = buf.payload[var37++] & 0xFF;
 				boolean var10 = var65 != var33;
 				var33 = var65 & 15;
 				if (var65 == 7) {

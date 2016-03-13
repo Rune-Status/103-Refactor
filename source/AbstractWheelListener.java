@@ -1,19 +1,19 @@
 import java.awt.Component;
 
-public abstract class Class78 {
+public abstract class AbstractWheelListener {
 
 	static int anInt654;
 
-	public abstract void method340(Component var1, short var2);
+	public abstract void setWheelListener(Component var1);
 
-	public abstract int method341(int var1);
+	public abstract int getRotation();
 
-	public abstract void method342(Component var1, byte var2);
+	public abstract void removeWheelListener(Component var1);
 
-	public static void method343(Component var0) {
-		var0.removeKeyListener(Class71.aClass71_603);
-		var0.removeFocusListener(Class71.aClass71_603);
-		Class71.anInt596 = 434850385;
+	public static void removeKeyFocusListener(Component comp) {
+		comp.removeKeyListener(KeyFocusListener.kfListener);
+		comp.removeFocusListener(KeyFocusListener.kfListener);
+		KeyFocusListener.anInt596 = 434850385;
 	}
 
 	static final void method344() {
@@ -34,7 +34,6 @@ public abstract class Class78 {
 			} else {
 				Class14 var10 = Client.aClass14Array2210[var0];
 				if (var10 == null) {
-					Class14 var10000 = (Class14) null;
 					var10 = Class14.method119(VarClientType.sfxIndex, Client.anIntArray2206[var0], 0);
 					if (var10 == null) {
 						continue;
@@ -47,14 +46,14 @@ public abstract class Class78 {
 				if (Client.anIntArray2029[var0] < 0) {
 					int var8;
 					if (Client.anIntArray2209[var0] != 0) {
-						int var6 = 128 * (Client.anIntArray2209[var0] & 255);
-						int var7 = Client.anIntArray2209[var0] >> 16 & 255;
+						int var6 = 128 * (Client.anIntArray2209[var0] & 0xFF);
+						int var7 = Client.anIntArray2209[var0] >> 16 & 0xFF;
 						int var1 = 128 * var7 + 64 - Class68.myPlayer.strictX * 1272643751;
 						if (var1 < 0) {
 							var1 = -var1;
 						}
 
-						int var4 = Client.anIntArray2209[var0] >> 8 & 255;
+						int var4 = Client.anIntArray2209[var0] >> 8 & 0xFF;
 						int var5 = 64 + 128 * var4 - Class68.myPlayer.strictY * -1801433343;
 						if (var5 < 0) {
 							var5 = -var5;

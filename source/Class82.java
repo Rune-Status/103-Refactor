@@ -2,7 +2,7 @@ import java.awt.Graphics;
 
 public final class Class82 {
 
-	static int anInt686;
+	static int mainPort;
 
 	Class82() throws Throwable {
 		throw new Error();

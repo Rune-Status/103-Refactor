@@ -360,7 +360,7 @@ public class Node_Sub12 extends Node {
 			int var40 = var46[1] << 1;
 
 			for (var8 = 0; var8 < var41; ++var8) {
-				var38 = (this.aByteArray1369[var8] & 255) + var40;
+				var38 = (this.aByteArray1369[var8] & 0xFF) + var40;
 				if (var38 < 0) {
 					var38 = 0;
 				}
@@ -382,7 +382,7 @@ public class Node_Sub12 extends Node {
 					var35 = var2 - var41;
 					var34 = var7 >>> 31;
 					var36 = (var34 + var7) / var35 - var34;
-					int var37 = var36 + (this.aByteArray1369[var33] & 255);
+					int var37 = var36 + (this.aByteArray1369[var33] & 0xFF);
 					if (var37 < 0) {
 						var37 = 0;
 					}
@@ -400,7 +400,7 @@ public class Node_Sub12 extends Node {
 			}
 
 			for (var38 = var41; var38 < 128; ++var38) {
-				var44 = var40 + (this.aByteArray1369[var38] & 255);
+				var44 = var40 + (this.aByteArray1369[var38] & 0xFF);
 				if (var44 < 0) {
 					var44 = 0;
 				}

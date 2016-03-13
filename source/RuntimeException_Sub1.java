@@ -2,7 +2,7 @@
 public class RuntimeException_Sub1 extends RuntimeException {
 
 	String aString1806;
-	public static String aString1807;
+	public static String myPlayerName;
 	Throwable aThrowable1808;
 
 	static int method931(int var0, int var1, int var2) {

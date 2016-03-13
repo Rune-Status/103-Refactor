@@ -21,10 +21,10 @@ public final class IndexTable {
 				} else {
 					this.indexFile.seek((long) (var1 * 6));
 					this.indexFile.method443(aByteArray571, 0, 6);
-					int var3 = (aByteArray571[2] & 255) + ((aByteArray571[1] & 255) << 8)
-							+ ((aByteArray571[0] & 255) << 16);
-					int var4 = (aByteArray571[5] & 255) + ((aByteArray571[4] & 255) << 8)
-							+ ((aByteArray571[3] & 255) << 16);
+					int var3 = (aByteArray571[2] & 0xFF) + ((aByteArray571[1] & 0xFF) << 8)
+							+ ((aByteArray571[0] & 0xFF) << 16);
+					int var4 = (aByteArray571[5] & 0xFF) + ((aByteArray571[4] & 0xFF) << 8)
+							+ ((aByteArray571[3] & 0xFF) << 16);
 					if (var3 < 0 || var3 > -1757028579 * this.maxSize) {
 						return null;
 					} else if (var4 <= 0 || (long) var4 > this.dataFile.method450() / 520L) {
@@ -45,11 +45,11 @@ public final class IndexTable {
 							}
 
 							this.dataFile.method443(aByteArray571, 0, 8 + var8);
-							int var9 = (aByteArray571[1] & 255) + ((aByteArray571[0] & 255) << 8);
-							int var10 = (aByteArray571[3] & 255) + ((aByteArray571[2] & 255) << 8);
-							int var11 = ((aByteArray571[5] & 255) << 8) + ((aByteArray571[4] & 255) << 16)
-									+ (aByteArray571[6] & 255);
-							int var12 = aByteArray571[7] & 255;
+							int var9 = (aByteArray571[1] & 0xFF) + ((aByteArray571[0] & 0xFF) << 8);
+							int var10 = (aByteArray571[3] & 0xFF) + ((aByteArray571[2] & 0xFF) << 8);
+							int var11 = ((aByteArray571[5] & 0xFF) << 8) + ((aByteArray571[4] & 0xFF) << 16)
+									+ (aByteArray571[6] & 0xFF);
+							int var12 = aByteArray571[7] & 0xFF;
 							if (var9 != var1 || var7 != var10 || 1928833099 * this.index != var12) {
 								return null;
 							}
@@ -132,8 +132,8 @@ public final class IndexTable {
 
 					this.indexFile.seek((long) (6 * var1));
 					this.indexFile.method443(aByteArray571, 0, 6);
-					var6 = (aByteArray571[5] & 255) + ((aByteArray571[4] & 255) << 8)
-							+ ((aByteArray571[3] & 255) << 16);
+					var6 = (aByteArray571[5] & 0xFF) + ((aByteArray571[4] & 0xFF) << 8)
+							+ ((aByteArray571[3] & 0xFF) << 16);
 					if (var6 <= 0 || (long) var6 > this.dataFile.method450() / 520L) {
 						return false;
 					}
@@ -166,11 +166,11 @@ public final class IndexTable {
 							break;
 						}
 
-						var10 = ((aByteArray571[0] & 255) << 8) + (aByteArray571[1] & 255);
-						int var11 = ((aByteArray571[2] & 255) << 8) + (aByteArray571[3] & 255);
-						var9 = (aByteArray571[6] & 255) + ((aByteArray571[4] & 255) << 16)
-								+ ((aByteArray571[5] & 255) << 8);
-						int var12 = aByteArray571[7] & 255;
+						var10 = ((aByteArray571[0] & 0xFF) << 8) + (aByteArray571[1] & 0xFF);
+						int var11 = ((aByteArray571[2] & 0xFF) << 8) + (aByteArray571[3] & 0xFF);
+						var9 = (aByteArray571[6] & 0xFF) + ((aByteArray571[4] & 0xFF) << 16)
+								+ ((aByteArray571[5] & 0xFF) << 8);
+						int var12 = aByteArray571[7] & 0xFF;
 						if (var1 != var10 || var11 != var8 || this.index * 1928833099 != var12) {
 							return false;
 						}
@@ -225,16 +225,16 @@ public final class IndexTable {
 		}
 	}
 
-	public static DualNode_Sub13_Sub2 method306(AbstractIndex var0, int var1) {
+	public static Sprite method306(AbstractIndex var0, int var1) {
 		byte[] var2 = var0.method378(var1);
 		boolean var3;
 		if (var2 != null) {
-			Player.method1042(var2);
+			Player.decodeSprite(var2);
 			var3 = true;
 		} else {
 			var3 = false;
 		}
 
-		return !var3 ? null : BoundaryStub.method153();
+		return !var3 ? null : BoundaryStub.set();
 	}
 }

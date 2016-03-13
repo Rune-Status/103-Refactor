@@ -45,7 +45,7 @@ public class Class21 {
 					int var13 = var2 + var12;
 					if (var10 > 0 && var13 > 0 && var10 < 103 && var13 < 103) {
 						ObjectType var15 = Class37.getObjectType(var7);
-						if (var14 != 22 || !Client.aBool2010 || var15.anInt1692 * -839074197 != 0
+						if (var14 != 22 || !Client.lowMemory || var15.anInt1692 * -839074197 != 0
 								|| -1030255905 * var15.anInt1690 == 1 || var15.aBool1711) {
 							if (!var15.method867()) {
 								Client.anInt2049 += -34022823;
@@ -66,10 +66,10 @@ public class Class21 {
 	static final void method156(Player var0, int var1, int var2, byte var3) {
 		int var4 = var0.anIntArray1945[0];
 		int var7 = var0.anIntArray1955[0];
-		int var6 = var0.method1046();
+		int var6 = var0.getSize();
 		if (var4 >= var6 && var4 < 104 - var6 && var7 >= var6 && var7 < 104 - var6) {
 			if (var1 >= var6 && var1 < 104 - var6 && var2 >= var6 && var2 < 104 - var6) {
-				int var9 = var0.method1046();
+				int var9 = var0.getSize();
 				Client.aClass48_Sub1_2234.anInt511 = -1745633279 * var1;
 				Client.aClass48_Sub1_2234.anInt509 = var2 * 1201257799;
 				Client.aClass48_Sub1_2234.anInt512 = 1741387093;

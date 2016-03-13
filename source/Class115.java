@@ -6,7 +6,7 @@ public class Class115 {
 	String aString798;
 	public int anInt799;
 	String aString800;
-	static String aString801;
+	static String osName;
 
 	public String method439() {
 		return this.aString800;

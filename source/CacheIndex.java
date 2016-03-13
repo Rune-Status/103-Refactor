@@ -7,8 +7,8 @@ public class CacheIndex extends AbstractIndex {
 	int anInt1325;
 	volatile boolean[] aBoolArray1326;
 	boolean aBool1327 = false;
-	static CRC32 aCRC32_1328 = new CRC32();
-	static Clipboard aClipboard1329;
+	static CRC32 crc = new CRC32();
+	static Clipboard sysClipboard;
 	volatile boolean aBool1330 = false;
 	int crcValue;
 	int anInt1332;
@@ -40,12 +40,12 @@ public class CacheIndex extends AbstractIndex {
 		long var4 = (long) (var1 + (var3 << 16));
 		FileRequest var6 = (FileRequest) Class81.aNodeTable673.get(var4);
 		if (var6 != null) {
-			Class81.aClass105_672.method422(var6);
+			Class81.aNodeQueue_672.method422(var6);
 		}
 
 	}
 
-	void method379(int var1, int var2) {
+	void method379(int var1) {
 		if (this.aClass62_1334 != null && this.aBoolArray1326 != null && this.aBoolArray1326[var1]) {
 			Class59.method292(var1, this.aClass62_1334, this);
 		} else {
@@ -76,7 +76,7 @@ public class CacheIndex extends AbstractIndex {
 				Object var21 = Class90.anObject720;
 				synchronized (var21) {
 					if (1638013353 * Class90.anInt719 == 0) {
-						IsaacRandom.aClass63_102.method313(new Class90(), 5);
+						IsaacRandom.taskManager.createRunnable(new Class90(), 5);
 					}
 
 					Class90.anInt719 = 1666340504;
@@ -103,7 +103,7 @@ public class CacheIndex extends AbstractIndex {
 				Object var20 = Class90.anObject720;
 				synchronized (var20) {
 					if (1638013353 * Class90.anInt719 == 0) {
-						IsaacRandom.aClass63_102.method313(new Class90(), 5);
+						IsaacRandom.taskManager.createRunnable(new Class90(), 5);
 					}
 
 					Class90.anInt719 = 1666340504;
@@ -148,7 +148,7 @@ public class CacheIndex extends AbstractIndex {
 					Object var10 = Class90.anObject720;
 					synchronized (var10) {
 						if (1638013353 * Class90.anInt719 == 0) {
-							IsaacRandom.aClass63_102.method313(new Class90(), 5);
+							IsaacRandom.taskManager.createRunnable(new Class90(), 5);
 						}
 
 						Class90.anInt719 = 1666340504;
@@ -232,10 +232,10 @@ public class CacheIndex extends AbstractIndex {
 				return;
 			}
 
-			aCRC32_1328.reset();
-			aCRC32_1328.update(var3, 0, var3.length);
-			var6 = (int) aCRC32_1328.getValue();
-			ByteBuf var7 = new ByteBuf(UnderlayType.method707(var3));
+			crc.reset();
+			crc.update(var3, 0, var3.length);
+			var6 = (int) crc.getValue();
+			ByteBuf var7 = new ByteBuf(UnderlayType.decodeContainer(var3));
 			int var5 = var7.getUByte();
 			if (var5 != 5 && var5 != 6) {
 				throw new RuntimeException(var5 + "," + this.anInt1325 * -1858370801 + "," + var2);
@@ -268,10 +268,10 @@ public class CacheIndex extends AbstractIndex {
 				return;
 			}
 
-			aCRC32_1328.reset();
-			aCRC32_1328.update(var3, 0, var3.length - 2);
-			var6 = (int) aCRC32_1328.getValue();
-			int var9 = ((var3[var3.length - 2] & 255) << 8) + (var3[var3.length - 1] & 255);
+			crc.reset();
+			crc.update(var3, 0, var3.length - 2);
+			var6 = (int) crc.getValue();
+			int var9 = ((var3[var3.length - 2] & 0xFF) << 8) + (var3[var3.length - 1] & 0xFF);
 			if (this.anIntArray698[var2] != var6 || var9 != this.anIntArray707[var2]) {
 				this.aBoolArray1326[var2] = false;
 				if (this.aBool1327 || var4) {

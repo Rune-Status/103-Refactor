@@ -11,22 +11,22 @@ public class Class26 {
 	static int anInt310;
 	long aLong311;
 	int anInt312;
-	static Class78 aClass78_313;
+	static AbstractWheelListener wheelListener;
 	int anInt314;
-	Class61 aClass61_315;
+	Task aClass61_315;
 	static CacheIndex vorbisIndex;
 
 	byte[] method167() throws IOException {
-		if (Node_Sub5.currentTimeMs() > this.aLong311 * 5610376891018015397L) {
+		if (AnimationSkin.currentTimeMs() > this.aLong311 * 5610376891018015397L) {
 			throw new IOException();
 		} else {
 			if (this.anInt314 * -369390683 == 0) {
-				if (this.aClass61_315.anInt563 == 2) {
+				if (this.aClass61_315.status == 2) {
 					throw new IOException();
 				}
 
-				if (this.aClass61_315.anInt563 == 1) {
-					this.aDataInputStream308 = (DataInputStream) this.aClass61_315.anObject566;
+				if (this.aClass61_315.status == 1) {
+					this.aDataInputStream308 = (DataInputStream) this.aClass61_315.value;
 					this.anInt314 = -427006931;
 				}
 			}
@@ -69,7 +69,7 @@ public class Class26 {
 	}
 
 	static String method168(Widget var0) {
-		return Class63.method314(Class30.getWidgetConfig(var0)) == 0 ? null
+		return TaskManager.method314(Class30.getWidgetConfig(var0)) == 0 ? null
 				: (var0.selectedAction != null && var0.selectedAction.trim().length() != 0 ? var0.selectedAction
 						: null);
 	}
@@ -95,10 +95,10 @@ public class Class26 {
 		}
 	}
 
-	Class26(Class63 var1, URL var2) {
-		this.aClass61_315 = var1.method309(var2);
+	Class26(TaskManager var1, URL var2) {
+		this.aClass61_315 = var1.createURL(var2);
 		this.anInt314 = 0;
-		this.aLong311 = (Node_Sub5.currentTimeMs() + 30000L) * -4402853478160784083L;
+		this.aLong311 = (AnimationSkin.currentTimeMs() + 30000L) * -4402853478160784083L;
 	}
 
 	public static void method170(AbstractIndex var0) {

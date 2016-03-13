@@ -6,7 +6,7 @@ public class Class90 implements Runnable {
 	public static int anInt719 = 0;
 	public static Object anObject720 = new Object();
 	static Timer aClass66_721;
-	static int anInt722;
+	static int chunkBaseY;
 
 	public void run() {
 		try {
@@ -14,7 +14,7 @@ public class Class90 implements Runnable {
 				Deque var1 = aDeque718;
 				Node_Sub9 var2;
 				synchronized (var1) {
-					var2 = (Node_Sub9) aDeque718.method471();
+					var2 = (Node_Sub9) aDeque718.getFront();
 				}
 
 				Object var14;
@@ -58,7 +58,7 @@ public class Class90 implements Runnable {
 				}
 			}
 		} catch (Exception var13) {
-			Class79.method345((String) null, var13);
+			Class79.error((String) null, var13);
 		}
 	}
 }

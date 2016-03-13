@@ -48,7 +48,7 @@ public class InterfaceNode extends Node {
 
 		UnderlayType.method705();
 		ObjectType.method870(Widget.interfaces[var0 >> 16], var4, false);
-		Class24.method160(var1);
+		ClientSettings.method160(var1);
 		if (-1074177723 * Client.anInt2226 != -1) {
 			Class65.method319(Client.anInt2226 * -1074177723, 1);
 		}

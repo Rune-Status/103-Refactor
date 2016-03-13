@@ -150,23 +150,22 @@ public class Class53 {
 							if (var15.contentType * -179718399 == 1336) {
 								if (Client.displayFps) {
 									var11 += 15;
-									Client.p12_full.method972(
-											"Fps:" + Client.anInt1976 * 305420995, var10 + 1645211541 * var15.width,
-											var11, 16776960, -1);
+									Client.p12_full.method972("Fps:" + Client.anInt1976 * 305420995,
+											var10 + 1645211541 * var15.width, var11, 16776960, -1);
 									var11 += 15;
 									Runtime var56 = Runtime.getRuntime();
 									var16 = (int) ((var56.totalMemory() - var56.freeMemory()) / 1024L);
 									var13 = 16776960;
-									if (var16 > '\u8000' && Client.aBool2010) {
+									if (var16 > '\u8000' && Client.lowMemory) {
 										var13 = 16711680;
 									}
 
-									if (var16 > 65536 && !Client.aBool2010) {
+									if (var16 > 65536 && !Client.lowMemory) {
 										var13 = 16711680;
 									}
 
-									Client.p12_full.method972("Mem:" + var16 + "k",
-											var10 + 1645211541 * var15.width, var11, var13, -1);
+									Client.p12_full.method972("Mem:" + var16 + "k", var10 + 1645211541 * var15.width,
+											var11, var13, -1);
 									var11 += 15;
 								}
 								continue;
@@ -196,11 +195,11 @@ public class Class53 {
 									EntityMarker.method140(Class1.aClass1_1);
 								}
 
-								Class49.method249(true);
+								GZipDecompressor.method249(true);
 								EntityMarker.method140(var59 ? Class1.aClass1_6 : Class1.aClass1_2);
-								Class49.method249(false);
+								GZipDecompressor.method249(false);
 								VarClientHub.method184();
-								Class24.method162();
+								ClientSettings.method162();
 								Class13.method118(var10, var11, var13, var31, true);
 								var9 = 1146064501 * Client.anInt2223;
 								var16 = Client.anInt2224 * -990874927;
@@ -399,7 +398,7 @@ public class Class53 {
 										}
 
 										if (Client.anIntArray2088[var20] == 7) {
-											var12 = Client.anInt2208 * -1317183381 % 20 < 10 ? 255 : '\uffff';
+											var12 = Client.anInt2208 * -1317183381 % 20 < 10 ? 255 : 65535;
 										}
 
 										if (Client.anIntArray2088[var20] == 8) {
@@ -441,38 +440,33 @@ public class Class53 {
 										}
 
 										if (Client.anIntArray2089[var20] == 0) {
-											Class35.b12_full.method982(var71,
-													Client.anInt2093 * -94432357 + var9,
+											Class35.b12_full.method982(var71, Client.anInt2093 * -94432357 + var9,
 													Client.anInt2094 * -770682383 + var16, var12, 0);
 										}
 
 										if (Client.anIntArray2089[var20] == 1) {
-											Class35.b12_full.method964(var71,
-													var9 + Client.anInt2093 * -94432357,
+											Class35.b12_full.method964(var71, var9 + Client.anInt2093 * -94432357,
 													Client.anInt2094 * -770682383 + var16, var12, 0,
 													Client.anInt2208 * -1317183381);
 										}
 
 										if (Client.anIntArray2089[var20] == 2) {
-											Class35.b12_full.method973(var71,
-													var9 + -94432357 * Client.anInt2093,
+											Class35.b12_full.method973(var71, var9 + -94432357 * Client.anInt2093,
 													var16 + Client.anInt2094 * -770682383, var12, 0,
 													-1317183381 * Client.anInt2208);
 										}
 
 										if (Client.anIntArray2089[var20] == 3) {
-											Class35.b12_full.method974(var71,
-													var9 + -94432357 * Client.anInt2093,
+											Class35.b12_full.method974(var71, var9 + -94432357 * Client.anInt2093,
 													var16 + -770682383 * Client.anInt2094, var12, 0,
 													-1317183381 * Client.anInt2208, 150 - Client.anIntArray2132[var20]);
 										}
 
 										if (Client.anIntArray2089[var20] == 4) {
 											var32 = (150 - Client.anIntArray2132[var20])
-													* (Class35.b12_full.method967(var71) + 100)
-													/ 150;
-											RSGraphics.setInnerDrawRegion(Client.anInt2093 * -94432357 + var9 - 50, var16,
-													var9 + Client.anInt2093 * -94432357 + 50, var16 + var31);
+													* (Class35.b12_full.method967(var71) + 100) / 150;
+											RSGraphics.setInnerDrawRegion(Client.anInt2093 * -94432357 + var9 - 50,
+													var16, var9 + Client.anInt2093 * -94432357 + 50, var16 + var31);
 											Class35.b12_full.method980(var71,
 													-94432357 * Client.anInt2093 + var9 + 50 - var32,
 													var16 + -770682383 * Client.anInt2094, var12, 0);
@@ -489,17 +483,15 @@ public class Class53 {
 											}
 
 											RSGraphics.setInnerDrawRegion(var9,
-													-770682383 * Client.anInt2094 + var16
-															- Class35.b12_full.anInt1824 - 1,
+													-770682383 * Client.anInt2094 + var16 - Class35.b12_full.anInt1824
+															- 1,
 													var13 + var9, 5 + var16 + -770682383 * Client.anInt2094);
-											Class35.b12_full.method982(var71,
-													var9 + Client.anInt2093 * -94432357,
+											Class35.b12_full.method982(var71, var9 + Client.anInt2093 * -94432357,
 													Client.anInt2094 * -770682383 + var16 + var42, var12, 0);
 											RSGraphics.setDrawRegion(var9, var16, var13 + var9, var31 + var16);
 										}
 									} else {
-										Class35.b12_full.method982(var71,
-												var9 + Client.anInt2093 * -94432357,
+										Class35.b12_full.method982(var71, var9 + Client.anInt2093 * -94432357,
 												-770682383 * Client.anInt2094 + var16, 16776960, 0);
 									}
 								}
@@ -507,8 +499,9 @@ public class Class53 {
 								if (314519437 * Client.anInt2075 == 2) {
 									Class2.method62(
 											Client.anInt2116 * -1809686571 + (-1261526983 * Client.hintArrowX
-													- 1426698711 * Node_Sub10.regionBaseX << 7),
-											(Client.hintArrowY * -1901147055 - VarClientHub.regionBaseY * 714823515 << 7)
+													- 1426698711 * Node_Sub10.chunkLeftX << 7),
+											(Client.hintArrowY * -1901147055
+													- VarClientHub.chunkLeftY * 714823515 << 7)
 													+ -1460280361 * Client.anInt2025,
 											1818880718 * Client.anInt2032);
 									if (-94432357 * Client.anInt2093 > -1
@@ -518,8 +511,7 @@ public class Class53 {
 									}
 								}
 
-								((Class29) TexturedGraphic.anInterface3_1796)
-										.method186(-1163930299 * Client.anInt2066);
+								((TextureLoader) TexturedGraphic.anInterface3_1796).method186(-1163930299 * Client.anInt2066);
 								Class5.method71(var9, var16, var13, var31);
 								Projectile.cameraX = 933251441 * var38;
 								FriendedPlayer.cameraZ = var24 * -1022442815;
@@ -570,8 +562,7 @@ public class Class53 {
 						}
 
 						if (var15.type * -1305917269 == 0) {
-							if (!var15.interactable && IsaacRandom.method68(var15)
-									&& ObjectType.aWidget1719 != var15) {
+							if (!var15.interactable && IsaacRandom.method68(var15) && ObjectType.aWidget1719 != var15) {
 								continue;
 							}
 
@@ -596,7 +587,7 @@ public class Class53 {
 							InterfaceNode var47 = (InterfaceNode) Client.interfaceNodes
 									.get((long) (-1536575275 * var15.hash));
 							if (var47 != null) {
-								Class24.method164(226793949 * var47.type, var22, var23, var28, var29, var10, var11,
+								ClientSettings.method164(226793949 * var47.type, var22, var23, var28, var29, var10, var11,
 										var18);
 							}
 
@@ -621,11 +612,9 @@ public class Class53 {
 								}
 
 								var30 = var16 * (var13 - 32 - var17) / (var31 - var13);
-								RSGraphics.method793(var9, var30 + 16 + var11, 16, var17,
-										403555201 * Client.anInt2068);
+								RSGraphics.method793(var9, var30 + 16 + var11, 16, var17, 403555201 * Client.anInt2068);
 								RSGraphics.method784(var9, var30 + var11 + 16, var17, 439456629 * Client.anInt2070);
-								RSGraphics.method784(var9 + 1, 16 + var11 + var30, var17,
-										439456629 * Client.anInt2070);
+								RSGraphics.method784(var9 + 1, 16 + var11 + var30, var17, 439456629 * Client.anInt2070);
 								RSGraphics.method796(var9, var30 + 16 + var11, 16, Client.anInt2070 * 439456629);
 								RSGraphics.method796(var9, var11 + 17 + var30, 16, Client.anInt2070 * 439456629);
 								RSGraphics.method784(var9 + 15, var11 + 16 + var30, var17,
@@ -659,7 +648,7 @@ public class Class53 {
 														&& var17 < var5
 														|| var15 == SpotAnimType.aWidget1446
 																&& 1979905201 * Client.anInt2100 == var9) {
-													Sprite var70;
+													Picture var70;
 													if (Client.itemSelectionStatus * -1110581093 == 1
 															&& var9 == 543565821 * Class40.selectedItemIndex
 															&& -1536575275 * var15.hash == Class22.anInt286
@@ -693,7 +682,7 @@ public class Class53 {
 
 															var70.method951(var31 + var30, var17 + var38, 128);
 															if (var1 != -1) {
-																Widget var60 = var0[var1 & '\uffff'];
+																Widget var60 = var0[var1 & 0xFFFF];
 																if (var38 + var17 < RSGraphics.draw_region_y
 																		&& var60.insetY * -1602694527 > 0) {
 																	var26 = -1163930299 * Client.anInt2066
@@ -747,7 +736,7 @@ public class Class53 {
 													}
 												}
 											} else if (var15.anIntArray1164 != null && var9 < 20) {
-												Sprite var66 = var15.method488(var9);
+												Picture var66 = var15.method488(var9);
 												if (var66 != null) {
 													var66.method946(var31, var17);
 												} else if (Widget.aBool1128) {
@@ -761,8 +750,7 @@ public class Class53 {
 								} else if (-1305917269 * var15.type == 3) {
 									if (RuntimeException_Sub1.method932(var15)) {
 										var9 = 2125719227 * var15.anInt1139;
-										if (ObjectType.aWidget1719 == var15
-												&& var15.anInt1141 * -528196075 != 0) {
+										if (ObjectType.aWidget1719 == var15 && var15.anInt1141 * -528196075 != 0) {
 											var9 = -528196075 * var15.anInt1141;
 										}
 									} else {
@@ -782,10 +770,10 @@ public class Class53 {
 										}
 									} else if (var15.aBool1161) {
 										RSGraphics.fillRectangle(var10, var11, var15.width * 1645211541,
-												1227800423 * var15.height, var9, 256 - (var19 & 255));
+												1227800423 * var15.height, var9, 256 - (var19 & 0xFF));
 									} else {
 										RSGraphics.method794(var10, var11, 1645211541 * var15.width,
-												var15.height * 1227800423, var9, 256 - (var19 & 255));
+												var15.height * 1227800423, var9, 256 - (var19 & 0xFF));
 									}
 								} else {
 									DualNode_Sub13_Sub3_Sub1 var48;
@@ -816,8 +804,7 @@ public class Class53 {
 											}
 
 											if (var15.interactable && var15.itemId * 813479615 != -1) {
-												ItemType var68 = FriendedPlayer
-														.getItemType(var15.itemId * 813479615);
+												ItemType var68 = FriendedPlayer.getItemType(var15.itemId * 813479615);
 												var57 = var68.name;
 												if (var57 == null) {
 													var57 = "null";
@@ -848,7 +835,7 @@ public class Class53 {
 													var15.anInt1158 * -525493285);
 										}
 									} else if (-1305917269 * var15.type == 5) {
-										Sprite var50;
+										Picture var50;
 										if (!var15.interactable) {
 											var50 = var15.method489(RuntimeException_Sub1.method932(var15));
 											if (var50 != null) {
@@ -872,8 +859,8 @@ public class Class53 {
 													Class68.method326(var15);
 												}
 											} else {
-												var16 = var50.anInt1815;
-												var13 = var50.anInt1816;
+												var16 = var50.width;
+												var13 = var50.height;
 												if (!var15.aBool1144) {
 													var31 = var15.width * -17215488 / var16;
 													if (var15.spriteId * -1749435731 != 0) {
@@ -882,7 +869,7 @@ public class Class53 {
 																-1749435731 * var15.spriteId, var31);
 													} else if (var19 != 0) {
 														var50.method953(var10, var11, var15.width * 1645211541,
-																1227800423 * var15.height, 256 - (var19 & 255));
+																1227800423 * var15.height, 256 - (var19 & 0xFF));
 													} else if (var16 == 1645211541 * var15.width
 															&& var15.height * 1227800423 == var13) {
 														var50.method946(var10, var11);
@@ -905,7 +892,7 @@ public class Class53 {
 																		var15.spriteId * -1749435731, 4096);
 															} else if (var19 != 0) {
 																var50.method951(var10 + var16 * var30,
-																		var11 + var13 * var38, 256 - (var19 & 255));
+																		var11 + var13 * var38, 256 - (var19 & 0xFF));
 															} else {
 																var50.method946(var16 * var30 + var10,
 																		var38 * var13 + var11);
@@ -966,11 +953,9 @@ public class Class53 {
 											TexturedGraphic.method911(var15.width * 1645211541 / 2 + var10,
 													1227800423 * var15.height / 2 + var11);
 											var17 = var15.modelZoom * -1472457387
-													* TexturedGraphic.SIN_TABLE[175924351
-															* var15.rotationX] >> 16;
+													* TexturedGraphic.SIN_TABLE[175924351 * var15.rotationX] >> 16;
 											var30 = -1472457387 * var15.modelZoom
-													* TexturedGraphic.COS_TABLE[175924351
-															* var15.rotationX] >> 16;
+													* TexturedGraphic.COS_TABLE[175924351 * var15.rotationX] >> 16;
 											if (var52 != null) {
 												if (!var15.interactable) {
 													var52.method1012(0, 745334365 * var15.rotationZ, 0,

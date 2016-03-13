@@ -16,7 +16,7 @@ public class Class5 {
 					Client.anInt2096 * -1888662593 - 8);
 		}
 
-		Class77.method339();
+		GameType.method339();
 	}
 
 	DualNode_Sub8 method72(int var1, String var2, String var3, String var4) {

@@ -6,7 +6,7 @@ public class Class32 {
 	static Class108 aClass108_354 = new Class108();
 	static Class107 aClass107_355 = new Class107(1024);
 	static int anInt356;
-	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array357;
+	static Sprite[] aDualNode_Sub13_Sub2Array357;
 	static int anInt358 = 0;
 	static Map aMap359 = new HashMap();
 
@@ -23,11 +23,11 @@ public class Class32 {
 		try {
 			Class75.cacheDataFile.method444();
 
-			for (int var0 = 0; var0 < 855046563 * Class75.anInt638; ++var0) {
+			for (int var0 = 0; var0 < 855046563 * Class75.indexCount; ++var0) {
 				Class39.cacheIndexFiles[var0].method444();
 			}
 
-			Class75.aClass121_636.method444();
+			Class75.referenceFile.method444();
 			Class75.randomDat.method444();
 		} catch (Exception var1) {
 			;
@@ -48,7 +48,7 @@ public class Class32 {
 			GroundItem var9 = null;
 
 			GroundItem var3;
-			for (var3 = (GroundItem) var2.method471(); var3 != null; var3 = (GroundItem) var2.method473()) {
+			for (var3 = (GroundItem) var2.getFront(); var3 != null; var3 = (GroundItem) var2.getNext()) {
 				ItemType var4 = FriendedPlayer.getItemType(-848428919 * var3.anInt1842);
 				long var5 = (long) (60742695 * var4.storeValue);
 				if (var4.stackable * 1303294175 == 1) {
@@ -68,7 +68,7 @@ public class Class32 {
 				GroundItem var12 = null;
 				GroundItem var11 = null;
 
-				for (var3 = (GroundItem) var2.method471(); var3 != null; var3 = (GroundItem) var2.method473()) {
+				for (var3 = (GroundItem) var2.getFront(); var3 != null; var3 = (GroundItem) var2.getNext()) {
 					if (-848428919 * var9.anInt1842 != -848428919 * var3.anInt1842) {
 						if (var12 == null) {
 							var12 = var3;
@@ -81,9 +81,9 @@ public class Class32 {
 				}
 
 				int var10 = var0 + (var1 << 7) + 1610612736;
-				InterfaceNode.landscape.addItemPile(-747958745 * InterfaceNode.floorLevel, var0, var1, NpcType
-						.method802(var0 * 128 + 64, var1 * 128 + 64, -747958745 * InterfaceNode.floorLevel), var9,
-						var10, var12, var11);
+				InterfaceNode.landscape.addItemPile(-747958745 * InterfaceNode.floorLevel, var0, var1,
+						NpcType.method802(var0 * 128 + 64, var1 * 128 + 64, -747958745 * InterfaceNode.floorLevel),
+						var9, var10, var12, var11);
 			}
 		}
 	}

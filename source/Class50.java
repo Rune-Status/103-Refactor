@@ -44,7 +44,7 @@ public class Class50 {
 		if (-1074177723 * Client.anInt2226 != -1) {
 			var1 = Client.anInt2226 * -1074177723;
 			if (IdentKitType.loadWidget(var1)) {
-				Class77.method338(Widget.interfaces[var1], -1);
+				GameType.method338(Widget.interfaces[var1], -1);
 			}
 		}
 
@@ -63,7 +63,7 @@ public class Class50 {
 		TileDecorationStub.aWidget838 = null;
 		if (Client.anInt2226 * -1074177723 != -1) {
 			Client.anInt2168 = 0;
-			Class24.method164(Client.anInt2226 * -1074177723, 0, 0, -452716157 * Class34.gameWidth,
+			ClientSettings.method164(Client.anInt2226 * -1074177723, 0, 0, -452716157 * Class34.gameWidth,
 					Node_Sub9.gameHeight * 674167779, 0, 0, -1);
 		}
 
@@ -117,7 +117,7 @@ public class Class50 {
 		int var8 = Client.anInt2066 * -1163930299;
 
 		for (Node_Sub6 var2 = (Node_Sub6) Node_Sub6.aDeque1279
-				.method471(); var2 != null; var2 = (Node_Sub6) Node_Sub6.aDeque1279.method473()) {
+				.getFront(); var2 != null; var2 = (Node_Sub6) Node_Sub6.aDeque1279.getNext()) {
 			if (-1177973365 * var2.anInt1281 != -1 || var2.anIntArray1273 != null) {
 				int var4 = 0;
 				if (var7 > var2.anInt1269 * -159017461) {
@@ -145,8 +145,7 @@ public class Class50 {
 					if (var2.aNode_Sub4_Sub2_1276 == null) {
 						if (var2.anInt1281 * -1177973365 >= 0) {
 							var10000 = (Class14) null;
-							Class14 var3 = Class14.method119(VarClientType.sfxIndex,
-									-1177973365 * var2.anInt1281, 0);
+							Class14 var3 = Class14.method119(VarClientType.sfxIndex, -1177973365 * var2.anInt1281, 0);
 							if (var3 != null) {
 								Node_Sub2_Sub1 var9 = var3.method122().method722(Class59.aClass16_548);
 								Node_Sub4_Sub2 var6 = Node_Sub4_Sub2.method771(var9, 100, var10);
@@ -163,8 +162,7 @@ public class Class50 {
 						if (var2.anIntArray1273 != null && (var2.anInt1274 -= var8 * -2049360189) * -2041650709 <= 0) {
 							int var11 = (int) (Math.random() * (double) var2.anIntArray1273.length);
 							var10000 = (Class14) null;
-							Class14 var14 = Class14.method119(VarClientType.sfxIndex,
-									var2.anIntArray1273[var11], 0);
+							Class14 var14 = Class14.method119(VarClientType.sfxIndex, var2.anIntArray1273[var11], 0);
 							if (var14 != null) {
 								Node_Sub2_Sub1 var12 = var14.method122().method722(Class59.aClass16_548);
 								Node_Sub4_Sub2 var0 = Node_Sub4_Sub2.method771(var12, 100, var10);

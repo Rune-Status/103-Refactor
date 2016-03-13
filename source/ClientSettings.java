@@ -2,71 +2,63 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
-public class Class24 {
+public class ClientSettings {
 
-	boolean aBool298;
-	static int anInt299;
-	int anInt300 = -2081218561;
-	LinkedHashMap aLinkedHashMap301 = new LinkedHashMap();
-	static int anInt302 = -1924448428;
-	boolean aBool303;
+	boolean hideRoofs;
+	static int myWorldPort;
+	int screenType = -2081218561;
+	LinkedHashMap<Integer, Integer> trustList = new LinkedHashMap<>();
+	static int amount = -1924448428;
+	boolean muted;
 	static Widget aWidget304;
 	static int anInt305;
 
-	Class24() {
-		this.method161(true);
-	}
+	ClientSettings() { }
+	
+	ClientSettings(ByteBuf buf) {
+		if (buf != null && buf.payload != null) {
+			int size = buf.getUByte();
+			if (size >= 0 && size <= -322571907 * amount) {
+				this.hideRoofs = buf.getUByte() == 1;
 
-	Class24(ByteBuf var1) {
-		if (var1 != null && var1.payload != null) {
-			int var3 = var1.getUByte();
-			if (var3 >= 0 && var3 <= -322571907 * anInt302) {
-				if (var1.getUByte() == 1) {
-					this.aBool298 = true;
+				if (size > 1) {
+					this.muted = buf.getUByte() == 1;
 				}
 
-				if (var3 > 1) {
-					this.aBool303 = var1.getUByte() == 1;
+				if (size > 3) {
+					this.screenType = buf.getUByte() * -2081218561;
 				}
 
-				if (var3 > 3) {
-					this.anInt300 = var1.getUByte() * -2081218561;
-				}
+				if (size > 2) {
+					int count = buf.getUByte();
 
-				if (var3 > 2) {
-					int var2 = var1.getUByte();
-
-					for (int var4 = 0; var4 < var2; ++var4) {
-						int var6 = var1.getInt();
-						int var5 = var1.getInt();
-						this.aLinkedHashMap301.put(Integer.valueOf(var6), Integer.valueOf(var5));
+					for (int index = 0; index < count; ++index) {
+						int usernameHash = buf.getInt();
+						int authHash = buf.getInt();
+						this.trustList.put(Integer.valueOf(usernameHash), Integer.valueOf(authHash));
 					}
 				}
-			} else {
-				this.method161(true);
 			}
-		} else {
-			this.method161(true);
 		}
 
 	}
 
-	ByteBuf method159() {
-		ByteBuf var1 = new ByteBuf(100);
-		var1.putByte(anInt302 * -322571907);
-		var1.putByte(!this.aBool298 ? 0 : 1);
-		var1.putByte(this.aBool303 ? 1 : 0);
-		var1.putByte(this.anInt300 * -1207115777);
-		var1.putByte(this.aLinkedHashMap301.size());
-		Iterator var3 = this.aLinkedHashMap301.entrySet().iterator();
+	ByteBuf serialize() {
+		ByteBuf buf = new ByteBuf(100);
+		buf.putByte(amount * -322571907);
+		buf.putByte(this.hideRoofs ? 1 : 0);
+		buf.putByte(this.muted ? 1 : 0);
+		buf.putByte(this.screenType * -1207115777);
+		buf.putByte(this.trustList.size());
+		Iterator<Entry<Integer, Integer>> iterator = this.trustList.entrySet().iterator();
 
-		while (var3.hasNext()) {
-			Entry var2 = (Entry) var3.next();
-			var1.putInt(((Integer) var2.getKey()).intValue());
-			var1.putInt(((Integer) var2.getValue()).intValue());
+		while (iterator.hasNext()) {
+			Entry<Integer, Integer> entry = iterator.next();
+			buf.putInt(entry.getKey().intValue());
+			buf.putInt(entry.getValue().intValue());
 		}
 
-		return var1;
+		return buf;
 	}
 
 	static void method160(int var0) {
@@ -78,9 +70,9 @@ public class Class24 {
 					Widget var2 = var4[var3];
 					if (var2.anObjectArray1170 != null) {
 						ScriptEvent var1 = new ScriptEvent();
-						var1.aWidget1430 = var2;
+						var1.widget = var2;
 						var1.args = var2.anObjectArray1170;
-						Class52.method261(var1, 2000000);
+						AbstractByteBuffer.method261(var1, 2000000);
 					}
 				}
 
@@ -88,12 +80,9 @@ public class Class24 {
 		}
 	}
 
-	void method161(boolean var1) {
-	}
-
 	static final void method162() {
 		for (GraphicsStub var0 = (GraphicsStub) Client.graphicsObjectDeque
-				.method471(); var0 != null; var0 = (GraphicsStub) Client.graphicsObjectDeque.method473()) {
+				.getFront(); var0 != null; var0 = (GraphicsStub) Client.graphicsObjectDeque.getNext()) {
 			if (var0.floorLevel * 1273709753 == -747958745 * InterfaceNode.floorLevel && !var0.finished) {
 				if (Client.engineCycle * -1040073859 >= -301779367 * var0.startCycle) {
 					var0.method934(-1163930299 * Client.anInt2066, (byte) 15);
@@ -111,11 +100,12 @@ public class Class24 {
 
 	}
 
-	public static DualNode_Sub13_Sub3_Sub1 method163(AbstractIndex sprites, AbstractIndex fonts, String fontName, String childName) {
+	public static DualNode_Sub13_Sub3_Sub1 method163(AbstractIndex sprites, AbstractIndex fonts, String fontName,
+			String childName) {
 		int fileId = sprites.getFile(fontName);
 		int childId = sprites.getChild(fileId, childName);
 		DualNode_Sub13_Sub3_Sub1 var5;
-		if (!Class35.method202(sprites, fileId, childId)) {
+		if (!Class35.decodeSprite(sprites, fileId, childId)) {
 			var5 = null;
 		} else {
 			var5 = IgnoredPlayer.method415(fonts.getFile(fileId, childId));

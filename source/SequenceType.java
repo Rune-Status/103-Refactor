@@ -4,8 +4,8 @@ public class SequenceType extends DualNode {
 	public int anInt1469 = 1379256319;
 	static AbstractIndex aClass87_1470;
 	static AbstractIndex aClass87_1471;
-	public static Class106 sequences = new Class106(64);
-	public static Class106 aClass106_1473 = new Class106(100);
+	public static NodeMap sequences = new NodeMap(64);
+	public static NodeMap aClass106_1473 = new NodeMap(100);
 	public int[] anIntArray1474;
 	public boolean aBool1475 = false;
 	static int anInt1476;
@@ -124,8 +124,8 @@ public class SequenceType extends DualNode {
 
 	Model method676(Model var1, int var2, int var3) {
 		var2 = this.anIntArray1474[var2];
-		DualNode_Sub12 var5 = method685(var2 >> 16);
-		var2 &= '\uffff';
+		SkeletonSet var5 = method685(var2 >> 16);
+		var2 &= 65535;
 		if (var5 == null) {
 			return var1.method995(true);
 		} else {
@@ -154,8 +154,8 @@ public class SequenceType extends DualNode {
 
 	Model method677(Model var1, int var2) {
 		var2 = this.anIntArray1474[var2];
-		DualNode_Sub12 var3 = method685(var2 >> 16);
-		var2 &= '\uffff';
+		SkeletonSet var3 = method685(var2 >> 16);
+		var2 &= 65535;
 		if (var3 == null) {
 			return var1.method996(true);
 		} else {
@@ -167,14 +167,14 @@ public class SequenceType extends DualNode {
 
 	public Model method678(Model var1, int var2, SequenceType var3, int var4) {
 		var2 = this.anIntArray1474[var2];
-		DualNode_Sub12 var6 = method685(var2 >> 16);
-		var2 &= '\uffff';
+		SkeletonSet var6 = method685(var2 >> 16);
+		var2 &= 65535;
 		if (var6 == null) {
 			return var3.method681(var1, var4);
 		} else {
 			var4 = var3.anIntArray1474[var4];
-			DualNode_Sub12 var7 = method685(var4 >> 16);
-			var4 &= '\uffff';
+			SkeletonSet var7 = method685(var4 >> 16);
+			var4 &= 65535;
 			Model var5;
 			if (var7 == null) {
 				var5 = var1.method995(!var6.method776(var2, (byte) -108));
@@ -190,21 +190,21 @@ public class SequenceType extends DualNode {
 
 	public Model method679(Model var1, int var2) {
 		int var3 = this.anIntArray1474[var2];
-		DualNode_Sub12 var4 = method685(var3 >> 16);
-		var3 &= '\uffff';
+		SkeletonSet var4 = method685(var3 >> 16);
+		var3 &= 65535;
 		if (var4 == null) {
 			return var1.method995(true);
 		} else {
-			DualNode_Sub12 var5 = null;
+			SkeletonSet var5 = null;
 			int var6 = 0;
 			if (this.anIntArray1485 != null && var2 < this.anIntArray1485.length) {
 				var6 = this.anIntArray1485[var2];
 				var5 = method685(var6 >> 16);
-				var6 &= '\uffff';
+				var6 &= 65535;
 			}
 
 			Model var7;
-			if (var5 != null && var6 != '\uffff') {
+			if (var5 != null && var6 != 65535) {
 				var7 = var1.method995(!var4.method776(var3, (byte) -35) & !var5.method776(var6, (byte) -91));
 				var7.method1001(var4, var3);
 				var7.method1001(var5, var6);
@@ -217,23 +217,24 @@ public class SequenceType extends DualNode {
 		}
 	}
 
-	public static DualNode_Sub13_Sub2 method680(AbstractIndex var0, String var1, String var2) {
-		int var3 = var0.getFile(var1);
-		int var5 = var0.getChild(var3, var2);
-		DualNode_Sub13_Sub2 var4;
-		if (!Class35.method202(var0, var3, var5)) {
-			var4 = null;
+	public static Sprite getSprite(AbstractIndex index, String iFile, String iChild) {
+		int fileId = index.getFile(iFile);
+		int childId = index.getChild(fileId, iChild);
+		System.out.println(iFile + ", (5, " + fileId + ", " + childId + ")");
+		Sprite sprite;
+		if (!Class35.decodeSprite(index, fileId, childId)) {
+			sprite = null;
 		} else {
-			var4 = BoundaryStub.method153();
+			sprite = BoundaryStub.set();
 		}
 
-		return var4;
+		return sprite;
 	}
 
 	public Model method681(Model var1, int var2) {
 		var2 = this.anIntArray1474[var2];
-		DualNode_Sub12 var4 = method685(var2 >> 16);
-		var2 &= '\uffff';
+		SkeletonSet var4 = method685(var2 >> 16);
+		var2 &= 65535;
 		if (var4 == null) {
 			return var1.method995(true);
 		} else {
@@ -328,22 +329,22 @@ public class SequenceType extends DualNode {
 		}
 	}
 
-	static DualNode_Sub12 method685(int var0) {
-		DualNode_Sub12 var1 = (DualNode_Sub12) aClass106_1473.get((long) var0);
+	static SkeletonSet method685(int var0) {
+		SkeletonSet var1 = (SkeletonSet) aClass106_1473.get((long) var0);
 		if (var1 != null) {
 			return var1;
 		} else {
 			AbstractIndex var2 = aClass87_1470;
 			AbstractIndex var3 = aClass87_1471;
 			boolean var4 = true;
-			int[] var5 = var2.method394(var0);
+			int[] var5 = var2.getChilds(var0);
 
 			for (int var6 = 0; var6 < var5.length; ++var6) {
 				byte[] var7 = var2.method390(var0, var5[var6]);
 				if (var7 == null) {
 					var4 = false;
 				} else {
-					int var8 = (var7[0] & 255) << 8 | var7[1] & 255;
+					int var8 = (var7[0] & 0xFF) << 8 | var7[1] & 0xFF;
 					byte[] var9 = var3.method390(var8, 0);
 					if (var9 == null) {
 						var4 = false;
@@ -351,12 +352,12 @@ public class SequenceType extends DualNode {
 				}
 			}
 
-			DualNode_Sub12 var10;
+			SkeletonSet var10;
 			if (!var4) {
 				var10 = null;
 			} else {
 				try {
-					var10 = new DualNode_Sub12(var2, var3, var0, false);
+					var10 = new SkeletonSet(var2, var3, var0, false);
 				} catch (Exception var11) {
 					var10 = null;
 				}

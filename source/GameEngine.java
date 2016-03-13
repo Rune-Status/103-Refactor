@@ -14,7 +14,7 @@ import java.net.URL;
 public abstract class GameEngine extends Applet implements Runnable, FocusListener, WindowListener {
 
 	static GameEngine shell = null;
-	static int anInt1969 = 0;
+	static int shellCount = 0;
 	static boolean aBool1970 = false;
 	boolean aBool1971 = false;
 	static long aLong1972 = 0L;
@@ -33,7 +33,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 	static volatile long aLong1984 = 0L;
 
 	protected final synchronized void method1027() {
-		Container var1 = this.method1033();
+		Container var1 = this.container();
 		if (LandscapeTile.gameCanvas != null) {
 			LandscapeTile.gameCanvas.removeFocusListener(this);
 			var1.remove(LandscapeTile.gameCanvas);
@@ -83,10 +83,10 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 		IndexTable.imageProducer = (AbstractProducer) producer;
 		aBool1982 = false;
-		aLong1984 = Node_Sub5.currentTimeMs() * -2460302806870968417L;
+		aLong1984 = AnimationSkin.currentTimeMs() * -2460302806870968417L;
 	}
 
-	protected final boolean method1028() {
+	protected final boolean isValidHost() {
 		String var1 = this.getDocumentBase().getHost().toLowerCase();
 		if (!var1.equals("jagex.com") && !var1.endsWith(".jagex.com")) {
 			if (!var1.equals("runescape.com") && !var1.endsWith(".runescape.com")) {
@@ -119,10 +119,10 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 	public void run() {
 		try {
-			if (Class63.aString579 != null) {
-				String var1 = Class63.aString579.toLowerCase();
+			if (TaskManager.javaVendor != null) {
+				String var1 = TaskManager.javaVendor.toLowerCase();
 				if (var1.indexOf("sun") != -1 || var1.indexOf("apple") != -1) {
-					String var2 = Class63.aString575;
+					String var2 = TaskManager.javaVersion;
 					if (var2.equals("1.1") || var2.startsWith("1.1.") || var2.equals("1.2") || var2.startsWith("1.2.")
 							|| var2.equals("1.3") || var2.startsWith("1.3.") || var2.equals("1.4")
 							|| var2.startsWith("1.4.") || var2.equals("1.5") || var2.startsWith("1.5.")
@@ -201,7 +201,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 						}
 
 						if (var11) {
-							int var17 = Node_Sub5.method535(var4, 10, true);
+							int var17 = AnimationSkin.method535(var4, 10, true);
 							if (var17 < 10) {
 								this.error("wrongjava");
 								return;
@@ -216,21 +216,22 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			this.setFocusCycleRoot(true);
 			this.method1027();
 			this.method1031(-1295554880);
-			Class90.aClass66_721 = DualNode_Sub12.method778(-74695759);
+			Class90.aClass66_721 = SkeletonSet.method778(-74695759);
 
 			while (aLong1972 * 2722427985237087875L == 0L
-					|| Node_Sub5.currentTimeMs() < 2722427985237087875L * aLong1972) {
-				Node_Sub8.anInt1301 = Class90.aClass66_721.method322(anInt1974 * 2081489859, anInt1973 * 87833367) * 1809972633;
+					|| AnimationSkin.currentTimeMs() < 2722427985237087875L * aLong1972) {
+				Node_Sub8.anInt1301 = Class90.aClass66_721.method322(anInt1974 * 2081489859, anInt1973 * 87833367)
+						* 1809972633;
 
 				for (int var15 = 0; var15 < -108132695 * Node_Sub8.anInt1301; ++var15) {
 					this.method1029();
 				}
 
 				this.method1039();
-				GraphicsStub.method935(IsaacRandom.aClass63_102, LandscapeTile.gameCanvas);
+				GraphicsStub.method935(IsaacRandom.taskManager, LandscapeTile.gameCanvas);
 			}
 		} catch (Exception var14) {
-			Class79.method345((String) null, var14);
+			Class79.error((String) null, var14);
 			this.error("crash");
 		}
 
@@ -238,10 +239,10 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 	}
 
 	void method1029() {
-		long var1 = Node_Sub5.currentTimeMs();
-		long var3 = aLongArray1977[Class78.anInt654 * 1149319977];
-		aLongArray1977[Class78.anInt654 * 1149319977] = var1;
-		Class78.anInt654 = 549949721 * (Class78.anInt654 * 1149319977 + 1 & 31);
+		long var1 = AnimationSkin.currentTimeMs();
+		long var3 = aLongArray1977[AbstractWheelListener.anInt654 * 1149319977];
+		aLongArray1977[AbstractWheelListener.anInt654 * 1149319977] = var1;
+		AbstractWheelListener.anInt654 = 549949721 * (AbstractWheelListener.anInt654 * 1149319977 + 1 & 31);
 		if (0L != var3 && var1 > var3) {
 			;
 		}
@@ -277,9 +278,9 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 				}
 			}
 
-			if (IsaacRandom.aClass63_102 != null) {
+			if (IsaacRandom.taskManager != null) {
 				try {
-					IsaacRandom.aClass63_102.method312();
+					IsaacRandom.taskManager.join();
 				} catch (Exception var2) {
 					;
 				}
@@ -297,7 +298,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 	public void destroy() {
 		if (this == shell && !aBool1970) {
-			aLong1972 = Node_Sub5.currentTimeMs() * 4455918119670900779L;
+			aLong1972 = AnimationSkin.currentTimeMs() * 4455918119670900779L;
 			Class96_Sub1.sleep(5000L);
 			this.method1030();
 		}
@@ -352,12 +353,12 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 		}
 	}
 
-	protected Container method1033() {
+	protected Container container() {
 		return (Container) (VarClientType.gameFrame != null ? VarClientType.gameFrame : this);
 	}
 
 	protected Dimension method1034() {
-		Container var1 = this.method1033();
+		Container var1 = this.container();
 		int var2 = Math.max(var1.getWidth(), 2055757083 * CacheFileAccessor.anInt836);
 		int var4 = Math.max(var1.getHeight(), ClanMate.anInt1222 * -1066486805);
 		if (VarClientType.gameFrame != null) {
@@ -371,11 +372,11 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 	protected abstract void method1035(byte var1);
 
-	protected final void method1036(int var1, int var2, int var3) {
+	protected final void initialize(int var1, int var2, int var3) {
 		try {
 			if (shell != null) {
-				anInt1969 += 2053161379;
-				if (-1859094005 * anInt1969 >= 3) {
+				shellCount += 2053161379;
+				if (-1859094005 * shellCount >= 3) {
 					this.error("alreadyloaded");
 					return;
 				}
@@ -387,15 +388,15 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			shell = this;
 			Class34.gameWidth = -780223189 * var1;
 			Node_Sub9.gameHeight = 427958731 * var2;
-			Class125.anInt830 = var3 * -778950217;
-			CollisionMap.anApplet508 = this;
-			if (IsaacRandom.aClass63_102 == null) {
-				IsaacRandom.aClass63_102 = new Class63();
+			Class125.gameRevision = var3 * -778950217;
+			CollisionMap.gameApplet = this;
+			if (IsaacRandom.taskManager == null) {
+				IsaacRandom.taskManager = new TaskManager();
 			}
 
-			IsaacRandom.aClass63_102.method313(this, 1);
+			IsaacRandom.taskManager.createRunnable(this, 1);
 		} catch (Exception var5) {
-			Class79.method345((String) null, var5);
+			Class79.error((String) null, var5);
 			this.error("crash");
 		}
 
@@ -413,8 +414,8 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 	protected abstract void method1038(int var1);
 
 	void method1039() {
-		Container var1 = this.method1033();
-		long var5 = Node_Sub5.currentTimeMs();
+		Container var1 = this.container();
+		long var5 = AnimationSkin.currentTimeMs();
 		long var2 = aLongArray1975[263003187 * IsaacRandom.anInt97];
 		aLongArray1975[IsaacRandom.anInt97 * 263003187] = var5;
 		IsaacRandom.anInt97 = (1 + 263003187 * IsaacRandom.anInt97 & 31) * 1221279483;
@@ -442,15 +443,15 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 	public void stop() {
 		if (shell == this && !aBool1970) {
-			aLong1972 = (Node_Sub5.currentTimeMs() + 4000L) * 4455918119670900779L;
+			aLong1972 = (AnimationSkin.currentTimeMs() + 4000L) * 4455918119670900779L;
 		}
 	}
 
 	public final synchronized void paint(Graphics var1) {
 		if (shell == this && !aBool1970) {
 			aBool1979 = true;
-			if (Class63.aString575 != null && Class63.aString575.startsWith("1.5")
-					&& Node_Sub5.currentTimeMs() - aLong1984 * -2499368560980646817L > 1000L) {
+			if (TaskManager.javaVersion != null && TaskManager.javaVersion.startsWith("1.5")
+					&& AnimationSkin.currentTimeMs() - aLong1984 * -2499368560980646817L > 1000L) {
 				Rectangle var2 = var1.getClipBounds();
 				if (var2 == null || var2.width >= -452716157 * Class34.gameWidth
 						&& var2.height >= 674167779 * Node_Sub9.gameHeight) {
@@ -461,22 +462,22 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 		}
 	}
 
-	static DualNode_Sub13_Sub2[] method1040() {
-		DualNode_Sub13_Sub2[] var0 = new DualNode_Sub13_Sub2[817614505 * Class7.anInt154];
+	static Sprite[] method1040() {
+		Sprite[] var0 = new Sprite[817614505 * Class7.size];
 
-		for (int var2 = 0; var2 < Class7.anInt154 * 817614505; ++var2) {
-			DualNode_Sub13_Sub2 var1 = var0[var2] = new DualNode_Sub13_Sub2();
-			var1.anInt1804 = Class7.anInt148 * -749860951;
-			var1.anInt1805 = Class7.anInt155 * -1945497809;
-			var1.anInt1803 = Class7.anIntArray149[var2];
-			var1.anInt1802 = VarPlayerType.anIntArray1544[var2];
-			var1.anInt1800 = Class7.anIntArray150[var2];
-			var1.anInt1801 = Class7.anIntArray151[var2];
-			var1.anIntArray1798 = Class85.anIntArray690;
-			var1.aByteArray1799 = Npc.aByteArrayArray1966[var2];
+		for (int var2 = 0; var2 < Class7.size * 817614505; ++var2) {
+			Sprite var1 = var0[var2] = new Sprite();
+			var1.width = Class7.width * -749860951;
+			var1.height = Class7.height * -1945497809;
+			var1.offsetX = Class7.offsetsX[var2];
+			var1.offsetY = VarPlayerType.offsetsY[var2];
+			var1.subWidth = Class7.subWidths[var2];
+			var1.subHeight = Class7.subHeights[var2];
+			var1.palette = Class85.palette;
+			var1.pixels = Npc.spritePixels[var2];
 		}
 
-		Class65.method318();
+		Class65.resetSprite();
 		return var0;
 	}
 }

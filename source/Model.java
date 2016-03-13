@@ -285,11 +285,11 @@ public class Model extends Entity {
 		return this.XYZMag;
 	}
 
-	public void method1001(DualNode_Sub12 var1, int var2) {
+	public void method1001(SkeletonSet var1, int var2) {
 		if (this.anIntArrayArray1881 != null) {
 			if (var2 != -1) {
-				Class23 var4 = var1.aClass23Array1568[var2];
-				Node_Sub5 var5 = var4.aNode_Sub5_291;
+				AnimationSkeleton var4 = var1.skeletons[var2];
+				AnimationSkin var5 = var4.aNode_Sub5_291;
 				anInt1895 = 0;
 				anInt1883 = 0;
 				anInt1903 = 0;
@@ -371,9 +371,9 @@ public class Model extends Entity {
 							this.verticesX[var13] -= anInt1895;
 							this.verticesY[var13] -= anInt1883;
 							this.verticesZ[var13] -= anInt1903;
-							var11 = (var3 & 255) * 8;
-							int var7 = (var4 & 255) * 8;
-							int var17 = (var5 & 255) * 8;
+							var11 = (var3 & 0xFF) * 8;
+							int var7 = (var4 & 0xFF) * 8;
+							int var17 = (var5 & 0xFF) * 8;
 							int var8;
 							int var15;
 							int var16;
@@ -441,7 +441,7 @@ public class Model extends Entity {
 
 							for (var12 = 0; var12 < var14.length; ++var12) {
 								var13 = var14[var12];
-								var11 = (this.aByteArray1874[var13] & 255) + var3 * 8;
+								var11 = (this.aByteArray1874[var13] & 0xFF) + var3 * 8;
 								if (var11 < 0) {
 									var11 = 0;
 								} else if (var11 > 255) {
@@ -490,12 +490,12 @@ public class Model extends Entity {
 		this.anInt1866 = 0;
 	}
 
-	public void method1006(DualNode_Sub12 var1, int var2, DualNode_Sub12 var3, int var4, int[] var5) {
+	public void method1006(SkeletonSet var1, int var2, SkeletonSet var3, int var4, int[] var5) {
 		if (var2 != -1) {
 			if (var5 != null && var4 != -1) {
-				Class23 var9 = var1.aClass23Array1568[var2];
-				Class23 var6 = var3.aClass23Array1568[var4];
-				Node_Sub5 var12 = var9.aNode_Sub5_291;
+				AnimationSkeleton var9 = var1.skeletons[var2];
+				AnimationSkeleton var6 = var3.skeletons[var4];
+				AnimationSkin var12 = var9.aNode_Sub5_291;
 				anInt1895 = 0;
 				anInt1883 = 0;
 				anInt1903 = 0;
@@ -837,7 +837,7 @@ public class Model extends Entity {
 		if (this.aByteArray1874 == null) {
 			TexturedGraphic.anInt1781 = 0;
 		} else {
-			TexturedGraphic.anInt1781 = this.aByteArray1874[var1] & 255;
+			TexturedGraphic.anInt1781 = this.aByteArray1874[var1] & 0xFF;
 		}
 
 		int var3;
@@ -937,14 +937,14 @@ public class Model extends Entity {
 		int var11;
 		int var14;
 		if (var15 == 3) {
-			if (var6 < 0 || var7 < 0 || var8 < 0 || var6 > TexturedGraphic.anInt1791
-					|| var7 > TexturedGraphic.anInt1791 || var8 > TexturedGraphic.anInt1791) {
+			if (var6 < 0 || var7 < 0 || var8 < 0 || var6 > TexturedGraphic.anInt1791 || var7 > TexturedGraphic.anInt1791
+					|| var8 > TexturedGraphic.anInt1791) {
 				TexturedGraphic.aBool1782 = true;
 			}
 
 			if (this.aShortArray1860 != null && this.aShortArray1860[var1] != -1) {
 				if (this.aByteArray1875 != null && this.aByteArray1875[var1] != -1) {
-					var14 = this.aByteArray1875[var1] & 255;
+					var14 = this.aByteArray1875[var1] & 0xFF;
 					var9 = this.anIntArray1879[var14];
 					var10 = this.anIntArray1880[var14];
 					var11 = this.anIntArray1906[var14];
@@ -971,21 +971,21 @@ public class Model extends Entity {
 				TexturedGraphic.method917(var3, var4, var5, var6, var7, var8,
 						anIntArray1907[this.anIntArray1870[var1]]);
 			} else {
-				TexturedGraphic.method922(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
-						xViewportBuffer[1], xViewportBuffer[2]);
+				TexturedGraphic.method922(var3, var4, var5, var6, var7, var8, xViewportBuffer[0], xViewportBuffer[1],
+						xViewportBuffer[2]);
 			}
 		}
 
 		if (var15 == 4) {
-			if (var6 < 0 || var7 < 0 || var8 < 0 || var6 > TexturedGraphic.anInt1791
-					|| var7 > TexturedGraphic.anInt1791 || var8 > TexturedGraphic.anInt1791
-					|| anIntArray1899[3] < 0 || anIntArray1899[3] > TexturedGraphic.anInt1791) {
+			if (var6 < 0 || var7 < 0 || var8 < 0 || var6 > TexturedGraphic.anInt1791 || var7 > TexturedGraphic.anInt1791
+					|| var8 > TexturedGraphic.anInt1791 || anIntArray1899[3] < 0
+					|| anIntArray1899[3] > TexturedGraphic.anInt1791) {
 				TexturedGraphic.aBool1782 = true;
 			}
 
 			if (this.aShortArray1860 != null && this.aShortArray1860[var1] != -1) {
 				if (this.aByteArray1875 != null && this.aByteArray1875[var1] != -1) {
-					var14 = this.aByteArray1875[var1] & 255;
+					var14 = this.aByteArray1875[var1] & 0xFF;
 					var9 = this.anIntArray1879[var14];
 					var10 = this.anIntArray1880[var14];
 					var11 = this.anIntArray1906[var14];
@@ -1023,8 +1023,8 @@ public class Model extends Entity {
 				TexturedGraphic.method917(var3, var4, var5, var6, var7, var8, var9);
 				TexturedGraphic.method917(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3], var9);
 			} else {
-				TexturedGraphic.method922(var3, var4, var5, var6, var7, var8, xViewportBuffer[0],
-						xViewportBuffer[1], xViewportBuffer[2]);
+				TexturedGraphic.method922(var3, var4, var5, var6, var7, var8, xViewportBuffer[0], xViewportBuffer[1],
+						xViewportBuffer[2]);
 				TexturedGraphic.method922(var3, var5, anIntArray1882[3], var6, var8, anIntArray1899[3],
 						xViewportBuffer[0], xViewportBuffer[2], xViewportBuffer[3]);
 			}
@@ -1043,7 +1043,7 @@ public class Model extends Entity {
 			if (this.aByteArray1874 == null) {
 				TexturedGraphic.anInt1781 = 0;
 			} else {
-				TexturedGraphic.anInt1781 = this.aByteArray1874[var1] & 255;
+				TexturedGraphic.anInt1781 = this.aByteArray1874[var1] & 0xFF;
 			}
 
 			if (this.aShortArray1860 != null && this.aShortArray1860[var1] != -1) {
@@ -1051,7 +1051,7 @@ public class Model extends Entity {
 				int var5;
 				int var7;
 				if (this.aByteArray1875 != null && this.aByteArray1875[var1] != -1) {
-					int var6 = this.aByteArray1875[var1] & 255;
+					int var6 = this.aByteArray1875[var1] & 0xFF;
 					var7 = this.anIntArray1879[var6];
 					var5 = this.anIntArray1880[var6];
 					var3 = this.anIntArray1906[var6];
@@ -1291,8 +1291,7 @@ public class Model extends Entity {
 								- (anIntArray1890[var7] - anIntArray1890[var11]) * (var12 - var10) > 0) {
 							aBoolArray1902[var9] = false;
 							if (var5 >= 0 && var10 >= 0 && var12 >= 0 && var5 <= TexturedGraphic.anInt1791
-									&& var10 <= TexturedGraphic.anInt1791
-									&& var12 <= TexturedGraphic.anInt1791) {
+									&& var10 <= TexturedGraphic.anInt1791 && var12 <= TexturedGraphic.anInt1791) {
 								aBoolArray1887[var9] = false;
 							} else {
 								aBoolArray1887[var9] = true;

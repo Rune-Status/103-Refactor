@@ -1,10 +1,10 @@
 
 public class IgnoredPlayer {
 
-	static DualNode_Sub13_Sub2 aDualNode_Sub13_Sub2_754;
+	static Sprite logoSprite;
 	String previousName;
 	String displayName;
-	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array755;
+	static Sprite[] aDualNode_Sub13_Sub2Array755;
 
 	public static byte method414(char var0) {
 		byte var1;
@@ -79,10 +79,9 @@ public class IgnoredPlayer {
 		if (var0 == null) {
 			return null;
 		} else {
-			DualNode_Sub13_Sub3_Sub1 var1 = new DualNode_Sub13_Sub3_Sub1(var0, Class7.anIntArray149,
-					VarPlayerType.anIntArray1544, Class7.anIntArray150, Class7.anIntArray151, Class85.anIntArray690,
-					Npc.aByteArrayArray1966);
-			Class65.method318();
+			DualNode_Sub13_Sub3_Sub1 var1 = new DualNode_Sub13_Sub3_Sub1(var0, Class7.offsetsX, VarPlayerType.offsetsY,
+					Class7.subWidths, Class7.subHeights, Class85.palette, Npc.spritePixels);
+			Class65.resetSprite();
 			return var1;
 		}
 	}

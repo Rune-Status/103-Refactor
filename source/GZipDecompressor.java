@@ -1,31 +1,28 @@
 import java.util.zip.Inflater;
 
-public class Class49 {
+public class GZipDecompressor {
 
 	static Connection js5Connection;
-	static byte[][][] aByteArrayArrayArray514;
-	Inflater anInflater515;
+	static byte[][][] overlayRotations;
+	Inflater inflator;
 	public static AbstractIndex aClass87_516;
 
-	Class49(int var1, int var2, int var3) {
-	}
-
-	public void method248(ByteBuf var1, byte[] var2) {
-		if (var1.payload[314639891 * var1.position] == 31 && var1.payload[1 + var1.position * 314639891] == -117) {
-			if (this.anInflater515 == null) {
-				this.anInflater515 = new Inflater(true);
+	public void decompress(ByteBuf buf, byte[] dest) {
+		if (buf.payload[314639891 * buf.position] == 31 && buf.payload[1 + buf.position * 314639891] == -117) {
+			if (this.inflator == null) {
+				this.inflator = new Inflater(true);
 			}
 
 			try {
-				this.anInflater515.setInput(var1.payload, 10 + 314639891 * var1.position,
-						var1.payload.length - (8 + 10 + var1.position * 314639891));
-				this.anInflater515.inflate(var2);
+				this.inflator.setInput(buf.payload, 10 + 314639891 * buf.position,
+						buf.payload.length - (8 + 10 + buf.position * 314639891));
+				this.inflator.inflate(dest);
 			} catch (Exception var4) {
-				this.anInflater515.reset();
+				this.inflator.reset();
 				throw new RuntimeException("");
 			}
 
-			this.anInflater515.reset();
+			this.inflator.reset();
 		} else {
 			throw new RuntimeException("");
 		}
@@ -35,8 +32,7 @@ public class Class49 {
 		for (int var1 = 0; var1 < 727116725 * Client.anInt2225; ++var1) {
 			Npc var2 = Client.npcArray[Client.npcIndices[var1]];
 			int var4 = 536870912 + (Client.npcIndices[var1] << 14);
-			if (var2 != null && var2.hasConfig() && var0 == var2.type.aBool1586
-					&& var2.type.method803()) {
+			if (var2 != null && var2.hasConfig() && var0 == var2.type.aBool1586 && var2.type.method803()) {
 				int var5 = 1272643751 * var2.strictX >> 7;
 				int var3 = -1801433343 * var2.strictY >> 7;
 				if (var5 >= 0 && var5 < 104 && var3 >= 0 && var3 < 104) {
@@ -91,9 +87,5 @@ public class Class49 {
 		}
 
 		return var1;
-	}
-
-	public Class49() {
-		this(-1, 1000000, 1000000);
 	}
 }

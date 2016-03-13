@@ -1,13 +1,13 @@
 
-public class Class76 {
+public class BuildType {
 
-	static Class76 RC = new Class76("RC", 1);
-	static Class76 WIP = new Class76("WIP", 2);
-	static Class76 LIVE = new Class76("LIVE", 0);
-	public String aString642;
-	public int anInt643;
+	static BuildType RC = new BuildType("RC", 1);
+	static BuildType WIP = new BuildType("WIP", 2);
+	static BuildType LIVE = new BuildType("LIVE", 0);
+	public String identifier;
+	public int ordinal;
 	static Class26 aClass26_644;
-	static Class76 BUILD_LIVE = new Class76("BUILDLIVE", 3);
+	static BuildType BUILD_LIVE = new BuildType("BUILDLIVE", 3);
 
 	/**
 	 * Clear cache
@@ -139,8 +139,8 @@ public class Class76 {
 		Class70.aClass114_588 = null;
 	}
 
-	Class76(String var1, int var2) {
-		this.aString642 = var1;
-		this.anInt643 = var2 * -749936875;
+	BuildType(String var1, int var2) {
+		this.identifier = var1;
+		this.ordinal = var2 * -749936875;
 	}
 }

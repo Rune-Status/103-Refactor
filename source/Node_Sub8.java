@@ -10,27 +10,27 @@ public final class Node_Sub8 extends Node {
 	int anInt1306;
 	int anInt1307;
 	int anInt1308;
-	static Sprite[] aSpriteArray1309;
+	static Picture[] aSpriteArray1309;
 	int anInt1310 = 0;
 	int anInt1311 = 622541955;
 	int anInt1312;
 	int anInt1313;
-	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array1314;
+	static Sprite[] aDualNode_Sub13_Sub2Array1314;
 
 	static final void method546(int var0, int var1) {
-		if (-1361858763 * TileDecorationStub.anInt840 != var0 || var1 != Class90.anInt722 * 1249154187) {
-			TileDecorationStub.anInt840 = var0 * 1071803165;
-			Class90.anInt722 = var1 * -1066912989;
+		if (-1361858763 * TileDecorationStub.chunkBaseX != var0 || var1 != Class90.chunkBaseY * 1249154187) {
+			TileDecorationStub.chunkBaseX = var0 * 1071803165;
+			Class90.chunkBaseY = var1 * -1066912989;
 			method550(25);
 			Class82.method363(GameStrings.aString852, true);
-			int var5 = 1426698711 * Node_Sub10.regionBaseX;
-			int var9 = 714823515 * VarClientHub.regionBaseY;
-			Node_Sub10.regionBaseX = (var0 - 6) * -1551462600;
-			VarClientHub.regionBaseY = (var1 - 6) * -190314856;
-			int var7 = 1426698711 * Node_Sub10.regionBaseX - var5;
-			int var3 = 714823515 * VarClientHub.regionBaseY - var9;
-			var5 = Node_Sub10.regionBaseX * 1426698711;
-			var9 = 714823515 * VarClientHub.regionBaseY;
+			int lastChunkX = 1426698711 * Node_Sub10.chunkLeftX;
+			int lastChunkY = 714823515 * VarClientHub.chunkLeftY;
+			Node_Sub10.chunkLeftX = (var0 - 6) * -1551462600;
+			VarClientHub.chunkLeftY = (var1 - 6) * -190314856;
+			int offsetX = 1426698711 * Node_Sub10.chunkLeftX - lastChunkX;
+			int offsetY = 714823515 * VarClientHub.chunkLeftY - lastChunkY;
+			lastChunkX = Node_Sub10.chunkLeftX * 1426698711;
+			lastChunkY = 714823515 * VarClientHub.chunkLeftY;
 
 			int var10;
 			int var11;
@@ -38,12 +38,12 @@ public final class Node_Sub8 extends Node {
 				Npc var8 = Client.npcArray[var10];
 				if (var8 != null) {
 					for (var11 = 0; var11 < 10; ++var11) {
-						var8.anIntArray1945[var11] -= var7;
-						var8.anIntArray1955[var11] -= var3;
+						var8.anIntArray1945[var11] -= offsetX;
+						var8.anIntArray1955[var11] -= offsetY;
 					}
 
-					var8.strictX -= var7 * -715945088;
-					var8.strictY -= var3 * 1616412800;
+					var8.strictX -= offsetX * -715945088;
+					var8.strictY -= offsetY * 1616412800;
 				}
 			}
 
@@ -51,19 +51,19 @@ public final class Node_Sub8 extends Node {
 				Player var18 = Client.playerArray[var10];
 				if (var18 != null) {
 					for (var11 = 0; var11 < 10; ++var11) {
-						var18.anIntArray1945[var11] -= var7;
-						var18.anIntArray1955[var11] -= var3;
+						var18.anIntArray1945[var11] -= offsetX;
+						var18.anIntArray1955[var11] -= offsetY;
 					}
 
-					var18.strictX -= var7 * -715945088;
-					var18.strictY -= 1616412800 * var3;
+					var18.strictX -= offsetX * -715945088;
+					var18.strictY -= 1616412800 * offsetY;
 				}
 			}
 
 			byte var20 = 0;
 			byte var19 = 104;
 			byte var21 = 1;
-			if (var7 < 0) {
+			if (offsetX < 0) {
 				var20 = 103;
 				var19 = -1;
 				var21 = -1;
@@ -72,7 +72,7 @@ public final class Node_Sub8 extends Node {
 			byte var12 = 0;
 			byte var15 = 104;
 			byte var2 = 1;
-			if (var3 < 0) {
+			if (offsetY < 0) {
 				var12 = 103;
 				var15 = -1;
 				var2 = -1;
@@ -81,8 +81,8 @@ public final class Node_Sub8 extends Node {
 			int var13;
 			for (int var6 = var20; var19 != var6; var6 += var21) {
 				for (var13 = var12; var15 != var13; var13 += var2) {
-					int var4 = var7 + var6;
-					int var14 = var3 + var13;
+					int var4 = offsetX + var6;
+					int var14 = offsetY + var13;
 
 					for (int var16 = 0; var16 < 4; ++var16) {
 						if (var4 >= 0 && var14 >= 0 && var4 < 104 && var14 < 104) {
@@ -95,9 +95,9 @@ public final class Node_Sub8 extends Node {
 			}
 
 			for (Node_Sub8 var17 = (Node_Sub8) Client.aDeque2193
-					.method471(); var17 != null; var17 = (Node_Sub8) Client.aDeque2193.method473()) {
-				var17.anInt1300 -= var7 * -2106367321;
-				var17.anInt1312 -= var3 * 1453500391;
+					.getFront(); var17 != null; var17 = (Node_Sub8) Client.aDeque2193.getNext()) {
+				var17.anInt1300 -= offsetX * -2106367321;
+				var17.anInt1312 -= offsetY * 1453500391;
 				if (-1096801001 * var17.anInt1300 < 0 || var17.anInt1312 * -127960105 < 0
 						|| var17.anInt1300 * -1096801001 >= 104 || var17.anInt1312 * -127960105 >= 104) {
 					var17.unlink();
@@ -105,8 +105,8 @@ public final class Node_Sub8 extends Node {
 			}
 
 			if (Client.destinationX * -1712731251 != 0) {
-				Client.destinationX -= var7 * -1943900347;
-				Client.destinationY -= 317027045 * var3;
+				Client.destinationX -= offsetX * -1943900347;
+				Client.destinationY -= 317027045 * offsetY;
 			}
 
 			Client.audioEffectCount = 0;
@@ -181,9 +181,9 @@ public final class Node_Sub8 extends Node {
 					if (player != null && player.hasConfig() && !player.hidden && player != Class68.myPlayer) {
 						var11 = 1272643751 * player.strictX / 32 - 1272643751 * Class68.myPlayer.strictX / 32;
 						int var16 = -1801433343 * player.strictY / 32 - -1801433343 * Class68.myPlayer.strictY / 32;
-						
+
 						boolean isFriend = false;
-						if (Node_Sub5.isFriended(player.name, true)) {
+						if (AnimationSkin.isFriended(player.name, true)) {
 							isFriend = true;
 						}
 
@@ -225,9 +225,9 @@ public final class Node_Sub8 extends Node {
 					}
 
 					if (314519437 * Client.anInt2075 == 2) {
-						var4 = 2 + (-751140636 * Client.hintArrowX - 1411827548 * Node_Sub10.regionBaseX)
+						var4 = 2 + (-751140636 * Client.hintArrowX - 1411827548 * Node_Sub10.chunkLeftX)
 								- 1272643751 * Class68.myPlayer.strictX / 32;
-						var5 = 2 + (Client.hintArrowY * 985346372 - VarClientHub.regionBaseY * -1435673236)
+						var5 = 2 + (Client.hintArrowY * 985346372 - VarClientHub.chunkLeftY * -1435673236)
 								- Class68.myPlayer.strictY * -1801433343 / 32;
 						Class7.method77(var1, var2, var4, var5, Class72.aSpriteArray604[1], var6);
 					}
@@ -339,21 +339,21 @@ public final class Node_Sub8 extends Node {
 
 			if (var0 != 5 && var0 != 10) {
 				if (var0 == 20) {
-					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex,
-							Node_Sub5.spritesIndex, true, 846055547 * Client.anInt2113 == 11 ? 4 : 0);
+					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex, AnimationSkin.spritesIndex,
+							true, 846055547 * Client.anInt2113 == 11 ? 4 : 0);
 				} else if (var0 == 11) {
-					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex,
-							Node_Sub5.spritesIndex, false, 4);
+					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex, AnimationSkin.spritesIndex,
+							false, 4);
 				} else if (Class6.aBool142) {
-					Class6.aDualNode_Sub13_Sub2_147 = null;
-					Class6.aDualNode_Sub13_Sub2_117 = null;
-					Class6.aDualNode_Sub13_Sub2Array118 = null;
+					Class6.titleboxSprite = null;
+					Class6.titlebuttonSprite = null;
+					Class6.runesSprite = null;
 					Class56.aSprite542 = null;
 					Class6.aSprite137 = null;
-					IgnoredPlayer.aDualNode_Sub13_Sub2_754 = null;
-					FriendedPlayer.aDualNode_Sub13_Sub2Array741 = null;
-					Class6.aDualNode_Sub13_Sub2_120 = null;
-					Class6.aDualNode_Sub13_Sub2_121 = null;
+					IgnoredPlayer.logoSprite = null;
+					FriendedPlayer.titlemuteSprite = null;
+					Class6.radioButtons0Sprite = null;
+					Class6.radioButtons2Sprite = null;
 					Class93.aSpriteArray733 = null;
 					Class2.aDualNode_Sub13_Sub2Array78 = null;
 					Class32.aDualNode_Sub13_Sub2Array357 = null;
@@ -372,8 +372,8 @@ public final class Node_Sub8 extends Node {
 					Class6.aBool142 = false;
 				}
 			} else {
-				DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex,
-						Node_Sub5.spritesIndex, true, 0);
+				DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex, AnimationSkin.spritesIndex, true,
+						0);
 			}
 
 			Client.anInt2113 = -317532493 * var0;
@@ -411,9 +411,9 @@ public final class Node_Sub8 extends Node {
 
 				String var7 = "";
 				if (ConsumingImageProducer.aClass61_1215 != null) {
-					var7 = Class63.method315(ConsumingImageProducer.aClass61_1215.anInt564);
-					if (ConsumingImageProducer.aClass61_1215.anObject566 != null) {
-						var7 = (String) ConsumingImageProducer.aClass61_1215.anObject566;
+					var7 = TaskManager.method315(ConsumingImageProducer.aClass61_1215.stack);
+					if (ConsumingImageProducer.aClass61_1215.value != null) {
+						var7 = (String) ConsumingImageProducer.aClass61_1215.value;
 					}
 				}
 

@@ -49,9 +49,9 @@ public class Class16 {
 			if ((823601801 * Class74.anInt627 == 1 || !ClanMate.aBool1221 && 823601801 * Class74.anInt627 == 4)
 					&& Class74.anInt628 * -2040065729 >= Class6.anInt132 * 1933284923 + 765 - 50
 					&& Class74.anInt629 * 2090526775 >= 453) {
-				Node_Sub5.aClass24_1265.aBool303 = !Node_Sub5.aClass24_1265.aBool303;
-				Class75.method335();
-				if (!Node_Sub5.aClass24_1265.aBool303) {
+				AnimationSkin.settings.muted = !AnimationSkin.settings.muted;
+				Class75.serializeSettings();
+				if (!AnimationSkin.settings.muted) {
 					PlayerConfig.method271(Class2.midiTrack1Index, "scape main", "", 255, false);
 				} else {
 					Class110.aNode_Sub4_Sub4_784.method856();
@@ -82,7 +82,7 @@ public class Class16 {
 							}
 						}
 
-						if (Class76.aClass26_644 != null && Class30.loadWorlds()) {
+						if (BuildType.aClass26_644 != null && Class30.loadWorlds()) {
 							Class6.loadedWorlds = true;
 						}
 					}
@@ -193,14 +193,14 @@ public class Class16 {
 							short var11 = 321;
 							if (var6 == 1 && var9 >= var15 - 75 && var9 <= 75 + var15 && var14 >= var11 - 20
 									&& var14 <= var11 + 20) {
-								Class6.aString136 = Class6.aString136.trim();
-								if (Class6.aString136.length() == 0) {
+								Class6.username = Class6.username.trim();
+								if (Class6.username.length() == 0) {
 									GPI.method230(GameStrings.aString990, GameStrings.aString1102,
 											GameStrings.aString962);
 									return;
 								}
 
-								if (Class6.aString123.length() == 0) {
+								if (Class6.password.length() == 0) {
 									GPI.method230(GameStrings.aString963, GameStrings.aString881,
 											GameStrings.aString965);
 									return;
@@ -208,9 +208,9 @@ public class Class16 {
 
 								GPI.method230(GameStrings.aString1069, GameStrings.aString1070,
 										GameStrings.aString1071);
-								Class6.aClass92_119 = Node_Sub5.aClass24_1265.aLinkedHashMap301
-										.containsKey(Integer.valueOf(Class91.method400(Class6.aString136)))
-												? Class92.aClass92_724 : Class92.aClass92_726;
+								Class6.blockType = AnimationSkin.settings.trustList
+										.containsKey(Integer.valueOf(Class91.bkdrHash(Class6.username)))
+												? BlockType.TRUST : BlockType.NORMAL;
 								Node_Sub8.method550(20);
 								return;
 							}
@@ -219,11 +219,11 @@ public class Class16 {
 							if (var6 == 1 && var9 >= var15 - 75 && var9 <= 75 + var15 && var14 >= var11 - 20
 									&& var14 <= var11 + 20) {
 								Class6.anInt116 = 0;
-								Class6.aString136 = "";
-								Class6.aString123 = "";
-								Class114.anInt795 = 0;
-								Class37.aString404 = "";
-								Class6.aBool139 = true;
+								Class6.username = "";
+								Class6.password = "";
+								Class114.pin = 0;
+								Class37.pinText = "";
+								Class6.trust = true;
 							}
 
 							while (Class58.method289(1859574103)) {
@@ -238,28 +238,28 @@ public class Class16 {
 
 								if (Class5.anInt112 * -1989794123 == 13) {
 									Class6.anInt116 = 0;
-									Class6.aString136 = "";
-									Class6.aString123 = "";
-									Class114.anInt795 = 0;
-									Class37.aString404 = "";
-									Class6.aBool139 = true;
+									Class6.username = "";
+									Class6.password = "";
+									Class114.pin = 0;
+									Class37.pinText = "";
+									Class6.trust = true;
 								} else if (Class6.anInt115 * -1914929121 == 0) {
-									if (-1989794123 * Class5.anInt112 == 85 && Class6.aString136.length() > 0) {
-										Class6.aString136 = Class6.aString136.substring(0,
-												Class6.aString136.length() - 1);
+									if (-1989794123 * Class5.anInt112 == 85 && Class6.username.length() > 0) {
+										Class6.username = Class6.username.substring(0,
+												Class6.username.length() - 1);
 									}
 
 									if (-1989794123 * Class5.anInt112 == 84 || -1989794123 * Class5.anInt112 == 80) {
 										Class6.anInt115 = 586349535;
 									}
 
-									if (var7 && Class6.aString136.length() < 320) {
-										Class6.aString136 = Class6.aString136 + Class2.aChar80;
+									if (var7 && Class6.username.length() < 320) {
+										Class6.username = Class6.username + Class2.aChar80;
 									}
 								} else if (-1914929121 * Class6.anInt115 == 1) {
-									if (-1989794123 * Class5.anInt112 == 85 && Class6.aString123.length() > 0) {
-										Class6.aString123 = Class6.aString123.substring(0,
-												Class6.aString123.length() - 1);
+									if (-1989794123 * Class5.anInt112 == 85 && Class6.password.length() > 0) {
+										Class6.password = Class6.password.substring(0,
+												Class6.password.length() - 1);
 									}
 
 									if (Class5.anInt112 * -1989794123 == 84 || -1989794123 * Class5.anInt112 == 80) {
@@ -267,14 +267,14 @@ public class Class16 {
 									}
 
 									if (Class5.anInt112 * -1989794123 == 84) {
-										Class6.aString136 = Class6.aString136.trim();
-										if (Class6.aString136.length() == 0) {
+										Class6.username = Class6.username.trim();
+										if (Class6.username.length() == 0) {
 											GPI.method230(GameStrings.aString990, GameStrings.aString1102,
 													GameStrings.aString962);
 											return;
 										}
 
-										if (Class6.aString123.length() == 0) {
+										if (Class6.password.length() == 0) {
 											GPI.method230(GameStrings.aString963, GameStrings.aString881,
 													GameStrings.aString965);
 											return;
@@ -282,15 +282,15 @@ public class Class16 {
 
 										GPI.method230(GameStrings.aString1069, GameStrings.aString1070,
 												GameStrings.aString1071);
-										Class6.aClass92_119 = Node_Sub5.aClass24_1265.aLinkedHashMap301
-												.containsKey(Integer.valueOf(Class91.method400(Class6.aString136)))
-														? Class92.aClass92_724 : Class92.aClass92_726;
+										Class6.blockType = AnimationSkin.settings.trustList
+												.containsKey(Integer.valueOf(Class91.bkdrHash(Class6.username)))
+														? BlockType.TRUST : BlockType.NORMAL;
 										Node_Sub8.method550(20);
 										return;
 									}
 
-									if (var7 && Class6.aString123.length() < 20) {
-										Class6.aString123 = Class6.aString123 + Class2.aChar80;
+									if (var7 && Class6.password.length() < 20) {
+										Class6.password = Class6.password + Class2.aChar80;
 									}
 								}
 							}
@@ -302,16 +302,16 @@ public class Class16 {
 								var5 = 321;
 								if (var6 == 1 && var9 >= var10 - 75 && var9 <= var10 + 75 && var14 >= var5 - 20
 										&& var14 <= 20 + var5) {
-									Class37.aString404.trim();
-									if (Class37.aString404.length() != 6) {
+									Class37.pinText.trim();
+									if (Class37.pinText.length() != 6) {
 										GPI.method230(GameStrings.aString914, GameStrings.aString877,
 												GameStrings.aString1021);
 										return;
 									}
 
-									Class114.anInt795 = Integer.parseInt(Class37.aString404) * -748784207;
-									Class37.aString404 = "";
-									Class6.aClass92_119 = Class6.aBool139 ? Class92.aClass92_729 : Class92.aClass92_727;
+									Class114.pin = Integer.parseInt(Class37.pinText) * -748784207;
+									Class37.pinText = "";
+									Class6.blockType = Class6.trust ? BlockType.PIN_TRUST : BlockType.PIN;
 									GPI.method230(GameStrings.aString1069, GameStrings.aString1070,
 											GameStrings.aString1071);
 									Node_Sub8.method550(20);
@@ -321,7 +321,7 @@ public class Class16 {
 								if (var6 == 1 && var9 >= Class6.anInt126 * 1744540627 + 180 - 9
 										&& var9 <= 130 + 1744540627 * Class6.anInt126 + 180 && var14 >= 263
 										&& var14 <= 296) {
-									Class6.aBool139 = !Class6.aBool139;
+									Class6.trust = !Class6.trust;
 								}
 
 								if (var6 == 1 && var9 >= 1744540627 * Class6.anInt126 + 180 - 34
@@ -336,10 +336,10 @@ public class Class16 {
 								if (var6 == 1 && var9 >= var10 - 75 && var9 <= var10 + 75 && var14 >= var5 - 20
 										&& var14 <= var5 + 20) {
 									Class6.anInt116 = 0;
-									Class6.aString136 = "";
-									Class6.aString123 = "";
-									Class114.anInt795 = 0;
-									Class37.aString404 = "";
+									Class6.username = "";
+									Class6.password = "";
+									Class114.pin = 0;
+									Class37.pinText = "";
 								}
 
 								while (Class58.method289(1935265234)) {
@@ -354,36 +354,36 @@ public class Class16 {
 
 									if (Class5.anInt112 * -1989794123 == 13) {
 										Class6.anInt116 = 0;
-										Class6.aString136 = "";
-										Class6.aString123 = "";
-										Class114.anInt795 = 0;
-										Class37.aString404 = "";
+										Class6.username = "";
+										Class6.password = "";
+										Class114.pin = 0;
+										Class37.pinText = "";
 									} else {
-										if (-1989794123 * Class5.anInt112 == 85 && Class37.aString404.length() > 0) {
-											Class37.aString404 = Class37.aString404.substring(0,
-													Class37.aString404.length() - 1);
+										if (-1989794123 * Class5.anInt112 == 85 && Class37.pinText.length() > 0) {
+											Class37.pinText = Class37.pinText.substring(0,
+													Class37.pinText.length() - 1);
 										}
 
 										if (-1989794123 * Class5.anInt112 == 84) {
-											Class37.aString404.trim();
-											if (Class37.aString404.length() != 6) {
+											Class37.pinText.trim();
+											if (Class37.pinText.length() != 6) {
 												GPI.method230(GameStrings.aString914, GameStrings.aString877,
 														GameStrings.aString1021);
 												return;
 											}
 
-											Class114.anInt795 = Integer.parseInt(Class37.aString404) * -748784207;
-											Class37.aString404 = "";
-											Class6.aClass92_119 = Class6.aBool139 ? Class92.aClass92_729
-													: Class92.aClass92_727;
+											Class114.pin = Integer.parseInt(Class37.pinText) * -748784207;
+											Class37.pinText = "";
+											Class6.blockType = Class6.trust ? BlockType.PIN_TRUST
+													: BlockType.PIN;
 											GPI.method230(GameStrings.aString1069, GameStrings.aString1070,
 													GameStrings.aString1071);
 											Node_Sub8.method550(20);
 											return;
 										}
 
-										if (var13 && Class37.aString404.length() < 6) {
-											Class37.aString404 = Class37.aString404 + Class2.aChar80;
+										if (var13 && Class37.pinText.length() < 6) {
+											Class37.pinText = Class37.pinText + Class2.aChar80;
 										}
 									}
 								}
@@ -404,7 +404,7 @@ public class Class16 {
 									Class6.aString135 = GameStrings.aString917;
 									Class6.anInt116 = -434334242;
 									Class6.anInt115 = 0;
-									Class6.aString123 = "";
+									Class6.password = "";
 								}
 
 								while (Class58.method289(1912057832)) {
@@ -423,11 +423,11 @@ public class Class16 {
 										Class6.aString135 = GameStrings.aString917;
 										Class6.anInt116 = -434334242;
 										Class6.anInt115 = 0;
-										Class6.aString123 = "";
+										Class6.password = "";
 									} else {
-										if (Class5.anInt112 * -1989794123 == 85 && Class6.aString136.length() > 0) {
-											Class6.aString136 = Class6.aString136.substring(0,
-													Class6.aString136.length() - 1);
+										if (Class5.anInt112 * -1989794123 == 85 && Class6.username.length() > 0) {
+											Class6.username = Class6.username.substring(0,
+													Class6.username.length() - 1);
 										}
 
 										if (-1989794123 * Class5.anInt112 == 84) {
@@ -435,8 +435,8 @@ public class Class16 {
 											return;
 										}
 
-										if (var13 && Class6.aString136.length() < 320) {
-											Class6.aString136 = Class6.aString136 + Class2.aChar80;
+										if (var13 && Class6.username.length() < 320) {
+											Class6.username = Class6.username + Class2.aChar80;
 										}
 									}
 								}
@@ -448,7 +448,7 @@ public class Class16 {
 										Class6.aString135 = GameStrings.aString917;
 										Class6.anInt116 = -434334242;
 										Class6.anInt115 = 0;
-										Class6.aString123 = "";
+										Class6.password = "";
 									}
 								}
 
@@ -459,7 +459,7 @@ public class Class16 {
 									Class6.aString135 = GameStrings.aString917;
 									Class6.anInt116 = -434334242;
 									Class6.anInt115 = 0;
-									Class6.aString123 = "";
+									Class6.password = "";
 								}
 							}
 						}

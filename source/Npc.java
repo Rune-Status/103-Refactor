@@ -1,9 +1,9 @@
 
 public final class Npc extends Character {
 
-	static Sprite aSprite1965;
+	static Picture aSprite1965;
 	NpcType type;
-	public static byte[][] aByteArrayArray1966;
+	public static byte[][] spritePixels;
 	static AbstractIndex aClass87_1967;
 	static Class30 aClass30_1968;
 
@@ -75,8 +75,7 @@ public final class Npc extends Character {
 			SequenceType var4 = 57983255 * this.anInt1932 != -1
 					&& (370127001 * this.anInt1959 != this.anInt1932 * 57983255 || var3 == null)
 							? Node_Sub6.getSequenceType(57983255 * this.anInt1932) : null;
-			Model var2 = this.type.method799(var3, 1402685833 * this.anInt1934, var4,
-					-1199565973 * this.anInt1914);
+			Model var2 = this.type.method799(var3, 1402685833 * this.anInt1934, var4, -1199565973 * this.anInt1914);
 			if (var2 == null) {
 				return null;
 			} else {

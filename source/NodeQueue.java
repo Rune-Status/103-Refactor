@@ -1,5 +1,5 @@
 
-public final class Class105 {
+public final class NodeQueue {
 
 	DualNode aDualNode762 = new DualNode();
 
@@ -51,7 +51,7 @@ public final class Class105 {
 		}
 	}
 
-	public Class105() {
+	public NodeQueue() {
 		this.aDualNode762.dualNext = this.aDualNode762;
 		this.aDualNode762.dualPrevious = this.aDualNode762;
 	}

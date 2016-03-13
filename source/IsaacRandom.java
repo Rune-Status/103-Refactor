@@ -8,7 +8,7 @@ public final class IsaacRandom {
 	int anInt99;
 	int anInt100;
 	int anInt101;
-	public static Class63 aClass63_102;
+	public static TaskManager taskManager;
 	int[] anIntArray103 = new int[256];
 	int[] anIntArray104 = new int[256];
 
@@ -46,7 +46,7 @@ public final class IsaacRandom {
 				this.anInt99 = (this.anInt99 * 1471416339 ^ this.anInt99 * 1471416339 >>> 16) * 748749339;
 			}
 
-			this.anInt99 += 748749339 * this.anIntArray103[128 + var1 & 255];
+			this.anInt99 += 748749339 * this.anIntArray103[128 + var1 & 0xFF];
 			int var3;
 			this.anIntArray103[var1] = var3 = this.anIntArray103[(var2 & 1020) >> 2] + 1471416339 * this.anInt99
 					+ this.anInt100 * -1861103595;

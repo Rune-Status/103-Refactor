@@ -36,36 +36,36 @@ public final class Class31 {
 	}
 
 	public static void method192() {
-		Class71 var0 = Class71.aClass71_603;
+		KeyFocusListener var0 = KeyFocusListener.kfListener;
 		synchronized (var0) {
-			Class71.anInt601 += 2055192291;
-			Class71.anInt599 = -1719539323 * Class71.anInt600;
-			Class71.anInt602 = 0;
+			KeyFocusListener.anInt601 += 2055192291;
+			KeyFocusListener.anInt599 = -1719539323 * KeyFocusListener.anInt600;
+			KeyFocusListener.anInt602 = 0;
 			int var1;
-			if (1397604687 * Class71.anInt596 < 0) {
+			if (1397604687 * KeyFocusListener.anInt596 < 0) {
 				for (var1 = 0; var1 < 112; ++var1) {
-					Class71.aBoolArray593[var1] = false;
+					KeyFocusListener.aBoolArray593[var1] = false;
 				}
 
-				Class71.anInt596 = -1859441207 * Class71.anInt595;
+				KeyFocusListener.anInt596 = -1859441207 * KeyFocusListener.anInt595;
 			} else {
-				while (Class71.anInt595 * 1246538247 != 1397604687 * Class71.anInt596) {
-					var1 = Class71.anIntArray594[1246538247 * Class71.anInt595];
-					Class71.anInt595 = 1502651319 * (1 + 1246538247 * Class71.anInt595 & 127);
+				while (KeyFocusListener.anInt595 * 1246538247 != 1397604687 * KeyFocusListener.anInt596) {
+					var1 = KeyFocusListener.anIntArray594[1246538247 * KeyFocusListener.anInt595];
+					KeyFocusListener.anInt595 = 1502651319 * (1 + 1246538247 * KeyFocusListener.anInt595 & 127);
 					if (var1 < 0) {
-						Class71.aBoolArray593[~var1] = false;
+						KeyFocusListener.aBoolArray593[~var1] = false;
 					} else {
-						if (!Class71.aBoolArray593[var1]
-								&& 1701596051 * Class71.anInt602 < Class71.anIntArray592.length - 1) {
-							Class71.anIntArray592[(Class71.anInt602 += -2027189605) * 1701596051 - 1] = var1;
+						if (!KeyFocusListener.aBoolArray593[var1]
+								&& 1701596051 * KeyFocusListener.anInt602 < KeyFocusListener.anIntArray592.length - 1) {
+							KeyFocusListener.anIntArray592[(KeyFocusListener.anInt602 += -2027189605) * 1701596051 - 1] = var1;
 						}
 
-						Class71.aBoolArray593[var1] = true;
+						KeyFocusListener.aBoolArray593[var1] = true;
 					}
 				}
 			}
 
-			Class71.anInt600 = -1548916671 * Class71.anInt591;
+			KeyFocusListener.anInt600 = -1548916671 * KeyFocusListener.anInt591;
 		}
 	}
 

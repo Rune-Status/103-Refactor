@@ -2,8 +2,8 @@
 public class Class2 {
 
 	static CacheIndex fontMetricsIndex;
-	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array77;
-	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array78;
+	static Sprite[] aDualNode_Sub13_Sub2Array77;
+	static Sprite[] aDualNode_Sub13_Sub2Array78;
 	static CacheIndex midiTrack1Index;
 	public static char aChar80;
 

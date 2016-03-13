@@ -22,13 +22,13 @@ public class Class65 {
 		ItemPile.method455(var0, var1, 0, var0.length - 1);
 	}
 
-	public static void method318() {
-		Class7.anIntArray149 = null;
-		VarPlayerType.anIntArray1544 = null;
-		Class7.anIntArray150 = null;
-		Class7.anIntArray151 = null;
-		Class85.anIntArray690 = null;
-		Npc.aByteArrayArray1966 = (byte[][]) null;
+	public static void resetSprite() {
+		Class7.offsetsX = null;
+		VarPlayerType.offsetsY = null;
+		Class7.subWidths = null;
+		Class7.subHeights = null;
+		Class85.palette = null;
+		Npc.spritePixels = (byte[][]) null;
 	}
 
 	Class65() throws Throwable {

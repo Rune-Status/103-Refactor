@@ -1,17 +1,17 @@
 
-public class Class77 implements IOrdinal {
+public class GameType implements IOrdinal {
 
-	public String aString646;
-	static Class77 aClass77_647 = new Class77("stellardawn", "Stellar Dawn", 1);
-	static Class77 aClass77_648 = new Class77("game3", "Game 3", 2);
-	static Class77 aClass77_649 = new Class77("game4", "Game 4", 3);
-	static Class77 aClass77_650 = new Class77("game5", "Game 5", 4);
-	public static Class77 aClass77_651 = new Class77("oldscape", "RuneScape 2007", 5);
-	static Class77 aClass77_652 = new Class77("runescape", "RuneScape", 0);
-	int anInt653;
+	public String identifier;
+	static GameType STELLARDAWN = new GameType("stellardawn", "Stellar Dawn", 1);
+	static GameType GAME3 = new GameType("game3", "Game 3", 2);
+	static GameType GAME4 = new GameType("game4", "Game 4", 3);
+	static GameType GAME5 = new GameType("game5", "Game 5", 4);
+	public static GameType OLDSCAPE = new GameType("oldscape", "RuneScape 2007", 5);
+	static GameType RUNESCAPE = new GameType("runescape", "RuneScape", 0);
+	int ordinal;
 
 	public int ordinal() {
-		return 1118824193 * this.anInt653;
+		return 1118824193 * this.ordinal;
 	}
 
 	static final void method338(Widget[] var0, int var1) {
@@ -30,8 +30,7 @@ public class Class77 implements IOrdinal {
 						method338(var5.children, var5.hash * -1536575275);
 					}
 
-					InterfaceNode var3 = (InterfaceNode) Client.interfaceNodes
-							.get((long) (-1536575275 * var5.hash));
+					InterfaceNode var3 = (InterfaceNode) Client.interfaceNodes.get((long) (-1536575275 * var5.hash));
 					if (var3 != null) {
 						var4 = 226793949 * var3.type;
 						if (IdentKitType.loadWidget(var4)) {
@@ -83,15 +82,15 @@ public class Class77 implements IOrdinal {
 
 	}
 
-	Class77(String var1, String var2, int var3) {
-		this.aString646 = var1;
-		this.anInt653 = 1757485313 * var3;
+	GameType(String var1, String var2, int var3) {
+		this.identifier = var1;
+		this.ordinal = 1757485313 * var3;
 	}
 
 	static final void method339() {
 		Client.anInt2183 = 0;
-		int var1 = (1272643751 * Class68.myPlayer.strictX >> 7) + Node_Sub10.regionBaseX * 1426698711;
-		int var0 = (Class68.myPlayer.strictY * -1801433343 >> 7) + VarClientHub.regionBaseY * 714823515;
+		int var1 = (1272643751 * Class68.myPlayer.strictX >> 7) + Node_Sub10.chunkLeftX * 1426698711;
+		int var0 = (Class68.myPlayer.strictY * -1801433343 >> 7) + VarClientHub.chunkLeftY * 714823515;
 		if (var1 >= 3053 && var1 <= 3156 && var0 >= 3056 && var0 <= 3136) {
 			Client.anInt2183 = 450862527;
 		}

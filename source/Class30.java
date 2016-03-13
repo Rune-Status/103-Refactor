@@ -55,11 +55,11 @@ public class Class30 implements Runnable {
 						}
 
 						Class81.anInt667 = 0;
-						Class81.aLong668 = Node_Sub5.currentTimeMs() * 8420123348744189037L;
+						Class81.aLong668 = AnimationSkin.currentTimeMs() * 8420123348744189037L;
 						return;
 					}
 
-					Class81.aClass105_672.method422(var2);
+					Class81.aNodeQueue_672.method422(var2);
 					Class81.aNodeTable673.put(var2, var2.key);
 					Class81.anInt674 += 556834453;
 					Class81.anInt669 -= 30759979;
@@ -88,10 +88,10 @@ public class Class30 implements Runnable {
 
 	static boolean loadWorlds() {
 		try {
-			if (Class76.aClass26_644 == null) {
-				Class76.aClass26_644 = new Class26(IsaacRandom.aClass63_102, new URL(Client.aString2012));
+			if (BuildType.aClass26_644 == null) {
+				BuildType.aClass26_644 = new Class26(IsaacRandom.taskManager, new URL(Client.worldListURL));
 			} else {
-				byte[] var0 = Class76.aClass26_644.method167();
+				byte[] var0 = BuildType.aClass26_644.method167();
 				if (var0 != null) {
 					ByteBuf var1 = new ByteBuf(var0);
 					World.worldCount = var1.getUShort() * 1128208321;
@@ -110,13 +110,13 @@ public class Class30 implements Runnable {
 
 					Permission.method331(World.worlds, 0, World.worlds.length - 1, World.anIntArray1118,
 							World.anIntArray1119);
-					Class76.aClass26_644 = null;
+					BuildType.aClass26_644 = null;
 					return true;
 				}
 			}
 		} catch (Exception var4) {
 			var4.printStackTrace();
-			Class76.aClass26_644 = null;
+			BuildType.aClass26_644 = null;
 		}
 
 		return false;

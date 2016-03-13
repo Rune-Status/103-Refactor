@@ -2,7 +2,7 @@
 public class MilliTimer extends Timer {
 
 	int anInt1317 = -1470624512;
-	long milliTime = Node_Sub5.currentTimeMs() * -7851503190461573869L;
+	long milliTime = AnimationSkin.currentTimeMs() * -7851503190461573869L;
 	long[] aLongArray1319 = new long[10];
 	int anInt1320 = 0;
 	int anInt1321;
@@ -20,7 +20,7 @@ public class MilliTimer extends Timer {
 		int var5 = this.anInt1322 * -546326565;
 		this.anInt1317 = 155660092;
 		this.anInt1322 = -1663734701;
-		this.milliTime = Node_Sub5.currentTimeMs() * -7851503190461573869L;
+		this.milliTime = AnimationSkin.currentTimeMs() * -7851503190461573869L;
 		if (this.aLongArray1319[1407235087 * this.anInt1321] == 0L) {
 			this.anInt1317 = var4 * -1817683955;
 			this.anInt1322 = -1663734701 * var5;
@@ -65,7 +65,7 @@ public class MilliTimer extends Timer {
 			++var6;
 		}
 
-		this.anInt1320 = (this.anInt1320 * -1165867281 & 255) * -784357361;
+		this.anInt1320 = (this.anInt1320 * -1165867281 & 0xFF) * -784357361;
 		return var6;
 	}
 
@@ -76,7 +76,7 @@ public class MilliTimer extends Timer {
 
 	}
 
-	public static VarClientType getClientType(int id) {
+	public static VarClientType getVarClientType(int id) {
 		VarClientType type = (VarClientType) VarClientType.varclients.get((long) id);
 		if (type != null) {
 			return type;

@@ -8,7 +8,7 @@ import java.util.Random;
 
 public final class Class41 {
 
-	static int anInt446;
+	static int subPort;
 
 	static String method223(int var0) {
 		return "<img=" + var0 + ">";
@@ -19,8 +19,8 @@ public final class Class41 {
 	}
 
 	static void method224() {
-		Class6.aString136 = Class6.aString136.trim();
-		if (Class6.aString136.length() == 0) {
+		Class6.username = Class6.username.trim();
+		if (Class6.username.length() == 0) {
 			GPI.method230(GameStrings.aString1085, GameStrings.aString1086, GameStrings.aString1087);
 		} else {
 			long var0 = Class8.method81();
@@ -28,7 +28,7 @@ public final class Class41 {
 			if (0L == var0) {
 				var2 = 5;
 			} else {
-				String var3 = Class6.aString136;
+				String var3 = Class6.username;
 				Random var4 = new Random();
 				ByteBuf var5 = new ByteBuf(128);
 				ByteBuf var6 = new ByteBuf(128);

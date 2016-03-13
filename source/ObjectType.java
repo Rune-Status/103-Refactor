@@ -5,9 +5,9 @@ public class ObjectType extends DualNode {
 	static AbstractIndex objects_ref;
 	static AbstractIndex aClass87_1683;
 	public boolean modelClipped = false;
-	public static Class106 aClass106_1684 = new Class106(500);
-	public static Class106 objects = new Class106(64);
-	public static Class106 aClass106_1686 = new Class106(30);
+	public static NodeMap aClass106_1684 = new NodeMap(500);
+	public static NodeMap objects = new NodeMap(64);
+	public static NodeMap aClass106_1686 = new NodeMap(30);
 	public int anInt1687 = 0;
 	public String name = "null";
 	int[] anIntArray1688;
@@ -17,7 +17,7 @@ public class ObjectType extends DualNode {
 	short[] modifiedColors;
 	short[] aShortArray1691;
 	public int anInt1692 = 1731920317;
-	public static Class106 aClass106_1693 = new Class106(30);
+	public static NodeMap aClass106_1693 = new NodeMap(30);
 	public int sizeY = -1884647669;
 	public int[] transformIds;
 	short[] aShortArray1694;
@@ -138,7 +138,7 @@ public class ObjectType extends DualNode {
 			this.modelClipped = true;
 		} else if (var2 == 24) {
 			this.anInt1698 = var1.getUShort() * -1066502373;
-			if (this.anInt1698 * -100857069 == '\uffff') {
+			if (this.anInt1698 * -100857069 == 65535) {
 				this.anInt1698 = 1066502373;
 			}
 		} else if (var2 == 27) {
@@ -202,12 +202,12 @@ public class ObjectType extends DualNode {
 			this.anInt1713 = var1.getUByte() * -1740157925;
 		} else if (var2 == 77) {
 			this.varpIndex = var1.getUShort() * 459501529;
-			if (-560193431 * this.varpIndex == '\uffff') {
+			if (-560193431 * this.varpIndex == 65535) {
 				this.varpIndex = -459501529;
 			}
 
 			this.varp32Index = var1.getUShort() * -2089557189;
-			if (this.varp32Index * 560659955 == '\uffff') {
+			if (this.varp32Index * 560659955 == 65535) {
 				this.varp32Index = 2089557189;
 			}
 
@@ -216,7 +216,7 @@ public class ObjectType extends DualNode {
 
 			for (var3 = 0; var3 <= var4; ++var3) {
 				this.transformIds[var3] = var1.getUShort();
-				if (this.transformIds[var3] == '\uffff') {
+				if (this.transformIds[var3] == 65535) {
 					this.transformIds[var3] = -1;
 				}
 			}
@@ -376,7 +376,7 @@ public class ObjectType extends DualNode {
 
 				var3 = (Entity_Sub1) aClass106_1684.get((long) var4);
 				if (var3 == null) {
-					var3 = Entity_Sub1.method887(aClass87_1683, var4 & '\uffff', 0);
+					var3 = Entity_Sub1.method887(aClass87_1683, var4 & 0xFFFF, 0);
 					if (var3 == null) {
 						return null;
 					}
@@ -418,7 +418,7 @@ public class ObjectType extends DualNode {
 
 			var3 = (Entity_Sub1) aClass106_1684.get((long) var5);
 			if (var3 == null) {
-				var3 = Entity_Sub1.method887(aClass87_1683, var5 & '\uffff', 0);
+				var3 = Entity_Sub1.method887(aClass87_1683, var5 & 0xFFFF, 0);
 				if (var3 == null) {
 					return null;
 				}
@@ -515,7 +515,7 @@ public class ObjectType extends DualNode {
 		if (this.anIntArray1689 != null) {
 			for (int var4 = 0; var4 < this.anIntArray1689.length; ++var4) {
 				if (var1 == this.anIntArray1689[var4]) {
-					return aClass87_1683.method388(this.anIntArray1688[var4] & '\uffff', 0);
+					return aClass87_1683.method388(this.anIntArray1688[var4] & 0xFFFF, 0);
 				}
 			}
 
@@ -528,7 +528,7 @@ public class ObjectType extends DualNode {
 			boolean var2 = true;
 
 			for (int var3 = 0; var3 < this.anIntArray1688.length; ++var3) {
-				var2 &= aClass87_1683.method388(this.anIntArray1688[var3] & '\uffff', 0);
+				var2 &= aClass87_1683.method388(this.anIntArray1688[var3] & 0xFFFF, 0);
 			}
 
 			return var2;
@@ -542,7 +542,7 @@ public class ObjectType extends DualNode {
 			boolean var1 = true;
 
 			for (int var2 = 0; var2 < this.anIntArray1688.length; ++var2) {
-				var1 &= aClass87_1683.method388(this.anIntArray1688[var2] & '\uffff', 0);
+				var1 &= aClass87_1683.method388(this.anIntArray1688[var2] & 0xFFFF, 0);
 			}
 
 			return var1;
@@ -561,11 +561,11 @@ public class ObjectType extends DualNode {
 				? Class37.getObjectType(this.transformIds[var1]) : null;
 	}
 
-	public static DualNode_Sub13_Sub2[] method868(AbstractIndex var0, String var1, String var2) {
+	public static Sprite[] method868(AbstractIndex var0, String var1, String var2) {
 		int var3 = var0.getFile(var1);
 		int var4 = var0.getChild(var3, var2);
-		DualNode_Sub13_Sub2[] var5;
-		if (!Class35.method202(var0, var3, var4)) {
+		Sprite[] var5;
+		if (!Class35.decodeSprite(var0, var3, var4)) {
 			var5 = null;
 		} else {
 			var5 = GameEngine.method1040();

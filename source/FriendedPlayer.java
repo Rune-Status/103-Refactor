@@ -10,7 +10,7 @@ public class FriendedPlayer {
 	static int anInt739;
 	static Node_Sub4_Sub1 aNode_Sub4_Sub1_740;
 	String previousName;
-	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array741;
+	static Sprite[] titlemuteSprite;
 
 	static final void method407() {
 		for (int var0 = 0; var0 < Client.anInt2225 * 727116725; ++var0) {
@@ -68,13 +68,11 @@ public class FriendedPlayer {
 
 			type.post();
 			if (type.anInt1633 * -507524473 != -1) {
-				type.method819(getItemType(-507524473 * type.anInt1633),
-						getItemType(-322771797 * type.anInt1640));
+				type.method819(getItemType(-507524473 * type.anInt1633), getItemType(-322771797 * type.anInt1640));
 			}
 
 			if (125334003 * type.notedId != -1) {
-				type.method816(getItemType(125334003 * type.notedId),
-						getItemType(1428864645 * type.unnotedId));
+				type.method816(getItemType(125334003 * type.notedId), getItemType(1428864645 * type.unnotedId));
 			}
 
 			if (!Class94.aBool735 && type.aBool1618) {

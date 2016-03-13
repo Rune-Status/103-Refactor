@@ -87,13 +87,13 @@ public abstract class Character extends Entity {
 		StringBuilder var2 = new StringBuilder();
 
 		for (int var5 = 0; var5 < var1 + 0; var5 += 3) {
-			int var4 = var0[var5] & 255;
+			int var4 = var0[var5] & 0xFF;
 			var2.append(Class88.aCharArray711[var4 >>> 2]);
 			if (var5 < var1 - 1) {
-				int var3 = var0[1 + var5] & 255;
+				int var3 = var0[1 + var5] & 0xFF;
 				var2.append(Class88.aCharArray711[(var4 & 3) << 4 | var3 >>> 4]);
 				if (var5 < var1 - 2) {
-					int var6 = var0[var5 + 2] & 255;
+					int var6 = var0[var5 + 2] & 0xFF;
 					var2.append(Class88.aCharArray711[(var3 & 15) << 2 | var6 >>> 6])
 							.append(Class88.aCharArray711[var6 & 63]);
 				} else {
@@ -108,7 +108,7 @@ public abstract class Character extends Entity {
 		return var7;
 	}
 
-	static final int method1020(int var0, int var1) {
+	static final int calculateTileHeight(int var0, int var1) {
 		int var2 = Widget.method494(var0 + '\ub135', var1 + 91923, 4) - 128
 				+ (Widget.method494(10294 + var0, var1 + '\u93bd', 2) - 128 >> 1)
 				+ (Widget.method494(var0, var1, 1) - 128 >> 2);

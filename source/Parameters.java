@@ -10,7 +10,7 @@ public class Parameters {
 	public static Parameters aParameters66 = new Parameters("12", "12");
 	public static Parameters aParameters67 = new Parameters("2", "2");
 	public static Parameters aParameters68 = new Parameters("4", "4");
-	static Sprite[] mapDots;
+	static Picture[] mapDots;
 	public static Parameters aParameters70 = new Parameters("13", "13");
 	public static Parameters aParameters71 = new Parameters("1", "1");
 	public static Parameters aParameters72 = new Parameters("15", "15");

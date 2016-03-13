@@ -4,7 +4,7 @@ import java.io.IOException;
 public class ScriptEvent extends Node {
 
 	int anInt1429;
-	Widget aWidget1430;
+	Widget widget;
 	Object[] args;
 	int anInt1431;
 	boolean aBool1432;
@@ -18,7 +18,7 @@ public class ScriptEvent extends Node {
 
 	static final void method650(int var0, int var1, int var2, int var3, int var4, int var5, Landscape var6,
 			CollisionMap var7) {
-		if (!Client.aBool2010 || (Class39.renderRules[0][var1][var2] & 2) != 0
+		if (!Client.lowMemory || (Class39.renderRules[0][var1][var2] & 2) != 0
 				|| (Class39.renderRules[var0][var1][var2] & 16) == 0) {
 			if (var0 < Class39.anInt438 * -1263368093) {
 				Class39.anInt438 = var0 * -241419957;
@@ -104,7 +104,7 @@ public class ScriptEvent extends Node {
 
 			Object var27;
 			if (var5 == 22) {
-				if (!Client.aBool2010 || var8.anInt1692 * -839074197 != 0 || -1030255905 * var8.anInt1690 == 1
+				if (!Client.lowMemory || var8.anInt1692 * -839074197 != 0 || -1030255905 * var8.anInt1690 == 1
 						|| var8.aBool1711) {
 					if (var8.anInt1698 * -100857069 == -1 && var8.transformIds == null) {
 						var27 = var8.method860(22, var4, var11, var12, var13, var14);
@@ -416,7 +416,7 @@ public class ScriptEvent extends Node {
 		}
 	}
 
-	public static final Class8 method651(Class63 var0, Component var1, int var2, int var3) {
+	public static final Class8 method651(TaskManager var0, Component var1, int var2, int var3) {
 		if (-954458055 * Class8.anInt157 == 0) {
 			throw new IllegalStateException();
 		} else if (var2 >= 0 && var2 < 2) {
@@ -438,7 +438,7 @@ public class ScriptEvent extends Node {
 				if (-2110982975 * Class8.anInt172 > 0 && Class8.aClass19_156 == null) {
 					Class8.aClass19_156 = new Class19();
 					Class8.aClass19_156.aClass63_263 = var0;
-					var0.method313(Class8.aClass19_156, Class8.anInt172 * -2110982975);
+					var0.createRunnable(Class8.aClass19_156, Class8.anInt172 * -2110982975);
 				}
 
 				if (Class8.aClass19_156 != null) {
@@ -461,7 +461,7 @@ public class ScriptEvent extends Node {
 					if (-2110982975 * Class8.anInt172 > 0 && Class8.aClass19_156 == null) {
 						Class8.aClass19_156 = new Class19();
 						Class8.aClass19_156.aClass63_263 = var0;
-						var0.method313(Class8.aClass19_156, -2110982975 * Class8.anInt172);
+						var0.createRunnable(Class8.aClass19_156, -2110982975 * Class8.anInt172);
 					}
 
 					if (Class8.aClass19_156 != null) {

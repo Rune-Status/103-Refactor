@@ -1,16 +1,16 @@
 
 public class EnumType extends DualNode {
 
-	public int anInt1490 = 0;
-	static Class106 enums = new Class106(64);
+	public int size = 0;
+	static NodeMap enums = new NodeMap(64);
 	static AbstractIndex enum_ref;
-	public char aChar1493;
-	public char aChar1494;
-	public int anInt1495;
-	public int[] anIntArray1496;
-	public int[] anIntArray1497;
-	public String[] aStringArray1498;
-	public String aString1499 = "null";
+	public char valType;
+	public char keyType;
+	public int defaultInt;
+	public int[] keys;
+	public int[] intVals;
+	public String[] stringVals;
+	public String defaultString = "null";
 
 	void decode(ByteBuf var1) {
 		while (true) {
@@ -23,38 +23,33 @@ public class EnumType extends DualNode {
 		}
 	}
 
-	void method687(ByteBuf var1, int var2) {
-		if (var2 == 1) {
-			this.aChar1494 = (char) var1.getUByte();
-		} else if (var2 == 2) {
-			this.aChar1493 = (char) var1.getUByte();
-		} else if (var2 != 3) {
-			if (var2 == 4) {
-				this.anInt1495 = var1.getInt() * 1683814079;
-			} else {
-				int var3;
-				if (var2 == 5) {
-					this.anInt1490 = var1.getUShort() * 1451173443;
-					this.anIntArray1496 = new int[this.anInt1490 * 557176427];
-					this.aStringArray1498 = new String[this.anInt1490 * 557176427];
+	void method687(ByteBuf buffer, int opcode) {
+		if (opcode == 1) {
+			this.keyType = (char) buffer.getUByte();
+		} else if (opcode == 2) {
+			this.valType = (char) buffer.getUByte();
+		} else if (opcode == 3) {
+			this.defaultString = buffer.getString();
+		} else if (opcode == 4) {
+			this.defaultInt = buffer.getInt() * 1683814079;
+		} else if (opcode == 5) {
+			this.size = buffer.getUShort() * 1451173443;
+			this.keys = new int[this.size * 557176427];
+			this.stringVals = new String[this.size * 557176427];
 
-					for (var3 = 0; var3 < this.anInt1490 * 557176427; ++var3) {
-						this.anIntArray1496[var3] = var1.getInt();
-						this.aStringArray1498[var3] = var1.getString();
-					}
-				} else if (var2 == 6) {
-					this.anInt1490 = var1.getUShort() * 1451173443;
-					this.anIntArray1496 = new int[this.anInt1490 * 557176427];
-					this.anIntArray1497 = new int[557176427 * this.anInt1490];
-
-					for (var3 = 0; var3 < this.anInt1490 * 557176427; ++var3) {
-						this.anIntArray1496[var3] = var1.getInt();
-						this.anIntArray1497[var3] = var1.getInt();
-					}
-				}
+			for (int index = 0; index < this.size * 557176427; ++index) {
+				this.keys[index] = buffer.getInt();
+				this.stringVals[index] = buffer.getString();
 			}
-		} else {
-			this.aString1499 = var1.getString();
+		} else if (opcode == 6) {
+			this.size = buffer.getUShort() * 1451173443;
+			this.keys = new int[this.size * 557176427];
+			this.intVals = new int[557176427 * this.size];
+
+			for (int index = 0; index < this.size * 557176427; ++index) {
+				this.keys[index] = buffer.getInt();
+				this.intVals[index] = buffer.getInt();
+			}
 		}
 
 	}

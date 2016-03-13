@@ -8,14 +8,14 @@ public final class Connection implements Runnable {
 
 	int position = 0;
 	OutputStream outStream;
-	Class63 aClass63_552;
+	TaskManager manager;
 	InputStream inStream;
 	boolean closed = false;
-	Class61 aClass61_555;
+	Task task;
 	Socket socket;
-	int anInt557 = 0;
+	int streamOffset = 0;
 	byte[] buffer;
-	boolean aBool559 = false;
+	boolean exception = false;
 	static short[] aShortArray560;
 
 	public void shutdown() {
@@ -25,21 +25,21 @@ public final class Connection implements Runnable {
 				this.notifyAll();
 			}
 
-			if (this.aClass61_555 != null) {
-				while (this.aClass61_555.anInt563 == 0) {
+			if (this.task != null) {
+				while (this.task.status == 0) {
 					Class96_Sub1.sleep(1L);
 				}
 
-				if (this.aClass61_555.anInt563 == 1) {
+				if (this.task.status == 1) {
 					try {
-						((Thread) this.aClass61_555.anObject566).join();
+						((Thread) this.task.value).join();
 					} catch (InterruptedException var3) {
 						;
 					}
 				}
 			}
 
-			this.aClass61_555 = null;
+			this.task = null;
 		}
 	}
 
@@ -47,16 +47,16 @@ public final class Connection implements Runnable {
 		return !this.closed ? this.inStream.available() : 0;
 	}
 
-	public void read(byte[] var1, int var2, int var3) throws IOException {
+	public void read(byte[] bytes, int offset, int length) throws IOException {
 		if (!this.closed) {
-			while (var3 > 0) {
-				int var4 = this.inStream.read(var1, var2, var3);
-				if (var4 <= 0) {
+			while (length > 0) {
+				int read = this.inStream.read(bytes, offset, length);
+				if (read <= 0) {
 					throw new EOFException();
 				}
 
-				var2 += var4;
-				var3 -= var4;
+				offset += read;
+				length -= read;
 			}
 
 		}
@@ -64,8 +64,8 @@ public final class Connection implements Runnable {
 
 	public void write(byte[] bytes, int offset, int length) throws IOException {
 		if (!this.closed) {
-			if (this.aBool559) {
-				this.aBool559 = false;
+			if (this.exception) {
+				this.exception = false;
 				throw new IOException();
 			} else {
 				if (this.buffer == null) {
@@ -76,13 +76,13 @@ public final class Connection implements Runnable {
 					for (int index = 0; index < length; ++index) {
 						this.buffer[this.position * 823862379] = bytes[offset + index];
 						this.position = (this.position * 823862379 + 1) % 5000 * -1278318525;
-						if (this.position * 823862379 == (4900 + this.anInt557 * -742805451) % 5000) {
+						if (this.position * 823862379 == (4900 + this.streamOffset * -742805451) % 5000) {
 							throw new IOException();
 						}
 					}
 
-					if (this.aClass61_555 == null) {
-						this.aClass61_555 = this.aClass63_552.method313(this, 3);
+					if (this.task == null) {
+						this.task = this.manager.createRunnable(this, 3);
 					}
 
 					this.notifyAll();
@@ -94,13 +94,13 @@ public final class Connection implements Runnable {
 	public void run() {
 		while (true) {
 			try {
-				label79: {
-					int var3;
-					int var4;
+				mainLoop: {
+					int offset;
+					int length;
 					synchronized (this) {
-						if (this.anInt557 * -742805451 == this.position * 823862379) {
+						if (this.streamOffset * -742805451 == this.position * 823862379) {
 							if (this.closed) {
-								break label79;
+								break mainLoop;
 							}
 
 							try {
@@ -110,32 +110,32 @@ public final class Connection implements Runnable {
 							}
 						}
 
-						var3 = -742805451 * this.anInt557;
-						if (823862379 * this.position >= -742805451 * this.anInt557) {
-							var4 = this.position * 823862379 - -742805451 * this.anInt557;
+						offset = -742805451 * this.streamOffset;
+						if (823862379 * this.position >= -742805451 * this.streamOffset) {
+							length = this.position * 823862379 - -742805451 * this.streamOffset;
 						} else {
-							var4 = 5000 - this.anInt557 * -742805451;
+							length = 5000 - this.streamOffset * -742805451;
 						}
 					}
 
-					if (var4 <= 0) {
+					if (length <= 0) {
 						continue;
 					}
 
 					try {
-						this.outStream.write(this.buffer, var3, var4);
+						this.outStream.write(this.buffer, offset, length);
 					} catch (IOException var8) {
-						this.aBool559 = true;
+						this.exception = true;
 					}
 
-					this.anInt557 = (var4 + this.anInt557 * -742805451) % 5000 * 1649418781;
+					this.streamOffset = (length + this.streamOffset * -742805451) % 5000 * 1649418781;
 
 					try {
-						if (this.position * 823862379 == -742805451 * this.anInt557) {
+						if (this.position * 823862379 == -742805451 * this.streamOffset) {
 							this.outStream.flush();
 						}
 					} catch (IOException var7) {
-						this.aBool559 = true;
+						this.exception = true;
 					}
 					continue;
 				}
@@ -158,7 +158,7 @@ public final class Connection implements Runnable {
 
 				this.buffer = null;
 			} catch (Exception var11) {
-				Class79.method345((String) null, var11);
+				Class79.error((String) null, var11);
 			}
 
 			return;
@@ -169,13 +169,13 @@ public final class Connection implements Runnable {
 		return !this.closed ? this.inStream.read() : 0;
 	}
 
-	public static Class77[] method300(int var0) {
-		return new Class77[] { Class77.aClass77_651, Class77.aClass77_650, Class77.aClass77_648, Class77.aClass77_647,
-				Class77.aClass77_649, Class77.aClass77_652 };
+	public static GameType[] gameTypes() {
+		return new GameType[] { GameType.OLDSCAPE, GameType.GAME5, GameType.GAME3, GameType.STELLARDAWN,
+				GameType.GAME4, GameType.RUNESCAPE };
 	}
 
-	public Connection(Socket var1, Class63 var2) throws IOException {
-		this.aClass63_552 = var2;
+	public Connection(Socket var1, TaskManager var2) throws IOException {
+		this.manager = var2;
 		this.socket = var1;
 		this.socket.setSoTimeout(30000);
 		this.socket.setTcpNoDelay(true);
@@ -226,7 +226,7 @@ public final class Connection implements Runnable {
 						}
 
 						if (var6 != -1) {
-							Class71.method330(var6);
+							KeyFocusListener.method330(var6);
 						}
 
 						Client.menuOpen = false;
@@ -245,7 +245,6 @@ public final class Connection implements Runnable {
 								var6 = Class30.getWidgetConfig(var9);
 								boolean var10 = (var6 >> 28 & 1) != 0;
 								if (!var10) {
-									Class84 var10000 = (Class84) null;
 									if (!Class58.method291(Class30.getWidgetConfig(var9))) {
 										break label250;
 									}
@@ -294,7 +293,7 @@ public final class Connection implements Runnable {
 					}
 
 					if ((var2 == 1 || !ClanMate.aBool1221 && var2 == 4) && 1768430155 * Client.menuItemCount > 0) {
-						Class71.method330(Client.menuItemCount * 1768430155 - 1);
+						KeyFocusListener.method330(Client.menuItemCount * 1768430155 - 1);
 					}
 
 					if (var2 == 2 && 1768430155 * Client.menuItemCount > 0) {

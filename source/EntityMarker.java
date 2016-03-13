@@ -60,7 +60,7 @@ public final class EntityMarker {
 
 			if (var1 != null && var1.hasConfig() && !var1.hidden) {
 				var1.aBool1996 = false;
-				if ((Client.aBool2010 && var2 > 50 || var2 > 200) && var0 != Class1.aClass1_3
+				if ((Client.lowMemory && var2 > 50 || var2 > 200) && var0 != Class1.aClass1_3
 						&& var1.anInt1932 * 57983255 == var1.anInt1959 * 370127001) {
 					var1.aBool1996 = true;
 				}

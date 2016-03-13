@@ -25,9 +25,9 @@ public class ClassVerifier extends Node {
 			Client.destinationX = var0 * -1943900347;
 			Client.destinationY = 317027045 * var1;
 			Client.outBuffer.putHeader(107);
-			Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
-			Client.outBuffer.putLEShortA(var1 + VarClientHub.regionBaseY * 714823515);
-			Client.outBuffer.putShortA(1426698711 * Node_Sub10.regionBaseX + var0);
+			Client.outBuffer.putByte(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
+			Client.outBuffer.putLEShortA(var1 + VarClientHub.chunkLeftY * 714823515);
+			Client.outBuffer.putShortA(1426698711 * Node_Sub10.chunkLeftX + var0);
 			Client.outBuffer.putShort(var3);
 		}
 
@@ -96,10 +96,10 @@ public class ClassVerifier extends Node {
 			Client.destinationX = -1943900347 * var0;
 			Client.destinationY = 317027045 * var1;
 			Client.outBuffer.putHeader(51);
-			Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
-			Client.outBuffer.putLEShortA(var0 + Node_Sub10.regionBaseX * 1426698711);
+			Client.outBuffer.putByteC(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
+			Client.outBuffer.putLEShortA(var0 + Node_Sub10.chunkLeftX * 1426698711);
 			Client.outBuffer.putLEShortA(var3);
-			Client.outBuffer.putLEShortA(714823515 * VarClientHub.regionBaseY + var1);
+			Client.outBuffer.putLEShortA(714823515 * VarClientHub.chunkLeftY + var1);
 		}
 
 		int var13;
@@ -111,7 +111,7 @@ public class ClassVerifier extends Node {
 				if (var10 != null) {
 					if (var10.anObjectArray1180 != null) {
 						ScriptEvent var11 = new ScriptEvent();
-						var11.aWidget1430 = var10;
+						var11.widget = var10;
 						var11.anInt1429 = var3 * 1329208753;
 						var11.opbase = var5;
 						var11.args = var10.anObjectArray1180;
@@ -202,7 +202,8 @@ public class ClassVerifier extends Node {
 			var8 = AbstractProducer.method146(var1, var0);
 			if (var8 != null) {
 				IdentKitType.method672();
-				Class8.method96(var1, var0, Class63.method314(Class30.getWidgetConfig(var8)), 813479615 * var8.itemId);
+				Class8.method96(var1, var0, TaskManager.method314(Class30.getWidgetConfig(var8)),
+						813479615 * var8.itemId);
 				Client.itemSelectionStatus = 0;
 				Client.menuActionPrefix = Class26.method168(var8);
 				if (Client.menuActionPrefix == null) {
@@ -227,12 +228,12 @@ public class ClassVerifier extends Node {
 				Client.destinationY = var1 * 317027045;
 				Client.outBuffer.putHeader(208);
 				Client.outBuffer.putLEShort(543565821 * Class40.selectedItemIndex);
-				Client.outBuffer.putLEShort(Node_Sub10.regionBaseX * 1426698711 + var0);
+				Client.outBuffer.putLEShort(Node_Sub10.chunkLeftX * 1426698711 + var0);
 				Client.outBuffer.putLEShortA(var3);
-				Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
+				Client.outBuffer.putByte(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 				Client.outBuffer.putShort(1905121485 * Class32.anInt356);
 				Client.outBuffer.putLEInt(Class22.anInt286 * -47339353);
-				Client.outBuffer.putShort(VarClientHub.regionBaseY * 714823515 + var1);
+				Client.outBuffer.putShort(VarClientHub.chunkLeftY * 714823515 + var1);
 			}
 
 			if (var2 == 2) {
@@ -243,12 +244,12 @@ public class ClassVerifier extends Node {
 				Client.destinationX = var0 * -1943900347;
 				Client.destinationY = 317027045 * var1;
 				Client.outBuffer.putHeader(49);
-				Client.outBuffer.putLEShortA(var0 + 1426698711 * Node_Sub10.regionBaseX);
+				Client.outBuffer.putLEShortA(var0 + 1426698711 * Node_Sub10.chunkLeftX);
 				Client.outBuffer.putLEShortA(1149825709 * Client.anInt2128);
-				Client.outBuffer.putByteS(Class71.aBoolArray593[82] ? 1 : 0);
+				Client.outBuffer.putByteS(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 				Client.outBuffer.putInt(SequenceType.anInt1488 * -1195336111);
 				Client.outBuffer.putLEShortA(var3 >> 14 & 32767);
-				Client.outBuffer.putLEShortA(VarClientHub.regionBaseY * 714823515 + var1);
+				Client.outBuffer.putLEShortA(VarClientHub.chunkLeftY * 714823515 + var1);
 			}
 
 			if (var2 == 6) {
@@ -259,9 +260,9 @@ public class ClassVerifier extends Node {
 				Client.destinationX = var0 * -1943900347;
 				Client.destinationY = 317027045 * var1;
 				Client.outBuffer.putHeader(192);
-				Client.outBuffer.putShortA(1426698711 * Node_Sub10.regionBaseX + var0);
-				Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
-				Client.outBuffer.putShort(var1 + VarClientHub.regionBaseY * 714823515);
+				Client.outBuffer.putShortA(1426698711 * Node_Sub10.chunkLeftX + var0);
+				Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
+				Client.outBuffer.putShort(var1 + VarClientHub.chunkLeftY * 714823515);
 				Client.outBuffer.putShortA(var3 >> 14 & 32767);
 			}
 
@@ -287,7 +288,7 @@ public class ClassVerifier extends Node {
 					Client.destinationX = -1943900347 * var0;
 					Client.destinationY = 317027045 * var1;
 					Client.outBuffer.putHeader(133);
-					Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByteC(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putShort(var3);
 				}
 			}
@@ -328,7 +329,7 @@ public class ClassVerifier extends Node {
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(74);
 					Client.outBuffer.putLEShort(var3);
-					Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putIMEInt(SequenceType.anInt1488 * -1195336111);
 					Client.outBuffer.putLEShortA(1149825709 * Client.anInt2128);
 				}
@@ -355,7 +356,7 @@ public class ClassVerifier extends Node {
 					Client.destinationX = var0 * -1943900347;
 					Client.destinationY = 317027045 * var1;
 					Client.outBuffer.putHeader(83);
-					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByte(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putShort(var3);
 				}
 			}
@@ -381,10 +382,10 @@ public class ClassVerifier extends Node {
 				Client.destinationX = var0 * -1943900347;
 				Client.destinationY = 317027045 * var1;
 				Client.outBuffer.putHeader(197);
-				Client.outBuffer.putShortA(var1 + 714823515 * VarClientHub.regionBaseY);
-				Client.outBuffer.putLEShortA(1426698711 * Node_Sub10.regionBaseX + var0);
+				Client.outBuffer.putShortA(var1 + 714823515 * VarClientHub.chunkLeftY);
+				Client.outBuffer.putLEShortA(1426698711 * Node_Sub10.chunkLeftX + var0);
 				Client.outBuffer.putShort(var3 >> 14 & 32767);
-				Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+				Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 			}
 
 			if (var2 == 40) {
@@ -407,10 +408,10 @@ public class ClassVerifier extends Node {
 				Client.outBuffer.putHeader(118);
 				Client.outBuffer.putIMEInt(-47339353 * Class22.anInt286);
 				Client.outBuffer.putLEShortA(var3 >> 14 & 32767);
-				Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+				Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 				Client.outBuffer.putLEShortA(1905121485 * Class32.anInt356);
-				Client.outBuffer.putShortA(var1 + 714823515 * VarClientHub.regionBaseY);
-				Client.outBuffer.putLEShortA(Node_Sub10.regionBaseX * 1426698711 + var0);
+				Client.outBuffer.putShortA(var1 + 714823515 * VarClientHub.chunkLeftY);
+				Client.outBuffer.putLEShortA(Node_Sub10.chunkLeftX * 1426698711 + var0);
 				Client.outBuffer.putLEShortA(Class40.selectedItemIndex * 543565821);
 			}
 
@@ -431,7 +432,7 @@ public class ClassVerifier extends Node {
 					Client.destinationY = 317027045 * var1;
 					Client.outBuffer.putHeader(247);
 					Client.outBuffer.putShortA(var3);
-					Client.outBuffer.putByteS(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByteS(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 				}
 			}
 
@@ -465,7 +466,7 @@ public class ClassVerifier extends Node {
 					Client.destinationX = var0 * -1943900347;
 					Client.destinationY = 317027045 * var1;
 					Client.outBuffer.putHeader(185);
-					Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putShort(Class40.selectedItemIndex * 543565821);
 					Client.outBuffer.putMEInt(-47339353 * Class22.anInt286);
 					Client.outBuffer.putShortA(var3);
@@ -495,7 +496,7 @@ public class ClassVerifier extends Node {
 					Client.destinationX = -1943900347 * var0;
 					Client.destinationY = 317027045 * var1;
 					Client.outBuffer.putHeader(91);
-					Client.outBuffer.putByteS(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByteS(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putShort(var3);
 				}
 			}
@@ -520,7 +521,7 @@ public class ClassVerifier extends Node {
 					Client.destinationX = -1943900347 * var0;
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(243);
-					Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putShort(var3);
 				}
 			}
@@ -558,11 +559,11 @@ public class ClassVerifier extends Node {
 					Client.destinationX = var0 * -1943900347;
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(7);
-					Client.outBuffer.putLEShortA(var0 + 1426698711 * Node_Sub10.regionBaseX);
-					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putLEShortA(var0 + 1426698711 * Node_Sub10.chunkLeftX);
+					Client.outBuffer.putByte(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putIMEInt(-1195336111 * SequenceType.anInt1488);
 					Client.outBuffer.putShortA(1149825709 * Client.anInt2128);
-					Client.outBuffer.putShort(var1 + 714823515 * VarClientHub.regionBaseY);
+					Client.outBuffer.putShort(var1 + 714823515 * VarClientHub.chunkLeftY);
 					Client.outBuffer.putLEShortA(var3);
 				}
 
@@ -576,7 +577,7 @@ public class ClassVerifier extends Node {
 						Client.destinationX = -1943900347 * var0;
 						Client.destinationY = 317027045 * var1;
 						Client.outBuffer.putHeader(4);
-						Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteC(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putShortA(var3);
 					}
 				}
@@ -589,10 +590,10 @@ public class ClassVerifier extends Node {
 					Client.destinationX = -1943900347 * var0;
 					Client.destinationY = 317027045 * var1;
 					Client.outBuffer.putHeader(195);
-					Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
-					Client.outBuffer.putShort(var1 + VarClientHub.regionBaseY * 714823515);
+					Client.outBuffer.putByteC(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putShort(var1 + VarClientHub.chunkLeftY * 714823515);
 					Client.outBuffer.putShort(var3 >> 14 & 32767);
-					Client.outBuffer.putShortA(var0 + Node_Sub10.regionBaseX * 1426698711);
+					Client.outBuffer.putShortA(var0 + Node_Sub10.chunkLeftX * 1426698711);
 				}
 
 				if (var2 == 1003) {
@@ -625,7 +626,7 @@ public class ClassVerifier extends Node {
 						Client.destinationY = var1 * 317027045;
 						Client.outBuffer.putHeader(37);
 						Client.outBuffer.putShort(var3);
-						Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					}
 				}
 
@@ -646,9 +647,9 @@ public class ClassVerifier extends Node {
 					Client.destinationX = -1943900347 * var0;
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(109);
-					Client.outBuffer.putShortA(Node_Sub10.regionBaseX * 1426698711 + var0);
-					Client.outBuffer.putLEShort(var1 + 714823515 * VarClientHub.regionBaseY);
-					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putShortA(Node_Sub10.chunkLeftX * 1426698711 + var0);
+					Client.outBuffer.putLEShort(var1 + 714823515 * VarClientHub.chunkLeftY);
+					Client.outBuffer.putByte(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putShort(var3);
 				}
 
@@ -663,7 +664,7 @@ public class ClassVerifier extends Node {
 						Client.destinationY = 317027045 * var1;
 						Client.outBuffer.putHeader(100);
 						Client.outBuffer.putShort(var3);
-						Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					}
 				}
 
@@ -677,7 +678,7 @@ public class ClassVerifier extends Node {
 						Client.destinationX = var0 * -1943900347;
 						Client.destinationY = var1 * 317027045;
 						Client.outBuffer.putHeader(234);
-						Client.outBuffer.putByteS(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteS(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putShortA(var3);
 					}
 				}
@@ -691,9 +692,9 @@ public class ClassVerifier extends Node {
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(223);
 					Client.outBuffer.putLEShortA(var3);
-					Client.outBuffer.putShortA(var0 + Node_Sub10.regionBaseX * 1426698711);
-					Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
-					Client.outBuffer.putLEShortA(714823515 * VarClientHub.regionBaseY + var1);
+					Client.outBuffer.putShortA(var0 + Node_Sub10.chunkLeftX * 1426698711);
+					Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putLEShortA(714823515 * VarClientHub.chunkLeftY + var1);
 				}
 
 				if (var2 == 45) {
@@ -706,7 +707,7 @@ public class ClassVerifier extends Node {
 						Client.destinationX = var0 * -1943900347;
 						Client.destinationY = var1 * 317027045;
 						Client.outBuffer.putHeader(35);
-						Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putShort(var3);
 					}
 				}
@@ -734,7 +735,7 @@ public class ClassVerifier extends Node {
 						Client.destinationX = var0 * -1943900347;
 						Client.destinationY = 317027045 * var1;
 						Client.outBuffer.putHeader(8);
-						Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteC(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putShortA(Client.anInt2128 * 1149825709);
 						Client.outBuffer.putShort(var3);
 						Client.outBuffer.putInt(SequenceType.anInt1488 * -1195336111);
@@ -751,7 +752,7 @@ public class ClassVerifier extends Node {
 						Client.destinationX = var0 * -1943900347;
 						Client.destinationY = var1 * 317027045;
 						Client.outBuffer.putHeader(224);
-						Client.outBuffer.putByteS(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteS(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putShort(var3);
 					}
 				}
@@ -777,10 +778,10 @@ public class ClassVerifier extends Node {
 					Client.destinationX = -1943900347 * var0;
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(27);
-					Client.outBuffer.putShortA(var1 + VarClientHub.regionBaseY * 714823515);
-					Client.outBuffer.putShort(1426698711 * Node_Sub10.regionBaseX + var0);
+					Client.outBuffer.putShortA(var1 + VarClientHub.chunkLeftY * 714823515);
+					Client.outBuffer.putShort(1426698711 * Node_Sub10.chunkLeftX + var0);
 					Client.outBuffer.putLEShortA(var3);
-					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByte(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 				}
 
 				if (var2 == 14) {
@@ -796,7 +797,7 @@ public class ClassVerifier extends Node {
 						Client.outBuffer.putLEShortA(1905121485 * Class32.anInt356);
 						Client.outBuffer.putIMEInt(-47339353 * Class22.anInt286);
 						Client.outBuffer.putLEShortA(Class40.selectedItemIndex * 543565821);
-						Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByte(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putLEShort(var3);
 					}
 				}
@@ -811,7 +812,7 @@ public class ClassVerifier extends Node {
 						Client.destinationX = -1943900347 * var0;
 						Client.destinationY = var1 * 317027045;
 						Client.outBuffer.putHeader(218);
-						Client.outBuffer.putByteA(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteA(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putShortA(var3);
 					}
 				}
@@ -824,10 +825,10 @@ public class ClassVerifier extends Node {
 					Client.destinationX = var0 * -1943900347;
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(147);
-					Client.outBuffer.putLEShort(VarClientHub.regionBaseY * 714823515 + var1);
+					Client.outBuffer.putLEShort(VarClientHub.chunkLeftY * 714823515 + var1);
 					Client.outBuffer.putLEShort(var3 >> 14 & 32767);
-					Client.outBuffer.putByteC(Class71.aBoolArray593[82] ? 1 : 0);
-					Client.outBuffer.putShortA(var0 + 1426698711 * Node_Sub10.regionBaseX);
+					Client.outBuffer.putByteC(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putShortA(var0 + 1426698711 * Node_Sub10.chunkLeftX);
 				}
 
 				if (var2 == 46) {
@@ -840,7 +841,7 @@ public class ClassVerifier extends Node {
 						Client.destinationX = var0 * -1943900347;
 						Client.destinationY = var1 * 317027045;
 						Client.outBuffer.putHeader(10);
-						Client.outBuffer.putByteS(Class71.aBoolArray593[82] ? 1 : 0);
+						Client.outBuffer.putByteS(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 						Client.outBuffer.putShort(var3);
 					}
 				}
@@ -857,10 +858,10 @@ public class ClassVerifier extends Node {
 					Client.destinationX = var0 * -1943900347;
 					Client.destinationY = var1 * 317027045;
 					Client.outBuffer.putHeader(202);
-					Client.outBuffer.putByte(Class71.aBoolArray593[82] ? 1 : 0);
+					Client.outBuffer.putByte(KeyFocusListener.aBoolArray593[82] ? 1 : 0);
 					Client.outBuffer.putLEShortA(var3 >> 14 & 32767);
-					Client.outBuffer.putShortA(Node_Sub10.regionBaseX * 1426698711 + var0);
-					Client.outBuffer.putShort(VarClientHub.regionBaseY * 714823515 + var1);
+					Client.outBuffer.putShortA(Node_Sub10.chunkLeftX * 1426698711 + var0);
+					Client.outBuffer.putShort(VarClientHub.chunkLeftY * 714823515 + var1);
 				}
 
 				if (-1110581093 * Client.itemSelectionStatus != 0) {

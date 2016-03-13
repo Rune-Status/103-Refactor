@@ -156,8 +156,8 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 			var7 = var1.anInt1390 * 2008166831;
 			var6 = var2.aByteArray772[1 + var1.anInt1389 * 831660161];
 			if (var1.anInt1389 * 831660161 < var2.aByteArray772.length - 2) {
-				var4 = (var2.aByteArray772[var1.anInt1389 * 831660161] & 255) << 8;
-				var5 = (var2.aByteArray772[2 + var1.anInt1389 * 831660161] & 255) << 8;
+				var4 = (var2.aByteArray772[var1.anInt1389 * 831660161] & 0xFF) << 8;
+				var5 = (var2.aByteArray772[2 + var1.anInt1389 * 831660161] & 0xFF) << 8;
 				var6 += (var2.aByteArray772[3 + 831660161 * var1.anInt1389] - var6) * (var7 - var4) / (var5 - var4);
 			}
 
@@ -168,8 +168,8 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 			var7 = -524941375 * var1.anInt1376;
 			var6 = var2.aByteArray778[var1.anInt1377 * 1969966021 + 1];
 			if (1969966021 * var1.anInt1377 < var2.aByteArray778.length - 2) {
-				var4 = (var2.aByteArray778[var1.anInt1377 * 1969966021] & 255) << 8;
-				var5 = (var2.aByteArray778[1969966021 * var1.anInt1377 + 2] & 255) << 8;
+				var4 = (var2.aByteArray778[var1.anInt1377 * 1969966021] & 0xFF) << 8;
+				var5 = (var2.aByteArray778[1969966021 * var1.anInt1377 + 2] & 0xFF) << 8;
 				var6 += (var7 - var4) * (var2.aByteArray778[var1.anInt1377 * 1969966021 + 3] - var6) / (var5 - var4);
 			}
 
@@ -185,8 +185,8 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 			this.aNode_Sub14ArrayArray1665[var1][var2] = null;
 			if ((this.anIntArray1667[var1] & 2) != 0) {
 				for (Node_Sub14 var5 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652
-						.method471(); var5 != null; var5 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652
-								.method473()) {
+						.getFront(); var5 != null; var5 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652
+								.getNext()) {
 					if (1956904859 * var5.anInt1379 == 1956904859 * var4.anInt1379 && -524941375 * var5.anInt1376 < 0
 							&& var5 != var4) {
 						var4.anInt1376 = 0;
@@ -209,7 +209,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 
 	void method839(int var1) {
 		for (Node_Sub14 var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652
-				.method471(); var2 != null; var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.method473()) {
+				.getFront(); var2 != null; var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.getNext()) {
 			if (var1 < 0 || var2.anInt1379 * 1956904859 == var1) {
 				if (var2.aNode_Sub4_Sub2_1394 != null) {
 					var2.aNode_Sub4_Sub2_1394.method748(-954458055 * Class8.anInt157 / 100);
@@ -251,7 +251,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 	void method841(int var1) {
 		if ((this.anIntArray1667[var1] & 2) != 0) {
 			for (Node_Sub14 var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652
-					.method471(); var2 != null; var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.method473()) {
+					.getFront(); var2 != null; var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.getNext()) {
 				if (1956904859 * var2.anInt1379 == var1
 						&& this.aNode_Sub14ArrayArray1665[var1][1484938015 * var2.anInt1391] == null
 						&& -524941375 * var2.anInt1376 < 0) {
@@ -265,7 +265,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 	void method842(int var1) {
 		if ((this.anIntArray1667[var1] & 4) != 0) {
 			for (Node_Sub14 var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652
-					.method471(); var2 != null; var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.method473()) {
+					.getFront(); var2 != null; var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.getNext()) {
 				if (var2.anInt1379 * 1956904859 == var1) {
 					var2.anInt1388 = 0;
 				}
@@ -449,7 +449,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 			var5 = (var1 >> 9 & 16256) + (var1 >> 8 & 127);
 			this.method838(var3, var5);
 		} else {
-			var2 = var1 & 255;
+			var2 = var1 & 0xFF;
 			if (var2 == 255) {
 				this.method852();
 			}
@@ -651,7 +651,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 				}
 
 				while (831660161 * var1.anInt1389 < var7.aByteArray772.length - 2 && 2008166831
-						* var1.anInt1390 > (var7.aByteArray772[831660161 * var1.anInt1389 + 2] & 255) << 8) {
+						* var1.anInt1390 > (var7.aByteArray772[831660161 * var1.anInt1389 + 2] & 0xFF) << 8) {
 					var1.anInt1389 += -1193525502;
 				}
 
@@ -674,7 +674,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 				}
 
 				while (1969966021 * var1.anInt1377 < var7.aByteArray778.length - 2 && var1.anInt1376
-						* -524941375 > (var7.aByteArray778[2 + var1.anInt1377 * 1969966021] & 255) << 8) {
+						* -524941375 > (var7.aByteArray778[2 + var1.anInt1377 * 1969966021] & 0xFF) << 8) {
 					var1.anInt1377 += 617608730;
 				}
 
@@ -736,7 +736,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 
 	void method851(int var1) {
 		for (Node_Sub14 var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652
-				.method471(); var2 != null; var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.method473()) {
+				.getFront(); var2 != null; var2 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.getNext()) {
 			if ((var1 < 0 || var1 == var2.anInt1379 * 1956904859) && -524941375 * var2.anInt1376 < 0) {
 				this.aNode_Sub14ArrayArray1665[1956904859 * var2.anInt1379][var2.anInt1391 * 1484938015] = null;
 				var2.anInt1376 = 0;
@@ -792,7 +792,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 				var7.anInt1391 = var2 * 1507418335;
 				var7.anInt1382 = (var8.aByteArray1372[var2] * var8.anInt1367 * -822371327 * var3 * var3 + 1024 >> 11)
 						* -1743198079;
-				var7.anInt1383 = (var8.aByteArray1369[var2] & 255) * -626501839;
+				var7.anInt1383 = (var8.aByteArray1369[var2] & 0xFF) * -626501839;
 				var7.anInt1384 = -1554678345 * ((var2 << 8) - (var8.aShortArray1368[var2] & 32767));
 				var7.anInt1396 = 0;
 				var7.anInt1390 = 0;

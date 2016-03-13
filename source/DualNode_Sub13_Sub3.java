@@ -11,7 +11,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 	public int anInt1824 = 0;
 	int anInt1825;
 	int[] anIntArray1826;
-	public static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array1827;
+	public static Sprite[] aDualNode_Sub13_Sub2Array1827;
 	static Random aRandom1828 = new Random();
 	static int anInt1829 = -1;
 	static int anInt1830 = -1;
@@ -43,15 +43,15 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 		int var3;
 		if (var1.length == 257) {
 			for (var3 = 0; var3 < this.anIntArray1826.length; ++var3) {
-				this.anIntArray1826[var3] = var1[var3] & 255;
+				this.anIntArray1826[var3] = var1[var3] & 0xFF;
 			}
 
-			this.anInt1824 = var1[256] & 255;
+			this.anInt1824 = var1[256] & 0xFF;
 		} else {
 			var3 = 0;
 
 			for (int var5 = 0; var5 < 256; ++var5) {
-				this.anIntArray1826[var5] = var1[var3++] & 255;
+				this.anIntArray1826[var5] = var1[var3++] & 0xFF;
 			}
 
 			int[] var12 = new int[256];
@@ -59,11 +59,11 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 			int var2;
 			for (var2 = 0; var2 < 256; ++var2) {
-				var12[var2] = var1[var3++] & 255;
+				var12[var2] = var1[var3++] & 0xFF;
 			}
 
 			for (var2 = 0; var2 < 256; ++var2) {
-				var9[var2] = var1[var3++] & 255;
+				var9[var2] = var1[var3++] & 0xFF;
 			}
 
 			byte[][] var10 = new byte[256][];
@@ -152,8 +152,8 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 								if (var7.startsWith("img=")) {
 									try {
 										String var8 = var7.substring(4);
-										int var9 = Node_Sub5.method535(var8, 10, true);
-										var4 += aDualNode_Sub13_Sub2Array1827[var9].anInt1804;
+										int var9 = AnimationSkin.method535(var8, 10, true);
+										var4 += aDualNode_Sub13_Sub2Array1827[var9].width;
 										var3 = -1;
 									} catch (Exception var11) {
 										;
@@ -171,7 +171,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 					}
 
 					if (var2 == -1) {
-						var4 += this.anIntArray1826[(char) (IgnoredPlayer.method414(var6) & 255)];
+						var4 += this.anIntArray1826[(char) (IgnoredPlayer.method414(var6) & 0xFF)];
 						if (this.aByteArray1821 != null && var3 != -1) {
 							var4 += this.aByteArray1821[(var3 << 8) + var6];
 						}
@@ -235,8 +235,8 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 						} else if (var16.startsWith("img=")) {
 							try {
 								String var17 = var16.substring(4);
-								int var18 = Node_Sub5.method535(var17, 10, true);
-								var4 += aDualNode_Sub13_Sub2Array1827[var18].anInt1804;
+								int var18 = AnimationSkin.method535(var17, 10, true);
+								var4 += aDualNode_Sub13_Sub2Array1827[var18].width;
 								var11 = 0;
 							} catch (Exception var20) {
 								;
@@ -382,7 +382,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 		for (int var6 = 0; var6 < var1.length(); ++var6) {
 			if (var1.charAt(var6) != 0) {
-				char var7 = (char) (IgnoredPlayer.method414(var1.charAt(var6)) & 255);
+				char var7 = (char) (IgnoredPlayer.method414(var1.charAt(var6)) & 0xFF);
 				if (var7 == 60) {
 					var4 = var6;
 				} else {
@@ -397,10 +397,10 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 								if (var8.startsWith("img=")) {
 									try {
 										String var15 = var8.substring(4);
-										var10 = Node_Sub5.method535(var15, 10, true);
-										DualNode_Sub13_Sub2 var12 = aDualNode_Sub13_Sub2Array1827[var10];
-										var12.method929(var2, var3 + this.anInt1824 - var12.anInt1805);
-										var2 += var12.anInt1804;
+										var10 = AnimationSkin.method535(var15, 10, true);
+										Sprite var12 = aDualNode_Sub13_Sub2Array1827[var10];
+										var12.method929(var2, var3 + this.anInt1824 - var12.height);
+										var2 += var12.width;
 										var5 = -1;
 									} catch (Exception var13) {
 										;
@@ -476,7 +476,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 		for (int var9 = 0; var9 < var1.length(); ++var9) {
 			if (var1.charAt(var9) != 0) {
-				char var10 = (char) (IgnoredPlayer.method414(var1.charAt(var9)) & 255);
+				char var10 = (char) (IgnoredPlayer.method414(var1.charAt(var9)) & 0xFF);
 				if (var10 == 60) {
 					var6 = var9;
 				} else {
@@ -506,10 +506,10 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 										++var8;
 										String var20 = var11.substring(4);
-										var15 = Node_Sub5.method535(var20, 10, true);
-										DualNode_Sub13_Sub2 var17 = aDualNode_Sub13_Sub2Array1827[var15];
-										var17.method929(var2 + var12, var3 + this.anInt1824 - var17.anInt1805 + var13);
-										var2 += var17.anInt1804;
+										var15 = AnimationSkin.method535(var20, 10, true);
+										Sprite var17 = aDualNode_Sub13_Sub2Array1827[var15];
+										var17.method929(var2 + var12, var3 + this.anInt1824 - var17.height + var13);
+										var2 += var17.width;
 										var7 = -1;
 									} catch (Exception var18) {
 										;
@@ -733,7 +733,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 			var1 = 32;
 		}
 
-		return this.anIntArray1826[IgnoredPlayer.method414(var1) & 255];
+		return this.anIntArray1826[IgnoredPlayer.method414(var1) & 0xFF];
 	}
 
 	public void method982(String var1, int var2, int var3, int var4, int var5) {
@@ -782,13 +782,13 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 			int var3;
 			if (var1.startsWith("col=")) {
 				var2 = var1.substring(4);
-				var3 = Node_Sub5.method535(var2, 16, true);
+				var3 = AnimationSkin.method535(var2, 16, true);
 				anInt1834 = var3;
 			} else if (var1.equals("/col")) {
 				anInt1834 = anInt1833;
 			} else if (var1.startsWith("str=")) {
 				var2 = var1.substring(4);
-				var3 = Node_Sub5.method535(var2, 16, true);
+				var3 = AnimationSkin.method535(var2, 16, true);
 				anInt1829 = var3;
 			} else if (var1.equals("str")) {
 				anInt1829 = 8388608;
@@ -796,7 +796,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 				anInt1829 = -1;
 			} else if (var1.startsWith("u=")) {
 				var2 = var1.substring(2);
-				var3 = Node_Sub5.method535(var2, 16, true);
+				var3 = AnimationSkin.method535(var2, 16, true);
 				anInt1818 = var3;
 			} else if (var1.equals("u")) {
 				anInt1818 = 0;
@@ -804,7 +804,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 				anInt1818 = -1;
 			} else if (var1.startsWith("shad=")) {
 				var2 = var1.substring(5);
-				var3 = Node_Sub5.method535(var2, 16, true);
+				var3 = AnimationSkin.method535(var2, 16, true);
 				anInt1830 = var3;
 			} else if (var1.equals("shad")) {
 				anInt1830 = 0;

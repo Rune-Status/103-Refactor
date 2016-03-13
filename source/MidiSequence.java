@@ -49,9 +49,9 @@ public class MidiSequence {
 
 	MidiSequence() {
 		this.anIntArray234[0] = 0;
-		this.anIntArray234[1] = '\uffff';
+		this.anIntArray234[1] = 65535;
 		this.anIntArray243[0] = 0;
-		this.anIntArray243[1] = '\uffff';
+		this.anIntArray243[1] = 65535;
 	}
 
 	final void method126(ByteBuf var1) {

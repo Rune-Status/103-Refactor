@@ -14,8 +14,7 @@ public class Class86 {
 						method365(var3.children, var1);
 					}
 
-					InterfaceNode var4 = (InterfaceNode) Client.interfaceNodes
-							.get((long) (-1536575275 * var3.hash));
+					InterfaceNode var4 = (InterfaceNode) Client.interfaceNodes.get((long) (-1536575275 * var3.hash));
 					if (var4 != null) {
 						Class65.method319(226793949 * var4.type, var1);
 					}
@@ -24,7 +23,7 @@ public class Class86 {
 				ScriptEvent var5;
 				if (var1 == 0 && var3.anObjectArray1186 != null) {
 					var5 = new ScriptEvent();
-					var5.aWidget1430 = var3;
+					var5.widget = var3;
 					var5.args = var3.anObjectArray1186;
 					Class96_Sub1.method504(var5);
 				}
@@ -39,7 +38,7 @@ public class Class86 {
 					}
 
 					var5 = new ScriptEvent();
-					var5.aWidget1430 = var3;
+					var5.widget = var3;
 					var5.args = var3.anObjectArray1187;
 					Class96_Sub1.method504(var5);
 				}
@@ -85,22 +84,19 @@ public class Class86 {
 		int var40;
 		if (Class6.loadedWorlds) {
 			if (Class93.aSpriteArray733 == null) {
-				Class93.aSpriteArray733 = DynamicObject.method1023(Node_Sub5.spritesIndex, "sl_back", "");
+				Class93.aSpriteArray733 = DynamicObject.method1023(AnimationSkin.spritesIndex, "sl_back", "");
 			}
 
 			if (Class2.aDualNode_Sub13_Sub2Array78 == null) {
-				Class2.aDualNode_Sub13_Sub2Array78 = ObjectType.method868(Node_Sub5.spritesIndex,
-						"sl_flags", "");
+				Class2.aDualNode_Sub13_Sub2Array78 = ObjectType.method868(AnimationSkin.spritesIndex, "sl_flags", "");
 			}
 
 			if (Class32.aDualNode_Sub13_Sub2Array357 == null) {
-				Class32.aDualNode_Sub13_Sub2Array357 = ObjectType.method868(Node_Sub5.spritesIndex,
-						"sl_arrows", "");
+				Class32.aDualNode_Sub13_Sub2Array357 = ObjectType.method868(AnimationSkin.spritesIndex, "sl_arrows", "");
 			}
 
 			if (Node_Sub8.aDualNode_Sub13_Sub2Array1314 == null) {
-				Node_Sub8.aDualNode_Sub13_Sub2Array1314 = ObjectType.method868(Node_Sub5.spritesIndex,
-						"sl_stars", "");
+				Node_Sub8.aDualNode_Sub13_Sub2Array1314 = ObjectType.method868(AnimationSkin.spritesIndex, "sl_stars", "");
 			}
 
 			RSGraphics.method793(1933284923 * Class6.anInt132, 23, 765, 480, 0);
@@ -315,8 +311,8 @@ public class Class86 {
 			if (var3) {
 				Class56.aSprite542.method958(1933284923 * Class6.anInt132, 0);
 				Class6.aSprite137.method958(Class6.anInt132 * 1933284923 + 382, 0);
-				IgnoredPlayer.aDualNode_Sub13_Sub2_754.method929(
-						1933284923 * Class6.anInt132 + 382 - IgnoredPlayer.aDualNode_Sub13_Sub2_754.anInt1800 / 2, 18);
+				IgnoredPlayer.logoSprite.method929(
+						1933284923 * Class6.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 			}
 
 			if (Client.anInt2113 * 846055547 == 0 || 846055547 * Client.anInt2113 == 5) {
@@ -325,8 +321,8 @@ public class Class86 {
 				var5 = 253 - var4;
 				RSGraphics.drawRectangle(Class6.anInt126 * 1744540627 + 180 - 152, var5, 304, 34, 9179409);
 				RSGraphics.drawRectangle(Class6.anInt126 * 1744540627 + 180 - 151, var5 + 1, 302, 32, 0);
-				RSGraphics.method793(180 + 1744540627 * Class6.anInt126 - 150, var5 + 2,
-						-140328599 * Class6.anInt122, 30, 9179409);
+				RSGraphics.method793(180 + 1744540627 * Class6.anInt126 - 150, var5 + 2, -140328599 * Class6.anInt122,
+						30, 9179409);
 				RSGraphics.method793(-140328599 * Class6.anInt122 + (1744540627 * Class6.anInt126 + 180 - 150),
 						var5 + 2, 300 - -140328599 * Class6.anInt122, 30, 0);
 				var0.method982(Class6.bootMessage, 180 + 1744540627 * Class6.anInt126, 276 - var4, 16777215, -1);
@@ -340,9 +336,9 @@ public class Class86 {
 			short var27;
 			short var29;
 			if (846055547 * Client.anInt2113 == 20) {
-				Class6.aDualNode_Sub13_Sub2_147.method929(
-						Class6.anInt126 * 1744540627 + 180 - Class6.aDualNode_Sub13_Sub2_147.anInt1800 / 2,
-						271 - Class6.aDualNode_Sub13_Sub2_147.anInt1801 / 2);
+				Class6.titleboxSprite.method929(
+						Class6.anInt126 * 1744540627 + 180 - Class6.titleboxSprite.subWidth / 2,
+						271 - Class6.titleboxSprite.subHeight / 2);
 				var27 = 211;
 				var0.method982(Class6.aString133, Class6.anInt126 * 1744540627 + 180, var27, 16776960, 0);
 				var28 = var27 + 15;
@@ -356,7 +352,7 @@ public class Class86 {
 							0);
 					var29 = 200;
 
-					for (var6 = Class6.aString136; var0.method967(var6) > var29; var6 = var6.substring(0,
+					for (var6 = Class6.username; var0.method967(var6) > var29; var6 = var6.substring(0,
 							var6.length() - 1)) {
 						;
 					}
@@ -365,7 +361,7 @@ public class Class86 {
 							16777215, 0);
 					var28 += 15;
 					var8 = GameStrings.aString1052;
-					var10 = Class6.aString123;
+					var10 = Class6.password;
 					var12 = var10.length();
 					var13 = new char[var12];
 
@@ -380,7 +376,7 @@ public class Class86 {
 			}
 
 			if (Client.anInt2113 * 846055547 == 10 || 846055547 * Client.anInt2113 == 11) {
-				Class6.aDualNode_Sub13_Sub2_147.method929(Class6.anInt126 * 1744540627, 171);
+				Class6.titleboxSprite.method929(Class6.anInt126 * 1744540627, 171);
 				short var30;
 				if (-1168104433 * Class6.anInt116 == 0) {
 					var27 = 251;
@@ -388,10 +384,10 @@ public class Class86 {
 					var28 = var27 + 30;
 					var5 = Class6.anInt126 * 1744540627 + 180 - 80;
 					var30 = 291;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var5 - 73, var30 - 20);
+					Class6.titlebuttonSprite.method929(var5 - 73, var30 - 20);
 					var0.method990(GameStrings.aString1076, var5 - 73, var30 - 20, 144, 40, 16777215, 0, 1, 1, 0);
 					var5 = 80 + Class6.anInt126 * 1744540627 + 180;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var5 - 73, var30 - 20);
+					Class6.titlebuttonSprite.method929(var5 - 73, var30 - 20);
 					var0.method990(GameStrings.aString1077, var5 - 73, var30 - 20, 144, 40, 16777215, 0, 1, 1, 0);
 				} else if (Class6.anInt116 * -1168104433 == 1) {
 					var0.method982(GameStrings.aString946, 180 + 1744540627 * Class6.anInt126, 211, 16776960, 0);
@@ -404,10 +400,10 @@ public class Class86 {
 					var28 += 15;
 					var5 = 180 + Class6.anInt126 * 1744540627 - 80;
 					var30 = 321;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var5 - 73, var30 - 20);
+					Class6.titlebuttonSprite.method929(var5 - 73, var30 - 20);
 					var0.method982(GameStrings.aString848, var5, var30 + 5, 16777215, 0);
 					var5 = 80 + 1744540627 * Class6.anInt126 + 180;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var5 - 73, var30 - 20);
+					Class6.titlebuttonSprite.method929(var5 - 73, var30 - 20);
 					var0.method982(GameStrings.aString1079, var5, 5 + var30, 16777215, 0);
 				} else if (Class6.anInt116 * -1168104433 == 2) {
 					var27 = 211;
@@ -422,7 +418,7 @@ public class Class86 {
 							0);
 					var29 = 200;
 
-					for (var6 = Class6.aString136; var0.method967(var6) > var29; var6 = var6.substring(1)) {
+					for (var6 = Class6.username; var0.method967(var6) > var29; var6 = var6.substring(1)) {
 						;
 					}
 
@@ -433,7 +429,7 @@ public class Class86 {
 							Class6.anInt126 * 1744540627 + 180 - 70, var28, 16777215, 0);
 					var28 += 15;
 					var8 = GameStrings.aString1052;
-					var10 = Class6.aString123;
+					var10 = Class6.password;
 					var12 = var10.length();
 					var13 = new char[var12];
 
@@ -450,10 +446,10 @@ public class Class86 {
 					var28 += 15;
 					var40 = 1744540627 * Class6.anInt126 + 180 - 80;
 					short var42 = 321;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var40 - 73, var42 - 20);
+					Class6.titlebuttonSprite.method929(var40 - 73, var42 - 20);
 					var0.method982(GameStrings.aString1067, var40, 5 + var42, 16777215, 0);
 					var40 = 80 + Class6.anInt126 * 1744540627 + 180;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var40 - 73, var42 - 20);
+					Class6.titlebuttonSprite.method929(var40 - 73, var42 - 20);
 					var0.method982(GameStrings.aString1079, var40, 5 + var42, 16777215, 0);
 					var27 = 357;
 					var1.method982(GameStrings.aString1080, Class6.anInt126 * 1744540627 + 180, var27, 16776960, 0);
@@ -467,7 +463,7 @@ public class Class86 {
 					var0.method982(Class6.aString135, 180 + Class6.anInt126 * 1744540627, var28, 16777215, 0);
 					var28 += 15;
 					var6 = GameStrings.aString1074;
-					var8 = Class37.aString404;
+					var8 = Class37.pinText;
 					var39 = var8.length();
 					char[] var41 = new char[var39];
 
@@ -487,21 +483,21 @@ public class Class86 {
 					var0.method980(GameStrings.aString927, Class6.anInt126 * 1744540627 + 180 - 9, var28, 16776960, 0);
 					var36 = 180 + Class6.anInt126 * 1744540627 - 9 + var0.method967(GameStrings.aString927) + 15;
 					var39 = var28 - var0.anInt1824;
-					DualNode_Sub13_Sub2 var43;
-					if (Class6.aBool139) {
-						var43 = Class6.aDualNode_Sub13_Sub2_121;
+					Sprite var43;
+					if (Class6.trust) {
+						var43 = Class6.radioButtons2Sprite;
 					} else {
-						var43 = Class6.aDualNode_Sub13_Sub2_120;
+						var43 = Class6.radioButtons0Sprite;
 					}
 
 					var43.method929(var36, var39);
 					var28 += 15;
 					var12 = 180 + 1744540627 * Class6.anInt126 - 80;
 					short var44 = 321;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var12 - 73, var44 - 20);
+					Class6.titlebuttonSprite.method929(var12 - 73, var44 - 20);
 					var0.method982(GameStrings.aString848, var12, var44 + 5, 16777215, 0);
 					var12 = 80 + 1744540627 * Class6.anInt126 + 180;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var12 - 73, var44 - 20);
+					Class6.titlebuttonSprite.method929(var12 - 73, var44 - 20);
 					var0.method982(GameStrings.aString1079, var12, 5 + var44, 16777215, 0);
 					var1.method982(GameStrings.aString1068, 180 + 1744540627 * Class6.anInt126, var44 + 36, 255, 0);
 				} else if (-1168104433 * Class6.anInt116 == 5) {
@@ -518,7 +514,7 @@ public class Class86 {
 							0);
 					var29 = 174;
 
-					for (var6 = Class6.aString136; var0.method967(var6) > var29; var6 = var6.substring(1)) {
+					for (var6 = Class6.username; var0.method967(var6) > var29; var6 = var6.substring(1)) {
 						;
 					}
 
@@ -529,10 +525,10 @@ public class Class86 {
 					var28 += 15;
 					var7 = 180 + Class6.anInt126 * 1744540627 - 80;
 					short var32 = 321;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var7 - 73, var32 - 20);
+					Class6.titlebuttonSprite.method929(var7 - 73, var32 - 20);
 					var0.method982(GameStrings.aString1083, var7, 5 + var32, 16777215, 0);
 					var7 = 80 + 180 + Class6.anInt126 * 1744540627;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var7 - 73, var32 - 20);
+					Class6.titlebuttonSprite.method929(var7 - 73, var32 - 20);
 					var0.method982(GameStrings.aString995, var7, var32 + 5, 16777215, 0);
 				} else if (Class6.anInt116 * -1168104433 == 6) {
 					var27 = 211;
@@ -544,7 +540,7 @@ public class Class86 {
 					var28 += 15;
 					var5 = Class6.anInt126 * 1744540627 + 180;
 					var30 = 321;
-					Class6.aDualNode_Sub13_Sub2_117.method929(var5 - 73, var30 - 20);
+					Class6.titlebuttonSprite.method929(var5 - 73, var30 - 20);
 					var0.method982(GameStrings.aString995, var5, var30 + 5, 16777215, 0);
 				}
 			}
@@ -555,7 +551,7 @@ public class Class86 {
 			}
 
 			Class13.method117();
-			FriendedPlayer.aDualNode_Sub13_Sub2Array741[Node_Sub5.aClass24_1265.aBool303 ? 1 : 0]
+			FriendedPlayer.titlemuteSprite[AnimationSkin.settings.muted ? 1 : 0]
 					.method929(Class6.anInt132 * 1933284923 + 765 - 40, 463);
 			if (846055547 * Client.anInt2113 > 5 && -1025678859 * Client.anInt2011 == 0) {
 				if (GroundItem.aDualNode_Sub13_Sub2_1841 != null) {
@@ -566,14 +562,14 @@ public class Class86 {
 					GroundItem.aDualNode_Sub13_Sub2_1841.method929(var28, var29);
 					var0.method982(GameStrings.aString1008 + " " + -1631311031 * Client.myWorld, var33 / 2 + var28,
 							var29 + var31 / 2 - 2, 16777215, 0);
-					if (Class76.aClass26_644 != null) {
+					if (BuildType.aClass26_644 != null) {
 						var1.method982(GameStrings.aString1115, var33 / 2 + var28, 12 + var31 / 2 + var29, 16777215, 0);
 					} else {
 						var1.method982(GameStrings.aString929, var28 + var33 / 2, var29 + var31 / 2 + 12, 16777215, 0);
 					}
 				} else {
-					GroundItem.aDualNode_Sub13_Sub2_1841 = SequenceType.method680(Node_Sub5.spritesIndex,
-							"sl_button", "");
+					GroundItem.aDualNode_Sub13_Sub2_1841 = SequenceType.getSprite(AnimationSkin.spritesIndex, "sl_button",
+							"");
 				}
 			}
 

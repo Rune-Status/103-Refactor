@@ -13,7 +13,7 @@ public class Class8 {
 	int[] anIntArray160;
 	Node_Sub4 aNode_Sub4_161;
 	long aLong162 = 0L;
-	long aLong163 = Node_Sub5.currentTimeMs() * 7521534040423978303L;
+	long aLong163 = AnimationSkin.currentTimeMs() * 7521534040423978303L;
 	int anInt164;
 	int anInt165;
 	public static boolean aBool166;
@@ -63,7 +63,7 @@ public class Class8 {
 
 	public final synchronized void method82() {
 		if (this.anIntArray160 != null) {
-			long var1 = Node_Sub5.currentTimeMs();
+			long var1 = AnimationSkin.currentTimeMs();
 
 			try {
 				if (this.aLong167 * 4278827202856281897L != 0L) {
@@ -155,7 +155,7 @@ public class Class8 {
 			this.method80();
 		} catch (Exception var2) {
 			this.method93();
-			this.aLong167 = (Node_Sub5.currentTimeMs() + 2000L) * 6964159870914700569L;
+			this.aLong167 = (AnimationSkin.currentTimeMs() + 2000L) * 6964159870914700569L;
 		}
 
 	}
@@ -339,7 +339,7 @@ public class Class8 {
 			this.aNode_Sub4_161.method530(var1, 0, var2);
 		}
 
-		this.aLong163 = Node_Sub5.currentTimeMs() * 7521534040423978303L;
+		this.aLong163 = AnimationSkin.currentTimeMs() * 7521534040423978303L;
 	}
 
 	public static OverlayType getOverlayType(int id) {
@@ -363,7 +363,7 @@ public class Class8 {
 		Widget var4 = AbstractProducer.method146(var0, var1);
 		if (var4 != null && var4.anObjectArray1130 != null) {
 			ScriptEvent var5 = new ScriptEvent();
-			var5.aWidget1430 = var4;
+			var5.widget = var4;
 			var5.args = var4.anObjectArray1130;
 			Class96_Sub1.method504(var5);
 		}

@@ -10,15 +10,15 @@ public class Class35 {
 	static String aString392 = ")";
 	static String aString393 = "</col>";
 	static Connection aClass60_394;
-	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array395;
+	static Sprite[] aDualNode_Sub13_Sub2Array395;
 	static String aString396 = "true";
 
-	public static boolean method202(AbstractIndex var0, int var1, int var2) {
+	public static boolean decodeSprite(AbstractIndex var0, int var1, int var2) {
 		byte[] var3 = var0.getFile(var1, var2);
 		if (var3 == null) {
 			return false;
 		} else {
-			Player.method1042(var3);
+			Player.decodeSprite(var3);
 			return true;
 		}
 	}

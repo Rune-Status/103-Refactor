@@ -3,31 +3,29 @@ public class Class93 {
 
 	public static ByteBuf aBuffer731;
 	static int[] anIntArray732;
-	static Sprite[] aSpriteArray733;
+	static Picture[] aSpriteArray733;
 
 	Class93() throws Throwable {
 		throw new Error();
 	}
 
-	static final void method404(byte[] var0, int var1, int var2, int var3, int var4, CollisionMap[] var5) {
-		int var7;
-		int var8;
-		for (int var6 = 0; var6 < 4; ++var6) {
-			for (var7 = 0; var7 < 64; ++var7) {
-				for (var8 = 0; var8 < 64; ++var8) {
-					if (var1 + var7 > 0 && var7 + var1 < 103 && var2 + var8 > 0 && var8 + var2 < 103) {
-						var5[var6].flags[var7 + var1][var8 + var2] &= -16777217;
+	static final void method404(byte[] bytes, int baseX, int baseY, int xOffset, int yOffset, CollisionMap[] maps) {
+		for (int plane = 0; plane < 4; ++plane) {
+			for (int x = 0; x < 64; ++x) {
+				for (int y = 0; y < 64; ++y) {
+					if (baseX + x > 0 && x + baseX < 103 && baseY + y > 0 && y + baseY < 103) {
+						maps[plane].flags[x + baseX][y + baseY] &= -16777217;
 					}
 				}
 			}
 		}
 
-		ByteBuf var10 = new ByteBuf(var0);
+		ByteBuf buf = new ByteBuf(bytes);
 
-		for (var7 = 0; var7 < 4; ++var7) {
-			for (var8 = 0; var8 < 64; ++var8) {
-				for (int var9 = 0; var9 < 64; ++var9) {
-					Class122.method452(var10, var7, var1 + var8, var2 + var9, var3, var4, 0);
+		for (int plane = 0; plane < 4; ++plane) {
+			for (int x = 0; x < 64; ++x) {
+				for (int y = 0; y < 64; ++y) {
+					Class122.method452(buf, plane, baseX + x, baseY + y, xOffset, yOffset, 0);
 				}
 			}
 		}

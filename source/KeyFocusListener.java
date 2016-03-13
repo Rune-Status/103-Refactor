@@ -3,10 +3,10 @@ import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public final class Class71 implements KeyListener, FocusListener {
+public final class KeyFocusListener implements KeyListener, FocusListener {
 
-	static Class61 aClass61_589;
-	static int[] anIntArray590 = new int[] { -1, -1, -1, -1, -1, -1, -1, -1, 85, 80, 84, -1, 91, -1, -1, -1, 81, 82, 86,
+	static Task socket;
+	static int[] keyCodes = new int[] { -1, -1, -1, -1, -1, -1, -1, -1, 85, 80, 84, -1, 91, -1, -1, -1, 81, 82, 86,
 			-1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1, -1, 83, 104, 105, 103, 102, 96, 98, 97, 99, -1, -1, -1, -1,
 			-1, -1, -1, 25, 16, 17, 18, 19, 20, 21, 22, 23, 24, -1, -1, -1, -1, -1, -1, -1, 48, 68, 66, 50, 34, 51, 52,
 			53, 39, 54, 55, 56, 70, 69, 40, 41, 32, 35, 49, 36, 38, 67, 33, 65, 37, 64, -1, -1, -1, -1, -1, 228, 231,
@@ -38,102 +38,102 @@ public final class Class71 implements KeyListener, FocusListener {
 	static int anInt600 = 0;
 	public static volatile int anInt601 = 0;
 	public static int anInt602 = 0;
-	public static Class71 aClass71_603 = new Class71();
+	public static KeyFocusListener kfListener = new KeyFocusListener();
 
-	public final synchronized void keyPressed(KeyEvent var1) {
-		if (aClass71_603 != null) {
+	public final synchronized void keyPressed(KeyEvent event) {
+		if (kfListener != null) {
 			anInt601 = 0;
-			int var2 = var1.getKeyCode();
-			if (var2 >= 0 && var2 < anIntArray590.length) {
-				var2 = anIntArray590[var2];
-				if ((var2 & 128) != 0) {
-					var2 = -1;
+			int code = event.getKeyCode();
+			if (code >= 0 && code < keyCodes.length) {
+				code = keyCodes[code];
+				if ((code & 128) != 0) {
+					code = -1;
 				}
 			} else {
-				var2 = -1;
+				code = -1;
 			}
 
-			if (1397604687 * anInt596 >= 0 && var2 >= 0) {
-				anIntArray594[1397604687 * anInt596] = var2;
+			if (1397604687 * anInt596 >= 0 && code >= 0) {
+				anIntArray594[1397604687 * anInt596] = code;
 				anInt596 = (1 + 1397604687 * anInt596 & 127) * -434850385;
 				if (1246538247 * anInt595 == anInt596 * 1397604687) {
 					anInt596 = 434850385;
 				}
 			}
 
-			int var3;
-			if (var2 >= 0) {
-				var3 = -1444135991 * anInt591 + 1 & 127;
-				if (anInt599 * -103725771 != var3) {
-					anIntArray598[-1444135991 * anInt591] = var2;
+			int modifiers;
+			if (code >= 0) {
+				modifiers = -1444135991 * anInt591 + 1 & 127;
+				if (anInt599 * -103725771 != modifiers) {
+					anIntArray598[-1444135991 * anInt591] = code;
 					aCharArray597[anInt591 * -1444135991] = 0;
-					anInt591 = var3 * -1017328007;
+					anInt591 = modifiers * -1017328007;
 				}
 			}
 
-			var3 = var1.getModifiers();
-			if ((var3 & 10) != 0 || var2 == 85 || var2 == 10) {
-				var1.consume();
+			modifiers = event.getModifiers();
+			if ((modifiers & 10) != 0 || code == 85 || code == 10) {
+				event.consume();
 			}
 		}
 
 	}
 
-	public final void keyTyped(KeyEvent var1) {
-		if (aClass71_603 != null) {
-			char var3 = var1.getKeyChar();
-			if (var3 != 0 && var3 != '\uffff') {
-				boolean var2;
-				if ((var3 <= 0 || var3 >= 128) && (var3 < 160 || var3 > 255)) {
+	public final void keyTyped(KeyEvent event) {
+		if (kfListener != null) {
+			char c = event.getKeyChar();
+			if (c != 0 && c != 65535) {
+				boolean valid;
+				if ((c <= 0 || c >= 128) && (c < 160 || c > 255)) {
 					label68: {
-						if (var3 != 0) {
-							char[] var6 = Class85.characters;
+						if (c != 0) {
+							char[] chars = Class85.characters;
 
-							for (int var4 = 0; var4 < var6.length; ++var4) {
-								char var5 = var6[var4];
-								if (var5 == var3) {
-									var2 = true;
+							for (int i = 0; i < chars.length; ++i) {
+								char cc = chars[i];
+								if (cc == c) {
+									valid = true;
 									break label68;
 								}
 							}
 						}
 
-						var2 = false;
+						valid = false;
 					}
 				} else {
-					var2 = true;
+					valid = true;
 				}
 
-				if (var2) {
+				if (valid) {
 					int var7 = 1 + -1444135991 * anInt591 & 127;
 					if (var7 != anInt599 * -103725771) {
 						anIntArray598[-1444135991 * anInt591] = -1;
-						aCharArray597[-1444135991 * anInt591] = var3;
+						aCharArray597[-1444135991 * anInt591] = c;
 						anInt591 = -1017328007 * var7;
 					}
 				}
 			}
 		}
 
-		var1.consume();
+		event.consume();
 	}
 
 	public final void focusGained(FocusEvent var1) {
 	}
 
 	public final synchronized void focusLost(FocusEvent var1) {
-		if (aClass71_603 != null) {
+		if (kfListener != null) {
 			anInt596 = 434850385;
 		}
 
 	}
 
 	public final synchronized void keyReleased(KeyEvent var1) {
-		if (aClass71_603 != null) {
+		if (kfListener != null) {
 			anInt601 = 0;
 			int var2 = var1.getKeyCode();
-			if (var2 >= 0 && var2 < anIntArray590.length) {
-				var2 = anIntArray590[var2] & -129;
+			if (var2 >= 0 && var2 < keyCodes.length) {
+				var2 = keyCodes[var2] & -129;
 			} else {
 				var2 = -1;
 			}

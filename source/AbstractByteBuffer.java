@@ -1,32 +1,32 @@
 import java.applet.Applet;
 import java.util.Date;
 
-public abstract class Class52 {
+public abstract class AbstractByteBuffer {
 
 	static boolean aBool528 = false;
 
-	public static Sprite method257(AbstractIndex var0, String var1, String var2) {
-		int var3 = var0.getFile(var1);
-		int var5 = var0.getChild(var3, var2);
-		Sprite var9;
-		if (Class35.method202(var0, var3, var5)) {
-			Sprite var4 = new Sprite();
-			var4.anInt1815 = -749860951 * Class7.anInt148;
-			var4.anInt1816 = -1945497809 * Class7.anInt155;
-			var4.anInt1814 = Class7.anIntArray149[0];
-			var4.anInt1817 = VarPlayerType.anIntArray1544[0];
-			var4.height = Class7.anIntArray150[0];
-			var4.width = Class7.anIntArray151[0];
-			int var7 = var4.height * var4.width;
-			byte[] var10 = Npc.aByteArrayArray1966[0];
-			var4.pixels = new int[var7];
+	public static Picture method257(AbstractIndex sprites, String file, String child) {
+		int fileId = sprites.getFile(file);
+		int childId = sprites.getChild(fileId, child);
+		Picture var9;
+		if (Class35.decodeSprite(sprites, fileId, childId)) {
+			Picture picture = new Picture();
+			picture.width = -749860951 * Class7.width;
+			picture.height = -1945497809 * Class7.height;
+			picture.offsetX = Class7.offsetsX[0];
+			picture.offsetY = VarPlayerType.offsetsY[0];
+			picture.subWidth = Class7.subWidths[0];
+			picture.subHeight = Class7.subHeights[0];
+			int size = picture.subWidth * picture.subHeight;
+			byte[] pixels = Npc.spritePixels[0];
+			picture.pixels = new int[size];
 
-			for (int var6 = 0; var6 < var7; ++var6) {
-				var4.pixels[var6] = Class85.anIntArray690[var10[var6] & 255];
+			for (int index = 0; index < size; ++index) {
+				picture.pixels[index] = Class85.palette[pixels[index] & 0xFF];
 			}
 
-			Class65.method318();
-			var9 = var4;
+			Class65.resetSprite();
+			var9 = picture;
 		} else {
 			var9 = null;
 		}
@@ -34,256 +34,255 @@ public abstract class Class52 {
 		return var9;
 	}
 
-	abstract byte[] method258(int var1);
+	abstract byte[] get();
 
-	abstract void method259(byte[] var1, int var2);
+	abstract void put(byte[] var1);
 
 	public static void method260(Applet var0, String var1) {
 		Class70.anApplet587 = var0;
 		Class70.aString586 = var1;
 	}
 
-	static void method261(ScriptEvent var0, int var1) {
-		Object[] var2 = var0.args;
-		int var3 = ((Integer) var2[0]).intValue();
-		RuneScript var4 = Class39.getRuneScript(var3);
-		if (var4 != null) {
+	static void method261(ScriptEvent event, int var1) {
+		Object[] args = event.args;
+		int id = ((Integer) args[0]).intValue();
+		RuneScript script = Class39.getRuneScript(id);
+		if (script != null) {
 			int var5 = 0;
 			int var6 = 0;
 			int var7 = -1;
-			int[] var8 = var4.opcodes;
-			int[] var9 = var4.intOperands;
-			byte var10 = -1;
+			int[] opcodes = script.opcodes;
+			int[] intOperands = script.intOperands;
 			Class3.anInt87 = 0;
 
-			int var13;
+			int index;
 			try {
-				Class3.anIntArray82 = new int[-325262437 * var4.intArgCount];
-				int var11 = 0;
-				Class3.aStringArray83 = new String[var4.stringArgCount * 1146347541];
-				int var32 = 0;
+				Class3.intArgs = new int[-325262437 * script.intArgCount];
+				int iCount = 0;
+				Class3.stringArgs = new String[script.stringArgCount * 1146347541];
+				int sCount = 0;
 
-				int var14;
-				String var43;
-				for (var13 = 1; var13 < var2.length; ++var13) {
-					if (var2[var13] instanceof Integer) {
-						var14 = ((Integer) var2[var13]).intValue();
-						if (var14 == -2147483647) {
-							var14 = 1518911111 * var0.anInt1438;
+				int iArg;
+				String sArg;
+				for (index = 1; index < args.length; ++index) {
+					if (args[index] instanceof Integer) {
+						iArg = ((Integer) args[index]).intValue();
+						if (iArg == -2147483647) {
+							iArg = 1518911111 * event.anInt1438;
 						}
 
-						if (var14 == -2147483646) {
-							var14 = var0.anInt1431 * 2096422993;
+						if (iArg == -2147483646) {
+							iArg = event.anInt1431 * 2096422993;
 						}
 
-						if (var14 == -2147483645) {
-							var14 = var0.aWidget1430 != null ? -1536575275 * var0.aWidget1430.hash : -1;
+						if (iArg == -2147483645) {
+							iArg = event.widget != null ? -1536575275 * event.widget.hash : -1;
 						}
 
-						if (var14 == -2147483644) {
-							var14 = -332002479 * var0.anInt1429;
+						if (iArg == -2147483644) {
+							iArg = -332002479 * event.anInt1429;
 						}
 
-						if (var14 == -2147483643) {
-							var14 = var0.aWidget1430 != null ? 2021294259 * var0.aWidget1430.index : -1;
+						if (iArg == -2147483643) {
+							iArg = event.widget != null ? 2021294259 * event.widget.index : -1;
 						}
 
-						if (var14 == -2147483642) {
-							var14 = var0.aWidget1433 != null ? var0.aWidget1433.hash * -1536575275 : -1;
+						if (iArg == -2147483642) {
+							iArg = event.aWidget1433 != null ? event.aWidget1433.hash * -1536575275 : -1;
 						}
 
-						if (var14 == -2147483641) {
-							var14 = var0.aWidget1433 != null ? 2021294259 * var0.aWidget1433.index : -1;
+						if (iArg == -2147483641) {
+							iArg = event.aWidget1433 != null ? 2021294259 * event.aWidget1433.index : -1;
 						}
 
-						if (var14 == -2147483640) {
-							var14 = -59421549 * var0.anInt1434;
+						if (iArg == -2147483640) {
+							iArg = -59421549 * event.anInt1434;
 						}
 
-						if (var14 == -2147483639) {
-							var14 = var0.anInt1435 * 427883437;
+						if (iArg == -2147483639) {
+							iArg = event.anInt1435 * 427883437;
 						}
 
-						Class3.anIntArray82[var11++] = var14;
-					} else if (var2[var13] instanceof String) {
-						var43 = (String) var2[var13];
-						if (var43.equals("event_opbase")) {
-							var43 = var0.opbase;
+						Class3.intArgs[iCount++] = iArg;
+					} else if (args[index] instanceof String) {
+						sArg = (String) args[index];
+						if (sArg.equals("event_opbase")) {
+							sArg = event.opbase;
 						}
 
-						Class3.aStringArray83[var32++] = var43;
+						Class3.stringArgs[sCount++] = sArg;
 					}
 				}
 
-				var13 = 0;
-				Class3.anInt91 = 1375974071 * var0.anInt1436;
+				index = 0;
+				Class3.anInt91 = 1375974071 * event.anInt1436;
 
 				label3080: while (true) {
-					++var13;
-					if (var13 > var1) {
+					++index;
+					if (index > var1) {
 						throw new RuntimeException();
 					}
 
 					++var7;
-					int var31 = var8[var7];
+					int opcode = opcodes[var7];
 					int var16;
 					int var33;
 					int var45;
 					String[] var73;
 					String var83;
 					int[] var89;
-					if (var31 < 100) {
-						if (var31 == 0) {
-							Class3.anIntArray95[var5++] = var9[var7];
+					if (opcode < 100) {
+						if (opcode == 0) {
+							Class3.anIntArray95[var5++] = intOperands[var7];
 							continue;
 						}
 
-						if (var31 == 1) {
-							var14 = var9[var7];
-							Class3.anIntArray95[var5++] = Class94.tempVars[var14];
+						if (opcode == 1) {
+							iArg = intOperands[var7];
+							Class3.anIntArray95[var5++] = Class94.tempVars[iArg];
 							continue;
 						}
 
-						if (var31 == 2) {
-							var14 = var9[var7];
+						if (opcode == 2) {
+							iArg = intOperands[var7];
 							--var5;
-							Class94.tempVars[var14] = Class3.anIntArray95[var5];
-							World.method484(var14);
+							Class94.tempVars[iArg] = Class3.anIntArray95[var5];
+							World.method484(iArg);
 							continue;
 						}
 
-						if (var31 == 3) {
-							Class3.aStringArray85[var6++] = var4.stringOperands[var7];
+						if (opcode == 3) {
+							Class3.aStringArray85[var6++] = script.stringOperands[var7];
 							continue;
 						}
 
-						if (var31 == 6) {
-							var7 += var9[var7];
+						if (opcode == 6) {
+							var7 += intOperands[var7];
 							continue;
 						}
 
-						if (var31 == 7) {
+						if (opcode == 7) {
 							var5 -= 2;
 							if (Class3.anIntArray95[var5 + 1] != Class3.anIntArray95[var5]) {
-								var7 += var9[var7];
+								var7 += intOperands[var7];
 							}
 							continue;
 						}
 
-						if (var31 == 8) {
+						if (opcode == 8) {
 							var5 -= 2;
 							if (Class3.anIntArray95[var5 + 1] == Class3.anIntArray95[var5]) {
-								var7 += var9[var7];
+								var7 += intOperands[var7];
 							}
 							continue;
 						}
 
-						if (var31 == 9) {
+						if (opcode == 9) {
 							var5 -= 2;
 							if (Class3.anIntArray95[var5] < Class3.anIntArray95[var5 + 1]) {
-								var7 += var9[var7];
+								var7 += intOperands[var7];
 							}
 							continue;
 						}
 
-						if (var31 == 10) {
+						if (opcode == 10) {
 							var5 -= 2;
 							if (Class3.anIntArray95[var5] > Class3.anIntArray95[1 + var5]) {
-								var7 += var9[var7];
+								var7 += intOperands[var7];
 							}
 							continue;
 						}
 
-						if (var31 == 21) {
+						if (opcode == 21) {
 							if (1112721435 * Class3.anInt87 == 0) {
 								return;
 							}
 
 							Class33 var72 = Class3.aClass33Array86[(Class3.anInt87 -= -1200631277) * 1112721435];
-							var4 = var72.aRuneScript361;
-							var8 = var4.opcodes;
-							var9 = var4.intOperands;
+							script = var72.aRuneScript361;
+							opcodes = script.opcodes;
+							intOperands = script.intOperands;
 							var7 = var72.anInt363 * -594127079;
-							Class3.anIntArray82 = var72.anIntArray362;
-							Class3.aStringArray83 = var72.aStringArray360;
+							Class3.intArgs = var72.anIntArray362;
+							Class3.stringArgs = var72.aStringArray360;
 							continue;
 						}
 
-						if (var31 == 25) {
-							var14 = var9[var7];
-							Class3.anIntArray95[var5++] = Class91.method401(var14);
+						if (opcode == 25) {
+							iArg = intOperands[var7];
+							Class3.anIntArray95[var5++] = Class91.method401(iArg);
 							continue;
 						}
 
-						if (var31 == 27) {
-							var14 = var9[var7];
+						if (opcode == 27) {
+							iArg = intOperands[var7];
 							--var5;
-							Class75.method336(var14, Class3.anIntArray95[var5]);
+							Class75.method336(iArg, Class3.anIntArray95[var5]);
 							continue;
 						}
 
-						if (var31 == 31) {
+						if (opcode == 31) {
 							var5 -= 2;
 							if (Class3.anIntArray95[var5] <= Class3.anIntArray95[var5 + 1]) {
-								var7 += var9[var7];
+								var7 += intOperands[var7];
 							}
 							continue;
 						}
 
-						if (var31 == 32) {
+						if (opcode == 32) {
 							var5 -= 2;
 							if (Class3.anIntArray95[var5] >= Class3.anIntArray95[1 + var5]) {
-								var7 += var9[var7];
+								var7 += intOperands[var7];
 							}
 							continue;
 						}
 
-						if (var31 == 33) {
-							Class3.anIntArray95[var5++] = Class3.anIntArray82[var9[var7]];
+						if (opcode == 33) {
+							Class3.anIntArray95[var5++] = Class3.intArgs[intOperands[var7]];
 							continue;
 						}
 
 						int var10001;
-						if (var31 == 34) {
-							var10001 = var9[var7];
+						if (opcode == 34) {
+							var10001 = intOperands[var7];
 							--var5;
-							Class3.anIntArray82[var10001] = Class3.anIntArray95[var5];
+							Class3.intArgs[var10001] = Class3.anIntArray95[var5];
 							continue;
 						}
 
-						if (var31 == 35) {
-							Class3.aStringArray85[var6++] = Class3.aStringArray83[var9[var7]];
+						if (opcode == 35) {
+							Class3.aStringArray85[var6++] = Class3.stringArgs[intOperands[var7]];
 							continue;
 						}
 
-						if (var31 == 36) {
-							var10001 = var9[var7];
+						if (opcode == 36) {
+							var10001 = intOperands[var7];
 							--var6;
-							Class3.aStringArray83[var10001] = Class3.aStringArray85[var6];
+							Class3.stringArgs[var10001] = Class3.aStringArray85[var6];
 							continue;
 						}
 
-						if (var31 == 37) {
-							var14 = var9[var7];
-							var6 -= var14;
-							var83 = LandscapeTile.method580(Class3.aStringArray85, var6, var14);
+						if (opcode == 37) {
+							iArg = intOperands[var7];
+							var6 -= iArg;
+							var83 = LandscapeTile.method580(Class3.aStringArray85, var6, iArg);
 							Class3.aStringArray85[var6++] = var83;
 							continue;
 						}
 
-						if (var31 == 38) {
+						if (opcode == 38) {
 							--var5;
 							continue;
 						}
 
-						if (var31 == 39) {
+						if (opcode == 39) {
 							--var6;
 							continue;
 						}
 
-						if (var31 == 40) {
-							var14 = var9[var7];
-							RuneScript var101 = Class39.getRuneScript(var14);
+						if (opcode == 40) {
+							iArg = intOperands[var7];
+							RuneScript var101 = Class39.getRuneScript(iArg);
 							var89 = new int[-325262437 * var101.intArgCount];
 							var73 = new String[1146347541 * var101.stringArgCount];
 
@@ -299,39 +298,39 @@ public abstract class Class52 {
 							var5 -= 767633967 * var101.intStackCount;
 							var6 -= 873573015 * var101.stringStackCount;
 							Class33 var96 = new Class33();
-							var96.aRuneScript361 = var4;
+							var96.aRuneScript361 = script;
 							var96.anInt363 = var7 * 954144041;
-							var96.anIntArray362 = Class3.anIntArray82;
-							var96.aStringArray360 = Class3.aStringArray83;
+							var96.anIntArray362 = Class3.intArgs;
+							var96.aStringArray360 = Class3.stringArgs;
 							Class3.aClass33Array86[(Class3.anInt87 += -1200631277) * 1112721435 - 1] = var96;
-							var4 = var101;
-							var8 = var101.opcodes;
-							var9 = var101.intOperands;
+							script = var101;
+							opcodes = var101.opcodes;
+							intOperands = var101.intOperands;
 							var7 = -1;
-							Class3.anIntArray82 = var89;
-							Class3.aStringArray83 = var73;
+							Class3.intArgs = var89;
+							Class3.stringArgs = var73;
 							continue;
 						}
 
-						if (var31 == 42) {
-							Class3.anIntArray95[var5++] = Class33.aClass28_364.getVarc(var9[var7]);
+						if (opcode == 42) {
+							Class3.anIntArray95[var5++] = Class33.aClass28_364.getVarc(intOperands[var7]);
 							continue;
 						}
 
-						if (var31 == 43) {
-							var10001 = var9[var7];
+						if (opcode == 43) {
+							var10001 = intOperands[var7];
 							--var5;
 							Class33.aClass28_364.putVarc(var10001, Class3.anIntArray95[var5]);
 							continue;
 						}
 
-						if (var31 == 44) {
-							var14 = var9[var7] >> 16;
-							var33 = var9[var7] & '\uffff';
+						if (opcode == 44) {
+							iArg = intOperands[var7] >> 16;
+							var33 = intOperands[var7] & 0xFFFF;
 							--var5;
 							var16 = Class3.anIntArray95[var5];
 							if (var16 >= 0 && var16 <= 5000) {
-								Class3.anIntArray81[var14] = var16;
+								Class3.anIntArray81[iArg] = var16;
 								byte var85 = -1;
 								if (var33 == 105) {
 									var85 = 0;
@@ -344,7 +343,7 @@ public abstract class Class52 {
 										continue label3080;
 									}
 
-									Class3.anIntArrayArray84[var14][var45] = var85;
+									Class3.anIntArrayArray84[iArg][var45] = var85;
 									++var45;
 								}
 							}
@@ -352,42 +351,42 @@ public abstract class Class52 {
 							throw new RuntimeException();
 						}
 
-						if (var31 == 45) {
-							var14 = var9[var7];
+						if (opcode == 45) {
+							iArg = intOperands[var7];
 							--var5;
 							var33 = Class3.anIntArray95[var5];
-							if (var33 >= 0 && var33 < Class3.anIntArray81[var14]) {
-								Class3.anIntArray95[var5++] = Class3.anIntArrayArray84[var14][var33];
+							if (var33 >= 0 && var33 < Class3.anIntArray81[iArg]) {
+								Class3.anIntArray95[var5++] = Class3.anIntArrayArray84[iArg][var33];
 								continue;
 							}
 
 							throw new RuntimeException();
 						}
 
-						if (var31 == 46) {
-							var14 = var9[var7];
+						if (opcode == 46) {
+							iArg = intOperands[var7];
 							var5 -= 2;
 							var33 = Class3.anIntArray95[var5];
-							if (var33 >= 0 && var33 < Class3.anIntArray81[var14]) {
-								Class3.anIntArrayArray84[var14][var33] = Class3.anIntArray95[1 + var5];
+							if (var33 >= 0 && var33 < Class3.anIntArray81[iArg]) {
+								Class3.anIntArrayArray84[iArg][var33] = Class3.anIntArray95[1 + var5];
 								continue;
 							}
 
 							throw new RuntimeException();
 						}
 
-						if (var31 == 47) {
-							var43 = Class33.aClass28_364.getVarcString(var9[var7]);
-							if (var43 == null) {
-								var43 = "null";
+						if (opcode == 47) {
+							sArg = Class33.aClass28_364.getVarcString(intOperands[var7]);
+							if (sArg == null) {
+								sArg = "null";
 							}
 
-							Class3.aStringArray85[var6++] = var43;
+							Class3.aStringArray85[var6++] = sArg;
 							continue;
 						}
 
-						if (var31 == 48) {
-							var10001 = var9[var7];
+						if (opcode == 48) {
+							var10001 = intOperands[var7];
 							--var6;
 							Class33.aClass28_364.putVarcString(var10001, Class3.aStringArray85[var6]);
 							continue;
@@ -395,7 +394,7 @@ public abstract class Class52 {
 					}
 
 					boolean var46;
-					if (var9[var7] == 1) {
+					if (intOperands[var7] == 1) {
 						var46 = true;
 					} else {
 						var46 = false;
@@ -409,8 +408,8 @@ public abstract class Class52 {
 					int var35;
 					boolean var41;
 					boolean var55;
-					if (var31 < 1000) {
-						if (var31 == 100) {
+					if (opcode < 1000) {
+						if (opcode == 100) {
 							var5 -= 3;
 							var33 = Class3.anIntArray95[var5];
 							var16 = Class3.anIntArray95[1 + var5];
@@ -445,7 +444,7 @@ public abstract class Class52 {
 							var40.interactable = true;
 							var18.children[var35] = var40;
 							if (var46) {
-								Class24.aWidget304 = var40;
+								ClientSettings.aWidget304 = var40;
 							} else {
 								Class3.aWidget88 = var40;
 							}
@@ -454,15 +453,15 @@ public abstract class Class52 {
 							continue;
 						}
 
-						if (var31 == 101) {
-							var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
+						if (opcode == 101) {
+							var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
 							var34 = Class94.getWidget(-1536575275 * var15.hash);
 							var34.children[var15.index * 2021294259] = null;
 							Class68.method326(var34);
 							continue;
 						}
 
-						if (var31 == 102) {
+						if (opcode == 102) {
 							--var5;
 							var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 							var15.children = null;
@@ -470,7 +469,7 @@ public abstract class Class52 {
 							continue;
 						}
 
-						if (var31 == 200) {
+						if (opcode == 200) {
 							var5 -= 2;
 							var33 = Class3.anIntArray95[var5];
 							var16 = Class3.anIntArray95[var5 + 1];
@@ -478,7 +477,7 @@ public abstract class Class52 {
 							if (var17 != null && var16 != -1) {
 								Class3.anIntArray95[var5++] = 1;
 								if (var46) {
-									Class24.aWidget304 = var17;
+									ClientSettings.aWidget304 = var17;
 								} else {
 									Class3.aWidget88 = var17;
 								}
@@ -489,13 +488,13 @@ public abstract class Class52 {
 							continue;
 						}
 
-						if (var31 == 201) {
+						if (opcode == 201) {
 							--var5;
 							var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 							if (var15 != null) {
 								Class3.anIntArray95[var5++] = 1;
 								if (var46) {
-									Class24.aWidget304 = var15;
+									ClientSettings.aWidget304 = var15;
 								} else {
 									Class3.aWidget88 = var15;
 								}
@@ -506,21 +505,21 @@ public abstract class Class52 {
 						}
 					} else {
 						boolean var36;
-						if ((var31 < 1000 || var31 >= 1100) && (var31 < 2000 || var31 >= 2100)) {
+						if ((opcode < 1000 || opcode >= 1100) && (opcode < 2000 || opcode >= 2100)) {
 							String var37;
-							if ((var31 < 1100 || var31 >= 1200) && (var31 < 2100 || var31 >= 2200)) {
-								if ((var31 < 1200 || var31 >= 1300) && (var31 < 2200 || var31 >= 2300)) {
-									if ((var31 < 1300 || var31 >= 1400) && (var31 < 2300 || var31 >= 2400)) {
+							if ((opcode < 1100 || opcode >= 1200) && (opcode < 2100 || opcode >= 2200)) {
+								if ((opcode < 1200 || opcode >= 1300) && (opcode < 2200 || opcode >= 2300)) {
+									if ((opcode < 1300 || opcode >= 1400) && (opcode < 2300 || opcode >= 2400)) {
 										int[] var44;
 										int var49;
 										String var54;
-										if (var31 >= 1400 && var31 < 1500 || var31 >= 2400 && var31 < 2500) {
-											if (var31 >= 2000) {
-												var31 -= 1000;
+										if (opcode >= 1400 && opcode < 1500 || opcode >= 2400 && opcode < 2500) {
+											if (opcode >= 2000) {
+												opcode -= 1000;
 												--var5;
 												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 											} else {
-												var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
+												var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
 											}
 
 											--var6;
@@ -559,114 +558,114 @@ public abstract class Class52 {
 												var90 = null;
 											}
 
-											if (var31 == 1400) {
+											if (opcode == 1400) {
 												var15.anObjectArray1171 = var90;
 											}
 
-											if (var31 == 1401) {
+											if (opcode == 1401) {
 												var15.anObjectArray1174 = var90;
 											}
 
-											if (var31 == 1402) {
+											if (opcode == 1402) {
 												var15.anObjectArray1173 = var90;
 											}
 
-											if (var31 == 1403) {
+											if (opcode == 1403) {
 												var15.mouseEnterListener = var90;
 											}
 
-											if (var31 == 1404) {
+											if (opcode == 1404) {
 												var15.mouseExitListener = var90;
 											}
 
-											if (var31 == 1405) {
+											if (opcode == 1405) {
 												var15.anObjectArray1176 = var90;
 											}
 
-											if (var31 == 1406) {
+											if (opcode == 1406) {
 												var15.anObjectArray1178 = var90;
 											}
 
-											if (var31 == 1407) {
+											if (opcode == 1407) {
 												var15.configListenerArgs = var90;
 												var15.configTriggers = var44;
 											}
 
-											if (var31 == 1408) {
+											if (opcode == 1408) {
 												var15.renderListener = var90;
 											}
 
-											if (var31 == 1409) {
+											if (opcode == 1409) {
 												var15.anObjectArray1180 = var90;
 											}
 
-											if (var31 == 1410) {
+											if (opcode == 1410) {
 												var15.anObjectArray1177 = var90;
 											}
 
-											if (var31 == 1411) {
+											if (opcode == 1411) {
 												var15.anObjectArray1172 = var90;
 											}
 
-											if (var31 == 1412) {
+											if (opcode == 1412) {
 												var15.mouseHoverListener = var90;
 											}
 
-											if (var31 == 1414) {
+											if (opcode == 1414) {
 												var15.tableListenerArgs = var90;
 												var15.tableModTriggers = var44;
 											}
 
-											if (var31 == 1415) {
+											if (opcode == 1415) {
 												var15.skillListenerArgs = var90;
 												var15.skillTriggers = var44;
 											}
 
-											if (var31 == 1416) {
+											if (opcode == 1416) {
 												var15.anObjectArray1130 = var90;
 											}
 
-											if (var31 == 1417) {
+											if (opcode == 1417) {
 												var15.scrollListener = var90;
 											}
 
-											if (var31 == 1418) {
+											if (opcode == 1418) {
 												var15.anObjectArray1181 = var90;
 											}
 
-											if (var31 == 1419) {
+											if (opcode == 1419) {
 												var15.anObjectArray1182 = var90;
 											}
 
-											if (var31 == 1420) {
+											if (opcode == 1420) {
 												var15.anObjectArray1183 = var90;
 											}
 
-											if (var31 == 1421) {
+											if (opcode == 1421) {
 												var15.anObjectArray1184 = var90;
 											}
 
-											if (var31 == 1422) {
+											if (opcode == 1422) {
 												var15.anObjectArray1156 = var90;
 											}
 
-											if (var31 == 1423) {
+											if (opcode == 1423) {
 												var15.anObjectArray1186 = var90;
 											}
 
-											if (var31 == 1424) {
+											if (opcode == 1424) {
 												var15.anObjectArray1187 = var90;
 											}
 
-											if (var31 == 1425) {
+											if (opcode == 1425) {
 												var15.anObjectArray1189 = var90;
 											}
 
-											if (var31 == 1426) {
+											if (opcode == 1426) {
 												var15.anObjectArray1190 = var90;
 											}
 
-											if (var31 == 1427) {
+											if (opcode == 1427) {
 												var15.anObjectArray1188 = var90;
 											}
 
@@ -674,96 +673,96 @@ public abstract class Class52 {
 											continue;
 										}
 
-										if (var31 < 1600) {
-											var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
-											if (var31 == 1500) {
+										if (opcode < 1600) {
+											var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
+											if (opcode == 1500) {
 												Class3.anIntArray95[var5++] = 332168295 * var15.relativeX;
 												continue;
 											}
 
-											if (var31 == 1501) {
+											if (opcode == 1501) {
 												Class3.anIntArray95[var5++] = var15.relativeY * 1492425953;
 												continue;
 											}
 
-											if (var31 == 1502) {
+											if (opcode == 1502) {
 												Class3.anIntArray95[var5++] = var15.width * 1645211541;
 												continue;
 											}
 
-											if (var31 == 1503) {
+											if (opcode == 1503) {
 												Class3.anIntArray95[var5++] = 1227800423 * var15.height;
 												continue;
 											}
 
-											if (var31 == 1504) {
+											if (opcode == 1504) {
 												Class3.anIntArray95[var5++] = var15.hidden ? 1 : 0;
 												continue;
 											}
 
-											if (var31 == 1505) {
+											if (opcode == 1505) {
 												Class3.anIntArray95[var5++] = -1652479707 * var15.parentId;
 												continue;
 											}
-										} else if (var31 < 1700) {
-											var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
-											if (var31 == 1600) {
+										} else if (opcode < 1700) {
+											var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
+											if (opcode == 1600) {
 												Class3.anIntArray95[var5++] = -352661099 * var15.insetX;
 												continue;
 											}
 
-											if (var31 == 1601) {
+											if (opcode == 1601) {
 												Class3.anIntArray95[var5++] = -1602694527 * var15.insetY;
 												continue;
 											}
 
-											if (var31 == 1602) {
+											if (opcode == 1602) {
 												Class3.aStringArray85[var6++] = var15.text;
 												continue;
 											}
 
-											if (var31 == 1603) {
+											if (opcode == 1603) {
 												Class3.anIntArray95[var5++] = -302755437 * var15.viewportWidth;
 												continue;
 											}
 
-											if (var31 == 1604) {
+											if (opcode == 1604) {
 												Class3.anIntArray95[var5++] = 177405235 * var15.viewportHeight;
 												continue;
 											}
 
-											if (var31 == 1605) {
+											if (opcode == 1605) {
 												Class3.anIntArray95[var5++] = var15.modelZoom * -1472457387;
 												continue;
 											}
 
-											if (var31 == 1606) {
+											if (opcode == 1606) {
 												Class3.anIntArray95[var5++] = var15.rotationX * 175924351;
 												continue;
 											}
 
-											if (var31 == 1607) {
+											if (opcode == 1607) {
 												Class3.anIntArray95[var5++] = var15.rotationY * 681145387;
 												continue;
 											}
 
-											if (var31 == 1608) {
+											if (opcode == 1608) {
 												Class3.anIntArray95[var5++] = var15.rotationZ * 745334365;
 												continue;
 											}
 
-											if (var31 == 1609) {
+											if (opcode == 1609) {
 												Class3.anIntArray95[var5++] = -1508397471 * var15.alpha;
 												continue;
 											}
-										} else if (var31 < 1800) {
-											var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
-											if (var31 == 1700) {
+										} else if (opcode < 1800) {
+											var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
+											if (opcode == 1700) {
 												Class3.anIntArray95[var5++] = var15.itemId * 813479615;
 												continue;
 											}
 
-											if (var31 == 1701) {
+											if (opcode == 1701) {
 												if (813479615 * var15.itemId != -1) {
 													Class3.anIntArray95[var5++] = var15.itemQuantity * 1393082105;
 												} else {
@@ -772,19 +771,19 @@ public abstract class Class52 {
 												continue;
 											}
 
-											if (var31 == 1702) {
+											if (opcode == 1702) {
 												Class3.anIntArray95[var5++] = var15.index * 2021294259;
 												continue;
 											}
-										} else if (var31 < 1900) {
-											var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
-											if (var31 == 1800) {
-												Class3.anIntArray95[var5++] = Class63
+										} else if (opcode < 1900) {
+											var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
+											if (opcode == 1800) {
+												Class3.anIntArray95[var5++] = TaskManager
 														.method314(Class30.getWidgetConfig(var15));
 												continue;
 											}
 
-											if (var31 == 1801) {
+											if (opcode == 1801) {
 												--var5;
 												var16 = Class3.anIntArray95[var5];
 												--var16;
@@ -798,7 +797,7 @@ public abstract class Class52 {
 												continue;
 											}
 
-											if (var31 == 1802) {
+											if (opcode == 1802) {
 												if (var15.name == null) {
 													Class3.aStringArray85[var6++] = "";
 												} else {
@@ -806,100 +805,100 @@ public abstract class Class52 {
 												}
 												continue;
 											}
-										} else if ((var31 < 1900 || var31 >= 2000) && (var31 < 2900 || var31 >= 3000)) {
-											if (var31 < 2600) {
+										} else if ((opcode < 1900 || opcode >= 2000) && (opcode < 2900 || opcode >= 3000)) {
+											if (opcode < 2600) {
 												--var5;
 												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
-												if (var31 == 2500) {
+												if (opcode == 2500) {
 													Class3.anIntArray95[var5++] = var15.relativeX * 332168295;
 													continue;
 												}
 
-												if (var31 == 2501) {
+												if (opcode == 2501) {
 													Class3.anIntArray95[var5++] = var15.relativeY * 1492425953;
 													continue;
 												}
 
-												if (var31 == 2502) {
+												if (opcode == 2502) {
 													Class3.anIntArray95[var5++] = var15.width * 1645211541;
 													continue;
 												}
 
-												if (var31 == 2503) {
+												if (opcode == 2503) {
 													Class3.anIntArray95[var5++] = var15.height * 1227800423;
 													continue;
 												}
 
-												if (var31 == 2504) {
+												if (opcode == 2504) {
 													Class3.anIntArray95[var5++] = var15.hidden ? 1 : 0;
 													continue;
 												}
 
-												if (var31 == 2505) {
+												if (opcode == 2505) {
 													Class3.anIntArray95[var5++] = var15.parentId * -1652479707;
 													continue;
 												}
-											} else if (var31 < 2700) {
+											} else if (opcode < 2700) {
 												--var5;
 												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
-												if (var31 == 2600) {
+												if (opcode == 2600) {
 													Class3.anIntArray95[var5++] = -352661099 * var15.insetX;
 													continue;
 												}
 
-												if (var31 == 2601) {
+												if (opcode == 2601) {
 													Class3.anIntArray95[var5++] = -1602694527 * var15.insetY;
 													continue;
 												}
 
-												if (var31 == 2602) {
+												if (opcode == 2602) {
 													Class3.aStringArray85[var6++] = var15.text;
 													continue;
 												}
 
-												if (var31 == 2603) {
+												if (opcode == 2603) {
 													Class3.anIntArray95[var5++] = -302755437 * var15.viewportWidth;
 													continue;
 												}
 
-												if (var31 == 2604) {
+												if (opcode == 2604) {
 													Class3.anIntArray95[var5++] = var15.viewportHeight * 177405235;
 													continue;
 												}
 
-												if (var31 == 2605) {
+												if (opcode == 2605) {
 													Class3.anIntArray95[var5++] = -1472457387 * var15.modelZoom;
 													continue;
 												}
 
-												if (var31 == 2606) {
+												if (opcode == 2606) {
 													Class3.anIntArray95[var5++] = var15.rotationX * 175924351;
 													continue;
 												}
 
-												if (var31 == 2607) {
+												if (opcode == 2607) {
 													Class3.anIntArray95[var5++] = var15.rotationY * 681145387;
 													continue;
 												}
 
-												if (var31 == 2608) {
+												if (opcode == 2608) {
 													Class3.anIntArray95[var5++] = 745334365 * var15.rotationZ;
 													continue;
 												}
 
-												if (var31 == 2609) {
+												if (opcode == 2609) {
 													Class3.anIntArray95[var5++] = -1508397471 * var15.alpha;
 													continue;
 												}
-											} else if (var31 < 2800) {
-												if (var31 == 2700) {
+											} else if (opcode < 2800) {
+												if (opcode == 2700) {
 													--var5;
 													var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 													Class3.anIntArray95[var5++] = var15.itemId * 813479615;
 													continue;
 												}
 
-												if (var31 == 2701) {
+												if (opcode == 2701) {
 													--var5;
 													var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 													if (var15.itemId * 813479615 != -1) {
@@ -910,7 +909,7 @@ public abstract class Class52 {
 													continue;
 												}
 
-												if (var31 == 2702) {
+												if (opcode == 2702) {
 													--var5;
 													var33 = Class3.anIntArray95[var5];
 													InterfaceNode var52 = (InterfaceNode) Client.interfaceNodes
@@ -923,20 +922,20 @@ public abstract class Class52 {
 													continue;
 												}
 
-												if (var31 == 2706) {
+												if (opcode == 2706) {
 													Class3.anIntArray95[var5++] = Client.anInt2226 * -1074177723;
 													continue;
 												}
-											} else if (var31 < 2900) {
+											} else if (opcode < 2900) {
 												--var5;
 												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
-												if (var31 == 2800) {
-													Class3.anIntArray95[var5++] = Class63
+												if (opcode == 2800) {
+													Class3.anIntArray95[var5++] = TaskManager
 															.method314(Class30.getWidgetConfig(var15));
 													continue;
 												}
 
-												if (var31 == 2801) {
+												if (opcode == 2801) {
 													--var5;
 													var16 = Class3.anIntArray95[var5];
 													--var16;
@@ -950,7 +949,7 @@ public abstract class Class52 {
 													continue;
 												}
 
-												if (var31 == 2802) {
+												if (opcode == 2802) {
 													if (var15.name == null) {
 														Class3.aStringArray85[var6++] = "";
 													} else {
@@ -962,28 +961,28 @@ public abstract class Class52 {
 												int var22;
 												int var48;
 												int var62;
-												if (var31 < 3200) {
-													if (var31 == 3100) {
+												if (opcode < 3200) {
+													if (opcode == 3100) {
 														--var6;
 														var83 = Class3.aStringArray85[var6];
 														Class75.method334(0, "", var83);
 														continue;
 													}
 
-													if (var31 == 3101) {
+													if (opcode == 3101) {
 														var5 -= 2;
 														Class43.method229(Class68.myPlayer, Class3.anIntArray95[var5],
 																Class3.anIntArray95[1 + var5]);
 														continue;
 													}
 
-													if (var31 == 3103) {
+													if (opcode == 3103) {
 														IsaacRandom.method63();
 														continue;
 													}
 
 													boolean var42;
-													if (var31 == 3104) {
+													if (opcode == 3104) {
 														--var6;
 														var83 = Class3.aStringArray85[var6];
 														var16 = 0;
@@ -1048,7 +1047,7 @@ public abstract class Class52 {
 														}
 
 														if (var41) {
-															var45 = Node_Sub5.method535(var83, 10, true);
+															var45 = AnimationSkin.method535(var83, 10, true);
 															var16 = var45;
 														}
 
@@ -1057,7 +1056,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3105) {
+													if (opcode == 3105) {
 														--var6;
 														var83 = Class3.aStringArray85[var6];
 														Client.outBuffer.putHeader(84);
@@ -1066,7 +1065,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3106) {
+													if (opcode == 3106) {
 														--var6;
 														var83 = Class3.aStringArray85[var6];
 														Client.outBuffer.putHeader(58);
@@ -1075,7 +1074,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3107) {
+													if (opcode == 3107) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														--var6;
@@ -1118,7 +1117,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3108) {
+													if (opcode == 3108) {
 														var5 -= 3;
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[var5 + 1];
@@ -1128,35 +1127,35 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3109) {
+													if (opcode == 3109) {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[var5 + 1];
-														var17 = var46 ? Class24.aWidget304 : Class3.aWidget88;
+														var17 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
 														Class68.method327(var17, var33, var16);
 														continue;
 													}
 
-													if (var31 == 3110) {
+													if (opcode == 3110) {
 														--var5;
 														ClanMate.aBool1221 = Class3.anIntArray95[var5] == 1;
 														continue;
 													}
 
-													if (var31 == 3111) {
-														Class3.anIntArray95[var5++] = Node_Sub5.aClass24_1265.aBool298
+													if (opcode == 3111) {
+														Class3.anIntArray95[var5++] = AnimationSkin.settings.hideRoofs
 																? 1 : 0;
 														continue;
 													}
 
-													if (var31 == 3112) {
+													if (opcode == 3112) {
 														--var5;
-														Node_Sub5.aClass24_1265.aBool298 = Class3.anIntArray95[var5] == 1;
-														Class75.method335();
+														AnimationSkin.settings.hideRoofs = Class3.anIntArray95[var5] == 1;
+														Class75.serializeSettings();
 														continue;
 													}
 
-													if (var31 == 3113) {
+													if (opcode == 3113) {
 														--var6;
 														var83 = Class3.aStringArray85[var6];
 														--var5;
@@ -1165,7 +1164,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3115) {
+													if (opcode == 3115) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														Client.outBuffer.putHeader(160);
@@ -1173,7 +1172,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3116) {
+													if (opcode == 3116) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														var6 -= 2;
@@ -1190,8 +1189,8 @@ public abstract class Class52 {
 														}
 														continue;
 													}
-												} else if (var31 < 3300) {
-													if (var31 == 3200) {
+												} else if (opcode < 3300) {
+													if (opcode == 3200) {
 														var5 -= 3;
 														EntityMarker.method139(Class3.anIntArray95[var5],
 																Class3.anIntArray95[var5 + 1],
@@ -1199,16 +1198,15 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3201) {
+													if (opcode == 3201) {
 														--var5;
 														Class22.method158(Class3.anIntArray95[var5]);
 														continue;
 													}
 
-													if (var31 == 3202) {
+													if (opcode == 3202) {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5];
-														int var10000 = Class3.anIntArray95[1 + var5];
 														if (-1994948003 * Client.anInt2201 != 0 && var33 != -1) {
 															Class69.method328(PlayerConfig.midiTack2Index, var33, 0,
 																	Client.anInt2201 * -1994948003, false);
@@ -1216,14 +1214,14 @@ public abstract class Class52 {
 														}
 														continue;
 													}
-												} else if (var31 < 3400) {
-													if (var31 == 3300) {
+												} else if (opcode < 3400) {
+													if (opcode == 3300) {
 														Class3.anIntArray95[var5++] = -1040073859 * Client.engineCycle;
 														continue;
 													}
 
 													ItemTable var51;
-													if (var31 == 3301) {
+													if (opcode == 3301) {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[1 + var5];
@@ -1242,7 +1240,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3302) {
+													if (opcode == 3302) {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[1 + var5];
@@ -1250,7 +1248,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3303) {
+													if (opcode == 3303) {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[1 + var5];
@@ -1277,73 +1275,73 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3304) {
+													if (opcode == 3304) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
-														Class3.anIntArray95[var5++] = Class91.getInvType(var33).anInt1501
-																* -612948537;
+														Class3.anIntArray95[var5++] = Class91
+																.getInvType(var33).anInt1501 * -612948537;
 														continue;
 													}
 
-													if (var31 == 3305) {
+													if (opcode == 3305) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														Class3.anIntArray95[var5++] = Client.levels[var33];
 														continue;
 													}
 
-													if (var31 == 3306) {
+													if (opcode == 3306) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														Class3.anIntArray95[var5++] = Client.experiences[var33];
 														continue;
 													}
 
-													if (var31 == 3307) {
+													if (opcode == 3307) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														Class3.anIntArray95[var5++] = Client.currentLevels[var33];
 														continue;
 													}
 
-													if (var31 == 3308) {
+													if (opcode == 3308) {
 														var33 = InterfaceNode.floorLevel * -747958745;
-														var16 = 1426698711 * Node_Sub10.regionBaseX
+														var16 = 1426698711 * Node_Sub10.chunkLeftX
 																+ (1272643751 * Class68.myPlayer.strictX >> 7);
 														var35 = (Class68.myPlayer.strictY * -1801433343 >> 7)
-																+ VarClientHub.regionBaseY * 714823515;
+																+ VarClientHub.chunkLeftY * 714823515;
 														Class3.anIntArray95[var5++] = (var16 << 14) + (var33 << 28)
 																+ var35;
 														continue;
 													}
 
-													if (var31 == 3309) {
+													if (opcode == 3309) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														Class3.anIntArray95[var5++] = var33 >> 14 & 16383;
 														continue;
 													}
 
-													if (var31 == 3310) {
+													if (opcode == 3310) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														Class3.anIntArray95[var5++] = var33 >> 28;
 														continue;
 													}
 
-													if (var31 == 3311) {
+													if (opcode == 3311) {
 														--var5;
 														var33 = Class3.anIntArray95[var5];
 														Class3.anIntArray95[var5++] = var33 & 16383;
 														continue;
 													}
 
-													if (var31 == 3312) {
+													if (opcode == 3312) {
 														Class3.anIntArray95[var5++] = Client.membersWorld ? 1 : 0;
 														continue;
 													}
 
-													if (var31 == 3313) {
+													if (opcode == 3313) {
 														var5 -= 2;
 														var33 = '\u8000' + Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[1 + var5];
@@ -1362,7 +1360,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3314) {
+													if (opcode == 3314) {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5] + '\u8000';
 														var16 = Class3.anIntArray95[var5 + 1];
@@ -1370,7 +1368,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3315) {
+													if (opcode == 3315) {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5] + '\u8000';
 														var16 = Class3.anIntArray95[var5 + 1];
@@ -1397,7 +1395,7 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3316) {
+													if (opcode == 3316) {
 														if (Client.myRights * 1520983779 >= 2) {
 															Class3.anIntArray95[var5++] = Client.myRights * 1520983779;
 														} else {
@@ -1406,27 +1404,27 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3317) {
+													if (opcode == 3317) {
 														Class3.anIntArray95[var5++] = Client.anInt2189 * 210138957;
 														continue;
 													}
 
-													if (var31 == 3318) {
+													if (opcode == 3318) {
 														Class3.anIntArray95[var5++] = -1631311031 * Client.myWorld;
 														continue;
 													}
 
-													if (var31 == 3321) {
+													if (opcode == 3321) {
 														Class3.anIntArray95[var5++] = Client.energy * -1005815685;
 														continue;
 													}
 
-													if (var31 == 3322) {
+													if (opcode == 3322) {
 														Class3.anIntArray95[var5++] = -1944031695 * Client.weight;
 														continue;
 													}
 
-													if (var31 == 3323) {
+													if (opcode == 3323) {
 														if (Client.aBool2179) {
 															Class3.anIntArray95[var5++] = 1;
 														} else {
@@ -1435,49 +1433,49 @@ public abstract class Class52 {
 														continue;
 													}
 
-													if (var31 == 3324) {
+													if (opcode == 3324) {
 														Class3.anIntArray95[var5++] = Client.myWorldFlags * 1115656689;
 														continue;
 													}
-												} else if (var31 < 3500) {
-													if (var31 == 3400) {
+												} else if (opcode < 3500) {
+													if (opcode == 3400) {
 														var5 -= 2;
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[1 + var5];
 														EnumType var53 = ObjectType.getEnumType(var33);
-														if (var53.aChar1493 != 115) {
+														if (var53.valType != 115) {
 															;
 														}
 
-														for (var45 = 0; var45 < var53.anInt1490 * 557176427; ++var45) {
-															if (var53.anIntArray1496[var45] == var16) {
-																Class3.aStringArray85[var6++] = var53.aStringArray1498[var45];
+														for (var45 = 0; var45 < var53.size * 557176427; ++var45) {
+															if (var53.keys[var45] == var16) {
+																Class3.aStringArray85[var6++] = var53.stringVals[var45];
 																var53 = null;
 																break;
 															}
 														}
 
 														if (var53 != null) {
-															Class3.aStringArray85[var6++] = var53.aString1499;
+															Class3.aStringArray85[var6++] = var53.defaultString;
 														}
 														continue;
 													}
 
-													if (var31 == 3408) {
+													if (opcode == 3408) {
 														var5 -= 4;
 														var33 = Class3.anIntArray95[var5];
 														var16 = Class3.anIntArray95[var5 + 1];
 														var35 = Class3.anIntArray95[var5 + 2];
 														var45 = Class3.anIntArray95[var5 + 3];
 														EnumType var66 = ObjectType.getEnumType(var35);
-														if (var33 == var66.aChar1494 && var66.aChar1493 == var16) {
-															for (var20 = 0; var20 < var66.anInt1490
+														if (var33 == var66.keyType && var66.valType == var16) {
+															for (var20 = 0; var20 < var66.size
 																	* 557176427; ++var20) {
-																if (var45 == var66.anIntArray1496[var20]) {
+																if (var45 == var66.keys[var20]) {
 																	if (var16 == 115) {
-																		Class3.aStringArray85[var6++] = var66.aStringArray1498[var20];
+																		Class3.aStringArray85[var6++] = var66.stringVals[var20];
 																	} else {
-																		Class3.anIntArray95[var5++] = var66.anIntArray1497[var20];
+																		Class3.anIntArray95[var5++] = var66.intVals[var20];
 																	}
 
 																	var66 = null;
@@ -1487,10 +1485,10 @@ public abstract class Class52 {
 
 															if (var66 != null) {
 																if (var16 == 115) {
-																	Class3.aStringArray85[var6++] = var66.aString1499;
+																	Class3.aStringArray85[var6++] = var66.defaultString;
 																} else {
 																	Class3.anIntArray95[var5++] = -901678785
-																			* var66.anInt1495;
+																			* var66.defaultInt;
 																}
 															}
 															continue;
@@ -1505,8 +1503,8 @@ public abstract class Class52 {
 													}
 												} else {
 													String var60;
-													if (var31 < 3700) {
-														if (var31 == 3600) {
+													if (opcode < 3700) {
+														if (opcode == 3600) {
 															if (Client.friendListSize * -923448785 == 0) {
 																Class3.anIntArray95[var5++] = -2;
 															} else if (Client.friendListSize * -923448785 == 1) {
@@ -1518,7 +1516,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3601) {
+														if (opcode == 3601) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															if (Client.friendListSize * -923448785 == 2
@@ -1533,7 +1531,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3602) {
+														if (opcode == 3602) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															if (Client.friendListSize * -923448785 == 2
@@ -1547,7 +1545,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3603) {
+														if (opcode == 3603) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															if (-923448785 * Client.friendListSize == 2
@@ -1561,7 +1559,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3604) {
+														if (opcode == 3604) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															--var5;
@@ -1577,7 +1575,7 @@ public abstract class Class52 {
 														IgnoredPlayer var63;
 														FriendedPlayer var65;
 														String var67;
-														if (var31 == 3605) {
+														if (opcode == 3605) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															if (var83 == null) {
@@ -1659,14 +1657,14 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3606) {
+														if (opcode == 3606) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															SequenceType.method684(var83);
 															continue;
 														}
 
-														if (var31 == 3607) {
+														if (opcode == 3607) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															if (var83 == null) {
@@ -1747,7 +1745,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3608) {
+														if (opcode == 3608) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															if (var83 == null) {
@@ -1792,7 +1790,7 @@ public abstract class Class52 {
 															}
 														}
 
-														if (var31 == 3609) {
+														if (opcode == 3609) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															Permission[] var69 = new Permission[] { Permission.PLAYER,
@@ -1815,20 +1813,19 @@ public abstract class Class52 {
 																}
 															}
 
-															Class3.anIntArray95[var5++] = Node_Sub5.isFriended(var83,
+															Class3.anIntArray95[var5++] = AnimationSkin.isFriended(var83,
 																	false) ? 1 : 0;
 															continue;
 														}
 
 														String var59;
 														String[] var91;
-														if (var31 == 3611) {
+														if (opcode == 3611) {
 															if (Client.clanChatOwner != null) {
 																var91 = Class3.aStringArray85;
 																var16 = var6++;
 																var59 = Client.clanChatOwner;
-																var67 = OverlayType
-																		.method716(Class49.method250(var59));
+																var67 = OverlayType.method716(GZipDecompressor.method250(var59));
 																if (var67 == null) {
 																	var67 = "";
 																}
@@ -1840,7 +1837,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3612) {
+														if (opcode == 3612) {
 															if (Client.clanChatOwner != null) {
 																Class3.anIntArray95[var5++] = -1304125287
 																		* Class86.clanChatSize;
@@ -1850,7 +1847,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3613) {
+														if (opcode == 3613) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															if (Client.clanChatOwner != null
@@ -1863,7 +1860,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3614) {
+														if (opcode == 3614) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															if (Client.clanChatOwner != null
@@ -1877,7 +1874,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3615) {
+														if (opcode == 3615) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															if (Client.clanChatOwner != null
@@ -1890,12 +1887,12 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3616) {
+														if (opcode == 3616) {
 															Class3.anIntArray95[var5++] = Class43.aByte451;
 															continue;
 														}
 
-														if (var31 == 3617) {
+														if (opcode == 3617) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															if (InterfaceNode.clanMates != null) {
@@ -1907,12 +1904,12 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3618) {
+														if (opcode == 3618) {
 															Class3.anIntArray95[var5++] = Client.clanChatRank;
 															continue;
 														}
 
-														if (var31 == 3619) {
+														if (opcode == 3619) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															if (!var83.equals("")) {
@@ -1924,13 +1921,13 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3620) {
+														if (opcode == 3620) {
 															Client.outBuffer.putHeader(233);
 															Client.outBuffer.putByte(0);
 															continue;
 														}
 
-														if (var31 == 3621) {
+														if (opcode == 3621) {
 															if (Client.friendListSize * -923448785 == 0) {
 																Class3.anIntArray95[var5++] = -1;
 															} else {
@@ -1940,7 +1937,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3622) {
+														if (opcode == 3622) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															if (Client.friendListSize * -923448785 != 0
@@ -1955,12 +1952,11 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3623) {
+														if (opcode == 3623) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															if (var83.startsWith(Class41.method223(0))
-																	|| var83.startsWith(
-																			Class41.method223(1))) {
+																	|| var83.startsWith(Class41.method223(1))) {
 																var83 = var83.substring(7);
 															}
 
@@ -1969,7 +1965,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3624) {
+														if (opcode == 3624) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															if (InterfaceNode.clanMates != null
@@ -1984,13 +1980,12 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3625) {
+														if (opcode == 3625) {
 															if (Client.clanChatName != null) {
 																var91 = Class3.aStringArray85;
 																var16 = var6++;
 																var59 = Client.clanChatName;
-																var67 = OverlayType
-																		.method716(Class49.method250(var59));
+																var67 = OverlayType.method716(GZipDecompressor.method250(var59));
 																if (var67 == null) {
 																	var67 = "";
 																}
@@ -2001,8 +1996,8 @@ public abstract class Class52 {
 															}
 															continue;
 														}
-													} else if (var31 < 4000) {
-														if (var31 == 3903) {
+													} else if (opcode < 4000) {
+														if (opcode == 3903) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = Client.localExchangeOffers[var33]
@@ -2010,7 +2005,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3904) {
+														if (opcode == 3904) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = Client.localExchangeOffers[var33].itemId
@@ -2018,7 +2013,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3905) {
+														if (opcode == 3905) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = Client.localExchangeOffers[var33].price
@@ -2026,7 +2021,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3906) {
+														if (opcode == 3906) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = -794800437
@@ -2034,7 +2029,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3907) {
+														if (opcode == 3907) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = -338006479
@@ -2042,7 +2037,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3908) {
+														if (opcode == 3908) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = 1791988527
@@ -2050,7 +2045,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3910) {
+														if (opcode == 3910) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Client.localExchangeOffers[var33].method372();
@@ -2058,7 +2053,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3911) {
+														if (opcode == 3911) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Client.localExchangeOffers[var33].method372();
@@ -2066,7 +2061,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3912) {
+														if (opcode == 3912) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Client.localExchangeOffers[var33].method372();
@@ -2074,7 +2069,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3913) {
+														if (opcode == 3913) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Client.localExchangeOffers[var33].method372();
@@ -2083,7 +2078,7 @@ public abstract class Class52 {
 														}
 
 														boolean var97;
-														if (var31 == 3914) {
+														if (opcode == 3914) {
 															--var5;
 															var97 = Class3.anIntArray95[var5] == 1;
 															if (Class70.aClass114_588 != null) {
@@ -2093,7 +2088,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3915) {
+														if (opcode == 3915) {
 															--var5;
 															var97 = Class3.anIntArray95[var5] == 1;
 															if (Class70.aClass114_588 != null) {
@@ -2103,7 +2098,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3916) {
+														if (opcode == 3916) {
 															var5 -= 2;
 															var97 = Class3.anIntArray95[var5] == 1;
 															var55 = Class3.anIntArray95[1 + var5] == 1;
@@ -2114,7 +2109,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3917) {
+														if (opcode == 3917) {
 															--var5;
 															var97 = Class3.anIntArray95[var5] == 1;
 															if (Class70.aClass114_588 != null) {
@@ -2124,7 +2119,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3918) {
+														if (opcode == 3918) {
 															--var5;
 															var97 = Class3.anIntArray95[var5] == 1;
 															if (Class70.aClass114_588 != null) {
@@ -2134,14 +2129,14 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3919) {
+														if (opcode == 3919) {
 															Class3.anIntArray95[var5++] = Class70.aClass114_588 == null
 																	? 0 : Class70.aClass114_588.aList793.size();
 															continue;
 														}
 
 														Class115 var75;
-														if (var31 == 3920) {
+														if (opcode == 3920) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var75 = (Class115) Class70.aClass114_588.aList793
@@ -2150,7 +2145,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3921) {
+														if (opcode == 3921) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var75 = (Class115) Class70.aClass114_588.aList793
@@ -2159,7 +2154,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3922) {
+														if (opcode == 3922) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var75 = (Class115) Class70.aClass114_588.aList793
@@ -2168,12 +2163,12 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3923) {
+														if (opcode == 3923) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var75 = (Class115) Class70.aClass114_588.aList793
 																	.get(var33);
-															long var26 = Node_Sub5.currentTimeMs()
+															long var26 = AnimationSkin.currentTimeMs()
 																	- 8991659602621826001L * Huffman.aLong449
 																	- -3596478625201456337L * var75.aLong797;
 															var49 = (int) (var26 / 3600000L);
@@ -2186,7 +2181,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3924) {
+														if (opcode == 3924) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var75 = (Class115) Class70.aClass114_588.aList793
@@ -2196,7 +2191,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3925) {
+														if (opcode == 3925) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var75 = (Class115) Class70.aClass114_588.aList793
@@ -2206,7 +2201,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 3926) {
+														if (opcode == 3926) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var75 = (Class115) Class70.aClass114_588.aList793
@@ -2215,8 +2210,8 @@ public abstract class Class52 {
 																	* var75.anExchangeOffer796.itemId;
 															continue;
 														}
-													} else if (var31 < 4100) {
-														if (var31 == 4000) {
+													} else if (opcode < 4100) {
+														if (opcode == 4000) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2224,7 +2219,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4001) {
+														if (opcode == 4001) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2232,7 +2227,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4002) {
+														if (opcode == 4002) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2240,7 +2235,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4003) {
+														if (opcode == 4003) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[1 + var5];
@@ -2248,7 +2243,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4004) {
+														if (opcode == 4004) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = (int) (Math.random()
@@ -2256,7 +2251,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4005) {
+														if (opcode == 4005) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = (int) (Math.random()
@@ -2264,7 +2259,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4006) {
+														if (opcode == 4006) {
 															var5 -= 5;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2276,7 +2271,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4007) {
+														if (opcode == 4007) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2284,7 +2279,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4008) {
+														if (opcode == 4008) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2292,7 +2287,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4009) {
+														if (opcode == 4009) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2300,7 +2295,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4010) {
+														if (opcode == 4010) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2309,7 +2304,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4011) {
+														if (opcode == 4011) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2317,7 +2312,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4012) {
+														if (opcode == 4012) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2330,7 +2325,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4013) {
+														if (opcode == 4013) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[1 + var5];
@@ -2345,7 +2340,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4014) {
+														if (opcode == 4014) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2353,15 +2348,15 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4015) {
+														if (opcode == 4015) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
 															Class3.anIntArray95[var5++] = var33 | var16;
 															continue;
 														}
-													} else if (var31 < 4200) {
-														if (var31 == 4100) {
+													} else if (opcode < 4200) {
+														if (opcode == 4100) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															--var5;
@@ -2370,7 +2365,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4101) {
+														if (opcode == 4101) {
 															var6 -= 2;
 															var83 = Class3.aStringArray85[var6];
 															var54 = Class3.aStringArray85[1 + var6];
@@ -2378,7 +2373,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4102) {
+														if (opcode == 4102) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															--var5;
@@ -2395,14 +2390,14 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4103) {
+														if (opcode == 4103) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															Class3.aStringArray85[var6++] = var83.toLowerCase();
 															continue;
 														}
 
-														if (var31 == 4104) {
+														if (opcode == 4104) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															long var28 = ((long) var33 + 11745L) * 86400000L;
@@ -2415,7 +2410,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4105) {
+														if (opcode == 4105) {
 															var6 -= 2;
 															var83 = Class3.aStringArray85[var6];
 															var54 = Class3.aStringArray85[1 + var6];
@@ -2429,14 +2424,14 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4106) {
+														if (opcode == 4106) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.aStringArray85[var6++] = Integer.toString(var33);
 															continue;
 														}
 
-														if (var31 == 4107) {
+														if (opcode == 4107) {
 															var6 -= 2;
 															Class3.anIntArray95[var5++] = ByteBuf.method603(
 																	Class96_Sub1.method502(Class3.aStringArray85[var6],
@@ -2447,7 +2442,7 @@ public abstract class Class52 {
 
 														byte[] var71;
 														DualNode_Sub13_Sub3_Sub1 var79;
-														if (var31 == 4108) {
+														if (opcode == 4108) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															var5 -= 2;
@@ -2459,7 +2454,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4109) {
+														if (opcode == 4109) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															var5 -= 2;
@@ -2471,7 +2466,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4110) {
+														if (opcode == 4110) {
 															var6 -= 2;
 															var83 = Class3.aStringArray85[var6];
 															var54 = Class3.aStringArray85[1 + var6];
@@ -2484,7 +2479,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4111) {
+														if (opcode == 4111) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															Class3.aStringArray85[var6++] = DualNode_Sub13_Sub3
@@ -2492,7 +2487,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4112) {
+														if (opcode == 4112) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															--var5;
@@ -2502,7 +2497,7 @@ public abstract class Class52 {
 														}
 
 														char var78;
-														if (var31 == 4113) {
+														if (opcode == 4113) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var89 = Class3.anIntArray95;
@@ -2523,7 +2518,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4114) {
+														if (opcode == 4114) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var89 = Class3.anIntArray95;
@@ -2536,7 +2531,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4115) {
+														if (opcode == 4115) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = LandscapeTile
@@ -2544,7 +2539,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4116) {
+														if (opcode == 4116) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = MilliTimer
@@ -2552,7 +2547,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4117) {
+														if (opcode == 4117) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															if (var83 != null) {
@@ -2563,7 +2558,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4118) {
+														if (opcode == 4118) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															var5 -= 2;
@@ -2574,7 +2569,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4119) {
+														if (opcode == 4119) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															StringBuilder var88 = new StringBuilder(var83.length());
@@ -2595,7 +2590,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4120) {
+														if (opcode == 4120) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															--var5;
@@ -2604,7 +2599,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4121) {
+														if (opcode == 4121) {
 															var6 -= 2;
 															var83 = Class3.aStringArray85[var6];
 															var54 = Class3.aStringArray85[1 + var6];
@@ -2613,8 +2608,8 @@ public abstract class Class52 {
 															Class3.anIntArray95[var5++] = var83.indexOf(var54, var35);
 															continue;
 														}
-													} else if (var31 < 4300) {
-														if (var31 == 4200) {
+													} else if (opcode < 4300) {
+														if (opcode == 4200) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.aStringArray85[var6++] = FriendedPlayer
@@ -2623,7 +2618,7 @@ public abstract class Class52 {
 														}
 
 														ItemType var74;
-														if (var31 == 4201) {
+														if (opcode == 4201) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[1 + var5];
@@ -2639,7 +2634,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4202) {
+														if (opcode == 4202) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2655,7 +2650,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4203) {
+														if (opcode == 4203) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = FriendedPlayer
@@ -2663,17 +2658,17 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4204) {
+														if (opcode == 4204) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = FriendedPlayer
-																	.getItemType(var33).stackable
-																	* 1303294175 == 1 ? 1 : 0;
+																	.getItemType(var33).stackable * 1303294175 == 1 ? 1
+																			: 0;
 															continue;
 														}
 
 														ItemType var92;
-														if (var31 == 4205) {
+														if (opcode == 4205) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var92 = FriendedPlayer.getItemType(var33);
@@ -2688,7 +2683,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4206) {
+														if (opcode == 4206) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															var92 = FriendedPlayer.getItemType(var33);
@@ -2703,7 +2698,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4207) {
+														if (opcode == 4207) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = FriendedPlayer
@@ -2711,7 +2706,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4210) {
+														if (opcode == 4210) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															--var5;
@@ -2725,7 +2720,7 @@ public abstract class Class52 {
 															while (true) {
 																if (var48 >= Class13.itemsSize * -1396045331) {
 																	Connection.aShortArray560 = var80;
-																	Class24.anInt305 = 0;
+																	ClientSettings.anInt305 = 0;
 																	GroundItem.anInt1840 = var20 * -980225491;
 																	String[] var64 = new String[-845664859
 																			* GroundItem.anInt1840];
@@ -2740,8 +2735,7 @@ public abstract class Class52 {
 																	break;
 																}
 
-																ItemType var61 = FriendedPlayer
-																		.getItemType(var48);
+																ItemType var61 = FriendedPlayer.getItemType(var48);
 																if ((!var41 || var61.aBool1624)
 																		&& -507524473 * var61.anInt1633 == -1
 																		&& var61.name.toLowerCase()
@@ -2773,11 +2767,11 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4211) {
-															if (Connection.aShortArray560 != null && Class24.anInt305
+														if (opcode == 4211) {
+															if (Connection.aShortArray560 != null && ClientSettings.anInt305
 																	* -2003486467 < GroundItem.anInt1840 * -845664859) {
-																Class3.anIntArray95[var5++] = Connection.aShortArray560[(Class24.anInt305 += -1453677483)
-																		* -2003486467 - 1] & '\uffff';
+																Class3.anIntArray95[var5++] = Connection.aShortArray560[(ClientSettings.anInt305 += -1453677483)
+																		* -2003486467 - 1] & 0xFFFF;
 																continue;
 															}
 
@@ -2785,17 +2779,17 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 4212) {
-															Class24.anInt305 = 0;
+														if (opcode == 4212) {
+															ClientSettings.anInt305 = 0;
 															continue;
 														}
-													} else if (var31 < 5100) {
-														if (var31 == 5000) {
+													} else if (opcode < 5100) {
+														if (opcode == 5000) {
 															Class3.anIntArray95[var5++] = Client.anInt2110 * -400704361;
 															continue;
 														}
 
-														if (var31 == 5001) {
+														if (opcode == 5001) {
 															var5 -= 3;
 															Client.anInt2110 = -677280985 * Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2833,7 +2827,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5002) {
+														if (opcode == 5002) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															var5 -= 2;
@@ -2848,7 +2842,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5003) {
+														if (opcode == 5003) {
 															var5 -= 2;
 															var33 = Class3.anIntArray95[var5];
 															var16 = Class3.anIntArray95[var5 + 1];
@@ -2876,7 +2870,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5004) {
+														if (opcode == 5004) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															DualNode_Sub8 var95 = Class74.method332(var33);
@@ -2901,7 +2895,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5005) {
+														if (opcode == 5005) {
 															if (VarClientHub.aClass51_320 == null) {
 																Class3.anIntArray95[var5++] = -1;
 															} else {
@@ -2911,7 +2905,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5008) {
+														if (opcode == 5008) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															--var5;
@@ -3076,7 +3070,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5009) {
+														if (opcode == 5009) {
 															var6 -= 2;
 															var83 = Class3.aStringArray85[var6];
 															var54 = Class3.aStringArray85[var6 + 1];
@@ -3096,7 +3090,7 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5015) {
+														if (opcode == 5015) {
 															if (Class68.myPlayer != null
 																	&& Class68.myPlayer.name != null) {
 																var83 = Class68.myPlayer.name;
@@ -3108,13 +3102,13 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5016) {
+														if (opcode == 5016) {
 															Class3.anIntArray95[var5++] = -1975764555
 																	* Client.anInt2182;
 															continue;
 														}
 
-														if (var31 == 5017) {
+														if (opcode == 5017) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = DualNode_Sub14
@@ -3122,27 +3116,27 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5018) {
+														if (opcode == 5018) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = Class91.method403(var33);
 															continue;
 														}
 
-														if (var31 == 5019) {
+														if (opcode == 5019) {
 															--var5;
 															var33 = Class3.anIntArray95[var5];
 															Class3.anIntArray95[var5++] = Class21.method157(var33);
 															continue;
 														}
 
-														if (var31 == 5020) {
+														if (opcode == 5020) {
 															--var6;
 															var83 = Class3.aStringArray85[var6];
 															if (var83.equalsIgnoreCase("toggleroof")) {
-																Node_Sub5.aClass24_1265.aBool298 = !Node_Sub5.aClass24_1265.aBool298;
-																Class75.method335();
-																if (Node_Sub5.aClass24_1265.aBool298) {
+																AnimationSkin.settings.hideRoofs = !AnimationSkin.settings.hideRoofs;
+																Class75.serializeSettings();
+																if (AnimationSkin.settings.hideRoofs) {
 																	Class75.method334(99, "",
 																			"Roofs are now all hidden");
 																} else {
@@ -3173,7 +3167,7 @@ public abstract class Class52 {
 																}
 
 																if (var83.equalsIgnoreCase("errortest")
-																		&& 1082541889 * Client.anInt2074 == 2) {
+																		&& 1082541889 * Client.socketType == 2) {
 																	throw new RuntimeException();
 																}
 															}
@@ -3184,14 +3178,14 @@ public abstract class Class52 {
 															continue;
 														}
 
-														if (var31 == 5021) {
+														if (opcode == 5021) {
 															--var6;
 															Client.aString2044 = Class3.aStringArray85[var6]
 																	.toLowerCase().trim();
 															continue;
 														}
 
-														if (var31 == 5022) {
+														if (opcode == 5022) {
 															Class3.aStringArray85[var6++] = Client.aString2044;
 															continue;
 														}
@@ -3199,15 +3193,15 @@ public abstract class Class52 {
 												}
 											}
 										} else {
-											if (var31 >= 2000) {
-												var31 -= 1000;
+											if (opcode >= 2000) {
+												opcode -= 1000;
 												--var5;
 												var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 											} else {
-												var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
+												var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
 											}
 
-											if (var31 == 1927) {
+											if (opcode == 1927) {
 												if (Class3.anInt91 * -1024934675 >= 10) {
 													throw new RuntimeException();
 												}
@@ -3217,23 +3211,23 @@ public abstract class Class52 {
 												}
 
 												ScriptEvent var50 = new ScriptEvent();
-												var50.aWidget1430 = var15;
+												var50.widget = var15;
 												var50.args = var15.anObjectArray1188;
 												var50.anInt1436 = Class3.anInt91 * 189385479 + 1898945859;
-												Client.aDeque2164.method475(var0);
+												Client.aDeque2164.method475(event);
 												continue;
 											}
 										}
 									} else {
-										if (var31 >= 2000) {
-											var31 -= 1000;
+										if (opcode >= 2000) {
+											opcode -= 1000;
 											--var5;
 											var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 										} else {
-											var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
+											var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
 										}
 
-										if (var31 == 1300) {
+										if (opcode == 1300) {
 											--var5;
 											var16 = Class3.anIntArray95[var5] - 1;
 											if (var16 >= 0 && var16 <= 9) {
@@ -3246,7 +3240,7 @@ public abstract class Class52 {
 											continue;
 										}
 
-										if (var31 == 1301) {
+										if (opcode == 1301) {
 											var5 -= 2;
 											var16 = Class3.anIntArray95[var5];
 											var35 = Class3.anIntArray95[1 + var5];
@@ -3254,52 +3248,52 @@ public abstract class Class52 {
 											continue;
 										}
 
-										if (var31 == 1302) {
+										if (opcode == 1302) {
 											--var5;
 											var15.aBool1179 = Class3.anIntArray95[var5] == 1;
 											continue;
 										}
 
-										if (var31 == 1303) {
+										if (opcode == 1303) {
 											--var5;
 											var15.anInt1166 = Class3.anIntArray95[var5] * -172520565;
 											continue;
 										}
 
-										if (var31 == 1304) {
+										if (opcode == 1304) {
 											--var5;
 											var15.anInt1146 = Class3.anIntArray95[var5] * -77181551;
 											continue;
 										}
 
-										if (var31 == 1305) {
+										if (opcode == 1305) {
 											--var6;
 											var15.name = Class3.aStringArray85[var6];
 											continue;
 										}
 
-										if (var31 == 1306) {
+										if (opcode == 1306) {
 											--var6;
 											var15.selectedAction = Class3.aStringArray85[var6];
 											continue;
 										}
 
-										if (var31 == 1307) {
+										if (opcode == 1307) {
 											var15.actions = null;
 											continue;
 										}
 									}
 								} else {
-									if (var31 >= 2000) {
-										var31 -= 1000;
+									if (opcode >= 2000) {
+										opcode -= 1000;
 										--var5;
 										var15 = Class94.getWidget(Class3.anIntArray95[var5]);
 									} else {
-										var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
+										var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
 									}
 
 									Class68.method326(var15);
-									if (var31 == 1200 || var31 == 1205 || var31 == 1212) {
+									if (opcode == 1200 || opcode == 1205 || opcode == 1212) {
 										var5 -= 2;
 										var16 = Class3.anIntArray95[var5];
 										var35 = Class3.anIntArray95[var5 + 1];
@@ -3312,9 +3306,9 @@ public abstract class Class52 {
 										var15.anInt1198 = var38.anInt1642 * 889655743;
 										var15.anInt1151 = -738298705 * var38.anInt1616;
 										var15.modelZoom = -1079397735 * var38.anInt1637;
-										if (var31 == 1205) {
+										if (opcode == 1205) {
 											var15.anInt1155 = 0;
-										} else if (var31 == 1212 | 1303294175 * var38.stackable == 1) {
+										} else if (opcode == 1212 | 1303294175 * var38.stackable == 1) {
 											var15.anInt1155 = -1548696853;
 										} else {
 											var15.anInt1155 = 1197573590;
@@ -3330,14 +3324,14 @@ public abstract class Class52 {
 										continue;
 									}
 
-									if (var31 == 1201) {
+									if (opcode == 1201) {
 										var15.modelType = -752921414;
 										--var5;
 										var15.modelId = Class3.anIntArray95[var5] * -541123263;
 										continue;
 									}
 
-									if (var31 == 1202) {
+									if (opcode == 1202) {
 										var15.modelType = -1129382121;
 										var15.modelId = Class68.myPlayer.config.method269() * -541123263;
 										continue;
@@ -3345,16 +3339,16 @@ public abstract class Class52 {
 								}
 							} else {
 								var16 = -1;
-								if (var31 >= 2000) {
-									var31 -= 1000;
+								if (opcode >= 2000) {
+									opcode -= 1000;
 									--var5;
 									var16 = Class3.anIntArray95[var5];
 									var15 = Class94.getWidget(var16);
 								} else {
-									var15 = var46 ? Class24.aWidget304 : Class3.aWidget88;
+									var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
 								}
 
-								if (var31 == 1100) {
+								if (opcode == 1100) {
 									var5 -= 2;
 									var15.insetX = 435089853 * Class3.anIntArray95[var5];
 									if (-352661099 * var15.insetX > -302755437 * var15.viewportWidth
@@ -3380,56 +3374,56 @@ public abstract class Class52 {
 									continue;
 								}
 
-								if (var31 == 1101) {
+								if (opcode == 1101) {
 									--var5;
 									var15.textColor = Class3.anIntArray95[var5] * 1053943595;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1102) {
+								if (opcode == 1102) {
 									--var5;
 									var15.aBool1161 = Class3.anIntArray95[var5] == 1;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1103) {
+								if (opcode == 1103) {
 									--var5;
 									var15.alpha = Class3.anIntArray95[var5] * -150375007;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1104) {
+								if (opcode == 1104) {
 									--var5;
 									var15.anInt1137 = Class3.anIntArray95[var5] * -532092193;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1105) {
+								if (opcode == 1105) {
 									--var5;
 									var15.textureId = Class3.anIntArray95[var5] * 8452631;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1106) {
+								if (opcode == 1106) {
 									--var5;
 									var15.spriteId = Class3.anIntArray95[var5] * -2073708251;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1107) {
+								if (opcode == 1107) {
 									--var5;
 									var15.aBool1144 = Class3.anIntArray95[var5] == 1;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1108) {
+								if (opcode == 1108) {
 									var15.modelType = -376460707;
 									--var5;
 									var15.modelId = Class3.anIntArray95[var5] * -541123263;
@@ -3437,7 +3431,7 @@ public abstract class Class52 {
 									continue;
 								}
 
-								if (var31 == 1109) {
+								if (opcode == 1109) {
 									var5 -= 6;
 									var15.anInt1198 = 1821510845 * Class3.anIntArray95[var5];
 									var15.anInt1151 = 1509391427 * Class3.anIntArray95[var5 + 1];
@@ -3449,7 +3443,7 @@ public abstract class Class52 {
 									continue;
 								}
 
-								if (var31 == 1110) {
+								if (opcode == 1110) {
 									--var5;
 									var35 = Class3.anIntArray95[var5];
 									if (var35 != 467073769 * var15.anInt1162) {
@@ -3461,14 +3455,14 @@ public abstract class Class52 {
 									continue;
 								}
 
-								if (var31 == 1111) {
+								if (opcode == 1111) {
 									--var5;
 									var15.aBool1154 = Class3.anIntArray95[var5] == 1;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1112) {
+								if (opcode == 1112) {
 									--var6;
 									var37 = Class3.aStringArray85[var6];
 									if (!var37.equals(var15.text)) {
@@ -3478,14 +3472,14 @@ public abstract class Class52 {
 									continue;
 								}
 
-								if (var31 == 1113) {
+								if (opcode == 1113) {
 									--var5;
 									var15.fontId = Class3.anIntArray95[var5] * 189801909;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1114) {
+								if (opcode == 1114) {
 									var5 -= 3;
 									var15.anInt1159 = Class3.anIntArray95[var5] * 1328854359;
 									var15.anInt1138 = 252282377 * Class3.anIntArray95[var5 + 1];
@@ -3494,42 +3488,42 @@ public abstract class Class52 {
 									continue;
 								}
 
-								if (var31 == 1115) {
+								if (opcode == 1115) {
 									--var5;
 									var15.textShadowed = Class3.anIntArray95[var5] == 1;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1116) {
+								if (opcode == 1116) {
 									--var5;
 									var15.borderThickness = Class3.anIntArray95[var5] * -1058827231;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1117) {
+								if (opcode == 1117) {
 									--var5;
 									var15.shadowColor = Class3.anIntArray95[var5] * 1485125361;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1118) {
+								if (opcode == 1118) {
 									--var5;
 									var15.flippedVertically = Class3.anIntArray95[var5] == 1;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1119) {
+								if (opcode == 1119) {
 									--var5;
 									var15.flippedHorizontally = Class3.anIntArray95[var5] == 1;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1120) {
+								if (opcode == 1120) {
 									var5 -= 2;
 									var15.viewportWidth = -1460374373 * Class3.anIntArray95[var5];
 									var15.viewportHeight = Class3.anIntArray95[var5 + 1] * 2144421371;
@@ -3540,14 +3534,14 @@ public abstract class Class52 {
 									continue;
 								}
 
-								if (var31 == 1121) {
+								if (opcode == 1121) {
 									FriendedPlayer.method410(var15.hash * -1536575275, var15.index * 2021294259);
 									Client.aWidget2135 = var15;
 									Class68.method326(var15);
 									continue;
 								}
 
-								if (var31 == 1122) {
+								if (opcode == 1122) {
 									--var5;
 									var15.anInt1143 = Class3.anIntArray95[var5] * -134170007;
 									Class68.method326(var15);
@@ -3556,16 +3550,16 @@ public abstract class Class52 {
 							}
 						} else {
 							var33 = -1;
-							if (var31 >= 2000) {
-								var31 -= 1000;
+							if (opcode >= 2000) {
+								opcode -= 1000;
 								--var5;
 								var33 = Class3.anIntArray95[var5];
 								var34 = Class94.getWidget(var33);
 							} else {
-								var34 = var46 ? Class24.aWidget304 : Class3.aWidget88;
+								var34 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
 							}
 
-							if (var31 == 1000) {
+							if (opcode == 1000) {
 								var5 -= 4;
 								var34.anInt1134 = Class3.anIntArray95[var5] * 10986657;
 								var34.anInt1185 = -720369495 * Class3.anIntArray95[1 + var5];
@@ -3579,7 +3573,7 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 1001) {
+							if (opcode == 1001) {
 								var5 -= 4;
 								var34.anInt1135 = Class3.anIntArray95[var5] * 934649725;
 								var34.anInt1136 = Class3.anIntArray95[var5 + 1] * -280898437;
@@ -3593,7 +3587,7 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 1003) {
+							if (opcode == 1003) {
 								--var5;
 								var36 = Class3.anIntArray95[var5] == 1;
 								if (var36 != var34.hidden) {
@@ -3603,13 +3597,13 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 1005) {
+							if (opcode == 1005) {
 								--var5;
 								var34.aBool1201 = Class3.anIntArray95[var5] == 1;
 								continue;
 							}
 
-							if (var31 == 1006) {
+							if (opcode == 1006) {
 								--var5;
 								var34.aBool1175 = Class3.anIntArray95[var5] == 1;
 								continue;
@@ -3617,8 +3611,8 @@ public abstract class Class52 {
 						}
 					}
 
-					if (var31 < 5400) {
-						if (var31 == 5306) {
+					if (opcode < 5400) {
+						if (opcode == 5306) {
 							int[] var99 = Class3.anIntArray95;
 							var16 = var5++;
 							var35 = Client.resizable ? 2 : 1;
@@ -3626,7 +3620,7 @@ public abstract class Class52 {
 							continue;
 						}
 
-						if (var31 == 5307) {
+						if (opcode == 5307) {
 							--var5;
 							var33 = Class3.anIntArray95[var5];
 							if (var33 != 1 && var33 != 2) {
@@ -3640,7 +3634,7 @@ public abstract class Class52 {
 								Client.resizable = false;
 							}
 
-							Node_Sub5.method534();
+							AnimationSkin.method534();
 							if (Client.anInt2113 * 846055547 >= 25) {
 								Client.outBuffer.putHeader(23);
 								BitBuf var94 = Client.outBuffer;
@@ -3654,24 +3648,24 @@ public abstract class Class52 {
 							continue;
 						}
 
-						if (var31 == 5308) {
-							Class3.anIntArray95[var5++] = Node_Sub5.aClass24_1265.anInt300 * -1207115777;
+						if (opcode == 5308) {
+							Class3.anIntArray95[var5++] = AnimationSkin.settings.screenType * -1207115777;
 							continue;
 						}
 
-						if (var31 == 5309) {
+						if (opcode == 5309) {
 							--var5;
 							var33 = Class3.anIntArray95[var5];
 							if (var33 == 1 || var33 == 2) {
-								Node_Sub5.aClass24_1265.anInt300 = -2081218561 * var33;
-								Class75.method335();
+								AnimationSkin.settings.screenType = -2081218561 * var33;
+								Class75.serializeSettings();
 							}
 							continue;
 						}
 					}
 
-					if (var31 < 5600) {
-						if (var31 == 5504) {
+					if (opcode < 5600) {
+						if (opcode == 5504) {
 							var5 -= 2;
 							var33 = Class3.anIntArray95[var5];
 							var16 = Class3.anIntArray95[1 + var5];
@@ -3682,17 +3676,17 @@ public abstract class Class52 {
 							continue;
 						}
 
-						if (var31 == 5505) {
+						if (opcode == 5505) {
 							Class3.anIntArray95[var5++] = Client.anInt2051 * -1992036739;
 							continue;
 						}
 
-						if (var31 == 5506) {
+						if (opcode == 5506) {
 							Class3.anIntArray95[var5++] = -1916997753 * Client.minimapRotation;
 							continue;
 						}
 
-						if (var31 == 5530) {
+						if (opcode == 5530) {
 							--var5;
 							var33 = Class3.anIntArray95[var5];
 							if (var33 < 0) {
@@ -3703,17 +3697,17 @@ public abstract class Class52 {
 							continue;
 						}
 
-						if (var31 == 5531) {
+						if (opcode == 5531) {
 							Class3.anIntArray95[var5++] = Client.anInt2185 * -868608503;
 							continue;
 						}
 					}
 
-					if (var31 < 5700 && var31 == 5630) {
+					if (opcode < 5700 && opcode == 5630) {
 						Client.anInt2045 = -453788862;
 					} else {
-						if (var31 < 6300) {
-							if (var31 == 6200) {
+						if (opcode < 6300) {
+							if (opcode == 6200) {
 								var5 -= 2;
 								Client.aShort2178 = (short) Class3.anIntArray95[var5];
 								if (Client.aShort2178 <= 0) {
@@ -3727,7 +3721,7 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 6201) {
+							if (opcode == 6201) {
 								var5 -= 2;
 								Client.aShort2218 = (short) Class3.anIntArray95[var5];
 								if (Client.aShort2218 <= 0) {
@@ -3741,7 +3735,7 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 6202) {
+							if (opcode == 6202) {
 								var5 -= 4;
 								Client.aShort2219 = (short) Class3.anIntArray95[var5];
 								if (Client.aShort2219 <= 0) {
@@ -3769,7 +3763,7 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 6203) {
+							if (opcode == 6203) {
 								if (Client.aWidget2231 != null) {
 									Class13.method118(0, 0, 1645211541 * Client.aWidget2231.width,
 											Client.aWidget2231.height * 1227800423, false);
@@ -3782,27 +3776,27 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 6204) {
+							if (opcode == 6204) {
 								Class3.anIntArray95[var5++] = Client.aShort2218;
 								Class3.anIntArray95[var5++] = Client.aShort2014;
 								continue;
 							}
 
-							if (var31 == 6205) {
+							if (opcode == 6205) {
 								Class3.anIntArray95[var5++] = Client.aShort2178;
 								Class3.anIntArray95[var5++] = Client.aShort2217;
 								continue;
 							}
 						}
 
-						if (var31 < 6600) {
-							if (var31 == 6500) {
+						if (opcode < 6600) {
+							if (opcode == 6500) {
 								Class3.anIntArray95[var5++] = Class30.loadWorlds() ? 1 : 0;
 								continue;
 							}
 
 							World var98;
-							if (var31 == 6501) {
+							if (opcode == 6501) {
 								var98 = Npc.method1026((byte) 2);
 								if (var98 != null) {
 									Class3.anIntArray95[var5++] = -145619359 * var98.id;
@@ -3822,7 +3816,7 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 6502) {
+							if (opcode == 6502) {
 								if (World.anInt1121 * -1614070229 < World.worldCount * -1946617791) {
 									var98 = World.worlds[(World.anInt1121 += -1416261501) * -1614070229 - 1];
 								} else {
@@ -3848,7 +3842,7 @@ public abstract class Class52 {
 							}
 
 							World var93;
-							if (var31 == 6506) {
+							if (opcode == 6506) {
 								--var5;
 								var33 = Class3.anIntArray95[var5];
 								var93 = null;
@@ -3878,7 +3872,7 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 6507) {
+							if (opcode == 6507) {
 								var5 -= 4;
 								var33 = Class3.anIntArray95[var5];
 								var55 = Class3.anIntArray95[1 + var5] == 1;
@@ -3890,7 +3884,7 @@ public abstract class Class52 {
 								continue;
 							}
 
-							if (var31 == 6511) {
+							if (opcode == 6511) {
 								--var5;
 								var33 = Class3.anIntArray95[var5];
 								if (var33 >= 0 && var33 < -1946617791 * World.worldCount) {
@@ -3917,16 +3911,16 @@ public abstract class Class52 {
 						throw new IllegalStateException();
 					}
 				}
-			} catch (Exception var30) {
-				StringBuilder var12 = new StringBuilder(30);
-				var12.append("").append(var4.key).append(" ");
+			} catch (Exception e) {
+				StringBuilder builder = new StringBuilder(30);
+				builder.append("").append(script.key).append(" ");
 
-				for (var13 = 1112721435 * Class3.anInt87 - 1; var13 >= 0; --var13) {
-					var12.append("").append(Class3.aClass33Array86[var13].aRuneScript361.key).append(" ");
+				for (index = 1112721435 * Class3.anInt87 - 1; index >= 0; --index) {
+					builder.append("").append(Class3.aClass33Array86[index].aRuneScript361.key).append(" ");
 				}
 
-				var12.append("").append(var10);
-				Class79.method345(var12.toString(), var30);
+				builder.append("").append(-1);
+				Class79.error(builder.toString(), e);
 			}
 		}
 	}

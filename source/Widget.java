@@ -6,7 +6,7 @@ public class Widget extends Node {
 	static AbstractIndex widgetIndex;
 	public String aString1125 = "";
 	public int anInt1126;
-	static Class106 aClass106_1127 = new Class106(50);
+	static NodeMap aClass106_1127 = new NodeMap(50);
 	public int config = 0;
 	public int spriteId = 0;
 	public static boolean aBool1128 = false;
@@ -85,7 +85,7 @@ public class Widget extends Node {
 	public String[] actions;
 	public Widget parent = null;
 	public int anInt1166 = 0;
-	static Class106 aClass106_1167 = new Class106(200);
+	static NodeMap aClass106_1167 = new NodeMap(200);
 	public int[] anIntArray1168;
 	public String selectedAction = "";
 	public boolean aBool1169 = false;
@@ -123,7 +123,7 @@ public class Widget extends Node {
 	public int[][] varpOpcodes;
 	public int[] anIntArray1191;
 	public int viewportWidth = 0;
-	static Class106 aClass106_1192 = new Class106(20);
+	static NodeMap aClass106_1192 = new NodeMap(20);
 	public Object[] configListenerArgs;
 	public String tooltip;
 	public int anInt1193 = -1646228653;
@@ -143,7 +143,7 @@ public class Widget extends Node {
 	public int anInt1200;
 	public boolean aBool1201;
 	public int rotationZ = 0;
-	static Class106 aClass106_1202 = new Class106(8);
+	static NodeMap aClass106_1202 = new NodeMap(8);
 
 	void decodeActive(ByteBuf var1) {
 		var1.getUByte();
@@ -164,7 +164,7 @@ public class Widget extends Node {
 		this.anInt1132 = var1.getByte() * 821393763;
 		this.anInt1122 = var1.getByte() * -1510479807;
 		this.parentId = var1.getUShort() * 742443693;
-		if (-1652479707 * this.parentId == '\uffff') {
+		if (-1652479707 * this.parentId == 65535) {
 			this.parentId = -742443693;
 		} else {
 			this.parentId = 742443693 * ((this.hash * -1536575275 & -65536) + this.parentId * -1652479707);
@@ -191,7 +191,7 @@ public class Widget extends Node {
 		if (-1305917269 * this.type == 6) {
 			this.modelType = -376460707;
 			this.modelId = var1.getUShort() * -541123263;
-			if (this.modelId * 686060225 == '\uffff') {
+			if (this.modelId * 686060225 == 65535) {
 				this.modelId = 541123263;
 			}
 
@@ -202,7 +202,7 @@ public class Widget extends Node {
 			this.rotationY = var1.getUShort() * -1820349821;
 			this.modelZoom = var1.getUShort() * -438091779;
 			this.anInt1162 = var1.getUShort() * 1986493785;
-			if (467073769 * this.anInt1162 == '\uffff') {
+			if (467073769 * this.anInt1162 == 65535) {
 				this.anInt1162 = -1986493785;
 			}
 
@@ -219,7 +219,7 @@ public class Widget extends Node {
 
 		if (this.type * -1305917269 == 4) {
 			this.fontId = var1.getUShort() * 189801909;
-			if (-335454051 * this.fontId == '\uffff') {
+			if (-335454051 * this.fontId == 65535) {
 				this.fontId = -189801909;
 			}
 
@@ -296,36 +296,36 @@ public class Widget extends Node {
 		}
 	}
 
-	public Sprite method488(int var1) {
+	public Picture method488(int var1) {
 		aBool1128 = false;
 		if (var1 >= 0 && var1 < this.anIntArray1164.length) {
 			int var2 = this.anIntArray1164[var1];
 			if (var2 != -1) {
-				Sprite var3 = (Sprite) aClass106_1167.get((long) var2);
+				Picture var3 = (Picture) aClass106_1167.get((long) var2);
 				if (var3 != null) {
 					return var3;
 				} else {
 					AbstractIndex var4 = Npc.aClass87_1967;
-					Sprite var6;
-					if (!Class35.method202(var4, var2, 0)) {
+					Picture var6;
+					if (!Class35.decodeSprite(var4, var2, 0)) {
 						var6 = null;
 					} else {
-						Sprite var5 = new Sprite();
-						var5.anInt1815 = -749860951 * Class7.anInt148;
-						var5.anInt1816 = -1945497809 * Class7.anInt155;
-						var5.anInt1814 = Class7.anIntArray149[0];
-						var5.anInt1817 = VarPlayerType.anIntArray1544[0];
-						var5.height = Class7.anIntArray150[0];
-						var5.width = Class7.anIntArray151[0];
-						int var8 = var5.height * var5.width;
-						byte[] var9 = Npc.aByteArrayArray1966[0];
+						Picture var5 = new Picture();
+						var5.width = -749860951 * Class7.width;
+						var5.height = -1945497809 * Class7.height;
+						var5.offsetX = Class7.offsetsX[0];
+						var5.offsetY = VarPlayerType.offsetsY[0];
+						var5.subWidth = Class7.subWidths[0];
+						var5.subHeight = Class7.subHeights[0];
+						int var8 = var5.subWidth * var5.subHeight;
+						byte[] var9 = Npc.spritePixels[0];
 						var5.pixels = new int[var8];
 
 						for (int var7 = 0; var7 < var8; ++var7) {
-							var5.pixels[var7] = Class85.anIntArray690[var9[var7] & 255];
+							var5.pixels[var7] = Class85.palette[var9[var7] & 0xFF];
 						}
 
-						Class65.method318();
+						Class65.resetSprite();
 						var6 = var5;
 					}
 
@@ -345,7 +345,7 @@ public class Widget extends Node {
 		}
 	}
 
-	public Sprite method489(boolean var1) {
+	public Picture method489(boolean var1) {
 		aBool1128 = false;
 		int var11;
 		if (var1) {
@@ -360,31 +360,31 @@ public class Widget extends Node {
 			long var8 = ((long) (2139159057 * this.shadowColor) << 40) + ((this.flippedVertically ? 1L : 0L) << 38)
 					+ (long) var11 + ((long) (-357503007 * this.borderThickness) << 36)
 					+ ((this.flippedHorizontally ? 1L : 0L) << 39);
-			Sprite var2 = (Sprite) aClass106_1167.get(var8);
+			Picture var2 = (Picture) aClass106_1167.get(var8);
 			if (var2 != null) {
 				return var2;
 			} else {
 				AbstractIndex var10 = Npc.aClass87_1967;
-				Sprite var7;
-				if (!Class35.method202(var10, var11, 0)) {
+				Picture var7;
+				if (!Class35.decodeSprite(var10, var11, 0)) {
 					var7 = null;
 				} else {
-					Sprite var3 = new Sprite();
-					var3.anInt1815 = -749860951 * Class7.anInt148;
-					var3.anInt1816 = Class7.anInt155 * -1945497809;
-					var3.anInt1814 = Class7.anIntArray149[0];
-					var3.anInt1817 = VarPlayerType.anIntArray1544[0];
-					var3.height = Class7.anIntArray150[0];
-					var3.width = Class7.anIntArray151[0];
-					int var5 = var3.height * var3.width;
-					byte[] var12 = Npc.aByteArrayArray1966[0];
+					Picture var3 = new Picture();
+					var3.width = -749860951 * Class7.width;
+					var3.height = Class7.height * -1945497809;
+					var3.offsetX = Class7.offsetsX[0];
+					var3.offsetY = VarPlayerType.offsetsY[0];
+					var3.subWidth = Class7.subWidths[0];
+					var3.subHeight = Class7.subHeights[0];
+					int var5 = var3.subWidth * var3.subHeight;
+					byte[] var12 = Npc.spritePixels[0];
 					var3.pixels = new int[var5];
 
 					for (int var4 = 0; var4 < var5; ++var4) {
-						var3.pixels[var4] = Class85.anIntArray690[var12[var4] & 255];
+						var3.pixels[var4] = Class85.palette[var12[var4] & 0xFF];
 					}
 
-					Class65.method318();
+					Class65.resetSprite();
 					var7 = var3;
 				}
 
@@ -435,7 +435,7 @@ public class Widget extends Node {
 				AbstractIndex var4 = Class96_Sub1.aClass87_1207;
 				int var5 = -335454051 * this.fontId;
 				DualNode_Sub13_Sub3_Sub1 var2;
-				if (!Class35.method202(var3, var5, 0)) {
+				if (!Class35.decodeSprite(var3, var5, 0)) {
 					var2 = null;
 				} else {
 					var2 = IgnoredPlayer.method415(var4.getFile(var5, 0));
@@ -470,23 +470,23 @@ public class Widget extends Node {
 			if (var9 != null) {
 				return var9;
 			} else {
-				Sprite sprite = this.method489(var1);
+				Picture sprite = this.method489(var1);
 				if (sprite == null) {
 					return null;
 				} else {
-					Sprite copy = sprite.copy();
-					int[] var10 = new int[copy.width];
-					int[] var6 = new int[copy.width];
+					Picture copy = sprite.copy();
+					int[] var10 = new int[copy.subHeight];
+					int[] var6 = new int[copy.subHeight];
 					int var11 = 0;
 
-					while (var11 < copy.width) {
+					while (var11 < copy.subHeight) {
 						int var13 = 0;
-						int var4 = copy.height;
+						int var4 = copy.subWidth;
 						int var3 = 0;
 
 						while (true) {
-							if (var3 < copy.height) {
-								if (copy.pixels[var3 + var11 * copy.height] != 0) {
+							if (var3 < copy.subWidth) {
+								if (copy.pixels[var3 + var11 * copy.subWidth] != 0) {
 									++var3;
 									continue;
 								}
@@ -494,8 +494,8 @@ public class Widget extends Node {
 								var13 = var3;
 							}
 
-							for (var3 = copy.height - 1; var3 >= var13; --var3) {
-								if (copy.pixels[var3 + var11 * copy.height] == 0) {
+							for (var3 = copy.subWidth - 1; var3 >= var13; --var3) {
+								if (copy.pixels[var3 + var11 * copy.subWidth] == 0) {
 									var4 = 1 + var3;
 									break;
 								}
@@ -508,7 +508,7 @@ public class Widget extends Node {
 						}
 					}
 
-					var9 = new DualNode_Sub14(copy.height, copy.width, var6, var10, var2);
+					var9 = new DualNode_Sub14(copy.subWidth, copy.subHeight, var6, var10, var2);
 					aClass106_1202.put(var9, var7);
 					return var9;
 				}
@@ -656,14 +656,14 @@ public class Widget extends Node {
 		this.anInt1136 = var1.getUShort() * -280898437;
 		this.alpha = var1.getUByte() * -150375007;
 		this.parentId = var1.getUShort() * 742443693;
-		if (-1652479707 * this.parentId == '\uffff') {
+		if (-1652479707 * this.parentId == 65535) {
 			this.parentId = -742443693;
 		} else {
 			this.parentId = 742443693 * (this.parentId * -1652479707 + (-1536575275 * this.hash & -65536));
 		}
 
 		this.anInt1153 = var1.getUShort() * 1344074445;
-		if (this.anInt1153 * -700429819 == '\uffff') {
+		if (this.anInt1153 * -700429819 == 65535) {
 			this.anInt1153 = -1344074445;
 		}
 
@@ -692,7 +692,7 @@ public class Widget extends Node {
 
 				for (var8 = 0; var8 < var2; ++var8) {
 					this.varpOpcodes[var4][var8] = var1.getUShort();
-					if (this.varpOpcodes[var4][var8] == '\uffff') {
+					if (this.varpOpcodes[var4][var8] == 65535) {
 						this.varpOpcodes[var4][var8] = -1;
 					}
 				}
@@ -770,7 +770,7 @@ public class Widget extends Node {
 			this.anInt1138 = var1.getUByte() * 252282377;
 			this.anInt1158 = var1.getUByte() * -51845037;
 			this.fontId = var1.getUShort() * 189801909;
-			if (-335454051 * this.fontId == '\uffff') {
+			if (-335454051 * this.fontId == 65535) {
 				this.fontId = -189801909;
 			}
 
@@ -800,23 +800,23 @@ public class Widget extends Node {
 		if (this.type * -1305917269 == 6) {
 			this.modelType = -376460707;
 			this.modelId = var1.getUShort() * -541123263;
-			if (this.modelId * 686060225 == '\uffff') {
+			if (this.modelId * 686060225 == 65535) {
 				this.modelId = 541123263;
 			}
 
 			this.anInt1147 = 2074402997;
 			this.anInt1148 = var1.getUShort() * 1281953087;
-			if (this.anInt1148 * 489906879 == '\uffff') {
+			if (this.anInt1148 * 489906879 == 65535) {
 				this.anInt1148 = -1281953087;
 			}
 
 			this.anInt1162 = var1.getUShort() * 1986493785;
-			if (467073769 * this.anInt1162 == '\uffff') {
+			if (467073769 * this.anInt1162 == 65535) {
 				this.anInt1162 = -1986493785;
 			}
 
 			this.anInt1150 = var1.getUShort() * 1031227777;
-			if (this.anInt1150 * -213715327 == '\uffff') {
+			if (this.anInt1150 * -213715327 == 65535) {
 				this.anInt1150 = -1031227777;
 			}
 
@@ -830,7 +830,7 @@ public class Widget extends Node {
 			this.itemQuantities = new int[this.anInt1135 * 124195285 * this.anInt1136 * 507570867];
 			this.anInt1159 = var1.getUByte() * 1328854359;
 			this.fontId = var1.getUShort() * 189801909;
-			if (this.fontId * -335454051 == '\uffff') {
+			if (this.fontId * -335454051 == 65535) {
 				this.fontId = -189801909;
 			}
 

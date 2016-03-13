@@ -13,14 +13,14 @@ public class Class79 {
 	static boolean aBool655 = false;
 	static Hashtable aHashtable656 = new Hashtable(16);
 
-	public static void method345(String var0, Throwable var1) {
+	public static void error(String m, Throwable ex) {
 		try {
-			String var2 = "";
-			if (var1 != null) {
-				Throwable var3 = var1;
+			String error = "";
+			if (ex != null) {
+				Throwable var3 = ex;
 				String var5;
-				if (var1 instanceof RuntimeException_Sub1) {
-					RuntimeException_Sub1 var4 = (RuntimeException_Sub1) var1;
+				if (ex instanceof RuntimeException_Sub1) {
+					RuntimeException_Sub1 var4 = (RuntimeException_Sub1) ex;
 					var5 = var4.aString1806 + " | ";
 					var3 = var4.aThrowable1808;
 				} else {
@@ -39,7 +39,7 @@ public class Class79 {
 					String var10 = var8.readLine();
 					if (var10 == null) {
 						var5 = var5 + "| " + var9;
-						var2 = var5;
+						error = var5;
 						break;
 					}
 
@@ -64,29 +64,29 @@ public class Class79 {
 				}
 			}
 
-			if (var0 != null) {
-				if (var1 != null) {
-					var2 = var2 + " | ";
+			if (m != null) {
+				if (ex != null) {
+					error = error + " | ";
 				}
 
-				var2 = var2 + var0;
+				error = error + m;
 			}
 
-			System.out.println("Error: " + var2);
-			var2 = var2.replace(':', '.');
-			var2 = var2.replace('@', '_');
-			var2 = var2.replace('&', '_');
-			var2 = var2.replace('#', '_');
-			if (CollisionMap.anApplet508 == null) {
+			System.out.println("Error: " + error);
+			error = error.replace(':', '.');
+			error = error.replace('@', '_');
+			error = error.replace('&', '_');
+			error = error.replace('#', '_');
+			if (CollisionMap.gameApplet == null) {
 				return;
 			}
 
-			URL var15 = new URL(CollisionMap.anApplet508.getCodeBase(),
-					"clienterror.ws?c=" + 1316357127 * Class125.anInt830 + "&u=" + RuntimeException_Sub1.aString1807
-							+ "&v1=" + Class63.aString579 + "&v2=" + Class63.aString575 + "&e=" + var2);
-			DataInputStream var17 = new DataInputStream(var15.openStream());
-			var17.read();
-			var17.close();
+			URL url = new URL(CollisionMap.gameApplet.getCodeBase(),
+					"clienterror.ws?c=" + 1316357127 * Class125.gameRevision + "&u=" + RuntimeException_Sub1.myPlayerName
+							+ "&v1=" + TaskManager.javaVendor + "&v2=" + TaskManager.javaVersion + "&e=" + error);
+			DataInputStream stream = new DataInputStream(url.openStream());
+			stream.read();
+			stream.close();
 		} catch (Exception var16) {
 			;
 		}

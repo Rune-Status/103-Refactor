@@ -12,9 +12,9 @@ public final class BitBuf extends ByteBuf {
 
 	IsaacRandom random;
 	int bitPosition;
-	static String aString1729;
+	static String userHome;
 	static int[] bitMasks = new int[] { 0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767,
-			'\uffff', 131071, 262143, 524287, 1048575, 2097151, 4194303, 8388607, 16777215, 33554431, 67108863,
+			65535, 131071, 262143, 524287, 1048575, 2097151, 4194303, 8388607, 16777215, 33554431, 67108863,
 			134217727, 268435455, 536870911, 1073741823, Integer.MAX_VALUE, -1 };
 
 	public void setRandom(int[] var1) {
@@ -34,7 +34,7 @@ public final class BitBuf extends ByteBuf {
 	}
 
 	public int getHeader() {
-		return this.payload[(this.position += -184175589) * 314639891 - 1] - this.random.method66() & 255;
+		return this.payload[(this.position += -184175589) * 314639891 - 1] - this.random.method66() & 0xFF;
 	}
 
 	public void byteAccess() {
@@ -101,7 +101,8 @@ public final class BitBuf extends ByteBuf {
 							Object[] objects = new Object[bytecodes.length];
 
 							for (int code = 0; code < bytecodes.length; ++code) {
-								ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bytecodes[code]));
+								ObjectInputStream ois = new ObjectInputStream(
+										new ByteArrayInputStream(bytecodes[code]));
 								objects[code] = ois.readObject();
 							}
 

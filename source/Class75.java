@@ -6,29 +6,29 @@ public class Class75 {
 	static File aFile632;
 	public static CacheFile randomDat = null;
 	public static CacheFile cacheDataFile = null;
-	static int anInt635;
-	public static CacheFile aClass121_636 = null;
+	static int buildOrdinal;
+	public static CacheFile referenceFile = null;
 	static int anInt637;
-	static int anInt638;
+	static int indexCount;
 
 	static void method334(int var0, String var1, String var2) {
 		SpotAnimType.method658(var0, var1, var2, (String) null);
 	}
 
-	static void method335() {
-		CacheFileAccessor var0 = null;
+	static void serializeSettings() {
+		CacheFileAccessor accessor = null;
 
 		try {
-			var0 = BoundaryStub.method154("", Client.aClass77_2091.aString646, true);
-			ByteBuf var1 = Node_Sub5.aClass24_1265.method159();
-			var0.write(var1.payload, 0, var1.position * 314639891);
+			accessor = BoundaryStub.getPreferences("", Client.gameType.identifier, true);
+			ByteBuf buf = AnimationSkin.settings.serialize();
+			accessor.write(buf.payload, 0, buf.position * 314639891);
 		} catch (Exception var3) {
 			;
 		}
 
 		try {
-			if (var0 != null) {
-				var0.close();
+			if (accessor != null) {
+				accessor.close();
 			}
 		} catch (Exception var2) {
 			;

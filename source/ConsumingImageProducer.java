@@ -13,7 +13,7 @@ public final class ConsumingImageProducer extends AbstractProducer implements Im
 
 	ImageConsumer consumer;
 	static DualNode_Sub13_Sub3_Sub1 p11_full;
-	static Class61 aClass61_1215;
+	static Task aClass61_1215;
 	ColorModel model;
 
 	public final void initializeProducer(int width, int height, Component comp) {
@@ -68,44 +68,44 @@ public final class ConsumingImageProducer extends AbstractProducer implements Im
 
 	synchronized void imageComplete() {
 		if (this.consumer != null) {
-			this.consumer.setPixels(0, 0, 1154763343 * this.width, -1725941875 * this.height,
-					this.model, this.dataArray, 0, this.width * 1154763343);
+			this.consumer.setPixels(0, 0, 1154763343 * this.width, -1725941875 * this.height, this.model,
+					this.dataArray, 0, this.width * 1154763343);
 			this.consumer.imageComplete(2);
 		}
 	}
 
 	synchronized void imageComplete(int x, int y, int width, int height) {
 		if (this.consumer != null) {
-			this.consumer.setPixels(x, y, width, height, this.model, this.dataArray,
-					this.width * 1154763343 * y + x, 1154763343 * this.width);
+			this.consumer.setPixels(x, y, width, height, this.model, this.dataArray, this.width * 1154763343 * y + x,
+					1154763343 * this.width);
 			this.consumer.imageComplete(2);
 		}
 	}
 
-	static Sprite[] method510(AbstractIndex var0, int var1, int var2) {
-		if (!Class35.method202(var0, var1, var2)) {
+	static Picture[] method510(AbstractIndex var0, int var1, int var2) {
+		if (!Class35.decodeSprite(var0, var1, var2)) {
 			return null;
 		} else {
-			Sprite[] var7 = new Sprite[Class7.anInt154 * 817614505];
+			Picture[] var7 = new Picture[Class7.size * 817614505];
 
-			for (int var6 = 0; var6 < 817614505 * Class7.anInt154; ++var6) {
-				Sprite var5 = var7[var6] = new Sprite();
-				var5.anInt1815 = -749860951 * Class7.anInt148;
-				var5.anInt1816 = Class7.anInt155 * -1945497809;
-				var5.anInt1814 = Class7.anIntArray149[var6];
-				var5.anInt1817 = VarPlayerType.anIntArray1544[var6];
-				var5.height = Class7.anIntArray150[var6];
-				var5.width = Class7.anIntArray151[var6];
-				int var4 = var5.width * var5.height;
-				byte[] var8 = Npc.aByteArrayArray1966[var6];
+			for (int var6 = 0; var6 < 817614505 * Class7.size; ++var6) {
+				Picture var5 = var7[var6] = new Picture();
+				var5.width = -749860951 * Class7.width;
+				var5.height = Class7.height * -1945497809;
+				var5.offsetX = Class7.offsetsX[var6];
+				var5.offsetY = VarPlayerType.offsetsY[var6];
+				var5.subWidth = Class7.subWidths[var6];
+				var5.subHeight = Class7.subHeights[var6];
+				int var4 = var5.subHeight * var5.subWidth;
+				byte[] var8 = Npc.spritePixels[var6];
 				var5.pixels = new int[var4];
 
 				for (int var3 = 0; var3 < var4; ++var3) {
-					var5.pixels[var3] = Class85.anIntArray690[var8[var3] & 255];
+					var5.pixels[var3] = Class85.palette[var8[var3] & 0xFF];
 				}
 			}
 
-			Class65.method318();
+			Class65.resetSprite();
 			return var7;
 		}
 	}

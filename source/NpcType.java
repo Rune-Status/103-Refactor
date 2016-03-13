@@ -3,10 +3,10 @@ public class NpcType extends DualNode {
 
 	public int anInt1577 = 1076528657;
 	short[] colors;
-	public static Class106 aClass106_1578 = new Class106(50);
+	public static NodeMap aClass106_1578 = new NodeMap(50);
 	public int id;
 	int varpIndex = 341695561;
-	public static Class106 npcs = new Class106(64);
+	public static NodeMap npcs = new NodeMap(64);
 	int[] anIntArray1581;
 	int[] anIntArray1582;
 	public int[] transformIds;
@@ -115,12 +115,12 @@ public class NpcType extends DualNode {
 			this.anInt1599 = var1.getUShort() * 627188429;
 		} else if (var2 == 106) {
 			this.varpIndex = var1.getUShort() * -341695561;
-			if (this.varpIndex * 1660103175 == '\uffff') {
+			if (this.varpIndex * 1660103175 == 65535) {
 				this.varpIndex = 341695561;
 			}
 
 			this.varp32Index = var1.getUShort() * 87498741;
-			if (-1519823779 * this.varp32Index == '\uffff') {
+			if (-1519823779 * this.varp32Index == 65535) {
 				this.varp32Index = -87498741;
 			}
 
@@ -129,7 +129,7 @@ public class NpcType extends DualNode {
 
 			for (var4 = 0; var4 <= var3; ++var4) {
 				this.transformIds[var4] = var1.getUShort();
-				if (this.transformIds[var4] == '\uffff') {
+				if (this.transformIds[var4] == 65535) {
 					this.transformIds[var4] = -1;
 				}
 			}
@@ -339,7 +339,7 @@ public class NpcType extends DualNode {
 		Node_Sub8 var9 = null;
 
 		for (Node_Sub8 var10 = (Node_Sub8) Client.aDeque2193
-				.method471(); var10 != null; var10 = (Node_Sub8) Client.aDeque2193.method473()) {
+				.getFront(); var10 != null; var10 = (Node_Sub8) Client.aDeque2193.getNext()) {
 			if (var0 == var10.anInt1302 * 584375567 && var1 == -1096801001 * var10.anInt1300
 					&& -127960105 * var10.anInt1312 == var2 && var10.anInt1303 * -1976125003 == var3) {
 				var9 = var10;
@@ -370,6 +370,6 @@ public class NpcType extends DualNode {
 			var4 = new IndexTable(var0, Class75.cacheDataFile, Class39.cacheIndexFiles[var0], 1000000);
 		}
 
-		return new CacheIndex(var4, Class3.aClass62_92, var0, var1, var2, var3);
+		return new CacheIndex(var4, Class3.refIndexTable, var0, var1, var2, var3);
 	}
 }

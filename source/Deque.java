@@ -52,7 +52,7 @@ public class Deque {
 		}
 	}
 
-	public Node method471() {
+	public Node getFront() {
 		Node var1 = this.head.next;
 		if (var1 != this.head) {
 			this.tail = var1.next;
@@ -74,7 +74,7 @@ public class Deque {
 		}
 	}
 
-	public Node method473() {
+	public Node getNext() {
 		Node var1 = this.tail;
 		if (var1 == this.head) {
 			this.tail = null;

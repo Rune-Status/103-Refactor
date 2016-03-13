@@ -3,7 +3,7 @@ public final class Class39 {
 
 	static int[] anIntArray427 = new int[] { 1, 0, -1, 0 };
 	public static CacheFile[] cacheIndexFiles;
-	static byte[][][] aByteArrayArrayArray429;
+	static byte[][][] overlayIds;
 	static byte[][][] aByteArrayArrayArray430;
 	static int anInt431 = ((int) (Math.random() * 17.0D) - 8) * 1676696543;
 	static int[] anIntArray432;
@@ -18,7 +18,7 @@ public final class Class39 {
 	static int anInt439 = ((int) (Math.random() * 33.0D) - 16) * 916560105;
 	static int[] anIntArray440 = new int[] { 1, -1, -1, 1 };
 	static int[][] anIntArrayArray441;
-	static Sprite[] aSpriteArray442;
+	static Picture[] aSpriteArray442;
 
 	static final void method215(Character var0, int var1, int var2, int var3, int var4, int var5) {
 		if (var0 != null && var0.hasConfig()) {
@@ -44,7 +44,7 @@ public final class Class39 {
 				}
 
 				if (var9.skullIcon * 1744423653 != -1 || var9.prayerIcon * 266784541 != -1) {
-					DualNode_Sub12.method777(var0, 15 + var0.anInt1950 * 1688909931);
+					SkeletonSet.method777(var0, 15 + var0.anInt1950 * 1688909931);
 					if (-94432357 * Client.anInt2093 > -1) {
 						if (var9.skullIcon * 1744423653 != -1) {
 							VarBitType.aSpriteArray1728[1744423653 * var9.skullIcon].method946(
@@ -63,7 +63,7 @@ public final class Class39 {
 				}
 
 				if (var1 >= 0 && 314519437 * Client.anInt2075 == 10 && 1613691605 * Client.anInt2158 == var6[var1]) {
-					DualNode_Sub12.method777(var0, 15 + var0.anInt1950 * 1688909931);
+					SkeletonSet.method777(var0, 15 + var0.anInt1950 * 1688909931);
 					if (-94432357 * Client.anInt2093 > -1) {
 						aSpriteArray442[1].method946(Client.anInt2093 * -94432357 + var2 - 12,
 								var3 + Client.anInt2094 * -770682383 - var8);
@@ -77,7 +77,7 @@ public final class Class39 {
 
 				if (1855378703 * var12.anInt1577 >= 0
 						&& 1855378703 * var12.anInt1577 < ItemType.aSpriteArray1619.length) {
-					DualNode_Sub12.method777(var0, var0.anInt1950 * 1688909931 + 15);
+					SkeletonSet.method777(var0, var0.anInt1950 * 1688909931 + 15);
 					if (-94432357 * Client.anInt2093 > -1) {
 						ItemType.aSpriteArray1619[var12.anInt1577 * 1855378703].method946(
 								-94432357 * Client.anInt2093 + var2 - 12, -770682383 * Client.anInt2094 + var3 - 30);
@@ -87,7 +87,7 @@ public final class Class39 {
 				if (314519437 * Client.anInt2075 == 1
 						&& Client.npcIndices[var1 - var10] == 1583399955 * Client.anInt2021
 						&& Client.engineCycle * -1040073859 % 20 < 10) {
-					DualNode_Sub12.method777(var0, 15 + var0.anInt1950 * 1688909931);
+					SkeletonSet.method777(var0, 15 + var0.anInt1950 * 1688909931);
 					if (-94432357 * Client.anInt2093 > -1) {
 						aSpriteArray442[0].method946(var2 + -94432357 * Client.anInt2093 - 12,
 								-770682383 * Client.anInt2094 + var3 - 28);
@@ -98,14 +98,13 @@ public final class Class39 {
 			if (var0.overheadText != null && (var1 >= var10 || !var0.aBool1923
 					&& (Client.anInt2110 * -400704361 == 4 || !var0.aBool1946 && (Client.anInt2110 * -400704361 == 0
 							|| -400704361 * Client.anInt2110 == 3 || -400704361 * Client.anInt2110 == 1
-									&& Node_Sub5.isFriended(((Player) var0).name, false))))) {
-				DualNode_Sub12.method777(var0, var0.anInt1950 * 1688909931);
+									&& AnimationSkin.isFriended(((Player) var0).name, false))))) {
+				SkeletonSet.method777(var0, var0.anInt1950 * 1688909931);
 				if (Client.anInt2093 * -94432357 > -1
 						&& -1673918139 * Client.anInt2082 < Client.anInt2083 * -475281231) {
 					Client.anIntArray2087[Client.anInt2082 * -1673918139] = Class35.b12_full
 							.method967(var0.overheadText) / 2;
-					Client.anIntArray2086[Client.anInt2082
-							* -1673918139] = Class35.b12_full.anInt1824;
+					Client.anIntArray2086[Client.anInt2082 * -1673918139] = Class35.b12_full.anInt1824;
 					Client.anIntArray2084[Client.anInt2082 * -1673918139] = -94432357 * Client.anInt2093;
 					Client.anIntArray2085[-1673918139 * Client.anInt2082] = -770682383 * Client.anInt2094;
 					Client.anIntArray2088[Client.anInt2082 * -1673918139] = var0.anInt1942 * 621976643;
@@ -117,7 +116,7 @@ public final class Class39 {
 			}
 
 			if (var0.healthBarCycle * -1144844257 > Client.engineCycle * -1040073859) {
-				DualNode_Sub12.method777(var0, 15 + var0.anInt1950 * 1688909931);
+				SkeletonSet.method777(var0, 15 + var0.anInt1950 * 1688909931);
 				if (Client.anInt2093 * -94432357 > -1) {
 					if (var1 < var10) {
 						var8 = 30;
@@ -142,7 +141,7 @@ public final class Class39 {
 
 			for (var8 = 0; var8 < 4; ++var8) {
 				if (var0.hitsplatCycles[var8] > -1040073859 * Client.engineCycle) {
-					DualNode_Sub12.method777(var0, 1688909931 * var0.anInt1950 / 2);
+					SkeletonSet.method777(var0, 1688909931 * var0.anInt1950 / 2);
 					if (Client.anInt2093 * -94432357 > -1) {
 						if (var8 == 1) {
 							Client.anInt2094 -= 442101076;
@@ -160,9 +159,9 @@ public final class Class39 {
 
 						Class96_Sub1.aSpriteArray1204[var0.hitsplatDamages[var8]].method946(
 								-94432357 * Client.anInt2093 + var2 - 12, -770682383 * Client.anInt2094 + var3 - 12);
-						ConsumingImageProducer.p11_full.method982(
-								Integer.toString(var0.hitsplatTypes[var8]), var2 + -94432357 * Client.anInt2093 - 1,
-								var3 + -770682383 * Client.anInt2094 + 3, 16777215, 0);
+						ConsumingImageProducer.p11_full.method982(Integer.toString(var0.hitsplatTypes[var8]),
+								var2 + -94432357 * Client.anInt2093 - 1, var3 + -770682383 * Client.anInt2094 + 3,
+								16777215, 0);
 					}
 				}
 			}
@@ -741,7 +740,7 @@ public final class Class39 {
 
 	static void method220() {
 		for (Node_Sub6 var0 = (Node_Sub6) Node_Sub6.aDeque1279
-				.method471(); var0 != null; var0 = (Node_Sub6) Node_Sub6.aDeque1279.method473()) {
+				.getFront(); var0 != null; var0 = (Node_Sub6) Node_Sub6.aDeque1279.getNext()) {
 			if (var0.anObjectDefinition1283 != null) {
 				var0.method536(-61806771);
 			}
@@ -780,7 +779,7 @@ public final class Class39 {
 						Class81.aNodeTable685.put(request, hash);
 						Class81.anInt670 += -1554399579;
 					} else {
-						Class81.aClass105_672.method425(request);
+						Class81.aNodeQueue_672.method425(request);
 						Class81.aNodeTable673.put(request, hash);
 						Class81.anInt674 += 556834453;
 					}
@@ -791,42 +790,42 @@ public final class Class39 {
 	}
 
 	static RuneScript getRuneScript(int var0) {
-		RuneScript var1 = (RuneScript) RuneScript.aClass106_1725.get((long) var0);
-		if (var1 != null) {
-			return var1;
+		RuneScript script = (RuneScript) RuneScript.aClass106_1725.get((long) var0);
+		if (script != null) {
+			return script;
 		} else {
-			byte[] var4 = InvType.clientScriptsIndex.getFile(var0, 0);
-			if (var4 == null) {
+			byte[] bytes = InvType.clientScriptsIndex.getFile(var0, 0);
+			if (bytes == null) {
 				return null;
 			} else {
-				var1 = new RuneScript();
-				ByteBuf var2 = new ByteBuf(var4);
-				var2.position = -184175589 * (var2.payload.length - 12);
-				int var6 = var2.getInt();
-				var1.intArgCount = var2.getUShort() * 2055457427;
-				var1.stringArgCount = var2.getUShort() * 1720774461;
-				var1.intStackCount = var2.getUShort() * -1455792945;
-				var1.stringStackCount = var2.getUShort() * -144149209;
-				var2.position = 0;
-				var2.method599();
-				var1.opcodes = new int[var6];
-				var1.intOperands = new int[var6];
-				var1.stringOperands = new String[var6];
+				script = new RuneScript();
+				ByteBuf buf = new ByteBuf(bytes);
+				buf.position = -184175589 * (buf.payload.length - 12);
+				int count = buf.getInt();
+				script.intArgCount = buf.getUShort() * 2055457427;
+				script.stringArgCount = buf.getUShort() * 1720774461;
+				script.intStackCount = buf.getUShort() * -1455792945;
+				script.stringStackCount = buf.getUShort() * -144149209;
+				buf.position = 0;
+				buf.getNullString();
+				script.opcodes = new int[count];
+				script.intOperands = new int[count];
+				script.stringOperands = new String[count];
 
-				int var3;
-				for (int var5 = 0; var2.position * 314639891 < var2.payload.length - 12; var1.opcodes[var5++] = var3) {
-					var3 = var2.getUShort();
-					if (var3 == 3) {
-						var1.stringOperands[var5] = var2.getString();
-					} else if (var3 < 100 && var3 != 21 && var3 != 38 && var3 != 39) {
-						var1.intOperands[var5] = var2.getInt();
+				int opcode;
+				for (int pos = 0; buf.position * 314639891 < buf.payload.length - 12; script.opcodes[pos++] = opcode) {
+					opcode = buf.getUShort();
+					if (opcode == 3) {
+						script.stringOperands[pos] = buf.getString();
+					} else if (opcode < 100 && opcode != 21 && opcode != 38 && opcode != 39) {
+						script.intOperands[pos] = buf.getInt();
 					} else {
-						var1.intOperands[var5] = var2.getUByte();
+						script.intOperands[pos] = buf.getUByte();
 					}
 				}
 
-				RuneScript.aClass106_1725.put(var1, (long) var0);
-				return var1;
+				RuneScript.aClass106_1725.put(script, (long) var0);
+				return script;
 			}
 		}
 	}

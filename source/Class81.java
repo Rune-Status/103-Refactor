@@ -8,7 +8,7 @@ public class Class81 {
 	public static int anInt669 = 0;
 	public static int anInt670 = 0;
 	public static byte xorKey = 0;
-	public static Class105 aClass105_672 = new Class105();
+	public static NodeQueue aNodeQueue_672 = new NodeQueue();
 	static NodeTable aNodeTable673 = new NodeTable(4096);
 	public static int anInt674 = 0;
 	public static NodeTable aNodeTable675 = new NodeTable(4096);
@@ -52,7 +52,7 @@ public class Class81 {
 		Client.aBool2191 = false;
 
 		for (Node_Sub6 var1 = (Node_Sub6) Node_Sub6.aDeque1279
-				.method471(); var1 != null; var1 = (Node_Sub6) Node_Sub6.aDeque1279.method473()) {
+				.getFront(); var1 != null; var1 = (Node_Sub6) Node_Sub6.aDeque1279.getNext()) {
 			if (var1.aNode_Sub4_Sub2_1276 != null) {
 				FriendedPlayer.aNode_Sub4_Sub1_740.method730(var1.aNode_Sub4_Sub2_1276);
 				var1.aNode_Sub4_Sub2_1276 = null;

@@ -1,9 +1,10 @@
 import java.awt.Component;
+
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine.Info;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
-import javax.sound.sampled.DataLine.Info;
 
 public class Class8_Sub2 extends Class8 {
 

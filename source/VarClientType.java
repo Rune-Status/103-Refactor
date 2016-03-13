@@ -2,7 +2,7 @@ import java.awt.Frame;
 
 public class VarClientType extends DualNode {
 
-	static Class106 varclients = new Class106(64);
+	static NodeMap varclients = new NodeMap(64);
 	public boolean serialize = false;
 	static AbstractIndex varclient_ref;
 	static CacheIndex sfxIndex;
@@ -50,6 +50,6 @@ public class VarClientType extends DualNode {
 		int var2 = var1 * 57 + var0;
 		var2 ^= var2 << 13;
 		int var3 = var2 * (789221 + var2 * var2 * 15731) + 1376312589 & Integer.MAX_VALUE;
-		return var3 >> 19 & 255;
+		return var3 >> 19 & 0xFF;
 	}
 }

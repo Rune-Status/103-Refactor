@@ -7,10 +7,10 @@ public class SpotAnimType extends DualNode {
 
 	public static AbstractIndex aClass87_1440;
 	public int anInt1441 = 1973532945;
-	static Class106 aClass106_1442 = new Class106(30);
+	static NodeMap aClass106_1442 = new NodeMap(30);
 	int id;
 	int anInt1444;
-	static Class106 spotanims = new Class106(64);
+	static NodeMap spotanims = new NodeMap(64);
 	static Widget aWidget1446;
 	int anInt1447 = 0;
 	short[] aShortArray1448;
@@ -153,7 +153,7 @@ public class SpotAnimType extends DualNode {
 		int var3 = 2045896553 * Class21.anInt281 - 674167779 * Node_Sub9.gameHeight - var1;
 		if (var0 > 0 || var2 > 0 || var1 > 0 || var3 > 0) {
 			try {
-				Container var4 = Client.aClient2005.method1033();
+				Container var4 = Client.clientInstance.container();
 				int var5 = 0;
 				int var6 = 0;
 				if (var4 == VarClientType.gameFrame) {

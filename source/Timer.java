@@ -30,7 +30,7 @@ public abstract class Timer {
 		int var19;
 		if ((var3 & 2) != 0) {
 			var5 = buf.getUShort();
-			if (var5 == '\uffff') {
+			if (var5 == 65535) {
 				var5 = -1;
 			}
 
@@ -40,7 +40,7 @@ public abstract class Timer {
 
 		if ((var3 & 128) != 0) {
 			var2.targetIndex = buf.getUShort() * 1611414733;
-			if (734924805 * var2.targetIndex == '\uffff') {
+			if (734924805 * var2.targetIndex == 65535) {
 				var2.targetIndex = -1611414733;
 			}
 		}
@@ -106,8 +106,8 @@ public abstract class Timer {
 						}
 
 						byte[] var14 = new byte[var13];
-						var12.position += Class120.huffman.decompress(var12.payload, 314639891 * var12.position,
-								var14, 0, var13) * -184175589;
+						var12.position += Class120.huffman.decompress(var12.payload, 314639891 * var12.position, var14,
+								0, var13) * -184175589;
 						String var15 = LandscapeTile.getString(var14, 0, var13);
 						var16 = var15;
 					} catch (Exception var18) {
@@ -117,7 +117,7 @@ public abstract class Timer {
 					var16 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var16));
 					var2.overheadText = var16.trim();
 					var2.anInt1942 = -1783525269 * (var5 >> 8);
-					var2.anInt1926 = (var5 & 255) * -819780711;
+					var2.anInt1926 = (var5 & 0xFF) * -819780711;
 					var2.anInt1927 = -853552818;
 					var2.aBool1946 = var8;
 					var2.aBool1923 = Class68.myPlayer != var2 && var21.aBool615 && "" != Client.aString2044
@@ -129,8 +129,7 @@ public abstract class Timer {
 					}
 
 					if (-2127218069 * var21.sprite != -1) {
-						Class75.method334(var13,
-								Class41.method223(-2127218069 * var21.sprite) + var2.name, var16);
+						Class75.method334(var13, Class41.method223(-2127218069 * var21.sprite) + var2.name, var16);
 					} else {
 						Class75.method334(var13, var2.name, var16);
 					}
@@ -144,14 +143,14 @@ public abstract class Timer {
 			var2.anInt1938 = buf.getUShort() * -1738418729;
 			var5 = buf.getInt();
 			var2.anInt1920 = (var5 >> 16) * 878509897;
-			var2.anInt1941 = 1621235571 * ((var5 & '\uffff') + Client.engineCycle * -1040073859);
+			var2.anInt1941 = 1621235571 * ((var5 & 0xFFFF) + Client.engineCycle * -1040073859);
 			var2.anInt1925 = 0;
 			var2.anInt1940 = 0;
 			if (var2.anInt1941 * 489022907 > -1040073859 * Client.engineCycle) {
 				var2.anInt1925 = -1825378913;
 			}
 
-			if (1631645159 * var2.anInt1938 == '\uffff') {
+			if (1631645159 * var2.anInt1938 == 65535) {
 				var2.anInt1938 = 1738418729;
 			}
 		}
@@ -201,7 +200,8 @@ public abstract class Timer {
 		if ((var3 & 8192) != 0) {
 			for (var5 = 0; var5 < 3; ++var5) {
 				var2.aStringArray1986[var5] = buf.getString();
-				//System.out.println(var5 + ", \"" + var2.aStringArray1986[var5] + "\"");
+				// System.out.println(var5 + ", \"" +
+				// var2.aStringArray1986[var5] + "\"");
 			}
 		}
 
@@ -242,7 +242,7 @@ public abstract class Timer {
 		VarPlayerType.method727();
 		Class91.method398();
 		Class36.method206();
-		((Class29) TexturedGraphic.anInterface3_1796).method187();
+		((TextureLoader) TexturedGraphic.anInterface3_1796).method187();
 		RuneScript.aClass106_1725.method429();
 		Class34.skeletonsIndex.reset();
 		Client.meshesIndex.reset();
@@ -251,7 +251,7 @@ public abstract class Timer {
 		Class48_Sub1.landscapesIndex.reset();
 		Class2.midiTrack1Index.reset();
 		Class3.modelsIndex.reset();
-		Node_Sub5.spritesIndex.reset();
+		AnimationSkin.spritesIndex.reset();
 		Class1.texturesIndex.reset();
 		Class40.binaryIndex.reset();
 		PlayerConfig.midiTack2Index.reset();

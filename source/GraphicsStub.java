@@ -18,7 +18,7 @@ public final class GraphicsStub extends Entity {
 
 	static File method933(String var0, String var1, int var2) {
 		String var3 = var2 == 0 ? "" : "" + var2;
-		Class75.aFile632 = new File(BitBuf.aString1729, "jagex_cl_" + var0 + "_" + var1 + var3 + ".dat");
+		Class75.aFile632 = new File(BitBuf.userHome, "jagex_cl_" + var0 + "_" + var1 + var3 + ".dat");
 		String var4 = null;
 		String var5 = null;
 		boolean var6 = false;
@@ -82,9 +82,9 @@ public final class GraphicsStub extends Entity {
 		}
 
 		if (var4 == null && var2 == 0) {
-			label113: for (int var18 = 0; var18 < Class67.aStringArray584.length; ++var18) {
-				for (int var21 = 0; var21 < BoundaryDecorationStub.aStringArray217.length; ++var21) {
-					File var22 = new File(BoundaryDecorationStub.aStringArray217[var21] + Class67.aStringArray584[var18]
+			label113: for (int var18 = 0; var18 < Class67.historicLocations.length; ++var18) {
+				for (int var21 = 0; var21 < BoundaryDecorationStub.cacheLocations.length; ++var21) {
+					File var22 = new File(BoundaryDecorationStub.cacheLocations[var21] + Class67.historicLocations[var18]
 							+ File.separatorChar + var0 + File.separatorChar);
 					if (var22.exists() && AbstractIndex.method393(new File(var22, "test.dat"), true)) {
 						var4 = var22.toString();
@@ -96,7 +96,7 @@ public final class GraphicsStub extends Entity {
 		}
 
 		if (var4 == null) {
-			var4 = BitBuf.aString1729 + File.separatorChar + "jagexcache" + var3 + File.separatorChar + var0
+			var4 = BitBuf.userHome + File.separatorChar + "jagexcache" + var3 + File.separatorChar + var0
 					+ File.separatorChar + var1 + File.separatorChar;
 			var6 = true;
 		}
@@ -190,14 +190,14 @@ public final class GraphicsStub extends Entity {
 
 	}
 
-	public static void method935(Class63 var0, Object var1) {
-		if (var0.anEventQueue581 != null) {
-			for (int var2 = 0; var2 < 50 && var0.anEventQueue581.peekEvent() != null; ++var2) {
+	public static void method935(TaskManager var0, Object var1) {
+		if (var0.sysEventQueue != null) {
+			for (int var2 = 0; var2 < 50 && var0.sysEventQueue.peekEvent() != null; ++var2) {
 				Class96_Sub1.sleep(1L);
 			}
 
 			if (var1 != null) {
-				var0.anEventQueue581.postEvent(new ActionEvent(var1, 1001, "dummy"));
+				var0.sysEventQueue.postEvent(new ActionEvent(var1, 1001, "dummy"));
 			}
 
 		}

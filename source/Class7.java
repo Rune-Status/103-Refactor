@@ -2,15 +2,15 @@ import java.awt.Font;
 
 public class Class7 {
 
-	public static int anInt148;
-	public static int[] anIntArray149;
-	public static int[] anIntArray150;
-	public static int[] anIntArray151;
+	public static int width;
+	public static int[] offsetsX;
+	public static int[] subWidths;
+	public static int[] subHeights;
 	static byte[][] aByteArrayArray152;
 	protected static Font aFont153;
-	static int anInt154;
+	static int size;
 	static int menuX;
-	public static int anInt155;
+	public static int height;
 
 	static final void decodeMapRegion(boolean dyn) {
 		Client.dynamicRegion = dyn;
@@ -25,15 +25,18 @@ public class Class7 {
 			var2 = Client.inBuffer.getUShortA();
 			var3 = Client.inBuffer.getULEShort();
 			region_count = Client.inBuffer.getUShort();
-			DualNode_Sub12.regionXTEAs = new int[region_count][4]; 
+			SkeletonSet.regionXTEAs = new int[region_count][4];
 
 			for (index = 0; index < region_count; ++index) {
 				for (plane = 0; plane < 4; ++plane) {
-					DualNode_Sub12.regionXTEAs[index][plane] = Client.inBuffer.getInt();
-				//	System.out.println("region plane: " + index + "," + plane);
+					SkeletonSet.regionXTEAs[index][plane] = Client.inBuffer.getInt();
+					// System.out.println("region plane: " + index + "," +
+					// plane);
 				}
 			}
-			//System.out.println("ChunkX: " + var3 + ", ChunkY: " + var2 + ", Count: " + var5 + ", (" + (var3 << 3) + ", " + (var2 << 3) + ")");
+			// System.out.println("ChunkX: " + var3 + ", ChunkY: " + var2 + ",
+			// Count: " + var5 + ", (" + (var3 << 3) + ", " + (var2 << 3) +
+			// ")");
 
 			Client.regionIds = new int[region_count];
 			Class69.mapRegionFileIds = new int[region_count];
@@ -56,12 +59,11 @@ public class Class7 {
 					var9 = var1 + (plane << 8);
 					if (!var13
 							|| var1 != 49 && var1 != 149 && var1 != 147 && plane != 50 && (plane != 49 || var1 != 47)) {
-						
-					
-						
-						GameClient.dumpMap(var9, DualNode_Sub12.regionXTEAs[region_count]);
+
+						GameClient.dumpMap(var9, SkeletonSet.regionXTEAs[region_count]);
 						Client.regionIds[region_count] = var9;
-						//System.out.println("blahhh:" + Client.regionIds[region_count] + "," + var9);
+						// System.out.println("blahhh:" +
+						// Client.regionIds[region_count] + "," + var9);
 						Class69.mapRegionFileIds[region_count] = Class48_Sub1.landscapesIndex
 								.getFile("m" + plane + "_" + var1);
 						InvType.landRegionFielIds[region_count] = Class48_Sub1.landscapesIndex
@@ -70,7 +72,7 @@ public class Class7 {
 					}
 				}
 			}
-			//System.out.println("MapRegion: " + var3 + "," + var2);
+			// System.out.println("MapRegion: " + var3 + "," + var2);
 			Node_Sub8.method546(var3, var2);
 		} else {
 			var2 = Client.inBuffer.getUShort();
@@ -92,11 +94,11 @@ public class Class7 {
 			}
 
 			Client.inBuffer.byteAccess();
-			DualNode_Sub12.regionXTEAs = new int[region_count][4];
+			SkeletonSet.regionXTEAs = new int[region_count][4];
 
 			for (index = 0; index < region_count; ++index) {
 				for (plane = 0; plane < 4; ++plane) {
-					DualNode_Sub12.regionXTEAs[index][plane] = Client.inBuffer.getInt();
+					SkeletonSet.regionXTEAs[index][plane] = Client.inBuffer.getInt();
 				}
 			}
 
@@ -126,8 +128,8 @@ public class Class7 {
 
 							if (var8 != -1) {
 								Client.regionIds[region_count] = var8;
-								var4 = var8 >> 8 & 255;
-								int var10 = var8 & 255;
+								var4 = var8 >> 8 & 0xFF;
+								int var10 = var8 & 0xFF;
 								Class69.mapRegionFileIds[region_count] = Class48_Sub1.landscapesIndex
 										.getFile("m" + var4 + "_" + var10);
 								InvType.landRegionFielIds[region_count] = Class48_Sub1.landscapesIndex
@@ -169,7 +171,7 @@ public class Class7 {
 		return offset - position;
 	}
 
-	static final void method77(int var0, int var1, int var2, int var3, Sprite var4, DualNode_Sub14 var5) {
+	static final void method77(int var0, int var1, int var2, int var3, Picture var4, DualNode_Sub14 var5) {
 		int var6 = var3 * var3 + var2 * var2;
 		if (var6 > 4225 && var6 < 90000) {
 			int var10 = Client.minimapRotation * -1916997753 + Client.minimapScale * -1718342721 & 2047;
@@ -226,7 +228,8 @@ public class Class7 {
 					if (var3 == 0) {
 						Client.npcIndices[(Client.anInt2225 += -368645475) * 727116725 - 1] = var5;
 						var6.anInt1949 = 1050068427 * Client.engineCycle;
-						Client.pendingNpcFlagsIndices[(Client.pendingNpcFlagsCount += 2121422091) * -143667549 - 1] = var5;
+						Client.pendingNpcFlagsIndices[(Client.pendingNpcFlagsCount += 2121422091) * -143667549
+								- 1] = var5;
 					} else if (var3 == 1) {
 						Client.npcIndices[(Client.anInt2225 += -368645475) * 727116725 - 1] = var5;
 						var6.anInt1949 = Client.engineCycle * 1050068427;
@@ -234,7 +237,8 @@ public class Class7 {
 						var6.method1024(var7, (byte) 1);
 						var8 = Client.inBuffer.getBits(1);
 						if (var8 == 1) {
-							Client.pendingNpcFlagsIndices[(Client.pendingNpcFlagsCount += 2121422091) * -143667549 - 1] = var5;
+							Client.pendingNpcFlagsIndices[(Client.pendingNpcFlagsCount += 2121422091) * -143667549
+									- 1] = var5;
 						}
 					} else if (var3 == 2) {
 						Client.npcIndices[(Client.anInt2225 += -368645475) * 727116725 - 1] = var5;
@@ -245,7 +249,8 @@ public class Class7 {
 						var6.method1024(var8, (byte) 2);
 						int var9 = Client.inBuffer.getBits(1);
 						if (var9 == 1) {
-							Client.pendingNpcFlagsIndices[(Client.pendingNpcFlagsCount += 2121422091) * -143667549 - 1] = var5;
+							Client.pendingNpcFlagsIndices[(Client.pendingNpcFlagsCount += 2121422091) * -143667549
+									- 1] = var5;
 						}
 					} else if (var3 == 3) {
 						Client.anIntArray2107[(Client.anInt2105 += 1545207887) * 1457329839 - 1] = var5;

@@ -47,7 +47,7 @@ public final class Class46 {
 
 		int val;
 		for (int var8 = length + offset; var6 < var8; chars[count++] = (char) val) {
-			int var5 = bytes[var6++] & 255;
+			int var5 = bytes[var6++] & 0xFF;
 			if (var5 < 128) {
 				if (var5 == 0) {
 					val = '\ufffd';

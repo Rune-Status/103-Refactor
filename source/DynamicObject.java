@@ -10,7 +10,7 @@ public class DynamicObject extends Entity {
 	SequenceType aDualNode_Sub3_1961;
 	int anInt1962;
 	int anInt1963;
-	public static String aString1964;
+	public static String osNameLC;
 	int type;
 
 	DynamicObject(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, Entity var9) {
@@ -97,7 +97,7 @@ public class DynamicObject extends Entity {
 		}
 	}
 
-	static void method1022(Component var0, AbstractIndex var1, AbstractIndex var2, boolean var3, int var4) {
+	static void method1022(Component var0, AbstractIndex binary, AbstractIndex sprites, boolean var3, int var4) {
 		if (Class6.aBool142) {
 			if (var4 == 4) {
 				Class6.anInt116 = -868668484;
@@ -106,21 +106,21 @@ public class DynamicObject extends Entity {
 		} else {
 			Class6.anInt116 = var4 * -217167121;
 			RSGraphics.reset();
-			byte[] var6 = var1.method389("title.jpg", "");
-			Class56.aSprite542 = new Sprite(var6, var0);
+			byte[] var6 = binary.method389("title.jpg", "");
+			Class56.aSprite542 = new Picture(var6, var0);
 			Class6.aSprite137 = Class56.aSprite542.method937();
 			if ((Client.myWorldFlags * 1115656689 & 536870912) != 0) {
-				IgnoredPlayer.aDualNode_Sub13_Sub2_754 = SequenceType.method680(var2, "logo_deadman_mode", "");
+				IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo_deadman_mode", "");
 			} else {
-				IgnoredPlayer.aDualNode_Sub13_Sub2_754 = SequenceType.method680(var2, "logo", "");
+				IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo", "");
 			}
 
-			Class6.aDualNode_Sub13_Sub2_147 = SequenceType.method680(var2, "titlebox", "");
-			Class6.aDualNode_Sub13_Sub2_117 = SequenceType.method680(var2, "titlebutton", "");
-			Class6.aDualNode_Sub13_Sub2Array118 = ObjectType.method868(var2, "runes", "");
-			FriendedPlayer.aDualNode_Sub13_Sub2Array741 = ObjectType.method868(var2, "title_mute", "");
-			Class6.aDualNode_Sub13_Sub2_120 = SequenceType.method680(var2, "options_radio_buttons,0", "");
-			Class6.aDualNode_Sub13_Sub2_121 = SequenceType.method680(var2, "options_radio_buttons,2", "");
+			Class6.titleboxSprite = SequenceType.getSprite(sprites, "titlebox", "");
+			Class6.titlebuttonSprite = SequenceType.getSprite(sprites, "titlebutton", "");
+			Class6.runesSprite = ObjectType.method868(sprites, "runes", "");
+			FriendedPlayer.titlemuteSprite = ObjectType.method868(sprites, "title_mute", "");
+			Class6.radioButtons0Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,0", "");
+			Class6.radioButtons2Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,2", "");
 			TileDecorationStub.anIntArray841 = new int[256];
 
 			int var5;
@@ -151,7 +151,7 @@ public class DynamicObject extends Entity {
 			}
 
 			for (var5 = 0; var5 < 64; ++var5) {
-				Class118.anIntArray803[var5 + 128] = '\uffff' + var5 * 262144;
+				Class118.anIntArray803[var5 + 128] = 65535 + var5 * 262144;
 			}
 
 			for (var5 = 0; var5 < 64; ++var5) {
@@ -179,19 +179,19 @@ public class DynamicObject extends Entity {
 			Class6.anIntArray124 = new int[256];
 			Class33.anIntArray365 = new int['\u8000'];
 			Permission.anIntArray605 = new int['\u8000'];
-			VarBitType.method877((DualNode_Sub13_Sub2) null);
+			VarBitType.method877((Sprite) null);
 			Class122.anIntArray818 = new int['\u8000'];
 			Class4.anIntArray110 = new int['\u8000'];
 			if (var3) {
-				Class6.aString136 = "";
-				Class6.aString123 = "";
+				Class6.username = "";
+				Class6.password = "";
 			}
 
-			Class114.anInt795 = 0;
-			Class37.aString404 = "";
-			Class6.aBool139 = true;
+			Class114.pin = 0;
+			Class37.pinText = "";
+			Class6.trust = true;
 			Class6.loadedWorlds = false;
-			if (!Node_Sub5.aClass24_1265.aBool303) {
+			if (!AnimationSkin.settings.muted) {
 				Class91.method402(2, Class2.midiTrack1Index, "scape main", "", 255, false);
 			} else {
 				Class65.method320(2);
@@ -203,12 +203,12 @@ public class DynamicObject extends Entity {
 			Class6.anInt126 = 1843765198 + Class6.anInt132 * 132725497;
 			Class56.aSprite542.method958(1933284923 * Class6.anInt132, 0);
 			Class6.aSprite137.method958(Class6.anInt132 * 1933284923 + 382, 0);
-			IgnoredPlayer.aDualNode_Sub13_Sub2_754.method929(
-					Class6.anInt132 * 1933284923 + 382 - IgnoredPlayer.aDualNode_Sub13_Sub2_754.anInt1800 / 2, 18);
+			IgnoredPlayer.logoSprite.method929(
+					Class6.anInt132 * 1933284923 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 		}
 	}
 
-	public static Sprite[] method1023(AbstractIndex var0, String var1, String var2) {
+	public static Picture[] method1023(AbstractIndex var0, String var1, String var2) {
 		int var3 = var0.getFile(var1);
 		int var4 = var0.getChild(var3, var2);
 		return ConsumingImageProducer.method510(var0, var3, var4);

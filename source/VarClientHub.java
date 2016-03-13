@@ -1,4 +1,5 @@
 import java.io.EOFException;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class VarClientHub {
 
@@ -9,7 +10,7 @@ public class VarClientHub {
 	String[] varcstrings;
 	boolean changed = false;
 	long lastSerialize;
-	static int regionBaseY;
+	static int chunkLeftY;
 
 	void putVarc(int id, int val) {
 		this.varcs[id] = val;
@@ -39,7 +40,7 @@ public class VarClientHub {
 	}
 
 	void serialize() {
-		CacheFileAccessor var1 = this.method179(true);
+		CacheFileAccessor var1 = this.getVarPrefs(true);
 		boolean var14 = false;
 
 		try {
@@ -124,31 +125,31 @@ public class VarClientHub {
 		}
 
 		this.changed = false;
-		this.lastSerialize = Node_Sub5.currentTimeMs() * -4897623063149766703L;
+		this.lastSerialize = AnimationSkin.currentTimeMs() * -4897623063149766703L;
 	}
 
 	void deserialize() {
-		CacheFileAccessor var1 = this.method179(false);
-		boolean var20 = false;
+		CacheFileAccessor accessor = this.getVarPrefs(false);
+		boolean caught = false;
 
 		try {
-			label186: {
+			processLabel: {
 				try {
-					var20 = true;
-					byte[] var2 = new byte[(int) var1.length()];
+					caught = true;
+					byte[] bytes = new byte[(int) accessor.length()];
 
-					int var4;
-					for (int var3 = 0; var3 < var2.length; var3 += var4) {
-						var4 = var1.read(var2, var3, var2.length - var3);
-						if (var4 == -1) {
+					int read;
+					for (int position = 0; position < bytes.length; position += read) {
+						read = accessor.read(bytes, position, bytes.length - position);
+						if (read == -1) {
 							throw new EOFException();
 						}
 					}
 
-					ByteBuf buf = new ByteBuf(var2);
+					ByteBuf buf = new ByteBuf(bytes);
 					if (buf.payload.length - buf.position * 314639891 < 1) {
 						try {
-							var1.close();
+							accessor.close();
 						} catch (Exception var23) {
 							;
 						}
@@ -156,10 +157,10 @@ public class VarClientHub {
 						return;
 					}
 
-					int var5 = buf.getUByte();
-					if (var5 < 0 || var5 > 1) {
+					int version = buf.getUByte();
+					if (version < 0 || version > 1) {
 						try {
-							var1.close();
+							accessor.close();
 						} catch (Exception var25) {
 							;
 						}
@@ -167,49 +168,46 @@ public class VarClientHub {
 						return;
 					}
 
-					int var6 = buf.getUShort();
+					int cCount = buf.getUShort();
 
-					int var7;
-					int var8;
-					int var9;
-					for (var7 = 0; var7 < var6; ++var7) {
-						var8 = buf.getUShort();
-						var9 = buf.getInt();
-						if (this.varcSerials[var8]) {
-							this.varcs[var8] = var9;
+					for (int i = 0; i < cCount; ++i) {
+						int key = buf.getUShort();
+						int val = buf.getInt();
+						if (this.varcSerials[key]) {
+							this.varcs[key] = val;
 						}
 					}
 
-					var7 = buf.getUShort();
+					int csCount = buf.getUShort();
 
-					for (var8 = 0; var8 < var7; ++var8) {
-						var9 = buf.getUShort();
-						String var10 = buf.getString();
-						if (this.varcstringSerials[var9]) {
-							this.varcstrings[var9] = var10;
+					for (int i = 0; i < csCount; ++i) {
+						int key = buf.getUShort();
+						String val = buf.getString();
+						if (this.varcstringSerials[key]) {
+							this.varcstrings[key] = val;
 						}
 					}
 				} catch (Exception var26) {
 					try {
-						var1.close();
-						var20 = false;
+						accessor.close();
+						caught = false;
 					} catch (Exception var22) {
-						var20 = false;
+						caught = false;
 					}
-					break label186;
+					break processLabel;
 				}
 
 				try {
-					var1.close();
-					var20 = false;
+					accessor.close();
+					caught = false;
 				} catch (Exception var24) {
-					var20 = false;
+					caught = false;
 				}
 			}
 		} finally {
-			if (var20) {
+			if (caught) {
 				try {
-					var1.close();
+					accessor.close();
 				} catch (Exception var21) {
 					;
 				}
@@ -221,7 +219,7 @@ public class VarClientHub {
 	}
 
 	void process() {
-		if (this.changed && this.lastSerialize * -2233906655684255439L < Node_Sub5.currentTimeMs() - 60000L) {
+		if (this.changed && this.lastSerialize * -2233906655684255439L < AnimationSkin.currentTimeMs() - 60000L) {
 			this.serialize();
 		}
 
@@ -247,8 +245,8 @@ public class VarClientHub {
 
 	}
 
-	CacheFileAccessor method179(boolean var1) {
-		return BoundaryStub.method154("2", Client.aClass77_2091.aString646, var1);
+	CacheFileAccessor getVarPrefs(boolean serialize) {
+		return BoundaryStub.getPreferences("2", Client.gameType.identifier, serialize);
 	}
 
 	VarClientHub() {
@@ -258,7 +256,7 @@ public class VarClientHub {
 
 		int index;
 		for (index = 0; index < this.varcs.length; ++index) {
-			VarClientType varc = MilliTimer.getClientType(index);
+			VarClientType varc = MilliTimer.getVarClientType(index);
 			this.varcSerials[index] = varc.serialize;
 		}
 
@@ -365,7 +363,7 @@ public class VarClientHub {
 		if (var3 && var0.anObjectArray1188 != null
 				&& (var4 != 1645211541 * var0.width || 1227800423 * var0.height != var6)) {
 			ScriptEvent var5 = new ScriptEvent();
-			var5.aWidget1430 = var0;
+			var5.widget = var0;
 			var5.args = var0.anObjectArray1188;
 			Client.aDeque2164.method475(var5);
 		}
@@ -374,7 +372,7 @@ public class VarClientHub {
 
 	static final void method184() {
 		for (Projectile var0 = (Projectile) Client.projectileDeque
-				.method471(); var0 != null; var0 = (Projectile) Client.projectileDeque.method473()) {
+				.getFront(); var0 != null; var0 = (Projectile) Client.projectileDeque.getNext()) {
 			if (var0.anInt1844 * -2138425693 == -747958745 * InterfaceNode.floorLevel
 					&& -1040073859 * Client.engineCycle <= var0.loopCycle * -2082473613) {
 				if (Client.engineCycle * -1040073859 >= 826970615 * var0.anInt1846) {

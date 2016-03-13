@@ -4,13 +4,13 @@ public class Class6 {
 	static int anInt114 = 0;
 	static int anInt115 = 0;
 	static int anInt116 = 0;
-	static DualNode_Sub13_Sub2 aDualNode_Sub13_Sub2_117;
-	static DualNode_Sub13_Sub2[] aDualNode_Sub13_Sub2Array118;
-	static Class92 aClass92_119 = Class92.aClass92_726;
-	static DualNode_Sub13_Sub2 aDualNode_Sub13_Sub2_120;
-	static DualNode_Sub13_Sub2 aDualNode_Sub13_Sub2_121;
+	static Sprite titlebuttonSprite;
+	static Sprite[] runesSprite;
+	static BlockType blockType = BlockType.NORMAL;
+	static Sprite radioButtons0Sprite;
+	static Sprite radioButtons2Sprite;
 	static int anInt122 = -1175970450;
-	static String aString123 = "";
+	static String password = "";
 	static int[] anIntArray124;
 	static int[] anIntArray125;
 	static int anInt132 = 0;
@@ -23,10 +23,10 @@ public class Class6 {
 	static String aString133 = "";
 	static String aString134 = "";
 	static String aString135 = "";
-	static String aString136 = "";
-	static Sprite aSprite137;
+	static String username = "";
+	static Picture aSprite137;
 	static int anInt138 = 0;
-	static boolean aBool139 = true;
+	static boolean trust = true;
 	static int anInt140 = 0;
 	static String aString141 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"£$%^&*()-_=+[{]};:\'@#~,<.>/?\\| ";
 	static boolean aBool142;
@@ -34,7 +34,7 @@ public class Class6 {
 	static int anInt144 = -2121360341;
 	static int[] anIntArray145 = new int[256];
 	static Widget[] aWidgetArray146;
-	static DualNode_Sub13_Sub2 aDualNode_Sub13_Sub2_147;
+	static Sprite titleboxSprite;
 
 	Class6() throws Throwable {
 		throw new Error();

@@ -175,22 +175,22 @@ public class World {
 			if (var2 == 1) {
 				if (var1 == 1) {
 					TexturedGraphic.method913(0.9D);
-					((Class29) TexturedGraphic.anInterface3_1796).method185(0.9D);
+					((TextureLoader) TexturedGraphic.anInterface3_1796).method185(0.9D);
 				}
 
 				if (var1 == 2) {
 					TexturedGraphic.method913(0.8D);
-					((Class29) TexturedGraphic.anInterface3_1796).method185(0.8D);
+					((TextureLoader) TexturedGraphic.anInterface3_1796).method185(0.8D);
 				}
 
 				if (var1 == 3) {
 					TexturedGraphic.method913(0.7D);
-					((Class29) TexturedGraphic.anInterface3_1796).method185(0.7D);
+					((TextureLoader) TexturedGraphic.anInterface3_1796).method185(0.7D);
 				}
 
 				if (var1 == 4) {
 					TexturedGraphic.method913(0.6D);
-					((Class29) TexturedGraphic.anInterface3_1796).method185(0.6D);
+					((TextureLoader) TexturedGraphic.anInterface3_1796).method185(0.6D);
 				}
 
 				DualNode_Sub8.method711();
@@ -292,7 +292,7 @@ public class World {
 			}
 
 			if (var2 == 17) {
-				Client.anInt2136 = (var1 & '\uffff') * 218906203;
+				Client.anInt2136 = (var1 & 0xFFFF) * 218906203;
 			}
 
 			Class36[] var4;

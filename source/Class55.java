@@ -3,7 +3,7 @@ public final class Class55 {
 
 	static Class46 aClass46_541 = new Class46();
 
-	public static int method276(byte[] var0, int var1, byte[] var2, int var3, int var4) {
+	public static int bunzip2(byte[] var0, int var1, byte[] var2, int var3, int var4) {
 		Class46 var5 = aClass46_541;
 		synchronized (var5) {
 			aClass46_541.aByteArray471 = var2;
@@ -73,7 +73,7 @@ public final class Class55 {
 
 				var1 = (byte) var4;
 				var6 = var5[var6];
-				var12 = (byte) (var6 & 255);
+				var12 = (byte) (var6 & 0xFF);
 				var6 >>= 8;
 				++var3;
 				if (var12 != var4) {
@@ -102,7 +102,7 @@ public final class Class55 {
 
 			var2 = 2;
 			var6 = var5[var6];
-			var12 = (byte) (var6 & 255);
+			var12 = (byte) (var6 & 0xFF);
 			var6 >>= 8;
 			++var3;
 			if (var3 != var9) {
@@ -111,7 +111,7 @@ public final class Class55 {
 				} else {
 					var2 = 3;
 					var6 = var5[var6];
-					var12 = (byte) (var6 & 255);
+					var12 = (byte) (var6 & 0xFF);
 					var6 >>= 8;
 					++var3;
 					if (var3 != var9) {
@@ -119,12 +119,12 @@ public final class Class55 {
 							var4 = var12;
 						} else {
 							var6 = var5[var6];
-							var12 = (byte) (var6 & 255);
+							var12 = (byte) (var6 & 0xFF);
 							var6 >>= 8;
 							++var3;
-							var2 = (var12 & 255) + 4;
+							var2 = (var12 & 0xFF) + 4;
 							var6 = var5[var6];
-							var4 = (byte) (var6 & 255);
+							var4 = (byte) (var6 & 0xFF);
 							var6 >>= 8;
 							++var3;
 						}
@@ -151,24 +151,6 @@ public final class Class55 {
 	}
 
 	static void method278(Class46 var0) {
-		boolean var1 = false;
-		boolean var30 = false;
-		boolean var3 = false;
-		boolean var29 = false;
-		boolean var5 = false;
-		boolean var31 = false;
-		boolean var7 = false;
-		boolean var8 = false;
-		boolean var6 = false;
-		boolean var18 = false;
-		boolean var11 = false;
-		boolean var2 = false;
-		boolean var4 = false;
-		boolean var10 = false;
-		boolean var12 = false;
-		boolean var16 = false;
-		boolean var14 = false;
-		boolean var13 = false;
 		int var19 = 0;
 		int[] var20 = null;
 		int[] var17 = null;
@@ -202,11 +184,11 @@ public final class Class55 {
 
 			var0.anInt492 = 0;
 			var9 = method279(var0);
-			var0.anInt492 = (var0.anInt492 * -831286639 << 8 | var9 & 255) * -1293783439;
+			var0.anInt492 = (var0.anInt492 * -831286639 << 8 | var9 & 0xFF) * -1293783439;
 			var9 = method279(var0);
-			var0.anInt492 = (var0.anInt492 * -831286639 << 8 | var9 & 255) * -1293783439;
+			var0.anInt492 = (var0.anInt492 * -831286639 << 8 | var9 & 0xFF) * -1293783439;
 			var9 = method279(var0);
-			var0.anInt492 = (var0.anInt492 * -831286639 << 8 | var9 & 255) * -1293783439;
+			var0.anInt492 = (var0.anInt492 * -831286639 << 8 | var9 & 0xFF) * -1293783439;
 
 			int var35;
 			for (var35 = 0; var35 < 16; ++var35) {
@@ -417,8 +399,8 @@ public final class Class55 {
 						}
 					}
 
-					++var0.anIntArray485[var0.aByteArray491[var9 & 255] & 255];
-					Class93.anIntArray732[var45] = var0.aByteArray491[var9 & 255] & 255;
+					++var0.anIntArray485[var0.aByteArray491[var9 & 0xFF] & 0xFF];
+					Class93.anIntArray732[var45] = var0.aByteArray491[var9 & 0xFF] & 0xFF;
 					++var45;
 					if (var42 == 0) {
 						++var43;
@@ -473,10 +455,10 @@ public final class Class55 {
 					} while (var50 == 0 || var50 == 1);
 
 					++var36;
-					var9 = var0.aByteArray491[var0.aByteArray489[var0.anIntArray493[0]] & 255];
+					var9 = var0.aByteArray491[var0.aByteArray489[var0.anIntArray493[0]] & 0xFF];
 
-					for (var0.anIntArray485[var9 & 255] += var36; var36 > 0; --var36) {
-						Class93.anIntArray732[var45] = var9 & 255;
+					for (var0.anIntArray485[var9 & 0xFF] += var36; var36 > 0; --var36) {
+						Class93.anIntArray732[var45] = var9 & 0xFF;
 						++var45;
 					}
 				}
@@ -495,15 +477,15 @@ public final class Class55 {
 			}
 
 			for (var35 = 0; var35 < var45; ++var35) {
-				var9 = (byte) (Class93.anIntArray732[var35] & 255);
-				Class93.anIntArray732[var0.anIntArray487[var9 & 255]] |= var35 << 8;
-				++var0.anIntArray487[var9 & 255];
+				var9 = (byte) (Class93.anIntArray732[var35] & 0xFF);
+				Class93.anIntArray732[var0.anIntArray487[var9 & 0xFF]] |= var35 << 8;
+				++var0.anIntArray487[var9 & 0xFF];
 			}
 
 			var0.anInt481 = (Class93.anIntArray732[var0.anInt492 * -831286639] >> 8) * 1655083777;
 			var0.anInt473 = 0;
 			var0.anInt481 = Class93.anIntArray732[var0.anInt481 * 1254255873] * 1655083777;
-			var0.anInt484 = (byte) (var0.anInt481 * 1254255873 & 255) * 761517719;
+			var0.anInt484 = (byte) (var0.anInt481 * 1254255873 & 0xFF) * 761517719;
 			var0.anInt481 = (var0.anInt481 * 1254255873 >> 8) * 1655083777;
 			var0.anInt473 += 186970617;
 			var0.anInt501 = var45 * -1276906321;
@@ -523,7 +505,7 @@ public final class Class55 {
 
 	static int method280(int var0, Class46 var1) {
 		while (var1.anInt470 * -729094229 < var0) {
-			var1.anInt480 = (var1.anInt480 * 296567033 << 8 | var1.aByteArray471[var1.anInt486 * 1779342109] & 255)
+			var1.anInt480 = (var1.anInt480 * 296567033 << 8 | var1.aByteArray471[var1.anInt486 * 1779342109] & 0xFF)
 					* 947093833;
 			var1.anInt470 += -729360360;
 			var1.anInt486 += -1227292875;

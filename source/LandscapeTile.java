@@ -77,7 +77,7 @@ public final class LandscapeTile extends Node {
 		int count = 0;
 
 		for (int var6 = 0; var6 < length; ++var6) {
-			int val = bytes[offset + var6] & 255;
+			int val = bytes[offset + var6] & 0xFF;
 			if (val != 0) {
 				if (val >= 128 && val < 160) {
 					char c = Class85.characters[val - 128];

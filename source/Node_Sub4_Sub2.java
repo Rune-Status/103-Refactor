@@ -416,7 +416,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 				}
 
 				this.anInt1563 += var2;
-				if (this.anInt1554 == 256 && (this.anInt1557 & 255) == 0) {
+				if (this.anInt1554 == 256 && (this.anInt1557 & 0xFF) == 0) {
 					if (Class8.aBool166) {
 						var2 = method759(0, ((Node_Sub2_Sub1) this.aNode_Sub2_1258).aByteArray1543, var1,
 								this.anInt1557, var2, this.anInt1558, this.anInt1559, this.anInt1564, this.anInt1567, 0,
@@ -446,7 +446,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 				return var4;
 			}
 
-			if (this.anInt1554 == 256 && (this.anInt1557 & 255) == 0) {
+			if (this.anInt1554 == 256 && (this.anInt1557 & 0xFF) == 0) {
 				if (Class8.aBool166) {
 					return method738(0, ((Node_Sub2_Sub1) this.aNode_Sub2_1258).aByteArray1543, var1, this.anInt1557,
 							var2, this.anInt1558, this.anInt1559, 0, var4, var3, this);
@@ -475,7 +475,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 				}
 
 				this.anInt1563 += var2;
-				if (this.anInt1554 == -256 && (this.anInt1557 & 255) == 0) {
+				if (this.anInt1554 == -256 && (this.anInt1557 & 0xFF) == 0) {
 					if (Class8.aBool166) {
 						var2 = method770(0, ((Node_Sub2_Sub1) this.aNode_Sub2_1258).aByteArray1543, var1,
 								this.anInt1557, var2, this.anInt1558, this.anInt1559, this.anInt1564, this.anInt1567, 0,
@@ -505,7 +505,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 				return var4;
 			}
 
-			if (this.anInt1554 == -256 && (this.anInt1557 & 255) == 0) {
+			if (this.anInt1554 == -256 && (this.anInt1557 & 0xFF) == 0) {
 				if (Class8.aBool166) {
 					return method775(0, ((Node_Sub2_Sub1) this.aNode_Sub2_1258).aByteArray1543, var1, this.anInt1557,
 							var2, this.anInt1558, this.anInt1559, 0, var4, var3, this);
@@ -633,7 +633,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 			var1 = var4 >> 8;
 			var13 = var2[var1];
 			var10001 = var5++;
-			var3[var10001] += ((var13 << 8) + (var2[var1 + 1] - var13) * (var4 & 255)) * var6 >> 6;
+			var3[var10001] += ((var13 << 8) + (var2[var1 + 1] - var13) * (var4 & 0xFF)) * var6 >> 6;
 			var4 += var11;
 		}
 
@@ -644,7 +644,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 		for (var1 = var12; var5 < var7; var4 += var11) {
 			var13 = var2[var4 >> 8];
 			var10001 = var5++;
-			var3[var10001] += ((var13 << 8) + (var1 - var13) * (var4 & 255)) * var6 >> 6;
+			var3[var10001] += ((var13 << 8) + (var1 - var13) * (var4 & 0xFF)) * var6 >> 6;
 		}
 
 		var10.anInt1557 = var4;
@@ -804,7 +804,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 			var1 = var4 >> 8;
 			var14 = var2[var1];
 			var10001 = var5++;
-			var3[var10001] += ((var14 << 8) + (var2[var1 + 1] - var14) * (var4 & 255)) * var6 >> 6;
+			var3[var10001] += ((var14 << 8) + (var2[var1 + 1] - var14) * (var4 & 0xFF)) * var6 >> 6;
 			var6 += var7;
 			var4 += var12;
 		}
@@ -816,7 +816,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 		for (var1 = var13; var5 < var8; var4 += var12) {
 			var14 = var2[var4 >> 8];
 			var10001 = var5++;
-			var3[var10001] += ((var14 << 8) + (var1 - var14) * (var4 & 255)) * var6 >> 6;
+			var3[var10001] += ((var14 << 8) + (var1 - var14) * (var4 & 0xFF)) * var6 >> 6;
 			var6 += var7;
 		}
 
@@ -841,7 +841,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 		for (var10 <<= 1; var5 < var10; var4 += var14) {
 			var1 = var4 >> 8;
 			var16 = var2[var1];
-			var0 = (var16 << 8) + (var2[var1 + 1] - var16) * (var4 & 255);
+			var0 = (var16 << 8) + (var2[var1 + 1] - var16) * (var4 & 0xFF);
 			var10001 = var5++;
 			var3[var10001] += var0 * var6 >> 6;
 			var6 += var8;
@@ -858,7 +858,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 
 		for (var1 = var15; var5 < var10; var4 += var14) {
 			var16 = var2[var4 >> 8];
-			var0 = (var16 << 8) + (var1 - var16) * (var4 & 255);
+			var0 = (var16 << 8) + (var1 - var16) * (var4 & 0xFF);
 			var10001 = var5++;
 			var3[var10001] += var0 * var6 >> 6;
 			var6 += var8;
@@ -888,7 +888,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 			var1 = var4 >> 8;
 			byte var14 = var2[var1 - 1];
 			var10001 = var5++;
-			var3[var10001] += ((var14 << 8) + (var2[var1] - var14) * (var4 & 255)) * var6 >> 6;
+			var3[var10001] += ((var14 << 8) + (var2[var1] - var14) * (var4 & 0xFF)) * var6 >> 6;
 			var6 += var7;
 			var4 += var12;
 		}
@@ -901,7 +901,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 
 		for (var1 = var12; var5 < var8; var4 += var1) {
 			var10001 = var5++;
-			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 255)) * var6 >> 6;
+			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 0xFF)) * var6 >> 6;
 			var6 += var7;
 		}
 
@@ -925,7 +925,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 		for (var10 <<= 1; var5 < var10; var4 += var14) {
 			var1 = var4 >> 8;
 			byte var16 = var2[var1 - 1];
-			var0 = (var16 << 8) + (var2[var1] - var16) * (var4 & 255);
+			var0 = (var16 << 8) + (var2[var1] - var16) * (var4 & 0xFF);
 			var10001 = var5++;
 			var3[var10001] += var0 * var6 >> 6;
 			var6 += var8;
@@ -941,7 +941,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 		var10 <<= 1;
 
 		for (var1 = var15; var5 < var10; var4 += var14) {
-			var0 = (var1 << 8) + (var2[var4 >> 8] - var1) * (var4 & 255);
+			var0 = (var1 << 8) + (var2[var4 >> 8] - var1) * (var4 & 0xFF);
 			var10001 = var5++;
 			var3[var10001] += var0 * var6 >> 6;
 			var6 += var8;
@@ -1013,7 +1013,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 			var1 = var4 >> 8;
 			byte var13 = var2[var1 - 1];
 			var10001 = var5++;
-			var3[var10001] += ((var13 << 8) + (var2[var1] - var13) * (var4 & 255)) * var6 >> 6;
+			var3[var10001] += ((var13 << 8) + (var2[var1] - var13) * (var4 & 0xFF)) * var6 >> 6;
 			var4 += var11;
 		}
 
@@ -1025,7 +1025,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 
 		for (var1 = var11; var5 < var7; var4 += var1) {
 			var10001 = var5++;
-			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 255)) * var6 >> 6;
+			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 0xFF)) * var6 >> 6;
 		}
 
 		var10.anInt1557 = var4;
@@ -1045,7 +1045,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 		for (var8 <<= 1; var5 < var8; var4 += var12) {
 			var1 = var4 >> 8;
 			var14 = var2[var1];
-			var0 = (var14 << 8) + (var2[var1 + 1] - var14) * (var4 & 255);
+			var0 = (var14 << 8) + (var2[var1 + 1] - var14) * (var4 & 0xFF);
 			var10001 = var5++;
 			var3[var10001] += var0 * var6 >> 6;
 			var10001 = var5++;
@@ -1060,7 +1060,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 
 		for (var1 = var13; var5 < var8; var4 += var12) {
 			var14 = var2[var4 >> 8];
-			var0 = (var14 << 8) + (var1 - var14) * (var4 & 255);
+			var0 = (var14 << 8) + (var1 - var14) * (var4 & 0xFF);
 			var10001 = var5++;
 			var3[var10001] += var0 * var6 >> 6;
 			var10001 = var5++;
@@ -1212,7 +1212,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 		for (var8 <<= 1; var5 < var8; var4 += var12) {
 			var1 = var4 >> 8;
 			byte var14 = var2[var1 - 1];
-			var0 = (var14 << 8) + (var2[var1] - var14) * (var4 & 255);
+			var0 = (var14 << 8) + (var2[var1] - var14) * (var4 & 0xFF);
 			var10001 = var5++;
 			var3[var10001] += var0 * var6 >> 6;
 			var10001 = var5++;
@@ -1226,7 +1226,7 @@ public class Node_Sub4_Sub2 extends Node_Sub4 {
 		var8 <<= 1;
 
 		for (var1 = var13; var5 < var8; var4 += var12) {
-			var0 = (var1 << 8) + (var2[var4 >> 8] - var1) * (var4 & 255);
+			var0 = (var1 << 8) + (var2[var4 >> 8] - var1) * (var4 & 0xFF);
 			var10001 = var5++;
 			var3[var10001] += var0 * var6 >> 6;
 			var10001 = var5++;

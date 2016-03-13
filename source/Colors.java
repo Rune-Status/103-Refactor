@@ -32,7 +32,7 @@ public class Colors {
 					(short) 4574, (short) 17050, (short) 0, (short) 127 } };
 	public static short[] colorsToFind1 = new short[] { (short) -10304, (short) 9104, (short) -1, (short) -1,
 			(short) -1 };
-	public static short[] aShortArray837;
+	public static short[] colorToFind1;
 	public static short[] colorsToFind = new short[] { (short) 6798, (short) 8741, (short) 25238, (short) 4626,
 			(short) 4550 };
 

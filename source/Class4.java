@@ -43,12 +43,12 @@ public class Class4 {
 				var11.targetIndex = GPI.cachedIndices[var1] * 1611414733;
 				var10 = GPI.cachedRegions[var1];
 				var3 = var10 >> 28;
-				var6 = var10 >> 14 & 255;
-				var8 = var10 & 255;
+				var6 = var10 >> 14 & 0xFF;
+				var8 = var10 & 0xFF;
 				var11.aByteArray1951[0] = GPI.movementTypes[var1];
 				var11.anInt2004 = -1668953739 * (byte) var3;
-				var11.method1043(var4 + (var6 << 6) - 1426698711 * Node_Sub10.regionBaseX,
-						var7 + (var8 << 6) - 714823515 * VarClientHub.regionBaseY);
+				var11.method1043(var4 + (var6 << 6) - 1426698711 * Node_Sub10.chunkLeftX,
+						var7 + (var8 << 6) - 714823515 * VarClientHub.chunkLeftY);
 				var11.aBool1999 = false;
 				return true;
 			}
@@ -66,8 +66,8 @@ public class Class4 {
 				var9 = var4 & 7;
 				var5 = GPI.cachedRegions[var1];
 				var10 = (var5 >> 28) + var7 & 3;
-				var3 = var5 >> 14 & 255;
-				var6 = var5 & 255;
+				var3 = var5 >> 14 & 0xFF;
+				var6 = var5 & 0xFF;
 				if (var9 == 0) {
 					--var3;
 					--var6;
@@ -109,12 +109,12 @@ public class Class4 {
 			} else {
 				var4 = var0.getBits(18);
 				var7 = var4 >> 16;
-				var9 = var4 >> 8 & 255;
-				var5 = var4 & 255;
+				var9 = var4 >> 8 & 0xFF;
+				var5 = var4 & 0xFF;
 				var10 = GPI.cachedRegions[var1];
 				var3 = (var10 >> 28) + var7 & 3;
-				var6 = (var10 >> 14) + var9 & 255;
-				var8 = var5 + var10 & 255;
+				var6 = (var10 >> 14) + var9 & 0xFF;
+				var8 = var5 + var10 & 0xFF;
 				GPI.cachedRegions[var1] = var8 + (var6 << 14) + (var3 << 28);
 				return false;
 			}

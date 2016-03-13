@@ -29,15 +29,15 @@ public final class Class91 {
 		}
 	}
 
-	public static int method400(CharSequence var0) {
-		int var1 = var0.length();
-		int var2 = 0;
+	public static int bkdrHash(CharSequence seq) {
+		int length = seq.length();
+		int hash = 0;
 
-		for (int var3 = 0; var3 < var1; ++var3) {
-			var2 = (var2 << 5) - var2 + var0.charAt(var3);
+		for (int i = 0; i < length; ++i) {
+			hash = (hash << 5) - hash + seq.charAt(i);
 		}
 
-		return var2;
+		return hash;
 	}
 
 	public static int method401(int var0) {

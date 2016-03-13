@@ -7,7 +7,7 @@ public class CollisionMap {
 	int anInt505 = 0;
 	int anInt506 = 0;
 	int height;
-	static Applet anApplet508;
+	static Applet gameApplet;
 
 	public void method234(int var1, int var2, int var3, int var4, boolean var5) {
 		int var6 = 256;

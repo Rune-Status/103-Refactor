@@ -97,14 +97,14 @@ public class Class94 {
 
 	public static Widget getWidget(int hash) {
 		int parent = hash >> 16;
-		int child = hash & '\uffff';
+		int child = hash & 0xFFFF;
 		if (Widget.interfaces[parent] == null || Widget.interfaces[parent][child] == null) {
 			boolean loaded = IdentKitType.loadWidget(parent);
 			if (!loaded) {
 				return null;
 			}
 		}
-		//System.out.println("Widget: " + var1 + "," + var2);
+		// System.out.println("Widget: " + var1 + "," + var2);
 
 		return Widget.interfaces[parent][child];
 	}

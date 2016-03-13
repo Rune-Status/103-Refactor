@@ -1,16 +1,16 @@
 
-public final class Class106 {
+public final class NodeMap {
 
 	int anInt763;
 	NodeTable aNodeTable764;
 	int anInt765;
 	DualNode aDualNode766 = new DualNode();
-	Class105 aClass105_767 = new Class105();
+	NodeQueue aNodeQueue_767 = new NodeQueue();
 
 	public DualNode get(long var1) {
 		DualNode var3 = (DualNode) this.aNodeTable764.get(var1);
 		if (var3 != null) {
-			this.aClass105_767.method425(var3);
+			this.aNodeQueue_767.method425(var3);
 		}
 
 		return var3;
@@ -18,11 +18,11 @@ public final class Class106 {
 
 	public void put(DualNode var1, long var2) {
 		if (this.anInt765 == 0) {
-			DualNode var4 = this.aClass105_767.method423();
+			DualNode var4 = this.aNodeQueue_767.method423();
 			var4.unlink();
 			var4.unlinkDual();
 			if (var4 == this.aDualNode766) {
-				var4 = this.aClass105_767.method423();
+				var4 = this.aNodeQueue_767.method423();
 				var4.unlink();
 				var4.unlinkDual();
 			}
@@ -31,17 +31,17 @@ public final class Class106 {
 		}
 
 		this.aNodeTable764.put(var1, var2);
-		this.aClass105_767.method425(var1);
+		this.aNodeQueue_767.method425(var1);
 	}
 
 	public void method429() {
-		this.aClass105_767.method426();
+		this.aNodeQueue_767.method426();
 		this.aNodeTable764.method149();
 		this.aDualNode766 = new DualNode();
 		this.anInt765 = this.anInt763;
 	}
 
-	public Class106(int var1) {
+	public NodeMap(int var1) {
 		this.anInt763 = var1;
 		this.anInt765 = var1;
 

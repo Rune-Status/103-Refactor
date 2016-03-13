@@ -2,7 +2,7 @@ import java.util.Comparator;
 
 final class Class37 implements Comparator {
 
-	static String aString404;
+	static String pinText;
 	// $FF: synthetic field
 	boolean val$preferOwnWorld;
 
@@ -107,27 +107,27 @@ final class Class37 implements Comparator {
 		}
 	}
 
-	static String method212(String var0, boolean var1) {
-		String var2 = var1 ? "https://" : "http://";
-		if (1082541889 * Client.anInt2074 == 1) {
-			var0 = var0 + "-wtrc";
-		} else if (1082541889 * Client.anInt2074 == 2) {
-			var0 = var0 + "-wtqa";
-		} else if (Client.anInt2074 * 1082541889 == 3) {
-			var0 = var0 + "-wtwip";
-		} else if (Client.anInt2074 * 1082541889 == 5) {
-			var0 = var0 + "-wti";
-		} else if (1082541889 * Client.anInt2074 == 4) {
-			var0 = "local";
+	static String method212(String subDomain, boolean ssl) {
+		String protocol = ssl ? "https://" : "http://";
+		if (1082541889 * Client.socketType == 1) {
+			subDomain = subDomain + "-wtrc";
+		} else if (1082541889 * Client.socketType == 2) {
+			subDomain = subDomain + "-wtqa";
+		} else if (Client.socketType * 1082541889 == 3) {
+			subDomain = subDomain + "-wtwip";
+		} else if (Client.socketType * 1082541889 == 5) {
+			subDomain = subDomain + "-wti";
+		} else if (1082541889 * Client.socketType == 4) {
+			subDomain = "local";
 		}
 
 		String var4 = "";
-		if (Client.aString2013 != null) {
-			var4 = "/p=" + Client.aString2013;
+		if (Client.sessionToken != null) {
+			var4 = "/p=" + Client.sessionToken;
 		}
 
-		String var3 = "runescape.com";
-		return var2 + var0 + "." + var3 + "/l=" + Client.anInt2011 * -1025678859 + "/a="
+		String domain = "runescape.com";
+		return protocol + subDomain + "." + domain + "/l=" + Client.anInt2011 * -1025678859 + "/a="
 				+ InterfaceNode.anInt1399 * -1929163163 + var4 + "/";
 	}
 

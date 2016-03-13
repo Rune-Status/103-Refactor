@@ -19,7 +19,7 @@ public class ItemTable extends Node {
 		EnumType.enum_ref = var0;
 	}
 
-	static final void method649(BitBuf var0) {
+	static final void initializeGPI(BitBuf var0) {
 		var0.bitAccess();
 		int var1 = 1467227105 * Client.myPlayerIndex;
 		Player var2 = Class68.myPlayer = Client.playerArray[var1] = new Player();
@@ -28,10 +28,10 @@ public class ItemTable extends Node {
 		byte var7 = (byte) (var3 >> 28);
 		int var4 = var3 >> 14 & 16383;
 		int var6 = var3 & 16383;
-		var2.anIntArray1945[0] = var4 - 1426698711 * Node_Sub10.regionBaseX;
-		var2.strictX = ((var2.anIntArray1945[0] << 7) + (var2.method1046() << 6)) * 1705682711;
-		var2.anIntArray1955[0] = var6 - VarClientHub.regionBaseY * 714823515;
-		var2.strictY = ((var2.anIntArray1955[0] << 7) + (var2.method1046() << 6)) * 1421914369;
+		var2.anIntArray1945[0] = var4 - 1426698711 * Node_Sub10.chunkLeftX;
+		var2.strictX = ((var2.anIntArray1945[0] << 7) + (var2.getSize() << 6)) * 1705682711;
+		var2.anIntArray1955[0] = var6 - VarClientHub.chunkLeftY * 714823515;
+		var2.strictY = ((var2.anIntArray1955[0] << 7) + (var2.getSize() << 6)) * 1421914369;
 		InterfaceNode.floorLevel = (var2.anInt2004 = var7 * -1668953739) * -1941196453;
 		if (GPI.cachedAppearances[var1] != null) {
 			var2.decodeApperance(GPI.cachedAppearances[var1]);
@@ -46,8 +46,8 @@ public class ItemTable extends Node {
 			if (var5 != var1) {
 				int var8 = var0.getBits(18);
 				int var9 = var8 >> 16;
-				int var10 = var8 >> 8 & 255;
-				int var11 = var8 & 255;
+				int var10 = var8 >> 8 & 0xFF;
+				int var11 = var8 & 0xFF;
 				GPI.cachedRegions[var5] = (var9 << 28) + (var10 << 14) + var11;
 				GPI.cachedDirections[var5] = 0;
 				GPI.cachedIndices[var5] = -1;

@@ -287,7 +287,7 @@ public class GameStrings {
 
 	static final void method466() {
 		Landscape.aBool22 = false;
-		Client.aBool2010 = false;
+		Client.lowMemory = false;
 	}
 
 }

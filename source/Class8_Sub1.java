@@ -33,7 +33,7 @@ public class Class8_Sub1 extends Class8 {
 		anInterface2_1210.method3(this.anInt1209, this.anIntArray160);
 	}
 
-	Class8_Sub1(Class63 var1, int var2) {
+	Class8_Sub1(TaskManager var1, int var2) {
 		anInterface2_1210 = var1.method310();
 		this.anInt1209 = var2;
 	}
