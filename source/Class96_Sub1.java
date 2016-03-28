@@ -4,1040 +4,932 @@ import java.net.URI;
 
 public class Class96_Sub1 extends Class96 {
 
-	String aString1203;
-	static Picture[] aSpriteArray1204;
-	short aShort1205;
-	int anInt1206 = (int) (AnimationSkin.currentTimeMs() / 1000L) * 1225451051;
-	static AbstractIndex aClass87_1207;
-	static Task socket;
-
-	public static void method498(AbstractIndex var0, AbstractIndex var1, boolean var2) {
-		ObjectType.objects_ref = var0;
-		ObjectType.aClass87_1683 = var1;
-		ObjectType.aBool1696 = var2;
-	}
-
-	public static SpotAnimType getSpotAnimType(int id) {
-		SpotAnimType type = (SpotAnimType) SpotAnimType.spotanims.get((long) id);
-		if (type != null) {
-			return type;
-		} else {
-			byte[] bytes = SpotAnimType.anim_ref.getFile(13, id);
-			type = new SpotAnimType();
-			type.id = id * -892199181;
-			if (bytes != null) {
-				type.decode(new ByteBuf(bytes));
-			}
-
-			SpotAnimType.spotanims.put(type, (long) id);
-			return type;
-		}
-	}
-
-	public static final void sleep(long millis) {
-		if (millis > 0L) {
-			if (millis % 10L == 0L) {
-				long actual = millis - 1L;
-
-				try {
-					Thread.sleep(actual);
-				} catch (InterruptedException var8) {
-					;
-				}
-
-				try {
-					Thread.sleep(1L);
-				} catch (InterruptedException var7) {
-					;
-				}
-			} else {
-				try {
-					Thread.sleep(millis);
-				} catch (InterruptedException var6) {
-					;
-				}
-			}
-
-		}
-	}
-
-	public static void method501() {
-		if (TaskManager.javaVendor.toLowerCase().indexOf("microsoft") != -1) {
-			KeyFocusListener.keyCodes[186] = 57;
-			KeyFocusListener.keyCodes[187] = 27;
-			KeyFocusListener.keyCodes[188] = 71;
-			KeyFocusListener.keyCodes[189] = 26;
-			KeyFocusListener.keyCodes[190] = 72;
-			KeyFocusListener.keyCodes[191] = 73;
-			KeyFocusListener.keyCodes[192] = 58;
-			KeyFocusListener.keyCodes[219] = 42;
-			KeyFocusListener.keyCodes[220] = 74;
-			KeyFocusListener.keyCodes[221] = 43;
-			KeyFocusListener.keyCodes[222] = 59;
-			KeyFocusListener.keyCodes[223] = 28;
-		} else {
-			KeyFocusListener.keyCodes[44] = 71;
-			KeyFocusListener.keyCodes[45] = 26;
-			KeyFocusListener.keyCodes[46] = 72;
-			KeyFocusListener.keyCodes[47] = 73;
-			KeyFocusListener.keyCodes[59] = 57;
-			KeyFocusListener.keyCodes[61] = 27;
-			KeyFocusListener.keyCodes[91] = 42;
-			KeyFocusListener.keyCodes[92] = 74;
-			KeyFocusListener.keyCodes[93] = 43;
-			KeyFocusListener.keyCodes[192] = 28;
-			KeyFocusListener.keyCodes[222] = 58;
-			KeyFocusListener.keyCodes[520] = 59;
-		}
-
-	}
-
-	public static int method502(CharSequence var0, CharSequence var1, int var2) {
-		int var3 = var0.length();
-		int var11 = var1.length();
-		int var9 = 0;
-		int var10 = 0;
-		byte var7 = 0;
-		byte var8 = 0;
-
-		while (var9 - var7 < var3 || var10 - var8 < var11) {
-			if (var9 - var7 >= var3) {
-				return -1;
-			}
-
-			if (var10 - var8 >= var11) {
-				return 1;
-			}
-
-			char var12;
-			if (var7 != 0) {
-				var12 = (char) var7;
-				boolean var16 = false;
-			} else {
-				var12 = var0.charAt(var9++);
-			}
-
-			char var13;
-			if (var8 != 0) {
-				var13 = (char) var8;
-				boolean var18 = false;
-			} else {
-				var13 = var1.charAt(var10++);
-			}
-
-			byte var4;
-			if (var12 == 198) {
-				var4 = 69;
-			} else if (var12 == 230) {
-				var4 = 101;
-			} else if (var12 == 223) {
-				var4 = 115;
-			} else if (var12 != 338) {
-				if (var12 == 339) {
-					var4 = 101;
-				} else {
-					var4 = 0;
-				}
-			} else {
-				var4 = 69;
-			}
-
-			var7 = var4;
-			byte var6;
-			if (var13 == 198) {
-				var6 = 69;
-			} else if (var13 != 230) {
-				if (var13 == 223) {
-					var6 = 115;
-				} else if (var13 != 338) {
-					if (var13 == 339) {
-						var6 = 101;
-					} else {
-						var6 = 0;
-					}
-				} else {
-					var6 = 69;
-				}
-			} else {
-				var6 = 101;
-			}
-
-			var8 = var6;
-			var12 = InvType.method695(var12, var2);
-			var13 = InvType.method695(var13, var2);
-			if (var13 != var12 && java.lang.Character.toUpperCase(var12) != java.lang.Character.toUpperCase(var13)) {
-				var12 = java.lang.Character.toLowerCase(var12);
-				var13 = java.lang.Character.toLowerCase(var13);
-				if (var12 != var13) {
-					return ObjectType.method864(var12, var2) - ObjectType.method864(var13, var2);
-				}
-			}
-		}
-
-		int var19 = Math.min(var3, var11);
-
-		char var17;
-		int var20;
-		for (var20 = 0; var20 < var19; ++var20) {
-			char var14 = var0.charAt(var20);
-			var17 = var1.charAt(var20);
-			if (var14 != var17 && java.lang.Character.toUpperCase(var14) != java.lang.Character.toUpperCase(var17)) {
-				var14 = java.lang.Character.toLowerCase(var14);
-				var17 = java.lang.Character.toLowerCase(var17);
-				if (var17 != var14) {
-					return ObjectType.method864(var14, var2) - ObjectType.method864(var17, var2);
-				}
-			}
-		}
-
-		var20 = var3 - var11;
-		if (var20 != 0) {
-			return var20;
-		} else {
-			for (int var15 = 0; var15 < var19; ++var15) {
-				var17 = var0.charAt(var15);
-				char var5 = var1.charAt(var15);
-				if (var17 != var5) {
-					return ObjectType.method864(var17, var2) - ObjectType.method864(var5, var2);
-				}
-			}
-
-			return 0;
-		}
-	}
-
-	public static void method503(String var0, boolean var1, String var2, boolean var3) {
-		if (var1) {
-			if (!var3 && Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
-				try {
-					Desktop.getDesktop().browse(new URI(var0));
-					return;
-				} catch (Exception var5) {
-					;
-				}
-			}
-
-			if (Class70.aString586.startsWith("win") && !var3) {
-				Player.method1050(var0, 0, "openjs");
-				return;
-			}
-
-			if (Class70.aString586.startsWith("mac")) {
-				Player.method1050(var0, 1, var2);
-				return;
-			}
-
-			Player.method1050(var0, 2, "openjs");
-		} else {
-			Player.method1050(var0, 3, "openjs");
-		}
-
-	}
-
-	static void method504(ScriptEvent var0) {
-		AbstractByteBuffer.method261(var0, 200000);
-	}
-
-	Class96_Sub1(String var1, int var2) {
-		this.aString1203 = var1;
-		this.aShort1205 = (short) var2;
-	}
-
-	static final void method505(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-		for (int var8 = 0; var8 < var0.length; ++var8) {
-			Widget var13 = var0[var8];
-			if (var13 != null
-					&& (!var13.interactable || var13.type * -1305917269 == 0 || var13.aBool1169
-							|| Class30.getWidgetConfig(var13) != 0 || var13 == Client.aWidget2142
-							|| -179718399 * var13.contentType == 1338)
-					&& var1 == var13.parentId * -1652479707 && (!var13.interactable || !IsaacRandom.method68(var13))) {
-				int var20 = var6 + 332168295 * var13.relativeX;
-				int var15 = 1492425953 * var13.relativeY + var7;
-				int var11;
-				int var12;
-				int var16;
-				int var17;
-				int var21;
-				int var22;
-				int var23;
-				int var25;
-				if (-1305917269 * var13.type == 2) {
-					var23 = var2;
-					var25 = var3;
-					var16 = var4;
-					var17 = var5;
-				} else if (var13.type * -1305917269 == 9) {
-					var21 = var20;
-					var22 = var15;
-					var12 = var13.width * 1645211541 + var20;
-					var11 = var15 + 1227800423 * var13.height;
-					if (var12 < var20) {
-						var21 = var12;
-						var12 = var20;
-					}
-
-					if (var11 < var15) {
-						var22 = var11;
-						var11 = var15;
-					}
-
-					++var12;
-					++var11;
-					var23 = var21 > var2 ? var21 : var2;
-					var25 = var22 > var3 ? var22 : var3;
-					var16 = var12 < var4 ? var12 : var4;
-					var17 = var11 < var5 ? var11 : var5;
-				} else {
-					var21 = var20 + 1645211541 * var13.width;
-					var22 = var15 + 1227800423 * var13.height;
-					var23 = var20 > var2 ? var20 : var2;
-					var25 = var15 > var3 ? var15 : var3;
-					var16 = var21 < var4 ? var21 : var4;
-					var17 = var22 < var5 ? var22 : var5;
-				}
-
-				if (Client.aWidget2141 == var13) {
-					Client.aBool2148 = true;
-					Client.anInt2050 = -693748815 * var20;
-					Client.anInt2149 = 740381373 * var15;
-				}
-
-				if (!var13.interactable || var23 < var16 && var25 < var17) {
-					var21 = -453286219 * Class74.anInt621;
-					var22 = Class74.anInt622 * 103771565;
-					if (823601801 * Class74.anInt627 != 0) {
-						var21 = -2040065729 * Class74.anInt628;
-						var22 = Class74.anInt629 * 2090526775;
-					}
-
-					if (-179718399 * var13.contentType == 1337) {
-						if (!Client.aBool2214 && !Client.menuOpen && var21 >= var23 && var22 >= var25 && var21 < var16
-								&& var22 < var17) {
-							TileDecorationStub.method462(var21, var22, var23, var25);
-						}
-					} else {
-						int var10;
-						int var18;
-						int var24;
-						int var26;
-						int var27;
-						int var46;
-						if (var13.contentType * -179718399 == 1338) {
-							if ((-1797803011 * Client.anInt2200 == 0 || Client.anInt2200 * -1797803011 == 3)
-									&& (Class74.anInt627 * 823601801 == 1
-											|| !ClanMate.aBool1221 && Class74.anInt627 * 823601801 == 4)) {
-								DualNode_Sub14 var44 = var13.method491(true);
-								if (var44 != null) {
-									var11 = Class74.anInt628 * -2040065729 - var20;
-									var46 = Class74.anInt629 * 2090526775 - var15;
-									if (var44.method823(var11, var46)) {
-										var11 -= var44.anInt1647 * 662480183 / 2;
-										var46 -= var44.anInt1648 * -988977157 / 2;
-										var10 = -1718342721 * Client.minimapScale + Client.minimapRotation * -1916997753
-												& 2047;
-										var24 = TexturedGraphic.SIN_TABLE[var10];
-										var26 = TexturedGraphic.COS_TABLE[var10];
-										var24 = var24 * (256 + Client.viewRotation * -806982331) >> 8;
-										var26 = var26 * (-806982331 * Client.viewRotation + 256) >> 8;
-										var27 = var11 * var26 + var24 * var46 >> 11;
-										int var52 = var26 * var46 - var11 * var24 >> 11;
-										int var53 = var27 + 1272643751 * Class68.myPlayer.strictX >> 7;
-										var18 = Class68.myPlayer.strictY * -1801433343 - var52 >> 7;
-										Client.outBuffer.putHeader(239);
-										Client.outBuffer.putByte(18);
-										Client.outBuffer.putByteC(
-												KeyFocusListener.aBoolArray593[82] ? (KeyFocusListener.aBoolArray593[81] ? 2 : 1) : 0);
-										Client.outBuffer.putLEShortA(Node_Sub10.chunkLeftX * 1426698711 + var53);
-										Client.outBuffer.putLEShort(VarClientHub.chunkLeftY * 714823515 + var18);
-										Client.outBuffer.putByte(var11);
-										Client.outBuffer.putByte(var46);
-										Client.outBuffer.putShort(-1916997753 * Client.minimapRotation);
-										Client.outBuffer.putByte(57);
-										Client.outBuffer.putByte(Client.minimapScale * -1718342721);
-										Client.outBuffer.putByte(-806982331 * Client.viewRotation);
-										Client.outBuffer.putByte(89);
-										Client.outBuffer.putShort(1272643751 * Class68.myPlayer.strictX);
-										Client.outBuffer.putShort(-1801433343 * Class68.myPlayer.strictY);
-										Client.outBuffer.putByte(63);
-										Client.destinationX = var53 * -1943900347;
-										Client.destinationY = 317027045 * var18;
-									}
-								}
-							}
-						} else {
-							boolean var47;
-							if (!Client.menuOpen && var21 >= var23 && var22 >= var25 && var21 < var16
-									&& var22 < var17) {
-								var12 = var21 - var20;
-								var11 = var22 - var15;
-								if (-1300193677 * var13.anInt1195 == 1) {
-									FriendedPlayer.addMenuRow(var13.tooltip, "", 24, 0, 0, -1536575275 * var13.hash);
-								}
-
-								String var19;
-								if (-1300193677 * var13.anInt1195 == 2 && !Client.spellSelected) {
-									var19 = Class26.method168(var13);
-									if (var19 != null) {
-										FriendedPlayer.addMenuRow(var19,
-												Class48_Sub1.method545('\uff00') + var13.aString1125, 25, 0, -1,
-												-1536575275 * var13.hash);
-									}
-								}
-
-								if (var13.anInt1195 * -1300193677 == 3) {
-									FriendedPlayer.addMenuRow(GameStrings.aString1007, "", 26, 0, 0,
-											var13.hash * -1536575275);
-								}
-
-								if (var13.anInt1195 * -1300193677 == 4) {
-									FriendedPlayer.addMenuRow(var13.tooltip, "", 28, 0, 0, -1536575275 * var13.hash);
-								}
-
-								if (-1300193677 * var13.anInt1195 == 5) {
-									FriendedPlayer.addMenuRow(var13.tooltip, "", 29, 0, 0, var13.hash * -1536575275);
-								}
-
-								if (-1300193677 * var13.anInt1195 == 6 && Client.aWidget2135 == null) {
-									FriendedPlayer.addMenuRow(var13.tooltip, "", 30, 0, -1, var13.hash * -1536575275);
-								}
-
-								if (-1305917269 * var13.type == 2) {
-									var46 = 0;
-
-									for (var10 = 0; var10 < 1227800423 * var13.height; ++var10) {
-										for (var24 = 0; var24 < 1645211541 * var13.width; ++var24) {
-											var26 = (var13.columnPadding * 1918789959 + 32) * var24;
-											var27 = (32 + var13.rowPadding * -1195323371) * var10;
-											if (var46 < 20) {
-												var26 += var13.xSprites[var46];
-												var27 += var13.anIntArray1163[var46];
-											}
-
-											if (var12 >= var26 && var11 >= var27 && var12 < var26 + 32
-													&& var11 < 32 + var27) {
-												Client.anInt2124 = -582656979 * var46;
-												TileDecorationStub.aWidget838 = var13;
-												if (var13.itemIds[var46] > 0) {
-													label1179: {
-														ItemType var29 = FriendedPlayer
-																.getItemType(var13.itemIds[var46] - 1);
-														boolean var28;
-														if (Client.itemSelectionStatus * -1110581093 == 1) {
-															var18 = Class30.getWidgetConfig(var13);
-															var28 = (var18 >> 30 & 1) != 0;
-															if (var28) {
-																if (-47339353 * Class22.anInt286 != -1536575275
-																		* var13.hash
-																		|| 543565821
-																				* Class40.selectedItemIndex != var46) {
-																	FriendedPlayer.addMenuRow(GameStrings.aString993,
-																			Client.selectedItemName + " "
-																					+ Class35.aString391 + " "
-																					+ Class48_Sub1.method545(16748608)
-																					+ var29.name,
-																			31, 1548676283 * var29.id, var46,
-																			var13.hash * -1536575275);
-																}
-																break label1179;
-															}
-														}
-
-														if (Client.spellSelected) {
-															var18 = Class30.getWidgetConfig(var13);
-															var28 = (var18 >> 30 & 1) != 0;
-															if (var28) {
-																if ((2016481409 * Class31.currentSpellTargets
-																		& 16) == 16) {
-																	FriendedPlayer.addMenuRow(Client.menuActionPrefix,
-																			Client.selectedSpellName + " "
-																					+ Class35.aString391 + " "
-																					+ Class48_Sub1.method545(16748608)
-																					+ var29.name,
-																			32, 1548676283 * var29.id, var46,
-																			var13.hash * -1536575275);
-																}
-																break label1179;
-															}
-														}
-
-														String[] var51 = var29.actions;
-														if (Client.aBool2139) {
-															var51 = GameCanvas.method885(var51);
-														}
-
-														int var32 = Class30.getWidgetConfig(var13);
-														boolean var45 = (var32 >> 30 & 1) != 0;
-														if (var45) {
-															for (int var9 = 4; var9 >= 3; --var9) {
-																if (var51 != null && var51[var9] != null) {
-																	byte var33;
-																	if (var9 == 3) {
-																		var33 = 36;
-																	} else {
-																		var33 = 37;
-																	}
-
-																	FriendedPlayer.addMenuRow(var51[var9],
-																			Class48_Sub1.method545(16748608)
-																					+ var29.name,
-																			var33, 1548676283 * var29.id, var46,
-																			var13.hash * -1536575275);
-																} else if (var9 == 4) {
-																	FriendedPlayer.addMenuRow(GameStrings.aString844,
-																			Class48_Sub1.method545(16748608)
-																					+ var29.name,
-																			37, var29.id * 1548676283, var46,
-																			var13.hash * -1536575275);
-																}
-															}
-														}
-
-														int var54 = Class30.getWidgetConfig(var13);
-														boolean var35 = (var54 >> 31 & 1) != 0;
-														if (var35) {
-															FriendedPlayer.addMenuRow(GameStrings.aString993,
-																	Class48_Sub1.method545(16748608) + var29.name, 38,
-																	var29.id * 1548676283, var46,
-																	var13.hash * -1536575275);
-														}
-
-														int var34 = Class30.getWidgetConfig(var13);
-														boolean var31 = (var34 >> 30 & 1) != 0;
-														byte var14;
-														int var30;
-														if (var31 && var51 != null) {
-															for (var30 = 2; var30 >= 0; --var30) {
-																if (var51[var30] != null) {
-																	var14 = 0;
-																	if (var30 == 0) {
-																		var14 = 33;
-																	}
-
-																	if (var30 == 1) {
-																		var14 = 34;
-																	}
-
-																	if (var30 == 2) {
-																		var14 = 35;
-																	}
-
-																	FriendedPlayer.addMenuRow(var51[var30],
-																			Class48_Sub1.method545(16748608)
-																					+ var29.name,
-																			var14, 1548676283 * var29.id, var46,
-																			-1536575275 * var13.hash);
-																}
-															}
-														}
-
-														var51 = var13.tableActions;
-														if (Client.aBool2139) {
-															var51 = GameCanvas.method885(var51);
-														}
-
-														if (var51 != null) {
-															for (var30 = 4; var30 >= 0; --var30) {
-																if (var51[var30] != null) {
-																	var14 = 0;
-																	if (var30 == 0) {
-																		var14 = 39;
-																	}
-
-																	if (var30 == 1) {
-																		var14 = 40;
-																	}
-
-																	if (var30 == 2) {
-																		var14 = 41;
-																	}
-
-																	if (var30 == 3) {
-																		var14 = 42;
-																	}
-
-																	if (var30 == 4) {
-																		var14 = 43;
-																	}
-
-																	FriendedPlayer.addMenuRow(var51[var30],
-																			Class48_Sub1.method545(16748608)
-																					+ var29.name,
-																			var14, var29.id * 1548676283, var46,
-																			-1536575275 * var13.hash);
-																}
-															}
-														}
-
-														FriendedPlayer.addMenuRow(GameStrings.aString994,
-																Class48_Sub1.method545(16748608) + var29.name, 1005,
-																1548676283 * var29.id, var46, -1536575275 * var13.hash);
-													}
-												}
-											}
-
-											++var46;
-										}
-									}
-								}
-
-								if (var13.interactable) {
-									if (Client.spellSelected) {
-										var10 = Class30.getWidgetConfig(var13);
-										var47 = (var10 >> 21 & 1) != 0;
-										if (var47 && (2016481409 * Class31.currentSpellTargets & 32) == 32) {
-											FriendedPlayer.addMenuRow(Client.menuActionPrefix,
-													Client.selectedSpellName + " " + Class35.aString391 + " "
-															+ var13.name,
-													58, 0, 2021294259 * var13.index, var13.hash * -1536575275);
-										}
-									} else {
-										for (var46 = 9; var46 >= 5; --var46) {
-											String var36 = Player.method1049(var13, var46);
-											if (var36 != null) {
-												FriendedPlayer.addMenuRow(var36, var13.name, 1007, var46 + 1,
-														var13.index * 2021294259, -1536575275 * var13.hash);
-											}
-										}
-
-										var19 = Class26.method168(var13);
-										if (var19 != null) {
-											FriendedPlayer.addMenuRow(var19, var13.name, 25, 0,
-													2021294259 * var13.index, var13.hash * -1536575275);
-										}
-
-										for (var10 = 4; var10 >= 0; --var10) {
-											String var48 = Player.method1049(var13, var10);
-											if (var48 != null) {
-												FriendedPlayer.addMenuRow(var48, var13.name, 57, var10 + 1,
-														2021294259 * var13.index, -1536575275 * var13.hash);
-											}
-										}
-
-										if (Class7.method78(Class30.getWidgetConfig(var13))) {
-											FriendedPlayer.addMenuRow(GameStrings.aString848, "", 30, 0,
-													2021294259 * var13.index, var13.hash * -1536575275);
-										}
-									}
-								}
-							}
-
-							if (-1305917269 * var13.type == 0) {
-								if (!var13.interactable && IsaacRandom.method68(var13)
-										&& ObjectType.aWidget1719 != var13) {
-									continue;
-								}
-
-								method505(var0, -1536575275 * var13.hash, var23, var25, var16, var17,
-										var20 - var13.insetX * -352661099, var15 - -1602694527 * var13.insetY);
-								if (var13.children != null) {
-									method505(var13.children, -1536575275 * var13.hash, var23, var25, var16, var17,
-											var20 - var13.insetX * -352661099, var15 - var13.insetY * -1602694527);
-								}
-
-								InterfaceNode var41 = (InterfaceNode) Client.interfaceNodes
-										.get((long) (-1536575275 * var13.hash));
-								if (var41 != null) {
-									if (var41.owner * -1882639549 == 0 && Class74.anInt621 * -453286219 >= var23
-											&& 103771565 * Class74.anInt622 >= var25
-											&& -453286219 * Class74.anInt621 < var16
-											&& Class74.anInt622 * 103771565 < var17 && !Client.menuOpen
-											&& !Client.aBool2024) {
-										for (ScriptEvent var39 = (ScriptEvent) Client.aDeque2164
-												.getFront(); var39 != null; var39 = (ScriptEvent) Client.aDeque2164
-														.getNext()) {
-											if (var39.aBool1432) {
-												var39.unlink();
-												var39.widget.aBool1165 = false;
-											}
-										}
-
-										if (FriendedPlayer.anInt739 * 1559668895 == 0) {
-											Client.aWidget2141 = null;
-											Client.aWidget2142 = null;
-										}
-
-										if (!Client.menuOpen) {
-											Client.menuActions[0] = GameStrings.aString1079;
-											Client.menuNouns[0] = "";
-											Client.menuOpcodes[0] = 1006;
-											Client.menuItemCount = 1937006435;
-										}
-									}
-
-									Class40.method222(226793949 * var41.type, var23, var25, var16, var17, var20, var15);
-								}
-							}
-
-							if (var13.interactable) {
-								ScriptEvent var42;
-								if (var13.aBool1201) {
-									if (-453286219 * Class74.anInt621 >= var23 && 103771565 * Class74.anInt622 >= var25
-											&& Class74.anInt621 * -453286219 < var16
-											&& 103771565 * Class74.anInt622 < var17) {
-										for (var42 = (ScriptEvent) Client.aDeque2164
-												.getFront(); var42 != null; var42 = (ScriptEvent) Client.aDeque2164
-														.getNext()) {
-											if (var42.aBool1432) {
-												var42.unlink();
-												var42.widget.aBool1165 = false;
-											}
-										}
-
-										if (FriendedPlayer.anInt739 * 1559668895 == 0) {
-											Client.aWidget2141 = null;
-											Client.aWidget2142 = null;
-										}
-
-										if (!Client.menuOpen) {
-											Client.menuActions[0] = GameStrings.aString1079;
-											Client.menuNouns[0] = "";
-											Client.menuOpcodes[0] = 1006;
-											Client.menuItemCount = 1937006435;
-										}
-									}
-								} else if (var13.aBool1175 && -453286219 * Class74.anInt621 >= var23
-										&& Class74.anInt622 * 103771565 >= var25
-										&& -453286219 * Class74.anInt621 < var16
-										&& Class74.anInt622 * 103771565 < var17) {
-									for (var42 = (ScriptEvent) Client.aDeque2164
-											.getFront(); var42 != null; var42 = (ScriptEvent) Client.aDeque2164
-													.getNext()) {
-										if (var42.aBool1432 && var42.args == var42.widget.scrollListener) {
-											var42.unlink();
-										}
-									}
-								}
-
-								boolean var43;
-								if (-453286219 * Class74.anInt621 >= var23 && Class74.anInt622 * 103771565 >= var25
-										&& Class74.anInt621 * -453286219 < var16
-										&& 103771565 * Class74.anInt622 < var17) {
-									var43 = true;
-								} else {
-									var43 = false;
-								}
-
-								boolean var40 = false;
-								if ((-562612321 * Class74.anInt624 == 1
-										|| !ClanMate.aBool1221 && Class74.anInt624 * -562612321 == 4) && var43) {
-									var40 = true;
-								}
-
-								var47 = false;
-								if ((823601801 * Class74.anInt627 == 1
-										|| !ClanMate.aBool1221 && 823601801 * Class74.anInt627 == 4)
-										&& -2040065729 * Class74.anInt628 >= var23
-										&& Class74.anInt629 * 2090526775 >= var25
-										&& Class74.anInt628 * -2040065729 < var16
-										&& Class74.anInt629 * 2090526775 < var17) {
-									var47 = true;
-								}
-
-								if (var47) {
-									Class68.method327(var13, Class74.anInt628 * -2040065729 - var20,
-											Class74.anInt629 * 2090526775 - var15);
-								}
-
-								if (Client.aWidget2141 != null && var13 != Client.aWidget2141 && var43) {
-									var24 = Class30.getWidgetConfig(var13);
-									boolean var37 = (var24 >> 20 & 1) != 0;
-									if (var37) {
-										Client.aWidget2009 = var13;
-									}
-								}
-
-								if (Client.aWidget2142 == var13) {
-									Client.aBool2145 = true;
-									Client.anInt2146 = var20 * -548999593;
-									Client.anInt2147 = -553751249 * var15;
-								}
-
-								if (var13.aBool1169) {
-									ScriptEvent var38;
-									if (var43 && -1955541359 * Client.anInt2163 != 0 && var13.scrollListener != null) {
-										var38 = new ScriptEvent();
-										var38.aBool1432 = true;
-										var38.widget = var13;
-										var38.anInt1431 = Client.anInt2163 * -528893375;
-										var38.args = var13.scrollListener;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (Client.aWidget2141 != null || SpotAnimType.aWidget1446 != null
-											|| Client.menuOpen) {
-										var47 = false;
-										var40 = false;
-										var43 = false;
-									}
-
-									if (!var13.aBool1145 && var47) {
-										var13.aBool1145 = true;
-										if (var13.anObjectArray1171 != null) {
-											var38 = new ScriptEvent();
-											var38.aBool1432 = true;
-											var38.widget = var13;
-											var38.anInt1438 = (Class74.anInt628 * -2040065729 - var20) * 1833150263;
-											var38.anInt1431 = 1385195697 * (2090526775 * Class74.anInt629 - var15);
-											var38.args = var13.anObjectArray1171;
-											Client.aDeque2164.method475(var38);
-										}
-									}
-
-									if (var13.aBool1145 && var40 && var13.anObjectArray1172 != null) {
-										var38 = new ScriptEvent();
-										var38.aBool1432 = true;
-										var38.widget = var13;
-										var38.anInt1438 = (Class74.anInt621 * -453286219 - var20) * 1833150263;
-										var38.anInt1431 = (103771565 * Class74.anInt622 - var15) * 1385195697;
-										var38.args = var13.anObjectArray1172;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (var13.aBool1145 && !var40) {
-										var13.aBool1145 = false;
-										if (var13.anObjectArray1173 != null) {
-											var38 = new ScriptEvent();
-											var38.aBool1432 = true;
-											var38.widget = var13;
-											var38.anInt1438 = (-453286219 * Class74.anInt621 - var20) * 1833150263;
-											var38.anInt1431 = (103771565 * Class74.anInt622 - var15) * 1385195697;
-											var38.args = var13.anObjectArray1173;
-											Client.aDeque2166.method475(var38);
-										}
-									}
-
-									if (var40 && var13.anObjectArray1174 != null) {
-										var38 = new ScriptEvent();
-										var38.aBool1432 = true;
-										var38.widget = var13;
-										var38.anInt1438 = (-453286219 * Class74.anInt621 - var20) * 1833150263;
-										var38.anInt1431 = (Class74.anInt622 * 103771565 - var15) * 1385195697;
-										var38.args = var13.anObjectArray1174;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (!var13.aBool1165 && var43) {
-										var13.aBool1165 = true;
-										if (var13.mouseEnterListener != null) {
-											var38 = new ScriptEvent();
-											var38.aBool1432 = true;
-											var38.widget = var13;
-											var38.anInt1438 = 1833150263 * (Class74.anInt621 * -453286219 - var20);
-											var38.anInt1431 = (Class74.anInt622 * 103771565 - var15) * 1385195697;
-											var38.args = var13.mouseEnterListener;
-											Client.aDeque2164.method475(var38);
-										}
-									}
-
-									if (var13.aBool1165 && var43 && var13.mouseHoverListener != null) {
-										var38 = new ScriptEvent();
-										var38.aBool1432 = true;
-										var38.widget = var13;
-										var38.anInt1438 = (-453286219 * Class74.anInt621 - var20) * 1833150263;
-										var38.anInt1431 = 1385195697 * (Class74.anInt622 * 103771565 - var15);
-										var38.args = var13.mouseHoverListener;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (var13.aBool1165 && !var43) {
-										var13.aBool1165 = false;
-										if (var13.mouseExitListener != null) {
-											var38 = new ScriptEvent();
-											var38.aBool1432 = true;
-											var38.widget = var13;
-											var38.anInt1438 = 1833150263 * (-453286219 * Class74.anInt621 - var20);
-											var38.anInt1431 = (Class74.anInt622 * 103771565 - var15) * 1385195697;
-											var38.args = var13.mouseExitListener;
-											Client.aDeque2166.method475(var38);
-										}
-									}
-
-									if (var13.renderListener != null) {
-										var38 = new ScriptEvent();
-										var38.widget = var13;
-										var38.args = var13.renderListener;
-										Client.aDeque2165.method475(var38);
-									}
-
-									ScriptEvent var50;
-									if (var13.configListenerArgs != null
-											&& Client.anInt2153 * -729938695 > var13.anInt1197 * -1243107947) {
-										if (var13.configTriggers != null && Client.anInt2153 * -729938695
-												- var13.anInt1197 * -1243107947 <= 32) {
-											label957: for (var10 = -1243107947
-													* var13.anInt1197; var10 < Client.anInt2153 * -729938695; ++var10) {
-												var24 = Client.anIntArray2152[var10 & 31];
-
-												for (var26 = 0; var26 < var13.configTriggers.length; ++var26) {
-													if (var24 == var13.configTriggers[var26]) {
-														var50 = new ScriptEvent();
-														var50.widget = var13;
-														var50.args = var13.configListenerArgs;
-														Client.aDeque2164.method475(var50);
-														break label957;
-													}
-												}
-											}
-										} else {
-											var38 = new ScriptEvent();
-											var38.widget = var13;
-											var38.args = var13.configListenerArgs;
-											Client.aDeque2164.method475(var38);
-										}
-
-										var13.anInt1197 = Client.anInt2153 * 1429878997;
-									}
-
-									if (var13.tableListenerArgs != null
-											&& -1512766933 * Client.anInt2079 > -1925975647 * var13.anInt1200) {
-										if (var13.tableModTriggers != null && -1512766933 * Client.anInt2079
-												- -1925975647 * var13.anInt1200 <= 32) {
-											label938: for (var10 = var13.anInt1200 * -1925975647; var10 < -1512766933
-													* Client.anInt2079; ++var10) {
-												var24 = Client.anIntArray2154[var10 & 31];
-
-												for (var26 = 0; var26 < var13.tableModTriggers.length; ++var26) {
-													if (var13.tableModTriggers[var26] == var24) {
-														var50 = new ScriptEvent();
-														var50.widget = var13;
-														var50.args = var13.tableListenerArgs;
-														Client.aDeque2164.method475(var50);
-														break label938;
-													}
-												}
-											}
-										} else {
-											var38 = new ScriptEvent();
-											var38.widget = var13;
-											var38.args = var13.tableListenerArgs;
-											Client.aDeque2164.method475(var38);
-										}
-
-										var13.anInt1200 = -679331765 * Client.anInt2079;
-									}
-
-									if (var13.skillListenerArgs != null
-											&& -549276637 * Client.anInt2157 > 415543593 * var13.anInt1199) {
-										if (var13.skillTriggers != null
-												&& -549276637 * Client.anInt2157 - var13.anInt1199 * 415543593 <= 32) {
-											label919: for (var10 = 415543593 * var13.anInt1199; var10 < -549276637
-													* Client.anInt2157; ++var10) {
-												var24 = Client.anIntArray2156[var10 & 31];
-
-												for (var26 = 0; var26 < var13.skillTriggers.length; ++var26) {
-													if (var13.skillTriggers[var26] == var24) {
-														var50 = new ScriptEvent();
-														var50.widget = var13;
-														var50.args = var13.skillListenerArgs;
-														Client.aDeque2164.method475(var50);
-														break label919;
-													}
-												}
-											}
-										} else {
-											var38 = new ScriptEvent();
-											var38.widget = var13;
-											var38.args = var13.skillListenerArgs;
-											Client.aDeque2164.method475(var38);
-										}
-
-										var13.anInt1199 = -218863509 * Client.anInt2157;
-									}
-
-									if (Client.anInt2078 * -2089342185 > 1565124835 * var13.anInt1196
-											&& var13.anObjectArray1181 != null) {
-										var38 = new ScriptEvent();
-										var38.widget = var13;
-										var38.args = var13.anObjectArray1181;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (Client.anInt2114 * -537338829 > 1565124835 * var13.anInt1196
-											&& var13.anObjectArray1183 != null) {
-										var38 = new ScriptEvent();
-										var38.widget = var13;
-										var38.args = var13.anObjectArray1183;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (Client.anInt2159 * -1898555245 > var13.anInt1196 * 1565124835
-											&& var13.anObjectArray1184 != null) {
-										var38 = new ScriptEvent();
-										var38.widget = var13;
-										var38.args = var13.anObjectArray1184;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (Client.anInt2160 * 1861004399 > var13.anInt1196 * 1565124835
-											&& var13.anObjectArray1189 != null) {
-										var38 = new ScriptEvent();
-										var38.widget = var13;
-										var38.args = var13.anObjectArray1189;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (Client.anInt2161 * -596556353 > 1565124835 * var13.anInt1196
-											&& var13.anObjectArray1190 != null) {
-										var38 = new ScriptEvent();
-										var38.widget = var13;
-										var38.args = var13.anObjectArray1190;
-										Client.aDeque2164.method475(var38);
-									}
-
-									if (Client.anInt2155 * -747354515 > 1565124835 * var13.anInt1196
-											&& var13.anObjectArray1156 != null) {
-										var38 = new ScriptEvent();
-										var38.widget = var13;
-										var38.args = var13.anObjectArray1156;
-										Client.aDeque2164.method475(var38);
-									}
-
-									var13.anInt1196 = Client.anInt2151 * -1951905989;
-									if (var13.anObjectArray1182 != null) {
-										for (var10 = 0; var10 < Client.anInt2188 * -703165807; ++var10) {
-											ScriptEvent var49 = new ScriptEvent();
-											var49.widget = var13;
-											var49.anInt1434 = -411848293 * Client.anIntArray2190[var10];
-											var49.anInt1435 = Client.anIntArray2162[var10] * -784457691;
-											var49.args = var13.anObjectArray1182;
-											Client.aDeque2164.method475(var49);
-										}
-									}
-								}
-							}
-
-							if (!var13.interactable && Client.aWidget2141 == null && SpotAnimType.aWidget1446 == null
-									&& !Client.menuOpen) {
-								if ((var13.anInt1153 * -700429819 >= 0 || 301172361 * var13.anInt1140 != 0)
-										&& -453286219 * Class74.anInt621 >= var23
-										&& 103771565 * Class74.anInt622 >= var25
-										&& Class74.anInt621 * -453286219 < var16
-										&& Class74.anInt622 * 103771565 < var17) {
-									if (-700429819 * var13.anInt1153 >= 0) {
-										ObjectType.aWidget1719 = var0[var13.anInt1153 * -700429819];
-									} else {
-										ObjectType.aWidget1719 = var13;
-									}
-								}
-
-								if (-1305917269 * var13.type == 8 && Class74.anInt621 * -453286219 >= var23
-										&& 103771565 * Class74.anInt622 >= var25
-										&& Class74.anInt621 * -453286219 < var16
-										&& Class74.anInt622 * 103771565 < var17) {
-									ScriptEvent.aWidget1437 = var13;
-								}
-
-								if (var13.viewportHeight * 177405235 > var13.height * 1227800423) {
-									Class35.method205(var13, var13.width * 1645211541 + var20, var15,
-											1227800423 * var13.height, 177405235 * var13.viewportHeight,
-											-453286219 * Class74.anInt621, Class74.anInt622 * 103771565);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-	}
+   static Picture[] aSpriteArray1204;
+   static AbstractIndex aClass87_1207;
+   static Task socket;
+   int anInt1206 = (int)(AnimationSkin.currentTimeMs() / 1000L);
+   String aString1203;
+   short aShort1205;
+
+   public static void method498(AbstractIndex var0, AbstractIndex var1, boolean var2) {
+      ObjectType.objects_ref = var0;
+      ObjectType.aClass87_1683 = var1;
+      ObjectType.aBool1696 = var2;
+   }
+
+   public static SpotAnimType getSpotAnimType(int id) {
+      SpotAnimType type = (SpotAnimType)SpotAnimType.spotanims.get((long)id);
+      if(type != null) {
+         return type;
+      } else {
+         byte[] bytes = SpotAnimType.anim_ref.getFile(13, id);
+         type = new SpotAnimType();
+         type.id = id;
+         if(bytes != null) {
+            type.decode(new ByteBuf(bytes));
+         }
+
+         SpotAnimType.spotanims.put(type, (long)id);
+         return type;
+      }
+   }
+
+   public static final void sleep(long millis) {
+      if(millis > 0L) {
+         if(millis % 10L == 0L) {
+            long actual = millis - 1L;
+
+            try {
+               Thread.sleep(actual);
+            } catch (InterruptedException var7) {
+               ;
+            }
+
+            try {
+               Thread.sleep(1L);
+            } catch (InterruptedException var6) {
+               ;
+            }
+         } else {
+            try {
+               Thread.sleep(millis);
+            } catch (InterruptedException var5) {
+               ;
+            }
+         }
+      }
+
+   }
+
+   public static void method501() {
+      if(TaskManager.javaVendor.toLowerCase().indexOf("microsoft") != -1) {
+         KeyFocusListener.keyCodes[186] = 57;
+         KeyFocusListener.keyCodes[187] = 27;
+         KeyFocusListener.keyCodes[188] = 71;
+         KeyFocusListener.keyCodes[189] = 26;
+         KeyFocusListener.keyCodes[190] = 72;
+         KeyFocusListener.keyCodes[191] = 73;
+         KeyFocusListener.keyCodes[192] = 58;
+         KeyFocusListener.keyCodes[219] = 42;
+         KeyFocusListener.keyCodes[220] = 74;
+         KeyFocusListener.keyCodes[221] = 43;
+         KeyFocusListener.keyCodes[222] = 59;
+         KeyFocusListener.keyCodes[223] = 28;
+      } else {
+         KeyFocusListener.keyCodes[44] = 71;
+         KeyFocusListener.keyCodes[45] = 26;
+         KeyFocusListener.keyCodes[46] = 72;
+         KeyFocusListener.keyCodes[47] = 73;
+         KeyFocusListener.keyCodes[59] = 57;
+         KeyFocusListener.keyCodes[61] = 27;
+         KeyFocusListener.keyCodes[91] = 42;
+         KeyFocusListener.keyCodes[92] = 74;
+         KeyFocusListener.keyCodes[93] = 43;
+         KeyFocusListener.keyCodes[192] = 28;
+         KeyFocusListener.keyCodes[222] = 58;
+         KeyFocusListener.keyCodes[520] = 59;
+      }
+
+   }
+
+   public static int method502(CharSequence var0, CharSequence var1, int var2) {
+      int var3 = var0.length();
+      int var11 = var1.length();
+      int var9 = 0;
+      int var10 = 0;
+      byte var7 = 0;
+      byte var8 = 0;
+
+      char var14;
+      while(var9 - var7 < var3 || var10 - var8 < var11) {
+         if(var9 - var7 >= var3) {
+            return -1;
+         }
+
+         if(var10 - var8 >= var11) {
+            return 1;
+         }
+
+         char var19;
+         if(var7 != 0) {
+            var19 = (char)var7;
+            boolean var17 = false;
+         } else {
+            var19 = var0.charAt(var9++);
+         }
+
+         if(var8 != 0) {
+            var14 = (char)var8;
+            boolean var20 = false;
+         } else {
+            var14 = var1.charAt(var10++);
+         }
+
+         byte var16;
+         if(var19 == 198) {
+            var16 = 69;
+         } else if(var19 == 230) {
+            var16 = 101;
+         } else if(var19 == 223) {
+            var16 = 115;
+         } else if(var19 != 338) {
+            if(var19 == 339) {
+               var16 = 101;
+            } else {
+               var16 = 0;
+            }
+         } else {
+            var16 = 69;
+         }
+
+         var7 = var16;
+         byte var15;
+         if(var14 == 198) {
+            var15 = 69;
+         } else if(var14 != 230) {
+            if(var14 == 223) {
+               var15 = 115;
+            } else if(var14 != 338) {
+               if(var14 == 339) {
+                  var15 = 101;
+               } else {
+                  var15 = 0;
+               }
+            } else {
+               var15 = 69;
+            }
+         } else {
+            var15 = 101;
+         }
+
+         var8 = var15;
+         var19 = InvType.method695(var19, var2);
+         var14 = InvType.method695(var14, var2);
+         if(var14 != var19 && java.lang.Character.toUpperCase(var19) != java.lang.Character.toUpperCase(var14)) {
+            var19 = java.lang.Character.toLowerCase(var19);
+            var14 = java.lang.Character.toLowerCase(var14);
+            if(var19 != var14) {
+               return ObjectType.method864(var19, var2) - ObjectType.method864(var14, var2);
+            }
+         }
+      }
+
+      int var151 = Math.min(var3, var11);
+
+      int var171;
+      for(var171 = 0; var171 < var151; var171++) {
+         char var18 = var0.charAt(var171);
+         var14 = var1.charAt(var171);
+         if(var18 != var14 && java.lang.Character.toUpperCase(var18) != java.lang.Character.toUpperCase(var14)) {
+            var18 = java.lang.Character.toLowerCase(var18);
+            var14 = java.lang.Character.toLowerCase(var14);
+            if(var14 != var18) {
+               return ObjectType.method864(var18, var2) - ObjectType.method864(var14, var2);
+            }
+         }
+      }
+
+      var171 = var3 - var11;
+      if(var171 != 0) {
+         return var171;
+      } else {
+         for(int var191 = 0; var191 < var151; var191++) {
+            var14 = var0.charAt(var191);
+            char var5 = var1.charAt(var191);
+            if(var14 != var5) {
+               return ObjectType.method864(var14, var2) - ObjectType.method864(var5, var2);
+            }
+         }
+
+         return 0;
+      }
+   }
+
+   public static void method503(String var0, boolean var1, String var2, boolean var3) {
+      if(var1) {
+         if(!var3 && Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
+            try {
+               Desktop.getDesktop().browse(new URI(var0));
+               return;
+            } catch (Exception var5) {
+               ;
+            }
+         }
+
+         if(Class70.aString586.startsWith("win") && !var3) {
+            Player.method1050(var0, 0, "openjs");
+            return;
+         }
+
+         if(Class70.aString586.startsWith("mac")) {
+            Player.method1050(var0, 1, var2);
+            return;
+         }
+
+         Player.method1050(var0, 2, "openjs");
+      } else {
+         Player.method1050(var0, 3, "openjs");
+      }
+
+   }
+
+   static void execute(ScriptEvent var0) {
+      AbstractByteBuffer.execute(var0, 200000);
+   }
+
+   Class96_Sub1(String var1, int var2) {
+      this.aString1203 = var1;
+      this.aShort1205 = (short)var2;
+   }
+
+   static final void method505(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+      for(int var8 = 0; var8 < var0.length; var8++) {
+         Widget var13 = var0[var8];
+         if(var13 != null && (!var13.interactable || var13.type == 0 || var13.aBool1169 || Class30.getWidgetConfig(var13) != 0 || Client.aWidget2142 == var13 || var13.contentType == 1338) && var13.parentId == var1 && (!var13.interactable || !IsaacRandom.method68(var13))) {
+            int var20 = var13.relativeX + var6;
+            int var15 = var13.relativeY + var7;
+            int var11;
+            int var12;
+            int var16;
+            int var17;
+            int var21;
+            int var22;
+            int var23;
+            int var25;
+            if(var13.type == 2) {
+               var23 = var2;
+               var25 = var3;
+               var16 = var4;
+               var17 = var5;
+            } else if(var13.type == 9) {
+               var21 = var20;
+               var22 = var15;
+               var12 = var13.width + var20;
+               var11 = var13.height * 1227800423 + var15;
+               if(var12 < var20) {
+                  var21 = var12;
+                  var12 = var20;
+               }
+
+               if(var11 < var15) {
+                  var22 = var11;
+                  var11 = var15;
+               }
+
+               ++var12;
+               ++var11;
+               var23 = var21 > var2 ? var21 : var2;
+               var25 = var22 > var3 ? var22 : var3;
+               var16 = var12 < var4 ? var12 : var4;
+               var17 = var11 < var5 ? var11 : var5;
+            } else {
+               var21 = var13.width + var20;
+               var22 = var13.height * 1227800423 + var15;
+               var23 = var20 > var2 ? var20 : var2;
+               var25 = var15 > var3 ? var15 : var3;
+               var16 = var21 < var4 ? var21 : var4;
+               var17 = var22 < var5 ? var22 : var5;
+            }
+
+            if(Client.aWidget2141 == var13) {
+               Client.aBool2148 = true;
+               Client.anInt2050 = var20;
+               Client.anInt2149 = var15;
+            }
+
+            if(!var13.interactable || var23 < var16 && var25 < var17) {
+               var21 = Class74.anInt621;
+               var22 = Class74.anInt622;
+               if(Class74.anInt627 != 0) {
+                  var21 = Class74.anInt628;
+                  var22 = Class74.anInt629;
+               }
+
+               if(var13.contentType == 1337) {
+                  if(!Client.aBool2214 && !Client.menuOpen && var21 >= var23 && var22 >= var25 && var21 < var16 && var22 < var17) {
+                     TileDecorationStub.method462(var21, var22, var23, var25);
+                  }
+               } else {
+                  int var10;
+                  int var18;
+                  int var24;
+                  int var26;
+                  int var27;
+                  int var46;
+                  if(var13.contentType == 1338) {
+                     if((Client.anInt2200 == 0 || Client.anInt2200 == 3) && (Class74.anInt627 == 1 || !ClanMate.aBool1221 && Class74.anInt627 == 4)) {
+                        DualNode_Sub14 var401 = var13.method491(true);
+                        if(var401 != null) {
+                           var11 = Class74.anInt628 - var20;
+                           var46 = Class74.anInt629 - var15;
+                           if(var401.method823(var11, var46)) {
+                              var11 -= var401.anInt1647 / 2;
+                              var46 -= var401.anInt1648 / 2;
+                              var10 = Client.minimapScale + Client.minimapRotation & 0x7ff;
+                              var24 = TexturedGraphic.SIN_TABLE[var10];
+                              var26 = TexturedGraphic.COS_TABLE[var10];
+                              var24 = (Client.viewRotation + 256) * var24 >> 8;
+                              var26 = (Client.viewRotation + 256) * var26 >> 8;
+                              var27 = var11 * var26 + var24 * var46 >> 11;
+                              int var44 = var26 * var46 - var11 * var24 >> 11;
+                              int var491 = Class68.myPlayer.strictX + var27 >> 7;
+                              var18 = Class68.myPlayer.strictY - var44 >> 7;
+                              Client.outBuffer.putHeader(239);
+                              Client.outBuffer.putByte(18);
+                              Client.outBuffer.putByteC(KeyFocusListener.aBoolArray593[82] ? (KeyFocusListener.aBoolArray593[81] ? 2 : 1) : 0);
+                              Client.outBuffer.putLEShortA(Node_Sub10.chunkLeftX + var491);
+                              Client.outBuffer.putLEShort(VarClientHub.chunkLeftY + var18);
+                              Client.outBuffer.putByte(var11);
+                              Client.outBuffer.putByte(var46);
+                              Client.outBuffer.putShort(Client.minimapRotation);
+                              Client.outBuffer.putByte(57);
+                              Client.outBuffer.putByte(Client.minimapScale);
+                              Client.outBuffer.putByte(Client.viewRotation);
+                              Client.outBuffer.putByte(89);
+                              Client.outBuffer.putShort(Class68.myPlayer.strictX);
+                              Client.outBuffer.putShort(Class68.myPlayer.strictY);
+                              Client.outBuffer.putByte(63);
+                              Client.destinationX = var491;
+                              Client.destinationY = var18;
+                           }
+                        }
+                     }
+                  } else {
+                     boolean var47;
+                     boolean var40;
+                     if(!Client.menuOpen && var21 >= var23 && var22 >= var25 && var21 < var16 && var22 < var17) {
+                        var12 = var21 - var20;
+                        var11 = var22 - var15;
+                        if(var13.anInt1195 == 1) {
+                           FriendedPlayer.addMenuRow(var13.tooltip, "", 24, 0, 0, var13.hash);
+                        }
+
+                        String var42;
+                        if(var13.anInt1195 == 2 && !Client.spellSelected) {
+                           var42 = Class26.method168(var13);
+                           if(var42 != null) {
+                              FriendedPlayer.addMenuRow(var42, Class48_Sub1.method545('\uff00') + var13.aString1125, 25, 0, -1, var13.hash);
+                           }
+                        }
+
+                        if(var13.anInt1195 == 3) {
+                           FriendedPlayer.addMenuRow("Close", "", 26, 0, 0, var13.hash);
+                        }
+
+                        if(var13.anInt1195 == 4) {
+                           FriendedPlayer.addMenuRow(var13.tooltip, "", 28, 0, 0, var13.hash);
+                        }
+
+                        if(var13.anInt1195 == 5) {
+                           FriendedPlayer.addMenuRow(var13.tooltip, "", 29, 0, 0, var13.hash);
+                        }
+
+                        if(var13.anInt1195 == 6 && Client.aWidget2135 == null) {
+                           FriendedPlayer.addMenuRow(var13.tooltip, "", 30, 0, -1, var13.hash);
+                        }
+
+                        if(var13.type == 2) {
+                           var46 = 0;
+
+                           for(var10 = 0; var10 < var13.height * 1227800423; var10++) {
+                              for(var24 = 0; var24 < var13.width; var24++) {
+                                 var26 = (var13.columnPadding + 32) * var24;
+                                 var27 = (var13.rowPadding + 32) * var10;
+                                 if(var46 < 20) {
+                                    var26 += var13.xSprites[var46];
+                                    var27 += var13.anIntArray1163[var46];
+                                 }
+
+                                 if(var12 >= var26 && var11 >= var27 && var12 < var26 + 32 && var11 < var27 + 32) {
+                                    Client.anInt2124 = var46;
+                                    TileDecorationStub.aWidget838 = var13;
+                                    if(var13.itemIds[var46] > 0) {
+                                       label976: {
+                                          ItemType var43 = FriendedPlayer.getItemType(var13.itemIds[var46] - 1);
+                                          if(Client.itemSelectionStatus == 1) {
+                                             var18 = Class30.getWidgetConfig(var13);
+                                             var40 = (var18 >> 30 & 0x1) != 0;
+                                             if(var40) {
+                                                if(Class22.anInt286 != var13.hash || Class40.selectedItemIndex != var46) {
+                                                   FriendedPlayer.addMenuRow("Use", Client.selectedItemName + " " + Class35.aString391 + " " + Class48_Sub1.method545(16748608) + var43.name, 31, var43.id, var46, var13.hash);
+                                                }
+                                                break label976;
+                                             }
+                                          }
+
+                                          if(Client.spellSelected) {
+                                             var18 = Class30.getWidgetConfig(var13);
+                                             var40 = (var18 >> 30 & 0x1) != 0;
+                                             if(var40) {
+                                                if((Class31.currentSpellTargets & 0x10) == 16) {
+                                                   FriendedPlayer.addMenuRow(Client.menuActionPrefix, Client.selectedSpellName + " " + Class35.aString391 + " " + Class48_Sub1.method545(16748608) + var43.name, 32, var43.id, var46, var13.hash);
+                                                }
+                                                break label976;
+                                             }
+                                          }
+
+                                          String[] var38 = var43.actions;
+                                          if(Client.aBool2139) {
+                                             var38 = GameCanvas.method885(var38);
+                                          }
+
+                                          int var50 = Class30.getWidgetConfig(var13);
+                                          boolean var49 = (var50 >> 30 & 0x1) != 0;
+                                          int var54;
+                                          if(var49) {
+                                             for(var54 = 4; var54 >= 3; --var54) {
+                                                if(var38 != null && var38[var54] != null) {
+                                                   byte var35;
+                                                   if(var54 == 3) {
+                                                      var35 = 36;
+                                                   } else {
+                                                      var35 = 37;
+                                                   }
+
+                                                   FriendedPlayer.addMenuRow(var38[var54], Class48_Sub1.method545(16748608) + var43.name, var35, var43.id, var46, var13.hash);
+                                                } else if(var54 == 4) {
+                                                   FriendedPlayer.addMenuRow("Drop", Class48_Sub1.method545(16748608) + var43.name, 37, var43.id, var46, var13.hash);
+                                                }
+                                             }
+                                          }
+
+                                          var54 = Class30.getWidgetConfig(var13);
+                                          boolean var51 = (var54 >> 31 & 0x1) != 0;
+                                          if(var51) {
+                                             FriendedPlayer.addMenuRow("Use", Class48_Sub1.method545(16748608) + var43.name, 38, var43.id, var46, var13.hash);
+                                          }
+
+                                          int var34 = Class30.getWidgetConfig(var13);
+                                          boolean var31 = (var34 >> 30 & 0x1) != 0;
+                                          byte var14;
+                                          int var30;
+                                          if(var31 && var38 != null) {
+                                             for(var30 = 2; var30 >= 0; --var30) {
+                                                if(var38[var30] != null) {
+                                                   var14 = 0;
+                                                   if(var30 == 0) {
+                                                      var14 = 33;
+                                                   }
+
+                                                   if(var30 == 1) {
+                                                      var14 = 34;
+                                                   }
+
+                                                   if(var30 == 2) {
+                                                      var14 = 35;
+                                                   }
+
+                                                   FriendedPlayer.addMenuRow(var38[var30], Class48_Sub1.method545(16748608) + var43.name, var14, var43.id, var46, var13.hash);
+                                                }
+                                             }
+                                          }
+
+                                          var38 = var13.tableActions;
+                                          if(Client.aBool2139) {
+                                             var38 = GameCanvas.method885(var38);
+                                          }
+
+                                          if(var38 != null) {
+                                             for(var30 = 4; var30 >= 0; --var30) {
+                                                if(var38[var30] != null) {
+                                                   var14 = 0;
+                                                   if(var30 == 0) {
+                                                      var14 = 39;
+                                                   }
+
+                                                   if(var30 == 1) {
+                                                      var14 = 40;
+                                                   }
+
+                                                   if(var30 == 2) {
+                                                      var14 = 41;
+                                                   }
+
+                                                   if(var30 == 3) {
+                                                      var14 = 42;
+                                                   }
+
+                                                   if(var30 == 4) {
+                                                      var14 = 43;
+                                                   }
+
+                                                   FriendedPlayer.addMenuRow(var38[var30], Class48_Sub1.method545(16748608) + var43.name, var14, var43.id, var46, var13.hash);
+                                                }
+                                             }
+                                          }
+
+                                          FriendedPlayer.addMenuRow("Examine", Class48_Sub1.method545(16748608) + var43.name, 1005, var43.id, var46, var13.hash);
+                                       }
+                                    }
+                                 }
+
+                                 ++var46;
+                              }
+                           }
+                        }
+
+                        if(var13.interactable) {
+                           if(Client.spellSelected) {
+                              var10 = Class30.getWidgetConfig(var13);
+                              var47 = (var10 >> 21 & 0x1) != 0;
+                              if(var47 && (Class31.currentSpellTargets & 0x20) == 32) {
+                                 FriendedPlayer.addMenuRow(Client.menuActionPrefix, Client.selectedSpellName + " " + Class35.aString391 + " " + var13.name, 58, 0, var13.index, var13.hash);
+                              }
+                           } else {
+                              String var421;
+                              for(var46 = 9; var46 >= 5; --var46) {
+                                 var421 = Player.method1049(var13, var46);
+                                 if(var421 != null) {
+                                    FriendedPlayer.addMenuRow(var421, var13.name, 1007, var46 + 1, var13.index, var13.hash);
+                                 }
+                              }
+
+                              var42 = Class26.method168(var13);
+                              if(var42 != null) {
+                                 FriendedPlayer.addMenuRow(var42, var13.name, 25, 0, var13.index, var13.hash);
+                              }
+
+                              for(var10 = 4; var10 >= 0; --var10) {
+                                 var421 = Player.method1049(var13, var10);
+                                 if(var421 != null) {
+                                    FriendedPlayer.addMenuRow(var421, var13.name, 57, var10 + 1, var13.index, var13.hash);
+                                 }
+                              }
+
+                              if(Class7.method78(Class30.getWidgetConfig(var13))) {
+                                 FriendedPlayer.addMenuRow("Continue", "", 30, 0, var13.index, var13.hash);
+                              }
+                           }
+                        }
+                     }
+
+                     if(var13.type == 0) {
+                        if(!var13.interactable && IsaacRandom.method68(var13) && ObjectType.aWidget1719 != var13) {
+                           continue;
+                        }
+
+                        method505(var0, var13.hash, var23, var25, var16, var17, var20 - var13.insetX, var15 - var13.insetY);
+                        if(var13.children != null) {
+                           method505(var13.children, var13.hash, var23, var25, var16, var17, var20 - var13.insetX, var15 - var13.insetY);
+                        }
+
+                        InterfaceNode var39 = (InterfaceNode)Client.interfaceNodes.get((long)var13.hash);
+                        if(var39 != null) {
+                           if(var39.owner == 0 && Class74.anInt621 >= var23 && Class74.anInt622 >= var25 && Class74.anInt621 < var16 && Class74.anInt622 < var17 && !Client.menuOpen && !Client.aBool2024) {
+                              for(ScriptEvent var431 = (ScriptEvent)Client.aDeque2164.getFront(); var431 != null; var431 = (ScriptEvent)Client.aDeque2164.getNext()) {
+                                 if(var431.aBool1432) {
+                                    var431.unlink();
+                                    var431.widget.aBool1165 = false;
+                                 }
+                              }
+
+                              if(FriendedPlayer.anInt739 == 0) {
+                                 Client.aWidget2141 = null;
+                                 Client.aWidget2142 = null;
+                              }
+
+                              if(!Client.menuOpen) {
+                                 Client.menuActions[0] = "Cancel";
+                                 Client.menuNouns[0] = "";
+                                 Client.menuOpcodes[0] = 1006;
+                                 Client.menuItemCount = 1;
+                              }
+                           }
+
+                           Class40.method222(var39.type, var23, var25, var16, var17, var20, var15);
+                        }
+                     }
+
+                     if(var13.interactable) {
+                        ScriptEvent var41;
+                        if(!var13.aBool1201) {
+                           if(var13.aBool1175 && Class74.anInt621 >= var23 && Class74.anInt622 >= var25 && Class74.anInt621 < var16 && Class74.anInt622 < var17) {
+                              for(var41 = (ScriptEvent)Client.aDeque2164.getFront(); var41 != null; var41 = (ScriptEvent)Client.aDeque2164.getNext()) {
+                                 if(var41.aBool1432 && var41.args == var41.widget.scrollListener) {
+                                    var41.unlink();
+                                 }
+                              }
+                           }
+                        } else if(Class74.anInt621 >= var23 && Class74.anInt622 >= var25 && Class74.anInt621 < var16 && Class74.anInt622 < var17) {
+                           for(var41 = (ScriptEvent)Client.aDeque2164.getFront(); var41 != null; var41 = (ScriptEvent)Client.aDeque2164.getNext()) {
+                              if(var41.aBool1432) {
+                                 var41.unlink();
+                                 var41.widget.aBool1165 = false;
+                              }
+                           }
+
+                           if(FriendedPlayer.anInt739 == 0) {
+                              Client.aWidget2141 = null;
+                              Client.aWidget2142 = null;
+                           }
+
+                           if(!Client.menuOpen) {
+                              Client.menuActions[0] = "Cancel";
+                              Client.menuNouns[0] = "";
+                              Client.menuOpcodes[0] = 1006;
+                              Client.menuItemCount = 1;
+                           }
+                        }
+
+                        boolean var45;
+                        if(Class74.anInt621 >= var23 && Class74.anInt622 >= var25 && Class74.anInt621 < var16 && Class74.anInt622 < var17) {
+                           var45 = true;
+                        } else {
+                           var45 = false;
+                        }
+
+                        var40 = false;
+                        if((Class74.anInt624 == 1 || !ClanMate.aBool1221 && Class74.anInt624 == 4) && var45) {
+                           var40 = true;
+                        }
+
+                        var47 = false;
+                        if((Class74.anInt627 == 1 || !ClanMate.aBool1221 && Class74.anInt627 == 4) && Class74.anInt628 >= var23 && Class74.anInt629 >= var25 && Class74.anInt628 < var16 && Class74.anInt629 < var17) {
+                           var47 = true;
+                        }
+
+                        if(var47) {
+                           Class68.method327(var13, Class74.anInt628 - var20, Class74.anInt629 - var15);
+                        }
+
+                        if(Client.aWidget2141 != null && Client.aWidget2141 != var13 && var45) {
+                           var24 = Class30.getWidgetConfig(var13);
+                           boolean var471 = (var24 >> 20 & 0x1) != 0;
+                           if(var471) {
+                              Client.aWidget2009 = var13;
+                           }
+                        }
+
+                        if(Client.aWidget2142 == var13) {
+                           Client.aBool2145 = true;
+                           Client.anInt2146 = var20;
+                           Client.anInt2147 = var15;
+                        }
+
+                        if(var13.aBool1169) {
+                           ScriptEvent var501;
+                           if(var45 && Client.anInt2163 != 0 && var13.scrollListener != null) {
+                              var501 = new ScriptEvent();
+                              var501.aBool1432 = true;
+                              var501.widget = var13;
+                              var501.anInt1431 = Client.anInt2163;
+                              var501.args = var13.scrollListener;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(Client.aWidget2141 != null || SpotAnimType.aWidget1446 != null || Client.menuOpen) {
+                              var47 = false;
+                              var40 = false;
+                              var45 = false;
+                           }
+
+                           if(!var13.aBool1145 && var47) {
+                              var13.aBool1145 = true;
+                              if(var13.anObjectArray1171 != null) {
+                                 var501 = new ScriptEvent();
+                                 var501.aBool1432 = true;
+                                 var501.widget = var13;
+                                 var501.anInt1438 = Class74.anInt628 - var20;
+                                 var501.anInt1431 = Class74.anInt629 - var15;
+                                 var501.args = var13.anObjectArray1171;
+                                 Client.aDeque2164.method475(var501);
+                              }
+                           }
+
+                           if(var13.aBool1145 && var40 && var13.anObjectArray1172 != null) {
+                              var501 = new ScriptEvent();
+                              var501.aBool1432 = true;
+                              var501.widget = var13;
+                              var501.anInt1438 = Class74.anInt621 - var20;
+                              var501.anInt1431 = Class74.anInt622 - var15;
+                              var501.args = var13.anObjectArray1172;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(var13.aBool1145 && !var40) {
+                              var13.aBool1145 = false;
+                              if(var13.anObjectArray1173 != null) {
+                                 var501 = new ScriptEvent();
+                                 var501.aBool1432 = true;
+                                 var501.widget = var13;
+                                 var501.anInt1438 = Class74.anInt621 - var20;
+                                 var501.anInt1431 = Class74.anInt622 - var15;
+                                 var501.args = var13.anObjectArray1173;
+                                 Client.aDeque2166.method475(var501);
+                              }
+                           }
+
+                           if(var40 && var13.anObjectArray1174 != null) {
+                              var501 = new ScriptEvent();
+                              var501.aBool1432 = true;
+                              var501.widget = var13;
+                              var501.anInt1438 = Class74.anInt621 - var20;
+                              var501.anInt1431 = Class74.anInt622 - var15;
+                              var501.args = var13.anObjectArray1174;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(!var13.aBool1165 && var45) {
+                              var13.aBool1165 = true;
+                              if(var13.mouseEnterListener != null) {
+                                 var501 = new ScriptEvent();
+                                 var501.aBool1432 = true;
+                                 var501.widget = var13;
+                                 var501.anInt1438 = Class74.anInt621 - var20;
+                                 var501.anInt1431 = Class74.anInt622 - var15;
+                                 var501.args = var13.mouseEnterListener;
+                                 Client.aDeque2164.method475(var501);
+                              }
+                           }
+
+                           if(var13.aBool1165 && var45 && var13.mouseHoverListener != null) {
+                              var501 = new ScriptEvent();
+                              var501.aBool1432 = true;
+                              var501.widget = var13;
+                              var501.anInt1438 = Class74.anInt621 - var20;
+                              var501.anInt1431 = Class74.anInt622 - var15;
+                              var501.args = var13.mouseHoverListener;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(var13.aBool1165 && !var45) {
+                              var13.aBool1165 = false;
+                              if(var13.mouseExitListener != null) {
+                                 var501 = new ScriptEvent();
+                                 var501.aBool1432 = true;
+                                 var501.widget = var13;
+                                 var501.anInt1438 = Class74.anInt621 - var20;
+                                 var501.anInt1431 = Class74.anInt622 - var15;
+                                 var501.args = var13.mouseExitListener;
+                                 Client.aDeque2166.method475(var501);
+                              }
+                           }
+
+                           if(var13.renderListener != null) {
+                              var501 = new ScriptEvent();
+                              var501.widget = var13;
+                              var501.args = var13.renderListener;
+                              Client.aDeque2165.method475(var501);
+                           }
+
+                           ScriptEvent var461;
+                           if(var13.configListenerArgs != null && Client.anInt2153 > var13.anInt1197) {
+                              if(var13.configTriggers != null && Client.anInt2153 - var13.anInt1197 <= 32) {
+                                 label681:
+                                 for(var10 = var13.anInt1197; var10 < Client.anInt2153; var10++) {
+                                    var24 = Client.anIntArray2152[var10 & 0x1f];
+
+                                    for(var26 = 0; var26 < var13.configTriggers.length; var26++) {
+                                       if(var13.configTriggers[var26] == var24) {
+                                          var461 = new ScriptEvent();
+                                          var461.widget = var13;
+                                          var461.args = var13.configListenerArgs;
+                                          Client.aDeque2164.method475(var461);
+                                          break label681;
+                                       }
+                                    }
+                                 }
+                              } else {
+                                 var501 = new ScriptEvent();
+                                 var501.widget = var13;
+                                 var501.args = var13.configListenerArgs;
+                                 Client.aDeque2164.method475(var501);
+                              }
+
+                              var13.anInt1197 = Client.anInt2153;
+                           }
+
+                           if(var13.tableListenerArgs != null && Client.anInt2079 > var13.anInt1200) {
+                              if(var13.tableModTriggers != null && Client.anInt2079 - var13.anInt1200 <= 32) {
+                                 label657:
+                                 for(var10 = var13.anInt1200; var10 < Client.anInt2079; var10++) {
+                                    var24 = Client.anIntArray2154[var10 & 0x1f];
+
+                                    for(var26 = 0; var26 < var13.tableModTriggers.length; var26++) {
+                                       if(var13.tableModTriggers[var26] == var24) {
+                                          var461 = new ScriptEvent();
+                                          var461.widget = var13;
+                                          var461.args = var13.tableListenerArgs;
+                                          Client.aDeque2164.method475(var461);
+                                          break label657;
+                                       }
+                                    }
+                                 }
+                              } else {
+                                 var501 = new ScriptEvent();
+                                 var501.widget = var13;
+                                 var501.args = var13.tableListenerArgs;
+                                 Client.aDeque2164.method475(var501);
+                              }
+
+                              var13.anInt1200 = Client.anInt2079;
+                           }
+
+                           if(var13.skillListenerArgs != null && Client.anInt2157 > var13.anInt1199) {
+                              if(var13.skillTriggers != null && Client.anInt2157 - var13.anInt1199 <= 32) {
+                                 label633:
+                                 for(var10 = var13.anInt1199; var10 < Client.anInt2157; var10++) {
+                                    var24 = Client.anIntArray2156[var10 & 0x1f];
+
+                                    for(var26 = 0; var26 < var13.skillTriggers.length; var26++) {
+                                       if(var13.skillTriggers[var26] == var24) {
+                                          var461 = new ScriptEvent();
+                                          var461.widget = var13;
+                                          var461.args = var13.skillListenerArgs;
+                                          Client.aDeque2164.method475(var461);
+                                          break label633;
+                                       }
+                                    }
+                                 }
+                              } else {
+                                 var501 = new ScriptEvent();
+                                 var501.widget = var13;
+                                 var501.args = var13.skillListenerArgs;
+                                 Client.aDeque2164.method475(var501);
+                              }
+
+                              var13.anInt1199 = Client.anInt2157;
+                           }
+
+                           if(Client.anInt2078 > var13.anInt1196 && var13.anObjectArray1181 != null) {
+                              var501 = new ScriptEvent();
+                              var501.widget = var13;
+                              var501.args = var13.anObjectArray1181;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(Client.anInt2114 > var13.anInt1196 && var13.anObjectArray1183 != null) {
+                              var501 = new ScriptEvent();
+                              var501.widget = var13;
+                              var501.args = var13.anObjectArray1183;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(Client.anInt2159 > var13.anInt1196 && var13.anObjectArray1184 != null) {
+                              var501 = new ScriptEvent();
+                              var501.widget = var13;
+                              var501.args = var13.anObjectArray1184;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(Client.anInt2160 > var13.anInt1196 && var13.anObjectArray1189 != null) {
+                              var501 = new ScriptEvent();
+                              var501.widget = var13;
+                              var501.args = var13.anObjectArray1189;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(Client.anInt2161 > var13.anInt1196 && var13.anObjectArray1190 != null) {
+                              var501 = new ScriptEvent();
+                              var501.widget = var13;
+                              var501.args = var13.anObjectArray1190;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           if(Client.anInt2155 > var13.anInt1196 && var13.anObjectArray1156 != null) {
+                              var501 = new ScriptEvent();
+                              var501.widget = var13;
+                              var501.args = var13.anObjectArray1156;
+                              Client.aDeque2164.method475(var501);
+                           }
+
+                           var13.anInt1196 = Client.anInt2151;
+                           if(var13.anObjectArray1182 != null) {
+                              for(var10 = 0; var10 < Client.anInt2188; var10++) {
+                                 ScriptEvent var48 = new ScriptEvent();
+                                 var48.widget = var13;
+                                 var48.anInt1434 = Client.anIntArray2190[var10];
+                                 var48.anInt1435 = Client.anIntArray2162[var10];
+                                 var48.args = var13.anObjectArray1182;
+                                 Client.aDeque2164.method475(var48);
+                              }
+                           }
+                        }
+                     }
+
+                     if(!var13.interactable && Client.aWidget2141 == null && SpotAnimType.aWidget1446 == null && !Client.menuOpen) {
+                        if((var13.anInt1153 >= 0 || var13.anInt1140 != 0) && Class74.anInt621 >= var23 && Class74.anInt622 >= var25 && Class74.anInt621 < var16 && Class74.anInt622 < var17) {
+                           if(var13.anInt1153 >= 0) {
+                              ObjectType.aWidget1719 = var0[var13.anInt1153];
+                           } else {
+                              ObjectType.aWidget1719 = var13;
+                           }
+                        }
+
+                        if(var13.type == 8 && Class74.anInt621 >= var23 && Class74.anInt622 >= var25 && Class74.anInt621 < var16 && Class74.anInt622 < var17) {
+                           ScriptEvent.aWidget1437 = var13;
+                        }
+
+                        if(var13.viewportHeight > var13.height * 1227800423) {
+                           Class35.method205(var13, var13.width + var20, var15, var13.height * 1227800423, var13.viewportHeight, Class74.anInt621, Class74.anInt622);
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+   }
+
 }

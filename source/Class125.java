@@ -1,9 +1,9 @@
-
 public class Class125 {
 
-	static int gameRevision;
+   static int gameRevision;
 
-	Class125() throws Throwable {
-		throw new Error();
-	}
+   Class125() throws Throwable {
+      throw new Error();
+   }
+
 }

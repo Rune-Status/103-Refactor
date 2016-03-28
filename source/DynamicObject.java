@@ -2,215 +2,216 @@ import java.awt.Component;
 
 public class DynamicObject extends Entity {
 
-	int orientation;
-	int anInt1960;
-	int floorLevel;
-	int regionX;
-	int regionY;
-	SequenceType aDualNode_Sub3_1961;
-	int anInt1962;
-	int anInt1963;
-	public static String osNameLC;
-	int type;
+   public static String osNameLC;
+   int anInt1962;
+   int type;
+   int orientation;
+   int floorLevel;
+   int regionX;
+   int regionY;
+   SequenceType aDualNode_Sub3_1961;
+   int anInt1960;
+   int anInt1963;
 
-	DynamicObject(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, Entity var9) {
-		this.anInt1962 = var1 * -1338124091;
-		this.type = -2023943149 * var2;
-		this.orientation = 2041023979 * var3;
-		this.floorLevel = 254224793 * var4;
-		this.regionX = -1322341781 * var5;
-		this.regionY = var6 * -1552283421;
-		if (var7 != -1) {
-			this.aDualNode_Sub3_1961 = Node_Sub6.getSequenceType(var7);
-			this.anInt1960 = 0;
-			this.anInt1963 = Client.engineCycle * -1207738427 - 932026345;
-			if (this.aDualNode_Sub3_1961.anInt1486 * 972933669 == 0 && var9 != null && var9 instanceof DynamicObject) {
-				DynamicObject var10 = (DynamicObject) var9;
-				if (this.aDualNode_Sub3_1961 == var10.aDualNode_Sub3_1961) {
-					this.anInt1960 = var10.anInt1960 * 1;
-					this.anInt1963 = 1 * var10.anInt1963;
-					return;
-				}
-			}
+   DynamicObject(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, Entity var9) {
+      this.anInt1962 = var1;
+      this.type = var2;
+      this.orientation = var3;
+      this.floorLevel = var4;
+      this.regionX = var5;
+      this.regionY = var6;
+      if(var7 != -1) {
+         this.aDualNode_Sub3_1961 = Node_Sub6.getSequenceType(var7);
+         this.anInt1960 = 0;
+         this.anInt1963 = Client.engineCycle - 1;
+         if(this.aDualNode_Sub3_1961.anInt1486 == 0 && var9 != null && var9 instanceof DynamicObject) {
+            DynamicObject var10 = (DynamicObject)var9;
+            if(this.aDualNode_Sub3_1961 == var10.aDualNode_Sub3_1961) {
+               this.anInt1960 = var10.anInt1960;
+               this.anInt1963 = var10.anInt1963;
+               return;
+            }
+         }
 
-			if (var8 && this.aDualNode_Sub3_1961.anInt1477 * 174111251 != -1) {
-				this.anInt1960 = (int) (Math.random() * (double) this.aDualNode_Sub3_1961.anIntArray1474.length)
-						* 218220251;
-				this.anInt1963 -= (int) (Math.random()
-						* (double) this.aDualNode_Sub3_1961.anIntArray1481[-49101485 * this.anInt1960]) * 932026345;
-			}
-		}
+         if(var8 && this.aDualNode_Sub3_1961.anInt1477 != -1) {
+            this.anInt1960 = (int)(Math.random() * (double)this.aDualNode_Sub3_1961.anIntArray1474.length);
+            this.anInt1963 -= (int)(Math.random() * (double)this.aDualNode_Sub3_1961.anIntArray1481[this.anInt1960]);
+         }
+      }
 
-	}
+   }
 
-	protected final Model method654(byte var1) {
-		if (this.aDualNode_Sub3_1961 != null) {
-			int var4 = Client.engineCycle * -1040073859 - this.anInt1963 * 2095493209;
-			if (var4 > 100 && 174111251 * this.aDualNode_Sub3_1961.anInt1477 > 0) {
-				var4 = 100;
-			}
+   protected final Model method654(byte var1) {
+      if(this.aDualNode_Sub3_1961 != null) {
+         int var13 = Client.engineCycle - this.anInt1963;
+         if(var13 > 100 && this.aDualNode_Sub3_1961.anInt1477 > 0) {
+            var13 = 100;
+         }
 
-			while (var4 > this.aDualNode_Sub3_1961.anIntArray1481[this.anInt1960 * -49101485]) {
-				var4 -= this.aDualNode_Sub3_1961.anIntArray1481[this.anInt1960 * -49101485];
-				this.anInt1960 += 218220251;
-				if (-49101485 * this.anInt1960 >= this.aDualNode_Sub3_1961.anIntArray1474.length) {
-					this.anInt1960 -= this.aDualNode_Sub3_1961.anInt1477 * 1639768129;
-					if (-49101485 * this.anInt1960 < 0
-							|| -49101485 * this.anInt1960 >= this.aDualNode_Sub3_1961.anIntArray1474.length) {
-						this.aDualNode_Sub3_1961 = null;
-						break;
-					}
-				}
-			}
+         label46: {
+            do {
+               do {
+                  if(var13 <= this.aDualNode_Sub3_1961.anIntArray1481[this.anInt1960]) {
+                     break label46;
+                  }
 
-			this.anInt1963 = 932026345 * (-1040073859 * Client.engineCycle - var4);
-		}
+                  var13 -= this.aDualNode_Sub3_1961.anIntArray1481[this.anInt1960];
+                  ++this.anInt1960;
+               } while(this.anInt1960 < this.aDualNode_Sub3_1961.anIntArray1474.length);
 
-		ObjectType var13 = Class37.getObjectType(-1889540595 * this.anInt1962);
-		if (var13.transformIds != null) {
-			var13 = var13.transform();
-		}
+               this.anInt1960 -= this.aDualNode_Sub3_1961.anInt1477;
+            } while(this.anInt1960 >= 0 && this.anInt1960 < this.aDualNode_Sub3_1961.anIntArray1474.length);
 
-		if (var13 == null) {
-			return null;
-		} else {
-			int var2;
-			int var5;
-			if (this.orientation * 775238339 != 1 && 775238339 * this.orientation != 3) {
-				var2 = var13.sizeX * 1162660975;
-				var5 = -1976023901 * var13.sizeY;
-			} else {
-				var2 = -1976023901 * var13.sizeY;
-				var5 = 1162660975 * var13.sizeX;
-			}
+            this.aDualNode_Sub3_1961 = null;
+         }
 
-			int var3 = this.regionX * 1134670403 + (var2 >> 1);
-			int var11 = 1134670403 * this.regionX + (1 + var2 >> 1);
-			int var12 = (var5 >> 1) + this.regionY * 317684939;
-			int var6 = this.regionY * 317684939 + (1 + var5 >> 1);
-			int[][] var7 = Class39.tileHeights[936123049 * this.floorLevel];
-			int var9 = var7[var11][var12] + var7[var3][var12] + var7[var3][var6] + var7[var11][var6] >> 2;
-			int var8 = (1134670403 * this.regionX << 7) + (var2 << 6);
-			int var10 = (var5 << 6) + (this.regionY * 317684939 << 7);
-			return var13.method862(-757213669 * this.type, 775238339 * this.orientation, var7, var8, var9, var10,
-					this.aDualNode_Sub3_1961, this.anInt1960 * -49101485);
-		}
-	}
+         this.anInt1963 = Client.engineCycle - var13;
+      }
 
-	static void method1022(Component var0, AbstractIndex binary, AbstractIndex sprites, boolean var3, int var4) {
-		if (Class6.aBool142) {
-			if (var4 == 4) {
-				Class6.anInt116 = -868668484;
-			}
+      ObjectType var131 = Class37.getObjectType(this.anInt1962);
+      if(var131.transformIds != null) {
+         var131 = var131.transform();
+      }
 
-		} else {
-			Class6.anInt116 = var4 * -217167121;
-			RSGraphics.reset();
-			byte[] var6 = binary.method389("title.jpg", "");
-			Class56.aSprite542 = new Picture(var6, var0);
-			Class6.aSprite137 = Class56.aSprite542.method937();
-			if ((Client.myWorldFlags * 1115656689 & 536870912) != 0) {
-				IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo_deadman_mode", "");
-			} else {
-				IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo", "");
-			}
+      if(var131 == null) {
+         return null;
+      } else {
+         int var2;
+         int var5;
+         if(this.orientation != 1 && this.orientation != 3) {
+            var2 = var131.sizeX;
+            var5 = var131.sizeY;
+         } else {
+            var2 = var131.sizeY;
+            var5 = var131.sizeX;
+         }
 
-			Class6.titleboxSprite = SequenceType.getSprite(sprites, "titlebox", "");
-			Class6.titlebuttonSprite = SequenceType.getSprite(sprites, "titlebutton", "");
-			Class6.runesSprite = ObjectType.method868(sprites, "runes", "");
-			FriendedPlayer.titlemuteSprite = ObjectType.method868(sprites, "title_mute", "");
-			Class6.radioButtons0Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,0", "");
-			Class6.radioButtons2Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,2", "");
-			TileDecorationStub.anIntArray841 = new int[256];
+         int var3 = this.regionX + (var2 >> 1);
+         int var11 = this.regionX + (var2 + 1 >> 1);
+         int var12 = (var5 >> 1) + this.regionY;
+         int var6 = this.regionY + (var5 + 1 >> 1);
+         int[][] var7 = Class39.tileHeights[this.floorLevel];
+         int var9 = var7[var11][var12] + var7[var3][var12] + var7[var3][var6] + var7[var11][var6] >> 2;
+         int var8 = (this.regionX << 7) + (var2 << 6);
+         int var10 = (var5 << 6) + (this.regionY << 7);
+         return var131.method862(this.type, this.orientation, var7, var8, var9, var10, this.aDualNode_Sub3_1961, this.anInt1960);
+      }
+   }
 
-			int var5;
-			for (var5 = 0; var5 < 64; ++var5) {
-				TileDecorationStub.anIntArray841[var5] = var5 * 262144;
-			}
+   static void method1022(Component var0, AbstractIndex binary, AbstractIndex sprites, boolean var3, int var4) {
+      if(Class6.aBool142) {
+         if(var4 == 4) {
+            Class6.anInt116 = 4;
+         }
+      } else {
+         Class6.anInt116 = var4;
+         RSGraphics.reset();
+         byte[] var6 = binary.method389("title.jpg", "");
+         Class56.aSprite542 = new Picture(var6, var0);
+         Class6.aSprite137 = Class56.aSprite542.method937();
+         if((Client.myWorldFlags & 0x20000000) != 0) {
+            IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo_deadman_mode", "");
+         } else {
+            IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo", "");
+         }
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				TileDecorationStub.anIntArray841[64 + var5] = 16711680 + 1024 * var5;
-			}
+         Class6.titleboxSprite = SequenceType.getSprite(sprites, "titlebox", "");
+         Class6.titlebuttonSprite = SequenceType.getSprite(sprites, "titlebutton", "");
+         Class6.runesSprite = ObjectType.method868(sprites, "runes", "");
+         FriendedPlayer.titlemuteSprite = ObjectType.method868(sprites, "title_mute", "");
+         Class6.radioButtons0Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,0", "");
+         Class6.radioButtons2Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,2", "");
+         TileDecorationStub.anIntArray841 = new int[256];
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				TileDecorationStub.anIntArray841[128 + var5] = 4 * var5 + 16776960;
-			}
+         int var5;
+         for(var5 = 0; var5 < 64; var5++) {
+            TileDecorationStub.anIntArray841[var5] = var5 * 262144;
+         }
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				TileDecorationStub.anIntArray841[192 + var5] = 16777215;
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            TileDecorationStub.anIntArray841[var5 + 64] = var5 * 1024 + 16711680;
+         }
 
-			Class118.anIntArray803 = new int[256];
+         for(var5 = 0; var5 < 64; var5++) {
+            TileDecorationStub.anIntArray841[var5 + 128] = var5 * 4 + 16776960;
+         }
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				Class118.anIntArray803[var5] = var5 * 1024;
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            TileDecorationStub.anIntArray841[var5 + 192] = 16777215;
+         }
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				Class118.anIntArray803[64 + var5] = 4 * var5 + '\uff00';
-			}
+         Class118.anIntArray803 = new int[256];
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				Class118.anIntArray803[var5 + 128] = 65535 + var5 * 262144;
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            Class118.anIntArray803[var5] = var5 * 1024;
+         }
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				Class118.anIntArray803[192 + var5] = 16777215;
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            Class118.anIntArray803[var5 + 64] = var5 * 4 + '\uff00';
+         }
 
-			Class6.anIntArray125 = new int[256];
+         for(var5 = 0; var5 < 64; var5++) {
+            Class118.anIntArray803[var5 + 128] = var5 * 262144 + '\uffff';
+         }
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				Class6.anIntArray125[var5] = var5 * 4;
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            Class118.anIntArray803[var5 + 192] = 16777215;
+         }
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				Class6.anIntArray125[var5 + 64] = 262144 * var5 + 255;
-			}
+         Class6.anIntArray125 = new int[256];
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				Class6.anIntArray125[var5 + 128] = var5 * 1024 + 16711935;
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            Class6.anIntArray125[var5] = var5 * 4;
+         }
 
-			for (var5 = 0; var5 < 64; ++var5) {
-				Class6.anIntArray125[192 + var5] = 16777215;
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            Class6.anIntArray125[var5 + 64] = var5 * 262144 + 255;
+         }
 
-			Class6.anIntArray124 = new int[256];
-			Class33.anIntArray365 = new int['\u8000'];
-			Permission.anIntArray605 = new int['\u8000'];
-			VarBitType.method877((Sprite) null);
-			Class122.anIntArray818 = new int['\u8000'];
-			Class4.anIntArray110 = new int['\u8000'];
-			if (var3) {
-				Class6.username = "";
-				Class6.password = "";
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            Class6.anIntArray125[var5 + 128] = var5 * 1024 + 16711935;
+         }
 
-			Class114.pin = 0;
-			Class37.pinText = "";
-			Class6.trust = true;
-			Class6.loadedWorlds = false;
-			if (!AnimationSkin.settings.muted) {
-				Class91.method402(2, Class2.midiTrack1Index, "scape main", "", 255, false);
-			} else {
-				Class65.method320(2);
-			}
+         for(var5 = 0; var5 < 64; var5++) {
+            Class6.anIntArray125[var5 + 192] = 16777215;
+         }
 
-			ScriptEvent.sendConInfo(false);
-			Class6.aBool142 = true;
-			Class6.anInt132 = 1079825139 * ((-452716157 * Class34.gameWidth - 1468194207 * Client.anInt2233) / 2);
-			Class6.anInt126 = 1843765198 + Class6.anInt132 * 132725497;
-			Class56.aSprite542.method958(1933284923 * Class6.anInt132, 0);
-			Class6.aSprite137.method958(Class6.anInt132 * 1933284923 + 382, 0);
-			IgnoredPlayer.logoSprite.method929(
-					Class6.anInt132 * 1933284923 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
-		}
-	}
+         Class6.anIntArray124 = new int[256];
+         Class33.anIntArray365 = new int['\u8000'];
+         Permission.anIntArray605 = new int['\u8000'];
+         VarBitType.method877((Sprite)null);
+         Class122.anIntArray818 = new int['\u8000'];
+         Class4.anIntArray110 = new int['\u8000'];
+         if(var3) {
+            Class6.username = "";
+            Class6.password = "";
+         }
 
-	public static Picture[] method1023(AbstractIndex var0, String var1, String var2) {
-		int var3 = var0.getFile(var1);
-		int var4 = var0.getChild(var3, var2);
-		return ConsumingImageProducer.method510(var0, var3, var4);
-	}
+         Class114.pin = 0;
+         Class37.pinText = "";
+         Class6.trust = true;
+         Class6.loadedWorlds = false;
+         if(!AnimationSkin.settings.muted) {
+            Class91.method402(2, Class2.midiTrack1Index, "scape main", "", 255, false);
+         } else {
+            Class65.method320(2);
+         }
+
+         ScriptEvent.sendConInfo(false);
+         Class6.aBool142 = true;
+         Class6.anInt132 = (Class34.gameWidth - Client.anInt2233) / 2;
+         Class6.anInt126 = Class6.anInt132 + 202;
+         Class56.aSprite542.method958(Class6.anInt132, 0);
+         Class6.aSprite137.method958(Class6.anInt132 + 382, 0);
+         IgnoredPlayer.logoSprite.method929(Class6.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
+      }
+
+   }
+
+   public static Picture[] method1023(AbstractIndex var0, String var1, String var2) {
+      int var3 = var0.getFile(var1);
+      int var4 = var0.getChild(var3, var2);
+      return ConsumingImageProducer.method510(var0, var3, var4);
+   }
+
 }
