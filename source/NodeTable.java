@@ -1,91 +1,91 @@
 public final class NodeTable {
 
-   Node aNode274;
-   Node aNode275;
-   int size = 0;
-   int index;
-   Node[] buckets;
+	Node aNode274;
+	Node aNode275;
+	int size = 0;
+	int index;
+	Node[] buckets;
 
-   public Node get(long var1) {
-      Node var3 = this.buckets[(int)((long)(this.index - 1) & var1)];
+	public Node get(long var1) {
+		Node var3 = this.buckets[(int) ((long) (this.index - 1) & var1)];
 
-      for(this.aNode274 = var3.next; this.aNode274 != var3; this.aNode274 = this.aNode274.next) {
-         if(this.aNode274.key == var1) {
-            Node var4 = this.aNode274;
-            this.aNode274 = this.aNode274.next;
-            return var4;
-         }
-      }
+		for (this.aNode274 = var3.next; this.aNode274 != var3; this.aNode274 = this.aNode274.next) {
+			if (this.aNode274.key == var1) {
+				Node var4 = this.aNode274;
+				this.aNode274 = this.aNode274.next;
+				return var4;
+			}
+		}
 
-      this.aNode274 = null;
-      return null;
-   }
+		this.aNode274 = null;
+		return null;
+	}
 
-   void method149() {
-      for(int var1 = 0; var1 < this.index; var1++) {
-         Node var2 = this.buckets[var1];
+	void method149() {
+		for (int var1 = 0; var1 < this.index; var1++) {
+			Node var2 = this.buckets[var1];
 
-         while(true) {
-            Node var3 = var2.next;
-            if(var3 == var2) {
-               break;
-            }
+			while (true) {
+				Node var3 = var2.next;
+				if (var3 == var2) {
+					break;
+				}
 
-            var3.unlink();
-         }
-      }
+				var3.unlink();
+			}
+		}
 
-      this.aNode274 = null;
-      this.aNode275 = null;
-   }
+		this.aNode274 = null;
+		this.aNode275 = null;
+	}
 
-   public Node method150() {
-      this.size = 0;
-      return this.method151();
-   }
+	public Node method150() {
+		this.size = 0;
+		return this.method151();
+	}
 
-   public Node method151() {
-      Node var1;
-      if(this.size > 0 && this.aNode275 != this.buckets[this.size - 1]) {
-         var1 = this.aNode275;
-         this.aNode275 = var1.next;
-         return var1;
-      } else {
-         while(this.size < this.index) {
-            var1 = this.buckets[this.size++].next;
-            if(this.buckets[this.size - 1] != var1) {
-               this.aNode275 = var1.next;
-               return var1;
-            }
-         }
+	public Node method151() {
+		Node var1;
+		if (this.size > 0 && this.aNode275 != this.buckets[this.size - 1]) {
+			var1 = this.aNode275;
+			this.aNode275 = var1.next;
+			return var1;
+		} else {
+			while (this.size < this.index) {
+				var1 = this.buckets[this.size++].next;
+				if (this.buckets[this.size - 1] != var1) {
+					this.aNode275 = var1.next;
+					return var1;
+				}
+			}
 
-         return null;
-      }
-   }
+			return null;
+		}
+	}
 
-   public NodeTable(int var1) {
-      this.index = var1;
-      this.buckets = new Node[var1];
+	public NodeTable(int var1) {
+		this.index = var1;
+		this.buckets = new Node[var1];
 
-      for(int var3 = 0; var3 < var1; var3++) {
-         Node var2 = this.buckets[var3] = new Node();
-         var2.next = var2;
-         var2.previous = var2;
-      }
+		for (int var3 = 0; var3 < var1; var3++) {
+			Node var2 = this.buckets[var3] = new Node();
+			var2.next = var2;
+			var2.previous = var2;
+		}
 
-   }
+	}
 
-   public void put(Node var1, long var2) {
-      if(var1.previous != null) {
-         var1.unlink();
-      }
+	public void put(Node var1, long var2) {
+		if (var1.previous != null) {
+			var1.unlink();
+		}
 
-      Node var4 = this.buckets[(int)((long)(this.index - 1) & var2)];
-      var1.previous = var4.previous;
-      var1.next = var4;
-      var1.previous.next = var1;
-      var1.next.previous = var1;
-      var1.key = var2;
-   }
+		Node var4 = this.buckets[(int) ((long) (this.index - 1) & var2)];
+		var1.previous = var4.previous;
+		var1.next = var4;
+		var1.previous.next = var1;
+		var1.next.previous = var1;
+		var1.key = var2;
+	}
 
 }

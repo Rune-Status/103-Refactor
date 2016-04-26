@@ -1,5 +1,5 @@
 public interface IOrdinal {
 
-   int ordinal();
+	int ordinal();
 
 }

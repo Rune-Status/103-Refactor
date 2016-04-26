@@ -61,7 +61,6 @@ public class GameClient extends JFrame implements AppletStub {
 	private void startApplet() {
 		try {
 			rsps = true;
-			// dump = /*!rsps*/true;
 			dump = true;
 			clnt = new Client();
 			map = new HashMap<>();
@@ -81,7 +80,7 @@ public class GameClient extends JFrame implements AppletStub {
 			map.put("7", "true");
 			map.put("8", "54073");
 			map.put("9", ".runescape.com");
-			map.put("10", "4");
+			map.put("10", "0");
 
 			clnt.setStub(this);
 
@@ -91,20 +90,6 @@ public class GameClient extends JFrame implements AppletStub {
 
 			clnt.init();
 			clnt.start();
-
-			/*
-			 * for (int iii = 0; iii < Class100.frameSizes.length; iii++) { int
-			 * size = Class100.frameSizes[iii]; if (size == -1)
-			 * System.out.println(
-			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
-			 * ", FrameType.VARIABLE_BYTE);"); else if (size == -2)
-			 * System.out.println(
-			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
-			 * ", FrameType.VARIABLE_SHORT);"); else System.out.println(
-			 * "GameFrameBuilder builder = new GameFrameBuilder(alloc, " + iii +
-			 * ", FrameType.FIXED);"); }
-			 */
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -168,21 +153,5 @@ public class GameClient extends JFrame implements AppletStub {
 	@Override
 	public String getParameter(String key) {
 		return map.get(key);
-	}
-
-	public static void dumpCS2Scripts(Object[] params) {
-		StringBuilder builder = new StringBuilder();
-		for (int i = 1; i < params.length; i++) {
-			Object obj = params[i];
-			if (obj instanceof String) {
-				builder.append("\"" + ((String) obj) + "\"" + ((i == params.length - 1) ? "" : ", "));
-			} else {
-				builder.append("" + ((Integer) obj) + "" + ((i == params.length - 1) ? "" : ", "));
-			}
-		}
-		System.out.println("sendCS2Script(" + params[0] + ", new Object[] { " + builder.toString() + " });");
-	}
-
-	public static void dumpMap(int region, int[] keys) {
 	}
 }
