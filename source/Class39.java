@@ -518,7 +518,7 @@ public final class Class39 {
 
 			var27 = var29;
 		} else {
-			var27 = ConsumingImageProducer.method512(var0, var1, var2, var3, var4);
+			var27 = Client.method512(var0, var1, var2, var3, var4);
 		}
 
 		var12 = var0 - 64;

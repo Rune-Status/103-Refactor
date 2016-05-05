@@ -18,7 +18,7 @@ public class PlayerConfig {
 
 			for (int var6 = 0; var6 < 7; var6++) {
 				for (int var7 = 0; var7 < IdentKitType.anInt1457; var7++) {
-					IdentKitType var5 = ConsumingImageProducer.getIdentKitType(var7);
+					IdentKitType var5 = Client.getIdentKitType(var7);
 					if (var5 != null && !var5.aBool1466 && (var3 ? 7 : 0) + var6 == var5.anInt1459) {
 						var1[anIntArray534[var6]] = var7 + 256;
 						break;
@@ -78,7 +78,7 @@ public class PlayerConfig {
 								}
 							}
 
-							var3 = ConsumingImageProducer.getIdentKitType(var4);
+							var3 = Client.getIdentKitType(var4);
 						} while (var3 == null);
 					} while (var3.aBool1466);
 				} while ((this.female ? 7 : 0) + var1 != var3.anInt1459);
@@ -187,7 +187,7 @@ public class PlayerConfig {
 				for (int var18 = 0; var18 < 12; var18++) {
 					var11 = var5[var18];
 					if (var11 >= 256 && var11 < 512
-							&& !ConsumingImageProducer.getIdentKitType(var11 - 256).method662()) {
+							&& !Client.getIdentKitType(var11 - 256).method662()) {
 						var17 = true;
 					}
 
@@ -215,7 +215,7 @@ public class PlayerConfig {
 						var10 = var5[var16];
 						Model var14;
 						if (var10 >= 256 && var10 < 512) {
-							var14 = ConsumingImageProducer.getIdentKitType(var10 - 256).method660();
+							var14 = Client.getIdentKitType(var10 - 256).method660();
 							if (var14 != null) {
 								var171[var11++] = var14;
 							}
@@ -280,7 +280,7 @@ public class PlayerConfig {
 			int var3;
 			for (int var7 = 0; var7 < 12; var7++) {
 				var3 = this.appearance[var7];
-				if (var3 >= 256 && var3 < 512 && !ConsumingImageProducer.getIdentKitType(var3 - 256).method669()) {
+				if (var3 >= 256 && var3 < 512 && !Client.getIdentKitType(var3 - 256).method669()) {
 					var4 = true;
 				}
 
@@ -300,7 +300,7 @@ public class PlayerConfig {
 					var2 = this.appearance[var8];
 					Model var6;
 					if (var2 >= 256 && var2 < 512) {
-						var6 = ConsumingImageProducer.getIdentKitType(var2 - 256).method663();
+						var6 = Client.getIdentKitType(var2 - 256).method663();
 						if (var6 != null) {
 							var71[var3++] = var6;
 						}

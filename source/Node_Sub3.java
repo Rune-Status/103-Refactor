@@ -166,8 +166,8 @@ public class Node_Sub3 extends Node {
 		int msb;
 		for (bitsRead = 0; bits >= 8 - bitPosition; bits -= msb) {
 			msb = 8 - bitPosition;
-			int v = (1 << msb) - 1;
-			value += (payload[position] >> bitPosition & v) << bitsRead;
+			int mask = (1 << msb) - 1;
+			value += (payload[position] >> bitPosition & mask) << bitsRead;
 			bitPosition = 0;
 			++position;
 			bitsRead += msb;

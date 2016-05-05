@@ -28,7 +28,7 @@ public final class DirectImageProducer extends AbstractProducer {
 		DirectColorModel cm = new DirectColorModel(32, 16711680, '\uff00', 255);
 		WritableRaster raster = Raster.createWritableRaster(cm.createCompatibleSampleModel(this.width, this.height),
 				buf, (Point) null);
-		this.image = new BufferedImage(cm, raster, false, new Hashtable());
+		this.image = new BufferedImage(cm, raster, false, new Hashtable<>());
 		this.component = comp;
 		this.setRaster();
 	}

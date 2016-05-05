@@ -213,7 +213,7 @@ public class DynamicObject extends Entity {
 	public static Picture[] method1023(AbstractIndex var0, String var1, String var2) {
 		int var3 = var0.getFile(var1);
 		int var4 = var0.getChild(var3, var2);
-		return ConsumingImageProducer.method510(var0, var3, var4);
+		return Client.method510(var0, var3, var4);
 	}
 
 }
