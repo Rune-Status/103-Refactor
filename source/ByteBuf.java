@@ -316,7 +316,7 @@ public class ByteBuf extends Node {
 	}
 
 	public int putCrc(int offset) {
-		int val = Class58.getCrc(this.payload, offset, this.position);
+		int val = LoginHandler.getCrc(this.payload, offset, this.position);
 		this.putInt(val);
 		return val;
 	}
@@ -514,7 +514,7 @@ public class ByteBuf extends Node {
 
 	public boolean checkCrc() {
 		this.position -= 4;
-		int calc = Class58.getCrc(this.payload, 0, this.position);
+		int calc = LoginHandler.getCrc(this.payload, 0, this.position);
 		int excp = this.getInt();
 		return calc == excp;
 	}

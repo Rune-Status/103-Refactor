@@ -77,8 +77,8 @@ public class Class30 implements Runnable {
 			Object var1 = this.anObject342;
 			synchronized (var1) {
 				if (this.anInt338 < 500) {
-					this.anIntArray337[this.anInt338] = Class74.anInt621;
-					this.anIntArray340[this.anInt338] = Class74.anInt622;
+					this.anIntArray337[this.anInt338] = MouseInput.anInt621;
+					this.anIntArray340[this.anInt338] = MouseInput.anInt622;
 					++this.anInt338;
 				}
 			}

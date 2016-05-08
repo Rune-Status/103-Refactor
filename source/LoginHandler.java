@@ -3,7 +3,7 @@ import java.net.Socket;
 import java.util.Iterator;
 import netscape.javascript.JSObject;
 
-public class Class58 {
+public class LoginHandler {
 
 	static int anInt545;
 	static int[][] anIntArrayArray543 = new int[128][128];
@@ -146,18 +146,18 @@ public class Class58 {
 						(int) (Math.random() * 9.9999999E7D), (int) (Math.random() * 9.9999999E7D) };
 				Client.outBuffer.position = 0;
 				Client.outBuffer.putByte(1);
-				Client.outBuffer.putByte(Class6.blockType.ordinal());
+				Client.outBuffer.putByte(PlayerLoginDetails.blockType.ordinal());
 				Client.outBuffer.putInt(var14[0]);
 				Client.outBuffer.putInt(var14[1]);
 				Client.outBuffer.putInt(var14[2]);
 				Client.outBuffer.putInt(var14[3]);
-				switch (Class6.blockType.type) {
+				switch (PlayerLoginDetails.blockType.type) {
 				case 0:
 					Client.outBuffer.position += 8;
 					break;
 				case 1:
 					Client.outBuffer.putInt(((Integer) AnimationSkin.settings.trustList
-							.get(Integer.valueOf(Class91.bkdrHash(Class6.username)))).intValue());
+							.get(Integer.valueOf(Class91.bkdrHash(PlayerLoginDetails.username)))).intValue());
 					Client.outBuffer.position += 4;
 					break;
 				case 2:
@@ -166,7 +166,7 @@ public class Class58 {
 					Client.outBuffer.position += 5;
 				}
 
-				Client.outBuffer.putString(Class6.password);
+				Client.outBuffer.putString(PlayerLoginDetails.password);
 				Client.outBuffer.encryptRSA(Class40.loginExponent, Class40.loginModulus);
 				Client.loginBuffer.position = 0;
 				if (Client.anInt2113 == 40) {
@@ -180,7 +180,7 @@ public class Class58 {
 				Client.loginBuffer.putInt(103);
 				Client.loginBuffer.putBytes(Client.outBuffer.payload, 0, Client.outBuffer.position);
 				xteaStart = Client.loginBuffer.position;
-				Client.loginBuffer.putString(Class6.username);
+				Client.loginBuffer.putString(PlayerLoginDetails.username);
 				Client.loginBuffer.putByte((Client.resizable ? 1 : 0) << 1 | (Client.lowMemory ? 1 : 0));
 				Client.loginBuffer.putShort(Class34.gameWidth);
 				Client.loginBuffer.putShort(Node_Sub9.gameHeight);
@@ -285,7 +285,7 @@ public class Class58 {
 						varStart |= Client.inBuffer.getHeader() << 16;
 						varStart |= Client.inBuffer.getHeader() << 8;
 						varStart |= Client.inBuffer.getHeader();
-						xteaStart = Class91.bkdrHash(Class6.username);
+						xteaStart = Class91.bkdrHash(PlayerLoginDetails.username);
 						if (AnimationSkin.settings.trustList.size() >= 10
 								&& !AnimationSkin.settings.trustList.containsKey(Integer.valueOf(xteaStart))) {
 							Iterator var15 = AnimationSkin.settings.trustList.entrySet().iterator();
@@ -420,7 +420,7 @@ public class Class58 {
 		return (var0 >> 29 & 0x1) != 0;
 	}
 
-	Class58() throws Throwable {
+	LoginHandler() throws Throwable {
 		throw new Error();
 	}
 

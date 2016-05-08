@@ -56,7 +56,7 @@ public abstract class AbstractIndex {
 
 	void method376(byte[] var1) {
 		int var2 = var1.length;
-		int var7 = Class58.getCrc(var1, 0, var2);
+		int var7 = LoginHandler.getCrc(var1, 0, var2);
 		this.crc = var7;
 		ByteBuf var3 = new ByteBuf(UnderlayType.decodeContainer(var1));
 		int var6 = var3.getUByte();

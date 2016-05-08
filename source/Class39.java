@@ -251,8 +251,8 @@ public final class Class39 {
 		int var12;
 		for (int var9 = 0; var9 < 128; var9++) {
 			for (var12 = 0; var12 < 128; var12++) {
-				Class58.anIntArrayArray543[var9][var12] = 0;
-				Class58.anIntArrayArray546[var9][var12] = 99999999;
+				LoginHandler.anIntArrayArray543[var9][var12] = 0;
+				LoginHandler.anIntArrayArray546[var9][var12] = 99999999;
 			}
 		}
 
@@ -280,114 +280,114 @@ public final class Class39 {
 			var13 = 64;
 			var10 = var0 - var331;
 			var16 = var1 - var13;
-			Class58.anIntArrayArray543[var331][var13] = 99;
-			Class58.anIntArrayArray546[var331][var13] = 0;
+			LoginHandler.anIntArrayArray543[var331][var13] = 99;
+			LoginHandler.anIntArrayArray546[var331][var13] = 0;
 			var17 = 0;
 			var21 = 0;
-			Class58.anIntArray544[var17] = var0;
+			LoginHandler.anIntArray544[var17] = var0;
 			var32 = var17 + 1;
-			Class58.anIntArray547[var17] = var1;
+			LoginHandler.anIntArray547[var17] = var1;
 			var18 = var4.flags;
 
 			label340: {
 				while (var32 != var21) {
-					var14 = Class58.anIntArray544[var21];
-					var11 = Class58.anIntArray547[var21];
+					var14 = LoginHandler.anIntArray544[var21];
+					var11 = LoginHandler.anIntArray547[var21];
 					var21 = var21 + 1 & 0xfff;
 					var28 = var14 - var10;
 					var30 = var11 - var16;
 					var19 = var14 - var4.anInt505;
 					var20 = var11 - var4.anInt506;
 					if (var3.method245(1, var14, var11, var4, -1909538051)) {
-						Class58.anInt545 = var14;
+						LoginHandler.anInt545 = var14;
 						Class48_Sub1.anInt1298 = var11;
 						var29 = true;
 						break label340;
 					}
 
-					var15 = Class58.anIntArrayArray546[var28][var30] + 1;
-					if (var28 > 0 && Class58.anIntArrayArray543[var28 - 1][var30] == 0
+					var15 = LoginHandler.anIntArrayArray546[var28][var30] + 1;
+					if (var28 > 0 && LoginHandler.anIntArrayArray543[var28 - 1][var30] == 0
 							&& (var18[var19 - 1][var20] & 0x1240108) == 0) {
-						Class58.anIntArray544[var32] = var14 - 1;
-						Class58.anIntArray547[var32] = var11;
+						LoginHandler.anIntArray544[var32] = var14 - 1;
+						LoginHandler.anIntArray547[var32] = var11;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 - 1][var30] = 2;
-						Class58.anIntArrayArray546[var28 - 1][var30] = var15;
+						LoginHandler.anIntArrayArray543[var28 - 1][var30] = 2;
+						LoginHandler.anIntArrayArray546[var28 - 1][var30] = var15;
 					}
 
-					if (var28 < 127 && Class58.anIntArrayArray543[var28 + 1][var30] == 0
+					if (var28 < 127 && LoginHandler.anIntArrayArray543[var28 + 1][var30] == 0
 							&& (var18[var19 + 1][var20] & 0x1240180) == 0) {
-						Class58.anIntArray544[var32] = var14 + 1;
-						Class58.anIntArray547[var32] = var11;
+						LoginHandler.anIntArray544[var32] = var14 + 1;
+						LoginHandler.anIntArray547[var32] = var11;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 + 1][var30] = 8;
-						Class58.anIntArrayArray546[var28 + 1][var30] = var15;
+						LoginHandler.anIntArrayArray543[var28 + 1][var30] = 8;
+						LoginHandler.anIntArrayArray546[var28 + 1][var30] = var15;
 					}
 
-					if (var30 > 0 && Class58.anIntArrayArray543[var28][var30 - 1] == 0
+					if (var30 > 0 && LoginHandler.anIntArrayArray543[var28][var30 - 1] == 0
 							&& (var18[var19][var20 - 1] & 0x1240102) == 0) {
-						Class58.anIntArray544[var32] = var14;
-						Class58.anIntArray547[var32] = var11 - 1;
+						LoginHandler.anIntArray544[var32] = var14;
+						LoginHandler.anIntArray547[var32] = var11 - 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28][var30 - 1] = 1;
-						Class58.anIntArrayArray546[var28][var30 - 1] = var15;
+						LoginHandler.anIntArrayArray543[var28][var30 - 1] = 1;
+						LoginHandler.anIntArrayArray546[var28][var30 - 1] = var15;
 					}
 
-					if (var30 < 127 && Class58.anIntArrayArray543[var28][var30 + 1] == 0
+					if (var30 < 127 && LoginHandler.anIntArrayArray543[var28][var30 + 1] == 0
 							&& (var18[var19][var20 + 1] & 0x1240120) == 0) {
-						Class58.anIntArray544[var32] = var14;
-						Class58.anIntArray547[var32] = var11 + 1;
+						LoginHandler.anIntArray544[var32] = var14;
+						LoginHandler.anIntArray547[var32] = var11 + 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28][var30 + 1] = 4;
-						Class58.anIntArrayArray546[var28][var30 + 1] = var15;
+						LoginHandler.anIntArrayArray543[var28][var30 + 1] = 4;
+						LoginHandler.anIntArrayArray546[var28][var30 + 1] = var15;
 					}
 
-					if (var28 > 0 && var30 > 0 && Class58.anIntArrayArray543[var28 - 1][var30 - 1] == 0
+					if (var28 > 0 && var30 > 0 && LoginHandler.anIntArrayArray543[var28 - 1][var30 - 1] == 0
 							&& (var18[var19 - 1][var20 - 1] & 0x124010e) == 0
 							&& (var18[var19 - 1][var20] & 0x1240108) == 0
 							&& (var18[var19][var20 - 1] & 0x1240102) == 0) {
-						Class58.anIntArray544[var32] = var14 - 1;
-						Class58.anIntArray547[var32] = var11 - 1;
+						LoginHandler.anIntArray544[var32] = var14 - 1;
+						LoginHandler.anIntArray547[var32] = var11 - 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 - 1][var30 - 1] = 3;
-						Class58.anIntArrayArray546[var28 - 1][var30 - 1] = var15;
+						LoginHandler.anIntArrayArray543[var28 - 1][var30 - 1] = 3;
+						LoginHandler.anIntArrayArray546[var28 - 1][var30 - 1] = var15;
 					}
 
-					if (var28 < 127 && var30 > 0 && Class58.anIntArrayArray543[var28 + 1][var30 - 1] == 0
+					if (var28 < 127 && var30 > 0 && LoginHandler.anIntArrayArray543[var28 + 1][var30 - 1] == 0
 							&& (var18[var19 + 1][var20 - 1] & 0x1240183) == 0
 							&& (var18[var19 + 1][var20] & 0x1240180) == 0
 							&& (var18[var19][var20 - 1] & 0x1240102) == 0) {
-						Class58.anIntArray544[var32] = var14 + 1;
-						Class58.anIntArray547[var32] = var11 - 1;
+						LoginHandler.anIntArray544[var32] = var14 + 1;
+						LoginHandler.anIntArray547[var32] = var11 - 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 + 1][var30 - 1] = 9;
-						Class58.anIntArrayArray546[var28 + 1][var30 - 1] = var15;
+						LoginHandler.anIntArrayArray543[var28 + 1][var30 - 1] = 9;
+						LoginHandler.anIntArrayArray546[var28 + 1][var30 - 1] = var15;
 					}
 
-					if (var28 > 0 && var30 < 127 && Class58.anIntArrayArray543[var28 - 1][var30 + 1] == 0
+					if (var28 > 0 && var30 < 127 && LoginHandler.anIntArrayArray543[var28 - 1][var30 + 1] == 0
 							&& (var18[var19 - 1][var20 + 1] & 0x1240138) == 0
 							&& (var18[var19 - 1][var20] & 0x1240108) == 0
 							&& (var18[var19][var20 + 1] & 0x1240120) == 0) {
-						Class58.anIntArray544[var32] = var14 - 1;
-						Class58.anIntArray547[var32] = var11 + 1;
+						LoginHandler.anIntArray544[var32] = var14 - 1;
+						LoginHandler.anIntArray547[var32] = var11 + 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 - 1][var30 + 1] = 6;
-						Class58.anIntArrayArray546[var28 - 1][var30 + 1] = var15;
+						LoginHandler.anIntArrayArray543[var28 - 1][var30 + 1] = 6;
+						LoginHandler.anIntArrayArray546[var28 - 1][var30 + 1] = var15;
 					}
 
-					if (var28 < 127 && var30 < 127 && Class58.anIntArrayArray543[var28 + 1][var30 + 1] == 0
+					if (var28 < 127 && var30 < 127 && LoginHandler.anIntArrayArray543[var28 + 1][var30 + 1] == 0
 							&& (var18[var19 + 1][var20 + 1] & 0x12401e0) == 0
 							&& (var18[var19 + 1][var20] & 0x1240180) == 0
 							&& (var18[var19][var20 + 1] & 0x1240120) == 0) {
-						Class58.anIntArray544[var32] = var14 + 1;
-						Class58.anIntArray547[var32] = var11 + 1;
+						LoginHandler.anIntArray544[var32] = var14 + 1;
+						LoginHandler.anIntArray547[var32] = var11 + 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 + 1][var30 + 1] = 12;
-						Class58.anIntArrayArray546[var28 + 1][var30 + 1] = var15;
+						LoginHandler.anIntArrayArray543[var28 + 1][var30 + 1] = 12;
+						LoginHandler.anIntArrayArray546[var28 + 1][var30 + 1] = var15;
 					}
 				}
 
-				Class58.anInt545 = var14;
+				LoginHandler.anInt545 = var14;
 				Class48_Sub1.anInt1298 = var11;
 				var29 = false;
 			}
@@ -400,118 +400,118 @@ public final class Class39 {
 			var13 = 64;
 			var10 = var0 - var331;
 			var16 = var1 - var13;
-			Class58.anIntArrayArray543[var331][var13] = 99;
-			Class58.anIntArrayArray546[var331][var13] = 0;
+			LoginHandler.anIntArrayArray543[var331][var13] = 99;
+			LoginHandler.anIntArrayArray546[var331][var13] = 0;
 			var17 = 0;
 			var21 = 0;
-			Class58.anIntArray544[var17] = var0;
+			LoginHandler.anIntArray544[var17] = var0;
 			var32 = var17 + 1;
-			Class58.anIntArray547[var17] = var1;
+			LoginHandler.anIntArray547[var17] = var1;
 			var18 = var4.flags;
 
 			label329: {
 				while (var21 != var32) {
-					var14 = Class58.anIntArray544[var21];
-					var11 = Class58.anIntArray547[var21];
+					var14 = LoginHandler.anIntArray544[var21];
+					var11 = LoginHandler.anIntArray547[var21];
 					var21 = var21 + 1 & 0xfff;
 					var28 = var14 - var10;
 					var30 = var11 - var16;
 					var19 = var14 - var4.anInt505;
 					var20 = var11 - var4.anInt506;
 					if (var3.method245(2, var14, var11, var4, -1833137502)) {
-						Class58.anInt545 = var14;
+						LoginHandler.anInt545 = var14;
 						Class48_Sub1.anInt1298 = var11;
 						var29 = true;
 						break label329;
 					}
 
-					var15 = Class58.anIntArrayArray546[var28][var30] + 1;
-					if (var28 > 0 && Class58.anIntArrayArray543[var28 - 1][var30] == 0
+					var15 = LoginHandler.anIntArrayArray546[var28][var30] + 1;
+					if (var28 > 0 && LoginHandler.anIntArrayArray543[var28 - 1][var30] == 0
 							&& (var18[var19 - 1][var20] & 0x124010e) == 0
 							&& (var18[var19 - 1][var20 + 1] & 0x1240138) == 0) {
-						Class58.anIntArray544[var32] = var14 - 1;
-						Class58.anIntArray547[var32] = var11;
+						LoginHandler.anIntArray544[var32] = var14 - 1;
+						LoginHandler.anIntArray547[var32] = var11;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 - 1][var30] = 2;
-						Class58.anIntArrayArray546[var28 - 1][var30] = var15;
+						LoginHandler.anIntArrayArray543[var28 - 1][var30] = 2;
+						LoginHandler.anIntArrayArray546[var28 - 1][var30] = var15;
 					}
 
-					if (var28 < 126 && Class58.anIntArrayArray543[var28 + 1][var30] == 0
+					if (var28 < 126 && LoginHandler.anIntArrayArray543[var28 + 1][var30] == 0
 							&& (var18[var19 + 2][var20] & 0x1240183) == 0
 							&& (var18[var19 + 2][var20 + 1] & 0x12401e0) == 0) {
-						Class58.anIntArray544[var32] = var14 + 1;
-						Class58.anIntArray547[var32] = var11;
+						LoginHandler.anIntArray544[var32] = var14 + 1;
+						LoginHandler.anIntArray547[var32] = var11;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 + 1][var30] = 8;
-						Class58.anIntArrayArray546[var28 + 1][var30] = var15;
+						LoginHandler.anIntArrayArray543[var28 + 1][var30] = 8;
+						LoginHandler.anIntArrayArray546[var28 + 1][var30] = var15;
 					}
 
-					if (var30 > 0 && Class58.anIntArrayArray543[var28][var30 - 1] == 0
+					if (var30 > 0 && LoginHandler.anIntArrayArray543[var28][var30 - 1] == 0
 							&& (var18[var19][var20 - 1] & 0x124010e) == 0
 							&& (var18[var19 + 1][var20 - 1] & 0x1240183) == 0) {
-						Class58.anIntArray544[var32] = var14;
-						Class58.anIntArray547[var32] = var11 - 1;
+						LoginHandler.anIntArray544[var32] = var14;
+						LoginHandler.anIntArray547[var32] = var11 - 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28][var30 - 1] = 1;
-						Class58.anIntArrayArray546[var28][var30 - 1] = var15;
+						LoginHandler.anIntArrayArray543[var28][var30 - 1] = 1;
+						LoginHandler.anIntArrayArray546[var28][var30 - 1] = var15;
 					}
 
-					if (var30 < 126 && Class58.anIntArrayArray543[var28][var30 + 1] == 0
+					if (var30 < 126 && LoginHandler.anIntArrayArray543[var28][var30 + 1] == 0
 							&& (var18[var19][var20 + 2] & 0x1240138) == 0
 							&& (var18[var19 + 1][var20 + 2] & 0x12401e0) == 0) {
-						Class58.anIntArray544[var32] = var14;
-						Class58.anIntArray547[var32] = var11 + 1;
+						LoginHandler.anIntArray544[var32] = var14;
+						LoginHandler.anIntArray547[var32] = var11 + 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28][var30 + 1] = 4;
-						Class58.anIntArrayArray546[var28][var30 + 1] = var15;
+						LoginHandler.anIntArrayArray543[var28][var30 + 1] = 4;
+						LoginHandler.anIntArrayArray546[var28][var30 + 1] = var15;
 					}
 
-					if (var28 > 0 && var30 > 0 && Class58.anIntArrayArray543[var28 - 1][var30 - 1] == 0
+					if (var28 > 0 && var30 > 0 && LoginHandler.anIntArrayArray543[var28 - 1][var30 - 1] == 0
 							&& (var18[var19 - 1][var20] & 0x124013e) == 0
 							&& (var18[var19 - 1][var20 - 1] & 0x124010e) == 0
 							&& (var18[var19][var20 - 1] & 0x124018f) == 0) {
-						Class58.anIntArray544[var32] = var14 - 1;
-						Class58.anIntArray547[var32] = var11 - 1;
+						LoginHandler.anIntArray544[var32] = var14 - 1;
+						LoginHandler.anIntArray547[var32] = var11 - 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 - 1][var30 - 1] = 3;
-						Class58.anIntArrayArray546[var28 - 1][var30 - 1] = var15;
+						LoginHandler.anIntArrayArray543[var28 - 1][var30 - 1] = 3;
+						LoginHandler.anIntArrayArray546[var28 - 1][var30 - 1] = var15;
 					}
 
-					if (var28 < 126 && var30 > 0 && Class58.anIntArrayArray543[var28 + 1][var30 - 1] == 0
+					if (var28 < 126 && var30 > 0 && LoginHandler.anIntArrayArray543[var28 + 1][var30 - 1] == 0
 							&& (var18[var19 + 1][var20 - 1] & 0x124018f) == 0
 							&& (var18[var19 + 2][var20 - 1] & 0x1240183) == 0
 							&& (var18[var19 + 2][var20] & 0x12401e3) == 0) {
-						Class58.anIntArray544[var32] = var14 + 1;
-						Class58.anIntArray547[var32] = var11 - 1;
+						LoginHandler.anIntArray544[var32] = var14 + 1;
+						LoginHandler.anIntArray547[var32] = var11 - 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 + 1][var30 - 1] = 9;
-						Class58.anIntArrayArray546[var28 + 1][var30 - 1] = var15;
+						LoginHandler.anIntArrayArray543[var28 + 1][var30 - 1] = 9;
+						LoginHandler.anIntArrayArray546[var28 + 1][var30 - 1] = var15;
 					}
 
-					if (var28 > 0 && var30 < 126 && Class58.anIntArrayArray543[var28 - 1][var30 + 1] == 0
+					if (var28 > 0 && var30 < 126 && LoginHandler.anIntArrayArray543[var28 - 1][var30 + 1] == 0
 							&& (var18[var19 - 1][var20 + 1] & 0x124013e) == 0
 							&& (var18[var19 - 1][var20 + 2] & 0x1240138) == 0
 							&& (var18[var19][var20 + 2] & 0x12401f8) == 0) {
-						Class58.anIntArray544[var32] = var14 - 1;
-						Class58.anIntArray547[var32] = var11 + 1;
+						LoginHandler.anIntArray544[var32] = var14 - 1;
+						LoginHandler.anIntArray547[var32] = var11 + 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 - 1][var30 + 1] = 6;
-						Class58.anIntArrayArray546[var28 - 1][var30 + 1] = var15;
+						LoginHandler.anIntArrayArray543[var28 - 1][var30 + 1] = 6;
+						LoginHandler.anIntArrayArray546[var28 - 1][var30 + 1] = var15;
 					}
 
-					if (var28 < 126 && var30 < 126 && Class58.anIntArrayArray543[var28 + 1][var30 + 1] == 0
+					if (var28 < 126 && var30 < 126 && LoginHandler.anIntArrayArray543[var28 + 1][var30 + 1] == 0
 							&& (var18[var19 + 1][var20 + 2] & 0x12401f8) == 0
 							&& (var18[var19 + 2][var20 + 2] & 0x12401e0) == 0
 							&& (var18[var19 + 2][var20 + 1] & 0x12401e3) == 0) {
-						Class58.anIntArray544[var32] = var14 + 1;
-						Class58.anIntArray547[var32] = var11 + 1;
+						LoginHandler.anIntArray544[var32] = var14 + 1;
+						LoginHandler.anIntArray547[var32] = var11 + 1;
 						var32 = var32 + 1 & 0xfff;
-						Class58.anIntArrayArray543[var28 + 1][var30 + 1] = 12;
-						Class58.anIntArrayArray546[var28 + 1][var30 + 1] = var15;
+						LoginHandler.anIntArrayArray543[var28 + 1][var30 + 1] = 12;
+						LoginHandler.anIntArrayArray546[var28 + 1][var30 + 1] = var15;
 					}
 				}
 
-				Class58.anInt545 = var14;
+				LoginHandler.anInt545 = var14;
 				Class48_Sub1.anInt1298 = var11;
 				var29 = false;
 			}
@@ -523,7 +523,7 @@ public final class Class39 {
 
 		var12 = var0 - 64;
 		var14 = var1 - 64;
-		var11 = Class58.anInt545;
+		var11 = LoginHandler.anInt545;
 		var28 = Class48_Sub1.anInt1298;
 		if (!var27) {
 			if (!var5) {
@@ -543,7 +543,7 @@ public final class Class39 {
 					int var26 = var20 - var12;
 					int var22 = var15 - var14;
 					if (var26 >= 0 && var22 >= 0 && var26 < 128 && var22 < 128
-							&& Class58.anIntArrayArray546[var26][var22] < 100) {
+							&& LoginHandler.anIntArrayArray546[var26][var22] < 100) {
 						int var24 = 0;
 						if (var20 < var32) {
 							var24 = var32 - var20;
@@ -559,9 +559,9 @@ public final class Class39 {
 						}
 
 						int var25 = var23 * var23 + var24 * var24;
-						if (var25 < var30 || var25 == var30 && Class58.anIntArrayArray546[var26][var22] < var10) {
+						if (var25 < var30 || var25 == var30 && LoginHandler.anIntArrayArray546[var26][var22] < var10) {
 							var30 = var25;
-							var10 = Class58.anIntArrayArray546[var26][var22];
+							var10 = LoginHandler.anIntArrayArray546[var26][var22];
 							var11 = var20;
 							var28 = var15;
 						}
@@ -578,16 +578,16 @@ public final class Class39 {
 			return 0;
 		} else {
 			var13 = 0;
-			Class58.anIntArray544[var13] = var11;
+			LoginHandler.anIntArray544[var13] = var11;
 			var30 = var13 + 1;
-			Class58.anIntArray547[var13] = var28;
+			LoginHandler.anIntArray547[var13] = var28;
 
-			for (var10 = var16 = Class58.anIntArrayArray543[var11 - var12][var28 - var14]; var11 != var0
-					|| var1 != var28; var10 = Class58.anIntArrayArray543[var11 - var12][var28 - var14]) {
+			for (var10 = var16 = LoginHandler.anIntArrayArray543[var11 - var12][var28 - var14]; var11 != var0
+					|| var1 != var28; var10 = LoginHandler.anIntArrayArray543[var11 - var12][var28 - var14]) {
 				if (var10 != var16) {
 					var16 = var10;
-					Class58.anIntArray544[var30] = var11;
-					Class58.anIntArray547[var30++] = var28;
+					LoginHandler.anIntArray544[var30] = var11;
+					LoginHandler.anIntArray547[var30++] = var28;
 				}
 
 				if ((var10 & 0x2) != 0) {
@@ -606,8 +606,8 @@ public final class Class39 {
 			var32 = 0;
 
 			while (var30-- > 0) {
-				var6[var32] = Class58.anIntArray544[var30];
-				var7[var32++] = Class58.anIntArray547[var30];
+				var6[var32] = LoginHandler.anIntArray544[var30];
+				var7[var32++] = LoginHandler.anIntArray547[var30];
 				if (var32 >= var6.length) {
 					break;
 				}

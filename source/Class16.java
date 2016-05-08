@@ -42,11 +42,11 @@ public class Class16 {
 	}
 
 	static void method127(GameEngine var0) {
-		if (Class6.loadedWorlds) {
+		if (PlayerLoginDetails.loadedWorlds) {
 			BoundaryDecorationStub.method107(var0);
 		} else {
-			if ((Class74.anInt627 == 1 || !ClanMate.aBool1221 && Class74.anInt627 == 4)
-					&& Class74.anInt628 >= Class6.anInt132 + 765 - 50 && Class74.anInt629 >= 453) {
+			if ((MouseInput.anInt627 == 1 || !ClanMate.aBool1221 && MouseInput.anInt627 == 4)
+					&& MouseInput.anInt628 >= PlayerLoginDetails.anInt132 + 765 - 50 && MouseInput.anInt629 >= 453) {
 				AnimationSkin.settings.muted = !AnimationSkin.settings.muted;
 				Class75.serializeSettings();
 				if (!AnimationSkin.settings.muted) {
@@ -59,19 +59,19 @@ public class Class16 {
 			}
 
 			if (Client.anInt2113 != 5) {
-				++Class6.anInt140;
+				++PlayerLoginDetails.anInt140;
 				if (Client.anInt2113 == 10 || Client.anInt2113 == 11) {
 					int var6;
-					if (Client.anInt2011 == 0) {
-						if (Class74.anInt627 == 1 || !ClanMate.aBool1221 && Class74.anInt627 == 4) {
-							var6 = Class6.anInt132 + 5;
+					if (Client.languageId == 0) {
+						if (MouseInput.anInt627 == 1 || !ClanMate.aBool1221 && MouseInput.anInt627 == 4) {
+							var6 = PlayerLoginDetails.anInt132 + 5;
 							short var9 = 463;
 							byte var14 = 100;
 							byte var3 = 35;
-							if (Class74.anInt628 >= var6 && Class74.anInt628 <= var6 + var14 && Class74.anInt629 >= var9
-									&& Class74.anInt629 <= var3 + var9) {
+							if (MouseInput.anInt628 >= var6 && MouseInput.anInt628 <= var6 + var14 && MouseInput.anInt629 >= var9
+									&& MouseInput.anInt629 <= var3 + var9) {
 								if (Class30.loadWorlds()) {
-									Class6.loadedWorlds = true;
+									PlayerLoginDetails.loadedWorlds = true;
 								}
 
 								return;
@@ -79,13 +79,13 @@ public class Class16 {
 						}
 
 						if (BuildType.aClass26_644 != null && Class30.loadWorlds()) {
-							Class6.loadedWorlds = true;
+							PlayerLoginDetails.loadedWorlds = true;
 						}
 					}
 
-					var6 = Class74.anInt627;
-					int var121 = Class74.anInt628;
-					int var131 = Class74.anInt629;
+					var6 = MouseInput.anInt627;
+					int var121 = MouseInput.anInt628;
+					int var131 = MouseInput.anInt629;
 					if (!ClanMate.aBool1221 && var6 == 4) {
 						var6 = 1;
 					}
@@ -93,8 +93,8 @@ public class Class16 {
 					short var5;
 					int var10;
 					String var141;
-					if (Class6.anInt116 == 0) {
-						var10 = Class6.anInt126 + 180 - 80;
+					if (PlayerLoginDetails.anInt116 == 0) {
+						var10 = PlayerLoginDetails.anInt126 + 180 - 80;
 						var5 = 291;
 						if (var6 == 1 && var121 >= var10 - 75 && var121 <= var10 + 75 && var131 >= var5 - 20
 								&& var131 <= var5 + 20) {
@@ -103,48 +103,48 @@ public class Class16 {
 							Class96_Sub1.method503(var141, true, "openjs", false);
 						}
 
-						var10 = Class6.anInt126 + 80 + 180;
+						var10 = PlayerLoginDetails.anInt126 + 80 + 180;
 						if (var6 == 1 && var121 >= var10 - 75 && var121 <= var10 + 75 && var131 >= var5 - 20
 								&& var131 <= var5 + 20) {
 							if ((Client.myWorldFlags & 0x4) != 0) {
 								if ((Client.myWorldFlags & 0x400) != 0) {
-									Class6.aString133 = "This is a <col=ffff00>High Risk <col=ff0000>PvP<col=ffffff> world.";
-									Class6.aString134 = "Players can attack each other almost everywhere";
-									Class6.aString135 = "and the Protect Item prayer won\'t work.";
+									PlayerLoginDetails.aString133 = "This is a <col=ffff00>High Risk <col=ff0000>PvP<col=ffffff> world.";
+									PlayerLoginDetails.aString134 = "Players can attack each other almost everywhere";
+									PlayerLoginDetails.aString135 = "and the Protect Item prayer won\'t work.";
 								} else {
-									Class6.aString133 = "This is a <col=ff0000>PvP<col=ffffff> world.";
-									Class6.aString134 = "Players can attack each other";
-									Class6.aString135 = "almost everywhere.";
+									PlayerLoginDetails.aString133 = "This is a <col=ff0000>PvP<col=ffffff> world.";
+									PlayerLoginDetails.aString134 = "Players can attack each other";
+									PlayerLoginDetails.aString135 = "almost everywhere.";
 								}
 
-								Class6.anInt116 = 1;
-								Class6.anInt115 = 0;
+								PlayerLoginDetails.anInt116 = 1;
+								PlayerLoginDetails.anInt115 = 0;
 							} else if ((Client.myWorldFlags & 0x400) != 0) {
-								Class6.aString133 = "This is a <col=ffff00>High Risk<col=ffffff> world.";
-								Class6.aString134 = "The Protect Item prayer will";
-								Class6.aString135 = "not work on this world.";
-								Class6.anInt116 = 1;
-								Class6.anInt115 = 0;
+								PlayerLoginDetails.aString133 = "This is a <col=ffff00>High Risk<col=ffffff> world.";
+								PlayerLoginDetails.aString134 = "The Protect Item prayer will";
+								PlayerLoginDetails.aString135 = "not work on this world.";
+								PlayerLoginDetails.anInt116 = 1;
+								PlayerLoginDetails.anInt115 = 0;
 							} else {
-								Class6.aString133 = "";
-								Class6.aString134 = "Enter your username/email & password.";
-								Class6.aString135 = "";
-								Class6.anInt116 = 2;
-								Class6.anInt115 = 0;
+								PlayerLoginDetails.aString133 = "";
+								PlayerLoginDetails.aString134 = "Enter your username/email & password.";
+								PlayerLoginDetails.aString135 = "";
+								PlayerLoginDetails.anInt116 = 2;
+								PlayerLoginDetails.anInt115 = 0;
 							}
 						}
-					} else if (Class6.anInt116 != 1) {
+					} else if (PlayerLoginDetails.anInt116 != 1) {
 						short var12;
-						if (Class6.anInt116 == 2) {
+						if (PlayerLoginDetails.anInt116 == 2) {
 							var12 = 231;
 							var10 = var12 + 30;
 							if (var6 == 1 && var131 >= var10 - 15 && var131 < var10) {
-								Class6.anInt115 = 0;
+								PlayerLoginDetails.anInt115 = 0;
 							}
 
 							var10 += 15;
 							if (var6 == 1 && var131 >= var10 - 15 && var131 < var10) {
-								Class6.anInt115 = 1;
+								PlayerLoginDetails.anInt115 = 1;
 							}
 
 							var10 += 15;
@@ -153,107 +153,107 @@ public class Class16 {
 								GPI.method230("Please enter your username.",
 										"If you created your account after November",
 										"2010, this will be the creation email address.");
-								Class6.anInt116 = 5;
+								PlayerLoginDetails.anInt116 = 5;
 								return;
 							}
 
-							int var13 = Class6.anInt126 + 180 - 80;
+							int var13 = PlayerLoginDetails.anInt126 + 180 - 80;
 							short var16 = 321;
 							if (var6 == 1 && var121 >= var13 - 75 && var121 <= var13 + 75 && var131 >= var16 - 20
 									&& var131 <= var16 + 20) {
-								Class6.username = Class6.username.trim();
-								if (Class6.username.length() == 0) {
+								PlayerLoginDetails.username = PlayerLoginDetails.username.trim();
+								if (PlayerLoginDetails.username.length() == 0) {
 									GPI.method230("", "Please enter your username/email address.", "");
 									return;
 								}
 
-								if (Class6.password.length() == 0) {
+								if (PlayerLoginDetails.password.length() == 0) {
 									GPI.method230("", "Please enter your password.", "");
 									return;
 								}
 
 								GPI.method230("", "Connecting to server...", "");
-								Class6.blockType = AnimationSkin.settings.trustList
-										.containsKey(Integer.valueOf(Class91.bkdrHash(Class6.username)))
+								PlayerLoginDetails.blockType = AnimationSkin.settings.trustList
+										.containsKey(Integer.valueOf(Class91.bkdrHash(PlayerLoginDetails.username)))
 												? BlockType.TRUST : BlockType.NORMAL;
 								Node_Sub8.method550(20);
 								return;
 							}
 
-							var13 = Class6.anInt126 + 80 + 180;
+							var13 = PlayerLoginDetails.anInt126 + 80 + 180;
 							if (var6 == 1 && var121 >= var13 - 75 && var121 <= var13 + 75 && var131 >= var16 - 20
 									&& var131 <= var16 + 20) {
-								Class6.anInt116 = 0;
-								Class6.username = "";
-								Class6.password = "";
+								PlayerLoginDetails.anInt116 = 0;
+								PlayerLoginDetails.username = "";
+								PlayerLoginDetails.password = "";
 								Class114.pin = 0;
 								Class37.pinText = "";
-								Class6.trust = true;
+								PlayerLoginDetails.trust = true;
 							}
 
 							while (true) {
-								while (Class58.method289(1859574103)) {
+								while (LoginHandler.method289(1859574103)) {
 									boolean var7 = false;
 
-									for (int var8 = 0; var8 < Class6.aString141.length(); var8++) {
-										if (Class2.aChar80 == Class6.aString141.charAt(var8)) {
+									for (int var8 = 0; var8 < PlayerLoginDetails.aString141.length(); var8++) {
+										if (Class2.aChar80 == PlayerLoginDetails.aString141.charAt(var8)) {
 											var7 = true;
 											break;
 										}
 									}
 
 									if (Class5.anInt112 == 13) {
-										Class6.anInt116 = 0;
-										Class6.username = "";
-										Class6.password = "";
+										PlayerLoginDetails.anInt116 = 0;
+										PlayerLoginDetails.username = "";
+										PlayerLoginDetails.password = "";
 										Class114.pin = 0;
 										Class37.pinText = "";
-										Class6.trust = true;
-									} else if (Class6.anInt115 == 0) {
-										if (Class5.anInt112 == 85 && Class6.username.length() > 0) {
-											Class6.username = Class6.username.substring(0,
-													Class6.username.length() - 1);
+										PlayerLoginDetails.trust = true;
+									} else if (PlayerLoginDetails.anInt115 == 0) {
+										if (Class5.anInt112 == 85 && PlayerLoginDetails.username.length() > 0) {
+											PlayerLoginDetails.username = PlayerLoginDetails.username.substring(0,
+													PlayerLoginDetails.username.length() - 1);
 										}
 
 										if (Class5.anInt112 == 84 || Class5.anInt112 == 80) {
-											Class6.anInt115 = 1;
+											PlayerLoginDetails.anInt115 = 1;
 										}
 
-										if (var7 && Class6.username.length() < 320) {
-											Class6.username = Class6.username + Class2.aChar80;
+										if (var7 && PlayerLoginDetails.username.length() < 320) {
+											PlayerLoginDetails.username = PlayerLoginDetails.username + Class2.aChar80;
 										}
-									} else if (Class6.anInt115 == 1) {
-										if (Class5.anInt112 == 85 && Class6.password.length() > 0) {
-											Class6.password = Class6.password.substring(0,
-													Class6.password.length() - 1);
+									} else if (PlayerLoginDetails.anInt115 == 1) {
+										if (Class5.anInt112 == 85 && PlayerLoginDetails.password.length() > 0) {
+											PlayerLoginDetails.password = PlayerLoginDetails.password.substring(0,
+													PlayerLoginDetails.password.length() - 1);
 										}
 
 										if (Class5.anInt112 == 84 || Class5.anInt112 == 80) {
-											Class6.anInt115 = 0;
+											PlayerLoginDetails.anInt115 = 0;
 										}
 
 										if (Class5.anInt112 == 84) {
-											Class6.username = Class6.username.trim();
-											if (Class6.username.length() == 0) {
+											PlayerLoginDetails.username = PlayerLoginDetails.username.trim();
+											if (PlayerLoginDetails.username.length() == 0) {
 												GPI.method230("", "Please enter your username/email address.", "");
 												return;
 											}
 
-											if (Class6.password.length() == 0) {
+											if (PlayerLoginDetails.password.length() == 0) {
 												GPI.method230("", "Please enter your password.", "");
 												return;
 											}
 
 											GPI.method230("", "Connecting to server...", "");
-											Class6.blockType = AnimationSkin.settings.trustList
-													.containsKey(Integer.valueOf(Class91.bkdrHash(Class6.username)))
+											PlayerLoginDetails.blockType = AnimationSkin.settings.trustList
+													.containsKey(Integer.valueOf(Class91.bkdrHash(PlayerLoginDetails.username)))
 															? BlockType.TRUST : BlockType.NORMAL;
 											Node_Sub8.method550(20);
 											return;
 										}
 
-										if (var7 && Class6.password.length() < 20) {
-											Class6.password = Class6.password + Class2.aChar80;
+										if (var7 && PlayerLoginDetails.password.length() < 20) {
+											PlayerLoginDetails.password = PlayerLoginDetails.password + Class2.aChar80;
 										}
 									}
 								}
@@ -263,8 +263,8 @@ public class Class16 {
 						} else {
 							boolean var15;
 							int var161;
-							if (Class6.anInt116 == 4) {
-								var10 = Class6.anInt126 + 180 - 80;
+							if (PlayerLoginDetails.anInt116 == 4) {
+								var10 = PlayerLoginDetails.anInt126 + 180 - 80;
 								var5 = 321;
 								if (var6 == 1 && var121 >= var10 - 75 && var121 <= var10 + 75 && var131 >= var5 - 20
 										&& var131 <= var5 + 20) {
@@ -276,48 +276,48 @@ public class Class16 {
 
 									Class114.pin = Integer.parseInt(Class37.pinText);
 									Class37.pinText = "";
-									Class6.blockType = Class6.trust ? BlockType.PIN_TRUST : BlockType.PIN;
+									PlayerLoginDetails.blockType = PlayerLoginDetails.trust ? BlockType.PIN_TRUST : BlockType.PIN;
 									GPI.method230("", "Connecting to server...", "");
 									Node_Sub8.method550(20);
 									return;
 								}
 
-								if (var6 == 1 && var121 >= Class6.anInt126 + 180 - 9
-										&& var121 <= Class6.anInt126 + 130 + 180 && var131 >= 263 && var131 <= 296) {
-									Class6.trust = !Class6.trust;
+								if (var6 == 1 && var121 >= PlayerLoginDetails.anInt126 + 180 - 9
+										&& var121 <= PlayerLoginDetails.anInt126 + 130 + 180 && var131 >= 263 && var131 <= 296) {
+									PlayerLoginDetails.trust = !PlayerLoginDetails.trust;
 								}
 
-								if (var6 == 1 && var121 >= Class6.anInt126 + 180 - 34
-										&& var121 <= Class6.anInt126 + 34 + 180 && var131 >= 351 && var131 <= 363) {
+								if (var6 == 1 && var121 >= PlayerLoginDetails.anInt126 + 180 - 34
+										&& var121 <= PlayerLoginDetails.anInt126 + 34 + 180 && var131 >= 351 && var131 <= 363) {
 									var141 = Class37.method212("secure", true)
 											+ "m=totp-authenticator/disableTOTPRequest";
 									Class96_Sub1.method503(var141, true, "openjs", false);
 								}
 
-								var10 = Class6.anInt126 + 180 + 80;
+								var10 = PlayerLoginDetails.anInt126 + 180 + 80;
 								if (var6 == 1 && var121 >= var10 - 75 && var121 <= var10 + 75 && var131 >= var5 - 20
 										&& var131 <= var5 + 20) {
-									Class6.anInt116 = 0;
-									Class6.username = "";
-									Class6.password = "";
+									PlayerLoginDetails.anInt116 = 0;
+									PlayerLoginDetails.username = "";
+									PlayerLoginDetails.password = "";
 									Class114.pin = 0;
 									Class37.pinText = "";
 								}
 
-								while (Class58.method289(1935265234)) {
+								while (LoginHandler.method289(1935265234)) {
 									var15 = false;
 
-									for (var161 = 0; var161 < Class6.aString128.length(); var161++) {
-										if (Class2.aChar80 == Class6.aString128.charAt(var161)) {
+									for (var161 = 0; var161 < PlayerLoginDetails.aString128.length(); var161++) {
+										if (Class2.aChar80 == PlayerLoginDetails.aString128.charAt(var161)) {
 											var15 = true;
 											break;
 										}
 									}
 
 									if (Class5.anInt112 == 13) {
-										Class6.anInt116 = 0;
-										Class6.username = "";
-										Class6.password = "";
+										PlayerLoginDetails.anInt116 = 0;
+										PlayerLoginDetails.username = "";
+										PlayerLoginDetails.password = "";
 										Class114.pin = 0;
 										Class37.pinText = "";
 									} else {
@@ -335,7 +335,7 @@ public class Class16 {
 
 											Class114.pin = Integer.parseInt(Class37.pinText);
 											Class37.pinText = "";
-											Class6.blockType = Class6.trust ? BlockType.PIN_TRUST : BlockType.PIN;
+											PlayerLoginDetails.blockType = PlayerLoginDetails.trust ? BlockType.PIN_TRUST : BlockType.PIN;
 											GPI.method230("", "Connecting to server...", "");
 											Node_Sub8.method550(20);
 											return;
@@ -346,8 +346,8 @@ public class Class16 {
 										}
 									}
 								}
-							} else if (Class6.anInt116 == 5) {
-								var10 = Class6.anInt126 + 180 - 80;
+							} else if (PlayerLoginDetails.anInt116 == 5) {
+								var10 = PlayerLoginDetails.anInt126 + 180 - 80;
 								var5 = 321;
 								if (var6 == 1 && var121 >= var10 - 75 && var121 <= var10 + 75 && var131 >= var5 - 20
 										&& var131 <= var5 + 20) {
@@ -355,38 +355,38 @@ public class Class16 {
 									return;
 								}
 
-								var10 = Class6.anInt126 + 180 + 80;
+								var10 = PlayerLoginDetails.anInt126 + 180 + 80;
 								if (var6 == 1 && var121 >= var10 - 75 && var121 <= var10 + 75 && var131 >= var5 - 20
 										&& var131 <= var5 + 20) {
-									Class6.aString133 = "";
-									Class6.aString134 = "Enter your username/email & password.";
-									Class6.aString135 = "";
-									Class6.anInt116 = 2;
-									Class6.anInt115 = 0;
-									Class6.password = "";
+									PlayerLoginDetails.aString133 = "";
+									PlayerLoginDetails.aString134 = "Enter your username/email & password.";
+									PlayerLoginDetails.aString135 = "";
+									PlayerLoginDetails.anInt116 = 2;
+									PlayerLoginDetails.anInt115 = 0;
+									PlayerLoginDetails.password = "";
 								}
 
-								while (Class58.method289(1912057832)) {
+								while (LoginHandler.method289(1912057832)) {
 									var15 = false;
 
-									for (var161 = 0; var161 < Class6.aString141.length(); var161++) {
-										if (Class2.aChar80 == Class6.aString141.charAt(var161)) {
+									for (var161 = 0; var161 < PlayerLoginDetails.aString141.length(); var161++) {
+										if (Class2.aChar80 == PlayerLoginDetails.aString141.charAt(var161)) {
 											var15 = true;
 											break;
 										}
 									}
 
 									if (Class5.anInt112 == 13) {
-										Class6.aString133 = "";
-										Class6.aString134 = "Enter your username/email & password.";
-										Class6.aString135 = "";
-										Class6.anInt116 = 2;
-										Class6.anInt115 = 0;
-										Class6.password = "";
+										PlayerLoginDetails.aString133 = "";
+										PlayerLoginDetails.aString134 = "Enter your username/email & password.";
+										PlayerLoginDetails.aString135 = "";
+										PlayerLoginDetails.anInt116 = 2;
+										PlayerLoginDetails.anInt115 = 0;
+										PlayerLoginDetails.password = "";
 									} else {
-										if (Class5.anInt112 == 85 && Class6.username.length() > 0) {
-											Class6.username = Class6.username.substring(0,
-													Class6.username.length() - 1);
+										if (Class5.anInt112 == 85 && PlayerLoginDetails.username.length() > 0) {
+											PlayerLoginDetails.username = PlayerLoginDetails.username.substring(0,
+													PlayerLoginDetails.username.length() - 1);
 										}
 
 										if (Class5.anInt112 == 84) {
@@ -394,66 +394,66 @@ public class Class16 {
 											return;
 										}
 
-										if (var15 && Class6.username.length() < 320) {
-											Class6.username = Class6.username + Class2.aChar80;
+										if (var15 && PlayerLoginDetails.username.length() < 320) {
+											PlayerLoginDetails.username = PlayerLoginDetails.username + Class2.aChar80;
 										}
 									}
 								}
-							} else if (Class6.anInt116 == 6) {
+							} else if (PlayerLoginDetails.anInt116 == 6) {
 								while (true) {
 									do {
-										if (!Class58.method289(1992890020)) {
+										if (!LoginHandler.method289(1992890020)) {
 											var12 = 321;
 											if (var6 == 1 && var131 >= var12 - 20 && var131 <= var12 + 20) {
-												Class6.aString133 = "";
-												Class6.aString134 = "Enter your username/email & password.";
-												Class6.aString135 = "";
-												Class6.anInt116 = 2;
-												Class6.anInt115 = 0;
-												Class6.password = "";
+												PlayerLoginDetails.aString133 = "";
+												PlayerLoginDetails.aString134 = "Enter your username/email & password.";
+												PlayerLoginDetails.aString135 = "";
+												PlayerLoginDetails.anInt116 = 2;
+												PlayerLoginDetails.anInt115 = 0;
+												PlayerLoginDetails.password = "";
 											}
 
 											return;
 										}
 									} while (Class5.anInt112 != 84 && Class5.anInt112 != 13);
 
-									Class6.aString133 = "";
-									Class6.aString134 = "Enter your username/email & password.";
-									Class6.aString135 = "";
-									Class6.anInt116 = 2;
-									Class6.anInt115 = 0;
-									Class6.password = "";
+									PlayerLoginDetails.aString133 = "";
+									PlayerLoginDetails.aString134 = "Enter your username/email & password.";
+									PlayerLoginDetails.aString135 = "";
+									PlayerLoginDetails.anInt116 = 2;
+									PlayerLoginDetails.anInt115 = 0;
+									PlayerLoginDetails.password = "";
 								}
 							}
 						}
 					} else {
-						while (Class58.method289(2102970548)) {
+						while (LoginHandler.method289(2102970548)) {
 							if (Class5.anInt112 == 84) {
-								Class6.aString133 = "";
-								Class6.aString134 = "Enter your username/email & password.";
-								Class6.aString135 = "";
-								Class6.anInt116 = 2;
-								Class6.anInt115 = 0;
+								PlayerLoginDetails.aString133 = "";
+								PlayerLoginDetails.aString134 = "Enter your username/email & password.";
+								PlayerLoginDetails.aString135 = "";
+								PlayerLoginDetails.anInt116 = 2;
+								PlayerLoginDetails.anInt115 = 0;
 							} else if (Class5.anInt112 == 13) {
-								Class6.anInt116 = 0;
+								PlayerLoginDetails.anInt116 = 0;
 							}
 						}
 
-						var10 = Class6.anInt126 + 180 - 80;
+						var10 = PlayerLoginDetails.anInt126 + 180 - 80;
 						var5 = 321;
 						if (var6 == 1 && var121 >= var10 - 75 && var121 <= var10 + 75 && var131 >= var5 - 20
 								&& var131 <= var5 + 20) {
-							Class6.aString133 = "";
-							Class6.aString134 = "Enter your username/email & password.";
-							Class6.aString135 = "";
-							Class6.anInt116 = 2;
-							Class6.anInt115 = 0;
+							PlayerLoginDetails.aString133 = "";
+							PlayerLoginDetails.aString134 = "Enter your username/email & password.";
+							PlayerLoginDetails.aString135 = "";
+							PlayerLoginDetails.anInt116 = 2;
+							PlayerLoginDetails.anInt115 = 0;
 						}
 
-						var10 = Class6.anInt126 + 180 + 80;
+						var10 = PlayerLoginDetails.anInt126 + 180 + 80;
 						if (var6 == 1 && var121 >= var10 - 75 && var121 <= var10 + 75 && var131 >= var5 - 20
 								&& var131 <= var5 + 20) {
-							Class6.anInt116 = 0;
+							PlayerLoginDetails.anInt116 = 0;
 						}
 					}
 				}

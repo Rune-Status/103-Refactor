@@ -41,7 +41,7 @@ public class Class35 {
 
 		Client.aBool2071 = false;
 		int var7;
-		if (Class74.anInt624 == 1 || !ClanMate.aBool1221 && Class74.anInt624 == 4) {
+		if (MouseInput.anInt624 == 1 || !ClanMate.aBool1221 && MouseInput.anInt624 == 4) {
 			if (var5 >= var1 && var5 < var1 + 16 && var6 >= var2 && var6 < var2 + 16) {
 				var0.insetY -= 4;
 				Class68.method326(var0);

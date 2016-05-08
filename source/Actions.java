@@ -3461,7 +3461,7 @@ public final class Actions {
                         Client.outBuffer.putShort(Node_Sub9.gameHeight);
                       }
 
-                      GameApplet.aBool1979 = true;
+                      GameEngine.aBool1979 = true;
                       continue;
                     }
 

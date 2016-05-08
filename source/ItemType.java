@@ -110,10 +110,10 @@ public class ItemType extends DualNode {
 	static void method810() {
 		AbstractWheelListener.removeKeyFocusListener(LandscapeTile.gameCanvas);
 		Canvas var0 = LandscapeTile.gameCanvas;
-		var0.removeMouseListener(Class74.aClass74_618);
-		var0.removeMouseMotionListener(Class74.aClass74_618);
-		var0.removeFocusListener(Class74.aClass74_618);
-		Class74.anInt626 = 0;
+		var0.removeMouseListener(MouseInput.aClass74_618);
+		var0.removeMouseMotionListener(MouseInput.aClass74_618);
+		var0.removeFocusListener(MouseInput.aClass74_618);
+		MouseInput.anInt626 = 0;
 		if (Class26.wheelListener != null) {
 			Class26.wheelListener.removeWheelListener(LandscapeTile.gameCanvas);
 		}
@@ -122,9 +122,9 @@ public class ItemType extends DualNode {
 		LandscapeTile.gameCanvas.setBackground(Color.black);
 		VarBitType.setKeyFocusListener(LandscapeTile.gameCanvas);
 		Canvas var1 = LandscapeTile.gameCanvas;
-		var1.addMouseListener(Class74.aClass74_618);
-		var1.addMouseMotionListener(Class74.aClass74_618);
-		var1.addFocusListener(Class74.aClass74_618);
+		var1.addMouseListener(MouseInput.aClass74_618);
+		var1.addMouseMotionListener(MouseInput.aClass74_618);
+		var1.addFocusListener(MouseInput.aClass74_618);
 		if (Class26.wheelListener != null) {
 			Class26.wheelListener.setWheelListener(LandscapeTile.gameCanvas);
 		}

@@ -1,4 +1,4 @@
-public final class Class117 {
+public final class InterfaceScripts {
 
 	static final int method442(Widget var0, int var1) {
 		if (var0.varpOpcodes != null && var1 < var0.varpOpcodes.length) {
@@ -158,7 +158,7 @@ public final class Class117 {
 		}
 	}
 
-	Class117() throws Throwable {
+	InterfaceScripts() throws Throwable {
 		throw new Error();
 	}
 

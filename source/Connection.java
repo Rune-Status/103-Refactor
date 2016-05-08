@@ -194,7 +194,7 @@ public final class Connection implements Runnable {
 	static final void method301() {
 		CollisionMap.method243();
 		if (SpotAnimType.aWidget1446 == null && Client.aWidget2141 == null) {
-			int var2 = Class74.anInt627;
+			int var2 = MouseInput.anInt627;
 			int var0;
 			int var1;
 			int var3;
@@ -203,8 +203,8 @@ public final class Connection implements Runnable {
 			int var8;
 			if (Client.menuOpen) {
 				if (var2 != 1 && (ClanMate.aBool1221 || var2 != 4)) {
-					var1 = Class74.anInt621;
-					var3 = Class74.anInt622;
+					var1 = MouseInput.anInt621;
+					var3 = MouseInput.anInt622;
 					if (var1 < Class7.menuX - 10 || var1 > Class7.menuX + 10 + Class4.menuWidth
 							|| var3 < InvType.menuY - 10 || var3 > Class4.menuHeight + 10 + InvType.menuY) {
 						Client.menuOpen = false;
@@ -216,8 +216,8 @@ public final class Connection implements Runnable {
 					var1 = Class7.menuX;
 					var3 = InvType.menuY;
 					var4 = Class4.menuWidth;
-					int var91 = Class74.anInt628;
-					int var101 = Class74.anInt629;
+					int var91 = MouseInput.anInt628;
+					int var101 = MouseInput.anInt629;
 					var6 = -1;
 
 					for (var0 = 0; var0 < Client.menuItemCount; var0++) {
@@ -244,7 +244,7 @@ public final class Connection implements Runnable {
 						Widget var9 = Class94.getWidget(var4);
 						var6 = Class30.getWidgetConfig(var9);
 						boolean var10 = (var6 >> 28 & 0x1) != 0;
-						if (var10 || Class58.method291(Class30.getWidgetConfig(var9))) {
+						if (var10 || LoginHandler.method291(Class30.getWidgetConfig(var9))) {
 							if (SpotAnimType.aWidget1446 != null && !Client.aBool2103 && Client.anInt2144 != 1
 									&& !Class39.method217(Client.menuItemCount - 1) && Client.menuItemCount > 0) {
 								var0 = Client.anInt2131;
@@ -261,8 +261,8 @@ public final class Connection implements Runnable {
 
 							SpotAnimType.aWidget1446 = Class94.getWidget(var4);
 							Client.anInt2100 = var3;
-							Client.anInt2131 = Class74.anInt628;
-							Client.anInt2101 = Class74.anInt629;
+							Client.anInt2131 = MouseInput.anInt628;
+							Client.anInt2101 = MouseInput.anInt629;
 							if (Client.menuItemCount > 0) {
 								var0 = Client.menuItemCount - 1;
 								CacheIndex.aClass4_1333 = new Class4();
@@ -290,7 +290,7 @@ public final class Connection implements Runnable {
 				}
 
 				if (var2 == 2 && Client.menuItemCount > 0) {
-					MilliTimer.method554(Class74.anInt628, Class74.anInt629);
+					MilliTimer.method554(MouseInput.anInt628, MouseInput.anInt629);
 				}
 			}
 		}

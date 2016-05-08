@@ -389,7 +389,6 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			shell = this;
 			Class34.gameWidth = var1;
 			Node_Sub9.gameHeight = var2;
-			Class125.gameRevision = var3;
 			CollisionMap.gameApplet = this;
 			if (IsaacRandom.taskManager == null) {
 				IsaacRandom.taskManager = new TaskManager();

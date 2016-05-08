@@ -92,41 +92,41 @@ public class Class13 {
 	static final void method117() {
 		short var0 = 256;
 		int var1;
-		if (Class6.anInt138 > 0) {
+		if (PlayerLoginDetails.anInt138 > 0) {
 			for (var1 = 0; var1 < 256; var1++) {
-				if (Class6.anInt138 > 768) {
-					Class6.anIntArray124[var1] = ByteBuf.method637(TileDecorationStub.anIntArray841[var1],
-							Class118.anIntArray803[var1], 1024 - Class6.anInt138);
-				} else if (Class6.anInt138 <= 256) {
-					Class6.anIntArray124[var1] = ByteBuf.method637(Class118.anIntArray803[var1],
-							TileDecorationStub.anIntArray841[var1], 256 - Class6.anInt138);
+				if (PlayerLoginDetails.anInt138 > 768) {
+					PlayerLoginDetails.anIntArray124[var1] = ByteBuf.method637(TileDecorationStub.anIntArray841[var1],
+							Class118.anIntArray803[var1], 1024 - PlayerLoginDetails.anInt138);
+				} else if (PlayerLoginDetails.anInt138 <= 256) {
+					PlayerLoginDetails.anIntArray124[var1] = ByteBuf.method637(Class118.anIntArray803[var1],
+							TileDecorationStub.anIntArray841[var1], 256 - PlayerLoginDetails.anInt138);
 				} else {
-					Class6.anIntArray124[var1] = Class118.anIntArray803[var1];
+					PlayerLoginDetails.anIntArray124[var1] = Class118.anIntArray803[var1];
 				}
 			}
-		} else if (Class6.anInt127 > 0) {
+		} else if (PlayerLoginDetails.anInt127 > 0) {
 			for (var1 = 0; var1 < 256; var1++) {
-				if (Class6.anInt127 > 768) {
-					Class6.anIntArray124[var1] = ByteBuf.method637(TileDecorationStub.anIntArray841[var1],
-							Class6.anIntArray125[var1], 1024 - Class6.anInt127);
-				} else if (Class6.anInt127 > 256) {
-					Class6.anIntArray124[var1] = Class6.anIntArray125[var1];
+				if (PlayerLoginDetails.anInt127 > 768) {
+					PlayerLoginDetails.anIntArray124[var1] = ByteBuf.method637(TileDecorationStub.anIntArray841[var1],
+							PlayerLoginDetails.anIntArray125[var1], 1024 - PlayerLoginDetails.anInt127);
+				} else if (PlayerLoginDetails.anInt127 > 256) {
+					PlayerLoginDetails.anIntArray124[var1] = PlayerLoginDetails.anIntArray125[var1];
 				} else {
-					Class6.anIntArray124[var1] = ByteBuf.method637(Class6.anIntArray125[var1],
-							TileDecorationStub.anIntArray841[var1], 256 - Class6.anInt127);
+					PlayerLoginDetails.anIntArray124[var1] = ByteBuf.method637(PlayerLoginDetails.anIntArray125[var1],
+							TileDecorationStub.anIntArray841[var1], 256 - PlayerLoginDetails.anInt127);
 				}
 			}
 		} else {
 			for (var1 = 0; var1 < 256; var1++) {
-				Class6.anIntArray124[var1] = TileDecorationStub.anIntArray841[var1];
+				PlayerLoginDetails.anIntArray124[var1] = TileDecorationStub.anIntArray841[var1];
 			}
 		}
 
-		RSGraphics.setDrawRegion(Class6.anInt132, 9, Class6.anInt132 + 128, var0 + 7);
-		Class56.aSprite542.method958(Class6.anInt132, 0);
+		RSGraphics.setDrawRegion(PlayerLoginDetails.anInt132, 9, PlayerLoginDetails.anInt132 + 128, var0 + 7);
+		Class56.aSprite542.method958(PlayerLoginDetails.anInt132, 0);
 		RSGraphics.noClip();
 		var1 = 0;
-		int var2 = IndexTable.imageProducer.width * 9 + Class6.anInt132;
+		int var2 = IndexTable.imageProducer.width * 9 + PlayerLoginDetails.anInt132;
 
 		int var3;
 		int var4;
@@ -137,7 +137,7 @@ public class Class13 {
 		int var9;
 		int var10;
 		for (var5 = 1; var5 < var0 - 1; var5++) {
-			var7 = Class6.anIntArray145[var5] * (var0 - var5) / var0;
+			var7 = PlayerLoginDetails.anIntArray145[var5] * (var0 - var5) / var0;
 			var4 = var7 + 22;
 			if (var4 < 0) {
 				var4 = 0;
@@ -150,7 +150,7 @@ public class Class13 {
 				if (var3 != 0) {
 					var10 = var3;
 					var8 = 256 - var3;
-					var3 = Class6.anIntArray124[var3];
+					var3 = PlayerLoginDetails.anIntArray124[var3];
 					var9 = IndexTable.imageProducer.dataArray[var2];
 					IndexTable.imageProducer.dataArray[var2++] = ((var9 & 0xff00ff) * var8 + (var3 & 0xff00ff) * var10
 							& 0xff00ff00) + ((var9 & 0xff00) * var8 + (var3 & 0xff00) * var10 & 0xff0000) >> 8;
@@ -162,14 +162,14 @@ public class Class13 {
 			var2 += IndexTable.imageProducer.width + var4 - 128;
 		}
 
-		RSGraphics.setDrawRegion(Class6.anInt132 + 765 - 128, 9, Class6.anInt132 + 765, var0 + 7);
-		Class6.aSprite137.method958(Class6.anInt132 + 382, 0);
+		RSGraphics.setDrawRegion(PlayerLoginDetails.anInt132 + 765 - 128, 9, PlayerLoginDetails.anInt132 + 765, var0 + 7);
+		PlayerLoginDetails.aSprite137.method958(PlayerLoginDetails.anInt132 + 382, 0);
 		RSGraphics.noClip();
 		var1 = 0;
-		var2 = IndexTable.imageProducer.width * 9 + 661 + Class6.anInt132;
+		var2 = IndexTable.imageProducer.width * 9 + 661 + PlayerLoginDetails.anInt132;
 
 		for (var5 = 1; var5 < var0 - 1; var5++) {
-			var7 = Class6.anIntArray145[var5] * (var0 - var5) / var0;
+			var7 = PlayerLoginDetails.anIntArray145[var5] * (var0 - var5) / var0;
 			var4 = 103 - var7;
 			var2 += var7;
 
@@ -178,7 +178,7 @@ public class Class13 {
 				if (var3 != 0) {
 					var10 = var3;
 					var8 = 256 - var3;
-					var3 = Class6.anIntArray124[var3];
+					var3 = PlayerLoginDetails.anIntArray124[var3];
 					var9 = IndexTable.imageProducer.dataArray[var2];
 					IndexTable.imageProducer.dataArray[var2++] = ((var3 & 0xff00) * var10 + (var9 & 0xff00) * var8
 							& 0xff0000) + ((var3 & 0xff00ff) * var10 + (var9 & 0xff00ff) * var8 & 0xff00ff00) >> 8;

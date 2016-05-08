@@ -234,7 +234,7 @@ public class Class96_Sub1 extends Class96 {
 	}
 
 	static void execute(ScriptEvent var0) {
-		AbstractByteBuffer.execute(var0, 200000);
+		Actions.execute(var0, 200000);
 	}
 
 	Class96_Sub1(String var1, int var2) {
@@ -301,11 +301,11 @@ public class Class96_Sub1 extends Class96 {
 				}
 
 				if (!var13.interactable || var23 < var16 && var25 < var17) {
-					var21 = Class74.anInt621;
-					var22 = Class74.anInt622;
-					if (Class74.anInt627 != 0) {
-						var21 = Class74.anInt628;
-						var22 = Class74.anInt629;
+					var21 = MouseInput.anInt621;
+					var22 = MouseInput.anInt622;
+					if (MouseInput.anInt627 != 0) {
+						var21 = MouseInput.anInt628;
+						var22 = MouseInput.anInt629;
 					}
 
 					if (var13.contentType == 1337) {
@@ -322,11 +322,11 @@ public class Class96_Sub1 extends Class96 {
 						int var46;
 						if (var13.contentType == 1338) {
 							if ((Client.anInt2200 == 0 || Client.anInt2200 == 3)
-									&& (Class74.anInt627 == 1 || !ClanMate.aBool1221 && Class74.anInt627 == 4)) {
+									&& (MouseInput.anInt627 == 1 || !ClanMate.aBool1221 && MouseInput.anInt627 == 4)) {
 								DualNode_Sub14 var401 = var13.method491(true);
 								if (var401 != null) {
-									var11 = Class74.anInt628 - var20;
-									var46 = Class74.anInt629 - var15;
+									var11 = MouseInput.anInt628 - var20;
+									var46 = MouseInput.anInt629 - var15;
 									if (var401.method823(var11, var46)) {
 										var11 -= var401.anInt1647 / 2;
 										var46 -= var401.anInt1648 / 2;
@@ -622,8 +622,8 @@ public class Class96_Sub1 extends Class96 {
 
 								InterfaceNode var39 = (InterfaceNode) Client.interfaceNodes.get((long) var13.hash);
 								if (var39 != null) {
-									if (var39.owner == 0 && Class74.anInt621 >= var23 && Class74.anInt622 >= var25
-											&& Class74.anInt621 < var16 && Class74.anInt622 < var17 && !Client.menuOpen
+									if (var39.owner == 0 && MouseInput.anInt621 >= var23 && MouseInput.anInt622 >= var25
+											&& MouseInput.anInt621 < var16 && MouseInput.anInt622 < var17 && !Client.menuOpen
 											&& !Client.aBool2024) {
 										for (ScriptEvent var431 = (ScriptEvent) Client.aDeque2164
 												.getFront(); var431 != null; var431 = (ScriptEvent) Client.aDeque2164
@@ -654,8 +654,8 @@ public class Class96_Sub1 extends Class96 {
 							if (var13.interactable) {
 								ScriptEvent var41;
 								if (!var13.aBool1201) {
-									if (var13.aBool1175 && Class74.anInt621 >= var23 && Class74.anInt622 >= var25
-											&& Class74.anInt621 < var16 && Class74.anInt622 < var17) {
+									if (var13.aBool1175 && MouseInput.anInt621 >= var23 && MouseInput.anInt622 >= var25
+											&& MouseInput.anInt621 < var16 && MouseInput.anInt622 < var17) {
 										for (var41 = (ScriptEvent) Client.aDeque2164
 												.getFront(); var41 != null; var41 = (ScriptEvent) Client.aDeque2164
 														.getNext()) {
@@ -664,8 +664,8 @@ public class Class96_Sub1 extends Class96 {
 											}
 										}
 									}
-								} else if (Class74.anInt621 >= var23 && Class74.anInt622 >= var25
-										&& Class74.anInt621 < var16 && Class74.anInt622 < var17) {
+								} else if (MouseInput.anInt621 >= var23 && MouseInput.anInt622 >= var25
+										&& MouseInput.anInt621 < var16 && MouseInput.anInt622 < var17) {
 									for (var41 = (ScriptEvent) Client.aDeque2164
 											.getFront(); var41 != null; var41 = (ScriptEvent) Client.aDeque2164
 													.getNext()) {
@@ -689,27 +689,27 @@ public class Class96_Sub1 extends Class96 {
 								}
 
 								boolean var45;
-								if (Class74.anInt621 >= var23 && Class74.anInt622 >= var25 && Class74.anInt621 < var16
-										&& Class74.anInt622 < var17) {
+								if (MouseInput.anInt621 >= var23 && MouseInput.anInt622 >= var25 && MouseInput.anInt621 < var16
+										&& MouseInput.anInt622 < var17) {
 									var45 = true;
 								} else {
 									var45 = false;
 								}
 
 								var40 = false;
-								if ((Class74.anInt624 == 1 || !ClanMate.aBool1221 && Class74.anInt624 == 4) && var45) {
+								if ((MouseInput.anInt624 == 1 || !ClanMate.aBool1221 && MouseInput.anInt624 == 4) && var45) {
 									var40 = true;
 								}
 
 								var47 = false;
-								if ((Class74.anInt627 == 1 || !ClanMate.aBool1221 && Class74.anInt627 == 4)
-										&& Class74.anInt628 >= var23 && Class74.anInt629 >= var25
-										&& Class74.anInt628 < var16 && Class74.anInt629 < var17) {
+								if ((MouseInput.anInt627 == 1 || !ClanMate.aBool1221 && MouseInput.anInt627 == 4)
+										&& MouseInput.anInt628 >= var23 && MouseInput.anInt629 >= var25
+										&& MouseInput.anInt628 < var16 && MouseInput.anInt629 < var17) {
 									var47 = true;
 								}
 
 								if (var47) {
-									Class68.method327(var13, Class74.anInt628 - var20, Class74.anInt629 - var15);
+									Class68.method327(var13, MouseInput.anInt628 - var20, MouseInput.anInt629 - var15);
 								}
 
 								if (Client.aWidget2141 != null && Client.aWidget2141 != var13 && var45) {
@@ -750,8 +750,8 @@ public class Class96_Sub1 extends Class96 {
 											var501 = new ScriptEvent();
 											var501.aBool1432 = true;
 											var501.widget = var13;
-											var501.anInt1438 = Class74.anInt628 - var20;
-											var501.anInt1431 = Class74.anInt629 - var15;
+											var501.anInt1438 = MouseInput.anInt628 - var20;
+											var501.anInt1431 = MouseInput.anInt629 - var15;
 											var501.args = var13.anObjectArray1171;
 											Client.aDeque2164.method475(var501);
 										}
@@ -761,8 +761,8 @@ public class Class96_Sub1 extends Class96 {
 										var501 = new ScriptEvent();
 										var501.aBool1432 = true;
 										var501.widget = var13;
-										var501.anInt1438 = Class74.anInt621 - var20;
-										var501.anInt1431 = Class74.anInt622 - var15;
+										var501.anInt1438 = MouseInput.anInt621 - var20;
+										var501.anInt1431 = MouseInput.anInt622 - var15;
 										var501.args = var13.anObjectArray1172;
 										Client.aDeque2164.method475(var501);
 									}
@@ -773,8 +773,8 @@ public class Class96_Sub1 extends Class96 {
 											var501 = new ScriptEvent();
 											var501.aBool1432 = true;
 											var501.widget = var13;
-											var501.anInt1438 = Class74.anInt621 - var20;
-											var501.anInt1431 = Class74.anInt622 - var15;
+											var501.anInt1438 = MouseInput.anInt621 - var20;
+											var501.anInt1431 = MouseInput.anInt622 - var15;
 											var501.args = var13.anObjectArray1173;
 											Client.aDeque2166.method475(var501);
 										}
@@ -784,8 +784,8 @@ public class Class96_Sub1 extends Class96 {
 										var501 = new ScriptEvent();
 										var501.aBool1432 = true;
 										var501.widget = var13;
-										var501.anInt1438 = Class74.anInt621 - var20;
-										var501.anInt1431 = Class74.anInt622 - var15;
+										var501.anInt1438 = MouseInput.anInt621 - var20;
+										var501.anInt1431 = MouseInput.anInt622 - var15;
 										var501.args = var13.anObjectArray1174;
 										Client.aDeque2164.method475(var501);
 									}
@@ -796,8 +796,8 @@ public class Class96_Sub1 extends Class96 {
 											var501 = new ScriptEvent();
 											var501.aBool1432 = true;
 											var501.widget = var13;
-											var501.anInt1438 = Class74.anInt621 - var20;
-											var501.anInt1431 = Class74.anInt622 - var15;
+											var501.anInt1438 = MouseInput.anInt621 - var20;
+											var501.anInt1431 = MouseInput.anInt622 - var15;
 											var501.args = var13.mouseEnterListener;
 											Client.aDeque2164.method475(var501);
 										}
@@ -807,8 +807,8 @@ public class Class96_Sub1 extends Class96 {
 										var501 = new ScriptEvent();
 										var501.aBool1432 = true;
 										var501.widget = var13;
-										var501.anInt1438 = Class74.anInt621 - var20;
-										var501.anInt1431 = Class74.anInt622 - var15;
+										var501.anInt1438 = MouseInput.anInt621 - var20;
+										var501.anInt1431 = MouseInput.anInt622 - var15;
 										var501.args = var13.mouseHoverListener;
 										Client.aDeque2164.method475(var501);
 									}
@@ -819,8 +819,8 @@ public class Class96_Sub1 extends Class96 {
 											var501 = new ScriptEvent();
 											var501.aBool1432 = true;
 											var501.widget = var13;
-											var501.anInt1438 = Class74.anInt621 - var20;
-											var501.anInt1431 = Class74.anInt622 - var15;
+											var501.anInt1438 = MouseInput.anInt621 - var20;
+											var501.anInt1431 = MouseInput.anInt622 - var15;
 											var501.args = var13.mouseExitListener;
 											Client.aDeque2166.method475(var501);
 										}
@@ -968,9 +968,9 @@ public class Class96_Sub1 extends Class96 {
 
 							if (!var13.interactable && Client.aWidget2141 == null && SpotAnimType.aWidget1446 == null
 									&& !Client.menuOpen) {
-								if ((var13.anInt1153 >= 0 || var13.anInt1140 != 0) && Class74.anInt621 >= var23
-										&& Class74.anInt622 >= var25 && Class74.anInt621 < var16
-										&& Class74.anInt622 < var17) {
+								if ((var13.anInt1153 >= 0 || var13.anInt1140 != 0) && MouseInput.anInt621 >= var23
+										&& MouseInput.anInt622 >= var25 && MouseInput.anInt621 < var16
+										&& MouseInput.anInt622 < var17) {
 									if (var13.anInt1153 >= 0) {
 										ObjectType.aWidget1719 = var0[var13.anInt1153];
 									} else {
@@ -978,14 +978,14 @@ public class Class96_Sub1 extends Class96 {
 									}
 								}
 
-								if (var13.type == 8 && Class74.anInt621 >= var23 && Class74.anInt622 >= var25
-										&& Class74.anInt621 < var16 && Class74.anInt622 < var17) {
+								if (var13.type == 8 && MouseInput.anInt621 >= var23 && MouseInput.anInt622 >= var25
+										&& MouseInput.anInt621 < var16 && MouseInput.anInt622 < var17) {
 									ScriptEvent.aWidget1437 = var13;
 								}
 
 								if (var13.viewportHeight > var13.height * 1227800423) {
 									Class35.method205(var13, var13.width + var20, var15, var13.height * 1227800423,
-											var13.viewportHeight, Class74.anInt621, Class74.anInt622);
+											var13.viewportHeight, MouseInput.anInt621, MouseInput.anInt622);
 								}
 							}
 						}

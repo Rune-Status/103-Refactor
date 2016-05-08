@@ -23,7 +23,7 @@ public class Class22 {
 			int var1 = Client.anInt2201;
 			Class110.anInt782 = 1;
 			Class110.aClass87_783 = var2;
-			Class98.musicId = var0;
+			MusicIndex.musicId = var0;
 			Class111.anInt788 = 0;
 			Class110.anInt787 = var1;
 			Class44.aBool464 = false;

@@ -126,7 +126,7 @@ final class Class37 implements Comparator {
 		}
 
 		String domain = "runescape.com";
-		return protocol + subDomain + "." + domain + "/l=" + Client.anInt2011 + "/a=" + InterfaceNode.anInt1399 + var4
+		return protocol + subDomain + "." + domain + "/l=" + Client.languageId + "/a=" + InterfaceNode.anInt1399 + var4
 				+ "/";
 	}
 

@@ -1,4 +1,4 @@
-public class Class6 {
+public class PlayerLoginDetails {
 
 	static Sprite titlebuttonSprite;
 	static Sprite[] runesSprite;
@@ -35,7 +35,7 @@ public class Class6 {
 	static int anInt144;
 	static int[] anIntArray145;
 
-	Class6() throws Throwable {
+	PlayerLoginDetails() throws Throwable {
 		throw new Error();
 	}
 

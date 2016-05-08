@@ -71,7 +71,7 @@ public class ClientSettings {
 					ScriptEvent var1 = new ScriptEvent();
 					var1.widget = var2;
 					var1.args = var2.anObjectArray1170;
-					AbstractByteBuffer.execute(var1, 2000000);
+					Actions.execute(var1, 2000000);
 				}
 			}
 		}
@@ -114,12 +114,12 @@ public class ClientSettings {
 
 	static final void method164(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
 		if (IdentKitType.loadWidget(var0)) {
-			Class6.aWidgetArray146 = null;
+			PlayerLoginDetails.aWidgetArray146 = null;
 			Class53.method272(Widget.interfaces[var0], -1, var1, var2, var3, var4, var5, var6, var7);
-			if (Class6.aWidgetArray146 != null) {
-				Class53.method272(Class6.aWidgetArray146, -1412584499, var1, var2, var3, var4, BoundaryStub.anInt276,
+			if (PlayerLoginDetails.aWidgetArray146 != null) {
+				Class53.method272(PlayerLoginDetails.aWidgetArray146, -1412584499, var1, var2, var3, var4, BoundaryStub.anInt276,
 						Class75.anInt637, var7);
-				Class6.aWidgetArray146 = null;
+				PlayerLoginDetails.aWidgetArray146 = null;
 			}
 		} else if (var7 != -1) {
 			Client.aBoolArray2118[var7] = true;

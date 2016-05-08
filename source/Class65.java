@@ -32,7 +32,7 @@ public class Class65 {
 	public static void method320(int var0) {
 		Class110.anInt782 = 1;
 		Class110.aClass87_783 = null;
-		Class98.musicId = -1;
+		MusicIndex.musicId = -1;
 		Class111.anInt788 = -1;
 		Class110.anInt787 = 0;
 		Class44.aBool464 = false;

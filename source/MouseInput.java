@@ -5,7 +5,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.IOException;
 
-public class Class74 implements MouseListener, MouseMotionListener, FocusListener {
+public class MouseInput implements MouseListener, MouseMotionListener, FocusListener {
 
 	public static volatile int anInt617 = 0;
 	public static volatile int anInt626 = 0;
@@ -15,7 +15,7 @@ public class Class74 implements MouseListener, MouseMotionListener, FocusListene
 	public static volatile int anInt620 = 0;
 	public static volatile long aLong616 = 0L;
 	public static volatile int anInt623 = 0;
-	public static Class74 aClass74_618 = new Class74();
+	public static MouseInput aClass74_618 = new MouseInput();
 	public static int anInt621 = 0;
 	public static int anInt622 = 0;
 	public static int anInt624 = 0;

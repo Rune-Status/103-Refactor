@@ -351,16 +351,16 @@ public final class Node_Sub8 extends Node {
 				} else if (var0 == 11) {
 					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex, AnimationSkin.spritesIndex,
 							false, 4);
-				} else if (Class6.aBool142) {
-					Class6.titleboxSprite = null;
-					Class6.titlebuttonSprite = null;
-					Class6.runesSprite = null;
+				} else if (PlayerLoginDetails.aBool142) {
+					PlayerLoginDetails.titleboxSprite = null;
+					PlayerLoginDetails.titlebuttonSprite = null;
+					PlayerLoginDetails.runesSprite = null;
 					Class56.aSprite542 = null;
-					Class6.aSprite137 = null;
+					PlayerLoginDetails.aSprite137 = null;
 					IgnoredPlayer.logoSprite = null;
 					FriendedPlayer.titlemuteSprite = null;
-					Class6.radioButtons0Sprite = null;
-					Class6.radioButtons2Sprite = null;
+					PlayerLoginDetails.radioButtons0Sprite = null;
+					PlayerLoginDetails.radioButtons2Sprite = null;
 					Class93.aSpriteArray733 = null;
 					Class2.aDualNode_Sub13_Sub2Array78 = null;
 					Class32.aDualNode_Sub13_Sub2Array357 = null;
@@ -368,15 +368,15 @@ public final class Node_Sub8 extends Node {
 					GroundItem.aDualNode_Sub13_Sub2_1841 = null;
 					TileDecorationStub.anIntArray841 = null;
 					Class118.anIntArray803 = null;
-					Class6.anIntArray125 = null;
-					Class6.anIntArray124 = null;
+					PlayerLoginDetails.anIntArray125 = null;
+					PlayerLoginDetails.anIntArray124 = null;
 					Class33.anIntArray365 = null;
 					Permission.anIntArray605 = null;
 					Class122.anIntArray818 = null;
 					Class4.anIntArray110 = null;
 					Class65.method320(2);
 					ScriptEvent.sendConInfo(true);
-					Class6.aBool142 = false;
+					PlayerLoginDetails.aBool142 = false;
 				}
 			} else {
 				DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex, AnimationSkin.spritesIndex,
@@ -399,7 +399,7 @@ public final class Node_Sub8 extends Node {
 					}
 
 					String var6 = var0.substring(0, var7);
-					int var4 = Class117.method442(var1, var2 - 1);
+					int var4 = InterfaceScripts.method442(var1, var2 - 1);
 					String var5;
 					if (var4 >= 999999999) {
 						var5 = "*";

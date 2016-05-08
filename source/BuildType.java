@@ -28,7 +28,7 @@ public class BuildType {
 		Client.anInt2075 = 0;
 		Client.menuItemCount = 0;
 		Client.menuOpen = false;
-		Class74.anInt617 = 0;
+		MouseInput.anInt617 = 0;
 		Node_Sub9.method564();
 		Client.itemSelectionStatus = 0;
 		Client.spellSelected = false;

@@ -9,7 +9,7 @@ public class Class69 {
 	public static void method328(AbstractIndex var0, int var1, int var2, int var3, boolean var4) {
 		Class110.anInt782 = 1;
 		Class110.aClass87_783 = var0;
-		Class98.musicId = var1;
+		MusicIndex.musicId = var1;
 		Class111.anInt788 = var2;
 		Class110.anInt787 = var3;
 		Class44.aBool464 = var4;

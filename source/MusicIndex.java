@@ -1,8 +1,8 @@
-public class Class98 {
+public class MusicIndex {
 
 	public static int musicId;
 
-	Class98() throws Throwable {
+	MusicIndex() throws Throwable {
 		throw new Error();
 	}
 

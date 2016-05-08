@@ -101,28 +101,28 @@ public class DynamicObject extends Entity {
 	}
 
 	static void method1022(Component var0, AbstractIndex binary, AbstractIndex sprites, boolean var3, int var4) {
-		if (Class6.aBool142) {
+		if (PlayerLoginDetails.aBool142) {
 			if (var4 == 4) {
-				Class6.anInt116 = 4;
+				PlayerLoginDetails.anInt116 = 4;
 			}
 		} else {
-			Class6.anInt116 = var4;
+			PlayerLoginDetails.anInt116 = var4;
 			RSGraphics.reset();
 			byte[] var6 = binary.method389("title.jpg", "");
 			Class56.aSprite542 = new Picture(var6, var0);
-			Class6.aSprite137 = Class56.aSprite542.method937();
+			PlayerLoginDetails.aSprite137 = Class56.aSprite542.method937();
 			if ((Client.myWorldFlags & 0x20000000) != 0) {
 				IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo_deadman_mode", "");
 			} else {
 				IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo", "");
 			}
 
-			Class6.titleboxSprite = SequenceType.getSprite(sprites, "titlebox", "");
-			Class6.titlebuttonSprite = SequenceType.getSprite(sprites, "titlebutton", "");
-			Class6.runesSprite = ObjectType.method868(sprites, "runes", "");
+			PlayerLoginDetails.titleboxSprite = SequenceType.getSprite(sprites, "titlebox", "");
+			PlayerLoginDetails.titlebuttonSprite = SequenceType.getSprite(sprites, "titlebutton", "");
+			PlayerLoginDetails.runesSprite = ObjectType.method868(sprites, "runes", "");
 			FriendedPlayer.titlemuteSprite = ObjectType.method868(sprites, "title_mute", "");
-			Class6.radioButtons0Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,0", "");
-			Class6.radioButtons2Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,2", "");
+			PlayerLoginDetails.radioButtons0Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,0", "");
+			PlayerLoginDetails.radioButtons2Sprite = SequenceType.getSprite(sprites, "options_radio_buttons,2", "");
 			TileDecorationStub.anIntArray841 = new int[256];
 
 			int var5;
@@ -160,39 +160,39 @@ public class DynamicObject extends Entity {
 				Class118.anIntArray803[var5 + 192] = 16777215;
 			}
 
-			Class6.anIntArray125 = new int[256];
+			PlayerLoginDetails.anIntArray125 = new int[256];
 
 			for (var5 = 0; var5 < 64; var5++) {
-				Class6.anIntArray125[var5] = var5 * 4;
+				PlayerLoginDetails.anIntArray125[var5] = var5 * 4;
 			}
 
 			for (var5 = 0; var5 < 64; var5++) {
-				Class6.anIntArray125[var5 + 64] = var5 * 262144 + 255;
+				PlayerLoginDetails.anIntArray125[var5 + 64] = var5 * 262144 + 255;
 			}
 
 			for (var5 = 0; var5 < 64; var5++) {
-				Class6.anIntArray125[var5 + 128] = var5 * 1024 + 16711935;
+				PlayerLoginDetails.anIntArray125[var5 + 128] = var5 * 1024 + 16711935;
 			}
 
 			for (var5 = 0; var5 < 64; var5++) {
-				Class6.anIntArray125[var5 + 192] = 16777215;
+				PlayerLoginDetails.anIntArray125[var5 + 192] = 16777215;
 			}
 
-			Class6.anIntArray124 = new int[256];
+			PlayerLoginDetails.anIntArray124 = new int[256];
 			Class33.anIntArray365 = new int['\u8000'];
 			Permission.anIntArray605 = new int['\u8000'];
 			VarBitType.method877((Sprite) null);
 			Class122.anIntArray818 = new int['\u8000'];
 			Class4.anIntArray110 = new int['\u8000'];
 			if (var3) {
-				Class6.username = "";
-				Class6.password = "";
+				PlayerLoginDetails.username = "";
+				PlayerLoginDetails.password = "";
 			}
 
 			Class114.pin = 0;
 			Class37.pinText = "";
-			Class6.trust = true;
-			Class6.loadedWorlds = false;
+			PlayerLoginDetails.trust = true;
+			PlayerLoginDetails.loadedWorlds = false;
 			if (!AnimationSkin.settings.muted) {
 				Class91.method402(2, Class2.midiTrack1Index, "scape main", "", 255, false);
 			} else {
@@ -200,12 +200,12 @@ public class DynamicObject extends Entity {
 			}
 
 			ScriptEvent.sendConInfo(false);
-			Class6.aBool142 = true;
-			Class6.anInt132 = (Class34.gameWidth - Client.anInt2233) / 2;
-			Class6.anInt126 = Class6.anInt132 + 202;
-			Class56.aSprite542.method958(Class6.anInt132, 0);
-			Class6.aSprite137.method958(Class6.anInt132 + 382, 0);
-			IgnoredPlayer.logoSprite.method929(Class6.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
+			PlayerLoginDetails.aBool142 = true;
+			PlayerLoginDetails.anInt132 = (Class34.gameWidth - Client.anInt2233) / 2;
+			PlayerLoginDetails.anInt126 = PlayerLoginDetails.anInt132 + 202;
+			Class56.aSprite542.method958(PlayerLoginDetails.anInt132, 0);
+			PlayerLoginDetails.aSprite137.method958(PlayerLoginDetails.anInt132 + 382, 0);
+			IgnoredPlayer.logoSprite.method929(PlayerLoginDetails.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 		}
 
 	}

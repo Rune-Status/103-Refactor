@@ -53,7 +53,7 @@ public final class Class91 {
 		int var7 = var1.getChild(var6, var3);
 		Class110.anInt782 = 1;
 		Class110.aClass87_783 = var1;
-		Class98.musicId = var6;
+		MusicIndex.musicId = var6;
 		Class111.anInt788 = var7;
 		Class110.anInt787 = var4;
 		Class44.aBool464 = var5;

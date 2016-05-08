@@ -19,8 +19,8 @@ public final class Class41 {
 	}
 
 	static void method224() {
-		Class6.username = Class6.username.trim();
-		if (Class6.username.length() == 0) {
+		PlayerLoginDetails.username = PlayerLoginDetails.username.trim();
+		if (PlayerLoginDetails.username.length() == 0) {
 			GPI.method230("Please enter your username.", "If you created your account after November",
 					"2010, this will be the creation email address.");
 		} else {
@@ -29,7 +29,7 @@ public final class Class41 {
 			if (var0 == 0L) {
 				var2 = 5;
 			} else {
-				String var3 = Class6.username;
+				String var3 = PlayerLoginDetails.username;
 				Random var4 = new Random();
 				ByteBuf var5 = new ByteBuf(128);
 				ByteBuf var6 = new ByteBuf(128);
@@ -110,7 +110,7 @@ public final class Class41 {
 					var13.setConnectTimeout(5000);
 					OutputStreamWriter var14 = new OutputStreamWriter(var13.getOutputStream());
 					var14.write(
-							"data2=" + Class58.method288(var11) + "&dest=" + Class58.method288("passwordchoice.ws"));
+							"data2=" + LoginHandler.method288(var11) + "&dest=" + LoginHandler.method288("passwordchoice.ws"));
 					var14.flush();
 					InputStream var15 = var13.getInputStream();
 					var261 = new ByteBuf(new byte[1000]);
@@ -180,7 +180,7 @@ public final class Class41 {
 			switch (var2) {
 			case 2:
 				GPI.method230("", "Page has opened in a new window.", "(Please check your popup blocker.)");
-				Class6.anInt116 = 6;
+				PlayerLoginDetails.anInt116 = 6;
 				break;
 			case 3:
 				GPI.method230("", "Error connecting to server.", "");

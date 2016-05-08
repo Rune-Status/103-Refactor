@@ -19,7 +19,7 @@ public class RuntimeException_Sub1 extends RuntimeException {
 			return false;
 		} else {
 			for (int var1 = 0; var1 < var0.anIntArray1191.length; var1++) {
-				int var2 = Class117.method442(var0, var1);
+				int var2 = InterfaceScripts.method442(var0, var1);
 				int var3 = var0.anIntArray1168[var1];
 				if (var0.anIntArray1191[var1] == 2) {
 					if (var2 >= var3) {

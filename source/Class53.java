@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class LoginHandler {
+public class Class53 {
 
 	static String[] aStringArray537 = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 	static String[][] aStringArrayArray538 = new String[][] {
@@ -9,7 +9,7 @@ public class LoginHandler {
 			{ "Jan", "Feb", "M\u00c3\u00a4r", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez" } };
 	static Calendar aCalendar536;
 
-	LoginHandler() throws Throwable {
+	Class53() throws Throwable {
 		throw new Error();
 	}
 

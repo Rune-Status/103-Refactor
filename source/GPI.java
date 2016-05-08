@@ -20,9 +20,9 @@ public class GPI {
 	}
 
 	static void method230(String var0, String var1, String var2) {
-		Class6.aString133 = var0;
-		Class6.aString134 = var1;
-		Class6.aString135 = var2;
+		PlayerLoginDetails.aString133 = var0;
+		PlayerLoginDetails.aString134 = var1;
+		PlayerLoginDetails.aString135 = var2;
 	}
 
 }

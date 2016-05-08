@@ -1,4 +1,4 @@
-public class Class100 {
+public class PacketConstants {
 
 	public static int[] frameSizes = new int[] { 8, -2, 0, 0, 28, 14, 0, 0, 0, -1, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0,
 			0, 0, 0, 4, 0, 0, 0, 4, 0, -2, 0, 0, 0, -2, 3, 0, 0, 0, 0, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -9,7 +9,7 @@ public class Class100 {
 			0, 12, 0, 0, -2, 0, 3, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0, -2, 1, 20, 0, 7, 0, 0, 0, 0, 6, 0, 0, 0,
 			0, 0, 6, 0, 0, 0, 0, -2, 6, 0, -2, 0, 0, -2, 0, 4, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-	Class100() throws Throwable {
+	PacketConstants() throws Throwable {
 		throw new Error();
 	}
 

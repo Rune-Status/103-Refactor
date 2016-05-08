@@ -158,7 +158,7 @@ public final class KeyFocusListener implements KeyListener, FocusListener {
 			int var4 = Client.menuArg0[var0];
 			String var5 = Client.menuActions[var0];
 			String var6 = Client.menuNouns[var0];
-			ClassVerifier.method583(var1, var2, var3, var4, var5, var6, Class74.anInt628, Class74.anInt629);
+			ClassVerifier.method583(var1, var2, var3, var4, var5, var6, MouseInput.anInt628, MouseInput.anInt629);
 		}
 
 	}

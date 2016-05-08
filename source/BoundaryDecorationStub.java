@@ -60,75 +60,75 @@ public final class BoundaryDecorationStub {
 	}
 
 	static void method107(GameEngine var0) {
-		if (Class74.anInt627 == 1 || !ClanMate.aBool1221 && Class74.anInt627 == 4) {
-			int var2 = Class6.anInt132 + 280;
-			if (Class74.anInt628 >= var2 && Class74.anInt628 <= var2 + 14 && Class74.anInt629 >= 4
-					&& Class74.anInt629 <= 18) {
+		if (MouseInput.anInt627 == 1 || !ClanMate.aBool1221 && MouseInput.anInt627 == 4) {
+			int var2 = PlayerLoginDetails.anInt132 + 280;
+			if (MouseInput.anInt628 >= var2 && MouseInput.anInt628 <= var2 + 14 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt629 <= 18) {
 				UnderlayType.method704(0, 0);
 				return;
 			}
 
-			if (Class74.anInt628 >= var2 + 15 && Class74.anInt628 <= var2 + 80 && Class74.anInt629 >= 4
-					&& Class74.anInt629 <= 18) {
+			if (MouseInput.anInt628 >= var2 + 15 && MouseInput.anInt628 <= var2 + 80 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt629 <= 18) {
 				UnderlayType.method704(0, 1);
 				return;
 			}
 
-			int var3 = Class6.anInt132 + 390;
-			if (Class74.anInt628 >= var3 && Class74.anInt628 <= var3 + 14 && Class74.anInt629 >= 4
-					&& Class74.anInt629 <= 18) {
+			int var3 = PlayerLoginDetails.anInt132 + 390;
+			if (MouseInput.anInt628 >= var3 && MouseInput.anInt628 <= var3 + 14 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt629 <= 18) {
 				UnderlayType.method704(1, 0);
 				return;
 			}
 
-			if (Class74.anInt628 >= var3 + 15 && Class74.anInt628 <= var3 + 80 && Class74.anInt629 >= 4
-					&& Class74.anInt629 <= 18) {
+			if (MouseInput.anInt628 >= var3 + 15 && MouseInput.anInt628 <= var3 + 80 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt629 <= 18) {
 				UnderlayType.method704(1, 1);
 				return;
 			}
 
-			int var1 = Class6.anInt132 + 500;
-			if (Class74.anInt628 >= var1 && Class74.anInt628 <= var1 + 14 && Class74.anInt629 >= 4
-					&& Class74.anInt629 <= 18) {
+			int var1 = PlayerLoginDetails.anInt132 + 500;
+			if (MouseInput.anInt628 >= var1 && MouseInput.anInt628 <= var1 + 14 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt629 <= 18) {
 				UnderlayType.method704(2, 0);
 				return;
 			}
 
-			if (Class74.anInt628 >= var1 + 15 && Class74.anInt628 <= var1 + 80 && Class74.anInt629 >= 4
-					&& Class74.anInt629 <= 18) {
+			if (MouseInput.anInt628 >= var1 + 15 && MouseInput.anInt628 <= var1 + 80 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt629 <= 18) {
 				UnderlayType.method704(2, 1);
 				return;
 			}
 
-			int var4 = Class6.anInt132 + 610;
-			if (Class74.anInt628 >= var4 && Class74.anInt628 <= var4 + 14 && Class74.anInt629 >= 4
-					&& Class74.anInt629 <= 18) {
+			int var4 = PlayerLoginDetails.anInt132 + 610;
+			if (MouseInput.anInt628 >= var4 && MouseInput.anInt628 <= var4 + 14 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt629 <= 18) {
 				UnderlayType.method704(3, 0);
 				return;
 			}
 
-			if (Class74.anInt628 >= var4 + 15 && Class74.anInt628 <= var4 + 80 && Class74.anInt629 >= 4
-					&& Class74.anInt629 <= 18) {
+			if (MouseInput.anInt628 >= var4 + 15 && MouseInput.anInt628 <= var4 + 80 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt629 <= 18) {
 				UnderlayType.method704(3, 1);
 				return;
 			}
 
-			if (Class74.anInt628 >= Class6.anInt132 + 708 && Class74.anInt629 >= 4
-					&& Class74.anInt628 <= Class6.anInt132 + 708 + 50 && Class74.anInt629 <= 20) {
-				Class6.loadedWorlds = false;
-				Class56.aSprite542.method958(Class6.anInt132, 0);
-				Class6.aSprite137.method958(Class6.anInt132 + 382, 0);
-				IgnoredPlayer.logoSprite.method929(Class6.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
+			if (MouseInput.anInt628 >= PlayerLoginDetails.anInt132 + 708 && MouseInput.anInt629 >= 4
+					&& MouseInput.anInt628 <= PlayerLoginDetails.anInt132 + 708 + 50 && MouseInput.anInt629 <= 20) {
+				PlayerLoginDetails.loadedWorlds = false;
+				Class56.aSprite542.method958(PlayerLoginDetails.anInt132, 0);
+				PlayerLoginDetails.aSprite137.method958(PlayerLoginDetails.anInt132 + 382, 0);
+				IgnoredPlayer.logoSprite.method929(PlayerLoginDetails.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 				return;
 			}
 
-			if (Class6.anInt144 != -1) {
-				World var5 = World.worlds[Class6.anInt144];
+			if (PlayerLoginDetails.anInt144 != -1) {
+				World var5 = World.worlds[PlayerLoginDetails.anInt144];
 				Class88.setWorld(var5);
-				Class6.loadedWorlds = false;
-				Class56.aSprite542.method958(Class6.anInt132, 0);
-				Class6.aSprite137.method958(Class6.anInt132 + 382, 0);
-				IgnoredPlayer.logoSprite.method929(Class6.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
+				PlayerLoginDetails.loadedWorlds = false;
+				Class56.aSprite542.method958(PlayerLoginDetails.anInt132, 0);
+				PlayerLoginDetails.aSprite137.method958(PlayerLoginDetails.anInt132 + 382, 0);
+				IgnoredPlayer.logoSprite.method929(PlayerLoginDetails.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 				return;
 			}
 		}
@@ -145,8 +145,8 @@ public final class BoundaryDecorationStub {
 			}
 
 			RuneScript.minimapSprite = new Picture(512, 512);
-			Class6.bootMessage = "Starting game engine...";
-			Class6.anInt122 = 5;
+			PlayerLoginDetails.bootMessage = "Starting game engine...";
+			PlayerLoginDetails.anInt122 = 5;
 			Client.bootState = 20;
 		} else {
 			int var1;
@@ -164,8 +164,8 @@ public final class BoundaryDecorationStub {
 				}
 
 				Landscape.method51(var11, 500, 800, 512, 334);
-				Class6.bootMessage = "Prepared visibility map";
-				Class6.anInt122 = 10;
+				PlayerLoginDetails.bootMessage = "Prepared visibility map";
+				PlayerLoginDetails.anInt122 = 10;
 				Client.bootState = 30;
 			} else if (Client.bootState == 30) {
 				Class34.skeletonsIndex = NpcType.openCacheIndex(0, false, true, true);
@@ -184,8 +184,8 @@ public final class BoundaryDecorationStub {
 				Class2.fontMetricsIndex = NpcType.openCacheIndex(13, true, false, true);
 				Class26.vorbisIndex = NpcType.openCacheIndex(14, false, true, false);
 				Class59.midiInstrumentsIndex = NpcType.openCacheIndex(15, false, true, true);
-				Class6.bootMessage = "Connecting to update server";
-				Class6.anInt122 = 20;
+				PlayerLoginDetails.bootMessage = "Connecting to update server";
+				PlayerLoginDetails.anInt122 = 20;
 				Client.bootState = 40;
 			} else if (Client.bootState == 40) {
 				var0 = Class34.skeletonsIndex.percentage() * 4 / 100;
@@ -206,13 +206,13 @@ public final class BoundaryDecorationStub {
 				var0 += Class59.midiInstrumentsIndex.percentage() * 2 / 100;
 				if (var0 != 100) {
 					if (var0 != 0) {
-						Class6.bootMessage = "Checking for updates - " + var0 + "%";
+						PlayerLoginDetails.bootMessage = "Checking for updates - " + var0 + "%";
 					}
 
-					Class6.anInt122 = 30;
+					PlayerLoginDetails.anInt122 = 30;
 				} else {
-					Class6.bootMessage = "Loaded update list";
-					Class6.anInt122 = 30;
+					PlayerLoginDetails.bootMessage = "Loaded update list";
+					PlayerLoginDetails.anInt122 = 30;
 					Client.bootState = 45;
 				}
 			} else {
@@ -239,8 +239,8 @@ public final class BoundaryDecorationStub {
 					FriendedPlayer.aNode_Sub4_Sub1_740 = new Node_Sub4_Sub1();
 					Class30.aClass8_341.method91(FriendedPlayer.aNode_Sub4_Sub1_740);
 					Class59.aClass16_548 = new Class16(22050, AbstractSoundSystem.sampleRate);
-					Class6.bootMessage = "Prepared sound engine";
-					Class6.anInt122 = 35;
+					PlayerLoginDetails.bootMessage = "Prepared sound engine";
+					PlayerLoginDetails.anInt122 = 35;
 					Client.bootState = 50;
 				} else if (Client.bootState == 50) {
 					var0 = 0;
@@ -266,30 +266,30 @@ public final class BoundaryDecorationStub {
 					}
 
 					if (var0 < 3) {
-						Class6.bootMessage = "Loading fonts - " + var0 * 100 / 3 + "%";
-						Class6.anInt122 = 40;
+						PlayerLoginDetails.bootMessage = "Loading fonts - " + var0 * 100 / 3 + "%";
+						PlayerLoginDetails.anInt122 = 40;
 					} else {
 						IdentKitType.aNode_Sub10_1467 = new Node_Sub10(true);
-						Class6.bootMessage = "Loaded fonts";
-						Class6.anInt122 = 40;
+						PlayerLoginDetails.bootMessage = "Loaded fonts";
+						PlayerLoginDetails.anInt122 = 40;
 						Client.bootState = 60;
 					}
 				} else if (Client.bootState == 60) {
 					var0 = Node_Sub8.method548(Class40.binaryIndex, AnimationSkin.spritesIndex);
 					var1 = Class50.method253();
 					if (var0 < var1) {
-						Class6.bootMessage = "Loading title screen - " + var0 * 100 / var1 + "%";
-						Class6.anInt122 = 50;
+						PlayerLoginDetails.bootMessage = "Loading title screen - " + var0 * 100 / var1 + "%";
+						PlayerLoginDetails.anInt122 = 50;
 					} else {
-						Class6.bootMessage = "Loaded title screen";
-						Class6.anInt122 = 50;
+						PlayerLoginDetails.bootMessage = "Loaded title screen";
+						PlayerLoginDetails.anInt122 = 50;
 						Node_Sub8.method550(5);
 						Client.bootState = 70;
 					}
 				} else if (Client.bootState == 70) {
 					if (!Client.configsIndex.method377()) {
-						Class6.bootMessage = "Loading config - " + Client.configsIndex.method559() + "%";
-						Class6.anInt122 = 60;
+						PlayerLoginDetails.bootMessage = "Loading config - " + Client.configsIndex.method559() + "%";
+						PlayerLoginDetails.anInt122 = 60;
 					} else {
 						CacheIndex var15 = Client.configsIndex;
 						OverlayType.overlay_ref = var15;
@@ -322,57 +322,57 @@ public final class BoundaryDecorationStub {
 						CacheIndex var6 = Client.configsIndex;
 						VarClientStringType.varclientstring_ref = var6;
 						Class33.aClass28_364 = new VarClientHub();
-						Class6.bootMessage = "Loaded config";
-						Class6.anInt122 = 60;
+						PlayerLoginDetails.bootMessage = "Loaded config";
+						PlayerLoginDetails.anInt122 = 60;
 						Client.bootState = 80;
 					}
 				} else if (Client.bootState != 80) {
 					if (Client.bootState == 90) {
 						if (!Class1.texturesIndex.method377()) {
-							Class6.bootMessage = "Loading textures - " + Class1.texturesIndex.method559() + "%";
-							Class6.anInt122 = 90;
+							PlayerLoginDetails.bootMessage = "Loading textures - " + Class1.texturesIndex.method559() + "%";
+							PlayerLoginDetails.anInt122 = 90;
 						} else {
 							TextureLoader var161 = new TextureLoader(Class1.texturesIndex, AnimationSkin.spritesIndex,
 									20, 0.8D, Client.lowMemory ? 64 : 128);
 							TexturedGraphic.setTextureLoader(var161);
 							TexturedGraphic.setBrightness(0.8D);
-							Class6.bootMessage = "Loaded textures";
-							Class6.anInt122 = 90;
+							PlayerLoginDetails.bootMessage = "Loaded textures";
+							PlayerLoginDetails.anInt122 = 90;
 							Client.bootState = 110;
 						}
 					} else if (Client.bootState == 110) {
 						Npc.aClass30_1968 = new Class30();
 						IsaacRandom.taskManager.createRunnable(Npc.aClass30_1968, 10);
-						Class6.bootMessage = "Loaded input handler";
-						Class6.anInt122 = 94;
+						PlayerLoginDetails.bootMessage = "Loaded input handler";
+						PlayerLoginDetails.anInt122 = 94;
 						Client.bootState = 120;
 					} else if (Client.bootState == 120) {
 						if (!Class40.binaryIndex.method385("huffman", "")) {
-							Class6.bootMessage = "Loading wordpack - " + 0 + "%";
-							Class6.anInt122 = 96;
+							PlayerLoginDetails.bootMessage = "Loading wordpack - " + 0 + "%";
+							PlayerLoginDetails.anInt122 = 96;
 						} else {
 							Huffman var17 = new Huffman(Class40.binaryIndex.method389("huffman", ""));
 							RuneScript.setHuffman(var17);
-							Class6.bootMessage = "Loaded wordpack";
-							Class6.anInt122 = 96;
+							PlayerLoginDetails.bootMessage = "Loaded wordpack";
+							PlayerLoginDetails.anInt122 = 96;
 							Client.bootState = 130;
 						}
 					} else if (Client.bootState == 130) {
 						if (!RuneScript.interfaceIndex.method377()) {
-							Class6.bootMessage = "Loading interfaces - " + RuneScript.interfaceIndex.method559() * 4 / 5
+							PlayerLoginDetails.bootMessage = "Loading interfaces - " + RuneScript.interfaceIndex.method559() * 4 / 5
 									+ "%";
-							Class6.anInt122 = 100;
+							PlayerLoginDetails.anInt122 = 100;
 						} else if (!InvType.clientScriptsIndex.method377()) {
-							Class6.bootMessage = "Loading interfaces - "
+							PlayerLoginDetails.bootMessage = "Loading interfaces - "
 									+ (InvType.clientScriptsIndex.method559() / 6 + 80) + "%";
-							Class6.anInt122 = 100;
+							PlayerLoginDetails.anInt122 = 100;
 						} else if (!Class2.fontMetricsIndex.method377()) {
-							Class6.bootMessage = "Loading interfaces - "
+							PlayerLoginDetails.bootMessage = "Loading interfaces - "
 									+ (Class2.fontMetricsIndex.method559() / 20 + 96) + "%";
-							Class6.anInt122 = 100;
+							PlayerLoginDetails.anInt122 = 100;
 						} else {
-							Class6.bootMessage = "Loaded interfaces";
-							Class6.anInt122 = 100;
+							PlayerLoginDetails.bootMessage = "Loaded interfaces";
+							PlayerLoginDetails.anInt122 = 100;
 							Client.bootState = 140;
 						}
 					} else if (Client.bootState == 140) {
@@ -468,8 +468,8 @@ public final class BoundaryDecorationStub {
 					}
 
 					if (var0 < 13) {
-						Class6.bootMessage = "Loading sprites - " + var0 * 100 / 13 + "%";
-						Class6.anInt122 = 70;
+						PlayerLoginDetails.bootMessage = "Loading sprites - " + var0 * 100 / 13 + "%";
+						PlayerLoginDetails.anInt122 = 70;
 					} else {
 						DualNode_Sub13_Sub3.aDualNode_Sub13_Sub2Array1827 = IgnoredPlayer.aDualNode_Sub13_Sub2Array755;
 						Npc.aSprite1965.method948();
@@ -483,8 +483,8 @@ public final class BoundaryDecorationStub {
 						}
 
 						Class2.aDualNode_Sub13_Sub2Array77[0].method927(var3 + var1, var3 + var2, var4 + var3);
-						Class6.bootMessage = "Loaded sprites";
-						Class6.anInt122 = 70;
+						PlayerLoginDetails.bootMessage = "Loaded sprites";
+						PlayerLoginDetails.anInt122 = 70;
 						Client.bootState = 90;
 					}
 				}

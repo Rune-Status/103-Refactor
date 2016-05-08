@@ -69,8 +69,8 @@ public class Class86 {
 	static void method367(DualNode_Sub13_Sub3_Sub1 var0, DualNode_Sub13_Sub3_Sub1 var1, DualNode_Sub13_Sub3_Sub1 var2,
 			boolean var3) {
 		if (var3) {
-			Class6.anInt132 = (Class34.gameWidth - Client.anInt2233) / 2;
-			Class6.anInt126 = Class6.anInt132 + 202;
+			PlayerLoginDetails.anInt132 = (Class34.gameWidth - Client.anInt2233) / 2;
+			PlayerLoginDetails.anInt126 = PlayerLoginDetails.anInt132 + 202;
 		}
 
 		int var5;
@@ -82,7 +82,7 @@ public class Class86 {
 		int var36;
 		int var39;
 		int var40;
-		if (Class6.loadedWorlds) {
+		if (PlayerLoginDetails.loadedWorlds) {
 			if (Class93.aSpriteArray733 == null) {
 				Class93.aSpriteArray733 = DynamicObject.method1023(AnimationSkin.spritesIndex, "sl_back", "");
 			}
@@ -101,20 +101,20 @@ public class Class86 {
 						"");
 			}
 
-			RSGraphics.method793(Class6.anInt132, 23, 765, 480, 0);
-			RSGraphics.method786(Class6.anInt132, 0, 125, 23, 12425273, 9135624);
-			RSGraphics.method786(Class6.anInt132 + 125, 0, 640, 23, 5197647, 2697513);
-			var0.method982("Select a world", Class6.anInt132 + 62, 15, 0, -1);
+			RSGraphics.method793(PlayerLoginDetails.anInt132, 23, 765, 480, 0);
+			RSGraphics.method786(PlayerLoginDetails.anInt132, 0, 125, 23, 12425273, 9135624);
+			RSGraphics.method786(PlayerLoginDetails.anInt132 + 125, 0, 640, 23, 5197647, 2697513);
+			var0.method982("Select a world", PlayerLoginDetails.anInt132 + 62, 15, 0, -1);
 			if (Node_Sub8.aDualNode_Sub13_Sub2Array1314 != null) {
-				Node_Sub8.aDualNode_Sub13_Sub2Array1314[1].method929(Class6.anInt132 + 140, 1);
-				var1.method980("Members only world", Class6.anInt132 + 152, 10, 16777215, -1);
-				Node_Sub8.aDualNode_Sub13_Sub2Array1314[0].method929(Class6.anInt132 + 140, 12);
-				var1.method980("Free world", Class6.anInt132 + 152, 21, 16777215, -1);
+				Node_Sub8.aDualNode_Sub13_Sub2Array1314[1].method929(PlayerLoginDetails.anInt132 + 140, 1);
+				var1.method980("Members only world", PlayerLoginDetails.anInt132 + 152, 10, 16777215, -1);
+				Node_Sub8.aDualNode_Sub13_Sub2Array1314[0].method929(PlayerLoginDetails.anInt132 + 140, 12);
+				var1.method980("Free world", PlayerLoginDetails.anInt132 + 152, 21, 16777215, -1);
 			}
 
 			int var6;
 			if (Class32.aDualNode_Sub13_Sub2Array357 != null) {
-				var28 = Class6.anInt132 + 280;
+				var28 = PlayerLoginDetails.anInt132 + 280;
 				if (World.anIntArray1118[0] == 0 && World.anIntArray1119[0] == 0) {
 					Class32.aDualNode_Sub13_Sub2Array357[2].method929(var28, 4);
 				} else {
@@ -128,7 +128,7 @@ public class Class86 {
 				}
 
 				var0.method980("World", var28 + 32, 17, 16777215, -1);
-				var5 = Class6.anInt132 + 390;
+				var5 = PlayerLoginDetails.anInt132 + 390;
 				if (World.anIntArray1118[0] == 1 && World.anIntArray1119[0] == 0) {
 					Class32.aDualNode_Sub13_Sub2Array357[2].method929(var5, 4);
 				} else {
@@ -142,7 +142,7 @@ public class Class86 {
 				}
 
 				var0.method980("Players", var5 + 32, 17, 16777215, -1);
-				var6 = Class6.anInt132 + 500;
+				var6 = PlayerLoginDetails.anInt132 + 500;
 				if (World.anIntArray1118[0] == 2 && World.anIntArray1119[0] == 0) {
 					Class32.aDualNode_Sub13_Sub2Array357[2].method929(var6, 4);
 				} else {
@@ -156,7 +156,7 @@ public class Class86 {
 				}
 
 				var0.method980("Location", var6 + 32, 17, 16777215, -1);
-				var7 = Class6.anInt132 + 610;
+				var7 = PlayerLoginDetails.anInt132 + 610;
 				if (World.anIntArray1118[0] == 3 && World.anIntArray1119[0] == 0) {
 					Class32.aDualNode_Sub13_Sub2Array357[2].method929(var7, 4);
 				} else {
@@ -172,8 +172,8 @@ public class Class86 {
 				var0.method980("Type", var7 + 32, 17, 16777215, -1);
 			}
 
-			RSGraphics.method793(Class6.anInt132 + 708, 4, 50, 16, 0);
-			var1.method982("Cancel", Class6.anInt132 + 25 + 708, 16, 16777215, -1);
+			RSGraphics.method793(PlayerLoginDetails.anInt132 + 708, 4, 50, 16, 0);
+			var1.method982("Cancel", PlayerLoginDetails.anInt132 + 25 + 708, 16, 16777215, -1);
 			var28 = 0;
 			var5 = 33554432;
 			var6 = Client.myWorldFlags & var5;
@@ -185,7 +185,7 @@ public class Class86 {
 				}
 			}
 
-			Class6.anInt144 = -1;
+			PlayerLoginDetails.anInt144 = -1;
 			if (Class93.aSpriteArray733 != null) {
 				var31 = 88;
 				byte var30 = 19;
@@ -221,7 +221,7 @@ public class Class86 {
 						int var10 = (765 - var36 * var31 - (var36 - 1) * var40) / 2;
 						var14 = (480 - var30 * var39 - (var39 - 1) * var12) / 2;
 						int var11 = var14 + 23;
-						int var13 = Class6.anInt132 + var10;
+						int var13 = PlayerLoginDetails.anInt132 + var10;
 						int var27 = 0;
 						boolean var29 = false;
 
@@ -260,10 +260,10 @@ public class Class86 {
 									var24 = 0;
 								}
 
-								if (Class74.anInt621 >= var13 && Class74.anInt622 >= var11
-										&& Class74.anInt621 < var31 + var13 && Class74.anInt622 < var11 + var30
+								if (MouseInput.anInt621 >= var13 && MouseInput.anInt622 >= var11
+										&& MouseInput.anInt621 < var31 + var13 && MouseInput.anInt622 < var11 + var30
 										&& var9) {
-									Class6.anInt144 = var26;
+									PlayerLoginDetails.anInt144 = var26;
 									Class93.aSpriteArray733[var24].method950(var13, var11, 128, 16777215);
 									var29 = true;
 								} else {
@@ -289,14 +289,14 @@ public class Class86 {
 						}
 
 						if (var29) {
-							var26 = var1.method967(World.worlds[Class6.anInt144].activity) + 6;
+							var26 = var1.method967(World.worlds[PlayerLoginDetails.anInt144].activity) + 6;
 							int var391 = var1.anInt1824 + 8;
-							RSGraphics.method793(Class74.anInt621 - var26 / 2, Class74.anInt622 + 5 + 20, var26, var391,
+							RSGraphics.method793(MouseInput.anInt621 - var26 / 2, MouseInput.anInt622 + 5 + 20, var26, var391,
 									16777120);
-							RSGraphics.drawRectangle(Class74.anInt621 - var26 / 2, Class74.anInt622 + 20 + 5, var26,
+							RSGraphics.drawRectangle(MouseInput.anInt621 - var26 / 2, MouseInput.anInt622 + 20 + 5, var26,
 									var391, 0);
-							var1.method982(World.worlds[Class6.anInt144].activity, Class74.anInt621,
-									Class74.anInt622 + 25 + var1.anInt1824 + 4, 0, -1);
+							var1.method982(World.worlds[PlayerLoginDetails.anInt144].activity, MouseInput.anInt621,
+									MouseInput.anInt622 + 25 + var1.anInt1824 + 4, 0, -1);
 						}
 						break;
 					}
@@ -311,22 +311,22 @@ public class Class86 {
 			}
 		} else {
 			if (var3) {
-				Class56.aSprite542.method958(Class6.anInt132, 0);
-				Class6.aSprite137.method958(Class6.anInt132 + 382, 0);
-				IgnoredPlayer.logoSprite.method929(Class6.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
+				Class56.aSprite542.method958(PlayerLoginDetails.anInt132, 0);
+				PlayerLoginDetails.aSprite137.method958(PlayerLoginDetails.anInt132 + 382, 0);
+				IgnoredPlayer.logoSprite.method929(PlayerLoginDetails.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 			}
 
 			if (Client.anInt2113 == 0 || Client.anInt2113 == 5) {
 				byte var281 = 20;
-				var0.method982("RuneScape is loading - please wait...", Class6.anInt126 + 180, 245 - var281, 16777215,
+				var0.method982("RuneScape is loading - please wait...", PlayerLoginDetails.anInt126 + 180, 245 - var281, 16777215,
 						-1);
 				var5 = 253 - var281;
-				RSGraphics.drawRectangle(Class6.anInt126 + 180 - 152, var5, 304, 34, 9179409);
-				RSGraphics.drawRectangle(Class6.anInt126 + 180 - 151, var5 + 1, 302, 32, 0);
-				RSGraphics.method793(Class6.anInt126 + 180 - 150, var5 + 2, Class6.anInt122 * 3, 30, 9179409);
-				RSGraphics.method793(Class6.anInt122 * 3 + (Class6.anInt126 + 180 - 150), var5 + 2,
-						300 - Class6.anInt122 * 3, 30, 0);
-				var0.method982(Class6.bootMessage, Class6.anInt126 + 180, 276 - var281, 16777215, -1);
+				RSGraphics.drawRectangle(PlayerLoginDetails.anInt126 + 180 - 152, var5, 304, 34, 9179409);
+				RSGraphics.drawRectangle(PlayerLoginDetails.anInt126 + 180 - 151, var5 + 1, 302, 32, 0);
+				RSGraphics.method793(PlayerLoginDetails.anInt126 + 180 - 150, var5 + 2, PlayerLoginDetails.anInt122 * 3, 30, 9179409);
+				RSGraphics.method793(PlayerLoginDetails.anInt122 * 3 + (PlayerLoginDetails.anInt126 + 180 - 150), var5 + 2,
+						300 - PlayerLoginDetails.anInt122 * 3, 30, 0);
+				var0.method982(PlayerLoginDetails.bootMessage, PlayerLoginDetails.anInt126 + 180, 276 - var281, 16777215, -1);
 			}
 
 			String var291;
@@ -337,30 +337,30 @@ public class Class86 {
 			short var361;
 			short var37;
 			if (Client.anInt2113 == 20) {
-				Class6.titleboxSprite.method929(Class6.anInt126 + 180 - Class6.titleboxSprite.subWidth / 2,
-						271 - Class6.titleboxSprite.subHeight / 2);
+				PlayerLoginDetails.titleboxSprite.method929(PlayerLoginDetails.anInt126 + 180 - PlayerLoginDetails.titleboxSprite.subWidth / 2,
+						271 - PlayerLoginDetails.titleboxSprite.subHeight / 2);
 				var361 = 211;
-				var0.method982(Class6.aString133, Class6.anInt126 + 180, var361, 16776960, 0);
+				var0.method982(PlayerLoginDetails.aString133, PlayerLoginDetails.anInt126 + 180, var361, 16776960, 0);
 				var28 = var361 + 15;
-				var0.method982(Class6.aString134, Class6.anInt126 + 180, var28, 16776960, 0);
+				var0.method982(PlayerLoginDetails.aString134, PlayerLoginDetails.anInt126 + 180, var28, 16776960, 0);
 				var28 += 15;
-				var0.method982(Class6.aString135, Class6.anInt126 + 180, var28, 16776960, 0);
+				var0.method982(PlayerLoginDetails.aString135, PlayerLoginDetails.anInt126 + 180, var28, 16776960, 0);
 				var28 += 15;
 				var28 += 10;
-				if (Class6.anInt116 != 4) {
-					var0.method980("Login: ", Class6.anInt126 + 180 - 110, var28, 16777215, 0);
+				if (PlayerLoginDetails.anInt116 != 4) {
+					var0.method980("Login: ", PlayerLoginDetails.anInt126 + 180 - 110, var28, 16777215, 0);
 					var37 = 200;
 
-					for (var291 = Class6.username; var0.method967(var291) > var37; var291 = var291.substring(0,
+					for (var291 = PlayerLoginDetails.username; var0.method967(var291) > var37; var291 = var291.substring(0,
 							var291.length() - 1)) {
 						;
 					}
 
-					var0.method980(DualNode_Sub13_Sub3.appendTags(var291), Class6.anInt126 + 180 - 70, var28, 16777215,
+					var0.method980(DualNode_Sub13_Sub3.appendTags(var291), PlayerLoginDetails.anInt126 + 180 - 70, var28, 16777215,
 							0);
 					var28 += 15;
 					var321 = "Password: ";
-					var33 = Class6.password;
+					var33 = PlayerLoginDetails.password;
 					var12 = var33.length();
 					var35 = new char[var12];
 
@@ -369,67 +369,67 @@ public class Class86 {
 					}
 
 					var34 = new String(var35);
-					var0.method980(var321 + var34, Class6.anInt126 + 180 - 108, var28, 16777215, 0);
+					var0.method980(var321 + var34, PlayerLoginDetails.anInt126 + 180 - 108, var28, 16777215, 0);
 					var28 += 15;
 				}
 			}
 
 			if (Client.anInt2113 == 10 || Client.anInt2113 == 11) {
-				Class6.titleboxSprite.method929(Class6.anInt126, 171);
+				PlayerLoginDetails.titleboxSprite.method929(PlayerLoginDetails.anInt126, 171);
 				short var38;
-				if (Class6.anInt116 == 0) {
+				if (PlayerLoginDetails.anInt116 == 0) {
 					var361 = 251;
-					var0.method982("Welcome to OSRS Deob #0", Class6.anInt126 + 180, var361, 16776960, 0);
+					var0.method982("Welcome to OSRS Deob #0", PlayerLoginDetails.anInt126 + 180, var361, 16776960, 0);
 					var28 = var361 + 30;
-					var5 = Class6.anInt126 + 180 - 80;
+					var5 = PlayerLoginDetails.anInt126 + 180 - 80;
 					var38 = 291;
-					Class6.titlebuttonSprite.method929(var5 - 73, var38 - 20);
+					PlayerLoginDetails.titlebuttonSprite.method929(var5 - 73, var38 - 20);
 					var0.method990("New User", var5 - 73, var38 - 20, 144, 40, 16777215, 0, 1, 1, 0);
-					var5 = Class6.anInt126 + 80 + 180;
-					Class6.titlebuttonSprite.method929(var5 - 73, var38 - 20);
+					var5 = PlayerLoginDetails.anInt126 + 80 + 180;
+					PlayerLoginDetails.titlebuttonSprite.method929(var5 - 73, var38 - 20);
 					var0.method990("Existing User", var5 - 73, var38 - 20, 144, 40, 16777215, 0, 1, 1, 0);
-				} else if (Class6.anInt116 == 1) {
-					var0.method982("Warning!", Class6.anInt126 + 180, 211, 16776960, 0);
+				} else if (PlayerLoginDetails.anInt116 == 1) {
+					var0.method982("Warning!", PlayerLoginDetails.anInt126 + 180, 211, 16776960, 0);
 					var361 = 236;
-					var0.method982(Class6.aString133, Class6.anInt126 + 180, var361, 16777215, 0);
+					var0.method982(PlayerLoginDetails.aString133, PlayerLoginDetails.anInt126 + 180, var361, 16777215, 0);
 					var28 = var361 + 15;
-					var0.method982(Class6.aString134, Class6.anInt126 + 180, var28, 16777215, 0);
+					var0.method982(PlayerLoginDetails.aString134, PlayerLoginDetails.anInt126 + 180, var28, 16777215, 0);
 					var28 += 15;
-					var0.method982(Class6.aString135, Class6.anInt126 + 180, var28, 16777215, 0);
+					var0.method982(PlayerLoginDetails.aString135, PlayerLoginDetails.anInt126 + 180, var28, 16777215, 0);
 					var28 += 15;
-					var5 = Class6.anInt126 + 180 - 80;
+					var5 = PlayerLoginDetails.anInt126 + 180 - 80;
 					var38 = 321;
-					Class6.titlebuttonSprite.method929(var5 - 73, var38 - 20);
+					PlayerLoginDetails.titlebuttonSprite.method929(var5 - 73, var38 - 20);
 					var0.method982("Continue", var5, var38 + 5, 16777215, 0);
-					var5 = Class6.anInt126 + 80 + 180;
-					Class6.titlebuttonSprite.method929(var5 - 73, var38 - 20);
+					var5 = PlayerLoginDetails.anInt126 + 80 + 180;
+					PlayerLoginDetails.titlebuttonSprite.method929(var5 - 73, var38 - 20);
 					var0.method982("Cancel", var5, var38 + 5, 16777215, 0);
 				} else {
 					short var401;
-					if (Class6.anInt116 == 2) {
+					if (PlayerLoginDetails.anInt116 == 2) {
 						var361 = 211;
-						var0.method982(Class6.aString133, Class6.anInt126 + 180, var361, 16776960, 0);
+						var0.method982(PlayerLoginDetails.aString133, PlayerLoginDetails.anInt126 + 180, var361, 16776960, 0);
 						var28 = var361 + 15;
-						var0.method982(Class6.aString134, Class6.anInt126 + 180, var28, 16776960, 0);
+						var0.method982(PlayerLoginDetails.aString134, PlayerLoginDetails.anInt126 + 180, var28, 16776960, 0);
 						var28 += 15;
-						var0.method982(Class6.aString135, Class6.anInt126 + 180, var28, 16776960, 0);
+						var0.method982(PlayerLoginDetails.aString135, PlayerLoginDetails.anInt126 + 180, var28, 16776960, 0);
 						var28 += 15;
 						var28 += 10;
-						var0.method980("Login: ", Class6.anInt126 + 180 - 110, var28, 16777215, 0);
+						var0.method980("Login: ", PlayerLoginDetails.anInt126 + 180 - 110, var28, 16777215, 0);
 						var37 = 200;
 
-						for (var291 = Class6.username; var0.method967(var291) > var37; var291 = var291.substring(1)) {
+						for (var291 = PlayerLoginDetails.username; var0.method967(var291) > var37; var291 = var291.substring(1)) {
 							;
 						}
 
 						var0.method980(
 								DualNode_Sub13_Sub3.appendTags(var291)
-										+ (Class6.anInt115 == 0 & Client.engineCycle % 40 < 20
+										+ (PlayerLoginDetails.anInt115 == 0 & Client.engineCycle % 40 < 20
 												? Class48_Sub1.method545(16776960) + Class35.aString388 : ""),
-								Class6.anInt126 + 180 - 70, var28, 16777215, 0);
+								PlayerLoginDetails.anInt126 + 180 - 70, var28, 16777215, 0);
 						var28 += 15;
 						var321 = "Password: ";
-						var33 = Class6.password;
+						var33 = PlayerLoginDetails.password;
 						var12 = var33.length();
 						var35 = new char[var12];
 
@@ -440,28 +440,28 @@ public class Class86 {
 						var34 = new String(var35);
 						var0.method980(
 								var321 + var34
-										+ (Class6.anInt115 == 1 & Client.engineCycle % 40 < 20
+										+ (PlayerLoginDetails.anInt115 == 1 & Client.engineCycle % 40 < 20
 												? Class48_Sub1.method545(16776960) + Class35.aString388 : ""),
-								Class6.anInt126 + 180 - 108, var28, 16777215, 0);
+								PlayerLoginDetails.anInt126 + 180 - 108, var28, 16777215, 0);
 						var28 += 15;
-						var40 = Class6.anInt126 + 180 - 80;
+						var40 = PlayerLoginDetails.anInt126 + 180 - 80;
 						var401 = 321;
-						Class6.titlebuttonSprite.method929(var40 - 73, var401 - 20);
+						PlayerLoginDetails.titlebuttonSprite.method929(var40 - 73, var401 - 20);
 						var0.method982("Login", var40, var401 + 5, 16777215, 0);
-						var40 = Class6.anInt126 + 80 + 180;
-						Class6.titlebuttonSprite.method929(var40 - 73, var401 - 20);
+						var40 = PlayerLoginDetails.anInt126 + 80 + 180;
+						PlayerLoginDetails.titlebuttonSprite.method929(var40 - 73, var401 - 20);
 						var0.method982("Cancel", var40, var401 + 5, 16777215, 0);
 						var361 = 357;
-						var1.method982("Forgotten your password? <col=ffffff>Click here.", Class6.anInt126 + 180,
+						var1.method982("Forgotten your password? <col=ffffff>Click here.", PlayerLoginDetails.anInt126 + 180,
 								var361, 16776960, 0);
-					} else if (Class6.anInt116 == 4) {
-						var0.method982("Authenticator", Class6.anInt126 + 180, 211, 16776960, 0);
+					} else if (PlayerLoginDetails.anInt116 == 4) {
+						var0.method982("Authenticator", PlayerLoginDetails.anInt126 + 180, 211, 16776960, 0);
 						var361 = 236;
-						var0.method982(Class6.aString133, Class6.anInt126 + 180, var361, 16777215, 0);
+						var0.method982(PlayerLoginDetails.aString133, PlayerLoginDetails.anInt126 + 180, var361, 16777215, 0);
 						var28 = var361 + 15;
-						var0.method982(Class6.aString134, Class6.anInt126 + 180, var28, 16777215, 0);
+						var0.method982(PlayerLoginDetails.aString134, PlayerLoginDetails.anInt126 + 180, var28, 16777215, 0);
 						var28 += 15;
-						var0.method982(Class6.aString135, Class6.anInt126 + 180, var28, 16777215, 0);
+						var0.method982(PlayerLoginDetails.aString135, PlayerLoginDetails.anInt126 + 180, var28, 16777215, 0);
 						var28 += 15;
 						var291 = "PIN: ";
 						var321 = Class37.pinText;
@@ -477,88 +477,88 @@ public class Class86 {
 								var291 + var441
 										+ (Client.engineCycle % 40 < 20
 												? Class48_Sub1.method545(16776960) + Class35.aString388 : ""),
-								Class6.anInt126 + 180 - 108, var28, 16777215, 0);
+								PlayerLoginDetails.anInt126 + 180 - 108, var28, 16777215, 0);
 						var28 -= 8;
-						var0.method980("Trust this computer", Class6.anInt126 + 180 - 9, var28, 16776960, 0);
+						var0.method980("Trust this computer", PlayerLoginDetails.anInt126 + 180 - 9, var28, 16776960, 0);
 						var28 += 15;
-						var0.method980("for 30 days: ", Class6.anInt126 + 180 - 9, var28, 16776960, 0);
-						var36 = Class6.anInt126 + 180 - 9 + var0.method967("for 30 days: ") + 15;
+						var0.method980("for 30 days: ", PlayerLoginDetails.anInt126 + 180 - 9, var28, 16776960, 0);
+						var36 = PlayerLoginDetails.anInt126 + 180 - 9 + var0.method967("for 30 days: ") + 15;
 						var39 = var28 - var0.anInt1824;
 						Sprite var45;
-						if (Class6.trust) {
-							var45 = Class6.radioButtons2Sprite;
+						if (PlayerLoginDetails.trust) {
+							var45 = PlayerLoginDetails.radioButtons2Sprite;
 						} else {
-							var45 = Class6.radioButtons0Sprite;
+							var45 = PlayerLoginDetails.radioButtons0Sprite;
 						}
 
 						var45.method929(var36, var39);
 						var28 += 15;
-						var12 = Class6.anInt126 + 180 - 80;
+						var12 = PlayerLoginDetails.anInt126 + 180 - 80;
 						short var46 = 321;
-						Class6.titlebuttonSprite.method929(var12 - 73, var46 - 20);
+						PlayerLoginDetails.titlebuttonSprite.method929(var12 - 73, var46 - 20);
 						var0.method982("Continue", var12, var46 + 5, 16777215, 0);
-						var12 = Class6.anInt126 + 80 + 180;
-						Class6.titlebuttonSprite.method929(var12 - 73, var46 - 20);
+						var12 = PlayerLoginDetails.anInt126 + 80 + 180;
+						PlayerLoginDetails.titlebuttonSprite.method929(var12 - 73, var46 - 20);
 						var0.method982("Cancel", var12, var46 + 5, 16777215, 0);
-						var1.method982("<u=ff>Can\'t Log In?</u>", Class6.anInt126 + 180, var46 + 36, 255, 0);
-					} else if (Class6.anInt116 != 5) {
-						if (Class6.anInt116 == 6) {
+						var1.method982("<u=ff>Can\'t Log In?</u>", PlayerLoginDetails.anInt126 + 180, var46 + 36, 255, 0);
+					} else if (PlayerLoginDetails.anInt116 != 5) {
+						if (PlayerLoginDetails.anInt116 == 6) {
 							var361 = 211;
-							var0.method982(Class6.aString133, Class6.anInt126 + 180, var361, 16776960, 0);
+							var0.method982(PlayerLoginDetails.aString133, PlayerLoginDetails.anInt126 + 180, var361, 16776960, 0);
 							var28 = var361 + 15;
-							var0.method982(Class6.aString134, Class6.anInt126 + 180, var28, 16776960, 0);
+							var0.method982(PlayerLoginDetails.aString134, PlayerLoginDetails.anInt126 + 180, var28, 16776960, 0);
 							var28 += 15;
-							var0.method982(Class6.aString135, Class6.anInt126 + 180, var28, 16776960, 0);
+							var0.method982(PlayerLoginDetails.aString135, PlayerLoginDetails.anInt126 + 180, var28, 16776960, 0);
 							var28 += 15;
-							var5 = Class6.anInt126 + 180;
+							var5 = PlayerLoginDetails.anInt126 + 180;
 							var38 = 321;
-							Class6.titlebuttonSprite.method929(var5 - 73, var38 - 20);
+							PlayerLoginDetails.titlebuttonSprite.method929(var5 - 73, var38 - 20);
 							var0.method982("Back", var5, var38 + 5, 16777215, 0);
 						}
 					} else {
-						var0.method982("Forgotten your password?", Class6.anInt126 + 180, 201, 16776960, 0);
+						var0.method982("Forgotten your password?", PlayerLoginDetails.anInt126 + 180, 201, 16776960, 0);
 						var361 = 221;
-						var2.method982(Class6.aString133, Class6.anInt126 + 180, var361, 16776960, 0);
+						var2.method982(PlayerLoginDetails.aString133, PlayerLoginDetails.anInt126 + 180, var361, 16776960, 0);
 						var28 = var361 + 15;
-						var2.method982(Class6.aString134, Class6.anInt126 + 180, var28, 16776960, 0);
+						var2.method982(PlayerLoginDetails.aString134, PlayerLoginDetails.anInt126 + 180, var28, 16776960, 0);
 						var28 += 15;
-						var2.method982(Class6.aString135, Class6.anInt126 + 180, var28, 16776960, 0);
+						var2.method982(PlayerLoginDetails.aString135, PlayerLoginDetails.anInt126 + 180, var28, 16776960, 0);
 						var28 += 15;
 						var28 += 14;
-						var0.method980("Username/email: ", Class6.anInt126 + 180 - 145, var28, 16777215, 0);
+						var0.method980("Username/email: ", PlayerLoginDetails.anInt126 + 180 - 145, var28, 16777215, 0);
 						var37 = 174;
 
-						for (var291 = Class6.username; var0.method967(var291) > var37; var291 = var291.substring(1)) {
+						for (var291 = PlayerLoginDetails.username; var0.method967(var291) > var37; var291 = var291.substring(1)) {
 							;
 						}
 
 						var0.method980(
 								DualNode_Sub13_Sub3.appendTags(var291) + (Client.engineCycle % 40 < 20
 										? Class48_Sub1.method545(16776960) + Class35.aString388 : ""),
-								Class6.anInt126 + 180 - 34, var28, 16777215, 0);
+								PlayerLoginDetails.anInt126 + 180 - 34, var28, 16777215, 0);
 						var28 += 15;
-						var7 = Class6.anInt126 + 180 - 80;
+						var7 = PlayerLoginDetails.anInt126 + 180 - 80;
 						var401 = 321;
-						Class6.titlebuttonSprite.method929(var7 - 73, var401 - 20);
+						PlayerLoginDetails.titlebuttonSprite.method929(var7 - 73, var401 - 20);
 						var0.method982("Recover", var7, var401 + 5, 16777215, 0);
-						var7 = Class6.anInt126 + 260;
-						Class6.titlebuttonSprite.method929(var7 - 73, var401 - 20);
+						var7 = PlayerLoginDetails.anInt126 + 260;
+						PlayerLoginDetails.titlebuttonSprite.method929(var7 - 73, var401 - 20);
 						var0.method982("Back", var7, var401 + 5, 16777215, 0);
 					}
 				}
 			}
 
-			if (Class6.anInt140 > 0) {
-				Class1.method14(Class6.anInt140);
-				Class6.anInt140 = 0;
+			if (PlayerLoginDetails.anInt140 > 0) {
+				Class1.method14(PlayerLoginDetails.anInt140);
+				PlayerLoginDetails.anInt140 = 0;
 			}
 
 			Class13.method117();
-			FriendedPlayer.titlemuteSprite[AnimationSkin.settings.muted ? 1 : 0].method929(Class6.anInt132 + 765 - 40,
+			FriendedPlayer.titlemuteSprite[AnimationSkin.settings.muted ? 1 : 0].method929(PlayerLoginDetails.anInt132 + 765 - 40,
 					463);
-			if (Client.anInt2113 > 5 && Client.anInt2011 == 0) {
+			if (Client.anInt2113 > 5 && Client.languageId == 0) {
 				if (GroundItem.aDualNode_Sub13_Sub2_1841 != null) {
-					var28 = Class6.anInt132 + 5;
+					var28 = PlayerLoginDetails.anInt132 + 5;
 					var37 = 463;
 					byte var41 = 100;
 					var31 = 35;

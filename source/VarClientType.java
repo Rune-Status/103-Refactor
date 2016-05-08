@@ -27,7 +27,7 @@ public class VarClientType extends DualNode {
 	}
 
 	public static int method719() {
-		return ++Class74.anInt617 - 1;
+		return ++MouseInput.anInt617 - 1;
 	}
 
 	static int decodeSkipCount(BitBuf var0) {

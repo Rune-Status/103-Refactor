@@ -15,12 +15,12 @@ public class Class1 {
 
 	static final void method14(int var0) {
 		short var1 = 256;
-		Class6.anInt114 += var0 * 128;
+		PlayerLoginDetails.anInt114 += var0 * 128;
 		int var2;
-		if (Class6.anInt114 > Class33.anIntArray365.length) {
-			Class6.anInt114 -= Class33.anIntArray365.length;
+		if (PlayerLoginDetails.anInt114 > Class33.anIntArray365.length) {
+			PlayerLoginDetails.anInt114 -= Class33.anIntArray365.length;
 			var2 = (int) (Math.random() * 12.0D);
-			VarBitType.method877(Class6.runesSprite[var2]);
+			VarBitType.method877(PlayerLoginDetails.runesSprite[var2]);
 		}
 
 		var2 = 0;
@@ -31,7 +31,7 @@ public class Class1 {
 		int var7;
 		for (var3 = 0; var3 < var5; var3++) {
 			var7 = Class122.anIntArray818[var2 + var4]
-					- Class33.anIntArray365[Class6.anInt114 + var2 & Class33.anIntArray365.length - 1] * var0 / 6;
+					- Class33.anIntArray365[PlayerLoginDetails.anInt114 + var2 & Class33.anIntArray365.length - 1] * var0 / 6;
 			if (var7 < 0) {
 				var7 = 0;
 			}
@@ -54,46 +54,46 @@ public class Class1 {
 			}
 		}
 
-		if (Class6.anInt138 > 0) {
-			Class6.anInt138 -= var0 * 4;
+		if (PlayerLoginDetails.anInt138 > 0) {
+			PlayerLoginDetails.anInt138 -= var0 * 4;
 		}
 
-		if (Class6.anInt127 > 0) {
-			Class6.anInt127 -= var0 * 4;
+		if (PlayerLoginDetails.anInt127 > 0) {
+			PlayerLoginDetails.anInt127 -= var0 * 4;
 		}
 
-		if (Class6.anInt138 == 0 && Class6.anInt127 == 0) {
+		if (PlayerLoginDetails.anInt138 == 0 && PlayerLoginDetails.anInt127 == 0) {
 			var3 = (int) (Math.random() * (double) (2000 / var0));
 			if (var3 == 0) {
-				Class6.anInt138 = 1024;
+				PlayerLoginDetails.anInt138 = 1024;
 			}
 
 			if (var3 == 1) {
-				Class6.anInt127 = 1024;
+				PlayerLoginDetails.anInt127 = 1024;
 			}
 		}
 
 		for (var3 = 0; var3 < var1 - var0; var3++) {
-			Class6.anIntArray145[var3] = Class6.anIntArray145[var3 + var0];
+			PlayerLoginDetails.anIntArray145[var3] = PlayerLoginDetails.anIntArray145[var3 + var0];
 		}
 
 		for (var3 = var1 - var0; var3 < var1; var3++) {
-			Class6.anIntArray145[var3] = (int) (Math.sin((double) Class6.anInt130 / 14.0D) * 16.0D
-					+ Math.sin((double) Class6.anInt130 / 15.0D) * 14.0D
-					+ Math.sin((double) Class6.anInt130 / 16.0D) * 12.0D);
-			++Class6.anInt130;
+			PlayerLoginDetails.anIntArray145[var3] = (int) (Math.sin((double) PlayerLoginDetails.anInt130 / 14.0D) * 16.0D
+					+ Math.sin((double) PlayerLoginDetails.anInt130 / 15.0D) * 14.0D
+					+ Math.sin((double) PlayerLoginDetails.anInt130 / 16.0D) * 12.0D);
+			++PlayerLoginDetails.anInt130;
 		}
 
-		Class6.anInt129 += var0 * -809494109;
+		PlayerLoginDetails.anInt129 += var0 * -809494109;
 		var3 = ((Client.engineCycle & 0x1) + var0) / 2;
 		if (var3 > 0) {
-			for (var7 = 0; var7 < Class6.anInt129 * 1962167372; var7++) {
+			for (var7 = 0; var7 < PlayerLoginDetails.anInt129 * 1962167372; var7++) {
 				var8 = (int) (Math.random() * 124.0D) + 2;
 				var6 = (int) (Math.random() * 128.0D) + 128;
 				Class122.anIntArray818[(var6 << 7) + var8] = 192;
 			}
 
-			Class6.anInt129 = 0;
+			PlayerLoginDetails.anInt129 = 0;
 
 			int var9;
 			for (var7 = 0; var7 < var1; var7++) {
