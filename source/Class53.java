@@ -1,7 +1,7 @@
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class Class53 {
+public class LoginHandler {
 
 	static String[] aStringArray537 = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 	static String[][] aStringArrayArray538 = new String[][] {
@@ -9,7 +9,7 @@ public class Class53 {
 			{ "Jan", "Feb", "M\u00c3\u00a4r", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez" } };
 	static Calendar aCalendar536;
 
-	Class53() throws Throwable {
+	LoginHandler() throws Throwable {
 		throw new Error();
 	}
 
@@ -46,15 +46,15 @@ public class Class53 {
 					int var23;
 					if (Client.aWidget2141 == var15) {
 						if (var1 != -1412584499 && !var15.aBool1179) {
-							Class6.aWidgetArray146 = var0;
+							PlayerLoginDetails.aWidgetArray146 = var0;
 							BoundaryStub.anInt276 = var6;
 							Class75.anInt637 = var7;
 							continue;
 						}
 
 						if (Client.aBool2150 && Client.aBool2145) {
-							var22 = Class74.anInt621;
-							var23 = Class74.anInt622;
+							var22 = MouseInput.anInt621;
+							var23 = MouseInput.anInt622;
 							var22 -= Client.anInt2127;
 							var23 -= Client.anInt2143;
 							if (var22 < Client.anInt2146) {
@@ -294,11 +294,11 @@ public class Class53 {
 									}
 								}
 
-								var27 = Class74.anInt621;
-								var37 = Class74.anInt622;
-								if (Class74.anInt627 != 0) {
-									var27 = Class74.anInt628;
-									var37 = Class74.anInt629;
+								var27 = MouseInput.anInt621;
+								var37 = MouseInput.anInt622;
+								if (MouseInput.anInt627 != 0) {
+									var27 = MouseInput.anInt628;
+									var37 = MouseInput.anInt629;
 								}
 
 								if (var27 >= var9 && var27 < var9 + var13 && var37 >= var16 && var37 < var31 + var16) {
@@ -644,8 +644,8 @@ public class Class53 {
 													if (var621 != null) {
 														if (SpotAnimType.aWidget1446 == var15
 																&& Client.anInt2100 == var9) {
-															var30 = Class74.anInt621 - Client.anInt2131;
-															var38 = Class74.anInt622 - Client.anInt2101;
+															var30 = MouseInput.anInt621 - Client.anInt2131;
+															var38 = MouseInput.anInt622 - Client.anInt2101;
 															if (var30 < 5 && var30 > -5) {
 																var30 = 0;
 															}
