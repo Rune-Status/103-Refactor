@@ -45,7 +45,7 @@ public class SpotAnimType extends DualNode {
 			int var4;
 			if (this.aShortArray1454 != null) {
 				for (var4 = 0; var4 < this.aShortArray1454.length; var4++) {
-					var5.method895(this.aShortArray1454[var4], this.aShortArray1451[var4]);
+					var5.recolor(this.aShortArray1454[var4], this.aShortArray1451[var4]);
 				}
 			}
 

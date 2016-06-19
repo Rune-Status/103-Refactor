@@ -182,7 +182,7 @@ public class NpcType extends DualNode {
 
 				if (this.colors != null) {
 					for (var6 = 0; var6 < this.colors.length; var6++) {
-						var11.method895(this.colors[var6], this.modifiedColors[var6]);
+						var11.recolor(this.colors[var6], this.modifiedColors[var6]);
 					}
 				}
 
@@ -239,27 +239,27 @@ public class NpcType extends DualNode {
 					var61[var6] = Model.method887(aClass87_1596, this.anIntArray1582[var6], 0);
 				}
 
-				Model var71;
+				Model model;
 				if (var61.length == 1) {
-					var71 = var61[0];
+					model = var61[0];
 				} else {
-					var71 = new Model(var61, var61.length);
+					model = new Model(var61, var61.length);
 				}
 
 				int var1;
 				if (this.colors != null) {
 					for (var1 = 0; var1 < this.colors.length; var1++) {
-						var71.method895(this.colors[var1], this.modifiedColors[var1]);
+						model.recolor(this.colors[var1], this.modifiedColors[var1]);
 					}
 				}
 
 				if (this.aShortArray1600 != null) {
 					for (var1 = 0; var1 < this.aShortArray1600.length; var1++) {
-						var71.method896(this.aShortArray1600[var1], this.aShortArray1592[var1]);
+						model.method896(this.aShortArray1600[var1], this.aShortArray1592[var1]);
 					}
 				}
 
-				return var71;
+				return model;
 			}
 		}
 	}
@@ -287,25 +287,23 @@ public class NpcType extends DualNode {
 		}
 	}
 
-	static final int method802(int var0, int var1, int var2) {
-		int var3 = var0 >> 7;
-		int var4 = var1 >> 7;
-		if (var3 >= 0 && var4 >= 0 && var3 <= 103 && var4 <= 103) {
-			int var6 = var2;
-			if (var2 < 3 && (Class39.renderRules[1][var3][var4] & 0x2) == 2) {
-				var6 = var2 + 1;
+	static final int getTileHeight(int x, int y, int z) {
+		int rx = x >> 7;
+		int ry = y >> 7;
+		if (rx >= 0 && ry >= 0 && rx <= 103 && ry <= 103) {
+			int rz = z;
+			if (z < 3 && (Class39.renderRules[1][rx][ry] & 0x2) == 2) {
+				rz = z + 1;
 			}
 
-			int var7 = var0 & 0x7f;
-			int var5 = var1 & 0x7f;
-			int var9 = Class39.tileHeights[var6][var3][var4] * (128 - var7)
-					+ Class39.tileHeights[var6][var3 + 1][var4] * var7 >> 7;
-			int var8 = Class39.tileHeights[var6][var3 + 1][var4 + 1] * var7
-					+ Class39.tileHeights[var6][var3][var4 + 1] * (128 - var7) >> 7;
-			return (128 - var5) * var9 + var8 * var5 >> 7;
-		} else {
-			return 0;
+			int ax = x & 0x7f;
+			int ay = y & 0x7f;
+			int aa = Class39.tileHeights[rz][rx][ry] * (128 - ax) + Class39.tileHeights[rz][rx + 1][ry] * ax >> 7;
+			int ab = Class39.tileHeights[rz][rx + 1][ry + 1] * ax
+					+ Class39.tileHeights[rz][rx][ry + 1] * (128 - ax) >> 7;
+			return (128 - ay) * aa + ab * ay >> 7;
 		}
+		return 0;
 	}
 
 	public boolean method803() {

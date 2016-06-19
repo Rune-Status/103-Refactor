@@ -233,11 +233,11 @@ public class PlayerConfig {
 
 					for (var10 = 0; var10 < 5; var10++) {
 						if (this.appearanceColors[var10] < colorsToReplace[var10].length) {
-							var181.method895(colorsToFind[var10], colorsToReplace[var10][this.appearanceColors[var10]]);
+							var181.recolor(colorsToFind[var10], colorsToReplace[var10][this.appearanceColors[var10]]);
 						}
 
 						if (this.appearanceColors[var10] < Class85.colorsToReplace1[var10].length) {
-							var181.method895(Colors.colorToFind1[var10],
+							var181.recolor(Colors.colorToFind1[var10],
 									Class85.colorsToReplace1[var10][this.appearanceColors[var10]]);
 						}
 					}
@@ -318,11 +318,11 @@ public class PlayerConfig {
 
 				for (var2 = 0; var2 < 5; var2++) {
 					if (this.appearanceColors[var2] < colorsToReplace[var2].length) {
-						var81.method895(colorsToFind[var2], colorsToReplace[var2][this.appearanceColors[var2]]);
+						var81.recolor(colorsToFind[var2], colorsToReplace[var2][this.appearanceColors[var2]]);
 					}
 
 					if (this.appearanceColors[var2] < Class85.colorsToReplace1[var2].length) {
-						var81.method895(Colors.colorToFind1[var2],
+						var81.recolor(Colors.colorToFind1[var2],
 								Class85.colorsToReplace1[var2][this.appearanceColors[var2]]);
 					}
 				}

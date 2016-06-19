@@ -43,7 +43,7 @@ public class GameClient extends JFrame implements AppletStub {
 	private String host;
 	private Client clnt;
 	public static boolean rsps;
-	public static boolean dump = true;
+	public static boolean dump;
 	private Map<String, String> map;
 
 	public static void main(String[] args) throws Exception {

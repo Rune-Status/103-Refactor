@@ -32,7 +32,7 @@ public class Class2 {
 
 	static final void tileToScreen(int x, int y, int height) {
 		if (x >= 128 && y >= 128 && x <= 13056 && y <= 13056) {
-			int z = NpcType.method802(x, y, InterfaceNode.floorLevel * -1331355705) - height;
+			int z = NpcType.getTileHeight(x, y, InterfaceNode.floorLevel * -1331355705) - height;
 
 			x -= Projectile.cameraX;
 			z -= FriendedPlayer.cameraZ;

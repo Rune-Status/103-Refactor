@@ -379,7 +379,7 @@ public class VarClientHub {
 						if (var2 != null && var2.strictX >= 0 && var2.strictX < 13312 && var2.strictY >= 0
 								&& var2.strictY < 13312) {
 							var0.method992(var2.strictX, var2.strictY,
-									NpcType.method802(var2.strictX, var2.strictY, var0.anInt1844) - var0.endHeight,
+									NpcType.getTileHeight(var2.strictX, var2.strictY, var0.anInt1844) - var0.endHeight,
 									Client.engineCycle);
 						}
 					}
@@ -396,7 +396,7 @@ public class VarClientHub {
 						if (var3 != null && var3.strictX >= 0 && var3.strictX < 13312 && var3.strictY >= 0
 								&& var3.strictY < 13312) {
 							var0.method992(var3.strictX, var3.strictY,
-									NpcType.method802(var3.strictX, var3.strictY, var0.anInt1844) - var0.endHeight,
+									NpcType.getTileHeight(var3.strictX, var3.strictY, var0.anInt1844) - var0.endHeight,
 									Client.engineCycle);
 						}
 					}

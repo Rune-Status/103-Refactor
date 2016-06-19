@@ -36,7 +36,7 @@ public class IdentKitType extends DualNode {
 			int var1;
 			if (this.aShortArray1461 != null) {
 				for (var1 = 0; var1 < this.aShortArray1461.length; var1++) {
-					var41.method895(this.aShortArray1461[var1], this.aShortArray1465[var1]);
+					var41.recolor(this.aShortArray1461[var1], this.aShortArray1465[var1]);
 				}
 			}
 
@@ -120,7 +120,7 @@ public class IdentKitType extends DualNode {
 		int var2;
 		if (this.aShortArray1461 != null) {
 			for (var2 = 0; var2 < this.aShortArray1461.length; var2++) {
-				var51.method895(this.aShortArray1461[var2], this.aShortArray1465[var2]);
+				var51.recolor(this.aShortArray1461[var2], this.aShortArray1465[var2]);
 			}
 		}
 

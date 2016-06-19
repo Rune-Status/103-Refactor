@@ -323,9 +323,9 @@ public class LoginScreenWidget {
 				var5 = 253 - var281;
 				RSGraphics.drawRectangle(PlayerLoginDetails.anInt126 + 180 - 152, var5, 304, 34, 9179409);
 				RSGraphics.drawRectangle(PlayerLoginDetails.anInt126 + 180 - 151, var5 + 1, 302, 32, 0);
-				RSGraphics.method793(PlayerLoginDetails.anInt126 + 180 - 150, var5 + 2, PlayerLoginDetails.anInt122 * 3, 30, 9179409);
-				RSGraphics.method793(PlayerLoginDetails.anInt122 * 3 + (PlayerLoginDetails.anInt126 + 180 - 150), var5 + 2,
-						300 - PlayerLoginDetails.anInt122 * 3, 30, 0);
+				RSGraphics.method793(PlayerLoginDetails.anInt126 + 180 - 150, var5 + 2, PlayerLoginDetails.loadingPercentage * 3, 30, 9179409);
+				RSGraphics.method793(PlayerLoginDetails.loadingPercentage * 3 + (PlayerLoginDetails.anInt126 + 180 - 150), var5 + 2,
+						300 - PlayerLoginDetails.loadingPercentage * 3, 30, 0);
 				var0.method982(PlayerLoginDetails.bootMessage, PlayerLoginDetails.anInt126 + 180, 276 - var281, 16777215, -1);
 			}
 

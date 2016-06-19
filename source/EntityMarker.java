@@ -70,7 +70,7 @@ public final class EntityMarker {
 					if (var1.aModel2001 != null && Client.engineCycle >= var1.anInt1989
 							&& Client.engineCycle < var1.anInt1990) {
 						var1.aBool1996 = false;
-						var1.anInt1997 = NpcType.method802(var1.strictX, var1.strictY,
+						var1.anInt1997 = NpcType.getTileHeight(var1.strictX, var1.strictY,
 								InterfaceNode.floorLevel * -1331355705);
 						InterfaceNode.landscape.method20(InterfaceNode.floorLevel * -1331355705, var1.strictX,
 								var1.strictY, var1.anInt1997, 60, var1, var1.anInt1937 * -2061229533, var4,
@@ -84,7 +84,7 @@ public final class EntityMarker {
 							Client.anIntArrayArray2121[var7][var8] = Client.anInt2208;
 						}
 
-						var1.anInt1997 = NpcType.method802(var1.strictX, var1.strictY,
+						var1.anInt1997 = NpcType.getTileHeight(var1.strictX, var1.strictY,
 								InterfaceNode.floorLevel * -1331355705);
 						InterfaceNode.landscape.method19(InterfaceNode.floorLevel * -1331355705, var1.strictX,
 								var1.strictY, var1.anInt1997, 60, var1, var1.anInt1937 * -2061229533, var4,

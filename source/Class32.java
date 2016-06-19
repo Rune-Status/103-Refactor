@@ -82,7 +82,7 @@ public class Class32 {
 
 				int var10 = (var1 << 7) + var0 + 1610612736;
 				InterfaceNode.landscape.addItemPile(InterfaceNode.floorLevel * -1331355705, var0, var1,
-						NpcType.method802(var0 * 128 + 64, var1 * 128 + 64, InterfaceNode.floorLevel * -1331355705),
+						NpcType.getTileHeight(var0 * 128 + 64, var1 * 128 + 64, InterfaceNode.floorLevel * -1331355705),
 						var9, var10, var121, var111);
 			}
 		}

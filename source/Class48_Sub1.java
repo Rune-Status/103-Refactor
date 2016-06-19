@@ -14,7 +14,7 @@ public class Class48_Sub1 extends Class48 {
 		if (AnimationSkin.settings.hideRoofs) {
 			return InterfaceNode.floorLevel * -1331355705;
 		} else {
-			int var0 = NpcType.method802(Projectile.cameraX, Class72.cameraY, InterfaceNode.floorLevel * -1331355705);
+			int var0 = NpcType.getTileHeight(Projectile.cameraX, Class72.cameraY, InterfaceNode.floorLevel * -1331355705);
 			return var0 - FriendedPlayer.cameraZ < 800 && (Class39.renderRules[InterfaceNode.floorLevel
 					* -1331355705][Projectile.cameraX >> 7][Class72.cameraY >> 7] & 0x4) != 0
 							? InterfaceNode.floorLevel * -1331355705 : 3;

@@ -12,7 +12,7 @@ public class ClassVerifier extends Node {
 	byte[][][] methodsBytecodes;
 	int anInt1426;
 
-	static final void method583(int var0, int var1, int var2, int var3, String var4, String var5, int var6, int var7) {
+	static final void menuOps(int var0, int var1, int var2, int var3, String var4, String var5, int var6, int var7) {
 		if (var2 >= 2000) {
 			var2 -= 2000;
 		}

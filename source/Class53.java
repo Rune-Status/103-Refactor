@@ -213,7 +213,7 @@ public class Class53 {
 
 									var38 = Client.anInt2060 + Client.minimapRotation & 0x7ff;
 									var24 = GPI.anInt461;
-									var40 = NpcType.method802(Class68.myPlayer.strictX, Class68.myPlayer.strictY,
+									var40 = NpcType.getTileHeight(Class68.myPlayer.strictX, Class68.myPlayer.strictY,
 											InterfaceNode.floorLevel * -1331355705) - Client.anInt2185;
 									var25 = SequenceType.anInt1476;
 									var26 = var30 * 3 + 600;

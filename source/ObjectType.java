@@ -461,7 +461,7 @@ public class ObjectType extends DualNode {
 
 		if (this.colors != null) {
 			for (var4 = 0; var4 < this.colors.length; var4++) {
-				var91.method895(this.colors[var4], this.modifiedColors[var4]);
+				var91.recolor(this.colors[var4], this.modifiedColors[var4]);
 			}
 		}
 

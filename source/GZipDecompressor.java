@@ -48,7 +48,7 @@ public class GZipDecompressor {
 					}
 
 					InterfaceNode.landscape.method19(InterfaceNode.floorLevel * -1331355705, var2.strictX, var2.strictY,
-							NpcType.method802(var2.anInt1915 * 64 - 64 + var2.strictX,
+							NpcType.getTileHeight(var2.anInt1915 * 64 - 64 + var2.strictX,
 									var2.anInt1915 * 64 - 64 + var2.strictY, InterfaceNode.floorLevel * -1331355705),
 							var2.anInt1915 * 64 - 64 + 60, var2, var2.anInt1937 * -2061229533, var4, var2.aBool1919);
 				}

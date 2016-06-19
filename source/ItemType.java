@@ -93,7 +93,7 @@ public class ItemType extends DualNode {
 
 			if (this.colors != null) {
 				for (var3 = 0; var3 < this.colors.length; var3++) {
-					var41.method895(this.colors[var3], this.modifiedColors[var3]);
+					var41.recolor(this.colors[var3], this.modifiedColors[var3]);
 				}
 			}
 
@@ -166,7 +166,7 @@ public class ItemType extends DualNode {
 				int var4;
 				if (this.colors != null) {
 					for (var4 = 0; var4 < this.colors.length; var4++) {
-						var61.method895(this.colors[var4], this.modifiedColors[var4]);
+						var61.recolor(this.colors[var4], this.modifiedColors[var4]);
 					}
 				}
 
@@ -269,7 +269,7 @@ public class ItemType extends DualNode {
 			int var91;
 			if (this.colors != null) {
 				for (var91 = 0; var91 < this.colors.length; var91++) {
-					var6.method895(this.colors[var91], this.modifiedColors[var91]);
+					var6.recolor(this.colors[var91], this.modifiedColors[var91]);
 				}
 			}
 
@@ -480,7 +480,7 @@ public class ItemType extends DualNode {
 			int var71;
 			if (this.colors != null) {
 				for (var71 = 0; var71 < this.colors.length; var71++) {
-					var5.method895(this.colors[var71], this.modifiedColors[var71]);
+					var5.recolor(this.colors[var71], this.modifiedColors[var71]);
 				}
 			}
 

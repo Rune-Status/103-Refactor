@@ -223,7 +223,7 @@ public class RuneScript extends DualNode {
 						var1 = var1 * 128 + 64;
 						var2 = var2 * 128 + 64;
 						GraphicsStub var38 = new GraphicsStub(var3, InterfaceNode.floorLevel * -1331355705, var1, var2,
-								NpcType.method802(var1, var2, InterfaceNode.floorLevel * -1331355705) - var32, var5,
+								NpcType.getTileHeight(var1, var2, InterfaceNode.floorLevel * -1331355705) - var32, var5,
 								Client.engineCycle);
 						Client.graphicsObjectDeque.method475(var38);
 					}
@@ -251,10 +251,10 @@ public class RuneScript extends DualNode {
 							var3 = var3 * 128 + 64;
 							var32 = var32 * 128 + 64;
 							Projectile var11 = new Projectile(var6, InterfaceNode.floorLevel * -1331355705, var1, var2,
-									NpcType.method802(var1, var2, InterfaceNode.floorLevel * -1331355705) - var9,
+									NpcType.getTileHeight(var1, var2, InterfaceNode.floorLevel * -1331355705) - var9,
 									Client.engineCycle + var33, Client.engineCycle + var37, var23, var39, var5, var7);
 							var11.method992(var3, var32,
-									NpcType.method802(var3, var32, InterfaceNode.floorLevel * -1331355705) - var7,
+									NpcType.getTileHeight(var3, var32, InterfaceNode.floorLevel * -1331355705) - var7,
 									Client.engineCycle + var33);
 							Client.projectileDeque.method475(var11);
 						}

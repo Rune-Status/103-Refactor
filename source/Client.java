@@ -1893,7 +1893,7 @@ public final class Client extends GameEngine {
 									if (TextureLoader.anInt334 >= 100) {
 										var5 = Class48_Sub1.anInt1299 + 64;
 										var6 = anInt2211 + 64;
-										var89 = NpcType.method802(var5, var6, InterfaceNode.floorLevel * -1331355705)
+										var89 = NpcType.getTileHeight(var5, var6, InterfaceNode.floorLevel * -1331355705)
 												- GraphicsStub.anInt1813;
 										var8 = var5 - Projectile.cameraX;
 										var9 = var89 - FriendedPlayer.cameraZ;
@@ -2729,7 +2729,7 @@ public final class Client extends GameEngine {
 									if (RuneScript.anInt1722 * -2101471913 >= 100) {
 										Projectile.cameraX = BoundaryDecorationStub.anInt216 * 915224960 + 64;
 										Class72.cameraY = Class26.anInt310 * 402993792 + 64;
-										FriendedPlayer.cameraZ = NpcType.method802(Projectile.cameraX, Class72.cameraY,
+										FriendedPlayer.cameraZ = NpcType.getTileHeight(Projectile.cameraX, Class72.cameraY,
 												InterfaceNode.floorLevel * -1331355705) - Class3.anInt94;
 									}
 
@@ -3960,7 +3960,7 @@ public final class Client extends GameEngine {
 
 																var6 = GPI.anInt461 >> 7;
 																var89 = SequenceType.anInt1476 >> 7;
-																var8 = NpcType.method802(GPI.anInt461,
+																var8 = NpcType.getTileHeight(GPI.anInt461,
 																		SequenceType.anInt1476,
 																		InterfaceNode.floorLevel * -1331355705);
 																var9 = 0;
@@ -4005,7 +4005,7 @@ public final class Client extends GameEngine {
 																	var83 = BoundaryDecorationStub.anInt216 * 915224960
 																			+ 64;
 																	var5 = Class26.anInt310 * 402993792 + 64;
-																	var6 = NpcType.method802(var83, var5,
+																	var6 = NpcType.getTileHeight(var83, var5,
 																			InterfaceNode.floorLevel * -1331355705)
 																			- Class3.anInt94;
 																	if (Projectile.cameraX < var83) {
@@ -4069,7 +4069,7 @@ public final class Client extends GameEngine {
 
 																	var83 = Class48_Sub1.anInt1299 + 64;
 																	var5 = anInt2211 + 64;
-																	var6 = NpcType.method802(var83, var5,
+																	var6 = NpcType.getTileHeight(var83, var5,
 																			InterfaceNode.floorLevel * -1331355705)
 																			- GraphicsStub.anInt1813;
 																	var89 = var83 - Projectile.cameraX;
@@ -4861,7 +4861,7 @@ public final class Client extends GameEngine {
 		}
 
 		if (anInt2113 == 0) {
-			var6 = PlayerLoginDetails.anInt122;
+			var6 = PlayerLoginDetails.loadingPercentage;
 			String message = PlayerLoginDetails.bootMessage;
 			Color color = null;
 

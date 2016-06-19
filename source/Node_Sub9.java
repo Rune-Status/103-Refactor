@@ -7,7 +7,7 @@ public class Node_Sub9 extends Node {
 	byte[] aByteArray1340;
 
 	static final void method563(Class4 var0, int var1, int var2) {
-		ClassVerifier.method583(var0.anInt109, var0.anInt106, var0.anInt107, var0.anInt105, var0.aString108,
+		ClassVerifier.menuOps(var0.anInt109, var0.anInt106, var0.anInt107, var0.anInt105, var0.aString108,
 				var0.aString108, var1, var2);
 	}
 

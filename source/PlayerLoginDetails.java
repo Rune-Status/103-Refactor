@@ -14,7 +14,7 @@ public class PlayerLoginDetails {
 	static int anInt115 = 0;
 	static int anInt116 = 0;
 	static BlockType blockType;
-	static int anInt122;
+	static int loadingPercentage;
 	static String password;
 	static int anInt132;
 	static int anInt126;
@@ -41,7 +41,7 @@ public class PlayerLoginDetails {
 
 	static {
 		blockType = BlockType.NORMAL;
-		anInt122 = 10;
+		loadingPercentage = 10;
 		password = "";
 		anInt132 = 0;
 		anInt126 = anInt132 + 202;
