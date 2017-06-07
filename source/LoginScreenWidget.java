@@ -316,7 +316,7 @@ public class LoginScreenWidget {
 				IgnoredPlayer.logoSprite.method929(PlayerLoginDetails.anInt132 + 382 - IgnoredPlayer.logoSprite.subWidth / 2, 18);
 			}
 
-			if (Client.anInt2113 == 0 || Client.anInt2113 == 5) {
+			if (Client.clientState == 0 || Client.clientState == 5) {
 				byte var281 = 20;
 				var0.method982("RuneScape is loading - please wait...", PlayerLoginDetails.anInt126 + 180, 245 - var281, 16777215,
 						-1);
@@ -336,7 +336,7 @@ public class LoginScreenWidget {
 			char[] var35;
 			short var361;
 			short var37;
-			if (Client.anInt2113 == 20) {
+			if (Client.clientState == 20) {
 				PlayerLoginDetails.titleboxSprite.method929(PlayerLoginDetails.anInt126 + 180 - PlayerLoginDetails.titleboxSprite.subWidth / 2,
 						271 - PlayerLoginDetails.titleboxSprite.subHeight / 2);
 				var361 = 211;
@@ -374,7 +374,7 @@ public class LoginScreenWidget {
 				}
 			}
 
-			if (Client.anInt2113 == 10 || Client.anInt2113 == 11) {
+			if (Client.clientState == 10 || Client.clientState == 11) {
 				PlayerLoginDetails.titleboxSprite.method929(PlayerLoginDetails.anInt126, 171);
 				short var38;
 				if (PlayerLoginDetails.anInt116 == 0) {
@@ -556,7 +556,7 @@ public class LoginScreenWidget {
 			Class13.method117();
 			FriendedPlayer.titlemuteSprite[AnimationSkin.settings.muted ? 1 : 0].method929(PlayerLoginDetails.anInt132 + 765 - 40,
 					463);
-			if (Client.anInt2113 > 5 && Client.languageId == 0) {
+			if (Client.clientState > 5 && Client.languageId == 0) {
 				if (GroundItem.aDualNode_Sub13_Sub2_1841 != null) {
 					var28 = PlayerLoginDetails.anInt132 + 5;
 					var37 = 463;

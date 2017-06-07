@@ -58,9 +58,9 @@ public class Class16 {
 				}
 			}
 
-			if (Client.anInt2113 != 5) {
+			if (Client.clientState != 5) {
 				++PlayerLoginDetails.anInt140;
-				if (Client.anInt2113 == 10 || Client.anInt2113 == 11) {
+				if (Client.clientState == 10 || Client.clientState == 11) {
 					int var6;
 					if (Client.languageId == 0) {
 						if (MouseInput.anInt627 == 1 || !ClanMate.aBool1221 && MouseInput.anInt627 == 4) {
@@ -176,7 +176,7 @@ public class Class16 {
 								PlayerLoginDetails.blockType = AnimationSkin.settings.trustList
 										.containsKey(Integer.valueOf(Class91.bkdrHash(PlayerLoginDetails.username)))
 												? BlockType.TRUST : BlockType.NORMAL;
-								Node_Sub8.method550(20);
+								Node_Sub8.setClientState(20);
 								return;
 							}
 
@@ -248,7 +248,7 @@ public class Class16 {
 											PlayerLoginDetails.blockType = AnimationSkin.settings.trustList
 													.containsKey(Integer.valueOf(Class91.bkdrHash(PlayerLoginDetails.username)))
 															? BlockType.TRUST : BlockType.NORMAL;
-											Node_Sub8.method550(20);
+											Node_Sub8.setClientState(20);
 											return;
 										}
 
@@ -278,7 +278,7 @@ public class Class16 {
 									Class37.pinText = "";
 									PlayerLoginDetails.blockType = PlayerLoginDetails.trust ? BlockType.PIN_TRUST : BlockType.PIN;
 									GPI.method230("", "Connecting to server...", "");
-									Node_Sub8.method550(20);
+									Node_Sub8.setClientState(20);
 									return;
 								}
 
@@ -337,7 +337,7 @@ public class Class16 {
 											Class37.pinText = "";
 											PlayerLoginDetails.blockType = PlayerLoginDetails.trust ? BlockType.PIN_TRUST : BlockType.PIN;
 											GPI.method230("", "Connecting to server...", "");
-											Node_Sub8.method550(20);
+											Node_Sub8.setClientState(20);
 											return;
 										}
 

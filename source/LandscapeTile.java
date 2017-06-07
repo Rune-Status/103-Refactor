@@ -28,37 +28,37 @@ public final class LandscapeTile extends Node {
 	int regionX;
 	int regionY;
 
-	public static String method580(CharSequence[] var0, int var1, int var2) {
-		if (var2 == 0) {
+	public static String appendStrings(CharSequence[] stack, int stringIndex, int count) {
+		if (count == 0) {
 			return "";
-		} else if (var2 == 1) {
-			CharSequence var8 = var0[var1];
-			return var8 == null ? "null" : var8.toString();
+		} else if (count == 1) {
+			CharSequence seq = stack[stringIndex];
+			return seq == null ? "null" : seq.toString();
 		} else {
-			int var4 = var1 + var2;
-			int var3 = 0;
+			int endIndex = stringIndex + count;
+			int length = 0;
 
-			for (int var9 = var1; var9 < var4; var9++) {
-				CharSequence var10 = var0[var9];
-				if (var10 == null) {
-					var3 += 4;
+			for (int index = stringIndex; index < endIndex; index++) {
+				CharSequence seq = stack[index];
+				if (seq == null) {
+					length += 4;
 				} else {
-					var3 += var10.length();
+					length += seq.length();
 				}
 			}
 
-			StringBuilder var91 = new StringBuilder(var3);
+			StringBuilder bldr = new StringBuilder(length);
 
-			for (int var101 = var1; var101 < var4; var101++) {
-				CharSequence var6 = var0[var101];
-				if (var6 == null) {
-					var91.append("null");
+			for (int index = stringIndex; index < endIndex; index++) {
+				CharSequence seq = stack[index];
+				if (seq == null) {
+					bldr.append("null");
 				} else {
-					var91.append(var6);
+					bldr.append(seq);
 				}
 			}
 
-			return var91.toString();
+			return bldr.toString();
 		}
 	}
 

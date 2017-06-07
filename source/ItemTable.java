@@ -26,7 +26,7 @@ public class ItemTable extends Node {
 		byte var7 = (byte) (var3 >> 28);
 		int var4 = var3 >> 14 & 0x3fff;
 		int var6 = var3 & 0x3fff;
-		var2.anIntArray1945[0] = var4 - Node_Sub10.chunkLeftX;
+		var2.anIntArray1945[0] = var4 - MachineInfo.chunkLeftX;
 		var2.strictX = (var2.anIntArray1945[0] << 7) + (var2.getSize() << 6);
 		var2.anIntArray1955[0] = var6 - VarClientHub.chunkLeftY;
 		var2.strictY = (var2.anIntArray1955[0] << 7) + (var2.getSize() << 6);

@@ -7,69 +7,69 @@ public final class Actions {
             int id = ((Integer) args[0]).intValue();
             RuneScript script = Class39.getRuneScript(id);
             if (script != null) {
-              int var5 = 0;
-              int var6 = 0;
+              int intIndex = 0;
+              int stringIndex = 0;
               int var7 = -1;
               int[] opcodes = script.opcodes;
               int[] intOperands = script.intOperands;
-              Class3.anInt87 = 0;
+              Class3.calledCount = 0;
 
               int index;
               try {
-                Class3.intArgs = new int[script.intArgCount];
+                Class3.intOperands = new int[script.intArgCount];
                 int e = 0;
-                Class3.stringArgs = new String[script.stringArgCount];
+                Class3.stringOperands = new String[script.stringArgCount];
                 int var47 = 0;
 
-                int iArg;
+                int intOp;
                 String sArg;
                 for (index = 1; index < args.length; index++) {
                   if (args[index] instanceof Integer) {
-                    iArg = ((Integer) args[index]).intValue();
-                    if (iArg == -2147483647) {
-                      iArg = event.anInt1438;
+                    intOp = ((Integer) args[index]).intValue();
+                    if (intOp == -2147483647) {
+                      intOp = event.anInt1438;
                     }
 
-                    if (iArg == -2147483646) {
-                      iArg = event.anInt1431;
+                    if (intOp == -2147483646) {
+                      intOp = event.anInt1431;
                     }
 
-                    if (iArg == -2147483645) {
-                      iArg = event.widget != null ? event.widget.hash : -1;
+                    if (intOp == -2147483645) {
+                      intOp = event.widget != null ? event.widget.hash : -1;
                     }
 
-                    if (iArg == -2147483644) {
-                      iArg = event.anInt1429;
+                    if (intOp == -2147483644) {
+                      intOp = event.anInt1429;
                     }
 
-                    if (iArg == -2147483643) {
-                      iArg = event.widget != null ? event.widget.index : -1;
+                    if (intOp == -2147483643) {
+                      intOp = event.widget != null ? event.widget.index : -1;
                     }
 
-                    if (iArg == -2147483642) {
-                      iArg = event.aWidget1433 != null ? event.aWidget1433.hash : -1;
+                    if (intOp == -2147483642) {
+                      intOp = event.aWidget1433 != null ? event.aWidget1433.hash : -1;
                     }
 
-                    if (iArg == -2147483641) {
-                      iArg = event.aWidget1433 != null ? event.aWidget1433.index : -1;
+                    if (intOp == -2147483641) {
+                      intOp = event.aWidget1433 != null ? event.aWidget1433.index : -1;
                     }
 
-                    if (iArg == -2147483640) {
-                      iArg = event.anInt1434;
+                    if (intOp == -2147483640) {
+                      intOp = event.anInt1434;
                     }
 
-                    if (iArg == -2147483639) {
-                      iArg = event.anInt1435;
+                    if (intOp == -2147483639) {
+                      intOp = event.anInt1435;
                     }
 
-                    Class3.intArgs[e++] = iArg;
+                    Class3.intOperands[e++] = intOp;
                   } else if (args[index] instanceof String) {
                     sArg = (String) args[index];
                     if (sArg.equals("event_opbase")) {
                       sArg = event.opbase;
                     }
 
-                    Class3.stringArgs[var47++] = sArg;
+                    Class3.stringOperands[var47++] = sArg;
                   }
                 }
 
@@ -87,31 +87,31 @@ public final class Actions {
                   int var16;
                   int var33;
                   int var45;
-                  String[] var73;
+                  String[] sstringOperands;
                   String var83;
-                  int[] var89;
+                  int[] sintOperands;
                   if (opcode < 100) {
                     if (opcode == 0) {
-                      Class3.intStack[var5++] = intOperands[var7];
+                      Class3.intStack[intIndex++] = intOperands[var7];
                       continue;
                     }
 
                     if (opcode == 1) {
-                      iArg = intOperands[var7];
-                      Class3.intStack[var5++] = Class94.tempVars[iArg];
+                      intOp = intOperands[var7];
+                      Class3.intStack[intIndex++] = Class94.tempVars[intOp];
                       continue;
                     }
 
                     if (opcode == 2) {
-                      iArg = intOperands[var7];
-                      --var5;
-                      Class94.tempVars[iArg] = Class3.intStack[var5];
-                      World.method484(iArg);
+                      intOp = intOperands[var7];
+                      --intIndex;
+                      Class94.tempVars[intOp] = Class3.intStack[intIndex];
+                      World.method484(intOp);
                       continue;
                     }
 
                     if (opcode == 3) {
-                      Class3.stringStack[var6++] = script.stringOperands[var7];
+                      Class3.stringStack[stringIndex++] = script.stringOperands[var7];
                       continue;
                     }
 
@@ -121,174 +121,174 @@ public final class Actions {
                     }
 
                     if (opcode == 7) {
-                      var5 -= 2;
-                      if (Class3.intStack[var5 + 1] != Class3.intStack[var5]) {
+                      intIndex -= 2;
+                      if (Class3.intStack[intIndex + 1] != Class3.intStack[intIndex]) {
                         var7 += intOperands[var7];
                       }
                       continue;
                     }
 
                     if (opcode == 8) {
-                      var5 -= 2;
-                      if (Class3.intStack[var5 + 1] == Class3.intStack[var5]) {
+                      intIndex -= 2;
+                      if (Class3.intStack[intIndex + 1] == Class3.intStack[intIndex]) {
                         var7 += intOperands[var7];
                       }
                       continue;
                     }
 
                     if (opcode == 9) {
-                      var5 -= 2;
-                      if (Class3.intStack[var5] < Class3.intStack[var5 + 1]) {
+                      intIndex -= 2;
+                      if (Class3.intStack[intIndex] < Class3.intStack[intIndex + 1]) {
                         var7 += intOperands[var7];
                       }
                       continue;
                     }
 
                     if (opcode == 10) {
-                      var5 -= 2;
-                      if (Class3.intStack[var5] > Class3.intStack[var5 + 1]) {
+                      intIndex -= 2;
+                      if (Class3.intStack[intIndex] > Class3.intStack[intIndex + 1]) {
                         var7 += intOperands[var7];
                       }
                       continue;
                     }
 
                     if (opcode == 21) {
-                      if (Class3.anInt87 == 0) {
+                      if (Class3.calledCount == 0) {
                         return;
                       }
 
-                      Class33 var501 = Class3.aClass33Array86[--Class3.anInt87];
-                      script = var501.aRuneScript361;
+                      CalledScript var501 = Class3.calledScripts[--Class3.calledCount];
+                      script = var501.callingScript;
                       opcodes = script.opcodes;
                       intOperands = script.intOperands;
                       var7 = var501.anInt363;
-                      Class3.intArgs = var501.anIntArray362;
-                      Class3.stringArgs = var501.aStringArray360;
+                      Class3.intOperands = var501.intOperands;
+                      Class3.stringOperands = var501.stringOperands;
                       continue;
                     }
 
                     if (opcode == 25) {
-                      iArg = intOperands[var7];
-                      Class3.intStack[var5++] = Class91.method401(iArg);
+                      intOp = intOperands[var7];
+                      Class3.intStack[intIndex++] = Class91.method401(intOp);
                       continue;
                     }
 
                     if (opcode == 27) {
-                      iArg = intOperands[var7];
-                      --var5;
-                      Class75.method336(iArg, Class3.intStack[var5]);
+                      intOp = intOperands[var7];
+                      --intIndex;
+                      Class75.method336(intOp, Class3.intStack[intIndex]);
                       continue;
                     }
 
                     if (opcode == 31) {
-                      var5 -= 2;
-                      if (Class3.intStack[var5] <= Class3.intStack[var5 + 1]) {
+                      intIndex -= 2;
+                      if (Class3.intStack[intIndex] <= Class3.intStack[intIndex + 1]) {
                         var7 += intOperands[var7];
                       }
                       continue;
                     }
 
                     if (opcode == 32) {
-                      var5 -= 2;
-                      if (Class3.intStack[var5] >= Class3.intStack[var5 + 1]) {
+                      intIndex -= 2;
+                      if (Class3.intStack[intIndex] >= Class3.intStack[intIndex + 1]) {
                         var7 += intOperands[var7];
                       }
                       continue;
                     }
 
                     if (opcode == 33) {
-                      Class3.intStack[var5++] = Class3.intArgs[intOperands[var7]];
+                      Class3.intStack[intIndex++] = Class3.intOperands[intOperands[var7]];
                       continue;
                     }
 
                     int var491;
                     if (opcode == 34) {
                       var491 = intOperands[var7];
-                      --var5;
-                      Class3.intArgs[var491] = Class3.intStack[var5];
+                      --intIndex;
+                      Class3.intOperands[var491] = Class3.intStack[intIndex];
                       continue;
                     }
 
                     if (opcode == 35) {
-                      Class3.stringStack[var6++] = Class3.stringArgs[intOperands[var7]];
+                      Class3.stringStack[stringIndex++] = Class3.stringOperands[intOperands[var7]];
                       continue;
                     }
 
                     if (opcode == 36) {
                       var491 = intOperands[var7];
-                      --var6;
-                      Class3.stringArgs[var491] = Class3.stringStack[var6];
+                      --stringIndex;
+                      Class3.stringOperands[var491] = Class3.stringStack[stringIndex];
                       continue;
                     }
 
                     if (opcode == 37) {
-                      iArg = intOperands[var7];
-                      var6 -= iArg;
-                      var83 = LandscapeTile.method580(Class3.stringStack, var6, iArg);
-                      Class3.stringStack[var6++] = var83;
+                      intOp = intOperands[var7];
+                      stringIndex -= intOp;
+                      var83 = LandscapeTile.appendStrings(Class3.stringStack, stringIndex, intOp);
+                      Class3.stringStack[stringIndex++] = var83;
                       continue;
                     }
 
                     if (opcode == 38) {
-                      --var5;
+                      --intIndex;
                       continue;
                     }
 
                     if (opcode == 39) {
-                      --var6;
+                      --stringIndex;
                       continue;
                     }
 
                     if (opcode == 40) {
-                      iArg = intOperands[var7];
-                      RuneScript var94 = Class39.getRuneScript(iArg);
-                      var89 = new int[var94.intArgCount];
-                      var73 = new String[var94.stringArgCount];
+                      intOp = intOperands[var7];
+                      RuneScript oScript = Class39.getRuneScript(intOp);
+                      sintOperands = new int[oScript.intArgCount];
+                      sstringOperands = new String[oScript.stringArgCount];
 
-                      for (var45 = 0; var45 < var94.intStackCount; var45++) {
-                        var89[var45] = Class3.intStack[var5 - var94.intStackCount + var45];
+                      for (var45 = 0; var45 < oScript.intStackCount; var45++) {
+                        sintOperands[var45] = Class3.intStack[intIndex - oScript.intStackCount + var45];
                       }
 
-                      for (var45 = 0; var45 < var94.stringStackCount; var45++) {
-                        var73[var45] = Class3.stringStack[var6 - var94.stringStackCount + var45];
+                      for (var45 = 0; var45 < oScript.stringStackCount; var45++) {
+                        sstringOperands[var45] = Class3.stringStack[stringIndex - oScript.stringStackCount + var45];
                       }
 
-                      var5 -= var94.intStackCount;
-                      var6 -= var94.stringStackCount;
-                      Class33 var481 = new Class33();
-                      var481.aRuneScript361 = script;
-                      var481.anInt363 = var7;
-                      var481.anIntArray362 = Class3.intArgs;
-                      var481.aStringArray360 = Class3.stringArgs;
-                      Class3.aClass33Array86[++Class3.anInt87 - 1] = var481;
-                      script = var94;
-                      opcodes = var94.opcodes;
-                      intOperands = var94.intOperands;
+                      intIndex -= oScript.intStackCount;
+                      stringIndex -= oScript.stringStackCount;
+                      CalledScript cScript = new CalledScript();
+                      cScript.callingScript = script;
+                      cScript.anInt363 = var7;
+                      cScript.intOperands = Class3.intOperands;
+                      cScript.stringOperands = Class3.stringOperands;
+                      Class3.calledScripts[++Class3.calledCount - 1] = cScript;
+                      script = oScript;
+                      opcodes = oScript.opcodes;
+                      intOperands = oScript.intOperands;
                       var7 = -1;
-                      Class3.intArgs = var89;
-                      Class3.stringArgs = var73;
+                      Class3.intOperands = sintOperands;
+                      Class3.stringOperands = sstringOperands;
                       continue;
                     }
 
                     if (opcode == 42) {
-                      Class3.intStack[var5++] = Class33.aClass28_364.getVarc(intOperands[var7]);
+                      Class3.intStack[intIndex++] = CalledScript.aClass28_364.getVarc(intOperands[var7]);
                       continue;
                     }
 
                     if (opcode == 43) {
                       var491 = intOperands[var7];
-                      --var5;
-                      Class33.aClass28_364.putVarc(var491, Class3.intStack[var5]);
+                      --intIndex;
+                      CalledScript.aClass28_364.putVarc(var491, Class3.intStack[intIndex]);
                       continue;
                     }
 
                     if (opcode == 44) {
-                      iArg = intOperands[var7] >> 16;
+                      intOp = intOperands[var7] >> 16;
                       var33 = intOperands[var7] & 0xffff;
-                      --var5;
-                      var16 = Class3.intStack[var5];
+                      --intIndex;
+                      var16 = Class3.intStack[intIndex];
                       if (var16 >= 0 && var16 <= 5000) {
-                        Class3.anIntArray81[iArg] = var16;
+                        Class3.anIntArray81[intOp] = var16;
                         byte var91 = -1;
                         if (var33 == 105) {
                           var91 = 0;
@@ -301,7 +301,7 @@ public final class Actions {
                             continue label3072;
                           }
 
-                          Class3.anIntArrayArray84[iArg][var45] = var91;
+                          Class3.anIntArrayArray84[intOp][var45] = var91;
                           ++var45;
                         }
                       }
@@ -310,11 +310,11 @@ public final class Actions {
                     }
 
                     if (opcode == 45) {
-                      iArg = intOperands[var7];
-                      --var5;
-                      var33 = Class3.intStack[var5];
-                      if (var33 >= 0 && var33 < Class3.anIntArray81[iArg]) {
-                        Class3.intStack[var5++] = Class3.anIntArrayArray84[iArg][var33];
+                      intOp = intOperands[var7];
+                      --intIndex;
+                      var33 = Class3.intStack[intIndex];
+                      if (var33 >= 0 && var33 < Class3.anIntArray81[intOp]) {
+                        Class3.intStack[intIndex++] = Class3.anIntArrayArray84[intOp][var33];
                         continue;
                       }
 
@@ -322,11 +322,11 @@ public final class Actions {
                     }
 
                     if (opcode == 46) {
-                      iArg = intOperands[var7];
-                      var5 -= 2;
-                      var33 = Class3.intStack[var5];
-                      if (var33 >= 0 && var33 < Class3.anIntArray81[iArg]) {
-                        Class3.anIntArrayArray84[iArg][var33] = Class3.intStack[var5 + 1];
+                      intOp = intOperands[var7];
+                      intIndex -= 2;
+                      var33 = Class3.intStack[intIndex];
+                      if (var33 >= 0 && var33 < Class3.anIntArray81[intOp]) {
+                        Class3.anIntArrayArray84[intOp][var33] = Class3.intStack[intIndex + 1];
                         continue;
                       }
 
@@ -334,19 +334,19 @@ public final class Actions {
                     }
 
                     if (opcode == 47) {
-                      sArg = Class33.aClass28_364.getVarcString(intOperands[var7]);
+                      sArg = CalledScript.aClass28_364.getVarcString(intOperands[var7]);
                       if (sArg == null) {
                         sArg = "null";
                       }
 
-                      Class3.stringStack[var6++] = sArg;
+                      Class3.stringStack[stringIndex++] = sArg;
                       continue;
                     }
 
                     if (opcode == 48) {
                       var491 = intOperands[var7];
-                      --var6;
-                      Class33.aClass28_364.putVarcString(var491, Class3.stringStack[var6]);
+                      --stringIndex;
+                      CalledScript.aClass28_364.putVarcString(var491, Class3.stringStack[stringIndex]);
                       continue;
                     }
                   }
@@ -368,10 +368,10 @@ public final class Actions {
                   boolean var55;
                   if (opcode < 1000) {
                     if (opcode == 100) {
-                      var5 -= 3;
-                      var33 = Class3.intStack[var5];
-                      var16 = Class3.intStack[var5 + 1];
-                      var35 = Class3.intStack[var5 + 2];
+                      intIndex -= 3;
+                      var33 = Class3.intStack[intIndex];
+                      var16 = Class3.intStack[intIndex + 1];
+                      var35 = Class3.intStack[intIndex + 2];
                       if (var16 == 0) {
                         throw new RuntimeException();
                       }
@@ -420,20 +420,20 @@ public final class Actions {
                     }
 
                     if (opcode == 102) {
-                      --var5;
-                      var15 = Class94.getWidget(Class3.intStack[var5]);
+                      --intIndex;
+                      var15 = Class94.getWidget(Class3.intStack[intIndex]);
                       var15.children = null;
                       Class68.method326(var15);
                       continue;
                     }
 
                     if (opcode == 200) {
-                      var5 -= 2;
-                      var33 = Class3.intStack[var5];
-                      var16 = Class3.intStack[var5 + 1];
+                      intIndex -= 2;
+                      var33 = Class3.intStack[intIndex];
+                      var16 = Class3.intStack[intIndex + 1];
                       var17 = AbstractProducer.method146(var33, var16);
                       if (var17 != null && var16 != -1) {
-                        Class3.intStack[var5++] = 1;
+                        Class3.intStack[intIndex++] = 1;
                         if (var46) {
                           ClientSettings.aWidget304 = var17;
                         } else {
@@ -442,22 +442,22 @@ public final class Actions {
                         continue;
                       }
 
-                      Class3.intStack[var5++] = 0;
+                      Class3.intStack[intIndex++] = 0;
                       continue;
                     }
 
                     if (opcode == 201) {
-                      --var5;
-                      var15 = Class94.getWidget(Class3.intStack[var5]);
+                      --intIndex;
+                      var15 = Class94.getWidget(Class3.intStack[intIndex]);
                       if (var15 != null) {
-                        Class3.intStack[var5++] = 1;
+                        Class3.intStack[intIndex++] = 1;
                         if (var46) {
                           ClientSettings.aWidget304 = var15;
                         } else {
                           Class3.aWidget88 = var15;
                         }
                       } else {
-                        Class3.intStack[var5++] = 0;
+                        Class3.intStack[intIndex++] = 0;
                       }
                       continue;
                     }
@@ -469,17 +469,17 @@ public final class Actions {
                         if (opcode >= 1200 && opcode < 1300 || opcode >= 2200 && opcode < 2300) {
                           if (opcode >= 2000) {
                             opcode -= 1000;
-                            --var5;
-                            var15 = Class94.getWidget(Class3.intStack[var5]);
+                            --intIndex;
+                            var15 = Class94.getWidget(Class3.intStack[intIndex]);
                           } else {
                             var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                           }
 
                           Class68.method326(var15);
                           if (opcode == 1200 || opcode == 1205 || opcode == 1212) {
-                            var5 -= 2;
-                            var16 = Class3.intStack[var5];
-                            var35 = Class3.intStack[var5 + 1];
+                            intIndex -= 2;
+                            var16 = Class3.intStack[intIndex];
+                            var35 = Class3.intStack[intIndex + 1];
                             var15.itemId = var16;
                             var15.itemQuantity = var35;
                             ItemType var571 = FriendedPlayer.getItemType(var16);
@@ -507,8 +507,8 @@ public final class Actions {
 
                           if (opcode == 1201) {
                             var15.modelType = 2;
-                            --var5;
-                            var15.modelId = Class3.intStack[var5];
+                            --intIndex;
+                            var15.modelId = Class3.intStack[intIndex];
                             continue;
                           }
 
@@ -520,60 +520,60 @@ public final class Actions {
                         } else if (opcode >= 1300 && opcode < 1400 || opcode >= 2300 && opcode < 2400) {
                           if (opcode >= 2000) {
                             opcode -= 1000;
-                            --var5;
-                            var15 = Class94.getWidget(Class3.intStack[var5]);
+                            --intIndex;
+                            var15 = Class94.getWidget(Class3.intStack[intIndex]);
                           } else {
                             var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                           }
 
                           if (opcode == 1300) {
-                            --var5;
-                            var16 = Class3.intStack[var5] - 1;
+                            --intIndex;
+                            var16 = Class3.intStack[intIndex] - 1;
                             if (var16 >= 0 && var16 <= 9) {
-                              --var6;
-                              var15.method493(var16, Class3.stringStack[var6]);
+                              --stringIndex;
+                              var15.method493(var16, Class3.stringStack[stringIndex]);
                               continue;
                             }
 
-                            --var6;
+                            --stringIndex;
                             continue;
                           }
 
                           if (opcode == 1301) {
-                            var5 -= 2;
-                            var16 = Class3.intStack[var5];
-                            var35 = Class3.intStack[var5 + 1];
+                            intIndex -= 2;
+                            var16 = Class3.intStack[intIndex];
+                            var35 = Class3.intStack[intIndex + 1];
                             var15.parent = AbstractProducer.method146(var16, var35);
                             continue;
                           }
 
                           if (opcode == 1302) {
-                            --var5;
-                            var15.aBool1179 = Class3.intStack[var5] == 1;
+                            --intIndex;
+                            var15.aBool1179 = Class3.intStack[intIndex] == 1;
                             continue;
                           }
 
                           if (opcode == 1303) {
-                            --var5;
-                            var15.anInt1166 = Class3.intStack[var5];
+                            --intIndex;
+                            var15.anInt1166 = Class3.intStack[intIndex];
                             continue;
                           }
 
                           if (opcode == 1304) {
-                            --var5;
-                            var15.anInt1146 = Class3.intStack[var5];
+                            --intIndex;
+                            var15.anInt1146 = Class3.intStack[intIndex];
                             continue;
                           }
 
                           if (opcode == 1305) {
-                            --var6;
-                            var15.name = Class3.stringStack[var6];
+                            --stringIndex;
+                            var15.name = Class3.stringStack[stringIndex];
                             continue;
                           }
 
                           if (opcode == 1306) {
-                            --var6;
-                            var15.selectedAction = Class3.stringStack[var6];
+                            --stringIndex;
+                            var15.selectedAction = Class3.stringStack[stringIndex];
                             continue;
                           }
 
@@ -588,21 +588,21 @@ public final class Actions {
                           if (opcode >= 1400 && opcode < 1500 || opcode >= 2400 && opcode < 2500) {
                             if (opcode >= 2000) {
                               opcode -= 1000;
-                              --var5;
-                              var15 = Class94.getWidget(Class3.intStack[var5]);
+                              --intIndex;
+                              var15 = Class94.getWidget(Class3.intStack[intIndex]);
                             } else {
                               var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                             }
 
-                            --var6;
-                            var54 = Class3.stringStack[var6];
+                            --stringIndex;
+                            var54 = Class3.stringStack[stringIndex];
                             var38 = null;
                             if (var54.length() > 0 && var54.charAt(var54.length() - 1) == 89) {
-                              --var5;
-                              var45 = Class3.intStack[var5];
+                              --intIndex;
+                              var45 = Class3.intStack[intIndex];
                               if (var45 > 0) {
-                                for (var38 = new int[var45]; var45-- > 0; var38[var45] = Class3.intStack[var5]) {
-                                  --var5;
+                                for (var38 = new int[var45]; var45-- > 0; var38[var45] = Class3.intStack[intIndex]) {
+                                  --intIndex;
                                 }
                               }
 
@@ -613,17 +613,17 @@ public final class Actions {
 
                             for (var49 = var601.length - 1; var49 >= 1; --var49) {
                               if (var54.charAt(var49 - 1) == 115) {
-                                --var6;
-                                var601[var49] = Class3.stringStack[var6];
+                                --stringIndex;
+                                var601[var49] = Class3.stringStack[stringIndex];
                               } else {
-                                --var5;
-                                Integer var621 = new Integer(Class3.intStack[var5]);
+                                --intIndex;
+                                Integer var621 = new Integer(Class3.intStack[intIndex]);
                                 var601[var49] = var621;
                               }
                             }
 
-                            --var5;
-                            var49 = Class3.intStack[var5];
+                            --intIndex;
+                            var49 = Class3.intStack[intIndex];
                             if (var49 != -1) {
                               var601[0] = new Integer(var49);
                             } else {
@@ -748,140 +748,140 @@ public final class Actions {
                           if (opcode < 1600) {
                             var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                             if (opcode == 1500) {
-                              Class3.intStack[var5++] = var15.relativeX;
+                              Class3.intStack[intIndex++] = var15.relativeX;
                               continue;
                             }
 
                             if (opcode == 1501) {
-                              Class3.intStack[var5++] = var15.relativeY;
+                              Class3.intStack[intIndex++] = var15.relativeY;
                               continue;
                             }
 
                             if (opcode == 1502) {
-                              Class3.intStack[var5++] = var15.width;
+                              Class3.intStack[intIndex++] = var15.width;
                               continue;
                             }
 
                             if (opcode == 1503) {
-                              Class3.intStack[var5++] = var15.height * 1227800423;
+                              Class3.intStack[intIndex++] = var15.height * 1227800423;
                               continue;
                             }
 
                             if (opcode == 1504) {
-                              Class3.intStack[var5++] = var15.hidden ? 1 : 0;
+                              Class3.intStack[intIndex++] = var15.hidden ? 1 : 0;
                               continue;
                             }
 
                             if (opcode == 1505) {
-                              Class3.intStack[var5++] = var15.parentId;
+                              Class3.intStack[intIndex++] = var15.parentId;
                               continue;
                             }
                           } else if (opcode < 1700) {
                             var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                             if (opcode == 1600) {
-                              Class3.intStack[var5++] = var15.insetX;
+                              Class3.intStack[intIndex++] = var15.insetX;
                               continue;
                             }
 
                             if (opcode == 1601) {
-                              Class3.intStack[var5++] = var15.insetY;
+                              Class3.intStack[intIndex++] = var15.insetY;
                               continue;
                             }
 
                             if (opcode == 1602) {
-                              Class3.stringStack[var6++] = var15.text;
+                              Class3.stringStack[stringIndex++] = var15.text;
                               continue;
                             }
 
                             if (opcode == 1603) {
-                              Class3.intStack[var5++] = var15.viewportWidth;
+                              Class3.intStack[intIndex++] = var15.viewportWidth;
                               continue;
                             }
 
                             if (opcode == 1604) {
-                              Class3.intStack[var5++] = var15.viewportHeight;
+                              Class3.intStack[intIndex++] = var15.viewportHeight;
                               continue;
                             }
 
                             if (opcode == 1605) {
-                              Class3.intStack[var5++] = var15.modelZoom;
+                              Class3.intStack[intIndex++] = var15.modelZoom;
                               continue;
                             }
 
                             if (opcode == 1606) {
-                              Class3.intStack[var5++] = var15.rotationX;
+                              Class3.intStack[intIndex++] = var15.rotationX;
                               continue;
                             }
 
                             if (opcode == 1607) {
-                              Class3.intStack[var5++] = var15.rotationY;
+                              Class3.intStack[intIndex++] = var15.rotationY;
                               continue;
                             }
 
                             if (opcode == 1608) {
-                              Class3.intStack[var5++] = var15.rotationZ;
+                              Class3.intStack[intIndex++] = var15.rotationZ;
                               continue;
                             }
 
                             if (opcode == 1609) {
-                              Class3.intStack[var5++] = var15.alpha;
+                              Class3.intStack[intIndex++] = var15.alpha;
                               continue;
                             }
                           } else if (opcode < 1800) {
                             var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                             if (opcode == 1700) {
-                              Class3.intStack[var5++] = var15.itemId;
+                              Class3.intStack[intIndex++] = var15.itemId;
                               continue;
                             }
 
                             if (opcode == 1701) {
                               if (var15.itemId != -1) {
-                                Class3.intStack[var5++] = var15.itemQuantity;
+                                Class3.intStack[intIndex++] = var15.itemQuantity;
                               } else {
-                                Class3.intStack[var5++] = 0;
+                                Class3.intStack[intIndex++] = 0;
                               }
                               continue;
                             }
 
                             if (opcode == 1702) {
-                              Class3.intStack[var5++] = var15.index;
+                              Class3.intStack[intIndex++] = var15.index;
                               continue;
                             }
                           } else if (opcode < 1900) {
                             var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                             if (opcode == 1800) {
-                              Class3.intStack[var5++] = TaskManager
+                              Class3.intStack[intIndex++] = TaskManager
                                   .method314(Class30.getWidgetConfig(var15));
                               continue;
                             }
 
                             if (opcode == 1801) {
-                              --var5;
-                              var16 = Class3.intStack[var5];
+                              --intIndex;
+                              var16 = Class3.intStack[intIndex];
                               --var16;
                               if (var15.actions != null && var16 < var15.actions.length
                                   && var15.actions[var16] != null) {
-                                Class3.stringStack[var6++] = var15.actions[var16];
+                                Class3.stringStack[stringIndex++] = var15.actions[var16];
                                 continue;
                               }
 
-                              Class3.stringStack[var6++] = "";
+                              Class3.stringStack[stringIndex++] = "";
                               continue;
                             }
 
                             if (opcode == 1802) {
                               if (var15.name == null) {
-                                Class3.stringStack[var6++] = "";
+                                Class3.stringStack[stringIndex++] = "";
                               } else {
-                                Class3.stringStack[var6++] = var15.name;
+                                Class3.stringStack[stringIndex++] = var15.name;
                               }
                               continue;
                             }
                           } else if (opcode >= 1900 && opcode < 2000 || opcode >= 2900 && opcode < 3000) {
                             if (opcode >= 2000) {
                               opcode -= 1000;
-                              --var5;
-                              var15 = Class94.getWidget(Class3.intStack[var5]);
+                              --intIndex;
+                              var15 = Class94.getWidget(Class3.intStack[intIndex]);
                             } else {
                               var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                             }
@@ -899,157 +899,157 @@ public final class Actions {
                               var59.widget = var15;
                               var59.args = var15.anObjectArray1188;
                               var59.anInt1436 = Class3.anInt91 + 1898945859;
-                              Client.aDeque2164.method475(event);
+                              Client.aDeque2164.add(event);
                               continue;
                             }
                           } else if (opcode < 2600) {
-                            --var5;
-                            var15 = Class94.getWidget(Class3.intStack[var5]);
+                            --intIndex;
+                            var15 = Class94.getWidget(Class3.intStack[intIndex]);
                             if (opcode == 2500) {
-                              Class3.intStack[var5++] = var15.relativeX;
+                              Class3.intStack[intIndex++] = var15.relativeX;
                               continue;
                             }
 
                             if (opcode == 2501) {
-                              Class3.intStack[var5++] = var15.relativeY;
+                              Class3.intStack[intIndex++] = var15.relativeY;
                               continue;
                             }
 
                             if (opcode == 2502) {
-                              Class3.intStack[var5++] = var15.width;
+                              Class3.intStack[intIndex++] = var15.width;
                               continue;
                             }
 
                             if (opcode == 2503) {
-                              Class3.intStack[var5++] = var15.height * 1227800423;
+                              Class3.intStack[intIndex++] = var15.height * 1227800423;
                               continue;
                             }
 
                             if (opcode == 2504) {
-                              Class3.intStack[var5++] = var15.hidden ? 1 : 0;
+                              Class3.intStack[intIndex++] = var15.hidden ? 1 : 0;
                               continue;
                             }
 
                             if (opcode == 2505) {
-                              Class3.intStack[var5++] = var15.parentId;
+                              Class3.intStack[intIndex++] = var15.parentId;
                               continue;
                             }
                           } else if (opcode < 2700) {
-                            --var5;
-                            var15 = Class94.getWidget(Class3.intStack[var5]);
+                            --intIndex;
+                            var15 = Class94.getWidget(Class3.intStack[intIndex]);
                             if (opcode == 2600) {
-                              Class3.intStack[var5++] = var15.insetX;
+                              Class3.intStack[intIndex++] = var15.insetX;
                               continue;
                             }
 
                             if (opcode == 2601) {
-                              Class3.intStack[var5++] = var15.insetY;
+                              Class3.intStack[intIndex++] = var15.insetY;
                               continue;
                             }
 
                             if (opcode == 2602) {
-                              Class3.stringStack[var6++] = var15.text;
+                              Class3.stringStack[stringIndex++] = var15.text;
                               continue;
                             }
 
                             if (opcode == 2603) {
-                              Class3.intStack[var5++] = var15.viewportWidth;
+                              Class3.intStack[intIndex++] = var15.viewportWidth;
                               continue;
                             }
 
                             if (opcode == 2604) {
-                              Class3.intStack[var5++] = var15.viewportHeight;
+                              Class3.intStack[intIndex++] = var15.viewportHeight;
                               continue;
                             }
 
                             if (opcode == 2605) {
-                              Class3.intStack[var5++] = var15.modelZoom;
+                              Class3.intStack[intIndex++] = var15.modelZoom;
                               continue;
                             }
 
                             if (opcode == 2606) {
-                              Class3.intStack[var5++] = var15.rotationX;
+                              Class3.intStack[intIndex++] = var15.rotationX;
                               continue;
                             }
 
                             if (opcode == 2607) {
-                              Class3.intStack[var5++] = var15.rotationY;
+                              Class3.intStack[intIndex++] = var15.rotationY;
                               continue;
                             }
 
                             if (opcode == 2608) {
-                              Class3.intStack[var5++] = var15.rotationZ;
+                              Class3.intStack[intIndex++] = var15.rotationZ;
                               continue;
                             }
 
                             if (opcode == 2609) {
-                              Class3.intStack[var5++] = var15.alpha;
+                              Class3.intStack[intIndex++] = var15.alpha;
                               continue;
                             }
                           } else if (opcode < 2800) {
                             if (opcode == 2700) {
-                              --var5;
-                              var15 = Class94.getWidget(Class3.intStack[var5]);
-                              Class3.intStack[var5++] = var15.itemId;
+                              --intIndex;
+                              var15 = Class94.getWidget(Class3.intStack[intIndex]);
+                              Class3.intStack[intIndex++] = var15.itemId;
                               continue;
                             }
 
                             if (opcode == 2701) {
-                              --var5;
-                              var15 = Class94.getWidget(Class3.intStack[var5]);
+                              --intIndex;
+                              var15 = Class94.getWidget(Class3.intStack[intIndex]);
                               if (var15.itemId != -1) {
-                                Class3.intStack[var5++] = var15.itemQuantity;
+                                Class3.intStack[intIndex++] = var15.itemQuantity;
                               } else {
-                                Class3.intStack[var5++] = 0;
+                                Class3.intStack[intIndex++] = 0;
                               }
                               continue;
                             }
 
                             if (opcode == 2702) {
-                              --var5;
-                              var33 = Class3.intStack[var5];
+                              --intIndex;
+                              var33 = Class3.intStack[intIndex];
                               InterfaceNode var50 = (InterfaceNode) Client.interfaceNodes
                                   .get((long) var33);
                               if (var50 != null) {
-                                Class3.intStack[var5++] = 1;
+                                Class3.intStack[intIndex++] = 1;
                               } else {
-                                Class3.intStack[var5++] = 0;
+                                Class3.intStack[intIndex++] = 0;
                               }
                               continue;
                             }
 
                             if (opcode == 2706) {
-                              Class3.intStack[var5++] = Client.anInt2226;
+                              Class3.intStack[intIndex++] = Client.anInt2226;
                               continue;
                             }
                           } else if (opcode < 2900) {
-                            --var5;
-                            var15 = Class94.getWidget(Class3.intStack[var5]);
+                            --intIndex;
+                            var15 = Class94.getWidget(Class3.intStack[intIndex]);
                             if (opcode == 2800) {
-                              Class3.intStack[var5++] = TaskManager
+                              Class3.intStack[intIndex++] = TaskManager
                                   .method314(Class30.getWidgetConfig(var15));
                               continue;
                             }
 
                             if (opcode == 2801) {
-                              --var5;
-                              var16 = Class3.intStack[var5];
+                              --intIndex;
+                              var16 = Class3.intStack[intIndex];
                               --var16;
                               if (var15.actions != null && var16 < var15.actions.length
                                   && var15.actions[var16] != null) {
-                                Class3.stringStack[var6++] = var15.actions[var16];
+                                Class3.stringStack[stringIndex++] = var15.actions[var16];
                                 continue;
                               }
 
-                              Class3.stringStack[var6++] = "";
+                              Class3.stringStack[stringIndex++] = "";
                               continue;
                             }
 
                             if (opcode == 2802) {
                               if (var15.name == null) {
-                                Class3.stringStack[var6++] = "";
+                                Class3.stringStack[stringIndex++] = "";
                               } else {
-                                Class3.stringStack[var6++] = var15.name;
+                                Class3.stringStack[stringIndex++] = var15.name;
                               }
                               continue;
                             }
@@ -1061,16 +1061,16 @@ public final class Actions {
                             boolean var611;
                             if (opcode < 3200) {
                               if (opcode == 3100) {
-                                --var6;
-                                var83 = Class3.stringStack[var6];
+                                --stringIndex;
+                                var83 = Class3.stringStack[stringIndex];
                                 Class75.method334(0, "", var83);
                                 continue;
                               }
 
                               if (opcode == 3101) {
-                                var5 -= 2;
-                                Class43.method229(Class68.myPlayer, Class3.intStack[var5],
-                                    Class3.intStack[var5 + 1]);
+                                intIndex -= 2;
+                                Class43.method229(Class68.myPlayer, Class3.intStack[intIndex],
+                                    Class3.intStack[intIndex + 1]);
                                 continue;
                               }
 
@@ -1081,8 +1081,8 @@ public final class Actions {
 
                               boolean var60;
                               if (opcode == 3104) {
-                                --var6;
-                                var83 = Class3.stringStack[var6];
+                                --stringIndex;
+                                var83 = Class3.stringStack[stringIndex];
                                 var16 = 0;
                                 var60 = false;
                                 var611 = false;
@@ -1155,8 +1155,8 @@ public final class Actions {
                               }
 
                               if (opcode == 3105) {
-                                --var6;
-                                var83 = Class3.stringStack[var6];
+                                --stringIndex;
+                                var83 = Class3.stringStack[stringIndex];
                                 Client.outBuffer.putHeader(84);
                                 Client.outBuffer.putByte(var83.length() + 1);
                                 Client.outBuffer.putString(var83);
@@ -1164,8 +1164,8 @@ public final class Actions {
                               }
 
                               if (opcode == 3106) {
-                                --var6;
-                                var83 = Class3.stringStack[var6];
+                                --stringIndex;
+                                var83 = Class3.stringStack[stringIndex];
                                 Client.outBuffer.putHeader(58);
                                 Client.outBuffer.putByte(var83.length() + 1);
                                 Client.outBuffer.putString(var83);
@@ -1173,10 +1173,10 @@ public final class Actions {
                               }
 
                               if (opcode == 3107) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                --var6;
-                                var54 = Class3.stringStack[var6];
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                --stringIndex;
+                                var54 = Class3.stringStack[stringIndex];
                                 var35 = GPI.localPlayerCount;
                                 int[] var76 = GPI.localPlayerIndices;
                                 var60 = false;
@@ -1215,65 +1215,65 @@ public final class Actions {
                               }
 
                               if (opcode == 3108) {
-                                var5 -= 3;
-                                var33 = Class3.intStack[var5];
-                                var16 = Class3.intStack[var5 + 1];
-                                var35 = Class3.intStack[var5 + 2];
+                                intIndex -= 3;
+                                var33 = Class3.intStack[intIndex];
+                                var16 = Class3.intStack[intIndex + 1];
+                                var35 = Class3.intStack[intIndex + 2];
                                 var18 = Class94.getWidget(var35);
                                 Class68.method327(var18, var33, var16);
                                 continue;
                               }
 
                               if (opcode == 3109) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5];
-                                var16 = Class3.intStack[var5 + 1];
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex];
+                                var16 = Class3.intStack[intIndex + 1];
                                 var17 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                                 Class68.method327(var17, var33, var16);
                                 continue;
                               }
 
                               if (opcode == 3110) {
-                                --var5;
-                                ClanMate.aBool1221 = Class3.intStack[var5] == 1;
+                                --intIndex;
+                                ClanMate.aBool1221 = Class3.intStack[intIndex] == 1;
                                 continue;
                               }
 
                               if (opcode == 3111) {
-                                Class3.intStack[var5++] = AnimationSkin.settings.hideRoofs ? 1 : 0;
+                                Class3.intStack[intIndex++] = AnimationSkin.settings.hideRoofs ? 1 : 0;
                                 continue;
                               }
 
                               if (opcode == 3112) {
-                                --var5;
-                                AnimationSkin.settings.hideRoofs = Class3.intStack[var5] == 1;
+                                --intIndex;
+                                AnimationSkin.settings.hideRoofs = Class3.intStack[intIndex] == 1;
                                 Class75.serializeSettings();
                                 continue;
                               }
 
                               if (opcode == 3113) {
-                                --var6;
-                                var83 = Class3.stringStack[var6];
-                                --var5;
-                                var55 = Class3.intStack[var5] == 1;
+                                --stringIndex;
+                                var83 = Class3.stringStack[stringIndex];
+                                --intIndex;
+                                var55 = Class3.intStack[intIndex] == 1;
                                 Class96_Sub1.method503(var83, var55, "openjs", false);
                                 continue;
                               }
 
                               if (opcode == 3115) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
                                 Client.outBuffer.putHeader(160);
                                 Client.outBuffer.putShort(var33);
                                 continue;
                               }
 
                               if (opcode == 3116) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                var6 -= 2;
-                                var54 = Class3.stringStack[var6];
-                                var93 = Class3.stringStack[var6 + 1];
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                stringIndex -= 2;
+                                var54 = Class3.stringStack[stringIndex];
+                                var93 = Class3.stringStack[stringIndex + 1];
                                 if (var54.length() <= 500 && var93.length() <= 500) {
                                   Client.outBuffer.putHeader(196);
                                   Client.outBuffer.putShort(TileDecorationStub.getLength(var54) + 1
@@ -1286,21 +1286,21 @@ public final class Actions {
                               }
                             } else if (opcode < 3300) {
                               if (opcode == 3200) {
-                                var5 -= 3;
-                                EntityMarker.method139(Class3.intStack[var5], Class3.intStack[var5 + 1],
-                                    Class3.intStack[var5 + 2]);
+                                intIndex -= 3;
+                                EntityMarker.method139(Class3.intStack[intIndex], Class3.intStack[intIndex + 1],
+                                    Class3.intStack[intIndex + 2]);
                                 continue;
                               }
 
                               if (opcode == 3201) {
-                                --var5;
-                                Class22.method158(Class3.intStack[var5]);
+                                --intIndex;
+                                Class22.method158(Class3.intStack[intIndex]);
                                 continue;
                               }
 
                               if (opcode == 3202) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5];
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex];
                                 if (Client.anInt2201 != 0 && var33 != -1) {
                                   Class69.method328(PlayerConfig.midiTack2Index, var33, 0,
                                       Client.anInt2201, false);
@@ -1310,17 +1310,17 @@ public final class Actions {
                               }
                             } else if (opcode < 3400) {
                               if (opcode == 3300) {
-                                Class3.intStack[var5++] = Client.engineCycle;
+                                Class3.intStack[intIndex++] = Client.engineCycle;
                                 continue;
                               }
 
                               ItemTable var63;
                               if (opcode == 3301) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5];
-                                var16 = Class3.intStack[var5 + 1];
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex];
+                                var16 = Class3.intStack[intIndex + 1];
                                 var38 = Class3.intStack;
-                                var45 = var5++;
+                                var45 = intIndex++;
                                 var63 = (ItemTable) ItemTable.itemTables.get((long) var33);
                                 if (var63 == null) {
                                   var49 = -1;
@@ -1335,19 +1335,19 @@ public final class Actions {
                               }
 
                               if (opcode == 3302) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5];
-                                var16 = Class3.intStack[var5 + 1];
-                                Class3.intStack[var5++] = Class37.method213(var33, var16);
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex];
+                                var16 = Class3.intStack[intIndex + 1];
+                                Class3.intStack[intIndex++] = Class37.method213(var33, var16);
                                 continue;
                               }
 
                               if (opcode == 3303) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5];
-                                var16 = Class3.intStack[var5 + 1];
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex];
+                                var16 = Class3.intStack[intIndex + 1];
                                 var38 = Class3.intStack;
-                                var45 = var5++;
+                                var45 = intIndex++;
                                 var63 = (ItemTable) ItemTable.itemTables.get((long) var33);
                                 if (var63 == null) {
                                   var49 = 0;
@@ -1370,73 +1370,73 @@ public final class Actions {
                               }
 
                               if (opcode == 3304) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                Class3.intStack[var5++] = Class91.getInvType(var33).anInt1501;
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                Class3.intStack[intIndex++] = Class91.getInvType(var33).anInt1501;
                                 continue;
                               }
 
                               if (opcode == 3305) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                Class3.intStack[var5++] = Client.levels[var33];
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                Class3.intStack[intIndex++] = Client.levels[var33];
                                 continue;
                               }
 
                               if (opcode == 3306) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                Class3.intStack[var5++] = Client.experiences[var33];
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                Class3.intStack[intIndex++] = Client.experiences[var33];
                                 continue;
                               }
 
                               if (opcode == 3307) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                Class3.intStack[var5++] = Client.currentLevels[var33];
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                Class3.intStack[intIndex++] = Client.currentLevels[var33];
                                 continue;
                               }
 
                               if (opcode == 3308) {
                                 var33 = InterfaceNode.floorLevel * -1331355705;
-                                var16 = Node_Sub10.chunkLeftX + (Class68.myPlayer.strictX >> 7);
+                                var16 = MachineInfo.chunkLeftX + (Class68.myPlayer.strictX >> 7);
                                 var35 = (Class68.myPlayer.strictY >> 7) + VarClientHub.chunkLeftY;
-                                Class3.intStack[var5++] = (var16 << 14) + (var33 << 28) + var35;
+                                Class3.intStack[intIndex++] = (var16 << 14) + (var33 << 28) + var35;
                                 continue;
                               }
 
                               if (opcode == 3309) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                Class3.intStack[var5++] = var33 >> 14 & 0x3fff;
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                Class3.intStack[intIndex++] = var33 >> 14 & 0x3fff;
                                 continue;
                               }
 
                               if (opcode == 3310) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                Class3.intStack[var5++] = var33 >> 28;
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                Class3.intStack[intIndex++] = var33 >> 28;
                                 continue;
                               }
 
                               if (opcode == 3311) {
-                                --var5;
-                                var33 = Class3.intStack[var5];
-                                Class3.intStack[var5++] = var33 & 0x3fff;
+                                --intIndex;
+                                var33 = Class3.intStack[intIndex];
+                                Class3.intStack[intIndex++] = var33 & 0x3fff;
                                 continue;
                               }
 
                               if (opcode == 3312) {
-                                Class3.intStack[var5++] = Client.membersWorld ? 1 : 0;
+                                Class3.intStack[intIndex++] = Client.membersWorld ? 1 : 0;
                                 continue;
                               }
 
                               if (opcode == 3313) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5] + '\u8000';
-                                var16 = Class3.intStack[var5 + 1];
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex] + '\u8000';
+                                var16 = Class3.intStack[intIndex + 1];
                                 var38 = Class3.intStack;
-                                var45 = var5++;
+                                var45 = intIndex++;
                                 var63 = (ItemTable) ItemTable.itemTables.get((long) var33);
                                 if (var63 == null) {
                                   var49 = -1;
@@ -1451,19 +1451,19 @@ public final class Actions {
                               }
 
                               if (opcode == 3314) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5] + '\u8000';
-                                var16 = Class3.intStack[var5 + 1];
-                                Class3.intStack[var5++] = Class37.method213(var33, var16);
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex] + '\u8000';
+                                var16 = Class3.intStack[intIndex + 1];
+                                Class3.intStack[intIndex++] = Class37.method213(var33, var16);
                                 continue;
                               }
 
                               if (opcode == 3315) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5] + '\u8000';
-                                var16 = Class3.intStack[var5 + 1];
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex] + '\u8000';
+                                var16 = Class3.intStack[intIndex + 1];
                                 var38 = Class3.intStack;
-                                var45 = var5++;
+                                var45 = intIndex++;
                                 var63 = (ItemTable) ItemTable.itemTables.get((long) var33);
                                 if (var63 == null) {
                                   var49 = 0;
@@ -1487,52 +1487,52 @@ public final class Actions {
 
                               if (opcode == 3316) {
                                 if (Client.myRights >= 2) {
-                                  Class3.intStack[var5++] = Client.myRights;
+                                  Class3.intStack[intIndex++] = Client.myRights;
                                 } else {
-                                  Class3.intStack[var5++] = 0;
+                                  Class3.intStack[intIndex++] = 0;
                                 }
                                 continue;
                               }
 
                               if (opcode == 3317) {
-                                Class3.intStack[var5++] = Client.anInt2189;
+                                Class3.intStack[intIndex++] = Client.anInt2189;
                                 continue;
                               }
 
                               if (opcode == 3318) {
-                                Class3.intStack[var5++] = Client.myWorld;
+                                Class3.intStack[intIndex++] = Client.myWorld;
                                 continue;
                               }
 
                               if (opcode == 3321) {
-                                Class3.intStack[var5++] = Client.energy;
+                                Class3.intStack[intIndex++] = Client.energy;
                                 continue;
                               }
 
                               if (opcode == 3322) {
-                                Class3.intStack[var5++] = Client.weight;
+                                Class3.intStack[intIndex++] = Client.weight;
                                 continue;
                               }
 
                               if (opcode == 3323) {
                                 if (Client.aBool2179) {
-                                  Class3.intStack[var5++] = 1;
+                                  Class3.intStack[intIndex++] = 1;
                                 } else {
-                                  Class3.intStack[var5++] = 0;
+                                  Class3.intStack[intIndex++] = 0;
                                 }
                                 continue;
                               }
 
                               if (opcode == 3324) {
-                                Class3.intStack[var5++] = Client.myWorldFlags;
+                                Class3.intStack[intIndex++] = Client.myWorldFlags;
                                 continue;
                               }
                             } else if (opcode < 3500) {
                               EnumType var66;
                               if (opcode == 3400) {
-                                var5 -= 2;
-                                var33 = Class3.intStack[var5];
-                                var16 = Class3.intStack[var5 + 1];
+                                intIndex -= 2;
+                                var33 = Class3.intStack[intIndex];
+                                var16 = Class3.intStack[intIndex + 1];
                                 var66 = ObjectType.getEnumType(var33);
                                 if (var66.valType != 115) {
                                   ;
@@ -1540,32 +1540,32 @@ public final class Actions {
 
                                 for (var45 = 0; var45 < var66.size; var45++) {
                                   if (var66.keys[var45] == var16) {
-                                    Class3.stringStack[var6++] = var66.stringVals[var45];
+                                    Class3.stringStack[stringIndex++] = var66.stringVals[var45];
                                     var66 = null;
                                     break;
                                   }
                                 }
 
                                 if (var66 != null) {
-                                  Class3.stringStack[var6++] = var66.defaultString;
+                                  Class3.stringStack[stringIndex++] = var66.defaultString;
                                 }
                                 continue;
                               }
 
                               if (opcode == 3408) {
-                                var5 -= 4;
-                                var33 = Class3.intStack[var5];
-                                var16 = Class3.intStack[var5 + 1];
-                                var35 = Class3.intStack[var5 + 2];
-                                var45 = Class3.intStack[var5 + 3];
+                                intIndex -= 4;
+                                var33 = Class3.intStack[intIndex];
+                                var16 = Class3.intStack[intIndex + 1];
+                                var35 = Class3.intStack[intIndex + 2];
+                                var45 = Class3.intStack[intIndex + 3];
                                 var66 = ObjectType.getEnumType(var35);
                                 if (var66.keyType == var33 && var66.valType == var16) {
                                   for (var20 = 0; var20 < var66.size; var20++) {
                                     if (var66.keys[var20] == var45) {
                                       if (var16 == 115) {
-                                        Class3.stringStack[var6++] = var66.stringVals[var20];
+                                        Class3.stringStack[stringIndex++] = var66.stringVals[var20];
                                       } else {
-                                        Class3.intStack[var5++] = var66.intVals[var20];
+                                        Class3.intStack[intIndex++] = var66.intVals[var20];
                                       }
 
                                       var66 = null;
@@ -1575,18 +1575,18 @@ public final class Actions {
 
                                   if (var66 != null) {
                                     if (var16 == 115) {
-                                      Class3.stringStack[var6++] = var66.defaultString;
+                                      Class3.stringStack[stringIndex++] = var66.defaultString;
                                     } else {
-                                      Class3.intStack[var5++] = var66.defaultInt;
+                                      Class3.intStack[intIndex++] = var66.defaultInt;
                                     }
                                   }
                                   continue;
                                 }
 
                                 if (var16 == 115) {
-                                  Class3.stringStack[var6++] = "null";
+                                  Class3.stringStack[stringIndex++] = "null";
                                 } else {
-                                  Class3.intStack[var5++] = 0;
+                                  Class3.intStack[intIndex++] = 0;
                                 }
                                 continue;
                               }
@@ -1595,58 +1595,58 @@ public final class Actions {
                               if (opcode < 3700) {
                                 if (opcode == 3600) {
                                   if (Client.friendListSize == 0) {
-                                    Class3.intStack[var5++] = -2;
+                                    Class3.intStack[intIndex++] = -2;
                                   } else if (Client.friendListSize == 1) {
-                                    Class3.intStack[var5++] = -1;
+                                    Class3.intStack[intIndex++] = -1;
                                   } else {
-                                    Class3.intStack[var5++] = Client.anInt2184;
+                                    Class3.intStack[intIndex++] = Client.anInt2184;
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 3601) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   if (Client.friendListSize == 2 && var33 < Client.anInt2184) {
-                                    Class3.stringStack[var6++] = Client.friendedPlayers[var33].displayName;
-                                    Class3.stringStack[var6++] = Client.friendedPlayers[var33].previousName;
+                                    Class3.stringStack[stringIndex++] = Client.friendedPlayers[var33].displayName;
+                                    Class3.stringStack[stringIndex++] = Client.friendedPlayers[var33].previousName;
                                     continue;
                                   }
 
-                                  Class3.stringStack[var6++] = "";
-                                  Class3.stringStack[var6++] = "";
+                                  Class3.stringStack[stringIndex++] = "";
+                                  Class3.stringStack[stringIndex++] = "";
                                   continue;
                                 }
 
                                 if (opcode == 3602) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   if (Client.friendListSize == 2 && var33 < Client.anInt2184) {
-                                    Class3.intStack[var5++] = Client.friendedPlayers[var33].world;
+                                    Class3.intStack[intIndex++] = Client.friendedPlayers[var33].world;
                                     continue;
                                   }
 
-                                  Class3.intStack[var5++] = 0;
+                                  Class3.intStack[intIndex++] = 0;
                                   continue;
                                 }
 
                                 if (opcode == 3603) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   if (Client.friendListSize == 2 && var33 < Client.anInt2184) {
-                                    Class3.intStack[var5++] = Client.friendedPlayers[var33].anInt737;
+                                    Class3.intStack[intIndex++] = Client.friendedPlayers[var33].anInt737;
                                     continue;
                                   }
 
-                                  Class3.intStack[var5++] = 0;
+                                  Class3.intStack[intIndex++] = 0;
                                   continue;
                                 }
 
                                 if (opcode == 3604) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  --var5;
-                                  var16 = Class3.intStack[var5];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  --intIndex;
+                                  var16 = Class3.intStack[intIndex];
                                   Client.outBuffer.putHeader(62);
                                   Client.outBuffer.putByte(TileDecorationStub.getLength(var83) + 1);
                                   Client.outBuffer.putString(var83);
@@ -1658,8 +1658,8 @@ public final class Actions {
                                 FriendedPlayer var67;
                                 String var681;
                                 if (opcode == 3605) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   if (var83 == null) {
                                     continue;
                                   }
@@ -1733,15 +1733,15 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3606) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   SequenceType.method684(var83);
                                   continue;
                                 }
 
                                 if (opcode == 3607) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   if (var83 == null) {
                                     continue;
                                   }
@@ -1815,8 +1815,8 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3608) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   if (var83 == null) {
                                     continue;
                                   }
@@ -1858,8 +1858,8 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3609) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   Permission[] var72 = new Permission[] { Permission.PLAYER,
                                       Permission.PLAYER_MOD, Permission.JAGEX_MOD,
                                       Permission.IRONMAN, Permission.HARDCORE_IRONMAN };
@@ -1875,7 +1875,7 @@ public final class Actions {
                                     }
                                   }
 
-                                  Class3.intStack[var5++] = AnimationSkin.isFriended(var83, false) ? 1
+                                  Class3.intStack[intIndex++] = AnimationSkin.isFriended(var83, false) ? 1
                                       : 0;
                                   continue;
                                 }
@@ -1885,7 +1885,7 @@ public final class Actions {
                                 if (opcode == 3611) {
                                   if (Client.clanChatOwner != null) {
                                     var57 = Class3.stringStack;
-                                    var16 = var6++;
+                                    var16 = stringIndex++;
                                     var701 = Client.clanChatOwner;
                                     var681 = OverlayType
                                         .method716(GZipDecompressor.method250(var701));
@@ -1895,64 +1895,64 @@ public final class Actions {
 
                                     var57[var16] = var681;
                                   } else {
-                                    Class3.stringStack[var6++] = "";
+                                    Class3.stringStack[stringIndex++] = "";
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 3612) {
                                   if (Client.clanChatOwner != null) {
-                                    Class3.intStack[var5++] = LoginScreenWidget.clanChatSize;
+                                    Class3.intStack[intIndex++] = LoginScreenWidget.clanChatSize;
                                   } else {
-                                    Class3.intStack[var5++] = 0;
+                                    Class3.intStack[intIndex++] = 0;
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 3613) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   if (Client.clanChatOwner != null && var33 < LoginScreenWidget.clanChatSize) {
-                                    Class3.stringStack[var6++] = InterfaceNode.clanMates[var33].displayName;
+                                    Class3.stringStack[stringIndex++] = InterfaceNode.clanMates[var33].displayName;
                                     continue;
                                   }
 
-                                  Class3.stringStack[var6++] = "";
+                                  Class3.stringStack[stringIndex++] = "";
                                   continue;
                                 }
 
                                 if (opcode == 3614) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   if (Client.clanChatOwner != null && var33 < LoginScreenWidget.clanChatSize) {
-                                    Class3.intStack[var5++] = InterfaceNode.clanMates[var33].world;
+                                    Class3.intStack[intIndex++] = InterfaceNode.clanMates[var33].world;
                                     continue;
                                   }
 
-                                  Class3.intStack[var5++] = 0;
+                                  Class3.intStack[intIndex++] = 0;
                                   continue;
                                 }
 
                                 if (opcode == 3615) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   if (Client.clanChatOwner != null && var33 < LoginScreenWidget.clanChatSize) {
-                                    Class3.intStack[var5++] = InterfaceNode.clanMates[var33].rank;
+                                    Class3.intStack[intIndex++] = InterfaceNode.clanMates[var33].rank;
                                     continue;
                                   }
 
-                                  Class3.intStack[var5++] = 0;
+                                  Class3.intStack[intIndex++] = 0;
                                   continue;
                                 }
 
                                 if (opcode == 3616) {
-                                  Class3.intStack[var5++] = Class43.aByte451;
+                                  Class3.intStack[intIndex++] = Class43.aByte451;
                                   continue;
                                 }
 
                                 if (opcode == 3617) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   if (InterfaceNode.clanMates != null) {
                                     Client.outBuffer.putHeader(166);
                                     Client.outBuffer.putByte(TileDecorationStub.getLength(var83));
@@ -1962,13 +1962,13 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3618) {
-                                  Class3.intStack[var5++] = Client.clanChatRank;
+                                  Class3.intStack[intIndex++] = Client.clanChatRank;
                                   continue;
                                 }
 
                                 if (opcode == 3619) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   if (!var83.equals("")) {
                                     Client.outBuffer.putHeader(233);
                                     Client.outBuffer.putByte(TileDecorationStub.getLength(var83));
@@ -1985,57 +1985,57 @@ public final class Actions {
 
                                 if (opcode == 3621) {
                                   if (Client.friendListSize == 0) {
-                                    Class3.intStack[var5++] = -1;
+                                    Class3.intStack[intIndex++] = -1;
                                   } else {
-                                    Class3.intStack[var5++] = Client.anInt2229;
+                                    Class3.intStack[intIndex++] = Client.anInt2229;
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 3622) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   if (Client.friendListSize != 0 && var33 < Client.anInt2229) {
-                                    Class3.stringStack[var6++] = Client.ignoredPlayers[var33].displayName;
-                                    Class3.stringStack[var6++] = Client.ignoredPlayers[var33].previousName;
+                                    Class3.stringStack[stringIndex++] = Client.ignoredPlayers[var33].displayName;
+                                    Class3.stringStack[stringIndex++] = Client.ignoredPlayers[var33].previousName;
                                     continue;
                                   }
 
-                                  Class3.stringStack[var6++] = "";
-                                  Class3.stringStack[var6++] = "";
+                                  Class3.stringStack[stringIndex++] = "";
+                                  Class3.stringStack[stringIndex++] = "";
                                   continue;
                                 }
 
                                 if (opcode == 3623) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   if (var83.startsWith(Class41.method223(0))
                                       || var83.startsWith(Class41.method223(1))) {
                                     var83 = var83.substring(7);
                                   }
 
-                                  Class3.intStack[var5++] = World.method485(var83) ? 1 : 0;
+                                  Class3.intStack[intIndex++] = World.method485(var83) ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 3624) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   if (InterfaceNode.clanMates != null && var33 < LoginScreenWidget.clanChatSize
                                       && InterfaceNode.clanMates[var33].displayName
                                           .equalsIgnoreCase(Class68.myPlayer.name)) {
-                                    Class3.intStack[var5++] = 1;
+                                    Class3.intStack[intIndex++] = 1;
                                     continue;
                                   }
 
-                                  Class3.intStack[var5++] = 0;
+                                  Class3.intStack[intIndex++] = 0;
                                   continue;
                                 }
 
                                 if (opcode == 3625) {
                                   if (Client.clanChatName != null) {
                                     var57 = Class3.stringStack;
-                                    var16 = var6++;
+                                    var16 = stringIndex++;
                                     var701 = Client.clanChatName;
                                     var681 = OverlayType
                                         .method716(GZipDecompressor.method250(var701));
@@ -2045,89 +2045,89 @@ public final class Actions {
 
                                     var57[var16] = var681;
                                   } else {
-                                    Class3.stringStack[var6++] = "";
+                                    Class3.stringStack[stringIndex++] = "";
                                   }
                                   continue;
                                 }
                               } else if (opcode < 4000) {
                                 if (opcode == 3903) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = Client.localExchangeOffers[var33]
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = Client.localExchangeOffers[var33]
                                       .method368();
                                   continue;
                                 }
 
                                 if (opcode == 3904) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = Client.localExchangeOffers[var33].itemId;
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = Client.localExchangeOffers[var33].itemId;
                                   continue;
                                 }
 
                                 if (opcode == 3905) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = Client.localExchangeOffers[var33].price;
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = Client.localExchangeOffers[var33].price;
                                   continue;
                                 }
 
                                 if (opcode == 3906) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = Client.localExchangeOffers[var33].itemQuantity;
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = Client.localExchangeOffers[var33].itemQuantity;
                                   continue;
                                 }
 
                                 if (opcode == 3907) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = Client.localExchangeOffers[var33].transferred;
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = Client.localExchangeOffers[var33].transferred;
                                   continue;
                                 }
 
                                 if (opcode == 3908) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = Client.localExchangeOffers[var33].spent;
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = Client.localExchangeOffers[var33].spent;
                                   continue;
                                 }
 
                                 if (opcode == 3910) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var16 = Client.localExchangeOffers[var33].method372();
-                                  Class3.intStack[var5++] = var16 == 0 ? 1 : 0;
+                                  Class3.intStack[intIndex++] = var16 == 0 ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 3911) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var16 = Client.localExchangeOffers[var33].method372();
-                                  Class3.intStack[var5++] = var16 == 2 ? 1 : 0;
+                                  Class3.intStack[intIndex++] = var16 == 2 ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 3912) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var16 = Client.localExchangeOffers[var33].method372();
-                                  Class3.intStack[var5++] = var16 == 5 ? 1 : 0;
+                                  Class3.intStack[intIndex++] = var16 == 5 ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 3913) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var16 = Client.localExchangeOffers[var33].method372();
-                                  Class3.intStack[var5++] = var16 == 1 ? 1 : 0;
+                                  Class3.intStack[intIndex++] = var16 == 1 ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 3914) {
-                                  --var5;
-                                  var611 = Class3.intStack[var5] == 1;
+                                  --intIndex;
+                                  var611 = Class3.intStack[intIndex] == 1;
                                   if (Class70.aClass114_588 != null) {
                                     Class70.aClass114_588.method438(Class114.aComparator792,
                                         var611);
@@ -2136,8 +2136,8 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3915) {
-                                  --var5;
-                                  var611 = Class3.intStack[var5] == 1;
+                                  --intIndex;
+                                  var611 = Class3.intStack[intIndex] == 1;
                                   if (Class70.aClass114_588 != null) {
                                     Class70.aClass114_588.method438(Class114.aComparator791,
                                         var611);
@@ -2146,9 +2146,9 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3916) {
-                                  var5 -= 2;
-                                  var611 = Class3.intStack[var5] == 1;
-                                  var55 = Class3.intStack[var5 + 1] == 1;
+                                  intIndex -= 2;
+                                  var611 = Class3.intStack[intIndex] == 1;
+                                  var55 = Class3.intStack[intIndex + 1] == 1;
                                   if (Class70.aClass114_588 != null) {
                                     Class70.aClass114_588.method438(new Class37(var55), var611);
                                   }
@@ -2156,8 +2156,8 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3917) {
-                                  --var5;
-                                  var611 = Class3.intStack[var5] == 1;
+                                  --intIndex;
+                                  var611 = Class3.intStack[intIndex] == 1;
                                   if (Class70.aClass114_588 != null) {
                                     Class70.aClass114_588.method438(Class114.aComparator790,
                                         var611);
@@ -2166,8 +2166,8 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3918) {
-                                  --var5;
-                                  var611 = Class3.intStack[var5] == 1;
+                                  --intIndex;
+                                  var611 = Class3.intStack[intIndex] == 1;
                                   if (Class70.aClass114_588 != null) {
                                     Class70.aClass114_588.method438(Class114.aComparator794,
                                         var611);
@@ -2176,39 +2176,39 @@ public final class Actions {
                                 }
 
                                 if (opcode == 3919) {
-                                  Class3.intStack[var5++] = Class70.aClass114_588 == null ? 0
+                                  Class3.intStack[intIndex++] = Class70.aClass114_588 == null ? 0
                                       : Class70.aClass114_588.aList793.size();
                                   continue;
                                 }
 
                                 Class115 var69;
                                 if (opcode == 3920) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var69 = (Class115) Class70.aClass114_588.aList793.get(var33);
-                                  Class3.intStack[var5++] = var69.anInt799;
+                                  Class3.intStack[intIndex++] = var69.anInt799;
                                   continue;
                                 }
 
                                 if (opcode == 3921) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var69 = (Class115) Class70.aClass114_588.aList793.get(var33);
-                                  Class3.stringStack[var6++] = var69.method440();
+                                  Class3.stringStack[stringIndex++] = var69.method440();
                                   continue;
                                 }
 
                                 if (opcode == 3922) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var69 = (Class115) Class70.aClass114_588.aList793.get(var33);
-                                  Class3.stringStack[var6++] = var69.method439();
+                                  Class3.stringStack[stringIndex++] = var69.method439();
                                   continue;
                                 }
 
                                 if (opcode == 3923) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var69 = (Class115) Class70.aClass114_588.aList793.get(var33);
                                   long var861 = AnimationSkin.currentTimeMs() - Huffman.aLong449
                                       - var69.aLong797;
@@ -2218,320 +2218,320 @@ public final class Actions {
                                       - (long) (var20 * '\uea60')) / 1000L);
                                   String var79 = var49 + ":" + var20 / 10 + var20 % 10 + ":"
                                       + var48 / 10 + var48 % 10;
-                                  Class3.stringStack[var6++] = var79;
+                                  Class3.stringStack[stringIndex++] = var79;
                                   continue;
                                 }
 
                                 if (opcode == 3924) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var69 = (Class115) Class70.aClass114_588.aList793.get(var33);
-                                  Class3.intStack[var5++] = var69.anExchangeOffer796.itemQuantity;
+                                  Class3.intStack[intIndex++] = var69.anExchangeOffer796.itemQuantity;
                                   continue;
                                 }
 
                                 if (opcode == 3925) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var69 = (Class115) Class70.aClass114_588.aList793.get(var33);
-                                  Class3.intStack[var5++] = var69.anExchangeOffer796.price;
+                                  Class3.intStack[intIndex++] = var69.anExchangeOffer796.price;
                                   continue;
                                 }
 
                                 if (opcode == 3926) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var69 = (Class115) Class70.aClass114_588.aList793.get(var33);
-                                  Class3.intStack[var5++] = var69.anExchangeOffer796.itemId;
+                                  Class3.intStack[intIndex++] = var69.anExchangeOffer796.itemId;
                                   continue;
                                 }
                               } else if (opcode < 4100) {
                                 if (opcode == 4000) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = var33 + var16;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = var33 + var16;
                                   continue;
                                 }
 
                                 if (opcode == 4001) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = var33 - var16;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = var33 - var16;
                                   continue;
                                 }
 
                                 if (opcode == 4002) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = var33 * var16;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = var33 * var16;
                                   continue;
                                 }
 
                                 if (opcode == 4003) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = var33 / var16;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = var33 / var16;
                                   continue;
                                 }
 
                                 if (opcode == 4004) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = (int) (Math.random() * (double) var33);
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = (int) (Math.random() * (double) var33);
                                   continue;
                                 }
 
                                 if (opcode == 4005) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = (int) (Math.random()
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = (int) (Math.random()
                                       * (double) (var33 + 1));
                                   continue;
                                 }
 
                                 if (opcode == 4006) {
-                                  var5 -= 5;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  var35 = Class3.intStack[var5 + 2];
-                                  var45 = Class3.intStack[var5 + 3];
-                                  var49 = Class3.intStack[var5 + 4];
-                                  Class3.intStack[var5++] = (var49 - var35) * (var16 - var33)
+                                  intIndex -= 5;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  var35 = Class3.intStack[intIndex + 2];
+                                  var45 = Class3.intStack[intIndex + 3];
+                                  var49 = Class3.intStack[intIndex + 4];
+                                  Class3.intStack[intIndex++] = (var49 - var35) * (var16 - var33)
                                       / (var45 - var35) + var33;
                                   continue;
                                 }
 
                                 if (opcode == 4007) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = var33 * var16 / 100 + var33;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = var33 * var16 / 100 + var33;
                                   continue;
                                 }
 
                                 if (opcode == 4008) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = 1 << var16 | var33;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = 1 << var16 | var33;
                                   continue;
                                 }
 
                                 if (opcode == 4009) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = -1 - (1 << var16) & var33;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = -1 - (1 << var16) & var33;
                                   continue;
                                 }
 
                                 if (opcode == 4010) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = (1 << var16 & var33) != 0 ? 1 : 0;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = (1 << var16 & var33) != 0 ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 4011) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = var33 % var16;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = var33 % var16;
                                   continue;
                                 }
 
                                 if (opcode == 4012) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
                                   if (var33 == 0) {
-                                    Class3.intStack[var5++] = 0;
+                                    Class3.intStack[intIndex++] = 0;
                                   } else {
-                                    Class3.intStack[var5++] = (int) Math.pow((double) var33,
+                                    Class3.intStack[intIndex++] = (int) Math.pow((double) var33,
                                         (double) var16);
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 4013) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
                                   if (var33 == 0) {
-                                    Class3.intStack[var5++] = 0;
+                                    Class3.intStack[intIndex++] = 0;
                                   } else if (var16 == 0) {
-                                    Class3.intStack[var5++] = Integer.MAX_VALUE;
+                                    Class3.intStack[intIndex++] = Integer.MAX_VALUE;
                                   } else {
-                                    Class3.intStack[var5++] = (int) Math.pow((double) var33,
+                                    Class3.intStack[intIndex++] = (int) Math.pow((double) var33,
                                         1.0D / (double) var16);
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 4014) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = var33 & var16;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = var33 & var16;
                                   continue;
                                 }
 
                                 if (opcode == 4015) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
-                                  Class3.intStack[var5++] = var33 | var16;
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
+                                  Class3.intStack[intIndex++] = var33 | var16;
                                   continue;
                                 }
                               } else if (opcode < 4200) {
                                 if (opcode == 4100) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  --var5;
-                                  var16 = Class3.intStack[var5];
-                                  Class3.stringStack[var6++] = var83 + var16;
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  --intIndex;
+                                  var16 = Class3.intStack[intIndex];
+                                  Class3.stringStack[stringIndex++] = var83 + var16;
                                   continue;
                                 }
 
                                 if (opcode == 4101) {
-                                  var6 -= 2;
-                                  var83 = Class3.stringStack[var6];
-                                  var54 = Class3.stringStack[var6 + 1];
-                                  Class3.stringStack[var6++] = var83 + var54;
+                                  stringIndex -= 2;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  var54 = Class3.stringStack[stringIndex + 1];
+                                  Class3.stringStack[stringIndex++] = var83 + var54;
                                   continue;
                                 }
 
                                 if (opcode == 4102) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  --var5;
-                                  var16 = Class3.intStack[var5];
-                                  var73 = Class3.stringStack;
-                                  var45 = var6++;
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  --intIndex;
+                                  var16 = Class3.intStack[intIndex];
+                                  sstringOperands = Class3.stringStack;
+                                  var45 = stringIndex++;
                                   if (var16 < 0) {
                                     var731 = Integer.toString(var16);
                                   } else {
                                     var731 = Class56.method284(var16, 10, true);
                                   }
 
-                                  var73[var45] = var83 + var731;
+                                  sstringOperands[var45] = var83 + var731;
                                   continue;
                                 }
 
                                 if (opcode == 4103) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  Class3.stringStack[var6++] = var83.toLowerCase();
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  Class3.stringStack[stringIndex++] = var83.toLowerCase();
                                   continue;
                                 }
 
                                 if (opcode == 4104) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   long var74 = ((long) var33 + 11745L) * 86400000L;
                                   Class3.aCalendar89.setTime(new Date(var74));
                                   var45 = Class3.aCalendar89.get(5);
                                   var49 = Class3.aCalendar89.get(2);
                                   var20 = Class3.aCalendar89.get(1);
-                                  Class3.stringStack[var6++] = var45 + "-"
+                                  Class3.stringStack[stringIndex++] = var45 + "-"
                                       + Class3.aStringArray90[var49] + "-" + var20;
                                   continue;
                                 }
 
                                 if (opcode == 4105) {
-                                  var6 -= 2;
-                                  var83 = Class3.stringStack[var6];
-                                  var54 = Class3.stringStack[var6 + 1];
+                                  stringIndex -= 2;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  var54 = Class3.stringStack[stringIndex + 1];
                                   if (Class68.myPlayer.config != null
                                       && Class68.myPlayer.config.female) {
-                                    Class3.stringStack[var6++] = var54;
+                                    Class3.stringStack[stringIndex++] = var54;
                                     continue;
                                   }
 
-                                  Class3.stringStack[var6++] = var83;
+                                  Class3.stringStack[stringIndex++] = var83;
                                   continue;
                                 }
 
                                 if (opcode == 4106) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.stringStack[var6++] = Integer.toString(var33);
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.stringStack[stringIndex++] = Integer.toString(var33);
                                   continue;
                                 }
 
                                 if (opcode == 4107) {
-                                  var6 -= 2;
-                                  Class3.intStack[var5++] = ByteBuf
-                                      .method603(Class96_Sub1.method502(Class3.stringStack[var6],
-                                          Class3.stringStack[var6 + 1], Client.languageId));
+                                  stringIndex -= 2;
+                                  Class3.intStack[intIndex++] = ByteBuf
+                                      .method603(Class96_Sub1.method502(Class3.stringStack[stringIndex],
+                                          Class3.stringStack[stringIndex + 1], Client.languageId));
                                   continue;
                                 }
 
                                 byte[] var71;
                                 DualNode_Sub13_Sub3_Sub1 var80;
                                 if (opcode == 4108) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  var5 -= 2;
-                                  var16 = Class3.intStack[var5];
-                                  var35 = Class3.intStack[var5 + 1];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  intIndex -= 2;
+                                  var16 = Class3.intStack[intIndex];
+                                  var35 = Class3.intStack[intIndex + 1];
                                   var71 = Class2.fontMetricsIndex.getFile(var35, 0);
                                   var80 = new DualNode_Sub13_Sub3_Sub1(var71);
-                                  Class3.intStack[var5++] = var80.method970(var83, var16);
+                                  Class3.intStack[intIndex++] = var80.method970(var83, var16);
                                   continue;
                                 }
 
                                 if (opcode == 4109) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  var5 -= 2;
-                                  var16 = Class3.intStack[var5];
-                                  var35 = Class3.intStack[var5 + 1];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  intIndex -= 2;
+                                  var16 = Class3.intStack[intIndex];
+                                  var35 = Class3.intStack[intIndex + 1];
                                   var71 = Class2.fontMetricsIndex.getFile(var35, 0);
                                   var80 = new DualNode_Sub13_Sub3_Sub1(var71);
-                                  Class3.intStack[var5++] = var80.method969(var83, var16);
+                                  Class3.intStack[intIndex++] = var80.method969(var83, var16);
                                   continue;
                                 }
 
                                 if (opcode == 4110) {
-                                  var6 -= 2;
-                                  var83 = Class3.stringStack[var6];
-                                  var54 = Class3.stringStack[var6 + 1];
-                                  --var5;
-                                  if (Class3.intStack[var5] == 1) {
-                                    Class3.stringStack[var6++] = var83;
+                                  stringIndex -= 2;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  var54 = Class3.stringStack[stringIndex + 1];
+                                  --intIndex;
+                                  if (Class3.intStack[intIndex] == 1) {
+                                    Class3.stringStack[stringIndex++] = var83;
                                   } else {
-                                    Class3.stringStack[var6++] = var54;
+                                    Class3.stringStack[stringIndex++] = var54;
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 4111) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  Class3.stringStack[var6++] = DualNode_Sub13_Sub3.appendTags(var83);
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  Class3.stringStack[stringIndex++] = DualNode_Sub13_Sub3.appendTags(var83);
                                   continue;
                                 }
 
                                 if (opcode == 4112) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  --var5;
-                                  var16 = Class3.intStack[var5];
-                                  Class3.stringStack[var6++] = var83 + (char) var16;
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  --intIndex;
+                                  var16 = Class3.intStack[intIndex];
+                                  Class3.stringStack[stringIndex++] = var83 + (char) var16;
                                   continue;
                                 }
 
                                 if (opcode == 4113) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  var89 = Class3.intStack;
-                                  var35 = var5++;
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  sintOperands = Class3.intStack;
+                                  var35 = intIndex++;
                                   var86 = (char) var33;
                                   if (var86 >= 32 && var86 <= 126) {
                                     var41 = true;
@@ -2544,62 +2544,62 @@ public final class Actions {
                                     var41 = true;
                                   }
 
-                                  var89[var35] = var41 ? 1 : 0;
+                                  sintOperands[var35] = var41 ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 4114) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  var89 = Class3.intStack;
-                                  var35 = var5++;
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  sintOperands = Class3.intStack;
+                                  var35 = intIndex++;
                                   var86 = (char) var33;
                                   var41 = var86 >= 48 && var86 <= 57 || var86 >= 65 && var86 <= 90
                                       || var86 >= 97 && var86 <= 122;
-                                  var89[var35] = var41 ? 1 : 0;
+                                  sintOperands[var35] = var41 ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 4115) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = LandscapeTile.method581((char) var33) ? 1
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = LandscapeTile.method581((char) var33) ? 1
                                       : 0;
                                   continue;
                                 }
 
                                 if (opcode == 4116) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = MilliTimer.method553((char) var33) ? 1
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = MilliTimer.method553((char) var33) ? 1
                                       : 0;
                                   continue;
                                 }
 
                                 if (opcode == 4117) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   if (var83 != null) {
-                                    Class3.intStack[var5++] = var83.length();
+                                    Class3.intStack[intIndex++] = var83.length();
                                   } else {
-                                    Class3.intStack[var5++] = 0;
+                                    Class3.intStack[intIndex++] = 0;
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 4118) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  var5 -= 2;
-                                  var16 = Class3.intStack[var5];
-                                  var35 = Class3.intStack[var5 + 1];
-                                  Class3.stringStack[var6++] = var83.substring(var16, var35);
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  intIndex -= 2;
+                                  var16 = Class3.intStack[intIndex];
+                                  var35 = Class3.intStack[intIndex + 1];
+                                  Class3.stringStack[stringIndex++] = var83.substring(var16, var35);
                                   continue;
                                 }
 
                                 if (opcode == 4119) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   StringBuilder var75 = new StringBuilder(var83.length());
                                   var98 = false;
 
@@ -2614,122 +2614,122 @@ public final class Actions {
                                     }
                                   }
 
-                                  Class3.stringStack[var6++] = var75.toString();
+                                  Class3.stringStack[stringIndex++] = var75.toString();
                                   continue;
                                 }
 
                                 if (opcode == 4120) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  --var5;
-                                  var16 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = var83.indexOf(var16);
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  --intIndex;
+                                  var16 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = var83.indexOf(var16);
                                   continue;
                                 }
 
                                 if (opcode == 4121) {
-                                  var6 -= 2;
-                                  var83 = Class3.stringStack[var6];
-                                  var54 = Class3.stringStack[var6 + 1];
-                                  --var5;
-                                  var35 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = var83.indexOf(var54, var35);
+                                  stringIndex -= 2;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  var54 = Class3.stringStack[stringIndex + 1];
+                                  --intIndex;
+                                  var35 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = var83.indexOf(var54, var35);
                                   continue;
                                 }
                               } else if (opcode < 4300) {
                                 if (opcode == 4200) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.stringStack[var6++] = FriendedPlayer.getItemType(var33).name;
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.stringStack[stringIndex++] = FriendedPlayer.getItemType(var33).name;
                                   continue;
                                 }
 
                                 ItemType var761;
                                 if (opcode == 4201) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
                                   var761 = FriendedPlayer.getItemType(var33);
                                   if (var16 >= 1 && var16 <= 5
                                       && var761.groundActions[var16 - 1] != null) {
-                                    Class3.stringStack[var6++] = var761.groundActions[var16 - 1];
+                                    Class3.stringStack[stringIndex++] = var761.groundActions[var16 - 1];
                                     continue;
                                   }
 
-                                  Class3.stringStack[var6++] = "";
+                                  Class3.stringStack[stringIndex++] = "";
                                   continue;
                                 }
 
                                 if (opcode == 4202) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
                                   var761 = FriendedPlayer.getItemType(var33);
                                   if (var16 >= 1 && var16 <= 5 && var761.actions[var16 - 1] != null) {
-                                    Class3.stringStack[var6++] = var761.actions[var16 - 1];
+                                    Class3.stringStack[stringIndex++] = var761.actions[var16 - 1];
                                     continue;
                                   }
 
-                                  Class3.stringStack[var6++] = "";
+                                  Class3.stringStack[stringIndex++] = "";
                                   continue;
                                 }
 
                                 if (opcode == 4203) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = FriendedPlayer
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = FriendedPlayer
                                       .getItemType(var33).storeValue;
                                   continue;
                                 }
 
                                 if (opcode == 4204) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = FriendedPlayer
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = FriendedPlayer
                                       .getItemType(var33).stackable == 1 ? 1 : 0;
                                   continue;
                                 }
 
                                 ItemType var84;
                                 if (opcode == 4205) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var84 = FriendedPlayer.getItemType(var33);
                                   if (var84.anInt1633 == -1 && var84.anInt1640 >= 0) {
-                                    Class3.intStack[var5++] = var84.anInt1640;
+                                    Class3.intStack[intIndex++] = var84.anInt1640;
                                     continue;
                                   }
 
-                                  Class3.intStack[var5++] = var33;
+                                  Class3.intStack[intIndex++] = var33;
                                   continue;
                                 }
 
                                 if (opcode == 4206) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   var84 = FriendedPlayer.getItemType(var33);
                                   if (var84.anInt1633 >= 0 && var84.anInt1640 >= 0) {
-                                    Class3.intStack[var5++] = var84.anInt1640;
+                                    Class3.intStack[intIndex++] = var84.anInt1640;
                                     continue;
                                   }
 
-                                  Class3.intStack[var5++] = var33;
+                                  Class3.intStack[intIndex++] = var33;
                                   continue;
                                 }
 
                                 if (opcode == 4207) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = FriendedPlayer
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = FriendedPlayer
                                       .getItemType(var33).aBool1618 ? 1 : 0;
                                   continue;
                                 }
 
                                 if (opcode == 4210) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  --var5;
-                                  var16 = Class3.intStack[var5];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  --intIndex;
+                                  var16 = Class3.intStack[intIndex];
                                   var41 = var16 == 1;
                                   var93 = var83.toLowerCase();
                                   short[] var891 = new short[16];
@@ -2777,19 +2777,19 @@ public final class Actions {
                                     ++var48;
                                   }
 
-                                  Class3.intStack[var5++] = GroundItem.anInt1840;
+                                  Class3.intStack[intIndex++] = GroundItem.anInt1840;
                                   continue;
                                 }
 
                                 if (opcode == 4211) {
                                   if (Connection.aShortArray560 != null
                                       && ClientSettings.anInt305 < GroundItem.anInt1840) {
-                                    Class3.intStack[var5++] = Connection.aShortArray560[++ClientSettings.anInt305
+                                    Class3.intStack[intIndex++] = Connection.aShortArray560[++ClientSettings.anInt305
                                         - 1] & 0xffff;
                                     continue;
                                   }
 
-                                  Class3.intStack[var5++] = -1;
+                                  Class3.intStack[intIndex++] = -1;
                                   continue;
                                 }
 
@@ -2799,14 +2799,14 @@ public final class Actions {
                                 }
                               } else if (opcode < 5100) {
                                 if (opcode == 5000) {
-                                  Class3.intStack[var5++] = Client.anInt2110;
+                                  Class3.intStack[intIndex++] = Client.anInt2110;
                                   continue;
                                 }
 
                                 if (opcode == 5001) {
-                                  var5 -= 3;
-                                  Client.anInt2110 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
+                                  intIndex -= 3;
+                                  Client.anInt2110 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
                                   Class51[] var97 = Class41.method225(94483834);
                                   var45 = 0;
 
@@ -2831,7 +2831,7 @@ public final class Actions {
                                     VarClientHub.aClass51_320 = Class51.aClass51_524;
                                   }
 
-                                  Client.anInt2182 = Class3.intStack[var5 + 2];
+                                  Client.anInt2182 = Class3.intStack[intIndex + 2];
                                   Client.outBuffer.putHeader(44);
                                   Client.outBuffer.putByte(Client.anInt2110);
                                   Client.outBuffer.putByte(VarClientHub.aClass51_320.anInt525);
@@ -2840,11 +2840,11 @@ public final class Actions {
                                 }
 
                                 if (opcode == 5002) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  var5 -= 2;
-                                  var16 = Class3.intStack[var5];
-                                  var35 = Class3.intStack[var5 + 1];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  intIndex -= 2;
+                                  var16 = Class3.intStack[intIndex];
+                                  var35 = Class3.intStack[intIndex + 1];
                                   Client.outBuffer.putHeader(71);
                                   Client.outBuffer.putByte(TileDecorationStub.getLength(var83) + 2);
                                   Client.outBuffer.putString(var83);
@@ -2854,67 +2854,67 @@ public final class Actions {
                                 }
 
                                 if (opcode == 5003) {
-                                  var5 -= 2;
-                                  var33 = Class3.intStack[var5];
-                                  var16 = Class3.intStack[var5 + 1];
+                                  intIndex -= 2;
+                                  var33 = Class3.intStack[intIndex];
+                                  var16 = Class3.intStack[intIndex + 1];
                                   Class5 var96 = (Class5) Class32.aMap359.get(Integer.valueOf(var33));
                                   DualNode_Sub8 var92 = var96.method74(var16);
                                   if (var92 != null) {
-                                    Class3.intStack[var5++] = var92.anInt1516;
-                                    Class3.intStack[var5++] = var92.anInt1517;
-                                    Class3.stringStack[var6++] = var92.aString1521 != null
+                                    Class3.intStack[intIndex++] = var92.anInt1516;
+                                    Class3.intStack[intIndex++] = var92.anInt1517;
+                                    Class3.stringStack[stringIndex++] = var92.aString1521 != null
                                         ? var92.aString1521 : "";
-                                    Class3.stringStack[var6++] = var92.aString1519 != null
+                                    Class3.stringStack[stringIndex++] = var92.aString1519 != null
                                         ? var92.aString1519 : "";
-                                    Class3.stringStack[var6++] = var92.aString1520 != null
+                                    Class3.stringStack[stringIndex++] = var92.aString1520 != null
                                         ? var92.aString1520 : "";
                                   } else {
-                                    Class3.intStack[var5++] = -1;
-                                    Class3.intStack[var5++] = 0;
-                                    Class3.stringStack[var6++] = "";
-                                    Class3.stringStack[var6++] = "";
-                                    Class3.stringStack[var6++] = "";
+                                    Class3.intStack[intIndex++] = -1;
+                                    Class3.intStack[intIndex++] = 0;
+                                    Class3.stringStack[stringIndex++] = "";
+                                    Class3.stringStack[stringIndex++] = "";
+                                    Class3.stringStack[stringIndex++] = "";
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 5004) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
                                   DualNode_Sub8 var95 = MouseInput.method332(var33);
                                   if (var95 != null) {
-                                    Class3.intStack[var5++] = var95.anInt1518;
-                                    Class3.intStack[var5++] = var95.anInt1517;
-                                    Class3.stringStack[var6++] = var95.aString1521 != null
+                                    Class3.intStack[intIndex++] = var95.anInt1518;
+                                    Class3.intStack[intIndex++] = var95.anInt1517;
+                                    Class3.stringStack[stringIndex++] = var95.aString1521 != null
                                         ? var95.aString1521 : "";
-                                    Class3.stringStack[var6++] = var95.aString1519 != null
+                                    Class3.stringStack[stringIndex++] = var95.aString1519 != null
                                         ? var95.aString1519 : "";
-                                    Class3.stringStack[var6++] = var95.aString1520 != null
+                                    Class3.stringStack[stringIndex++] = var95.aString1520 != null
                                         ? var95.aString1520 : "";
                                   } else {
-                                    Class3.intStack[var5++] = -1;
-                                    Class3.intStack[var5++] = 0;
-                                    Class3.stringStack[var6++] = "";
-                                    Class3.stringStack[var6++] = "";
-                                    Class3.stringStack[var6++] = "";
+                                    Class3.intStack[intIndex++] = -1;
+                                    Class3.intStack[intIndex++] = 0;
+                                    Class3.stringStack[stringIndex++] = "";
+                                    Class3.stringStack[stringIndex++] = "";
+                                    Class3.stringStack[stringIndex++] = "";
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 5005) {
                                   if (VarClientHub.aClass51_320 == null) {
-                                    Class3.intStack[var5++] = -1;
+                                    Class3.intStack[intIndex++] = -1;
                                   } else {
-                                    Class3.intStack[var5++] = VarClientHub.aClass51_320.anInt525;
+                                    Class3.intStack[intIndex++] = VarClientHub.aClass51_320.anInt525;
                                   }
                                   continue;
                                 }
 
                                 if (opcode == 5008) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
-                                  --var5;
-                                  var16 = Class3.intStack[var5];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  --intIndex;
+                                  var16 = Class3.intStack[intIndex];
                                   var93 = var83.toLowerCase();
                                   byte var85 = 0;
                                   if (var93.startsWith("yellow:")) {
@@ -3041,9 +3041,9 @@ public final class Actions {
                                 }
 
                                 if (opcode == 5009) {
-                                  var6 -= 2;
-                                  var83 = Class3.stringStack[var6];
-                                  var54 = Class3.stringStack[var6 + 1];
+                                  stringIndex -= 2;
+                                  var83 = Class3.stringStack[stringIndex];
+                                  var54 = Class3.stringStack[stringIndex + 1];
                                   Client.outBuffer.putHeader(248);
                                   Client.outBuffer.putShort(0);
                                   var35 = Client.outBuffer.position;
@@ -3065,39 +3065,39 @@ public final class Actions {
                                     var83 = "";
                                   }
 
-                                  Class3.stringStack[var6++] = var83;
+                                  Class3.stringStack[stringIndex++] = var83;
                                   continue;
                                 }
 
                                 if (opcode == 5016) {
-                                  Class3.intStack[var5++] = Client.anInt2182;
+                                  Class3.intStack[intIndex++] = Client.anInt2182;
                                   continue;
                                 }
 
                                 if (opcode == 5017) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = DualNode_Sub14.method822(var33);
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = DualNode_Sub14.method822(var33);
                                   continue;
                                 }
 
                                 if (opcode == 5018) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = Class91.method403(var33);
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = Class91.method403(var33);
                                   continue;
                                 }
 
                                 if (opcode == 5019) {
-                                  --var5;
-                                  var33 = Class3.intStack[var5];
-                                  Class3.intStack[var5++] = Class21.method157(var33);
+                                  --intIndex;
+                                  var33 = Class3.intStack[intIndex];
+                                  Class3.intStack[intIndex++] = Class21.method157(var33);
                                   continue;
                                 }
 
                                 if (opcode == 5020) {
-                                  --var6;
-                                  var83 = Class3.stringStack[var6];
+                                  --stringIndex;
+                                  var83 = Class3.stringStack[stringIndex];
                                   if (var83.equalsIgnoreCase("toggleroof")) {
                                     AnimationSkin.settings.hideRoofs = !AnimationSkin.settings.hideRoofs;
                                     Class75.serializeSettings();
@@ -3143,13 +3143,13 @@ public final class Actions {
                                 }
 
                                 if (opcode == 5021) {
-                                  --var6;
-                                  Client.aString2044 = Class3.stringStack[var6].toLowerCase().trim();
+                                  --stringIndex;
+                                  Client.aString2044 = Class3.stringStack[stringIndex].toLowerCase().trim();
                                   continue;
                                 }
 
                                 if (opcode == 5022) {
-                                  Class3.stringStack[var6++] = Client.aString2044;
+                                  Class3.stringStack[stringIndex++] = Client.aString2044;
                                   continue;
                                 }
                               }
@@ -3160,16 +3160,16 @@ public final class Actions {
                         var16 = -1;
                         if (opcode >= 2000) {
                           opcode -= 1000;
-                          --var5;
-                          var16 = Class3.intStack[var5];
+                          --intIndex;
+                          var16 = Class3.intStack[intIndex];
                           var15 = Class94.getWidget(var16);
                         } else {
                           var15 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                         }
 
                         if (opcode == 1100) {
-                          var5 -= 2;
-                          var15.insetX = Class3.intStack[var5];
+                          intIndex -= 2;
+                          var15.insetX = Class3.intStack[intIndex];
                           if (var15.insetX > var15.viewportWidth - var15.width) {
                             var15.insetX = var15.viewportWidth - var15.width;
                           }
@@ -3178,7 +3178,7 @@ public final class Actions {
                             var15.insetX = 0;
                           }
 
-                          var15.insetY = Class3.intStack[var5 + 1];
+                          var15.insetY = Class3.intStack[intIndex + 1];
                           if (var15.insetY > var15.viewportHeight - var15.height * 1227800423) {
                             var15.insetY = var15.viewportHeight - var15.height * 1227800423;
                           }
@@ -3192,77 +3192,77 @@ public final class Actions {
                         }
 
                         if (opcode == 1101) {
-                          --var5;
-                          var15.textColor = Class3.intStack[var5];
+                          --intIndex;
+                          var15.textColor = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1102) {
-                          --var5;
-                          var15.aBool1161 = Class3.intStack[var5] == 1;
+                          --intIndex;
+                          var15.aBool1161 = Class3.intStack[intIndex] == 1;
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1103) {
-                          --var5;
-                          var15.alpha = Class3.intStack[var5];
+                          --intIndex;
+                          var15.alpha = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1104) {
-                          --var5;
-                          var15.anInt1137 = Class3.intStack[var5] * -532092193;
+                          --intIndex;
+                          var15.anInt1137 = Class3.intStack[intIndex] * -532092193;
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1105) {
-                          --var5;
-                          var15.textureId = Class3.intStack[var5];
+                          --intIndex;
+                          var15.textureId = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1106) {
-                          --var5;
-                          var15.spriteId = Class3.intStack[var5];
+                          --intIndex;
+                          var15.spriteId = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1107) {
-                          --var5;
-                          var15.aBool1144 = Class3.intStack[var5] == 1;
+                          --intIndex;
+                          var15.aBool1144 = Class3.intStack[intIndex] == 1;
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1108) {
                           var15.modelType = 1;
-                          --var5;
-                          var15.modelId = Class3.intStack[var5];
+                          --intIndex;
+                          var15.modelId = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1109) {
-                          var5 -= 6;
-                          var15.anInt1198 = Class3.intStack[var5];
-                          var15.anInt1151 = Class3.intStack[var5 + 1];
-                          var15.rotationX = Class3.intStack[var5 + 2];
-                          var15.rotationZ = Class3.intStack[var5 + 3];
-                          var15.rotationY = Class3.intStack[var5 + 4];
-                          var15.modelZoom = Class3.intStack[var5 + 5];
+                          intIndex -= 6;
+                          var15.anInt1198 = Class3.intStack[intIndex];
+                          var15.anInt1151 = Class3.intStack[intIndex + 1];
+                          var15.rotationX = Class3.intStack[intIndex + 2];
+                          var15.rotationZ = Class3.intStack[intIndex + 3];
+                          var15.rotationY = Class3.intStack[intIndex + 4];
+                          var15.modelZoom = Class3.intStack[intIndex + 5];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1110) {
-                          --var5;
-                          var35 = Class3.intStack[var5];
+                          --intIndex;
+                          var35 = Class3.intStack[intIndex];
                           if (var15.anInt1162 != var35) {
                             var15.anInt1162 = var35;
                             var15.anInt1194 = 0;
@@ -3273,15 +3273,15 @@ public final class Actions {
                         }
 
                         if (opcode == 1111) {
-                          --var5;
-                          var15.aBool1154 = Class3.intStack[var5] == 1;
+                          --intIndex;
+                          var15.aBool1154 = Class3.intStack[intIndex] == 1;
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1112) {
-                          --var6;
-                          var93 = Class3.stringStack[var6];
+                          --stringIndex;
+                          var93 = Class3.stringStack[stringIndex];
                           if (!var93.equals(var15.text)) {
                             var15.text = var93;
                             Class68.method326(var15);
@@ -3290,60 +3290,60 @@ public final class Actions {
                         }
 
                         if (opcode == 1113) {
-                          --var5;
-                          var15.fontId = Class3.intStack[var5];
+                          --intIndex;
+                          var15.fontId = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1114) {
-                          var5 -= 3;
-                          var15.anInt1159 = Class3.intStack[var5];
-                          var15.anInt1138 = Class3.intStack[var5 + 1];
-                          var15.anInt1158 = Class3.intStack[var5 + 2];
+                          intIndex -= 3;
+                          var15.anInt1159 = Class3.intStack[intIndex];
+                          var15.anInt1138 = Class3.intStack[intIndex + 1];
+                          var15.anInt1158 = Class3.intStack[intIndex + 2];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1115) {
-                          --var5;
-                          var15.textShadowed = Class3.intStack[var5] == 1;
+                          --intIndex;
+                          var15.textShadowed = Class3.intStack[intIndex] == 1;
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1116) {
-                          --var5;
-                          var15.borderThickness = Class3.intStack[var5];
+                          --intIndex;
+                          var15.borderThickness = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1117) {
-                          --var5;
-                          var15.shadowColor = Class3.intStack[var5];
+                          --intIndex;
+                          var15.shadowColor = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1118) {
-                          --var5;
-                          var15.flippedVertically = Class3.intStack[var5] == 1;
+                          --intIndex;
+                          var15.flippedVertically = Class3.intStack[intIndex] == 1;
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1119) {
-                          --var5;
-                          var15.flippedHorizontally = Class3.intStack[var5] == 1;
+                          --intIndex;
+                          var15.flippedHorizontally = Class3.intStack[intIndex] == 1;
                           Class68.method326(var15);
                           continue;
                         }
 
                         if (opcode == 1120) {
-                          var5 -= 2;
-                          var15.viewportWidth = Class3.intStack[var5];
-                          var15.viewportHeight = Class3.intStack[var5 + 1];
+                          intIndex -= 2;
+                          var15.viewportWidth = Class3.intStack[intIndex];
+                          var15.viewportHeight = Class3.intStack[intIndex + 1];
                           Class68.method326(var15);
                           if (var16 != -1 && var15.type == 0) {
                             ObjectType.method870(Widget.interfaces[var16 >> 16], var15, false);
@@ -3359,8 +3359,8 @@ public final class Actions {
                         }
 
                         if (opcode == 1122) {
-                          --var5;
-                          var15.anInt1143 = Class3.intStack[var5];
+                          --intIndex;
+                          var15.anInt1143 = Class3.intStack[intIndex];
                           Class68.method326(var15);
                           continue;
                         }
@@ -3369,19 +3369,19 @@ public final class Actions {
                       var33 = -1;
                       if (opcode >= 2000) {
                         opcode -= 1000;
-                        --var5;
-                        var33 = Class3.intStack[var5];
+                        --intIndex;
+                        var33 = Class3.intStack[intIndex];
                         var34 = Class94.getWidget(var33);
                       } else {
                         var34 = var46 ? ClientSettings.aWidget304 : Class3.aWidget88;
                       }
 
                       if (opcode == 1000) {
-                        var5 -= 4;
-                        var34.anInt1134 = Class3.intStack[var5] * 10986657;
-                        var34.anInt1185 = Class3.intStack[var5 + 1] * -720369495;
-                        var34.anInt1132 = Class3.intStack[var5 + 2];
-                        var34.anInt1122 = Class3.intStack[var5 + 3];
+                        intIndex -= 4;
+                        var34.anInt1134 = Class3.intStack[intIndex] * 10986657;
+                        var34.anInt1185 = Class3.intStack[intIndex + 1] * -720369495;
+                        var34.anInt1132 = Class3.intStack[intIndex + 2];
+                        var34.anInt1122 = Class3.intStack[intIndex + 3];
                         Class68.method326(var34);
                         Player.method1048(var34);
                         if (var33 != -1 && var34.type == 0) {
@@ -3391,11 +3391,11 @@ public final class Actions {
                       }
 
                       if (opcode == 1001) {
-                        var5 -= 4;
-                        var34.anInt1135 = Class3.intStack[var5] * 934649725;
-                        var34.anInt1136 = Class3.intStack[var5 + 1] * -280898437;
-                        var34.anInt1133 = Class3.intStack[var5 + 2];
-                        var34.buttonType = Class3.intStack[var5 + 3];
+                        intIndex -= 4;
+                        var34.anInt1135 = Class3.intStack[intIndex] * 934649725;
+                        var34.anInt1136 = Class3.intStack[intIndex + 1] * -280898437;
+                        var34.anInt1133 = Class3.intStack[intIndex + 2];
+                        var34.buttonType = Class3.intStack[intIndex + 3];
                         Class68.method326(var34);
                         Player.method1048(var34);
                         if (var33 != -1 && var34.type == 0) {
@@ -3405,8 +3405,8 @@ public final class Actions {
                       }
 
                       if (opcode == 1003) {
-                        --var5;
-                        var98 = Class3.intStack[var5] == 1;
+                        --intIndex;
+                        var98 = Class3.intStack[intIndex] == 1;
                         if (var34.hidden != var98) {
                           var34.hidden = var98;
                           Class68.method326(var34);
@@ -3415,14 +3415,14 @@ public final class Actions {
                       }
 
                       if (opcode == 1005) {
-                        --var5;
-                        var34.aBool1201 = Class3.intStack[var5] == 1;
+                        --intIndex;
+                        var34.aBool1201 = Class3.intStack[intIndex] == 1;
                         continue;
                       }
 
                       if (opcode == 1006) {
-                        --var5;
-                        var34.aBool1175 = Class3.intStack[var5] == 1;
+                        --intIndex;
+                        var34.aBool1175 = Class3.intStack[intIndex] == 1;
                         continue;
                       }
                     }
@@ -3431,15 +3431,15 @@ public final class Actions {
                   if (opcode < 5400) {
                     if (opcode == 5306) {
                       int[] var541 = Class3.intStack;
-                      var16 = var5++;
+                      var16 = intIndex++;
                       var35 = Client.resizable ? 2 : 1;
                       var541[var16] = var35;
                       continue;
                     }
 
                     if (opcode == 5307) {
-                      --var5;
-                      var33 = Class3.intStack[var5];
+                      --intIndex;
+                      var33 = Class3.intStack[intIndex];
                       if (var33 != 1 && var33 != 2) {
                         continue;
                       }
@@ -3452,7 +3452,7 @@ public final class Actions {
                       }
 
                       AnimationSkin.method534();
-                      if (Client.anInt2113 >= 25) {
+                      if (Client.clientState >= 25) {
                         Client.outBuffer.putHeader(23);
                         BitBuf var52 = Client.outBuffer;
                         var35 = Client.resizable ? 2 : 1;
@@ -3466,13 +3466,13 @@ public final class Actions {
                     }
 
                     if (opcode == 5308) {
-                      Class3.intStack[var5++] = AnimationSkin.settings.screenType;
+                      Class3.intStack[intIndex++] = AnimationSkin.settings.screenType;
                       continue;
                     }
 
                     if (opcode == 5309) {
-                      --var5;
-                      var33 = Class3.intStack[var5];
+                      --intIndex;
+                      var33 = Class3.intStack[intIndex];
                       if (var33 == 1 || var33 == 2) {
                         AnimationSkin.settings.screenType = var33;
                         Class75.serializeSettings();
@@ -3483,9 +3483,9 @@ public final class Actions {
 
                   if (opcode < 5600) {
                     if (opcode == 5504) {
-                      var5 -= 2;
-                      var33 = Class3.intStack[var5];
-                      var16 = Class3.intStack[var5 + 1];
+                      intIndex -= 2;
+                      var33 = Class3.intStack[intIndex];
+                      var16 = Class3.intStack[intIndex + 1];
                       if (!Client.aBool2046) {
                         Client.anInt2051 = var33;
                         Client.minimapRotation = var16;
@@ -3494,18 +3494,18 @@ public final class Actions {
                     }
 
                     if (opcode == 5505) {
-                      Class3.intStack[var5++] = Client.anInt2051;
+                      Class3.intStack[intIndex++] = Client.anInt2051;
                       continue;
                     }
 
                     if (opcode == 5506) {
-                      Class3.intStack[var5++] = Client.minimapRotation;
+                      Class3.intStack[intIndex++] = Client.minimapRotation;
                       continue;
                     }
 
                     if (opcode == 5530) {
-                      --var5;
-                      var33 = Class3.intStack[var5];
+                      --intIndex;
+                      var33 = Class3.intStack[intIndex];
                       if (var33 < 0) {
                         var33 = 0;
                       }
@@ -3515,7 +3515,7 @@ public final class Actions {
                     }
 
                     if (opcode == 5531) {
-                      Class3.intStack[var5++] = Client.anInt2185;
+                      Class3.intStack[intIndex++] = Client.anInt2185;
                       continue;
                     }
                   }
@@ -3525,13 +3525,13 @@ public final class Actions {
                   } else {
                     if (opcode < 6300) {
                       if (opcode == 6200) {
-                        var5 -= 2;
-                        Client.aShort2178 = (short) Class3.intStack[var5];
+                        intIndex -= 2;
+                        Client.aShort2178 = (short) Class3.intStack[intIndex];
                         if (Client.aShort2178 <= 0) {
                           Client.aShort2178 = 256;
                         }
 
-                        Client.aShort2217 = (short) Class3.intStack[var5 + 1];
+                        Client.aShort2217 = (short) Class3.intStack[intIndex + 1];
                         if (Client.aShort2217 <= 0) {
                           Client.aShort2217 = 205;
                         }
@@ -3539,13 +3539,13 @@ public final class Actions {
                       }
 
                       if (opcode == 6201) {
-                        var5 -= 2;
-                        Client.aShort2218 = (short) Class3.intStack[var5];
+                        intIndex -= 2;
+                        Client.aShort2218 = (short) Class3.intStack[intIndex];
                         if (Client.aShort2218 <= 0) {
                           Client.aShort2218 = 256;
                         }
 
-                        Client.aShort2014 = (short) Class3.intStack[var5 + 1];
+                        Client.aShort2014 = (short) Class3.intStack[intIndex + 1];
                         if (Client.aShort2014 <= 0) {
                           Client.aShort2014 = 320;
                         }
@@ -3553,25 +3553,25 @@ public final class Actions {
                       }
 
                       if (opcode == 6202) {
-                        var5 -= 4;
-                        Client.aShort2219 = (short) Class3.intStack[var5];
+                        intIndex -= 4;
+                        Client.aShort2219 = (short) Class3.intStack[intIndex];
                         if (Client.aShort2219 <= 0) {
                           Client.aShort2219 = 1;
                         }
 
-                        Client.aShort2125 = (short) Class3.intStack[var5 + 1];
+                        Client.aShort2125 = (short) Class3.intStack[intIndex + 1];
                         if (Client.aShort2125 <= 0) {
                           Client.aShort2125 = 32767;
                         } else if (Client.aShort2125 < Client.aShort2219) {
                           Client.aShort2125 = Client.aShort2219;
                         }
 
-                        Client.aShort2221 = (short) Class3.intStack[var5 + 2];
+                        Client.aShort2221 = (short) Class3.intStack[intIndex + 2];
                         if (Client.aShort2221 <= 0) {
                           Client.aShort2221 = 1;
                         }
 
-                        Client.aShort2222 = (short) Class3.intStack[var5 + 3];
+                        Client.aShort2222 = (short) Class3.intStack[intIndex + 3];
                         if (Client.aShort2222 <= 0) {
                           Client.aShort2222 = 32767;
                         } else if (Client.aShort2222 < Client.aShort2221) {
@@ -3584,31 +3584,31 @@ public final class Actions {
                         if (Client.aWidget2231 != null) {
                           Class13.method118(0, 0, Client.aWidget2231.width,
                               Client.aWidget2231.height * 1227800423, false);
-                          Class3.intStack[var5++] = Client.screenHeight;
-                          Class3.intStack[var5++] = Client.screenWidth;
+                          Class3.intStack[intIndex++] = Client.screenHeight;
+                          Class3.intStack[intIndex++] = Client.screenWidth;
                         } else {
-                          Class3.intStack[var5++] = -1;
-                          Class3.intStack[var5++] = -1;
+                          Class3.intStack[intIndex++] = -1;
+                          Class3.intStack[intIndex++] = -1;
                         }
                         continue;
                       }
 
                       if (opcode == 6204) {
-                        Class3.intStack[var5++] = Client.aShort2218;
-                        Class3.intStack[var5++] = Client.aShort2014;
+                        Class3.intStack[intIndex++] = Client.aShort2218;
+                        Class3.intStack[intIndex++] = Client.aShort2014;
                         continue;
                       }
 
                       if (opcode == 6205) {
-                        Class3.intStack[var5++] = Client.aShort2178;
-                        Class3.intStack[var5++] = Client.aShort2217;
+                        Class3.intStack[intIndex++] = Client.aShort2178;
+                        Class3.intStack[intIndex++] = Client.aShort2217;
                         continue;
                       }
                     }
 
                     if (opcode < 6600) {
                       if (opcode == 6500) {
-                        Class3.intStack[var5++] = Class30.loadWorlds() ? 1 : 0;
+                        Class3.intStack[intIndex++] = Class30.loadWorlds() ? 1 : 0;
                         continue;
                       }
 
@@ -3616,19 +3616,19 @@ public final class Actions {
                       if (opcode == 6501) {
                         var51 = Npc.method1026((byte) 2);
                         if (var51 != null) {
-                          Class3.intStack[var5++] = var51.id;
-                          Class3.intStack[var5++] = var51.flags;
-                          Class3.stringStack[var6++] = var51.activity;
-                          Class3.intStack[var5++] = var51.location;
-                          Class3.intStack[var5++] = var51.population;
-                          Class3.stringStack[var6++] = var51.domain;
+                          Class3.intStack[intIndex++] = var51.id;
+                          Class3.intStack[intIndex++] = var51.flags;
+                          Class3.stringStack[stringIndex++] = var51.activity;
+                          Class3.intStack[intIndex++] = var51.location;
+                          Class3.intStack[intIndex++] = var51.population;
+                          Class3.stringStack[stringIndex++] = var51.domain;
                         } else {
-                          Class3.intStack[var5++] = -1;
-                          Class3.intStack[var5++] = 0;
-                          Class3.stringStack[var6++] = "";
-                          Class3.intStack[var5++] = 0;
-                          Class3.intStack[var5++] = 0;
-                          Class3.stringStack[var6++] = "";
+                          Class3.intStack[intIndex++] = -1;
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.stringStack[stringIndex++] = "";
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.stringStack[stringIndex++] = "";
                         }
                         continue;
                       }
@@ -3641,27 +3641,27 @@ public final class Actions {
                         }
 
                         if (var51 != null) {
-                          Class3.intStack[var5++] = var51.id;
-                          Class3.intStack[var5++] = var51.flags;
-                          Class3.stringStack[var6++] = var51.activity;
-                          Class3.intStack[var5++] = var51.location;
-                          Class3.intStack[var5++] = var51.population;
-                          Class3.stringStack[var6++] = var51.domain;
+                          Class3.intStack[intIndex++] = var51.id;
+                          Class3.intStack[intIndex++] = var51.flags;
+                          Class3.stringStack[stringIndex++] = var51.activity;
+                          Class3.intStack[intIndex++] = var51.location;
+                          Class3.intStack[intIndex++] = var51.population;
+                          Class3.stringStack[stringIndex++] = var51.domain;
                         } else {
-                          Class3.intStack[var5++] = -1;
-                          Class3.intStack[var5++] = 0;
-                          Class3.stringStack[var6++] = "";
-                          Class3.intStack[var5++] = 0;
-                          Class3.intStack[var5++] = 0;
-                          Class3.stringStack[var6++] = "";
+                          Class3.intStack[intIndex++] = -1;
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.stringStack[stringIndex++] = "";
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.stringStack[stringIndex++] = "";
                         }
                         continue;
                       }
 
                       World var53;
                       if (opcode == 6506) {
-                        --var5;
-                        var33 = Class3.intStack[var5];
+                        --intIndex;
+                        var33 = Class3.intStack[intIndex];
                         var53 = null;
 
                         for (var35 = 0; var35 < World.worldCount; var35++) {
@@ -3672,29 +3672,29 @@ public final class Actions {
                         }
 
                         if (var53 != null) {
-                          Class3.intStack[var5++] = var53.id;
-                          Class3.intStack[var5++] = var53.flags;
-                          Class3.stringStack[var6++] = var53.activity;
-                          Class3.intStack[var5++] = var53.location;
-                          Class3.intStack[var5++] = var53.population;
-                          Class3.stringStack[var6++] = var53.domain;
+                          Class3.intStack[intIndex++] = var53.id;
+                          Class3.intStack[intIndex++] = var53.flags;
+                          Class3.stringStack[stringIndex++] = var53.activity;
+                          Class3.intStack[intIndex++] = var53.location;
+                          Class3.intStack[intIndex++] = var53.population;
+                          Class3.stringStack[stringIndex++] = var53.domain;
                         } else {
-                          Class3.intStack[var5++] = -1;
-                          Class3.intStack[var5++] = 0;
-                          Class3.stringStack[var6++] = "";
-                          Class3.intStack[var5++] = 0;
-                          Class3.intStack[var5++] = 0;
-                          Class3.stringStack[var6++] = "";
+                          Class3.intStack[intIndex++] = -1;
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.stringStack[stringIndex++] = "";
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.intStack[intIndex++] = 0;
+                          Class3.stringStack[stringIndex++] = "";
                         }
                         continue;
                       }
 
                       if (opcode == 6507) {
-                        var5 -= 4;
-                        var33 = Class3.intStack[var5];
-                        var55 = Class3.intStack[var5 + 1] == 1;
-                        var35 = Class3.intStack[var5 + 2];
-                        var41 = Class3.intStack[var5 + 3] == 1;
+                        intIndex -= 4;
+                        var33 = Class3.intStack[intIndex];
+                        var55 = Class3.intStack[intIndex + 1] == 1;
+                        var35 = Class3.intStack[intIndex + 2];
+                        var41 = Class3.intStack[intIndex + 3] == 1;
                         if (World.worlds != null) {
                           Class37.method210(0, World.worlds.length - 1, var33, var55, var35, var41);
                         }
@@ -3702,25 +3702,25 @@ public final class Actions {
                       }
 
                       if (opcode == 6511) {
-                        --var5;
-                        var33 = Class3.intStack[var5];
+                        --intIndex;
+                        var33 = Class3.intStack[intIndex];
                         if (var33 >= 0 && var33 < World.worldCount) {
                           var53 = World.worlds[var33];
-                          Class3.intStack[var5++] = var53.id;
-                          Class3.intStack[var5++] = var53.flags;
-                          Class3.stringStack[var6++] = var53.activity;
-                          Class3.intStack[var5++] = var53.location;
-                          Class3.intStack[var5++] = var53.population;
-                          Class3.stringStack[var6++] = var53.domain;
+                          Class3.intStack[intIndex++] = var53.id;
+                          Class3.intStack[intIndex++] = var53.flags;
+                          Class3.stringStack[stringIndex++] = var53.activity;
+                          Class3.intStack[intIndex++] = var53.location;
+                          Class3.intStack[intIndex++] = var53.population;
+                          Class3.stringStack[stringIndex++] = var53.domain;
                           continue;
                         }
 
-                        Class3.intStack[var5++] = -1;
-                        Class3.intStack[var5++] = 0;
-                        Class3.stringStack[var6++] = "";
-                        Class3.intStack[var5++] = 0;
-                        Class3.intStack[var5++] = 0;
-                        Class3.stringStack[var6++] = "";
+                        Class3.intStack[intIndex++] = -1;
+                        Class3.intStack[intIndex++] = 0;
+                        Class3.stringStack[stringIndex++] = "";
+                        Class3.intStack[intIndex++] = 0;
+                        Class3.intStack[intIndex++] = 0;
+                        Class3.stringStack[stringIndex++] = "";
                         continue;
                       }
                     }
@@ -3732,8 +3732,8 @@ public final class Actions {
                 StringBuilder builder = new StringBuilder(30);
                 builder.append("").append(script.key).append(" ");
 
-                for (index = Class3.anInt87 - 1; index >= 0; --index) {
-                  builder.append("").append(Class3.aClass33Array86[index].aRuneScript361.key).append(" ");
+                for (index = Class3.calledCount - 1; index >= 0; --index) {
+                  builder.append("").append(Class3.calledScripts[index].callingScript.key).append(" ");
                 }
 
                 builder.append("").append(-1);

@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 public class IdentKitType extends DualNode {
 
 	public static int anInt1457;
-	static Node_Sub10 aNode_Sub10_1467;
+	static MachineInfo aNode_Sub10_1467;
 	static AbstractIndex identKit_ref;
 	public int anInt1459 = -1;
 	int[] anIntArray1462 = new int[] { -1, -1, -1, -1, -1 };
@@ -156,7 +156,7 @@ public class IdentKitType extends DualNode {
 			if ((flags & 0x1) != 0) {
 				var5 = Client.inBuffer.getULEShortA();
 				var4 = Client.inBuffer.getUShortA();
-				var6 = npc.strictX - (var5 - Node_Sub10.chunkLeftX - Node_Sub10.chunkLeftX) * 64;
+				var6 = npc.strictX - (var5 - MachineInfo.chunkLeftX - MachineInfo.chunkLeftX) * 64;
 				int var7 = npc.strictY - (var4 - VarClientHub.chunkLeftY - VarClientHub.chunkLeftY) * 64;
 				if (var6 != 0 || var7 != 0) {
 					npc.anInt1931 = (int) (Math.atan2((double) var6, (double) var7) * 325.949D) & 0x7ff;
@@ -173,18 +173,18 @@ public class IdentKitType extends DualNode {
 			}
 
 			if ((flags & 0x80) != 0) {
-				npc.anInt1938 = Client.inBuffer.getULEShortA();
+				npc.graphicsId = Client.inBuffer.getULEShortA();
 				var5 = Client.inBuffer.getInt();
-				npc.anInt1920 = var5 >> 16;
-				npc.anInt1941 = Client.engineCycle + (var5 & 0xffff);
+				npc.graphicsHeight = var5 >> 16;
+				npc.graphicsDelay = Client.engineCycle + (var5 & 0xffff);
 				npc.anInt1925 = 0;
 				npc.anInt1940 = 0;
-				if (npc.anInt1941 > Client.engineCycle) {
+				if (npc.graphicsDelay > Client.engineCycle) {
 					npc.anInt1925 = -1;
 				}
 
-				if (npc.anInt1938 == '\uffff') {
-					npc.anInt1938 = -1;
+				if (npc.graphicsId == '\uffff') {
+					npc.graphicsId = -1;
 				}
 			}
 
@@ -217,24 +217,24 @@ public class IdentKitType extends DualNode {
 				}
 
 				var4 = Client.inBuffer.getUByteA();
-				if (npc.animation == var5 && var5 != -1) {
+				if (npc.animationId == var5 && var5 != -1) {
 					var6 = Node_Sub6.getSequenceType(var5).anInt1486;
 					if (var6 == 1) {
 						npc.anInt1934 = 0;
 						npc.anInt1935 = 0;
-						npc.anInt1936 = var4;
+						npc.animationDelay = var4;
 						npc.anInt1958 = 0;
 					}
 
 					if (var6 == 2) {
 						npc.anInt1958 = 0;
 					}
-				} else if (var5 == -1 || npc.animation == -1 || Node_Sub6.getSequenceType(var5).anInt1480 >= Node_Sub6
-						.getSequenceType(npc.animation).anInt1480) {
-					npc.animation = var5;
+				} else if (var5 == -1 || npc.animationId == -1 || Node_Sub6.getSequenceType(var5).anInt1480 >= Node_Sub6
+						.getSequenceType(npc.animationId).anInt1480) {
+					npc.animationId = var5;
 					npc.anInt1934 = 0;
 					npc.anInt1935 = 0;
-					npc.anInt1936 = var4;
+					npc.animationDelay = var4;
 					npc.anInt1958 = 0;
 					npc.anInt1957 = npc.queueSize;
 				}

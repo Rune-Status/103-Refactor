@@ -1,14 +1,14 @@
 public abstract class Character extends Entity {
 
 	int strictY;
-	int anInt1920;
+	int graphicsHeight;
 	int anInt1924;
 	int anInt1928;
 	int hitpoints;
 	int maxHitpoints;
 	int strictX;
 	int anInt1937;
-	int anInt1941;
+	int graphicsDelay;
 	int anInt1943;
 	int anInt1944;
 	boolean aBool1946;
@@ -24,7 +24,7 @@ public abstract class Character extends Entity {
 	int anInt1916 = -1;
 	int anInt1917 = -517768871;
 	int anInt1918 = -1;
-	int animation = -1;
+	int animationId = -1;
 	boolean aBool1919 = false;
 	int anInt1921 = -1;
 	String overheadText = null;
@@ -43,8 +43,8 @@ public abstract class Character extends Entity {
 	int anInt1933 = 0;
 	int anInt1934 = 0;
 	int anInt1935 = 0;
-	int anInt1936 = 0;
-	int anInt1938 = -1;
+	int animationDelay = 0;
+	int graphicsId = -1;
 	int anInt1939 = -1;
 	int anInt1940 = 0;
 	int anInt1942 = 0;

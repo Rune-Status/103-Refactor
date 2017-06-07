@@ -1,7 +1,7 @@
 public class SequenceType extends DualNode {
 
-	static AbstractIndex aClass87_1470;
-	static AbstractIndex aClass87_1471;
+	static AbstractIndex skel_ref;
+	static AbstractIndex skin_ref;
 	static int anInt1476;
 	static int anInt1488;
 	static AbstractIndex seq_ref;
@@ -20,7 +20,7 @@ public class SequenceType extends DualNode {
 	int[] anIntArray1485;
 	public int[] anIntArray1487;
 	public static NodeMap sequences = new NodeMap(64);
-	public static NodeMap aClass106_1473 = new NodeMap(100);
+	public static NodeMap skeletons = new NodeMap(100);
 
 	void decode(ByteBuf var1) {
 		while (true) {
@@ -123,7 +123,7 @@ public class SequenceType extends DualNode {
 
 	Rasterizer method676(Rasterizer var1, int var2, int var3) {
 		var2 = this.anIntArray1474[var2];
-		SkeletonSet var5 = method685(var2 >> 16);
+		SkeletonSet var5 = getSkeletonSet(var2 >> 16);
 		var2 &= '\uffff';
 		if (var5 == null) {
 			return var1.method995(true);
@@ -153,7 +153,7 @@ public class SequenceType extends DualNode {
 
 	Rasterizer method677(Rasterizer var1, int var2) {
 		var2 = this.anIntArray1474[var2];
-		SkeletonSet var3 = method685(var2 >> 16);
+		SkeletonSet var3 = getSkeletonSet(var2 >> 16);
 		var2 &= '\uffff';
 		if (var3 == null) {
 			return var1.method996(true);
@@ -166,13 +166,13 @@ public class SequenceType extends DualNode {
 
 	public Rasterizer method678(Rasterizer var1, int var2, SequenceType var3, int var4) {
 		var2 = this.anIntArray1474[var2];
-		SkeletonSet var6 = method685(var2 >> 16);
+		SkeletonSet var6 = getSkeletonSet(var2 >> 16);
 		var2 &= '\uffff';
 		if (var6 == null) {
 			return var3.method681(var1, var4);
 		} else {
 			var4 = var3.anIntArray1474[var4];
-			SkeletonSet var7 = method685(var4 >> 16);
+			SkeletonSet var7 = getSkeletonSet(var4 >> 16);
 			var4 &= '\uffff';
 			Rasterizer var5;
 			if (var7 == null) {
@@ -189,7 +189,7 @@ public class SequenceType extends DualNode {
 
 	public Rasterizer method679(Rasterizer var1, int var2) {
 		int var3 = this.anIntArray1474[var2];
-		SkeletonSet var4 = method685(var3 >> 16);
+		SkeletonSet var4 = getSkeletonSet(var3 >> 16);
 		var3 &= '\uffff';
 		if (var4 == null) {
 			return var1.method995(true);
@@ -198,7 +198,7 @@ public class SequenceType extends DualNode {
 			int var6 = 0;
 			if (this.anIntArray1485 != null && var2 < this.anIntArray1485.length) {
 				var6 = this.anIntArray1485[var2];
-				var5 = method685(var6 >> 16);
+				var5 = getSkeletonSet(var6 >> 16);
 				var6 &= '\uffff';
 			}
 
@@ -219,7 +219,6 @@ public class SequenceType extends DualNode {
 	public static Sprite getSprite(AbstractIndex index, String iFile, String iChild) {
 		int fileId = index.getFile(iFile);
 		int childId = index.getChild(fileId, iChild);
-		System.out.println(iFile + ", (8, " + fileId + ", " + childId + ")");
 		Sprite sprite;
 		if (!Class35.decodeSprite(index, fileId, childId)) {
 			sprite = null;
@@ -232,7 +231,7 @@ public class SequenceType extends DualNode {
 
 	public Rasterizer method681(Rasterizer var1, int var2) {
 		var2 = this.anIntArray1474[var2];
-		SkeletonSet var4 = method685(var2 >> 16);
+		SkeletonSet var4 = getSkeletonSet(var2 >> 16);
 		var2 &= '\uffff';
 		if (var4 == null) {
 			return var1.method995(true);
@@ -326,46 +325,41 @@ public class SequenceType extends DualNode {
 
 	}
 
-	static SkeletonSet method685(int var0) {
-		SkeletonSet var1 = (SkeletonSet) aClass106_1473.get((long) var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			AbstractIndex var2 = aClass87_1470;
-			AbstractIndex var3 = aClass87_1471;
-			boolean var4 = true;
-			int[] var5 = var2.getChilds(var0);
+	static SkeletonSet getSkeletonSet(int id) {
+		SkeletonSet skeleton = (SkeletonSet) skeletons.get((long) id);
+		if (skeleton == null) {
+			boolean exists = true;
+			int[] childs = skel_ref.getChilds(id);
 
-			for (int var10 = 0; var10 < var5.length; var10++) {
-				byte[] var11 = var2.method390(var0, var5[var10]);
-				if (var11 == null) {
-					var4 = false;
+			for (int i = 0; i < childs.length; i++) {
+				byte[] skelBytes = skel_ref.getChild(id, childs[i]);
+				if (skelBytes == null) {
+					exists = false;
 				} else {
-					int var8 = (var11[0] & 0xff) << 8 | var11[1] & 0xff;
-					byte[] var9 = var3.method390(var8, 0);
-					if (var9 == null) {
-						var4 = false;
+					int skinId = (skelBytes[0] & 0xff) << 8 | skelBytes[1] & 0xff;
+					byte[] skinBytes = skin_ref.getChild(skinId, 0);
+					if (skinBytes == null) {
+						exists = false;
 					}
 				}
 			}
 
-			SkeletonSet var111;
-			if (!var4) {
-				var111 = null;
+			if (!exists) {
+				skeleton = null;
 			} else {
 				try {
-					var111 = new SkeletonSet(var2, var3, var0, false);
-				} catch (Exception var101) {
-					var111 = null;
+					skeleton = new SkeletonSet(skel_ref, skin_ref, id, false);
+				} catch (Exception e) {
+					skeleton = null;
 				}
 			}
 
-			if (var111 != null) {
-				aClass106_1473.put(var111, (long) var0);
+			if (skeleton != null) {
+				skeletons.put(skeleton, (long) id);
 			}
 
-			return var111;
 		}
+		return skeleton;
 	}
 
 }

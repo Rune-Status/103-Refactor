@@ -6,10 +6,10 @@ public class AnimationSkin extends Node {
 
 	static ClientSettings settings;
 	static CacheIndex spritesIndex;
-	int anInt1263;
-	int anInt1267;
-	int[] anIntArray1262;
-	int[][] anIntArrayArray1264;
+	int id;
+	int count;
+	int[] types;
+	int[][] list;
 
 	public static synchronized long currentTimeMs() {
 		long var0 = System.currentTimeMillis();
@@ -126,25 +126,24 @@ public class AnimationSkin extends Node {
 		}
 	}
 
-	AnimationSkin(int var1, byte[] var2) {
-		this.anInt1263 = var1;
-		ByteBuf var4 = new ByteBuf(var2);
-		this.anInt1267 = var4.getUByte();
-		this.anIntArray1262 = new int[this.anInt1267];
-		this.anIntArrayArray1264 = new int[this.anInt1267][];
+	AnimationSkin(int id, byte[] bytes) {
+		this.id = id;
+		ByteBuf buf = new ByteBuf(bytes);
+		this.count = buf.getUByte();
+		this.types = new int[this.count];
+		this.list = new int[this.count][];
 
-		int var3;
-		for (var3 = 0; var3 < this.anInt1267; var3++) {
-			this.anIntArray1262[var3] = var4.getUByte();
+		for (int i = 0; i < this.count; i++) {
+			this.types[i] = buf.getUByte();
 		}
 
-		for (var3 = 0; var3 < this.anInt1267; var3++) {
-			this.anIntArrayArray1264[var3] = new int[var4.getUByte()];
+		for (int i = 0; i < this.count; i++) {
+			this.list[i] = new int[buf.getUByte()];
 		}
 
-		for (var3 = 0; var3 < this.anInt1267; var3++) {
-			for (int var5 = 0; var5 < this.anIntArrayArray1264[var3].length; var5++) {
-				this.anIntArrayArray1264[var3][var5] = var4.getUByte();
+		for (int i = 0; i < this.count; i++) {
+			for (int j = 0; j < this.list[i].length; j++) {
+				this.list[i][j] = buf.getUByte();
 			}
 		}
 

@@ -95,7 +95,7 @@ public class ScriptEvent extends Node {
 					var27.method536(424061730);
 				}
 
-				Node_Sub6.aDeque1279.method475(var27);
+				Node_Sub6.aDeque1279.add(var27);
 				if (var27.anIntArray1273 != null) {
 					var27.anInt1274 = var27.anInt1277
 							+ (int) (Math.random() * (double) (var27.anInt1278 - var27.anInt1277));

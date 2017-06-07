@@ -483,11 +483,11 @@ public class Class53 {
 
 								if (Client.anInt2075 == 2) {
 									Class2.tileToScreen(
-											Client.anInt2116 + (Client.hintArrowX - Node_Sub10.chunkLeftX << 7),
+											Client.anInt2116 + (Client.hintArrowX - MachineInfo.chunkLeftX << 7),
 											(Client.hintArrowY - VarClientHub.chunkLeftY << 7) + Client.anInt2025,
 											Client.anInt2032 * 1818880718);
 									if (Client.screenY > -1 && Client.engineCycle % 20 < 10) {
-										Class39.aSpriteArray442[0].method946(Client.screenY + var9 - 12,
+										Class39.hintIcons[0].method946(Client.screenY + var9 - 12,
 												Client.screenX + var16 - 28);
 									}
 								}
@@ -527,7 +527,7 @@ public class Class53 {
 								DualNode_Sub14 var541 = var15.method491(false);
 								if (var541 != null) {
 									if (Client.anInt2200 < 3) {
-										Class48_Sub1.aSprite1296.method957(var10, var11, var541.anInt1647,
+										Class48_Sub1.compass.method957(var10, var11, var541.anInt1647,
 												var541.anInt1648, 25, 25, Client.minimapRotation, 256,
 												var541.anIntArray1646, var541.anIntArray1645);
 									} else {
@@ -580,8 +580,8 @@ public class Class53 {
 								var16 = var15.insetY;
 								var13 = var15.height * 1227800423;
 								var31 = var15.viewportHeight;
-								Class35.aDualNode_Sub13_Sub2Array395[0].method929(var9, var11);
-								Class35.aDualNode_Sub13_Sub2Array395[1].method929(var9, var13 + var11 - 16);
+								Class35.scrollbar[0].method929(var9, var11);
+								Class35.scrollbar[1].method929(var9, var13 + var11 - 16);
 								RSGraphics.method793(var9, var11 + 16, 16, var13 - 32, Client.anInt2067);
 								var481 = (var13 - 32) * var13 / var31;
 								if (var481 < 8) {

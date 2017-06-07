@@ -601,10 +601,10 @@ public class Widget extends Node {
 		int var8 = var2 - 1 & var0;
 		int var4 = var1 / var2;
 		int var6 = var2 - 1 & var1;
-		int var11 = Class33.method197(var3, var4);
-		int var10 = Class33.method197(var3 + 1, var4);
-		int var7 = Class33.method197(var3, var4 + 1);
-		int var5 = Class33.method197(var3 + 1, var4 + 1);
+		int var11 = CalledScript.method197(var3, var4);
+		int var10 = CalledScript.method197(var3 + 1, var4);
+		int var7 = CalledScript.method197(var3, var4 + 1);
+		int var5 = CalledScript.method197(var3 + 1, var4 + 1);
 		int var12 = InterfaceNode.method578(var11, var10, var8, var2);
 		int var9 = InterfaceNode.method578(var7, var5, var8, var2);
 		return InterfaceNode.method578(var12, var9, var6, var2);

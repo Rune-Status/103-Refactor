@@ -46,7 +46,7 @@ public class Class4 {
 				var8 = var10 & 0xff;
 				var12.aByteArray1951[0] = GPI.movementTypes[var1];
 				var12.anInt2004 = (byte) var3;
-				var12.method1043((var6 << 6) + var4 - Node_Sub10.chunkLeftX,
+				var12.method1043((var6 << 6) + var4 - MachineInfo.chunkLeftX,
 						(var8 << 6) + var7 - VarClientHub.chunkLeftY);
 				var12.aBool1999 = false;
 				return true;

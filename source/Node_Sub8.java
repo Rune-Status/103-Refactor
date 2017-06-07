@@ -8,7 +8,7 @@ public final class Node_Sub8 extends Node {
 	int anInt1306;
 	int anInt1307;
 	int anInt1308;
-	static Picture[] aSpriteArray1309;
+	static Picture[] mapfunctions;
 	int anInt1313;
 	int anInt1310 = 0;
 	int anInt1311 = -1;
@@ -20,15 +20,15 @@ public final class Node_Sub8 extends Node {
 		if (TileDecorationStub.chunkBaseX != var0 || Class90.chunkBaseY != var1) {
 			TileDecorationStub.chunkBaseX = var0;
 			Class90.chunkBaseY = var1;
-			method550(25);
+			setClientState(25);
 			Class82.method363("Loading - please wait.", true);
-			int lastChunkX = Node_Sub10.chunkLeftX;
+			int lastChunkX = MachineInfo.chunkLeftX;
 			int lastChunkY = VarClientHub.chunkLeftY;
-			Node_Sub10.chunkLeftX = (var0 - 6) * 8;
+			MachineInfo.chunkLeftX = (var0 - 6) * 8;
 			VarClientHub.chunkLeftY = (var1 - 6) * 8;
-			int offsetX = Node_Sub10.chunkLeftX - lastChunkX;
+			int offsetX = MachineInfo.chunkLeftX - lastChunkX;
 			int offsetY = VarClientHub.chunkLeftY - lastChunkY;
-			lastChunkX = Node_Sub10.chunkLeftX;
+			lastChunkX = MachineInfo.chunkLeftX;
 			lastChunkY = VarClientHub.chunkLeftY;
 
 			int var10;
@@ -212,16 +212,16 @@ public final class Node_Sub8 extends Node {
 								if (var22 != null) {
 									var5 = var22.strictX / 32 - Class68.myPlayer.strictX / 32;
 									var11 = var22.strictY / 32 - Class68.myPlayer.strictY / 32;
-									Class7.method77(var1, var2, var5, var11, Class72.aSpriteArray604[1], var6);
+									Class7.method77(var1, var2, var5, var11, Class72.mapmarker[1], var6);
 								}
 							}
 
 							if (Client.anInt2075 == 2) {
-								var4 = Client.hintArrowX * 4 - Node_Sub10.chunkLeftX * 4 + 2
+								var4 = Client.hintArrowX * 4 - MachineInfo.chunkLeftX * 4 + 2
 										- Class68.myPlayer.strictX / 32;
 								var5 = Client.hintArrowY * 4 - VarClientHub.chunkLeftY * 4 + 2
 										- Class68.myPlayer.strictY / 32;
-								Class7.method77(var1, var2, var4, var5, Class72.aSpriteArray604[1], var6);
+								Class7.method77(var1, var2, var4, var5, Class72.mapmarker[1], var6);
 							}
 
 							if (Client.anInt2075 == 10 && Client.anInt2158 >= 0
@@ -230,7 +230,7 @@ public final class Node_Sub8 extends Node {
 								if (var211 != null) {
 									var5 = var211.strictX / 32 - Class68.myPlayer.strictX / 32;
 									var11 = var211.strictY / 32 - Class68.myPlayer.strictY / 32;
-									Class7.method77(var1, var2, var5, var11, Class72.aSpriteArray604[1], var6);
+									Class7.method77(var1, var2, var5, var11, Class72.mapmarker[1], var6);
 								}
 							}
 						}
@@ -238,7 +238,7 @@ public final class Node_Sub8 extends Node {
 						if (Client.destinationX != 0) {
 							var4 = Client.destinationX * 4 + 2 - Class68.myPlayer.strictX / 32;
 							var5 = Client.destinationY * 4 + 2 - Class68.myPlayer.strictY / 32;
-							Class51.drawDot(var1, var2, var4, var5, Class72.aSpriteArray604[0], var6);
+							Class51.drawDot(var1, var2, var4, var5, Class72.mapmarker[0], var6);
 						}
 
 						if (!Class68.myPlayer.hidden) {
@@ -319,24 +319,24 @@ public final class Node_Sub8 extends Node {
 		VarPlayerType.anInt1547 = VarPlayerType.varplayer_ref.fileCount(16);
 	}
 
-	static void method550(int var0) {
-		if (Client.anInt2113 != var0) {
-			if (Client.anInt2113 == 0) {
+	static void setClientState(int state) {
+		if (Client.clientState != state) {
+			if (Client.clientState == 0) {
 				Class16.method130();
 			}
 
-			if (var0 == 20 || var0 == 40 || var0 == 45) {
+			if (state == 20 || state == 40 || state == 45) {
 				Client.connectionState = 0;
 				Client.anInt2180 = 0;
 				Client.anInt2037 = 0;
 			}
 
-			if (var0 != 20 && var0 != 40 && Class35.aClass60_394 != null) {
+			if (state != 20 && state != 40 && Class35.aClass60_394 != null) {
 				Class35.aClass60_394.shutdown();
 				Class35.aClass60_394 = null;
 			}
 
-			if (Client.anInt2113 == 25) {
+			if (Client.clientState == 25) {
 				Client.anInt2130 = 0;
 				Client.anInt2120 = 0;
 				Client.anInt2140 = 1;
@@ -344,14 +344,14 @@ public final class Node_Sub8 extends Node {
 				Client.anInt2027 = 1;
 			}
 
-			if (var0 != 5 && var0 != 10) {
-				if (var0 == 20) {
+			if (state != 5 && state != 10) {
+				if (state == 20) {
 					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex, AnimationSkin.spritesIndex,
-							true, Client.anInt2113 == 11 ? 4 : 0);
-				} else if (var0 == 11) {
+							true, Client.clientState == 11 ? 4 : 0);
+				} else if (state == 11) {
 					DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex, AnimationSkin.spritesIndex,
 							false, 4);
-				} else if (PlayerLoginDetails.aBool142) {
+				} else if (PlayerLoginDetails.titleScreenState) {
 					PlayerLoginDetails.titleboxSprite = null;
 					PlayerLoginDetails.titlebuttonSprite = null;
 					PlayerLoginDetails.runesSprite = null;
@@ -370,20 +370,20 @@ public final class Node_Sub8 extends Node {
 					Class118.anIntArray803 = null;
 					PlayerLoginDetails.anIntArray125 = null;
 					PlayerLoginDetails.anIntArray124 = null;
-					Class33.anIntArray365 = null;
+					CalledScript.anIntArray365 = null;
 					Permission.anIntArray605 = null;
 					Class122.anIntArray818 = null;
 					Class4.anIntArray110 = null;
 					Class65.method320(2);
 					ScriptEvent.sendConInfo(true);
-					PlayerLoginDetails.aBool142 = false;
+					PlayerLoginDetails.titleScreenState = false;
 				}
 			} else {
 				DynamicObject.method1022(LandscapeTile.gameCanvas, Class40.binaryIndex, AnimationSkin.spritesIndex,
 						true, 0);
 			}
 
-			Client.anInt2113 = var0;
+			Client.clientState = state;
 		}
 
 	}

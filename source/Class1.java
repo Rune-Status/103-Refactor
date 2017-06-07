@@ -17,8 +17,8 @@ public class Class1 {
 		short var1 = 256;
 		PlayerLoginDetails.anInt114 += var0 * 128;
 		int var2;
-		if (PlayerLoginDetails.anInt114 > Class33.anIntArray365.length) {
-			PlayerLoginDetails.anInt114 -= Class33.anIntArray365.length;
+		if (PlayerLoginDetails.anInt114 > CalledScript.anIntArray365.length) {
+			PlayerLoginDetails.anInt114 -= CalledScript.anIntArray365.length;
 			var2 = (int) (Math.random() * 12.0D);
 			VarBitType.method877(PlayerLoginDetails.runesSprite[var2]);
 		}
@@ -31,7 +31,7 @@ public class Class1 {
 		int var7;
 		for (var3 = 0; var3 < var5; var3++) {
 			var7 = Class122.anIntArray818[var2 + var4]
-					- Class33.anIntArray365[PlayerLoginDetails.anInt114 + var2 & Class33.anIntArray365.length - 1] * var0 / 6;
+					- CalledScript.anIntArray365[PlayerLoginDetails.anInt114 + var2 & CalledScript.anIntArray365.length - 1] * var0 / 6;
 			if (var7 < 0) {
 				var7 = 0;
 			}

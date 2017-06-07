@@ -170,7 +170,7 @@ final class Class37 implements Comparator {
 		}
 
 		Colors.method461();
-		Node_Sub8.method550(30);
+		Node_Sub8.setClientState(30);
 
 		for (var1 = 0; var1 < 100; var1++) {
 			Client.aBoolArray2118[var1] = true;

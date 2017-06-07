@@ -80,7 +80,7 @@ public class LoginHandler {
 				}
 
 				KeyFocusListener.socket = null;
-				Client.aBool2102 = false;
+				Client.socketError = false;
 				Client.anInt2180 = 0;
 				Client.connectionState = 1;
 			}
@@ -169,7 +169,7 @@ public class LoginHandler {
 				Client.outBuffer.putString(PlayerLoginDetails.password);
 				Client.outBuffer.encryptRSA(Class40.loginExponent, Class40.loginModulus);
 				Client.loginBuffer.position = 0;
-				if (Client.anInt2113 == 40) {
+				if (Client.clientState == 40) {
 					Client.loginBuffer.putByte(18);
 				} else {
 					Client.loginBuffer.putByte(16);
@@ -243,11 +243,11 @@ public class LoginHandler {
 
 			if (Client.connectionState == 6 && Class31.gameConnection.avail() > 0) {
 				var10 = Class31.gameConnection.read();
-				if (var10 == 21 && Client.anInt2113 == 20) {
+				if (var10 == 21 && Client.clientState == 20) {
 					Client.connectionState = 7;
 				} else if (var10 == 2) {
 					Client.connectionState = 9;
-				} else if (var10 == 15 && Client.anInt2113 == 40) {
+				} else if (var10 == 15 && Client.clientState == 40) {
 					Client.frameSize = -1;
 					Client.connectionState = 13;
 				} else if (var10 == 23 && Client.anInt2037 < 1) {
@@ -356,7 +356,7 @@ public class LoginHandler {
 						String var17 = Client.inBuffer.getString();
 						String var181 = Client.inBuffer.getString();
 						GPI.method230(var141, var17, var181);
-						Node_Sub8.method550(10);
+						Node_Sub8.setClientState(10);
 					}
 
 					if (Client.connectionState == 13) {

@@ -5,7 +5,7 @@ import java.io.IOException;
 public class ItemType extends DualNode {
 
 	public int id;
-	static Picture[] aSpriteArray1619;
+	static Picture[] prayerIcons;
 	public static AbstractIndex item_ref;
 	int anInt1630;
 	public int anInt1637 = 2000;

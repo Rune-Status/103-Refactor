@@ -95,7 +95,7 @@ public class Deque {
 		var1.next.previous = var1;
 	}
 
-	public void method475(Node var1) {
+	public void add(Node var1) {
 		if (var1.previous != null) {
 			var1.unlink();
 		}

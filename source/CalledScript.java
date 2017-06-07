@@ -1,8 +1,8 @@
-public class Class33 {
+public class CalledScript {
 
-	String[] aStringArray360;
-	RuneScript aRuneScript361;
-	int[] anIntArray362;
+	String[] stringOperands;
+	RuneScript callingScript;
+	int[] intOperands;
 	static VarClientHub aClass28_364;
 	static int[] anIntArray365;
 	int anInt363 = -1;

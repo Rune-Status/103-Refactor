@@ -364,7 +364,7 @@ public class VarClientHub {
 			ScriptEvent var5 = new ScriptEvent();
 			var5.widget = var0;
 			var5.args = var0.anObjectArray1188;
-			Client.aDeque2164.method475(var5);
+			Client.aDeque2164.add(var5);
 		}
 
 	}

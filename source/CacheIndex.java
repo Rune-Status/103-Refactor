@@ -70,7 +70,7 @@ public class CacheIndex extends AbstractIndex {
 				var19.aClass62_1336 = var18;
 				Deque var20 = Class90.aDeque718;
 				synchronized (var20) {
-					Class90.aDeque718.method475(var19);
+					Class90.aDeque718.add(var19);
 				}
 
 				Object var21 = Class90.anObject720;
@@ -97,7 +97,7 @@ public class CacheIndex extends AbstractIndex {
 				var181.aClass62_1336 = var171;
 				Deque var191 = Class90.aDeque718;
 				synchronized (var191) {
-					Class90.aDeque718.method475(var181);
+					Class90.aDeque718.add(var181);
 				}
 
 				Object var201 = Class90.anObject720;
@@ -142,7 +142,7 @@ public class CacheIndex extends AbstractIndex {
 					var4.aClass87_Sub1_1337 = this;
 					Deque var5 = Class90.aDeque718;
 					synchronized (var5) {
-						Class90.aDeque718.method475(var4);
+						Class90.aDeque718.add(var4);
 					}
 
 					Object var10 = Class90.anObject720;

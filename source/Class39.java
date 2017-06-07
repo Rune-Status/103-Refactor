@@ -6,7 +6,7 @@ public final class Class39 {
 	static int[] anIntArray432;
 	static int[][][] anIntArrayArrayArray433;
 	static int[][] anIntArrayArray441;
-	static Picture[] aSpriteArray442;
+	static Picture[] hintIcons;
 	static int[] anIntArray427 = new int[] { 1, 0, -1, 0 };
 	static int anInt431 = (int) (Math.random() * 17.0D) - 8;
 	static int[] anIntArray434 = new int[] { 1, 2, 4, 8 };
@@ -47,13 +47,13 @@ public final class Class39 {
 					SkeletonSet.characterToScreen(character, character.height + 15);
 					if (Client.screenY > -1) {
 						if (var11.skullIcon != -1) {
-							VarBitType.aSpriteArray1728[var11.skullIcon].method946(Client.screenY + var2 - 12,
+							VarBitType.pkIcons[var11.skullIcon].method946(Client.screenY + var2 - 12,
 									Client.screenX + var3 - var8);
 							var8 += 25;
 						}
 
 						if (var11.prayerIcon != -1) {
-							ItemType.aSpriteArray1619[var11.prayerIcon].method946(Client.screenY + var2 - 12,
+							ItemType.prayerIcons[var11.prayerIcon].method946(Client.screenY + var2 - 12,
 									Client.screenX + var3 - var8);
 							var8 += 25;
 						}
@@ -63,7 +63,7 @@ public final class Class39 {
 				if (var1 >= 0 && Client.anInt2075 == 10 && Client.anInt2158 == var6[var1]) {
 					SkeletonSet.characterToScreen(character, character.height + 15);
 					if (Client.screenY > -1) {
-						aSpriteArray442[1].method946(Client.screenY + var2 - 12, Client.screenX + var3 - var8);
+						hintIcons[1].method946(Client.screenY + var2 - 12, Client.screenX + var3 - var8);
 					}
 				}
 			} else {
@@ -72,10 +72,10 @@ public final class Class39 {
 					var13 = var13.transform();
 				}
 
-				if (var13.anInt1577 >= 0 && var13.anInt1577 < ItemType.aSpriteArray1619.length) {
+				if (var13.anInt1577 >= 0 && var13.anInt1577 < ItemType.prayerIcons.length) {
 					SkeletonSet.characterToScreen(character, character.height + 15);
 					if (Client.screenY > -1) {
-						ItemType.aSpriteArray1619[var13.anInt1577].method946(Client.screenY + var2 - 12,
+						ItemType.prayerIcons[var13.anInt1577].method946(Client.screenY + var2 - 12,
 								Client.screenX + var3 - 30);
 					}
 				}
@@ -84,7 +84,7 @@ public final class Class39 {
 						&& Client.engineCycle % 20 < 10) {
 					SkeletonSet.characterToScreen(character, character.height + 15);
 					if (Client.screenY > -1) {
-						aSpriteArray442[0].method946(Client.screenY + var2 - 12, Client.screenX + var3 - 28);
+						hintIcons[0].method946(Client.screenY + var2 - 12, Client.screenX + var3 - 28);
 					}
 				}
 			}
@@ -148,7 +148,7 @@ public final class Class39 {
 							Client.screenX -= 10;
 						}
 
-						Class96_Sub1.aSpriteArray1204[character.hitsplatDamages[var8]]
+						Class96_Sub1.hitmarks[character.hitsplatDamages[var8]]
 								.method946(Client.screenY + var2 - 12, Client.screenX + var3 - 12);
 						ConsumingImageProducer.p11_full.method982(Integer.toString(character.hitsplatTypes[var8]),
 								Client.screenY + var2 - 1, Client.screenX + var3 + 3, 16777215, 0);

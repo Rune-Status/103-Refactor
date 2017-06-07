@@ -3,7 +3,7 @@ import java.awt.Component;
 public class VarBitType extends DualNode {
 
 	public static AbstractIndex varbit_ref;
-	static Picture[] aSpriteArray1728;
+	static Picture[] pkIcons;
 	public int varp;
 	public int lowBit;
 	public int highBit;
@@ -39,14 +39,14 @@ public class VarBitType extends DualNode {
 		short var1 = 256;
 
 		int var5;
-		for (var5 = 0; var5 < Class33.anIntArray365.length; var5++) {
-			Class33.anIntArray365[var5] = 0;
+		for (var5 = 0; var5 < CalledScript.anIntArray365.length; var5++) {
+			CalledScript.anIntArray365[var5] = 0;
 		}
 
 		int var2;
 		for (var5 = 0; var5 < 5000; var5++) {
 			var2 = (int) (Math.random() * 128.0D * (double) var1);
-			Class33.anIntArray365[var2] = (int) (Math.random() * 256.0D);
+			CalledScript.anIntArray365[var2] = (int) (Math.random() * 256.0D);
 		}
 
 		int var3;
@@ -55,14 +55,14 @@ public class VarBitType extends DualNode {
 			for (var2 = 1; var2 < var1 - 1; var2++) {
 				for (var3 = 1; var3 < 127; var3++) {
 					var4 = (var2 << 7) + var3;
-					Permission.anIntArray605[var4] = (Class33.anIntArray365[var4 + 128]
-							+ Class33.anIntArray365[var4 - 128] + Class33.anIntArray365[var4 + 1]
-							+ Class33.anIntArray365[var4 - 1]) / 4;
+					Permission.anIntArray605[var4] = (CalledScript.anIntArray365[var4 + 128]
+							+ CalledScript.anIntArray365[var4 - 128] + CalledScript.anIntArray365[var4 + 1]
+							+ CalledScript.anIntArray365[var4 - 1]) / 4;
 				}
 			}
 
-			int[] var6 = Class33.anIntArray365;
-			Class33.anIntArray365 = Permission.anIntArray605;
+			int[] var6 = CalledScript.anIntArray365;
+			CalledScript.anIntArray365 = Permission.anIntArray605;
 			Permission.anIntArray605 = var6;
 		}
 
@@ -75,7 +75,7 @@ public class VarBitType extends DualNode {
 						var4 = var0.offsetX + 16 + var3;
 						int var8 = var2 + 16 + var0.offsetY;
 						int var7 = (var8 << 7) + var4;
-						Class33.anIntArray365[var7] = 0;
+						CalledScript.anIntArray365[var7] = 0;
 					}
 				}
 			}

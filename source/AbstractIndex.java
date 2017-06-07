@@ -375,7 +375,7 @@ public abstract class AbstractIndex {
 		return this.getFile(var3, var4);
 	}
 
-	public byte[] method390(int file, int child) {
+	public byte[] getChild(int file, int child) {
 		if (file >= 0 && file < this.anObjectArrayArray705.length && this.anObjectArrayArray705[file] != null
 				&& child >= 0 && child < this.anObjectArrayArray705[file].length) {
 			if (this.anObjectArrayArray705[file][child] == null) {
@@ -402,11 +402,11 @@ public abstract class AbstractIndex {
 
 	public byte[] method392(int var1) {
 		if (this.anObjectArrayArray705.length == 1) {
-			return this.method390(0, var1);
+			return this.getChild(0, var1);
 		} else if (this.anObjectArrayArray705[var1].length != 1) {
 			throw new RuntimeException();
 		} else {
-			return this.method390(var1, 0);
+			return this.getChild(var1, 0);
 		}
 	}
 

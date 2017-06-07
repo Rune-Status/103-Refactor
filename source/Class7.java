@@ -175,7 +175,7 @@ public class Class7 {
 			double var7 = Math.atan2((double) var13, (double) var14);
 			int var15 = (int) (Math.sin(var7) * 63.0D);
 			int var9 = (int) (Math.cos(var7) * 57.0D);
-			Npc.aSprite1965.method955(var0 + 4 + 94 + var15 - 10, var1 + 83 - var9 - 20, 20, 20, 15, 15, var7, 256);
+			Npc.mapedge.method955(var0 + 4 + 94 + var15 - 10, var1 + 83 - var9 - 20, 20, 20, 15, 15, var7, 256);
 		} else {
 			Class51.drawDot(var0, var1, var2, var3, var4, var5);
 		}

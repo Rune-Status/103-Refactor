@@ -197,7 +197,7 @@ public class RuneScript extends DualNode {
 							Client.groundItemDeque[InterfaceNode.floorLevel * -1331355705][var1][var2] = new Deque();
 						}
 
-						Client.groundItemDeque[InterfaceNode.floorLevel * -1331355705][var1][var2].method475(var29);
+						Client.groundItemDeque[InterfaceNode.floorLevel * -1331355705][var1][var2].add(var29);
 						Class32.method195(var1, var2);
 					}
 				} else if (Client.frameId == 182) {
@@ -225,7 +225,7 @@ public class RuneScript extends DualNode {
 						GraphicsStub var38 = new GraphicsStub(var3, InterfaceNode.floorLevel * -1331355705, var1, var2,
 								NpcType.getTileHeight(var1, var2, InterfaceNode.floorLevel * -1331355705) - var32, var5,
 								Client.engineCycle);
-						Client.graphicsObjectDeque.method475(var38);
+						Client.graphicsObjectDeque.add(var38);
 					}
 				} else {
 					int var23;
@@ -256,7 +256,7 @@ public class RuneScript extends DualNode {
 							var11.method992(var3, var32,
 									NpcType.getTileHeight(var3, var32, InterfaceNode.floorLevel * -1331355705) - var7,
 									Client.engineCycle + var33);
-							Client.projectileDeque.method475(var11);
+							Client.projectileDeque.add(var11);
 						}
 					} else {
 						if (Client.frameId == 5) {

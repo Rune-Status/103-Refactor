@@ -289,14 +289,14 @@ public class Rasterizer extends Entity {
 	public void method1001(SkeletonSet var1, int var2) {
 		if (this.anIntArrayArray1881 != null && var2 != -1) {
 			AnimationSkeleton var4 = var1.skeletons[var2];
-			AnimationSkin var5 = var4.aNode_Sub5_291;
+			AnimationSkin var5 = var4.skin;
 			anInt1895 = 0;
 			anInt1883 = 0;
 			anInt1903 = 0;
 
 			for (int var3 = 0; var3 < var4.anInt292; var3++) {
 				int var6 = var4.anIntArray293[var3];
-				this.method1002(var5.anIntArray1262[var6], var5.anIntArrayArray1264[var6], var4.anIntArray288[var3],
+				this.method1002(var5.types[var6], var5.list[var6], var4.anIntArray288[var3],
 						var4.anIntArray295[var3], var4.anIntArray296[var3]);
 			}
 
@@ -484,7 +484,7 @@ public class Rasterizer extends Entity {
 			if (var5 != null && var4 != -1) {
 				AnimationSkeleton var9 = var1.skeletons[var2];
 				AnimationSkeleton var6 = var3.skeletons[var4];
-				AnimationSkin var12 = var9.aNode_Sub5_291;
+				AnimationSkin var12 = var9.skin;
 				anInt1895 = 0;
 				anInt1883 = 0;
 				anInt1903 = 0;
@@ -499,8 +499,8 @@ public class Rasterizer extends Entity {
 						;
 					}
 
-					if (var10 != var8 || var12.anIntArray1262[var10] == 0) {
-						this.method1002(var12.anIntArray1262[var10], var12.anIntArrayArray1264[var10],
+					if (var10 != var8 || var12.types[var10] == 0) {
+						this.method1002(var12.types[var10], var12.list[var10],
 								var9.anIntArray288[var11], var9.anIntArray295[var11], var9.anIntArray296[var11]);
 					}
 				}
@@ -517,8 +517,8 @@ public class Rasterizer extends Entity {
 						;
 					}
 
-					if (var10 == var8 || var12.anIntArray1262[var10] == 0) {
-						this.method1002(var12.anIntArray1262[var10], var12.anIntArrayArray1264[var10],
+					if (var10 == var8 || var12.types[var10] == 0) {
+						this.method1002(var12.types[var10], var12.list[var10],
 								var6.anIntArray288[var11], var6.anIntArray295[var11], var6.anIntArray296[var11]);
 					}
 				}

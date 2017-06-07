@@ -814,7 +814,7 @@ public class Landscape {
 	}
 
 	void method40(LandscapeTile var1, boolean var2) {
-		aDeque12.method475(var1);
+		aDeque12.add(var1);
 
 		while (true) {
 			LandscapeTile var3;
@@ -1083,28 +1083,28 @@ public class Landscape {
 												if (var4 < screenCenterY && (var14 & 0x4) != 0) {
 													var33 = var8[var4 + 1][var5];
 													if (var33 != null && var33.aBool1412) {
-														aDeque12.method475(var33);
+														aDeque12.add(var33);
 													}
 												}
 
 												if (var5 < anInt24 && (var14 & 0x2) != 0) {
 													var33 = var8[var4][var5 + 1];
 													if (var33 != null && var33.aBool1412) {
-														aDeque12.method475(var33);
+														aDeque12.add(var33);
 													}
 												}
 
 												if (var4 > screenCenterY && (var14 & 0x1) != 0) {
 													var33 = var8[var4 - 1][var5];
 													if (var33 != null && var33.aBool1412) {
-														aDeque12.method475(var33);
+														aDeque12.add(var33);
 													}
 												}
 
 												if (var5 > anInt24 && (var14 & 0x8) != 0) {
 													var33 = var8[var4][var5 - 1];
 													if (var33 != null && var33.aBool1412) {
-														aDeque12.method475(var33);
+														aDeque12.add(var33);
 													}
 												}
 											}
@@ -1240,10 +1240,10 @@ public class Landscape {
 													for (var15 = var30.regionY; var15 <= var30.sizeY; var15++) {
 														LandscapeTile var28 = var8[var14][var15];
 														if (var28.anInt1409 != 0) {
-															aDeque12.method475(var28);
+															aDeque12.add(var28);
 														} else if ((var14 != var4 || var15 != var5)
 																&& var28.aBool1412) {
-															aDeque12.method475(var28);
+															aDeque12.add(var28);
 														}
 													}
 												}
@@ -1362,35 +1362,35 @@ public class Landscape {
 			if (var6 < this.maxZ - 1) {
 				var34 = this.tiles[var6 + 1][var4][var5];
 				if (var34 != null && var34.aBool1412) {
-					aDeque12.method475(var34);
+					aDeque12.add(var34);
 				}
 			}
 
 			if (var4 < screenCenterY) {
 				var34 = var8[var4 + 1][var5];
 				if (var34 != null && var34.aBool1412) {
-					aDeque12.method475(var34);
+					aDeque12.add(var34);
 				}
 			}
 
 			if (var5 < anInt24) {
 				var34 = var8[var4][var5 + 1];
 				if (var34 != null && var34.aBool1412) {
-					aDeque12.method475(var34);
+					aDeque12.add(var34);
 				}
 			}
 
 			if (var4 > screenCenterY) {
 				var34 = var8[var4 - 1][var5];
 				if (var34 != null && var34.aBool1412) {
-					aDeque12.method475(var34);
+					aDeque12.add(var34);
 				}
 			}
 
 			if (var5 > anInt24) {
 				var34 = var8[var4][var5 - 1];
 				if (var34 != null && var34.aBool1412) {
-					aDeque12.method475(var34);
+					aDeque12.add(var34);
 				}
 			}
 		}

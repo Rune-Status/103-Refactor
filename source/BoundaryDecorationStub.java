@@ -269,7 +269,7 @@ public final class BoundaryDecorationStub {
 						PlayerLoginDetails.bootMessage = "Loading fonts - " + var0 * 100 / 3 + "%";
 						PlayerLoginDetails.loadingPercentage = 40;
 					} else {
-						IdentKitType.aNode_Sub10_1467 = new Node_Sub10(true);
+						IdentKitType.aNode_Sub10_1467 = new MachineInfo(true);
 						PlayerLoginDetails.bootMessage = "Loaded fonts";
 						PlayerLoginDetails.loadingPercentage = 40;
 						Client.bootState = 60;
@@ -283,7 +283,7 @@ public final class BoundaryDecorationStub {
 					} else {
 						PlayerLoginDetails.bootMessage = "Loaded title screen";
 						PlayerLoginDetails.loadingPercentage = 50;
-						Node_Sub8.method550(5);
+						Node_Sub8.setClientState(5);
 						Client.bootState = 70;
 					}
 				} else if (Client.bootState == 70) {
@@ -321,7 +321,7 @@ public final class BoundaryDecorationStub {
 						Class32.method196(Client.configsIndex);
 						CacheIndex var6 = Client.configsIndex;
 						VarClientStringType.varclientstring_ref = var6;
-						Class33.aClass28_364 = new VarClientHub();
+						CalledScript.aClass28_364 = new VarClientHub();
 						PlayerLoginDetails.bootMessage = "Loaded config";
 						PlayerLoginDetails.loadingPercentage = 60;
 						Client.bootState = 80;
@@ -376,73 +376,73 @@ public final class BoundaryDecorationStub {
 							Client.bootState = 140;
 						}
 					} else if (Client.bootState == 140) {
-						Node_Sub8.method550(10);
+						Node_Sub8.setClientState(10);
 					}
 				} else {
 					var0 = 0;
-					if (Class48_Sub1.aSprite1296 == null) {
-						Class48_Sub1.aSprite1296 = AbstractByteBuffer.method257(AnimationSkin.spritesIndex, "compass",
+					if (Class48_Sub1.compass == null) {
+						Class48_Sub1.compass = AbstractByteBuffer.method257(AnimationSkin.spritesIndex, "compass",
 								"");
 					} else {
 						++var0;
 					}
 
-					if (Npc.aSprite1965 == null) {
-						Npc.aSprite1965 = AbstractByteBuffer.method257(AnimationSkin.spritesIndex, "mapedge", "");
+					if (Npc.mapedge == null) {
+						Npc.mapedge = AbstractByteBuffer.method257(AnimationSkin.spritesIndex, "mapedge", "");
 					} else {
 						++var0;
 					}
 
-					if (Class2.aDualNode_Sub13_Sub2Array77 == null) {
-						Class2.aDualNode_Sub13_Sub2Array77 = ObjectType.method868(AnimationSkin.spritesIndex,
+					if (Class2.mapscenes == null) {
+						Class2.mapscenes = ObjectType.method868(AnimationSkin.spritesIndex,
 								"mapscene", "");
 					} else {
 						++var0;
 					}
 
-					if (Node_Sub8.aSpriteArray1309 == null) {
-						Node_Sub8.aSpriteArray1309 = DynamicObject.method1023(AnimationSkin.spritesIndex, "mapfunction",
+					if (Node_Sub8.mapfunctions == null) {
+						Node_Sub8.mapfunctions = DynamicObject.method1023(AnimationSkin.spritesIndex, "mapfunction",
 								"");
 					} else {
 						++var0;
 					}
 
-					if (Class96_Sub1.aSpriteArray1204 == null) {
-						Class96_Sub1.aSpriteArray1204 = DynamicObject.method1023(AnimationSkin.spritesIndex, "hitmarks",
+					if (Class96_Sub1.hitmarks == null) {
+						Class96_Sub1.hitmarks = DynamicObject.method1023(AnimationSkin.spritesIndex, "hitmarks",
 								"");
 					} else {
 						++var0;
 					}
 
-					if (VarBitType.aSpriteArray1728 == null) {
-						VarBitType.aSpriteArray1728 = DynamicObject.method1023(AnimationSkin.spritesIndex,
+					if (VarBitType.pkIcons == null) {
+						VarBitType.pkIcons = DynamicObject.method1023(AnimationSkin.spritesIndex,
 								"headicons_pk", "");
 					} else {
 						++var0;
 					}
 
-					if (ItemType.aSpriteArray1619 == null) {
-						ItemType.aSpriteArray1619 = DynamicObject.method1023(AnimationSkin.spritesIndex,
+					if (ItemType.prayerIcons == null) {
+						ItemType.prayerIcons = DynamicObject.method1023(AnimationSkin.spritesIndex,
 								"headicons_prayer", "");
 					} else {
 						++var0;
 					}
 
-					if (Class39.aSpriteArray442 == null) {
-						Class39.aSpriteArray442 = DynamicObject.method1023(AnimationSkin.spritesIndex, "headicons_hint",
+					if (Class39.hintIcons == null) {
+						Class39.hintIcons = DynamicObject.method1023(AnimationSkin.spritesIndex, "headicons_hint",
 								"");
 					} else {
 						++var0;
 					}
 
-					if (Class72.aSpriteArray604 == null) {
-						Class72.aSpriteArray604 = DynamicObject.method1023(AnimationSkin.spritesIndex, "mapmarker", "");
+					if (Class72.mapmarker == null) {
+						Class72.mapmarker = DynamicObject.method1023(AnimationSkin.spritesIndex, "mapmarker", "");
 					} else {
 						++var0;
 					}
 
-					if (Class88.aSpriteArray712 == null) {
-						Class88.aSpriteArray712 = DynamicObject.method1023(AnimationSkin.spritesIndex, "cross", "");
+					if (Class88.cross == null) {
+						Class88.cross = DynamicObject.method1023(AnimationSkin.spritesIndex, "cross", "");
 					} else {
 						++var0;
 					}
@@ -453,15 +453,15 @@ public final class BoundaryDecorationStub {
 						++var0;
 					}
 
-					if (Class35.aDualNode_Sub13_Sub2Array395 == null) {
-						Class35.aDualNode_Sub13_Sub2Array395 = ObjectType.method868(AnimationSkin.spritesIndex,
+					if (Class35.scrollbar == null) {
+						Class35.scrollbar = ObjectType.method868(AnimationSkin.spritesIndex,
 								"scrollbar", "");
 					} else {
 						++var0;
 					}
 
-					if (IgnoredPlayer.aDualNode_Sub13_Sub2Array755 == null) {
-						IgnoredPlayer.aDualNode_Sub13_Sub2Array755 = ObjectType.method868(AnimationSkin.spritesIndex,
+					if (IgnoredPlayer.modIcons == null) {
+						IgnoredPlayer.modIcons = ObjectType.method868(AnimationSkin.spritesIndex,
 								"mod_icons", "");
 					} else {
 						++var0;
@@ -471,18 +471,18 @@ public final class BoundaryDecorationStub {
 						PlayerLoginDetails.bootMessage = "Loading sprites - " + var0 * 100 / 13 + "%";
 						PlayerLoginDetails.loadingPercentage = 70;
 					} else {
-						DualNode_Sub13_Sub3.aDualNode_Sub13_Sub2Array1827 = IgnoredPlayer.aDualNode_Sub13_Sub2Array755;
-						Npc.aSprite1965.method948();
+						DualNode_Sub13_Sub3.aDualNode_Sub13_Sub2Array1827 = IgnoredPlayer.modIcons;
+						Npc.mapedge.method948();
 						var1 = (int) (Math.random() * 21.0D) - 10;
 						var2 = (int) (Math.random() * 21.0D) - 10;
 						var4 = (int) (Math.random() * 21.0D) - 10;
 						var3 = (int) (Math.random() * 41.0D) - 20;
 
-						for (int var19 = 0; var19 < Node_Sub8.aSpriteArray1309.length; var19++) {
-							Node_Sub8.aSpriteArray1309[var19].method960(var1 + var3, var2 + var3, var3 + var4);
+						for (int var19 = 0; var19 < Node_Sub8.mapfunctions.length; var19++) {
+							Node_Sub8.mapfunctions[var19].method960(var1 + var3, var2 + var3, var3 + var4);
 						}
 
-						Class2.aDualNode_Sub13_Sub2Array77[0].method927(var3 + var1, var3 + var2, var4 + var3);
+						Class2.mapscenes[0].method927(var3 + var1, var3 + var2, var4 + var3);
 						PlayerLoginDetails.bootMessage = "Loaded sprites";
 						PlayerLoginDetails.loadingPercentage = 70;
 						Client.bootState = 90;

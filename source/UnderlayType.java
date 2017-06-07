@@ -116,7 +116,7 @@ public class UnderlayType extends DualNode {
 
 	static void method705() {
 		for (int var0 = 0; var0 < Client.menuItemCount; var0++) {
-			if (Class33.method199(Client.menuOpcodes[var0])) {
+			if (CalledScript.method199(Client.menuOpcodes[var0])) {
 				if (var0 < Client.menuItemCount - 1) {
 					for (int var1 = var0; var1 < Client.menuItemCount - 1; var1++) {
 						Client.menuActions[var1] = Client.menuActions[var1 + 1];

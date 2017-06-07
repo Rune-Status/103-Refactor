@@ -28,7 +28,7 @@ public class Class90 implements Runnable {
 						var2.aByteArray1340 = var2.aClass62_1336.method302((int) var2.key);
 						var13 = aDeque718;
 						synchronized (var13) {
-							aDeque717.method475(var2);
+							aDeque717.add(var2);
 						}
 					}
 

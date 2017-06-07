@@ -1,7 +1,7 @@
 public class Class72 {
 
 	static int cameraY;
-	static Picture[] aSpriteArray604;
+	static Picture[] mapmarker;
 
 	Class72() throws Throwable {
 		throw new Error();

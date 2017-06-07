@@ -85,7 +85,7 @@ public class GameType implements IOrdinal {
 
 	static final void method339() {
 		Client.anInt2183 = 0;
-		int var1 = (Class68.myPlayer.strictX >> 7) + Node_Sub10.chunkLeftX;
+		int var1 = (Class68.myPlayer.strictX >> 7) + MachineInfo.chunkLeftX;
 		int var0 = (Class68.myPlayer.strictY >> 7) + VarClientHub.chunkLeftY;
 		if (var1 >= 3053 && var1 <= 3156 && var0 >= 3056 && var0 <= 3136) {
 			Client.anInt2183 = 1;

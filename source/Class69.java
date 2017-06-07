@@ -27,9 +27,9 @@ public class Class69 {
 			int var6;
 			int var7;
 			if (var0.anInt1947 >= Client.engineCycle) {
-				if (var0.anInt1947 == Client.engineCycle || var0.animation == -1 || var0.anInt1936 != 0
+				if (var0.anInt1947 == Client.engineCycle || var0.animationId == -1 || var0.animationDelay != 0
 						|| var0.anInt1935
-								+ 1 > Node_Sub6.getSequenceType(var0.animation).anIntArray1481[var0.anInt1934]) {
+								+ 1 > Node_Sub6.getSequenceType(var0.animationId).anIntArray1481[var0.anInt1934]) {
 					var2 = var0.anInt1947 - var0.anInt1928;
 					var13 = Client.engineCycle - var0.anInt1928;
 					var6 = var0.anInt1915 * 64 + var0.anInt1954 * -777033600;
@@ -49,8 +49,8 @@ public class Class69 {
 					var0.anInt1956 = 0;
 				} else {
 					label332: {
-						if (var0.animation != -1 && var0.anInt1936 == 0) {
-							var11 = Node_Sub6.getSequenceType(var0.animation);
+						if (var0.animationId != -1 && var0.animationDelay == 0) {
+							var11 = Node_Sub6.getSequenceType(var0.animationId);
 							if (var0.anInt1957 > 0 && var11.anInt1484 == 0) {
 								++var0.anInt1956;
 								break label332;
@@ -202,8 +202,8 @@ public class Class69 {
 		}
 
 		if (var0.strictX < 128 || var0.strictY < 128 || var0.strictX >= 13184 || var0.strictY >= 13184) {
-			var0.animation = -1;
-			var0.anInt1938 = -1;
+			var0.animationId = -1;
+			var0.graphicsId = -1;
 			var0.anInt1928 = 0;
 			var0.anInt1947 = 0;
 			var0.strictX = var0.anInt1915 * 64 + var0.anIntArray1945[0] * 128;
@@ -213,8 +213,8 @@ public class Class69 {
 
 		if (Class68.myPlayer == var0
 				&& (var0.strictX < 1536 || var0.strictY < 1536 || var0.strictX >= 11776 || var0.strictY >= 11776)) {
-			var0.animation = -1;
-			var0.anInt1938 = -1;
+			var0.animationId = -1;
+			var0.graphicsId = -1;
 			var0.anInt1928 = 0;
 			var0.anInt1947 = 0;
 			var0.strictX = var0.anIntArray1945[0] * 128 + var0.anInt1915 * 64;
@@ -245,12 +245,12 @@ public class Class69 {
 			}
 		}
 
-		if (var0.anInt1938 != -1 && Client.engineCycle >= var0.anInt1941) {
+		if (var0.graphicsId != -1 && Client.engineCycle >= var0.graphicsDelay) {
 			if (var0.anInt1925 < 0) {
 				var0.anInt1925 = 0;
 			}
 
-			var2 = Class96_Sub1.getSpotAnimType(var0.anInt1938).anInt1441;
+			var2 = Class96_Sub1.getSpotAnimType(var0.graphicsId).anInt1441;
 			if (var2 != -1) {
 				SequenceType var121 = Node_Sub6.getSequenceType(var2);
 				if (var121 != null && var121.anIntArray1474 != null) {
@@ -264,27 +264,27 @@ public class Class69 {
 
 					if (var0.anInt1925 >= var121.anIntArray1474.length
 							&& (var0.anInt1925 < 0 || var0.anInt1925 >= var121.anIntArray1474.length)) {
-						var0.anInt1938 = -1;
+						var0.graphicsId = -1;
 					}
 				} else {
-					var0.anInt1938 = -1;
+					var0.graphicsId = -1;
 				}
 			} else {
-				var0.anInt1938 = -1;
+				var0.graphicsId = -1;
 			}
 		}
 
-		if (var0.animation != -1 && var0.anInt1936 <= 1) {
-			var11 = Node_Sub6.getSequenceType(var0.animation);
+		if (var0.animationId != -1 && var0.animationDelay <= 1) {
+			var11 = Node_Sub6.getSequenceType(var0.animationId);
 			if (var11.anInt1484 == 1 && var0.anInt1957 > 0 && var0.anInt1928 <= Client.engineCycle
 					&& var0.anInt1947 < Client.engineCycle) {
-				var0.anInt1936 = 1;
+				var0.animationDelay = 1;
 				return;
 			}
 		}
 
-		if (var0.animation != -1 && var0.anInt1936 == 0) {
-			var11 = Node_Sub6.getSequenceType(var0.animation);
+		if (var0.animationId != -1 && var0.animationDelay == 0) {
+			var11 = Node_Sub6.getSequenceType(var0.animationId);
 			if (var11 != null && var11.anIntArray1474 != null) {
 				++var0.anInt1935;
 				if (var0.anInt1934 < var11.anIntArray1474.length
@@ -298,22 +298,22 @@ public class Class69 {
 					var0.anInt1934 -= var11.anInt1477;
 					++var0.anInt1958;
 					if (var0.anInt1958 >= var11.anInt1483) {
-						var0.animation = -1;
+						var0.animationId = -1;
 					} else if (var0.anInt1934 >= 0 && var0.anInt1934 < var11.anIntArray1474.length) {
 						AbstractProducer.method147(var11, var0.anInt1934, var0.strictX, var0.strictY);
 					} else {
-						var0.animation = -1;
+						var0.animationId = -1;
 					}
 				}
 
 				var0.aBool1919 = var11.aBool1475;
 			} else {
-				var0.animation = -1;
+				var0.animationId = -1;
 			}
 		}
 
-		if (var0.anInt1936 > 0) {
-			--var0.anInt1936;
+		if (var0.animationDelay > 0) {
+			--var0.animationDelay;
 		}
 
 	}

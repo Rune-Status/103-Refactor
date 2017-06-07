@@ -45,8 +45,8 @@ public class VarClientStringType extends DualNode {
 
 	public static void method699(AbstractIndex var0, AbstractIndex var1, AbstractIndex var2) {
 		SequenceType.seq_ref = var0;
-		SequenceType.aClass87_1470 = var1;
-		SequenceType.aClass87_1471 = var2;
+		SequenceType.skel_ref = var1;
+		SequenceType.skin_ref = var2;
 	}
 
 	static File method700(String var0) {

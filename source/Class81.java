@@ -27,7 +27,7 @@ public class Class81 {
 		if (Client.anInt2045 > 0) {
 			logout();
 		} else {
-			Node_Sub8.method550(40);
+			Node_Sub8.setClientState(40);
 			Class35.aClass60_394 = Class31.gameConnection;
 			Class31.gameConnection = null;
 		}
@@ -66,7 +66,7 @@ public class Class81 {
 		}
 
 		Node_Sub6.aDeque1279.method467();
-		Node_Sub8.method550(10);
+		Node_Sub8.setClientState(10);
 	}
 
 	Class81() throws Throwable {

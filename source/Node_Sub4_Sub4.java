@@ -790,7 +790,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 					this.aNode_Sub14ArrayArray1673[var1][var7.anInt1380] = var7;
 				}
 
-				this.aNode_Sub4_Sub3_1681.aDeque1652.method475(var7);
+				this.aNode_Sub4_Sub3_1681.aDeque1652.add(var7);
 				this.aNode_Sub14ArrayArray1665[var1][var2] = var7;
 			}
 		}

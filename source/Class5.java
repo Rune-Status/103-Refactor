@@ -6,11 +6,11 @@ public class Class5 {
 
 	static final void method71(int var0, int var1, int var2, int var3) {
 		if (Client.cursorState == 1) {
-			Class88.aSpriteArray712[Client.anInt2097 / 100].method946(Client.anInt2095 - 8, Client.anInt2096 - 8);
+			Class88.cross[Client.anInt2097 / 100].method946(Client.anInt2095 - 8, Client.anInt2096 - 8);
 		}
 
 		if (Client.cursorState == 2) {
-			Class88.aSpriteArray712[Client.anInt2097 / 100 + 4].method946(Client.anInt2095 - 8, Client.anInt2096 - 8);
+			Class88.cross[Client.anInt2097 / 100 + 4].method946(Client.anInt2095 - 8, Client.anInt2096 - 8);
 		}
 
 		GameType.method339();

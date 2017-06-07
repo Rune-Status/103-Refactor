@@ -347,7 +347,7 @@ public class NpcType extends DualNode {
 			var9.anInt1300 = var1;
 			var9.anInt1312 = var2;
 			Class41.method226(var9);
-			Client.aDeque2193.method475(var9);
+			Client.aDeque2193.add(var9);
 		}
 
 		var9.anInt1307 = var4;

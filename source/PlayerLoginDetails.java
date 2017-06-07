@@ -7,7 +7,7 @@ public class PlayerLoginDetails {
 	static int[] anIntArray124;
 	static int[] anIntArray125;
 	static Picture aSprite137;
-	static boolean aBool142;
+	static boolean titleScreenState;
 	static Widget[] aWidgetArray146;
 	static Sprite titleboxSprite;
 	static int anInt114 = 0;

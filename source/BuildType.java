@@ -88,7 +88,7 @@ public class BuildType {
 			}
 		}
 
-		Class33.aClass28_364.reset();
+		CalledScript.aClass28_364.reset();
 		Client.anInt2136 = -1;
 		if (Client.anInt2226 != -1) {
 			Class53.method275(Client.anInt2226);

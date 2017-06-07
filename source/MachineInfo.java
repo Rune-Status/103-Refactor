@@ -1,4 +1,4 @@
-public class Node_Sub10 extends Node {
+public class MachineInfo extends Node {
 
 	int anInt1341;
 	int anInt1346;
@@ -8,22 +8,22 @@ public class Node_Sub10 extends Node {
 	int anInt1359;
 	static int chunkLeftX;
 	int[] anIntArray1362 = new int[3];
-	int anInt1343;
+	int osType;
 	String aString1354;
 	String aString1351;
 	String aString1355;
 	String aString1356;
 	String aString1360;
 	String aString1361;
-	boolean aBool1344;
-	int anInt1345;
-	int anInt1363;
-	int anInt1349;
-	int anInt1348;
-	int anInt1342;
+	boolean os32Bit;
+	int osVersionType;
+	int javaVendorType;
+	int javaVersionMajor;
+	int javaVersionMinor;
+	int javaVersionPatch;
 	boolean aBool1364;
-	int anInt1350;
-	int anInt1347;
+	int maxMemoryMB;
+	int availProcessors;
 	int anInt1352;
 
 	static final boolean method565(char var0) {
@@ -61,16 +61,16 @@ public class Node_Sub10 extends Node {
 
 	public void method566(ByteBuf var1) {
 		var1.putByte(6);
-		var1.putByte(this.anInt1343);
-		var1.putByte(this.aBool1344 ? 1 : 0);
-		var1.putByte(this.anInt1345);
-		var1.putByte(this.anInt1363);
-		var1.putByte(this.anInt1349);
-		var1.putByte(this.anInt1348);
-		var1.putByte(this.anInt1342);
+		var1.putByte(this.osType);
+		var1.putByte(this.os32Bit ? 1 : 0);
+		var1.putByte(this.osVersionType);
+		var1.putByte(this.javaVendorType);
+		var1.putByte(this.javaVersionMajor);
+		var1.putByte(this.javaVersionMinor);
+		var1.putByte(this.javaVersionPatch);
 		var1.putByte(this.aBool1364 ? 1 : 0);
-		var1.putShort(this.anInt1350);
-		var1.putByte(this.anInt1347);
+		var1.putShort(this.maxMemoryMB);
+		var1.putByte(this.availProcessors);
 		var1.putMedium(this.anInt1352);
 		var1.putShort(this.anInt1353 * -620298247);
 		var1.putJagString(this.aString1354);
@@ -91,161 +91,161 @@ public class Node_Sub10 extends Node {
 		var1.putInt(this.anInt1346 * 1223494517);
 	}
 
-	public Node_Sub10(boolean var1) {
+	public MachineInfo(boolean var1) {
 		if (var1) {
 			if (DynamicObject.osNameLC.startsWith("win")) {
-				this.anInt1343 = 1;
+				this.osType = 1;
 			} else if (DynamicObject.osNameLC.startsWith("mac")) {
-				this.anInt1343 = 2;
+				this.osType = 2;
 			} else if (DynamicObject.osNameLC.startsWith("linux")) {
-				this.anInt1343 = 3;
+				this.osType = 3;
 			} else {
-				this.anInt1343 = 4;
+				this.osType = 4;
 			}
 
-			String var2;
+			String osArch;
 			try {
-				var2 = System.getProperty("os.arch").toLowerCase();
+				osArch = System.getProperty("os.arch").toLowerCase();
 			} catch (Exception var12) {
-				var2 = "";
+				osArch = "";
 			}
 
-			String var4;
+			String osVersion;
 			try {
-				var4 = System.getProperty("os.version").toLowerCase();
+				osVersion = System.getProperty("os.version").toLowerCase();
 			} catch (Exception var11) {
-				var4 = "";
+				osVersion = "";
 			}
 
-			String var3 = "Unknown";
-			String var5 = "1.1";
+			String javaVendor = "Unknown";
+			String javaVersion = "1.1";
 
 			try {
-				var3 = System.getProperty("java.vendor");
-				var5 = System.getProperty("java.version");
+				javaVendor = System.getProperty("java.vendor");
+				javaVersion = System.getProperty("java.version");
 			} catch (Exception var10) {
 				;
 			}
 
-			if (!var2.startsWith("amd64") && !var2.startsWith("x86_64")) {
-				this.aBool1344 = false;
+			if (!osArch.startsWith("amd64") && !osArch.startsWith("x86_64")) {
+				this.os32Bit = false;
 			} else {
-				this.aBool1344 = true;
+				this.os32Bit = true;
 			}
 
-			if (this.anInt1343 == 1) {
-				if (var4.indexOf("4.0") != -1) {
-					this.anInt1345 = 1;
-				} else if (var4.indexOf("4.1") != -1) {
-					this.anInt1345 = 2;
-				} else if (var4.indexOf("4.9") != -1) {
-					this.anInt1345 = 3;
-				} else if (var4.indexOf("5.0") != -1) {
-					this.anInt1345 = 4;
-				} else if (var4.indexOf("5.1") != -1) {
-					this.anInt1345 = 5;
-				} else if (var4.indexOf("5.2") != -1) {
-					this.anInt1345 = 8;
-				} else if (var4.indexOf("6.0") != -1) {
-					this.anInt1345 = 6;
-				} else if (var4.indexOf("6.1") != -1) {
-					this.anInt1345 = 7;
-				} else if (var4.indexOf("6.2") != -1) {
-					this.anInt1345 = 9;
-				} else if (var4.indexOf("6.3") != -1) {
-					this.anInt1345 = 10;
+			if (this.osType == 1) {
+				if (osVersion.indexOf("4.0") != -1) {
+					this.osVersionType = 1;
+				} else if (osVersion.indexOf("4.1") != -1) {
+					this.osVersionType = 2;
+				} else if (osVersion.indexOf("4.9") != -1) {
+					this.osVersionType = 3;
+				} else if (osVersion.indexOf("5.0") != -1) {
+					this.osVersionType = 4;
+				} else if (osVersion.indexOf("5.1") != -1) {
+					this.osVersionType = 5;
+				} else if (osVersion.indexOf("5.2") != -1) {
+					this.osVersionType = 8;
+				} else if (osVersion.indexOf("6.0") != -1) {
+					this.osVersionType = 6;
+				} else if (osVersion.indexOf("6.1") != -1) {
+					this.osVersionType = 7;
+				} else if (osVersion.indexOf("6.2") != -1) {
+					this.osVersionType = 9;
+				} else if (osVersion.indexOf("6.3") != -1) {
+					this.osVersionType = 10;
 				}
-			} else if (this.anInt1343 == 2) {
-				if (var4.indexOf("10.4") != -1) {
-					this.anInt1345 = 20;
-				} else if (var4.indexOf("10.5") != -1) {
-					this.anInt1345 = 21;
-				} else if (var4.indexOf("10.6") != -1) {
-					this.anInt1345 = 22;
-				} else if (var4.indexOf("10.7") != -1) {
-					this.anInt1345 = 23;
-				} else if (var4.indexOf("10.8") != -1) {
-					this.anInt1345 = 24;
-				} else if (var4.indexOf("10.9") != -1) {
-					this.anInt1345 = 25;
-				} else if (var4.indexOf("10.10") != -1) {
-					this.anInt1345 = 26;
+			} else if (this.osType == 2) {
+				if (osVersion.indexOf("10.4") != -1) {
+					this.osVersionType = 20;
+				} else if (osVersion.indexOf("10.5") != -1) {
+					this.osVersionType = 21;
+				} else if (osVersion.indexOf("10.6") != -1) {
+					this.osVersionType = 22;
+				} else if (osVersion.indexOf("10.7") != -1) {
+					this.osVersionType = 23;
+				} else if (osVersion.indexOf("10.8") != -1) {
+					this.osVersionType = 24;
+				} else if (osVersion.indexOf("10.9") != -1) {
+					this.osVersionType = 25;
+				} else if (osVersion.indexOf("10.10") != -1) {
+					this.osVersionType = 26;
 				}
 			}
 
-			if (var3.toLowerCase().indexOf("sun") != -1) {
-				this.anInt1363 = 1;
-			} else if (var3.toLowerCase().indexOf("microsoft") != -1) {
-				this.anInt1363 = 2;
-			} else if (var3.toLowerCase().indexOf("apple") != -1) {
-				this.anInt1363 = 3;
-			} else if (var3.toLowerCase().indexOf("oracle") != -1) {
-				this.anInt1363 = 5;
+			if (javaVendor.toLowerCase().indexOf("sun") != -1) {
+				this.javaVendorType = 1;
+			} else if (javaVendor.toLowerCase().indexOf("microsoft") != -1) {
+				this.javaVendorType = 2;
+			} else if (javaVendor.toLowerCase().indexOf("apple") != -1) {
+				this.javaVendorType = 3;
+			} else if (javaVendor.toLowerCase().indexOf("oracle") != -1) {
+				this.javaVendorType = 5;
 			} else {
-				this.anInt1363 = 4;
+				this.javaVendorType = 4;
 			}
 
-			int var6 = 2;
-			int var7 = 0;
-
-			char var8;
+			int index = 2;
+			int acc = 0;
+			
+			char c;
 			try {
-				while (var6 < var5.length()) {
-					var8 = var5.charAt(var6);
-					if (var8 < 48 || var8 > 57) {
+				while (index < javaVersion.length()) {
+					c = javaVersion.charAt(index);
+					if (c < 48 || c > 57) {
 						break;
 					}
-
-					var7 = var8 - 48 + var7 * 10;
-					++var6;
+					
+					acc = acc * 10 + (c - 48);
+					++index;
 				}
 			} catch (Exception var15) {
 				;
 			}
 
-			this.anInt1349 = var7;
-			var6 = var5.indexOf(46, 2) + 1;
-			var7 = 0;
+			this.javaVersionMajor = acc;
+			index = javaVersion.indexOf(46, 2) + 1;
+			acc = 0;
 
 			try {
-				while (var6 < var5.length()) {
-					var8 = var5.charAt(var6);
-					if (var8 < 48 || var8 > 57) {
+				while (index < javaVersion.length()) {
+					c = javaVersion.charAt(index);
+					if (c < 48 || c > 57) {
 						break;
 					}
 
-					var7 = var7 * 10 + (var8 - 48);
-					++var6;
+					acc = acc * 10 + (c - 48);
+					++index;
 				}
 			} catch (Exception var14) {
 				;
 			}
 
-			this.anInt1348 = var7;
-			var6 = var5.indexOf(95, 4) + 1;
-			var7 = 0;
+			this.javaVersionMinor = acc;
+			index = javaVersion.indexOf(95, 4) + 1;
+			acc = 0;
 
 			try {
-				while (var6 < var5.length()) {
-					var8 = var5.charAt(var6);
-					if (var8 < 48 || var8 > 57) {
+				while (index < javaVersion.length()) {
+					c = javaVersion.charAt(index);
+					if (c < 48 || c > 57) {
 						break;
 					}
 
-					var7 = var7 * 10 + (var8 - 48);
-					++var6;
+					acc = acc * 10 + (c - 48);
+					++index;
 				}
 			} catch (Exception var13) {
 				;
 			}
 
-			this.anInt1342 = var7;
+			this.javaVersionPatch = acc;
 			this.aBool1364 = false;
-			this.anInt1350 = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
-			if (this.anInt1349 > 3) {
-				this.anInt1347 = Runtime.getRuntime().availableProcessors();
+			this.maxMemoryMB = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
+			if (this.javaVersionMajor > 3) {
+				this.availProcessors = Runtime.getRuntime().availableProcessors();
 			} else {
-				this.anInt1347 = 0;
+				this.availProcessors = 0;
 			}
 
 			this.anInt1352 = 0;

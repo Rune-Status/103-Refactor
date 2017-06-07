@@ -101,7 +101,7 @@ public class DynamicObject extends Entity {
 	}
 
 	static void method1022(Component var0, AbstractIndex binary, AbstractIndex sprites, boolean var3, int var4) {
-		if (PlayerLoginDetails.aBool142) {
+		if (PlayerLoginDetails.titleScreenState) {
 			if (var4 == 4) {
 				PlayerLoginDetails.anInt116 = 4;
 			}
@@ -179,7 +179,7 @@ public class DynamicObject extends Entity {
 			}
 
 			PlayerLoginDetails.anIntArray124 = new int[256];
-			Class33.anIntArray365 = new int['\u8000'];
+			CalledScript.anIntArray365 = new int['\u8000'];
 			Permission.anIntArray605 = new int['\u8000'];
 			VarBitType.method877((Sprite) null);
 			Class122.anIntArray818 = new int['\u8000'];
@@ -200,7 +200,7 @@ public class DynamicObject extends Entity {
 			}
 
 			ScriptEvent.sendConInfo(false);
-			PlayerLoginDetails.aBool142 = true;
+			PlayerLoginDetails.titleScreenState = true;
 			PlayerLoginDetails.anInt132 = (Class34.gameWidth - Client.anInt2233) / 2;
 			PlayerLoginDetails.anInt126 = PlayerLoginDetails.anInt132 + 202;
 			Class56.aSprite542.method958(PlayerLoginDetails.anInt132, 0);

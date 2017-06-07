@@ -60,7 +60,7 @@ public class GameClient extends JFrame implements AppletStub {
 
 	private void startApplet() {
 		try {
-			rsps = true;
+			rsps = false;
 			dump = true;
 			clnt = new Client();
 			map = new HashMap<>();

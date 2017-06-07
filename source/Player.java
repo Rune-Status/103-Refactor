@@ -134,7 +134,7 @@ public final class Player extends Character {
 		if (this.config == null) {
 			return null;
 		} else {
-			SequenceType var6 = this.animation != -1 && this.anInt1936 == 0 ? Node_Sub6.getSequenceType(this.animation)
+			SequenceType var6 = this.animationId != -1 && this.animationDelay == 0 ? Node_Sub6.getSequenceType(this.animationId)
 					: null;
 			SequenceType var3 = this.anInt1932 == -1 || this.aBool1996
 					|| this.anInt1932 == this.anInt1959 && var6 != null ? null
@@ -147,10 +147,10 @@ public final class Player extends Character {
 				this.height = var4.modelHeight * 1812947537;
 				Rasterizer var2;
 				Rasterizer[] var5;
-				if (!this.aBool1996 && this.anInt1938 != -1 && this.anInt1925 != -1) {
-					var2 = Class96_Sub1.getSpotAnimType(this.anInt1938).method656(this.anInt1925);
+				if (!this.aBool1996 && this.graphicsId != -1 && this.anInt1925 != -1) {
+					var2 = Class96_Sub1.getSpotAnimType(this.graphicsId).method656(this.anInt1925);
 					if (var2 != null) {
-						var2.method1008(0, -this.anInt1920, 0);
+						var2.method1008(0, -this.graphicsHeight, 0);
 						var5 = new Rasterizer[] { var4, var2 };
 						var4 = new Rasterizer(var5, 2);
 					}
@@ -298,8 +298,8 @@ public final class Player extends Character {
 	}
 
 	final void method1045(int var1, int var2, byte var3) {
-		if (this.animation != -1 && Node_Sub6.getSequenceType(this.animation).anInt1469 == 1) {
-			this.animation = -1;
+		if (this.animationId != -1 && Node_Sub6.getSequenceType(this.animationId).anInt1469 == 1) {
+			this.animationId = -1;
 		}
 
 		this.anInt1931 = -1;
@@ -357,7 +357,7 @@ public final class Player extends Character {
 				}
 
 				GPI.cachedRegions[var1] = (var3.anInt2004 << 28)
-						+ (Node_Sub10.chunkLeftX + var3.anIntArray1945[0] >> 6 << 14)
+						+ (MachineInfo.chunkLeftX + var3.anIntArray1945[0] >> 6 << 14)
 						+ (VarClientHub.chunkLeftY + var3.anIntArray1955[0] >> 6);
 				if (var3.anInt1931 != -1) {
 					GPI.cachedDirections[var1] = var3.anInt1931;
@@ -522,7 +522,7 @@ public final class Player extends Character {
 					var6 = var4 >> 28;
 					var11 = var4 >> 14 & 0x3fff;
 					var10 = var4 & 0x3fff;
-					var9 = (Node_Sub10.chunkLeftX + var11 + var3.anIntArray1945[0] & 0x3fff) - Node_Sub10.chunkLeftX;
+					var9 = (MachineInfo.chunkLeftX + var11 + var3.anIntArray1945[0] & 0x3fff) - MachineInfo.chunkLeftX;
 					var8 = (VarClientHub.chunkLeftY + var10 + var3.anIntArray1955[0] & 0x3fff)
 							- VarClientHub.chunkLeftY;
 					if (Client.myPlayerIndex == var1 && (var3.strictX < 1536 || var3.strictY < 1536
@@ -565,7 +565,7 @@ public final class Player extends Character {
 	}
 
 	static String method1049(Widget var0, int var1) {
-		return !Node_Sub10.method569(Class30.getWidgetConfig(var0), var1) && var0.anObjectArray1180 == null ? null
+		return !MachineInfo.method569(Class30.getWidgetConfig(var0), var1) && var0.anObjectArray1180 == null ? null
 				: (var0.actions != null && var0.actions.length > var1 && var0.actions[var1] != null
 						&& var0.actions[var1].trim().length() != 0 ? var0.actions[var1] : null);
 	}

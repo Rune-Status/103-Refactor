@@ -1,7 +1,7 @@
 public class Class48_Sub1 extends Class48 {
 
 	static CacheIndex landscapesIndex;
-	static Picture aSprite1296;
+	static Picture compass;
 	static Class124 aClass124_1297;
 	static int anInt1298;
 	static int anInt1299;

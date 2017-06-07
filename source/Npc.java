@@ -1,6 +1,6 @@
 public final class Npc extends Character {
 
-	static Picture aSprite1965;
+	static Picture mapedge;
 	NpcType type;
 	public static byte[][] spritePixels;
 	static AbstractIndex aClass87_1967;
@@ -45,8 +45,8 @@ public final class Npc extends Character {
 			--var4;
 		}
 
-		if (this.animation != -1 && Node_Sub6.getSequenceType(this.animation).anInt1469 == 1) {
-			this.animation = -1;
+		if (this.animationId != -1 && Node_Sub6.getSequenceType(this.animationId).anInt1469 == 1) {
+			this.animationId = -1;
 		}
 
 		if (this.queueSize < 9) {
@@ -68,7 +68,7 @@ public final class Npc extends Character {
 		if (this.type == null) {
 			return null;
 		} else {
-			SequenceType var3 = this.animation != -1 && this.anInt1936 == 0 ? Node_Sub6.getSequenceType(this.animation)
+			SequenceType var3 = this.animationId != -1 && this.animationDelay == 0 ? Node_Sub6.getSequenceType(this.animationId)
 					: null;
 			SequenceType var4 = this.anInt1932 == -1 || this.anInt1959 == this.anInt1932 && var3 != null ? null
 					: Node_Sub6.getSequenceType(this.anInt1932);
@@ -78,10 +78,10 @@ public final class Npc extends Character {
 			} else {
 				var2.method998();
 				this.height = var2.modelHeight * 1812947537;
-				if (this.anInt1938 != -1 && this.anInt1925 != -1) {
-					Rasterizer var5 = Class96_Sub1.getSpotAnimType(this.anInt1938).method656(this.anInt1925);
+				if (this.graphicsId != -1 && this.anInt1925 != -1) {
+					Rasterizer var5 = Class96_Sub1.getSpotAnimType(this.graphicsId).method656(this.anInt1925);
 					if (var5 != null) {
-						var5.method1008(0, -this.anInt1920, 0);
+						var5.method1008(0, -this.graphicsHeight, 0);
 						Rasterizer[] var6 = new Rasterizer[] { var2, var5 };
 						var2 = new Rasterizer(var6, 2);
 					}
@@ -101,8 +101,8 @@ public final class Npc extends Character {
 	}
 
 	final void method1025(int var1, int var2, boolean var3) {
-		if (this.animation != -1 && Node_Sub6.getSequenceType(this.animation).anInt1469 == 1) {
-			this.animation = -1;
+		if (this.animationId != -1 && Node_Sub6.getSequenceType(this.animationId).anInt1469 == 1) {
+			this.animationId = -1;
 		}
 
 		if (!var3) {

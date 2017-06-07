@@ -1,7 +1,7 @@
 public class Class2 {
 
 	static CacheIndex fontMetricsIndex;
-	static Sprite[] aDualNode_Sub13_Sub2Array77;
+	static Sprite[] mapscenes;
 	static Sprite[] aDualNode_Sub13_Sub2Array78;
 	static CacheIndex midiTrack1Index;
 	public static char aChar80;

@@ -117,19 +117,19 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 
 	}
 
-	static final void method333(boolean var0) {
+	static final void flush(boolean force) {
 		Class34.method201();
-		++Client.anInt2042;
-		if (Client.anInt2042 >= 50 || var0) {
-			Client.anInt2042 = 0;
-			if (!Client.aBool2102 && Class31.gameConnection != null) {
+		++Client.flushCount;
+		if (Client.flushCount >= 50 || force) {
+			Client.flushCount = 0;
+			if (!Client.socketError && Class31.gameConnection != null) {
 				Client.outBuffer.putHeader(126);
 
 				try {
 					Class31.gameConnection.write(Client.outBuffer.payload, 0, Client.outBuffer.position);
 					Client.outBuffer.position = 0;
 				} catch (IOException var2) {
-					Client.aBool2102 = true;
+					Client.socketError = true;
 				}
 			}
 		}

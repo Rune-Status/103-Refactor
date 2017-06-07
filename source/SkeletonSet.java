@@ -7,38 +7,38 @@ public class SkeletonSet extends DualNode {
 		return this.skeletons[var1].aBool297;
 	}
 
-	public SkeletonSet(AbstractIndex skeletonIndex, AbstractIndex skinIndex, int var3, boolean var4) {
-		Deque deque = new Deque();
-		int skeletonCount = skeletonIndex.fileCount(var3);
+	public SkeletonSet(AbstractIndex skeletonIndex, AbstractIndex skinIndex, int id, boolean falseBool) {
+		Deque skins = new Deque();
+		int skeletonCount = skeletonIndex.fileCount(id);
 		this.skeletons = new AnimationSkeleton[skeletonCount];
-		int[] childs = skeletonIndex.getChilds(var3);
+		int[] childs = skeletonIndex.getChilds(id);
 
 		for (int child = 0; child < childs.length; child++) {
-			byte[] bytes = skeletonIndex.getFile(var3, childs[child]);
-			AnimationSkin var10 = null;
+			byte[] bytes = skeletonIndex.getFile(id, childs[child]);
+			AnimationSkin skin = null;
 			int skinId = (bytes[0] & 0xff) << 8 | bytes[1] & 0xff;
 
-			for (AnimationSkin var11 = (AnimationSkin) deque.getFront(); var11 != null; var11 = (AnimationSkin) deque
+			for (AnimationSkin cSkin = (AnimationSkin) skins.getFront(); cSkin != null; cSkin = (AnimationSkin) skins
 					.getNext()) {
-				if (var11.anInt1263 == skinId) {
-					var10 = var11;
+				if (cSkin.id == skinId) {
+					skin = cSkin;
 					break;
 				}
 			}
 
-			if (var10 == null) {
+			if (skin == null) {
 				byte[] skinBytes;
-				if (var4) {
-					skinBytes = skinIndex.method390(0, skinId);
+				if (falseBool) {
+					skinBytes = skinIndex.getChild(0, skinId);
 				} else {
-					skinBytes = skinIndex.method390(skinId, 0);
+					skinBytes = skinIndex.getChild(skinId, 0);
 				}
 
-				var10 = new AnimationSkin(skinId, skinBytes);
-				deque.method475(var10);
+				skin = new AnimationSkin(skinId, skinBytes);
+				skins.add(skin);
 			}
 
-			this.skeletons[childs[child]] = new AnimationSkeleton(bytes, var10);
+			this.skeletons[childs[child]] = new AnimationSkeleton(bytes, skin);
 		}
 
 	}

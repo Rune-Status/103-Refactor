@@ -117,7 +117,7 @@ public final class InterfaceScripts {
 					}
 
 					if (var6 == 18) {
-						var7 = Node_Sub10.chunkLeftX + (Class68.myPlayer.strictX >> 7);
+						var7 = MachineInfo.chunkLeftX + (Class68.myPlayer.strictX >> 7);
 					}
 
 					if (var6 == 19) {

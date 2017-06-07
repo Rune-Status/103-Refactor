@@ -139,18 +139,18 @@ public abstract class Timer {
 		}
 
 		if ((var3 & 0x100) != 0) {
-			var2.anInt1938 = buf.getUShort();
+			var2.graphicsId = buf.getUShort();
 			var5 = buf.getInt();
-			var2.anInt1920 = var5 >> 16;
-			var2.anInt1941 = (var5 & 0xffff) + Client.engineCycle;
+			var2.graphicsHeight = var5 >> 16;
+			var2.graphicsDelay = (var5 & 0xffff) + Client.engineCycle;
 			var2.anInt1925 = 0;
 			var2.anInt1940 = 0;
-			if (var2.anInt1941 > Client.engineCycle) {
+			if (var2.graphicsDelay > Client.engineCycle) {
 				var2.anInt1925 = -1;
 			}
 
-			if (var2.anInt1938 == '\uffff') {
-				var2.anInt1938 = -1;
+			if (var2.graphicsId == '\uffff') {
+				var2.graphicsId = -1;
 			}
 		}
 
@@ -233,7 +233,7 @@ public abstract class Timer {
 		ItemType.aClass106_1607.method429();
 		ItemType.aClass106_1620.method429();
 		SequenceType.sequences.method429();
-		SequenceType.aClass106_1473.method429();
+		SequenceType.skeletons.method429();
 		EnumType.method689();
 		ExchangeOffer.method373();
 		VarPlayerType.method727();

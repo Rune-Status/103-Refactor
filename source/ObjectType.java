@@ -581,7 +581,7 @@ public class ObjectType extends DualNode {
 			GPI.method230("Unexpected server response", "Please try using a different world.", "");
 		}
 
-		Node_Sub8.method550(10);
+		Node_Sub8.setClientState(10);
 	}
 
 	static void method870(Widget[] var0, Widget var1, boolean var2) {

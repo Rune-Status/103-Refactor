@@ -1,6 +1,6 @@
 public class Class88 {
 
-	static Picture[] aSpriteArray712;
+	static Picture[] cross;
 	static char[] aCharArray711 = new char[64];
 	static char[] aCharArray714;
 	static int[] anIntArray713;

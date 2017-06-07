@@ -3,7 +3,7 @@ public class IgnoredPlayer {
 	static Sprite logoSprite;
 	String previousName;
 	String displayName;
-	static Sprite[] aDualNode_Sub13_Sub2Array755;
+	static Sprite[] modIcons;
 
 	public static byte method414(char var0) {
 		byte var1;
