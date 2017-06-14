@@ -9,7 +9,7 @@ public class ObjectType extends DualNode {
 	public boolean modelClipped = false;
 	public int anInt1687 = 0;
 	public String name = "null";
-	public int anInt1690 = 2;
+	public int interactType = 2;
 	public int anInt1692 = -1;
 	public int sizeY = 1;
 	int clipType = -1;
@@ -49,9 +49,9 @@ public class ObjectType extends DualNode {
 	public static NodeMap aClass106_1684 = new NodeMap(500);
 	public static NodeMap objects = new NodeMap(64);
 	public static NodeMap aClass106_1686 = new NodeMap(30);
-	public static NodeMap aClass106_1693 = new NodeMap(30);
+	public static NodeMap cachedModels = new NodeMap(30);
 	static boolean aBool1696 = false;
-	static Model[] anEntity_Sub1Array1712 = new Model[4];
+	static RSModel[] anEntity_Sub1Array1712 = new RSModel[4];
 
 	void post() {
 		if (this.anInt1692 == -1) {
@@ -68,7 +68,7 @@ public class ObjectType extends DualNode {
 		}
 
 		if (this.anInt1713 == -1) {
-			this.anInt1713 = 1 * (this.anInt1690 != 0 ? 1 : 0);
+			this.anInt1713 = 1 * (this.interactType != 0 ? 1 : 0);
 		}
 
 	}
@@ -123,7 +123,7 @@ public class ObjectType extends DualNode {
 		} else if (var2 == 15) {
 			this.sizeY = var1.getUByte();
 		} else if (var2 == 17) {
-			this.anInt1690 = 0;
+			this.interactType = 0;
 			this.aBool1714 = false;
 		} else if (var2 == 18) {
 			this.aBool1714 = false;
@@ -141,7 +141,7 @@ public class ObjectType extends DualNode {
 				this.anInt1698 = -1;
 			}
 		} else if (var2 == 27) {
-			this.anInt1690 = 1;
+			this.interactType = 1;
 		} else if (var2 == 28) {
 			this.anInt1699 = var1.getUByte();
 		} else if (var2 == 29) {
@@ -238,51 +238,51 @@ public class ObjectType extends DualNode {
 
 	}
 
-	public final Entity method860(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
-		long var7;
+	public final Entity getModel(int type, int orientation, int[][] heightMap, int var4, int averageY, int var6) {
+		long hash;
 		if (this.objectTypes == null) {
-			var7 = (long) ((this.id << 10) + var2);
+			hash = (long) ((this.id << 10) + orientation);
 		} else {
-			var7 = (long) ((this.id << 10) + var2 + (var1 << 3));
+			hash = (long) ((this.id << 10) + orientation + (type << 3));
 		}
 
-		Object var10 = (Entity) aClass106_1693.get(var7);
-		if (var10 == null) {
-			Model var9 = this.getModel(var1, var2);
-			if (var9 == null) {
+		Object model = (Entity) cachedModels.get(hash);
+		if (model == null) {
+			RSModel rsModel = this.getModel(type, orientation);
+			if (rsModel == null) {
 				return null;
 			}
 
 			if (!this.nonFlatShading) {
-				var10 = var9.method902(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+				model = rsModel.method902(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 			} else {
-				var9.aShort1764 = (short) (this.ambient + 64);
-				var9.aShort1766 = (short) (this.contrast + 768);
-				var9.method905();
-				var10 = var9;
+				rsModel.ambient = (short) (this.ambient + 64);
+				rsModel.contrast = (short) (this.contrast + 768);
+				rsModel.method905();
+				model = rsModel;
 			}
 
-			aClass106_1693.put((DualNode) var10, var7);
+			cachedModels.put((DualNode) model, hash);
 		}
 
 		if (this.nonFlatShading) {
-			var10 = ((Model) var10).method889();
+			model = ((RSModel) model).method889();
 		}
 
 		if (this.clipType >= 0) {
-			if (!(var10 instanceof Rasterizer)) {
-				if (var10 instanceof Model) {
-					var10 = ((Model) var10).method890(var3, var4, var5, var6, true, this.clipType);
+			if (!(model instanceof Model)) {
+				if (model instanceof RSModel) {
+					model = ((RSModel) model).method890(heightMap, var4, averageY, var6, true, this.clipType);
 				}
 			} else {
-				var10 = ((Rasterizer) var10).method994(var3, var4, var5, var6, true, this.clipType);
+				model = ((Model) model).method994(heightMap, var4, averageY, var6, true, this.clipType);
 			}
 		}
 
-		return (Entity) var10;
+		return (Entity) model;
 	}
 
-	public final Rasterizer method861(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
+	public final Model method861(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
 		long var9;
 		if (this.objectTypes == null) {
 			var9 = (long) ((this.id << 10) + var2);
@@ -290,9 +290,9 @@ public class ObjectType extends DualNode {
 			var9 = (long) ((var1 << 3) + var2 + (this.id << 10));
 		}
 
-		Rasterizer var8 = (Rasterizer) aClass106_1686.get(var9);
+		Model var8 = (Model) aClass106_1686.get(var9);
 		if (var8 == null) {
-			Model var7 = this.getModel(var1, var2);
+			RSModel var7 = this.getModel(var1, var2);
 			if (var7 == null) {
 				return null;
 			}
@@ -308,7 +308,7 @@ public class ObjectType extends DualNode {
 		return var8;
 	}
 
-	public final Rasterizer method862(int var1, int var2, int[][] var3, int var4, int var5, int var6, SequenceType var7,
+	public final Model method862(int var1, int var2, int[][] var3, int var4, int var5, int var6, SequenceType var7,
 			int var8) {
 		long var9;
 		if (this.objectTypes == null) {
@@ -317,9 +317,9 @@ public class ObjectType extends DualNode {
 			var9 = (long) ((var1 << 3) + (this.id << 10) + var2);
 		}
 
-		Rasterizer var11 = (Rasterizer) aClass106_1686.get(var9);
+		Model var11 = (Model) aClass106_1686.get(var9);
 		if (var11 == null) {
-			Model var12 = this.getModel(var1, var2);
+			RSModel var12 = this.getModel(var1, var2);
 			if (var12 == null) {
 				return null;
 			}
@@ -345,8 +345,8 @@ public class ObjectType extends DualNode {
 		}
 	}
 
-	final Model getModel(int var1, int var2) {
-		Model var3 = null;
+	final RSModel getModel(int var1, int var2) {
+		RSModel var3 = null;
 		int var4;
 		int var5;
 		boolean var6;
@@ -373,9 +373,9 @@ public class ObjectType extends DualNode {
 					var4 += 65536;
 				}
 
-				var3 = (Model) aClass106_1684.get((long) var4);
+				var3 = (RSModel) aClass106_1684.get((long) var4);
 				if (var3 == null) {
-					var3 = Model.method887(aClass87_1683, var4 & 0xffff, 0);
+					var3 = RSModel.method887(aClass87_1683, var4 & 0xffff, 0);
 					if (var3 == null) {
 						return null;
 					}
@@ -393,7 +393,7 @@ public class ObjectType extends DualNode {
 			}
 
 			if (var5 > 1) {
-				var3 = new Model(anEntity_Sub1Array1712, var5);
+				var3 = new RSModel(anEntity_Sub1Array1712, var5);
 			}
 		} else {
 			var9 = -1;
@@ -415,9 +415,9 @@ public class ObjectType extends DualNode {
 				var5 += 65536;
 			}
 
-			var3 = (Model) aClass106_1684.get((long) var5);
+			var3 = (RSModel) aClass106_1684.get((long) var5);
 			if (var3 == null) {
-				var3 = Model.method887(aClass87_1683, var5 & 0xffff, 0);
+				var3 = RSModel.method887(aClass87_1683, var5 & 0xffff, 0);
 				if (var3 == null) {
 					return null;
 				}
@@ -443,7 +443,7 @@ public class ObjectType extends DualNode {
 			var10 = true;
 		}
 
-		Model var91 = new Model(var3, var2 == 0 && !var6 && !var10, this.colors == null, this.aShortArray1691 == null,
+		RSModel var91 = new RSModel(var3, var2 == 0 && !var6 && !var10, this.colors == null, this.aShortArray1691 == null,
 				true);
 		if (var1 == 4 && var2 > 3) {
 			var91.method904(256);
@@ -559,10 +559,10 @@ public class ObjectType extends DualNode {
 				? Class37.getObjectType(this.transformIds[var1]) : null;
 	}
 
-	public static Sprite[] method868(AbstractIndex var0, String var1, String var2) {
+	public static IndexedSprite[] method868(AbstractIndex var0, String var1, String var2) {
 		int var3 = var0.getFile(var1);
 		int var4 = var0.getChild(var3, var2);
-		Sprite[] var5;
+		IndexedSprite[] var5;
 		if (!Class35.decodeSprite(var0, var3, var4)) {
 			var5 = null;
 		} else {

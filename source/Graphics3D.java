@@ -1,24 +1,24 @@
-public class TexturedGraphic extends RSGraphics {
+public class Graphics3D extends Raster {
 
-	static int anInt1785;
-	static int anInt1786;
+	static int centerX;
+	static int centerY;
 	static int anInt1789;
 	static int anInt1777;
 	static int anInt1797;
 	static int anInt1783;
 	static boolean lowMem = false;
 	static boolean aBool1778 = false;
-	static boolean aBool1782 = false;
-	static int anInt1791;
+	static boolean textX = false;
+	static int rightX;
 	static int anInt1787;
 	static int[] anIntArray1790 = new int[1024];
 	public static ITextureLoader textureLoader;
 	public static boolean aBool1780 = true;
-	static int anInt1781 = 0;
-	public static int anInt1784 = 512;
+	static int alpha = 0;
+	public static int viewportWidth = 512;
 	public static int[] SIN_TABLE = new int[2048];
 	public static int[] COS_TABLE = new int[2048];
-	public static int[] anIntArray1793 = new int[65536];
+	public static int[] palette = new int[65536];
 	static int[] anIntArray1794 = new int[512];
 	static int[] anIntArray1795 = new int[2048];
 
@@ -27,24 +27,24 @@ public class TexturedGraphic extends RSGraphics {
 	}
 
 	public static final void method910() {
-		anInt1785 = anInt1791 / 2;
-		anInt1786 = anInt1787 / 2;
-		anInt1789 = -anInt1785;
-		anInt1777 = anInt1791 - anInt1785;
-		anInt1797 = -anInt1786;
-		anInt1783 = anInt1787 - anInt1786;
+		centerX = rightX / 2;
+		centerY = anInt1787 / 2;
+		anInt1789 = -centerX;
+		anInt1777 = rightX - centerX;
+		anInt1797 = -centerY;
+		anInt1783 = anInt1787 - centerY;
 	}
 
 	public static final void method911(int var0, int var1) {
 		int var2 = anIntArray1790[0];
 		int var3 = var2 / raster_width;
 		int var4 = var2 - raster_width * var3;
-		anInt1785 = var0 - var4;
-		anInt1786 = var1 - var3;
-		anInt1789 = -anInt1785;
-		anInt1777 = anInt1791 - anInt1785;
-		anInt1797 = -anInt1786;
-		anInt1783 = anInt1787 - anInt1786;
+		centerX = var0 - var4;
+		centerY = var1 - var3;
+		anInt1789 = -centerX;
+		anInt1777 = rightX - centerX;
+		anInt1797 = -centerY;
+		anInt1783 = anInt1787 - centerY;
 	}
 
 	static final void method912(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
@@ -53,8 +53,8 @@ public class TexturedGraphic extends RSGraphics {
 		int[] var19 = textureLoader.pixels(var18);
 		int var22;
 		if (var19 == null) {
-			var22 = textureLoader.method7(var18);
-			method922(var0, var1, var2, var3, var4, var5, method921(var22, var6), method921(var22, var7),
+			var22 = textureLoader.getAverageTextureRGB(var18);
+			fillShadedTriangle(var0, var1, var2, var3, var4, var5, method921(var22, var6), method921(var22, var7),
 					method921(var22, var8));
 		} else {
 			lowMem = textureLoader.lowMem();
@@ -91,14 +91,14 @@ public class TexturedGraphic extends RSGraphics {
 				var14 -= var12;
 				var17 -= var15;
 				int var34 = var11 * var12 - var14 * var9 << 14;
-				int var36 = (int) (((long) (var14 * var15 - var17 * var12) << 3 << 14) / (long) anInt1784);
-				int var41 = (int) (((long) (var17 * var9 - var11 * var15) << 14) / (long) anInt1784);
+				int var36 = (int) (((long) (var14 * var15 - var17 * var12) << 3 << 14) / (long) viewportWidth);
+				int var41 = (int) (((long) (var17 * var9 - var11 * var15) << 14) / (long) viewportWidth);
 				int var20 = var10 * var12 - var13 * var9 << 14;
-				int var37 = (int) (((long) (var13 * var15 - var16 * var12) << 3 << 14) / (long) anInt1784);
-				int var21 = (int) (((long) (var16 * var9 - var10 * var15) << 14) / (long) anInt1784);
+				int var37 = (int) (((long) (var13 * var15 - var16 * var12) << 3 << 14) / (long) viewportWidth);
+				int var21 = (int) (((long) (var16 * var9 - var10 * var15) << 14) / (long) viewportWidth);
 				int var35 = var13 * var11 - var10 * var14 << 14;
-				int var38 = (int) (((long) (var16 * var14 - var13 * var17) << 3 << 14) / (long) anInt1784);
-				int var39 = (int) (((long) (var10 * var17 - var16 * var11) << 14) / (long) anInt1784);
+				int var38 = (int) (((long) (var16 * var14 - var13 * var17) << 3 << 14) / (long) viewportWidth);
+				int var39 = (int) (((long) (var10 * var17 - var16 * var11) << 14) / (long) viewportWidth);
 				int var28;
 				if (var0 <= var1 && var0 <= var2) {
 					if (var0 < anInt1787) {
@@ -126,7 +126,7 @@ public class TexturedGraphic extends RSGraphics {
 								var1 = 0;
 							}
 
-							var28 = var0 - anInt1786;
+							var28 = var0 - centerY;
 							var34 += var41 * var28;
 							var20 += var21 * var28;
 							var35 += var39 * var28;
@@ -219,7 +219,7 @@ public class TexturedGraphic extends RSGraphics {
 							var2 = 0;
 						}
 
-						var28 = var0 - anInt1786;
+						var28 = var0 - centerY;
 						var34 += var41 * var28;
 						var20 += var21 * var28;
 						var35 += var39 * var28;
@@ -323,7 +323,7 @@ public class TexturedGraphic extends RSGraphics {
 								var2 = 0;
 							}
 
-							var28 = var1 - anInt1786;
+							var28 = var1 - centerY;
 							var34 += var41 * var28;
 							var20 += var21 * var28;
 							var35 += var39 * var28;
@@ -416,7 +416,7 @@ public class TexturedGraphic extends RSGraphics {
 							var0 = 0;
 						}
 
-						var28 = var1 - anInt1786;
+						var28 = var1 - centerY;
 						var34 += var41 * var28;
 						var20 += var21 * var28;
 						var35 += var39 * var28;
@@ -519,7 +519,7 @@ public class TexturedGraphic extends RSGraphics {
 							var0 = 0;
 						}
 
-						var28 = var2 - anInt1786;
+						var28 = var2 - centerY;
 						var34 += var41 * var28;
 						var20 += var21 * var28;
 						var35 += var39 * var28;
@@ -612,7 +612,7 @@ public class TexturedGraphic extends RSGraphics {
 						var1 = 0;
 					}
 
-					var28 = var2 - anInt1786;
+					var28 = var2 - centerY;
 					var34 += var41 * var28;
 					var20 += var21 * var28;
 					var35 += var39 * var28;
@@ -771,7 +771,7 @@ public class TexturedGraphic extends RSGraphics {
 					var15 = 1;
 				}
 
-				anIntArray1793[var8++] = var15;
+				palette[var8++] = var15;
 			}
 		}
 
@@ -790,12 +790,12 @@ public class TexturedGraphic extends RSGraphics {
 		return (aRed << 16) + (aGreen << 8) + aBlue;
 	}
 
-	TexturedGraphic() throws Throwable {
+	Graphics3D() throws Throwable {
 		throw new Error();
 	}
 
 	public static void method916(int var0, int var1, int var2) {
-		aBool1782 = var0 < 0 || var0 > anInt1791 || var1 < 0 || var1 > anInt1791 || var2 < 0 || var2 > anInt1791;
+		textX = var0 < 0 || var0 > rightX || var1 < 0 || var1 > rightX || var2 < 0 || var2 > rightX;
 	}
 
 	public static final void method917(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
@@ -1255,9 +1255,9 @@ public class TexturedGraphic extends RSGraphics {
 	}
 
 	static final void method918(int[] var0, int var1, int var2, int var3, int var4, int var5) {
-		if (aBool1782) {
-			if (var5 > anInt1791) {
-				var5 = anInt1791;
+		if (textX) {
+			if (var5 > rightX) {
+				var5 = rightX;
 			}
 
 			if (var4 < 0) {
@@ -1268,7 +1268,7 @@ public class TexturedGraphic extends RSGraphics {
 		if (var4 < var5) {
 			var1 += var4;
 			var3 = var5 - var4 >> 2;
-			if (anInt1781 == 0) {
+			if (alpha == 0) {
 				while (true) {
 					--var3;
 					if (var3 < 0) {
@@ -1289,7 +1289,7 @@ public class TexturedGraphic extends RSGraphics {
 					var0[var1++] = var2;
 					var0[var1++] = var2;
 				}
-			} else if (anInt1781 == 254) {
+			} else if (alpha == 254) {
 				while (true) {
 					--var3;
 					if (var3 < 0) {
@@ -1311,8 +1311,8 @@ public class TexturedGraphic extends RSGraphics {
 					var0[var1++] = var0[var1];
 				}
 			} else {
-				int var7 = anInt1781;
-				int var8 = 256 - anInt1781;
+				int var7 = alpha;
+				int var8 = 256 - alpha;
 				var2 = ((var2 & 0xff00ff) * var8 >> 8 & 0xff00ff) + ((var2 & 0xff00) * var8 >> 8 & 0xff00);
 
 				while (true) {
@@ -1352,9 +1352,9 @@ public class TexturedGraphic extends RSGraphics {
 
 	static final void method919(int[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8, int var9, int var10, int var11, int var12, int var13, int var14) {
-		if (aBool1782) {
-			if (var6 > anInt1791) {
-				var6 = anInt1791;
+		if (textX) {
+			if (var6 > rightX) {
+				var6 = rightX;
 			}
 
 			if (var5 < 0) {
@@ -1375,7 +1375,7 @@ public class TexturedGraphic extends RSGraphics {
 			int var21;
 			int var22;
 			if (lowMem) {
-				var19 = var5 - anInt1785;
+				var19 = var5 - centerX;
 				var9 += (var12 >> 3) * var19;
 				var10 += (var13 >> 3) * var19;
 				var11 += (var14 >> 3) * var19;
@@ -1586,7 +1586,7 @@ public class TexturedGraphic extends RSGraphics {
 					}
 				}
 			} else {
-				var19 = var5 - anInt1785;
+				var19 = var5 - centerX;
 				var9 += (var12 >> 3) * var19;
 				var10 += (var13 >> 3) * var19;
 				var11 += (var14 >> 3) * var19;
@@ -1803,9 +1803,9 @@ public class TexturedGraphic extends RSGraphics {
 
 	static final void method920(int[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8, int var9, int var10, int var11, int var12, int var13, int var14) {
-		if (aBool1782) {
-			if (var6 > anInt1791) {
-				var6 = anInt1791;
+		if (textX) {
+			if (var6 > rightX) {
+				var6 = rightX;
 			}
 
 			if (var5 < 0) {
@@ -1826,7 +1826,7 @@ public class TexturedGraphic extends RSGraphics {
 			int var22;
 			int var23;
 			if (lowMem) {
-				var18 = var5 - anInt1785;
+				var18 = var5 - centerX;
 				var9 += var12 * var18;
 				var10 += var13 * var18;
 				var11 += var14 * var18;
@@ -1987,7 +1987,7 @@ public class TexturedGraphic extends RSGraphics {
 					}
 				}
 			} else {
-				var18 = var5 - anInt1785;
+				var18 = var5 - centerX;
 				var9 += var12 * var18;
 				var10 += var13 * var18;
 				var11 += var14 * var18;
@@ -2163,7 +2163,7 @@ public class TexturedGraphic extends RSGraphics {
 		return (var0 & 0xff80) + var1;
 	}
 
-	static final void method922(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
+	static final void fillShadedTriangle(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8) {
 		int var9 = var4 - var3;
 		int var16 = var1 - var0;
@@ -2671,9 +2671,9 @@ public class TexturedGraphic extends RSGraphics {
 	}
 
 	static final void method923(int[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-		if (aBool1782) {
-			if (var5 > anInt1791) {
-				var5 = anInt1791;
+		if (textX) {
+			if (var5 > rightX) {
+				var5 = rightX;
 			}
 
 			if (var4 < 0) {
@@ -2690,10 +2690,10 @@ public class TexturedGraphic extends RSGraphics {
 			if (aBool1780) {
 				var3 = var5 - var4 >> 2;
 				var7 <<= 2;
-				if (anInt1781 == 0) {
+				if (alpha == 0) {
 					if (var3 > 0) {
 						do {
-							var2 = anIntArray1793[var6 >> 8];
+							var2 = palette[var6 >> 8];
 							var6 += var7;
 							var0[var1++] = var2;
 							var0[var1++] = var2;
@@ -2705,7 +2705,7 @@ public class TexturedGraphic extends RSGraphics {
 
 					var3 = var5 - var4 & 0x3;
 					if (var3 > 0) {
-						var2 = anIntArray1793[var6 >> 8];
+						var2 = palette[var6 >> 8];
 
 						do {
 							var0[var1++] = var2;
@@ -2713,11 +2713,11 @@ public class TexturedGraphic extends RSGraphics {
 						} while (var3 > 0);
 					}
 				} else {
-					var10 = anInt1781;
-					var8 = 256 - anInt1781;
+					var10 = alpha;
+					var8 = 256 - alpha;
 					if (var3 > 0) {
 						do {
-							var2 = anIntArray1793[var6 >> 8];
+							var2 = palette[var6 >> 8];
 							var6 += var7;
 							var2 = ((var2 & 0xff00ff) * var8 >> 8 & 0xff00ff) + ((var2 & 0xff00) * var8 >> 8 & 0xff00);
 							var9 = var0[var1];
@@ -2738,7 +2738,7 @@ public class TexturedGraphic extends RSGraphics {
 
 					var3 = var5 - var4 & 0x3;
 					if (var3 > 0) {
-						var2 = anIntArray1793[var6 >> 8];
+						var2 = palette[var6 >> 8];
 						var2 = ((var2 & 0xff00ff) * var8 >> 8 & 0xff00ff) + ((var2 & 0xff00) * var8 >> 8 & 0xff00);
 
 						do {
@@ -2751,18 +2751,18 @@ public class TexturedGraphic extends RSGraphics {
 				}
 			} else {
 				var3 = var5 - var4;
-				if (anInt1781 == 0) {
+				if (alpha == 0) {
 					do {
-						var0[var1++] = anIntArray1793[var6 >> 8];
+						var0[var1++] = palette[var6 >> 8];
 						var6 += var7;
 						--var3;
 					} while (var3 > 0);
 				} else {
-					var10 = anInt1781;
-					var8 = 256 - anInt1781;
+					var10 = alpha;
+					var8 = 256 - alpha;
 
 					do {
-						var2 = anIntArray1793[var6 >> 8];
+						var2 = palette[var6 >> 8];
 						var6 += var7;
 						var2 = ((var2 & 0xff00ff) * var8 >> 8 & 0xff00ff) + ((var2 & 0xff00) * var8 >> 8 & 0xff00);
 						var9 = var0[var1];
@@ -2777,7 +2777,7 @@ public class TexturedGraphic extends RSGraphics {
 	}
 
 	static final void method924(int var0, int var1, int var2, int var3) {
-		anInt1791 = var2 - var0;
+		rightX = var2 - var0;
 		anInt1787 = var3 - var1;
 		method910();
 		if (anIntArray1790.length < anInt1787) {
@@ -2797,14 +2797,14 @@ public class TexturedGraphic extends RSGraphics {
 		textureLoader = var0;
 	}
 
-	static final void method926(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
+	static final void fillTexturedTriangle(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17,
 			int var18) {
 		int[] var19 = textureLoader.pixels(var18);
 		int var21;
 		if (var19 == null) {
-			var21 = textureLoader.method7(var18);
-			method922(var0, var1, var2, var3, var4, var5, method921(var21, var6), method921(var21, var7),
+			var21 = textureLoader.getAverageTextureRGB(var18);
+			fillShadedTriangle(var0, var1, var2, var3, var4, var5, method921(var21, var6), method921(var21, var7),
 					method921(var21, var8));
 		} else {
 			lowMem = textureLoader.lowMem();
@@ -2841,14 +2841,14 @@ public class TexturedGraphic extends RSGraphics {
 				var14 -= var12;
 				var17 -= var15;
 				int var40 = var11 * var12 - var14 * var9 << 14;
-				int var35 = (int) (((long) (var14 * var15 - var17 * var12) << 14) / (long) anInt1784);
-				int var36 = (int) (((long) (var17 * var9 - var11 * var15) << 14) / (long) anInt1784);
+				int var35 = (int) (((long) (var14 * var15 - var17 * var12) << 14) / (long) viewportWidth);
+				int var36 = (int) (((long) (var17 * var9 - var11 * var15) << 14) / (long) viewportWidth);
 				int var27 = var10 * var12 - var13 * var9 << 14;
-				int var41 = (int) (((long) (var13 * var15 - var16 * var12) << 14) / (long) anInt1784);
-				int var28 = (int) (((long) (var16 * var9 - var10 * var15) << 14) / (long) anInt1784);
+				int var41 = (int) (((long) (var13 * var15 - var16 * var12) << 14) / (long) viewportWidth);
+				int var28 = (int) (((long) (var16 * var9 - var10 * var15) << 14) / (long) viewportWidth);
 				int var31 = var13 * var11 - var10 * var14 << 14;
-				int var37 = (int) (((long) (var16 * var14 - var13 * var17) << 14) / (long) anInt1784);
-				int var32 = (int) (((long) (var10 * var17 - var16 * var11) << 14) / (long) anInt1784);
+				int var37 = (int) (((long) (var16 * var14 - var13 * var17) << 14) / (long) viewportWidth);
+				int var32 = (int) (((long) (var10 * var17 - var16 * var11) << 14) / (long) viewportWidth);
 				int var39;
 				if (var0 <= var1 && var0 <= var2) {
 					if (var0 < anInt1787) {
@@ -2876,7 +2876,7 @@ public class TexturedGraphic extends RSGraphics {
 								var1 = 0;
 							}
 
-							var39 = var0 - anInt1786;
+							var39 = var0 - centerY;
 							var40 += var36 * var39;
 							var27 += var28 * var39;
 							var31 += var32 * var39;
@@ -2969,7 +2969,7 @@ public class TexturedGraphic extends RSGraphics {
 							var2 = 0;
 						}
 
-						var39 = var0 - anInt1786;
+						var39 = var0 - centerY;
 						var40 += var36 * var39;
 						var27 += var28 * var39;
 						var31 += var32 * var39;
@@ -3073,7 +3073,7 @@ public class TexturedGraphic extends RSGraphics {
 								var2 = 0;
 							}
 
-							var39 = var1 - anInt1786;
+							var39 = var1 - centerY;
 							var40 += var36 * var39;
 							var27 += var28 * var39;
 							var31 += var32 * var39;
@@ -3166,7 +3166,7 @@ public class TexturedGraphic extends RSGraphics {
 							var0 = 0;
 						}
 
-						var39 = var1 - anInt1786;
+						var39 = var1 - centerY;
 						var40 += var36 * var39;
 						var27 += var28 * var39;
 						var31 += var32 * var39;
@@ -3269,7 +3269,7 @@ public class TexturedGraphic extends RSGraphics {
 							var0 = 0;
 						}
 
-						var39 = var2 - anInt1786;
+						var39 = var2 - centerY;
 						var40 += var36 * var39;
 						var27 += var28 * var39;
 						var31 += var32 * var39;
@@ -3362,7 +3362,7 @@ public class TexturedGraphic extends RSGraphics {
 						var1 = 0;
 					}
 
-					var39 = var2 - anInt1786;
+					var39 = var2 - centerY;
 					var40 += var36 * var39;
 					var27 += var28 * var39;
 					var31 += var32 * var39;

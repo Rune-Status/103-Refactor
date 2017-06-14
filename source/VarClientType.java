@@ -46,11 +46,11 @@ public class VarClientType extends DualNode {
 		return var2;
 	}
 
-	static final int method721(int var0, int var1) {
-		int var2 = var1 * 57 + var0;
-		var2 ^= var2 << 13;
-		int var3 = (var2 * var2 * 15731 + 789221) * var2 + 1376312589 & 0x7fffffff;
-		return var3 >> 19 & 0xff;
+	static final int getNoise(int x, int y) {
+		int z = y * 57 + x;
+		z ^= z << 13;
+		int v = (z * z * 15731 + 789221) * z + 1376312589 & 0x7fffffff;
+		return v >> 19 & 0xff;
 	}
 
 }

@@ -734,7 +734,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 		this.method836(var1, var2, 64);
 		if ((this.anIntArray1667[var1] & 0x2) != 0) {
 			for (Node_Sub14 var8 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652
-					.method472(); var8 != null; var8 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.method476()) {
+					.getTail(); var8 != null; var8 = (Node_Sub14) this.aNode_Sub4_Sub3_1681.aDeque1652.getPrevious()) {
 				if (var8.anInt1379 == var1 && var8.anInt1376 < 0) {
 					this.aNode_Sub14ArrayArray1665[var1][var8.anInt1391] = null;
 					this.aNode_Sub14ArrayArray1665[var1][var2] = var8;
@@ -790,7 +790,7 @@ public class Node_Sub4_Sub4 extends Node_Sub4 {
 					this.aNode_Sub14ArrayArray1673[var1][var7.anInt1380] = var7;
 				}
 
-				this.aNode_Sub4_Sub3_1681.aDeque1652.add(var7);
+				this.aNode_Sub4_Sub3_1681.aDeque1652.addFront(var7);
 				this.aNode_Sub14ArrayArray1665[var1][var2] = var7;
 			}
 		}

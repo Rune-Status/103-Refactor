@@ -58,7 +58,7 @@ public class SourceDataSoundSystem extends AbstractSoundSystem {
 		}
 
 		for (int var2 = 0; var2 < size; var2++) {
-			int var3 = this.anIntArray160[var2];
+			int var3 = this.samples[var2];
 			if ((var3 + 8388608 & 0xff000000) != 0) {
 				var3 = var3 >> 31 ^ 8388607;
 			}

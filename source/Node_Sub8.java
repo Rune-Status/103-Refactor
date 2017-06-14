@@ -8,13 +8,13 @@ public final class Node_Sub8 extends Node {
 	int anInt1306;
 	int anInt1307;
 	int anInt1308;
-	static Picture[] mapfunctions;
+	static Sprite[] mapfunctions;
 	int anInt1313;
 	int anInt1310 = 0;
 	int anInt1311 = -1;
 	int anInt1300;
 	int anInt1312;
-	static Sprite[] aDualNode_Sub13_Sub2Array1314;
+	static IndexedSprite[] aDualNode_Sub13_Sub2Array1314;
 
 	static final void method546(int var0, int var1) {
 		if (TileDecorationStub.chunkBaseX != var0 || Class90.chunkBaseY != var1) {
@@ -111,21 +111,21 @@ public final class Node_Sub8 extends Node {
 			Client.audioEffectCount = 0;
 			Client.aBool2046 = false;
 			Client.anInt2194 = -1;
-			Client.graphicsObjectDeque.method467();
-			Client.projectileDeque.method467();
+			Client.graphicsObjectDeque.clear();
+			Client.projectileDeque.clear();
 
 			for (var13 = 0; var13 < 4; var13++) {
-				Client.collisionMaps[var13].method244();
+				Client.collisionMaps[var13].reset();
 			}
 		}
 
 	}
 
 	static final void method547(Widget widget, int var1, int var2, int var3) {
-		Class34.method201();
+		Occluder.method201();
 		DualNode_Sub14 var6 = widget.method491(false);
 		if (var6 != null) {
-			RSGraphics.setDrawRegion(var1, var2, var6.anInt1647 + var1, var6.anInt1648 + var2);
+			Raster.setDrawRegion(var1, var2, var6.anInt1647 + var1, var6.anInt1648 + var2);
 			if (Client.anInt2200 != 2 && Client.anInt2200 != 5) {
 				int var8 = Client.minimapRotation + Client.minimapScale & 0x7ff;
 				int var7 = Class68.myPlayer.strictX / 32 + 48;
@@ -242,7 +242,7 @@ public final class Node_Sub8 extends Node {
 						}
 
 						if (!Class68.myPlayer.hidden) {
-							RSGraphics.method793(var6.anInt1647 / 2 + var1 - 1, var6.anInt1648 / 2 + var2 - 1, 3, 3,
+							Raster.method793(var6.anInt1647 / 2 + var1 - 1, var6.anInt1648 / 2 + var2 - 1, 3, 3,
 									16777215);
 						}
 						break;
@@ -260,7 +260,7 @@ public final class Node_Sub8 extends Node {
 					++var10;
 				}
 			} else {
-				RSGraphics.method792(var1, var2, 0, var6.anIntArray1646, var6.anIntArray1645);
+				Raster.method792(var1, var2, 0, var6.anIntArray1646, var6.anIntArray1645);
 			}
 
 			Client.aBoolArray2171[var3] = true;

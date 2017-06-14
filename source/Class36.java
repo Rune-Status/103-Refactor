@@ -27,9 +27,9 @@ public class Class36 implements IOrdinal {
 		int var3 = Class4.menuWidth;
 		int var4 = Class4.menuHeight;
 		int var2 = 6116423;
-		RSGraphics.method793(var0, var1, var3, var4, var2);
-		RSGraphics.method793(var0 + 1, var1 + 1, var3 - 2, 16, 0);
-		RSGraphics.drawRectangle(var0 + 1, var1 + 18, var3 - 2, var4 - 19, 0);
+		Raster.method793(var0, var1, var3, var4, var2);
+		Raster.method793(var0 + 1, var1 + 1, var3 - 2, 16, 0);
+		Raster.drawRectangle(var0 + 1, var1 + 18, var3 - 2, var4 - 19, 0);
 		Class35.b12_full.method980("Choose Option", var0 + 3, var1 + 14, var2, -1);
 		int var5 = MouseInput.anInt621;
 		int var9 = MouseInput.anInt622;

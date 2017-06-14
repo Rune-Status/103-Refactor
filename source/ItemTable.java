@@ -10,7 +10,7 @@ public class ItemTable extends Node {
 	}
 
 	static final void method647(boolean var0) {
-		FriendedPlayer.method409(Client.anInt2226, Class34.gameWidth, Node_Sub9.gameHeight, var0);
+		FriendedPlayer.method409(Client.anInt2226, Occluder.gameWidth, Node_Sub9.gameHeight, var0);
 	}
 
 	public static void method648(AbstractIndex var0) {

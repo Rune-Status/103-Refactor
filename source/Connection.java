@@ -246,7 +246,7 @@ public final class Connection implements Runnable {
 						boolean var10 = (var6 >> 28 & 0x1) != 0;
 						if (var10 || LoginHandler.method291(Class30.getWidgetConfig(var9))) {
 							if (SpotAnimType.aWidget1446 != null && !Client.aBool2103 && Client.anInt2144 != 1
-									&& !Class39.method217(Client.menuItemCount - 1) && Client.menuItemCount > 0) {
+									&& !Scene.method217(Client.menuItemCount - 1) && Client.menuItemCount > 0) {
 								var0 = Client.anInt2131;
 								var8 = Client.anInt2101;
 								Node_Sub9.method563(CacheIndex.aClass4_1333, var0, var8);
@@ -281,7 +281,7 @@ public final class Connection implements Runnable {
 
 				if ((var2 == 1 || !ClanMate.aBool1221 && var2 == 4)
 						&& (Client.anInt2144 == 1 && Client.menuItemCount > 2
-								|| Class39.method217(Client.menuItemCount - 1))) {
+								|| Scene.method217(Client.menuItemCount - 1))) {
 					var2 = 2;
 				}
 

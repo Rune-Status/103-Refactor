@@ -121,14 +121,14 @@ public class SequenceType extends DualNode {
 
 	}
 
-	Rasterizer method676(Rasterizer var1, int var2, int var3) {
+	Model method676(Model var1, int var2, int var3) {
 		var2 = this.anIntArray1474[var2];
 		SkeletonSet var5 = getSkeletonSet(var2 >> 16);
 		var2 &= '\uffff';
 		if (var5 == null) {
 			return var1.method995(true);
 		} else {
-			Rasterizer var4 = var1.method995(!var5.method776(var2));
+			Model var4 = var1.method995(!var5.method776(var2));
 			var3 &= 3;
 			if (var3 == 1) {
 				var4.method1004();
@@ -151,20 +151,20 @@ public class SequenceType extends DualNode {
 		}
 	}
 
-	Rasterizer method677(Rasterizer var1, int var2) {
+	Model method677(Model var1, int var2) {
 		var2 = this.anIntArray1474[var2];
 		SkeletonSet var3 = getSkeletonSet(var2 >> 16);
 		var2 &= '\uffff';
 		if (var3 == null) {
 			return var1.method996(true);
 		} else {
-			Rasterizer var4 = var1.method996(!var3.method776(var2));
+			Model var4 = var1.method996(!var3.method776(var2));
 			var4.method1001(var3, var2);
 			return var4;
 		}
 	}
 
-	public Rasterizer method678(Rasterizer var1, int var2, SequenceType var3, int var4) {
+	public Model method678(Model var1, int var2, SequenceType var3, int var4) {
 		var2 = this.anIntArray1474[var2];
 		SkeletonSet var6 = getSkeletonSet(var2 >> 16);
 		var2 &= '\uffff';
@@ -174,7 +174,7 @@ public class SequenceType extends DualNode {
 			var4 = var3.anIntArray1474[var4];
 			SkeletonSet var7 = getSkeletonSet(var4 >> 16);
 			var4 &= '\uffff';
-			Rasterizer var5;
+			Model var5;
 			if (var7 == null) {
 				var5 = var1.method995(!var6.method776(var2));
 				var5.method1001(var6, var2);
@@ -187,7 +187,7 @@ public class SequenceType extends DualNode {
 		}
 	}
 
-	public Rasterizer method679(Rasterizer var1, int var2) {
+	public Model method679(Model var1, int var2) {
 		int var3 = this.anIntArray1474[var2];
 		SkeletonSet var4 = getSkeletonSet(var3 >> 16);
 		var3 &= '\uffff';
@@ -202,7 +202,7 @@ public class SequenceType extends DualNode {
 				var6 &= '\uffff';
 			}
 
-			Rasterizer var7;
+			Model var7;
 			if (var5 != null && var6 != '\uffff') {
 				var7 = var1.method995(!var4.method776(var3) & !var5.method776(var6));
 				var7.method1001(var4, var3);
@@ -216,10 +216,10 @@ public class SequenceType extends DualNode {
 		}
 	}
 
-	public static Sprite getSprite(AbstractIndex index, String iFile, String iChild) {
+	public static IndexedSprite getSprite(AbstractIndex index, String iFile, String iChild) {
 		int fileId = index.getFile(iFile);
 		int childId = index.getChild(fileId, iChild);
-		Sprite sprite;
+		IndexedSprite sprite;
 		if (!Class35.decodeSprite(index, fileId, childId)) {
 			sprite = null;
 		} else {
@@ -229,14 +229,14 @@ public class SequenceType extends DualNode {
 		return sprite;
 	}
 
-	public Rasterizer method681(Rasterizer var1, int var2) {
+	public Model method681(Model var1, int var2) {
 		var2 = this.anIntArray1474[var2];
 		SkeletonSet var4 = getSkeletonSet(var2 >> 16);
 		var2 &= '\uffff';
 		if (var4 == null) {
 			return var1.method995(true);
 		} else {
-			Rasterizer var3 = var1.method995(!var4.method776(var2));
+			Model var3 = var1.method995(!var4.method776(var2));
 			var3.method1001(var4, var2);
 			return var3;
 		}

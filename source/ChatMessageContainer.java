@@ -1,7 +1,7 @@
-public class Class5 {
+public class ChatMessageContainer {
 
 	public static int anInt112;
-	DualNode_Sub8[] aDualNode_Sub8Array113 = new DualNode_Sub8[100];
+	ChatMessage[] aDualNode_Sub8Array113 = new ChatMessage[100];
 	int anInt111;
 
 	static final void method71(int var0, int var1, int var2, int var3) {
@@ -16,8 +16,8 @@ public class Class5 {
 		GameType.method339();
 	}
 
-	DualNode_Sub8 method72(int var1, String var2, String var3, String var4) {
-		DualNode_Sub8 var5 = this.aDualNode_Sub8Array113[99];
+	ChatMessage method72(int var1, String var2, String var3, String var4) {
+		ChatMessage var5 = this.aDualNode_Sub8Array113[99];
 
 		for (int var6 = this.anInt111; var6 > 0; --var6) {
 			if (var6 != 100) {
@@ -26,7 +26,7 @@ public class Class5 {
 		}
 
 		if (var5 == null) {
-			var5 = new DualNode_Sub8(var1, var2, var4, var3);
+			var5 = new ChatMessage(var1, var2, var4, var3);
 		} else {
 			var5.unlink();
 			var5.unlinkDual();
@@ -45,7 +45,7 @@ public class Class5 {
 		return this.anInt111;
 	}
 
-	DualNode_Sub8 method74(int var1) {
+	ChatMessage method74(int var1) {
 		return var1 >= 0 && var1 < this.anInt111 ? this.aDualNode_Sub8Array113[var1] : null;
 	}
 

@@ -155,7 +155,7 @@ public class PlayerConfig {
 
 	}
 
-	public Rasterizer method268(SequenceType var1, int var2, SequenceType var3, int var4) {
+	public Model method268(SequenceType var1, int var2, SequenceType var3, int var4) {
 		if (this.npcId != -1) {
 			return VarPlayerType.getNpcType(this.npcId).method799(var1, var2, var3, var4);
 		} else {
@@ -179,7 +179,7 @@ public class PlayerConfig {
 				}
 			}
 
-			Rasterizer var151 = (Rasterizer) aClass106_531.get(var8);
+			Model var151 = (Model) aClass106_531.get(var8);
 			if (var151 == null) {
 				boolean var17 = false;
 
@@ -198,7 +198,7 @@ public class PlayerConfig {
 
 				if (var17) {
 					if (this.aLong532 != -1L) {
-						var151 = (Rasterizer) aClass106_531.get(this.aLong532);
+						var151 = (Model) aClass106_531.get(this.aLong532);
 					}
 
 					if (var151 == null) {
@@ -207,13 +207,13 @@ public class PlayerConfig {
 				}
 
 				if (var151 == null) {
-					Model[] var171 = new Model[12];
+					RSModel[] var171 = new RSModel[12];
 					var11 = 0;
 
 					int var10;
 					for (int var16 = 0; var16 < 12; var16++) {
 						var10 = var5[var16];
-						Model var14;
+						RSModel var14;
 						if (var10 >= 256 && var10 < 512) {
 							var14 = Client.getIdentKitType(var10 - 256).method660();
 							if (var14 != null) {
@@ -229,7 +229,7 @@ public class PlayerConfig {
 						}
 					}
 
-					Model var181 = new Model(var171, var11);
+					RSModel var181 = new RSModel(var171, var11);
 
 					for (var10 = 0; var10 < 5; var10++) {
 						if (this.appearanceColors[var10] < colorsToReplace[var10].length) {
@@ -251,7 +251,7 @@ public class PlayerConfig {
 			if (var1 == null && var3 == null) {
 				return var151;
 			} else {
-				Rasterizer var161;
+				Model var161;
 				if (var1 != null && var3 != null) {
 					var161 = var1.method678(var151, var2, var3, var4);
 				} else if (var1 != null) {
@@ -271,7 +271,7 @@ public class PlayerConfig {
 						+ (this.appearance[0] << 15) + (this.appearance[8] << 10) + this.appearance[1];
 	}
 
-	Model method270() {
+	RSModel method270() {
 		if (this.npcId != -1) {
 			return VarPlayerType.getNpcType(this.npcId).method800();
 		} else {
@@ -292,13 +292,13 @@ public class PlayerConfig {
 			if (var4) {
 				return null;
 			} else {
-				Model[] var71 = new Model[12];
+				RSModel[] var71 = new RSModel[12];
 				var3 = 0;
 
 				int var2;
 				for (int var8 = 0; var8 < 12; var8++) {
 					var2 = this.appearance[var8];
-					Model var6;
+					RSModel var6;
 					if (var2 >= 256 && var2 < 512) {
 						var6 = Client.getIdentKitType(var2 - 256).method663();
 						if (var6 != null) {
@@ -314,7 +314,7 @@ public class PlayerConfig {
 					}
 				}
 
-				Model var81 = new Model(var71, var3);
+				RSModel var81 = new RSModel(var71, var3);
 
 				for (var2 = 0; var2 < 5; var2++) {
 					if (this.appearanceColors[var2] < colorsToReplace[var2].length) {

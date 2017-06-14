@@ -30,7 +30,7 @@ public class CodeBook {
 			var7 = 0;
 
 			for (var5 = Node_Sub3.getInt(5) + 1; var7 < this.entries; var5++) {
-				int var14 = Node_Sub3.getInt(DualNode_Sub8.ilog(this.entries - var7));
+				int var14 = Node_Sub3.getInt(ChatMessage.ilog(this.entries - var7));
 
 				for (var8 = 0; var8 < var14; var8++) {
 					this.entryLengths[var7++] = var5;

@@ -1,6 +1,6 @@
 public interface ITextureLoader {
 
-	int method7(int var1);
+	int getAverageTextureRGB(int var1);
 
 	boolean method8(int var1);
 

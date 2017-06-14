@@ -27,9 +27,9 @@ public class InterfaceNode extends Node {
 		}
 	}
 
-	static final int method578(int var0, int var1, int var2, int var3) {
-		int var4 = 65536 - TexturedGraphic.COS_TABLE[var2 * 1024 / var3] >> 1;
-		return (var4 * var1 >> 16) + ((65536 - var4) * var0 >> 16);
+	static final int getCosineLerp(int a, int b, int ft, int frac) {
+		int f = 65536 - Graphics3D.COS_TABLE[ft * 1024 / frac] >> 1;
+		return (f * b >> 16) + ((65536 - f) * a >> 16);
 	}
 
 	static final InterfaceNode method579(int var0, int var1, int var2) {

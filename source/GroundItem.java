@@ -2,7 +2,7 @@ public final class GroundItem extends Entity {
 
 	int quantity;
 	static int anInt1840;
-	static Sprite aDualNode_Sub13_Sub2_1841;
+	static IndexedSprite aDualNode_Sub13_Sub2_1841;
 	int anInt1842;
 
 	public static byte[] toByteArray(Object obj, boolean copy) {
@@ -19,7 +19,7 @@ public final class GroundItem extends Entity {
 		}
 	}
 
-	protected final Rasterizer method654(byte var1) {
+	protected final Model getModel(byte var1) {
 		return FriendedPlayer.getItemType(this.anInt1842).method811(this.quantity);
 	}
 

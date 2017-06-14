@@ -1,7 +1,7 @@
 public final class EntityMarker {
 
 	public Entity entity;
-	int anInt267;
+	int drawPriority;
 	int strictX;
 	int strictY;
 	int orientation;
@@ -9,11 +9,11 @@ public final class EntityMarker {
 	int sizeX;
 	int regionY;
 	int sizeY;
-	int anInt268;
+	int cycle;
 	int height;
 	int regionX;
 	int config = 0;
-	public int anInt269 = 0;
+	public int nitset = 0;
 
 	static void method139(int var0, int var1, int var2) {
 		if (Client.anInt2204 != 0 && var1 != 0 && Client.audioEffectCount < 50) {

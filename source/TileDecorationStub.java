@@ -4,7 +4,7 @@ public final class TileDecorationStub {
 	static Widget aWidget838;
 	int strictY;
 	public Entity entity;
-	public int anInt839;
+	public int bitset;
 	int config;
 	int height;
 	static int chunkBaseX;
@@ -20,8 +20,8 @@ public final class TileDecorationStub {
 
 		int var7;
 		int var8;
-		for (var7 = 0; var7 < Rasterizer.onCursorCount; var7++) {
-			var8 = Rasterizer.onCursorUids[var7];
+		for (var7 = 0; var7 < Model.onCursorCount; var7++) {
+			var8 = Model.onCursorUids[var7];
 			int var21 = var8 & 0x7f;
 			int var10 = var8 >> 7 & 0x7f;
 			int var16 = var8 >> 29 & 0x3;
@@ -43,7 +43,7 @@ public final class TileDecorationStub {
 						FriendedPlayer.addMenuRow("Use", Client.selectedItemName + " " + Class35.aString391 + " "
 								+ Class48_Sub1.method545('\uffff') + var15.name, 1, var8, var21, var10);
 					} else if (Client.spellSelected) {
-						if ((Class31.currentSpellTargets & 0x4) == 4) {
+						if ((TileUnderlay.currentSpellTargets & 0x4) == 4) {
 							FriendedPlayer
 									.addMenuRow(Client.menuActionPrefix,
 											Client.selectedSpellName + " " + Class35.aString391 + " "
@@ -107,7 +107,7 @@ public final class TileDecorationStub {
 							var251 = Client.npcArray[Client.npcIndices[var281]];
 							if (var251 != null && var251 != var24 && var251.type.anInt1589 == 1
 									&& var24.strictX == var251.strictX && var251.strictY == var24.strictY) {
-								Class39.method219(var251.type, Client.npcIndices[var281], var21, var10);
+								Scene.method219(var251.type, Client.npcIndices[var281], var21, var10);
 							}
 						}
 
@@ -122,7 +122,7 @@ public final class TileDecorationStub {
 						}
 					}
 
-					Class39.method219(var24.type, var17, var21, var10);
+					Scene.method219(var24.type, var17, var21, var10);
 				}
 
 				if (var16 == 0) {
@@ -136,7 +136,7 @@ public final class TileDecorationStub {
 							var251 = Client.npcArray[Client.npcIndices[var281]];
 							if (var251 != null && var251.type.anInt1589 == 1 && var271.strictX == var251.strictX
 									&& var271.strictY == var251.strictY) {
-								Class39.method219(var251.type, Client.npcIndices[var281], var21, var10);
+								Scene.method219(var251.type, Client.npcIndices[var281], var21, var10);
 							}
 						}
 
@@ -163,7 +163,7 @@ public final class TileDecorationStub {
 					Deque var291 = Client.groundItemDeque[InterfaceNode.floorLevel * -1331355705][var21][var10];
 					if (var291 != null) {
 						for (GroundItem var26 = (GroundItem) var291
-								.method472(); var26 != null; var26 = (GroundItem) var291.method476()) {
+								.getTail(); var26 != null; var26 = (GroundItem) var291.getPrevious()) {
 							ItemType var20 = FriendedPlayer.getItemType(var26.anInt1842);
 							if (Client.itemSelectionStatus == 1) {
 								FriendedPlayer.addMenuRow("Use",
@@ -171,7 +171,7 @@ public final class TileDecorationStub {
 												+ Class48_Sub1.method545(16748608) + var20.name,
 										16, var26.anInt1842, var21, var10);
 							} else if (Client.spellSelected) {
-								if ((Class31.currentSpellTargets & 0x1) == 1) {
+								if ((TileUnderlay.currentSpellTargets & 0x1) == 1) {
 									FriendedPlayer.addMenuRow(Client.menuActionPrefix,
 											Client.selectedSpellName + " " + Class35.aString391 + " "
 													+ Class48_Sub1.method545(16748608) + var20.name,

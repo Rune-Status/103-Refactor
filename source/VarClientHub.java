@@ -292,21 +292,21 @@ public class VarClientHub {
 		for (int var4 = var1; var4 <= var3 + var1; var4++) {
 			for (int var5 = var0; var5 <= var2 + var0; var5++) {
 				if (var5 >= 0 && var5 < 104 && var4 >= 0 && var4 < 104) {
-					Class39.aByteArrayArrayArray430[0][var5][var4] = 127;
+					Scene.shadowMap[0][var5][var4] = 127;
 					if (var5 == var0 && var5 > 0) {
-						Class39.tileHeights[0][var5][var4] = Class39.tileHeights[0][var5 - 1][var4];
+						Scene.tileHeights[0][var5][var4] = Scene.tileHeights[0][var5 - 1][var4];
 					}
 
 					if (var0 + var2 == var5 && var5 < 103) {
-						Class39.tileHeights[0][var5][var4] = Class39.tileHeights[0][var5 + 1][var4];
+						Scene.tileHeights[0][var5][var4] = Scene.tileHeights[0][var5 + 1][var4];
 					}
 
 					if (var1 == var4 && var4 > 0) {
-						Class39.tileHeights[0][var5][var4] = Class39.tileHeights[0][var5][var4 - 1];
+						Scene.tileHeights[0][var5][var4] = Scene.tileHeights[0][var5][var4 - 1];
 					}
 
 					if (var1 + var3 == var4 && var4 < 103) {
-						Class39.tileHeights[0][var5][var4] = Class39.tileHeights[0][var5][var4 + 1];
+						Scene.tileHeights[0][var5][var4] = Scene.tileHeights[0][var5][var4 + 1];
 					}
 				}
 			}
@@ -364,7 +364,7 @@ public class VarClientHub {
 			ScriptEvent var5 = new ScriptEvent();
 			var5.widget = var0;
 			var5.args = var0.anObjectArray1188;
-			Client.aDeque2164.add(var5);
+			Client.aDeque2164.addFront(var5);
 		}
 
 	}

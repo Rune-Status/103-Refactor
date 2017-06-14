@@ -4,7 +4,7 @@ public class Node {
 	public Node next;
 	Node previous;
 
-	public boolean method12() {
+	public boolean hasPrevious() {
 		return this.previous != null;
 	}
 

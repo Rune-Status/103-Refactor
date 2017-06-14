@@ -6,18 +6,18 @@ public abstract class AbstractIndex {
 	boolean aBool708;
 	boolean aBool700;
 	public int crc;
-	int anInt709;
-	int[] anIntArray703;
-	int[] anIntArray698;
-	int[] anIntArray707;
-	int[] anIntArray702;
+	int idSize;
+	int[] fileIds;
+	int[] crcs;
+	int[] versions;
+	int[] childSizes;
 	int[][] childEntries;
 	Object[] anObjectArray704;
-	Object[][] anObjectArrayArray705;
-	int[] anIntArray696;
-	Class99 aClass99_697;
-	int[][] anIntArrayArray706;
-	Class99[] aClass99Array694;
+	Object[][] childs;
+	int[] identifiersArray;
+	Identifiers identifiers;
+	int[][] childIdentifiersArray;
+	Identifiers[] childIdentifiers;
 	static GZipDecompressor gzip = new GZipDecompressor();
 	static int anInt710 = 0;
 
@@ -30,9 +30,9 @@ public abstract class AbstractIndex {
 	}
 
 	public byte[] method375(int var1, int var2, int[] var3) {
-		if (var1 >= 0 && var1 < this.anObjectArrayArray705.length && this.anObjectArrayArray705[var1] != null
-				&& var2 >= 0 && var2 < this.anObjectArrayArray705[var1].length) {
-			if (this.anObjectArrayArray705[var1][var2] == null) {
+		if (var1 >= 0 && var1 < this.childs.length && this.childs[var1] != null
+				&& var2 >= 0 && var2 < this.childs[var1].length) {
+			if (this.childs[var1][var2] == null) {
 				boolean var5 = this.method382(var1, var3);
 				if (!var5) {
 					this.method379(var1);
@@ -43,9 +43,9 @@ public abstract class AbstractIndex {
 				}
 			}
 
-			byte[] var51 = GroundItem.toByteArray(this.anObjectArrayArray705[var1][var2], false);
+			byte[] var51 = GroundItem.toByteArray(this.childs[var1][var2], false);
 			if (this.aBool700) {
-				this.anObjectArrayArray705[var1][var2] = null;
+				this.childs[var1][var2] = null;
 			}
 
 			return var51;
@@ -54,127 +54,123 @@ public abstract class AbstractIndex {
 		}
 	}
 
-	void method376(byte[] var1) {
-		int var2 = var1.length;
-		int var7 = LoginHandler.getCrc(var1, 0, var2);
-		this.crc = var7;
-		ByteBuf var3 = new ByteBuf(UnderlayType.decodeContainer(var1));
-		int var6 = var3.getUByte();
-		if (var6 >= 5 && var6 <= 7) {
-			if (var6 >= 6) {
-				var3.getInt();
+	void method376(byte[] bytes) {
+		this.crc = LoginHandler.getCrc(bytes, 0, bytes.length);
+		ByteBuf buf = new ByteBuf(UnderlayType.decodeContainer(bytes));
+		int format = buf.getUByte();
+		if (format >= 5 && format <= 7) {
+			if (format >= 6) {
+				buf.getInt();
 			}
 
-			int var12 = var3.getUByte();
-			if (var6 >= 7) {
-				this.anInt709 = var3.getLargeSmart();
+			int flags = buf.getUByte();
+			if (format >= 7) {
+				this.idSize = buf.getLargeSmart();
 			} else {
-				this.anInt709 = var3.getUShort();
+				this.idSize = buf.getUShort();
 			}
 
-			int var14 = 0;
-			int var5 = -1;
-			this.anIntArray703 = new int[this.anInt709];
-			int var4;
-			if (var6 >= 7) {
-				for (var4 = 0; var4 < this.anInt709; var4++) {
-					this.anIntArray703[var4] = var14 += var3.getLargeSmart();
-					if (this.anIntArray703[var4] > var5) {
-						var5 = this.anIntArray703[var4];
+			int acc = 0;
+			int fileSize = -1;
+			this.fileIds = new int[this.idSize];
+			if (format >= 7) {
+				for (int i = 0; i < this.idSize; i++) {
+					this.fileIds[i] = acc += buf.getLargeSmart();
+					if (this.fileIds[i] > fileSize) {
+						fileSize = this.fileIds[i];
 					}
 				}
 			} else {
-				for (var4 = 0; var4 < this.anInt709; var4++) {
-					this.anIntArray703[var4] = var14 += var3.getUShort();
-					if (this.anIntArray703[var4] > var5) {
-						var5 = this.anIntArray703[var4];
+				for (int i = 0; i < this.idSize; i++) {
+					this.fileIds[i] = acc += buf.getUShort();
+					if (this.fileIds[i] > fileSize) {
+						fileSize = this.fileIds[i];
 					}
 				}
 			}
 
-			this.anIntArray698 = new int[var5 + 1];
-			this.anIntArray707 = new int[var5 + 1];
-			this.anIntArray702 = new int[var5 + 1];
-			this.childEntries = new int[var5 + 1][];
-			this.anObjectArray704 = new Object[var5 + 1];
-			this.anObjectArrayArray705 = new Object[var5 + 1][];
-			if (var12 != 0) {
-				this.anIntArray696 = new int[var5 + 1];
+			this.crcs = new int[fileSize + 1];
+			this.versions = new int[fileSize + 1];
+			this.childSizes = new int[fileSize + 1];
+			this.childEntries = new int[fileSize + 1][];
+			this.anObjectArray704 = new Object[fileSize + 1];
+			this.childs = new Object[fileSize + 1][];
+			if (flags != 0) {
+				this.identifiersArray = new int[fileSize + 1];
 
-				for (var4 = 0; var4 < this.anInt709; var4++) {
-					this.anIntArray696[this.anIntArray703[var4]] = var3.getInt();
+				for (int i = 0; i < this.idSize; i++) {
+					this.identifiersArray[this.fileIds[i]] = buf.getInt();
 				}
 
-				this.aClass99_697 = new Class99(this.anIntArray696);
+				this.identifiers = new Identifiers(this.identifiersArray);
 			}
 
-			for (var4 = 0; var4 < this.anInt709; var4++) {
-				this.anIntArray698[this.anIntArray703[var4]] = var3.getInt();
+			for (int i = 0; i < this.idSize; i++) {
+				this.crcs[this.fileIds[i]] = buf.getInt();
 			}
 
-			for (var4 = 0; var4 < this.anInt709; var4++) {
-				this.anIntArray707[this.anIntArray703[var4]] = var3.getInt();
+			for (int i = 0; i < this.idSize; i++) {
+				this.versions[this.fileIds[i]] = buf.getInt();
 			}
 
-			for (var4 = 0; var4 < this.anInt709; var4++) {
-				this.anIntArray702[this.anIntArray703[var4]] = var3.getUShort();
+			for (int i = 0; i < this.idSize; i++) {
+				this.childSizes[this.fileIds[i]] = buf.getUShort();
 			}
 
-			int var8;
-			int var9;
-			int var10;
-			int var11;
-			int var13;
-			if (var6 >= 7) {
-				for (var4 = 0; var4 < this.anInt709; var4++) {
-					var8 = this.anIntArray703[var4];
-					var9 = this.anIntArray702[var8];
-					var14 = 0;
-					var10 = -1;
-					this.childEntries[var8] = new int[var9];
+			int fileId;
+			int childSize;
+			int childCount;
+			int childId;
+			if (format >= 7) {
+				for (int i = 0; i < this.idSize; i++) {
+					fileId = this.fileIds[i];
+					childSize = this.childSizes[fileId];
+					acc = 0;
+					childCount = -1;
+					this.childEntries[fileId] = new int[childSize];
 
-					for (var13 = 0; var13 < var9; var13++) {
-						var11 = this.childEntries[var8][var13] = var14 += var3.getLargeSmart();
-						if (var11 > var10) {
-							var10 = var11;
+					for (int j = 0; j < childSize; j++) {
+						childId = this.childEntries[fileId][j] = acc += buf.getLargeSmart();
+						if (childId > childCount) {
+							childCount = childId;
 						}
 					}
 
-					this.anObjectArrayArray705[var8] = new Object[var10 + 1];
+					this.childs[fileId] = new Object[childCount + 1];
 				}
 			} else {
-				for (var4 = 0; var4 < this.anInt709; var4++) {
-					var8 = this.anIntArray703[var4];
-					var9 = this.anIntArray702[var8];
-					var14 = 0;
-					var10 = -1;
-					this.childEntries[var8] = new int[var9];
+				for (int i = 0; i < this.idSize; i++) {
+					fileId = this.fileIds[i];
+					childSize = this.childSizes[fileId];
+					acc = 0;
+					childCount = -1;
+					this.childEntries[fileId] = new int[childSize];
 
-					for (var13 = 0; var13 < var9; var13++) {
-						var11 = this.childEntries[var8][var13] = var14 += var3.getUShort();
-						if (var11 > var10) {
-							var10 = var11;
+					for (int j = 0; j < childSize; j++) {
+						childId = this.childEntries[fileId][j] = acc += buf.getUShort();
+						if (childId > childCount) {
+							childCount = childId;
 						}
 					}
 
-					this.anObjectArrayArray705[var8] = new Object[var10 + 1];
+					this.childs[fileId] = new Object[childCount + 1];
 				}
 			}
 
-			if (var12 != 0) {
-				this.anIntArrayArray706 = new int[var5 + 1][];
-				this.aClass99Array694 = new Class99[var5 + 1];
+			if (flags != 0) {
+				this.childIdentifiersArray = new int[fileSize + 1][];
+				this.childIdentifiers = new Identifiers[fileSize + 1];
 
-				for (var4 = 0; var4 < this.anInt709; var4++) {
-					var8 = this.anIntArray703[var4];
-					var9 = this.anIntArray702[var8];
-					this.anIntArrayArray706[var8] = new int[this.anObjectArrayArray705[var8].length];
+				for (int i = 0; i < this.idSize; i++) {
+					fileId = this.fileIds[i];
+					childSize = this.childSizes[fileId];
+					this.childIdentifiersArray[fileId] = new int[this.childs[fileId].length];
 
-					for (var10 = 0; var10 < var9; var10++) {
-						this.anIntArrayArray706[var8][this.childEntries[var8][var10]] = var3.getInt();
+					for (childCount = 0; childCount < childSize; childCount++) {
+						this.childIdentifiersArray[fileId][this.childEntries[fileId][childCount]] = buf.getInt();
 					}
 
-					this.aClass99Array694[var8] = new Class99(this.anIntArrayArray706[var8]);
+					this.childIdentifiers[fileId] = new Identifiers(this.childIdentifiersArray[fileId]);
 				}
 			}
 
@@ -186,8 +182,8 @@ public abstract class AbstractIndex {
 	public boolean method377() {
 		boolean var1 = true;
 
-		for (int var3 = 0; var3 < this.anIntArray703.length; var3++) {
-			int var2 = this.anIntArray703[var3];
+		for (int var3 = 0; var3 < this.fileIds.length; var3++) {
+			int var2 = this.fileIds[var3];
 			if (this.anObjectArray704[var2] == null) {
 				this.method379(var2);
 				if (this.anObjectArray704[var2] == null) {
@@ -200,9 +196,9 @@ public abstract class AbstractIndex {
 	}
 
 	public byte[] method378(int var1) {
-		if (this.anObjectArrayArray705.length == 1) {
+		if (this.childs.length == 1) {
 			return this.getFile(0, var1);
-		} else if (this.anObjectArrayArray705[var1].length != 1) {
+		} else if (this.childs[var1].length != 1) {
 			throw new RuntimeException();
 		} else {
 			return this.getFile(var1, 0);
@@ -213,14 +209,14 @@ public abstract class AbstractIndex {
 	}
 
 	public int fileCount(int var1) {
-		return this.anObjectArrayArray705[var1].length;
+		return this.childs[var1].length;
 	}
 
 	public void reset() {
-		for (int var1 = 0; var1 < this.anObjectArrayArray705.length; var1++) {
-			if (this.anObjectArrayArray705[var1] != null) {
-				for (int var2 = 0; var2 < this.anObjectArrayArray705[var1].length; var2++) {
-					this.anObjectArrayArray705[var1][var2] = null;
+		for (int var1 = 0; var1 < this.childs.length; var1++) {
+			if (this.childs[var1] != null) {
+				for (int var2 = 0; var2 < this.childs[var1].length; var2++) {
+					this.childs[var1][var2] = null;
 				}
 			}
 		}
@@ -231,9 +227,9 @@ public abstract class AbstractIndex {
 		if (this.anObjectArray704[file] == null) {
 			return false;
 		} else {
-			int var3 = this.anIntArray702[file];
+			int var3 = this.childSizes[file];
 			int[] var4 = this.childEntries[file];
-			Object[] var5 = this.anObjectArrayArray705[file];
+			Object[] var5 = this.childs[file];
 			boolean var6 = true;
 
 			for (int var18 = 0; var18 < var3; var18++) {
@@ -321,19 +317,19 @@ public abstract class AbstractIndex {
 
 	public int getFile(String var1) {
 		var1 = var1.toLowerCase();
-		return this.aClass99_697.getFile(SequenceType.djb2Hash(var1));
+		return this.identifiers.getFile(SequenceType.djb2Hash(var1));
 	}
 
 	public int getChild(int file, String var2) {
 		var2 = var2.toLowerCase();
-		return this.aClass99Array694[file].getFile(SequenceType.djb2Hash(var2));
+		return this.childIdentifiers[file].getFile(SequenceType.djb2Hash(var2));
 	}
 
 	public boolean method385(String var1, String var2) {
 		var1 = var1.toLowerCase();
 		var2 = var2.toLowerCase();
-		int var3 = this.aClass99_697.getFile(SequenceType.djb2Hash(var1));
-		int var4 = this.aClass99Array694[var3].getFile(SequenceType.djb2Hash(var2));
+		int var3 = this.identifiers.getFile(SequenceType.djb2Hash(var1));
+		int var4 = this.childIdentifiers[var3].getFile(SequenceType.djb2Hash(var2));
 		return this.method388(var3, var4);
 	}
 
@@ -344,7 +340,7 @@ public abstract class AbstractIndex {
 
 	public void method387(String var1) {
 		var1 = var1.toLowerCase();
-		int var2 = this.aClass99_697.getFile(SequenceType.djb2Hash(var1));
+		int var2 = this.identifiers.getFile(SequenceType.djb2Hash(var1));
 		if (var2 >= 0) {
 			this.method374(var2, (byte) 1);
 		}
@@ -352,9 +348,9 @@ public abstract class AbstractIndex {
 	}
 
 	public boolean method388(int var1, int var2) {
-		if (var1 >= 0 && var1 < this.anObjectArrayArray705.length && this.anObjectArrayArray705[var1] != null
-				&& var2 >= 0 && var2 < this.anObjectArrayArray705[var1].length) {
-			if (this.anObjectArrayArray705[var1][var2] != null) {
+		if (var1 >= 0 && var1 < this.childs.length && this.childs[var1] != null
+				&& var2 >= 0 && var2 < this.childs[var1].length) {
+			if (this.childs[var1][var2] != null) {
 				return true;
 			} else if (this.anObjectArray704[var1] != null) {
 				return true;
@@ -370,15 +366,15 @@ public abstract class AbstractIndex {
 	public byte[] method389(String var1, String var2) {
 		var1 = var1.toLowerCase();
 		var2 = var2.toLowerCase();
-		int var3 = this.aClass99_697.getFile(SequenceType.djb2Hash(var1));
-		int var4 = this.aClass99Array694[var3].getFile(SequenceType.djb2Hash(var2));
+		int var3 = this.identifiers.getFile(SequenceType.djb2Hash(var1));
+		int var4 = this.childIdentifiers[var3].getFile(SequenceType.djb2Hash(var2));
 		return this.getFile(var3, var4);
 	}
 
 	public byte[] getChild(int file, int child) {
-		if (file >= 0 && file < this.anObjectArrayArray705.length && this.anObjectArrayArray705[file] != null
-				&& child >= 0 && child < this.anObjectArrayArray705[file].length) {
-			if (this.anObjectArrayArray705[file][child] == null) {
+		if (file >= 0 && file < this.childs.length && this.childs[file] != null
+				&& child >= 0 && child < this.childs[file].length) {
+			if (this.childs[file][child] == null) {
 				boolean var4 = this.method382(file, (int[]) null);
 				if (!var4) {
 					this.method379(file);
@@ -389,7 +385,7 @@ public abstract class AbstractIndex {
 				}
 			}
 
-			byte[] var41 = GroundItem.toByteArray(this.anObjectArrayArray705[file][child], false);
+			byte[] var41 = GroundItem.toByteArray(this.childs[file][child], false);
 			return var41;
 		} else {
 			return null;
@@ -401,9 +397,9 @@ public abstract class AbstractIndex {
 	}
 
 	public byte[] method392(int var1) {
-		if (this.anObjectArrayArray705.length == 1) {
+		if (this.childs.length == 1) {
 			return this.getChild(0, var1);
-		} else if (this.anObjectArrayArray705[var1].length != 1) {
+		} else if (this.childs[var1].length != 1) {
 			throw new RuntimeException();
 		} else {
 			return this.getChild(var1, 0);
@@ -442,14 +438,14 @@ public abstract class AbstractIndex {
 	}
 
 	public void method396(int var1) {
-		for (int var2 = 0; var2 < this.anObjectArrayArray705[var1].length; var2++) {
-			this.anObjectArrayArray705[var1][var2] = null;
+		for (int var2 = 0; var2 < this.childs[var1].length; var2++) {
+			this.childs[var1][var2] = null;
 		}
 
 	}
 
 	public int size() {
-		return this.anObjectArrayArray705.length;
+		return this.childs.length;
 	}
 
 }

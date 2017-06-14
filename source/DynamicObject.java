@@ -42,7 +42,7 @@ public class DynamicObject extends Entity {
 
 	}
 
-	protected final Rasterizer method654(byte var1) {
+	protected final Model getModel(byte var1) {
 		if (this.aDualNode_Sub3_1961 != null) {
 			int var13 = Client.engineCycle - this.anInt1963;
 			if (var13 > 100 && this.aDualNode_Sub3_1961.anInt1477 > 0) {
@@ -91,7 +91,7 @@ public class DynamicObject extends Entity {
 			int var11 = this.regionX + (var2 + 1 >> 1);
 			int var12 = (var5 >> 1) + this.regionY;
 			int var6 = this.regionY + (var5 + 1 >> 1);
-			int[][] var7 = Class39.tileHeights[this.floorLevel];
+			int[][] var7 = Scene.tileHeights[this.floorLevel];
 			int var9 = var7[var11][var12] + var7[var3][var12] + var7[var3][var6] + var7[var11][var6] >> 2;
 			int var8 = (this.regionX << 7) + (var2 << 6);
 			int var10 = (var5 << 6) + (this.regionY << 7);
@@ -107,9 +107,9 @@ public class DynamicObject extends Entity {
 			}
 		} else {
 			PlayerLoginDetails.anInt116 = var4;
-			RSGraphics.reset();
+			Raster.reset();
 			byte[] var6 = binary.method389("title.jpg", "");
-			Class56.aSprite542 = new Picture(var6, var0);
+			Class56.aSprite542 = new Sprite(var6, var0);
 			PlayerLoginDetails.aSprite137 = Class56.aSprite542.method937();
 			if ((Client.myWorldFlags & 0x20000000) != 0) {
 				IgnoredPlayer.logoSprite = SequenceType.getSprite(sprites, "logo_deadman_mode", "");
@@ -181,7 +181,7 @@ public class DynamicObject extends Entity {
 			PlayerLoginDetails.anIntArray124 = new int[256];
 			CalledScript.anIntArray365 = new int['\u8000'];
 			Permission.anIntArray605 = new int['\u8000'];
-			VarBitType.method877((Sprite) null);
+			VarBitType.method877((IndexedSprite) null);
 			Class122.anIntArray818 = new int['\u8000'];
 			Class4.anIntArray110 = new int['\u8000'];
 			if (var3) {
@@ -201,7 +201,7 @@ public class DynamicObject extends Entity {
 
 			ScriptEvent.sendConInfo(false);
 			PlayerLoginDetails.titleScreenState = true;
-			PlayerLoginDetails.anInt132 = (Class34.gameWidth - Client.anInt2233) / 2;
+			PlayerLoginDetails.anInt132 = (Occluder.gameWidth - Client.anInt2233) / 2;
 			PlayerLoginDetails.anInt126 = PlayerLoginDetails.anInt132 + 202;
 			Class56.aSprite542.method958(PlayerLoginDetails.anInt132, 0);
 			PlayerLoginDetails.aSprite137.method958(PlayerLoginDetails.anInt132 + 382, 0);
@@ -210,7 +210,7 @@ public class DynamicObject extends Entity {
 
 	}
 
-	public static Picture[] method1023(AbstractIndex var0, String var1, String var2) {
+	public static Sprite[] method1023(AbstractIndex var0, String var1, String var2) {
 		int var3 = var0.getFile(var1);
 		int var4 = var0.getChild(var3, var2);
 		return Client.method510(var0, var3, var4);

@@ -9,7 +9,7 @@ public class GameStrings {
 	}
 
 	static final void method466() {
-		Landscape.aBool22 = false;
+		Landscape.lowMemory = false;
 		Client.lowMemory = false;
 	}
 

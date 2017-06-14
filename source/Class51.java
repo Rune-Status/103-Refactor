@@ -2,7 +2,7 @@ import java.util.Date;
 
 public class Class51 {
 
-	static int[] anIntArray526;
+	static int[] blendedSaturation;
 	public int anInt525;
 	static Class51 aClass51_523 = new Class51(2);
 	public static Class51 aClass51_524 = new Class51(1);
@@ -26,13 +26,13 @@ public class Class51 {
 				+ var7 % 10 + ":" + var8 / 10 + var8 % 10 + " GMT";
 	}
 
-	static final void drawDot(int var0, int var1, int var2, int var3, Picture var4, DualNode_Sub14 var5) {
+	static final void drawDot(int var0, int var1, int var2, int var3, Sprite var4, DualNode_Sub14 var5) {
 		if (var4 != null) {
 			int var6 = Client.minimapScale + Client.minimapRotation & 0x7ff;
 			int var9 = var2 * var2 + var3 * var3;
 			if (var9 <= 6400) {
-				int var8 = TexturedGraphic.SIN_TABLE[var6];
-				int var7 = TexturedGraphic.COS_TABLE[var6];
+				int var8 = Graphics3D.SIN_TABLE[var6];
+				int var7 = Graphics3D.COS_TABLE[var6];
 				var8 = var8 * 256 / (Client.viewRotation + 256);
 				var7 = var7 * 256 / (Client.viewRotation + 256);
 				int var10 = var8 * var3 + var2 * var7 >> 16;

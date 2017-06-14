@@ -1,13 +1,13 @@
 public class DualNode_Sub14 extends DualNode {
 
-	static AbstractSoundSystem aClass8_1644;
+	static AbstractSoundSystem soundSystem0;
 	public int anInt1647;
 	public int anInt1648;
 	public int[] anIntArray1645;
 	public int[] anIntArray1646;
 
 	static int method822(int var0) {
-		Class5 var1 = (Class5) Class32.aMap359.get(Integer.valueOf(var0));
+		ChatMessageContainer var1 = (ChatMessageContainer) Class32.messageContainers.get(Integer.valueOf(var0));
 		return var1 == null ? 0 : var1.method73();
 	}
 

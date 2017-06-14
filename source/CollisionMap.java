@@ -3,26 +3,26 @@ import java.applet.Applet;
 public class CollisionMap {
 
 	static Applet gameApplet;
-	int anInt505 = 0;
-	int anInt506 = 0;
+	int xOffset = 0;
+	int yOffset = 0;
 	int width;
 	int height;
 	public int[][] flags;
 
-	public void method234(int var1, int var2, int var3, int var4, boolean var5) {
-		int var6 = 256;
-		if (var5) {
-			var6 += 131072;
+	public void addObject(int tileX, int tileY, int var3, int var4, boolean solid) {
+		int flags = 256;
+		if (solid) {
+			flags += 131072;
 		}
 
-		var1 -= this.anInt505;
-		var2 -= this.anInt506;
+		tileX -= this.xOffset;
+		tileY -= this.yOffset;
 
-		for (int var7 = var1; var7 < var3 + var1; var7++) {
-			if (var7 >= 0 && var7 < this.width) {
-				for (int var8 = var2; var8 < var4 + var2; var8++) {
-					if (var8 >= 0 && var8 < this.height) {
-						this.addFlag(var7, var8, var6);
+		for (int x = tileX; x < var3 + tileX; x++) {
+			if (x >= 0 && x < this.width) {
+				for (int y = tileY; y < var4 + tileY; y++) {
+					if (y >= 0 && y < this.height) {
+						this.add(x, y, flags);
 					}
 				}
 			}
@@ -30,189 +30,188 @@ public class CollisionMap {
 
 	}
 
-	public void method235(int var1, int var2) {
-		var1 -= this.anInt505;
-		var2 -= this.anInt506;
-		this.flags[var1][var2] |= 2097152;
+	public void blockBridge(int x, int y) {
+		x -= this.xOffset;
+		y -= this.yOffset;
+		this.flags[x][y] |= 2097152;
 	}
 
-	public void method236(int var1, int var2) {
-		var1 -= this.anInt505;
-		var2 -= this.anInt506;
-		this.flags[var1][var2] |= 262144;
+	public void block(int x, int y) {
+		x -= this.xOffset;
+		y -= this.yOffset;
+		this.flags[x][y] |= 262144;
 	}
 
-	void addFlag(int var1, int var2, int var3) {
-		this.flags[var1][var2] |= var3;
+	void add(int x, int y, int flags) {
+		this.flags[x][y] |= flags;
 	}
 
-	public void method238(int var1, int var2, int var3, int var4, boolean var5) {
-		var1 -= this.anInt505;
-		var2 -= this.anInt506;
-		if (var3 == 0) {
-			if (var4 == 0) {
-				this.removeFlag(var1, var2, 128);
-				this.removeFlag(var1 - 1, var2, 8);
+	public void removeWall(int x, int y, int type, int rotation, boolean blocks) {
+		x -= this.xOffset;
+		y -= this.yOffset;
+		if (type == 0) {
+			if (rotation == 0) {
+				this.remove(x, y, 128);
+				this.remove(x - 1, y, 8);
 			}
 
-			if (var4 == 1) {
-				this.removeFlag(var1, var2, 2);
-				this.removeFlag(var1, var2 + 1, 32);
+			if (rotation == 1) {
+				this.remove(x, y, 2);
+				this.remove(x, y + 1, 32);
 			}
 
-			if (var4 == 2) {
-				this.removeFlag(var1, var2, 8);
-				this.removeFlag(var1 + 1, var2, 128);
+			if (rotation == 2) {
+				this.remove(x, y, 8);
+				this.remove(x + 1, y, 128);
 			}
 
-			if (var4 == 3) {
-				this.removeFlag(var1, var2, 32);
-				this.removeFlag(var1, var2 - 1, 2);
-			}
-		}
-
-		if (var3 == 1 || var3 == 3) {
-			if (var4 == 0) {
-				this.removeFlag(var1, var2, 1);
-				this.removeFlag(var1 - 1, var2 + 1, 16);
-			}
-
-			if (var4 == 1) {
-				this.removeFlag(var1, var2, 4);
-				this.removeFlag(var1 + 1, var2 + 1, 64);
-			}
-
-			if (var4 == 2) {
-				this.removeFlag(var1, var2, 16);
-				this.removeFlag(var1 + 1, var2 - 1, 1);
-			}
-
-			if (var4 == 3) {
-				this.removeFlag(var1, var2, 64);
-				this.removeFlag(var1 - 1, var2 - 1, 4);
+			if (rotation == 3) {
+				this.remove(x, y, 32);
+				this.remove(x, y - 1, 2);
 			}
 		}
 
-		if (var3 == 2) {
-			if (var4 == 0) {
-				this.removeFlag(var1, var2, 130);
-				this.removeFlag(var1 - 1, var2, 8);
-				this.removeFlag(var1, var2 + 1, 32);
+		if (type == 1 || type == 3) {
+			if (rotation == 0) {
+				this.remove(x, y, 1);
+				this.remove(x - 1, y + 1, 16);
 			}
 
-			if (var4 == 1) {
-				this.removeFlag(var1, var2, 10);
-				this.removeFlag(var1, var2 + 1, 32);
-				this.removeFlag(var1 + 1, var2, 128);
+			if (rotation == 1) {
+				this.remove(x, y, 4);
+				this.remove(x + 1, y + 1, 64);
 			}
 
-			if (var4 == 2) {
-				this.removeFlag(var1, var2, 40);
-				this.removeFlag(var1 + 1, var2, 128);
-				this.removeFlag(var1, var2 - 1, 2);
+			if (rotation == 2) {
+				this.remove(x, y, 16);
+				this.remove(x + 1, y - 1, 1);
 			}
 
-			if (var4 == 3) {
-				this.removeFlag(var1, var2, 160);
-				this.removeFlag(var1, var2 - 1, 2);
-				this.removeFlag(var1 - 1, var2, 8);
+			if (rotation == 3) {
+				this.remove(x, y, 64);
+				this.remove(x - 1, y - 1, 4);
 			}
 		}
 
-		if (var5) {
-			if (var3 == 0) {
-				if (var4 == 0) {
-					this.removeFlag(var1, var2, 65536);
-					this.removeFlag(var1 - 1, var2, 4096);
+		if (type == 2) {
+			if (rotation == 0) {
+				this.remove(x, y, 130);
+				this.remove(x - 1, y, 8);
+				this.remove(x, y + 1, 32);
+			}
+
+			if (rotation == 1) {
+				this.remove(x, y, 10);
+				this.remove(x, y + 1, 32);
+				this.remove(x + 1, y, 128);
+			}
+
+			if (rotation == 2) {
+				this.remove(x, y, 40);
+				this.remove(x + 1, y, 128);
+				this.remove(x, y - 1, 2);
+			}
+
+			if (rotation == 3) {
+				this.remove(x, y, 160);
+				this.remove(x, y - 1, 2);
+				this.remove(x - 1, y, 8);
+			}
+		}
+
+		if (blocks) {
+			if (type == 0) {
+				if (rotation == 0) {
+					this.remove(x, y, 65536);
+					this.remove(x - 1, y, 4096);
 				}
 
-				if (var4 == 1) {
-					this.removeFlag(var1, var2, 1024);
-					this.removeFlag(var1, var2 + 1, 16384);
+				if (rotation == 1) {
+					this.remove(x, y, 1024);
+					this.remove(x, y + 1, 16384);
 				}
 
-				if (var4 == 2) {
-					this.removeFlag(var1, var2, 4096);
-					this.removeFlag(var1 + 1, var2, 65536);
+				if (rotation == 2) {
+					this.remove(x, y, 4096);
+					this.remove(x + 1, y, 65536);
 				}
 
-				if (var4 == 3) {
-					this.removeFlag(var1, var2, 16384);
-					this.removeFlag(var1, var2 - 1, 1024);
+				if (rotation == 3) {
+					this.remove(x, y, 16384);
+					this.remove(x, y - 1, 1024);
 				}
 			}
 
-			if (var3 == 1 || var3 == 3) {
-				if (var4 == 0) {
-					this.removeFlag(var1, var2, 512);
-					this.removeFlag(var1 - 1, var2 + 1, 8192);
+			if (type == 1 || type == 3) {
+				if (rotation == 0) {
+					this.remove(x, y, 512);
+					this.remove(x - 1, y + 1, 8192);
 				}
 
-				if (var4 == 1) {
-					this.removeFlag(var1, var2, 2048);
-					this.removeFlag(var1 + 1, var2 + 1, '\u8000');
+				if (rotation == 1) {
+					this.remove(x, y, 2048);
+					this.remove(x + 1, y + 1, '\u8000');
 				}
 
-				if (var4 == 2) {
-					this.removeFlag(var1, var2, 8192);
-					this.removeFlag(var1 + 1, var2 - 1, 512);
+				if (rotation == 2) {
+					this.remove(x, y, 8192);
+					this.remove(x + 1, y - 1, 512);
 				}
 
-				if (var4 == 3) {
-					this.removeFlag(var1, var2, '\u8000');
-					this.removeFlag(var1 - 1, var2 - 1, 2048);
+				if (rotation == 3) {
+					this.remove(x, y, '\u8000');
+					this.remove(x - 1, y - 1, 2048);
 				}
 			}
 
-			if (var3 == 2) {
-				if (var4 == 0) {
-					this.removeFlag(var1, var2, 66560);
-					this.removeFlag(var1 - 1, var2, 4096);
-					this.removeFlag(var1, var2 + 1, 16384);
+			if (type == 2) {
+				if (rotation == 0) {
+					this.remove(x, y, 66560);
+					this.remove(x - 1, y, 4096);
+					this.remove(x, y + 1, 16384);
 				}
 
-				if (var4 == 1) {
-					this.removeFlag(var1, var2, 5120);
-					this.removeFlag(var1, var2 + 1, 16384);
-					this.removeFlag(var1 + 1, var2, 65536);
+				if (rotation == 1) {
+					this.remove(x, y, 5120);
+					this.remove(x, y + 1, 16384);
+					this.remove(x + 1, y, 65536);
 				}
 
-				if (var4 == 2) {
-					this.removeFlag(var1, var2, 20480);
-					this.removeFlag(var1 + 1, var2, 65536);
-					this.removeFlag(var1, var2 - 1, 1024);
+				if (rotation == 2) {
+					this.remove(x, y, 20480);
+					this.remove(x + 1, y, 65536);
+					this.remove(x, y - 1, 1024);
 				}
 
-				if (var4 == 3) {
-					this.removeFlag(var1, var2, 81920);
-					this.removeFlag(var1, var2 - 1, 1024);
-					this.removeFlag(var1 - 1, var2, 4096);
+				if (rotation == 3) {
+					this.remove(x, y, 81920);
+					this.remove(x, y - 1, 1024);
+					this.remove(x - 1, y, 4096);
 				}
 			}
 		}
 
 	}
 
-	public void method239(int var1, int var2, int var3, int var4, int var5, boolean var6) {
-		int var7 = 256;
-		if (var6) {
-			var7 += 131072;
+	public void removeObject(int tileX, int tileY, int sizeX, int sizeY, int rotation, boolean solid) {
+		int flag = 256;
+		if (solid) {
+			flag += 131072;
 		}
 
-		var1 -= this.anInt505;
-		var2 -= this.anInt506;
-		int var8;
-		if (var5 == 1 || var5 == 3) {
-			var8 = var3;
-			var3 = var4;
-			var4 = var8;
+		tileX -= this.xOffset;
+		tileY -= this.yOffset;
+		if (rotation == 1 || rotation == 3) {
+			int w = sizeX;
+			sizeX = sizeY;
+			sizeY = w;
 		}
 
-		for (var8 = var1; var8 < var3 + var1; var8++) {
-			if (var8 >= 0 && var8 < this.width) {
-				for (int var9 = var2; var9 < var2 + var4; var9++) {
-					if (var9 >= 0 && var9 < this.height) {
-						this.removeFlag(var8, var9, var7);
+		for (int x = tileX; x < sizeX + tileX; x++) {
+			if (x >= 0 && x < this.width) {
+				for (int y = tileY; y < tileY + sizeY; y++) {
+					if (y >= 0 && y < this.height) {
+						this.remove(x, y, flag);
 					}
 				}
 			}
@@ -220,168 +219,168 @@ public class CollisionMap {
 
 	}
 
-	void removeFlag(int var1, int var2, int var3) {
-		this.flags[var1][var2] &= ~var3;
+	void remove(int x, int y, int flags) {
+		this.flags[x][y] &= ~flags;
 	}
 
-	public void method241(int var1, int var2) {
-		var1 -= this.anInt505;
-		var2 -= this.anInt506;
-		this.flags[var1][var2] &= -262145;
+	public void unblock(int x, int y) {
+		x -= this.xOffset;
+		y -= this.yOffset;
+		this.flags[x][y] &= -262145;
 	}
 
-	public void method242(int var1, int var2, int var3, int var4, boolean var5) {
-		var1 -= this.anInt505;
-		var2 -= this.anInt506;
-		if (var3 == 0) {
-			if (var4 == 0) {
-				this.addFlag(var1, var2, 128);
-				this.addFlag(var1 - 1, var2, 8);
+	public void addWall(int x, int y, int type, int rotation, boolean blocks) {
+		x -= this.xOffset;
+		y -= this.yOffset;
+		if (type == 0) {
+			if (rotation == 0) {
+				this.add(x, y, 128);
+				this.add(x - 1, y, 8);
 			}
 
-			if (var4 == 1) {
-				this.addFlag(var1, var2, 2);
-				this.addFlag(var1, var2 + 1, 32);
+			if (rotation == 1) {
+				this.add(x, y, 2);
+				this.add(x, y + 1, 32);
 			}
 
-			if (var4 == 2) {
-				this.addFlag(var1, var2, 8);
-				this.addFlag(var1 + 1, var2, 128);
+			if (rotation == 2) {
+				this.add(x, y, 8);
+				this.add(x + 1, y, 128);
 			}
 
-			if (var4 == 3) {
-				this.addFlag(var1, var2, 32);
-				this.addFlag(var1, var2 - 1, 2);
-			}
-		}
-
-		if (var3 == 1 || var3 == 3) {
-			if (var4 == 0) {
-				this.addFlag(var1, var2, 1);
-				this.addFlag(var1 - 1, var2 + 1, 16);
-			}
-
-			if (var4 == 1) {
-				this.addFlag(var1, var2, 4);
-				this.addFlag(var1 + 1, var2 + 1, 64);
-			}
-
-			if (var4 == 2) {
-				this.addFlag(var1, var2, 16);
-				this.addFlag(var1 + 1, var2 - 1, 1);
-			}
-
-			if (var4 == 3) {
-				this.addFlag(var1, var2, 64);
-				this.addFlag(var1 - 1, var2 - 1, 4);
+			if (rotation == 3) {
+				this.add(x, y, 32);
+				this.add(x, y - 1, 2);
 			}
 		}
 
-		if (var3 == 2) {
-			if (var4 == 0) {
-				this.addFlag(var1, var2, 130);
-				this.addFlag(var1 - 1, var2, 8);
-				this.addFlag(var1, var2 + 1, 32);
+		if (type == 1 || type == 3) {
+			if (rotation == 0) {
+				this.add(x, y, 1);
+				this.add(x - 1, y + 1, 16);
 			}
 
-			if (var4 == 1) {
-				this.addFlag(var1, var2, 10);
-				this.addFlag(var1, var2 + 1, 32);
-				this.addFlag(var1 + 1, var2, 128);
+			if (rotation == 1) {
+				this.add(x, y, 4);
+				this.add(x + 1, y + 1, 64);
 			}
 
-			if (var4 == 2) {
-				this.addFlag(var1, var2, 40);
-				this.addFlag(var1 + 1, var2, 128);
-				this.addFlag(var1, var2 - 1, 2);
+			if (rotation == 2) {
+				this.add(x, y, 16);
+				this.add(x + 1, y - 1, 1);
 			}
 
-			if (var4 == 3) {
-				this.addFlag(var1, var2, 160);
-				this.addFlag(var1, var2 - 1, 2);
-				this.addFlag(var1 - 1, var2, 8);
+			if (rotation == 3) {
+				this.add(x, y, 64);
+				this.add(x - 1, y - 1, 4);
 			}
 		}
 
-		if (var5) {
-			if (var3 == 0) {
-				if (var4 == 0) {
-					this.addFlag(var1, var2, 65536);
-					this.addFlag(var1 - 1, var2, 4096);
+		if (type == 2) {
+			if (rotation == 0) {
+				this.add(x, y, 130);
+				this.add(x - 1, y, 8);
+				this.add(x, y + 1, 32);
+			}
+
+			if (rotation == 1) {
+				this.add(x, y, 10);
+				this.add(x, y + 1, 32);
+				this.add(x + 1, y, 128);
+			}
+
+			if (rotation == 2) {
+				this.add(x, y, 40);
+				this.add(x + 1, y, 128);
+				this.add(x, y - 1, 2);
+			}
+
+			if (rotation == 3) {
+				this.add(x, y, 160);
+				this.add(x, y - 1, 2);
+				this.add(x - 1, y, 8);
+			}
+		}
+
+		if (blocks) {
+			if (type == 0) {
+				if (rotation == 0) {
+					this.add(x, y, 65536);
+					this.add(x - 1, y, 4096);
 				}
 
-				if (var4 == 1) {
-					this.addFlag(var1, var2, 1024);
-					this.addFlag(var1, var2 + 1, 16384);
+				if (rotation == 1) {
+					this.add(x, y, 1024);
+					this.add(x, y + 1, 16384);
 				}
 
-				if (var4 == 2) {
-					this.addFlag(var1, var2, 4096);
-					this.addFlag(var1 + 1, var2, 65536);
+				if (rotation == 2) {
+					this.add(x, y, 4096);
+					this.add(x + 1, y, 65536);
 				}
 
-				if (var4 == 3) {
-					this.addFlag(var1, var2, 16384);
-					this.addFlag(var1, var2 - 1, 1024);
+				if (rotation == 3) {
+					this.add(x, y, 16384);
+					this.add(x, y - 1, 1024);
 				}
 			}
 
-			if (var3 == 1 || var3 == 3) {
-				if (var4 == 0) {
-					this.addFlag(var1, var2, 512);
-					this.addFlag(var1 - 1, var2 + 1, 8192);
+			if (type == 1 || type == 3) {
+				if (rotation == 0) {
+					this.add(x, y, 512);
+					this.add(x - 1, y + 1, 8192);
 				}
 
-				if (var4 == 1) {
-					this.addFlag(var1, var2, 2048);
-					this.addFlag(var1 + 1, var2 + 1, '\u8000');
+				if (rotation == 1) {
+					this.add(x, y, 2048);
+					this.add(x + 1, y + 1, '\u8000');
 				}
 
-				if (var4 == 2) {
-					this.addFlag(var1, var2, 8192);
-					this.addFlag(var1 + 1, var2 - 1, 512);
+				if (rotation == 2) {
+					this.add(x, y, 8192);
+					this.add(x + 1, y - 1, 512);
 				}
 
-				if (var4 == 3) {
-					this.addFlag(var1, var2, '\u8000');
-					this.addFlag(var1 - 1, var2 - 1, 2048);
+				if (rotation == 3) {
+					this.add(x, y, '\u8000');
+					this.add(x - 1, y - 1, 2048);
 				}
 			}
 
-			if (var3 == 2) {
-				if (var4 == 0) {
-					this.addFlag(var1, var2, 66560);
-					this.addFlag(var1 - 1, var2, 4096);
-					this.addFlag(var1, var2 + 1, 16384);
+			if (type == 2) {
+				if (rotation == 0) {
+					this.add(x, y, 66560);
+					this.add(x - 1, y, 4096);
+					this.add(x, y + 1, 16384);
 				}
 
-				if (var4 == 1) {
-					this.addFlag(var1, var2, 5120);
-					this.addFlag(var1, var2 + 1, 16384);
-					this.addFlag(var1 + 1, var2, 65536);
+				if (rotation == 1) {
+					this.add(x, y, 5120);
+					this.add(x, y + 1, 16384);
+					this.add(x + 1, y, 65536);
 				}
 
-				if (var4 == 2) {
-					this.addFlag(var1, var2, 20480);
-					this.addFlag(var1 + 1, var2, 65536);
-					this.addFlag(var1, var2 - 1, 1024);
+				if (rotation == 2) {
+					this.add(x, y, 20480);
+					this.add(x + 1, y, 65536);
+					this.add(x, y - 1, 1024);
 				}
 
-				if (var4 == 3) {
-					this.addFlag(var1, var2, 81920);
-					this.addFlag(var1, var2 - 1, 1024);
-					this.addFlag(var1 - 1, var2, 4096);
+				if (rotation == 3) {
+					this.add(x, y, 81920);
+					this.add(x, y - 1, 1024);
+					this.add(x - 1, y, 4096);
 				}
 			}
 		}
 
 	}
 
-	public CollisionMap(int var1, int var2) {
-		this.width = var1;
-		this.height = var2;
+	public CollisionMap(int w, int h) {
+		this.width = w;
+		this.height = h;
 		this.flags = new int[this.width][this.height];
-		this.method244();
+		this.reset();
 	}
 
 	static final void method243() {
@@ -417,13 +416,13 @@ public class CollisionMap {
 
 	}
 
-	public void method244() {
-		for (int var1 = 0; var1 < this.width; var1++) {
-			for (int var2 = 0; var2 < this.height; var2++) {
-				if (var1 != 0 && var2 != 0 && var1 < this.width - 5 && var2 < this.height - 5) {
-					this.flags[var1][var2] = 16777216;
+	public void reset() {
+		for (int x = 0; x < this.width; x++) {
+			for (int y = 0; y < this.height; y++) {
+				if (x != 0 && y != 0 && x < this.width - 5 && y < this.height - 5) {
+					this.flags[x][y] = 16777216;
 				} else {
-					this.flags[var1][var2] = 16777215;
+					this.flags[x][y] = 16777215;
 				}
 			}
 		}

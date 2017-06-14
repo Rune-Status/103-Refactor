@@ -69,7 +69,7 @@ public class Class13 {
 		} else if (var3 != null && var3[0] <= 0) {
 			return null;
 		} else {
-			Class14 var8 = Class14.method119(this.sfx_index, var1, var2);
+			Track var8 = Track.getTrack(this.sfx_index, var1, var2);
 			if (var8 == null) {
 				return null;
 			} else {
@@ -122,9 +122,9 @@ public class Class13 {
 			}
 		}
 
-		RSGraphics.setDrawRegion(PlayerLoginDetails.anInt132, 9, PlayerLoginDetails.anInt132 + 128, var0 + 7);
+		Raster.setDrawRegion(PlayerLoginDetails.anInt132, 9, PlayerLoginDetails.anInt132 + 128, var0 + 7);
 		Class56.aSprite542.method958(PlayerLoginDetails.anInt132, 0);
-		RSGraphics.noClip();
+		Raster.noClip();
 		var1 = 0;
 		int var2 = IndexTable.imageProducer.width * 9 + PlayerLoginDetails.anInt132;
 
@@ -162,9 +162,9 @@ public class Class13 {
 			var2 += IndexTable.imageProducer.width + var4 - 128;
 		}
 
-		RSGraphics.setDrawRegion(PlayerLoginDetails.anInt132 + 765 - 128, 9, PlayerLoginDetails.anInt132 + 765, var0 + 7);
+		Raster.setDrawRegion(PlayerLoginDetails.anInt132 + 765 - 128, 9, PlayerLoginDetails.anInt132 + 765, var0 + 7);
 		PlayerLoginDetails.aSprite137.method958(PlayerLoginDetails.anInt132 + 382, 0);
-		RSGraphics.noClip();
+		Raster.noClip();
 		var1 = 0;
 		var2 = IndexTable.imageProducer.width * 9 + 661 + PlayerLoginDetails.anInt132;
 
@@ -222,9 +222,9 @@ public class Class13 {
 				var12 = var8 * 512 * var3 / (var15 * 334);
 				var6 = (var2 - var12) / 2;
 				if (var4) {
-					RSGraphics.noClip();
-					RSGraphics.method793(var0, var1, var6, var3, -16777216);
-					RSGraphics.method793(var0 + var2 - var6, var1, var6, var3, -16777216);
+					Raster.noClip();
+					Raster.method793(var0, var1, var6, var3, -16777216);
+					Raster.method793(var0 + var2 - var6, var1, var6, var3, -16777216);
 				}
 
 				var0 += var6;
@@ -238,9 +238,9 @@ public class Class13 {
 				var12 = var2 * var15 * 334 / (var8 * 512);
 				var6 = (var3 - var12) / 2;
 				if (var4) {
-					RSGraphics.noClip();
-					RSGraphics.method793(var0, var1, var2, var6, -16777216);
-					RSGraphics.method793(var0, var3 + var1 - var6, var2, var6, -16777216);
+					Raster.noClip();
+					Raster.method793(var0, var1, var2, var6, -16777216);
+					Raster.method793(var0, var3 + var1 - var6, var2, var6, -16777216);
 				}
 
 				var1 += var6;
@@ -256,7 +256,7 @@ public class Class13 {
 			for (int var9 = 0; var9 < 9; var9++) {
 				int var13 = var9 * 32 + 128 + 15;
 				int var11 = var13 * 3 + 600;
-				int var10 = TexturedGraphic.SIN_TABLE[var13];
+				int var10 = Graphics3D.SIN_TABLE[var13];
 				var14[var9] = var10 * var11 >> 16;
 			}
 

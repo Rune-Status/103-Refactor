@@ -9,7 +9,7 @@ public class AbstractSoundSystem {
 	public static int sampleRate;
 	int anInt165;
 	public static boolean highMemory;
-	public static int anInt172;
+	public static int priority;
 	int anInt158 = 32;
 	Node_Sub4[] aNode_Sub4Array159 = new Node_Sub4[8];
 	long aLong162 = 0L;
@@ -21,10 +21,10 @@ public class AbstractSoundSystem {
 	int anInt171 = 0;
 	boolean aBool173 = true;
 	Node_Sub4[] aNode_Sub4Array175 = new Node_Sub4[8];
-	int anInt164;
+	int offset;
 	int anInt174;
-	int[] anIntArray160;
-	static Class19 aClass19_156;
+	int[] samples;
+	static SoundTask task;
 	Node_Sub4 aNode_Sub4_161;
 
 	void flush() throws Exception {
@@ -62,7 +62,7 @@ public class AbstractSoundSystem {
 	}
 
 	public final synchronized void method82() {
-		if (this.anIntArray160 != null) {
+		if (this.samples != null) {
 			long var1 = AnimationSkin.currentTimeMs();
 
 			try {
@@ -71,7 +71,7 @@ public class AbstractSoundSystem {
 						return;
 					}
 
-					this.create(this.anInt164);
+					this.create(this.offset);
 					this.aLong167 = 0L;
 					this.aBool173 = true;
 				}
@@ -86,24 +86,24 @@ public class AbstractSoundSystem {
 					var4 = 16128;
 				}
 
-				if (var4 + 256 > this.anInt164) {
-					this.anInt164 += 1024;
-					if (this.anInt164 > 16384) {
-						this.anInt164 = 16384;
+				if (var4 + 256 > this.offset) {
+					this.offset += 1024;
+					if (this.offset > 16384) {
+						this.offset = 16384;
 					}
 
 					this.close();
-					this.create(this.anInt164);
+					this.create(this.offset);
 					var5 = 0;
 					this.aBool173 = true;
-					if (var4 + 256 > this.anInt164) {
-						var4 = this.anInt164 - 256;
+					if (var4 + 256 > this.offset) {
+						var4 = this.offset - 256;
 						this.anInt174 = var4 - this.anInt165;
 					}
 				}
 
 				while (var5 < var4) {
-					this.method94(this.anIntArray160, 256);
+					this.method94(this.samples, 256);
 					this.write();
 					var5 += 256;
 				}
@@ -161,32 +161,32 @@ public class AbstractSoundSystem {
 	}
 
 	public final synchronized void method84() {
-		if (aClass19_156 != null) {
+		if (task != null) {
 			boolean var2 = true;
 
 			for (int var1 = 0; var1 < 2; var1++) {
-				if (aClass19_156.aClass8Array264[var1] == this) {
-					aClass19_156.aClass8Array264[var1] = null;
+				if (task.systems[var1] == this) {
+					task.systems[var1] = null;
 				}
 
-				if (aClass19_156.aClass8Array264[var1] != null) {
+				if (task.systems[var1] != null) {
 					var2 = false;
 				}
 			}
 
 			if (var2) {
-				aClass19_156.aBool265 = true;
+				task.shutdown = true;
 
-				while (aClass19_156.aBool266) {
+				while (task.running) {
 					Class96_Sub1.sleep(50L);
 				}
 
-				aClass19_156 = null;
+				task = null;
 			}
 		}
 
 		this.close();
-		this.anIntArray160 = null;
+		this.samples = null;
 	}
 
 	final void method85(int var1) {
@@ -221,7 +221,7 @@ public class AbstractSoundSystem {
 	}
 
 	int size() throws Exception {
-		return this.anInt164;
+		return this.offset;
 	}
 
 	void write() throws Exception {
@@ -244,7 +244,7 @@ public class AbstractSoundSystem {
 			var3 = var2 << 1;
 		}
 
-		Class45.method232(var1, 0, var3);
+		SampleFill.fill(var1, 0, var3);
 		this.anInt171 -= var2;
 		if (this.aNode_Sub4_161 != null && this.anInt171 <= 0) {
 			this.anInt171 += sampleRate >> 4;
@@ -378,7 +378,7 @@ public class AbstractSoundSystem {
 		Client.spellSelected = true;
 		SequenceType.anInt1488 = var0;
 		Client.anInt2128 = var1;
-		Class31.currentSpellTargets = var2;
+		TileUnderlay.currentSpellTargets = var2;
 		Class68.method326(var4);
 	}
 

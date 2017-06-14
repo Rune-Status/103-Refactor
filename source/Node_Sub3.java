@@ -84,7 +84,7 @@ public class Node_Sub3 extends Node {
 			}
 
 			int[] var181 = new int[var1];
-			int var12 = DualNode_Sub8.ilog(var1 - 1);
+			int var12 = ChatMessage.ilog(var1 - 1);
 
 			for (int var8 = 0; var8 < var1; var8++) {
 				int var5 = var8;
@@ -298,7 +298,7 @@ public class Node_Sub3 extends Node {
 	float[] method523(int var1) {
 		setBytes(this.aByteArrayArray1255[var1], 0);
 		getBit();
-		int modeNumber = getInt(DualNode_Sub8.ilog(modeMappings.length - 1));
+		int modeNumber = getInt(ChatMessage.ilog(modeMappings.length - 1));
 		boolean blockFlag = modeBlockFlags[modeNumber];
 		int n = blockFlag ? blockSize1 : blockSize0;
 		boolean prevWindowFlag = false;
@@ -408,7 +408,7 @@ public class Node_Sub3 extends Node {
 				var52[var16 * 4 + 1] = (var5 - var3) * var6 + (var17 - var2) * var4;
 			}
 
-			var16 = DualNode_Sub8.ilog(n - 1);
+			var16 = ChatMessage.ilog(n - 1);
 
 			int var40;
 			int var41;

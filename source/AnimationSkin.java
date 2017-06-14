@@ -66,17 +66,17 @@ public class AnimationSkin extends Node {
 				}
 
 				if (!Client.resizable) {
-					Class34.gameWidth = Client.anInt2233;
+					Occluder.gameWidth = Client.anInt2233;
 					Node_Sub9.gameHeight = Client.anInt2181 * 674167779;
 				} else {
-					Class34.gameWidth = Math.min(VarClientStringType.anInt1505, 7680);
+					Occluder.gameWidth = Math.min(VarClientStringType.anInt1505, 7680);
 					Node_Sub9.gameHeight = Math.min(Class21.anInt281, 2160);
 				}
 
-				Client.anInt1983 = (VarClientStringType.anInt1505 - Class34.gameWidth) / 2;
+				Client.anInt1983 = (VarClientStringType.anInt1505 - Occluder.gameWidth) / 2;
 				Client.anInt1978 = 0;
-				LandscapeTile.gameCanvas.setSize(Class34.gameWidth, Node_Sub9.gameHeight);
-				int var31 = Class34.gameWidth;
+				LandscapeTile.gameCanvas.setSize(Occluder.gameWidth, Node_Sub9.gameHeight);
+				int var31 = Occluder.gameWidth;
 				int var4 = Node_Sub9.gameHeight;
 				Canvas var5 = LandscapeTile.gameCanvas;
 
@@ -96,7 +96,7 @@ public class AnimationSkin extends Node {
 					LandscapeTile.gameCanvas.setLocation(Client.anInt1983, Client.anInt1978);
 				}
 
-				int var171 = Class34.gameWidth;
+				int var171 = Occluder.gameWidth;
 				int var18 = Node_Sub9.gameHeight;
 				if (VarClientStringType.anInt1505 < var171) {
 					var171 = VarClientStringType.anInt1505;
@@ -149,15 +149,15 @@ public class AnimationSkin extends Node {
 
 	}
 
-	public static int method535(CharSequence var0, int var1, boolean var2) {
+	public static int getInt(CharSequence chars, int var1, boolean var2) {
 		if (var1 >= 2 && var1 <= 36) {
 			boolean var8 = false;
 			boolean var4 = false;
 			int var6 = 0;
-			int var3 = var0.length();
+			int var3 = chars.length();
 
 			for (int var7 = 0; var7 < var3; var7++) {
-				char var5 = var0.charAt(var7);
+				char var5 = chars.charAt(var7);
 				if (var7 == 0) {
 					if (var5 == 45) {
 						var8 = true;

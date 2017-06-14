@@ -55,8 +55,8 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 	public final void focusGained(FocusEvent var1) {
 	}
 
-	static DualNode_Sub8 method332(int var0) {
-		return (DualNode_Sub8) Class32.aClass107_355.method432((long) var0);
+	static ChatMessage method332(int var0) {
+		return (ChatMessage) Class32.aClass107_355.method432((long) var0);
 	}
 
 	public final synchronized void mousePressed(MouseEvent var1) {
@@ -118,15 +118,15 @@ public class MouseInput implements MouseListener, MouseMotionListener, FocusList
 	}
 
 	static final void flush(boolean force) {
-		Class34.method201();
+		Occluder.method201();
 		++Client.flushCount;
 		if (Client.flushCount >= 50 || force) {
 			Client.flushCount = 0;
-			if (!Client.socketError && Class31.gameConnection != null) {
+			if (!Client.socketError && TileUnderlay.gameConnection != null) {
 				Client.outBuffer.putHeader(126);
 
 				try {
-					Class31.gameConnection.write(Client.outBuffer.payload, 0, Client.outBuffer.position);
+					TileUnderlay.gameConnection.write(Client.outBuffer.payload, 0, Client.outBuffer.position);
 					Client.outBuffer.position = 0;
 				} catch (IOException var2) {
 					Client.socketError = true;

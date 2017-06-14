@@ -47,18 +47,18 @@ public class Class86 {
 
 	}
 
-	static final int method366(int var0, int var1) {
-		if (var0 == -1) {
+	static final int adjustHSLLightness1(int color, int lightness) {
+		if (color == -1) {
 			return 12345678;
 		} else {
-			var1 = (var0 & 0x7f) * var1 / 128;
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
+			lightness = (color & 0x7f) * lightness / 128;
+			if (lightness < 2) {
+				lightness = 2;
+			} else if (lightness > 126) {
+				lightness = 126;
 			}
 
-			return (var0 & 0xff80) + var1;
+			return (color & 0xff80) + lightness;
 		}
 	}
 
@@ -66,10 +66,10 @@ public class Class86 {
 		throw new Error();
 	}
 
-	static void method367(DualNode_Sub13_Sub3_Sub1 var0, DualNode_Sub13_Sub3_Sub1 var1, DualNode_Sub13_Sub3_Sub1 var2,
+	static void method367(IndexedFont var0, IndexedFont var1, IndexedFont var2,
 			boolean var3) {
 		if (var3) {
-			PlayerLoginDetails.anInt132 = (Class34.gameWidth - Client.anInt2233) / 2;
+			PlayerLoginDetails.anInt132 = (Occluder.gameWidth - Client.anInt2233) / 2;
 			PlayerLoginDetails.anInt126 = PlayerLoginDetails.anInt132 + 202;
 		}
 
@@ -101,9 +101,9 @@ public class Class86 {
 						"");
 			}
 
-			RSGraphics.method793(PlayerLoginDetails.anInt132, 23, 765, 480, 0);
-			RSGraphics.method786(PlayerLoginDetails.anInt132, 0, 125, 23, 12425273, 9135624);
-			RSGraphics.method786(PlayerLoginDetails.anInt132 + 125, 0, 640, 23, 5197647, 2697513);
+			Raster.method793(PlayerLoginDetails.anInt132, 23, 765, 480, 0);
+			Raster.method786(PlayerLoginDetails.anInt132, 0, 125, 23, 12425273, 9135624);
+			Raster.method786(PlayerLoginDetails.anInt132 + 125, 0, 640, 23, 5197647, 2697513);
 			var0.method982("Select a world", PlayerLoginDetails.anInt132 + 62, 15, 0, -1);
 			if (Node_Sub8.aDualNode_Sub13_Sub2Array1314 != null) {
 				Node_Sub8.aDualNode_Sub13_Sub2Array1314[1].method929(PlayerLoginDetails.anInt132 + 140, 1);
@@ -172,7 +172,7 @@ public class Class86 {
 				var0.method980("Type", var7 + 32, 17, 16777215, -1);
 			}
 
-			RSGraphics.method793(PlayerLoginDetails.anInt132 + 708, 4, 50, 16, 0);
+			Raster.method793(PlayerLoginDetails.anInt132 + 708, 4, 50, 16, 0);
 			var1.method982("Cancel", PlayerLoginDetails.anInt132 + 25 + 708, 16, 16777215, -1);
 			var28 = 0;
 			var5 = 33554432;
@@ -290,13 +290,13 @@ public class Class86 {
 
 						if (var29) {
 							var26 = var1.method967(World.worlds[PlayerLoginDetails.anInt144].activity) + 6;
-							int var391 = var1.anInt1824 + 8;
-							RSGraphics.method793(MouseInput.anInt621 - var26 / 2, MouseInput.anInt622 + 5 + 20, var26, var391,
+							int var391 = var1.verticalSpace + 8;
+							Raster.method793(MouseInput.anInt621 - var26 / 2, MouseInput.anInt622 + 5 + 20, var26, var391,
 									16777120);
-							RSGraphics.drawRectangle(MouseInput.anInt621 - var26 / 2, MouseInput.anInt622 + 20 + 5, var26,
+							Raster.drawRectangle(MouseInput.anInt621 - var26 / 2, MouseInput.anInt622 + 20 + 5, var26,
 									var391, 0);
 							var1.method982(World.worlds[PlayerLoginDetails.anInt144].activity, MouseInput.anInt621,
-									MouseInput.anInt622 + 25 + var1.anInt1824 + 4, 0, -1);
+									MouseInput.anInt622 + 25 + var1.verticalSpace + 4, 0, -1);
 						}
 						break;
 					}
@@ -321,10 +321,10 @@ public class Class86 {
 				var0.method982("RuneScape is loading - please wait...", PlayerLoginDetails.anInt126 + 180, 245 - var281, 16777215,
 						-1);
 				var5 = 253 - var281;
-				RSGraphics.drawRectangle(PlayerLoginDetails.anInt126 + 180 - 152, var5, 304, 34, 9179409);
-				RSGraphics.drawRectangle(PlayerLoginDetails.anInt126 + 180 - 151, var5 + 1, 302, 32, 0);
-				RSGraphics.method793(PlayerLoginDetails.anInt126 + 180 - 150, var5 + 2, PlayerLoginDetails.loadingPercentage * 3, 30, 9179409);
-				RSGraphics.method793(PlayerLoginDetails.loadingPercentage * 3 + (PlayerLoginDetails.anInt126 + 180 - 150), var5 + 2,
+				Raster.drawRectangle(PlayerLoginDetails.anInt126 + 180 - 152, var5, 304, 34, 9179409);
+				Raster.drawRectangle(PlayerLoginDetails.anInt126 + 180 - 151, var5 + 1, 302, 32, 0);
+				Raster.method793(PlayerLoginDetails.anInt126 + 180 - 150, var5 + 2, PlayerLoginDetails.loadingPercentage * 3, 30, 9179409);
+				Raster.method793(PlayerLoginDetails.loadingPercentage * 3 + (PlayerLoginDetails.anInt126 + 180 - 150), var5 + 2,
 						300 - PlayerLoginDetails.loadingPercentage * 3, 30, 0);
 				var0.method982(PlayerLoginDetails.bootMessage, PlayerLoginDetails.anInt126 + 180, 276 - var281, 16777215, -1);
 			}
@@ -356,7 +356,7 @@ public class Class86 {
 						;
 					}
 
-					var0.method980(DualNode_Sub13_Sub3.appendTags(var291), PlayerLoginDetails.anInt126 + 180 - 70, var28, 16777215,
+					var0.method980(AbstractFont.appendTags(var291), PlayerLoginDetails.anInt126 + 180 - 70, var28, 16777215,
 							0);
 					var28 += 15;
 					var321 = "Password: ";
@@ -423,7 +423,7 @@ public class Class86 {
 						}
 
 						var0.method980(
-								DualNode_Sub13_Sub3.appendTags(var291)
+								AbstractFont.appendTags(var291)
 										+ (PlayerLoginDetails.anInt115 == 0 & Client.engineCycle % 40 < 20
 												? Class48_Sub1.method545(16776960) + Class35.aString388 : ""),
 								PlayerLoginDetails.anInt126 + 180 - 70, var28, 16777215, 0);
@@ -483,8 +483,8 @@ public class Class86 {
 						var28 += 15;
 						var0.method980("for 30 days: ", PlayerLoginDetails.anInt126 + 180 - 9, var28, 16776960, 0);
 						var36 = PlayerLoginDetails.anInt126 + 180 - 9 + var0.method967("for 30 days: ") + 15;
-						var39 = var28 - var0.anInt1824;
-						Sprite var45;
+						var39 = var28 - var0.verticalSpace;
+						IndexedSprite var45;
 						if (PlayerLoginDetails.trust) {
 							var45 = PlayerLoginDetails.radioButtons2Sprite;
 						} else {
@@ -533,7 +533,7 @@ public class Class86 {
 						}
 
 						var0.method980(
-								DualNode_Sub13_Sub3.appendTags(var291) + (Client.engineCycle % 40 < 20
+								AbstractFont.appendTags(var291) + (Client.engineCycle % 40 < 20
 										? Class48_Sub1.method545(16776960) + Class35.aString388 : ""),
 								PlayerLoginDetails.anInt126 + 180 - 34, var28, 16777215, 0);
 						var28 += 15;

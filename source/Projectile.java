@@ -79,9 +79,9 @@ public final class Projectile extends Entity {
 		}
 	}
 
-	protected final Rasterizer method654(byte var1) {
+	protected final Model getModel(byte var1) {
 		SpotAnimType var2 = Class96_Sub1.getSpotAnimType(this.anInt1845);
-		Rasterizer var3 = var2.method656(this.anInt1857);
+		Model var3 = var2.method656(this.anInt1857);
 		if (var3 == null) {
 			return null;
 		} else {

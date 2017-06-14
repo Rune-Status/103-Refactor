@@ -1,4 +1,4 @@
-public class DualNode_Sub8 extends DualNode {
+public class ChatMessage extends DualNode {
 
 	int anInt1516 = VarPlayerType.method724();
 	int anInt1517;
@@ -16,7 +16,7 @@ public class DualNode_Sub8 extends DualNode {
 		this.aString1520 = var4;
 	}
 
-	DualNode_Sub8(int var1, String var2, String var3, String var4) {
+	ChatMessage(int var1, String var2, String var3, String var4) {
 		this.anInt1517 = Client.engineCycle;
 		this.anInt1518 = var1;
 		this.aString1521 = var2;

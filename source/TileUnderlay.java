@@ -1,17 +1,17 @@
-public final class Class31 {
+public final class TileUnderlay {
 
 	static int currentSpellTargets;
 	protected static String aString349;
-	public static DualNode_Sub13_Sub3_Sub1 aDualNode_Sub13_Sub3_Sub1_350;
+	public static IndexedFont aDualNode_Sub13_Sub3_Sub1_350;
 	static Connection gameConnection;
 	static int anInt352;
-	boolean aBool343 = true;
-	int anInt347;
-	int anInt353;
-	int anInt344;
-	int anInt345;
-	int anInt346;
-	int anInt348;
+	boolean flat = true;
+	int swColor;
+	int seColor;
+	int neColor;
+	int nwColor;
+	int tectureId;
+	int rgb;
 
 	public static void method190(AbstractIndex var0) {
 		Class112.inv_ref = var0;
@@ -68,14 +68,14 @@ public final class Class31 {
 		}
 	}
 
-	Class31(int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
-		this.anInt347 = var1;
-		this.anInt353 = var2;
-		this.anInt344 = var3;
-		this.anInt345 = var4;
-		this.anInt346 = var5;
-		this.anInt348 = var6;
-		this.aBool343 = var7;
+	TileUnderlay(int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
+		this.swColor = var1;
+		this.seColor = var2;
+		this.neColor = var3;
+		this.nwColor = var4;
+		this.tectureId = var5;
+		this.rgb = var6;
+		this.flat = var7;
 	}
 
 }

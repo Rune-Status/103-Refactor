@@ -28,23 +28,23 @@ public class Class81 {
 			logout();
 		} else {
 			Node_Sub8.setClientState(40);
-			Class35.aClass60_394 = Class31.gameConnection;
-			Class31.gameConnection = null;
+			Class35.aClass60_394 = TileUnderlay.gameConnection;
+			TileUnderlay.gameConnection = null;
 		}
 
 	}
 
 	static final void logout() {
-		if (Class31.gameConnection != null) {
-			Class31.gameConnection.shutdown();
-			Class31.gameConnection = null;
+		if (TileUnderlay.gameConnection != null) {
+			TileUnderlay.gameConnection.shutdown();
+			TileUnderlay.gameConnection = null;
 		}
 
 		Timer.method325();
-		InterfaceNode.landscape.method15();
+		InterfaceNode.landscape.reset();
 
 		for (int var1 = 0; var1 < 4; var1++) {
-			Client.collisionMaps[var1].method244();
+			Client.collisionMaps[var1].reset();
 		}
 
 		System.gc();
@@ -65,7 +65,7 @@ public class Class81 {
 			}
 		}
 
-		Node_Sub6.aDeque1279.method467();
+		Node_Sub6.aDeque1279.clear();
 		Node_Sub8.setClientState(10);
 	}
 

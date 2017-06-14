@@ -71,7 +71,7 @@ public class ClientSettings {
 					ScriptEvent var1 = new ScriptEvent();
 					var1.widget = var2;
 					var1.args = var2.anObjectArray1170;
-					Actions.execute(var1, 2000000);
+					ScriptExecutor.execute(var1, 2000000);
 				}
 			}
 		}
@@ -98,11 +98,11 @@ public class ClientSettings {
 
 	}
 
-	public static DualNode_Sub13_Sub3_Sub1 method163(AbstractIndex sprites, AbstractIndex fonts, String fontName,
+	public static IndexedFont method163(AbstractIndex sprites, AbstractIndex fonts, String fontName,
 			String childName) {
 		int fileId = sprites.getFile(fontName);
 		int childId = sprites.getChild(fileId, childName);
-		DualNode_Sub13_Sub3_Sub1 var5;
+		IndexedFont var5;
 		if (!Class35.decodeSprite(sprites, fileId, childId)) {
 			var5 = null;
 		} else {

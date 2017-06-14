@@ -50,7 +50,7 @@ public abstract class Character extends Entity {
 	int anInt1942 = 0;
 	int[] anIntArray1945 = new int[10];
 	int anInt1949 = 0;
-	int height = 200;
+	int charHeight = 200;
 	byte[] aByteArray1951 = new byte[10];
 	int anInt1952 = -1;
 	int orientation = -572100192;
@@ -107,20 +107,20 @@ public abstract class Character extends Entity {
 		return var71;
 	}
 
-	static final int calculateTileHeight(int var0, int var1) {
-		int var2 = Widget.method494(var0 + '\ub135', var1 + 91923, 4) - 128
-				+ (Widget.method494(var0 + 10294, var1 + '\u93bd', 2) - 128 >> 1)
-				+ (Widget.method494(var0, var1, 1) - 128 >> 2);
-		var2 = (int) ((double) var2 * 0.3D) + 35;
-		if (var2 >= 10) {
-			if (var2 > 60) {
-				var2 = 60;
+	static final int getPerlinNoise(int x, int y) {
+		int v = Widget.getSmoothNoise(x + '\ub135', y + 91923, 4) - 128
+				+ (Widget.getSmoothNoise(x + 10294, y + '\u93bd', 2) - 128 >> 1)
+				+ (Widget.getSmoothNoise(x, y, 1) - 128 >> 2);
+		v = (int) ((double) v * 0.3D) + 35;
+		if (v >= 10) {
+			if (v > 60) {
+				v = 60;
 			}
 		} else {
-			var2 = 10;
+			v = 10;
 		}
 
-		return var2;
+		return v;
 	}
 
 	public static int method1021(int var0, int var1, int var2, int var3, int var4, int var5) {

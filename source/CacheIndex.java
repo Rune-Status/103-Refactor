@@ -40,7 +40,7 @@ public class CacheIndex extends AbstractIndex {
 		long var4 = (long) ((var3 << 16) + var1);
 		FileRequest var6 = (FileRequest) Class81.aNodeTable673.get(var4);
 		if (var6 != null) {
-			Class81.aNodeQueue_672.method422(var6);
+			Class81.aNodeQueue_672.setHead(var6);
 		}
 
 	}
@@ -49,7 +49,7 @@ public class CacheIndex extends AbstractIndex {
 		if (this.aClass62_1334 != null && this.aBoolArray1326 != null && this.aBoolArray1326[var1]) {
 			Class59.method292(var1, this.aClass62_1334, this);
 		} else {
-			Class39.method221(this, this.anInt1325, var1, this.anIntArray698[var1], (byte) 2, true);
+			Scene.method221(this, this.anInt1325, var1, this.crcs[var1], (byte) 2, true);
 		}
 
 	}
@@ -70,7 +70,7 @@ public class CacheIndex extends AbstractIndex {
 				var19.aClass62_1336 = var18;
 				Deque var20 = Class90.aDeque718;
 				synchronized (var20) {
-					Class90.aDeque718.add(var19);
+					Class90.aDeque718.addFront(var19);
 				}
 
 				Object var21 = Class90.anObject720;
@@ -86,8 +86,8 @@ public class CacheIndex extends AbstractIndex {
 			this.method376(var2);
 			this.method558();
 		} else {
-			var2[var2.length - 2] = (byte) (this.anIntArray707[var1] >> 8);
-			var2[var2.length - 1] = (byte) this.anIntArray707[var1];
+			var2[var2.length - 2] = (byte) (this.versions[var1] >> 8);
+			var2[var2.length - 1] = (byte) this.versions[var1];
 			if (this.aClass62_1334 != null) {
 				IndexTable var171 = this.aClass62_1334;
 				Node_Sub9 var181 = new Node_Sub9();
@@ -97,7 +97,7 @@ public class CacheIndex extends AbstractIndex {
 				var181.aClass62_1336 = var171;
 				Deque var191 = Class90.aDeque718;
 				synchronized (var191) {
-					Class90.aDeque718.add(var181);
+					Class90.aDeque718.addFront(var181);
 				}
 
 				Object var201 = Class90.anObject720;
@@ -133,7 +133,7 @@ public class CacheIndex extends AbstractIndex {
 			this.anInt1335 = -1;
 
 			for (var1 = 0; var1 < this.aBoolArray1326.length; var1++) {
-				if (this.anIntArray702[var1] > 0) {
+				if (this.childSizes[var1] > 0) {
 					IndexTable var2 = this.aClass62_1334;
 					Node_Sub9 var4 = new Node_Sub9();
 					var4.anInt1338 = 1;
@@ -142,7 +142,7 @@ public class CacheIndex extends AbstractIndex {
 					var4.aClass87_Sub1_1337 = this;
 					Deque var5 = Class90.aDeque718;
 					synchronized (var5) {
-						Class90.aDeque718.add(var4);
+						Class90.aDeque718.addFront(var4);
 					}
 
 					Object var10 = Class90.anObject720;
@@ -171,7 +171,7 @@ public class CacheIndex extends AbstractIndex {
 
 		int var2;
 		for (var2 = 0; var2 < this.anObjectArray704.length; var2++) {
-			if (this.anIntArray702[var2] > 0) {
+			if (this.childSizes[var2] > 0) {
 				var1 += 100;
 				var3 += this.method562(var2);
 			}
@@ -198,7 +198,7 @@ public class CacheIndex extends AbstractIndex {
 			int var10 = Class93.aBuffer731.getInt();
 			this.setInformation(var9, var10);
 		} else {
-			Class39.method221((CacheIndex) null, 255, 255, 0, (byte) 0, true);
+			Scene.method221((CacheIndex) null, 255, 255, 0, (byte) 0, true);
 			Class81.aClass87_Sub1Array681[var7] = this;
 		}
 
@@ -226,7 +226,7 @@ public class CacheIndex extends AbstractIndex {
 			if (this.aBool1330) {
 				throw new RuntimeException();
 			} else if (var3 == null) {
-				Class39.method221(this, 255, this.anInt1325, this.crcValue, (byte) 0, true);
+				Scene.method221(this, 255, this.anInt1325, this.crcValue, (byte) 0, true);
 			} else {
 				crc32.reset();
 				crc32.update(var3, 0, var3.length);
@@ -242,7 +242,7 @@ public class CacheIndex extends AbstractIndex {
 					}
 
 					if (this.crcValue != var6 || this.anInt1332 != var8) {
-						Class39.method221(this, 255, this.anInt1325, this.crcValue, (byte) 0, true);
+						Scene.method221(this, 255, this.anInt1325, this.crcValue, (byte) 0, true);
 					} else {
 						this.method376(var3);
 						this.method558();
@@ -259,7 +259,7 @@ public class CacheIndex extends AbstractIndex {
 				crc32.update(var3, 0, var3.length - 2);
 				var6 = (int) crc32.getValue();
 				int var9 = ((var3[var3.length - 2] & 0xff) << 8) + (var3[var3.length - 1] & 0xff);
-				if (this.anIntArray698[var2] == var6 && this.anIntArray707[var2] == var9) {
+				if (this.crcs[var2] == var6 && this.versions[var2] == var9) {
 					this.aBoolArray1326[var2] = true;
 					if (var4) {
 						this.anObjectArray704[var2] = Node_Sub6.method538(var3, false);
@@ -268,14 +268,14 @@ public class CacheIndex extends AbstractIndex {
 				} else {
 					this.aBoolArray1326[var2] = false;
 					if (this.aBool1327 || var4) {
-						Class39.method221(this, this.anInt1325, var2, this.anIntArray698[var2], (byte) 2, var4);
+						Scene.method221(this, this.anInt1325, var2, this.crcs[var2], (byte) 2, var4);
 					}
 
 				}
 			} else {
 				this.aBoolArray1326[var2] = false;
 				if (this.aBool1327 || var4) {
-					Class39.method221(this, this.anInt1325, var2, this.anIntArray698[var2], (byte) 2, var4);
+					Scene.method221(this, this.anInt1325, var2, this.crcs[var2], (byte) 2, var4);
 				}
 
 			}
@@ -288,7 +288,7 @@ public class CacheIndex extends AbstractIndex {
 		if (this.aClass62_1324 != null) {
 			Class59.method292(this.anInt1325, this.aClass62_1324, this);
 		} else {
-			Class39.method221(this, 255, this.anInt1325, this.crcValue, (byte) 0, true);
+			Scene.method221(this, 255, this.anInt1325, this.crcValue, (byte) 0, true);
 		}
 
 	}

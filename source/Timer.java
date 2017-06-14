@@ -87,7 +87,7 @@ public abstract class Timer {
 			int var10 = buf.position;
 			if (var2.name != null && var2.config != null) {
 				boolean var11 = false;
-				if (var21.aBool615 && World.method485(var2.name)) {
+				if (var21.aBool615 && World.isIgnored(var2.name)) {
 					var11 = true;
 				}
 
@@ -113,7 +113,7 @@ public abstract class Timer {
 						var16 = "Cabbage";
 					}
 
-					var16 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var16));
+					var16 = AbstractFont.appendTags(Class48.method246(var16));
 					var2.overheadText = var16.trim();
 					var2.anInt1942 = var5 >> 8;
 					var2.anInt1926 = var5 & 0xff;
@@ -225,7 +225,7 @@ public abstract class Timer {
 		Class50.method251();
 		ObjectType.objects.method429();
 		ObjectType.aClass106_1684.method429();
-		ObjectType.aClass106_1693.method429();
+		ObjectType.cachedModels.method429();
 		ObjectType.aClass106_1686.method429();
 		NpcType.npcs.method429();
 		NpcType.aClass106_1578.method429();
@@ -239,9 +239,9 @@ public abstract class Timer {
 		VarPlayerType.method727();
 		Class91.method398();
 		Class36.method206();
-		((TextureLoader) TexturedGraphic.textureLoader).reset();
+		((TextureLoader) Graphics3D.textureLoader).reset();
 		RuneScript.aClass106_1725.method429();
-		Class34.skeletonsIndex.reset();
+		Occluder.skeletonsIndex.reset();
 		Client.meshesIndex.reset();
 		RuneScript.interfaceIndex.reset();
 		VarClientType.sfxIndex.reset();

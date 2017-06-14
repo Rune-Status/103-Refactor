@@ -39,18 +39,18 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			var1.remove(LandscapeTile.gameCanvas);
 		}
 
-		Class34.gameWidth = Math.max(var1.getWidth(), CacheFileAccessor.anInt836 * 2055757083);
+		Occluder.gameWidth = Math.max(var1.getWidth(), CacheFileAccessor.anInt836 * 2055757083);
 		Node_Sub9.gameHeight = Math.max(var1.getHeight(), ClanMate.anInt1222 * -1066486805);
 		Insets var2;
 		if (VarClientType.gameFrame != null) {
 			var2 = VarClientType.gameFrame.getInsets();
-			Class34.gameWidth -= var2.left + var2.right;
+			Occluder.gameWidth -= var2.left + var2.right;
 			Node_Sub9.gameHeight -= var2.bottom + var2.top;
 		}
 
 		LandscapeTile.gameCanvas = new GameCanvas(this);
 		var1.add(LandscapeTile.gameCanvas);
-		LandscapeTile.gameCanvas.setSize(Class34.gameWidth, Node_Sub9.gameHeight);
+		LandscapeTile.gameCanvas.setSize(Occluder.gameWidth, Node_Sub9.gameHeight);
 		LandscapeTile.gameCanvas.setVisible(true);
 		if (VarClientType.gameFrame == var1) {
 			var2 = VarClientType.gameFrame.getInsets();
@@ -62,7 +62,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 		LandscapeTile.gameCanvas.addFocusListener(this);
 		LandscapeTile.gameCanvas.requestFocus();
 		aBool1979 = true;
-		int width = Class34.gameWidth;
+		int width = Occluder.gameWidth;
 		int height = Node_Sub9.gameHeight;
 		Canvas canvas = LandscapeTile.gameCanvas;
 
@@ -201,7 +201,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 						}
 
 						if (var11) {
-							int var161 = AnimationSkin.method535(var4, 10, true);
+							int var161 = AnimationSkin.getInt(var4, 10, true);
 							if (var161 < 10) {
 								this.error("wrongjava");
 								return;
@@ -387,7 +387,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			}
 
 			shell = this;
-			Class34.gameWidth = var1;
+			Occluder.gameWidth = var1;
 			Node_Sub9.gameHeight = var2;
 			CollisionMap.gameApplet = this;
 			if (IsaacRandom.taskManager == null) {
@@ -427,7 +427,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 		if (++anInt1980 - 1 > 50) {
 			anInt1980 -= 50;
 			aBool1979 = true;
-			LandscapeTile.gameCanvas.setSize(Class34.gameWidth, Node_Sub9.gameHeight);
+			LandscapeTile.gameCanvas.setSize(Occluder.gameWidth, Node_Sub9.gameHeight);
 			LandscapeTile.gameCanvas.setVisible(true);
 			if (VarClientType.gameFrame == var1) {
 				Insets var71 = VarClientType.gameFrame.getInsets();
@@ -453,7 +453,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			if (TaskManager.javaVersion != null && TaskManager.javaVersion.startsWith("1.5")
 					&& AnimationSkin.currentTimeMs() - aLong1984 > 1000L) {
 				Rectangle var2 = var1.getClipBounds();
-				if (var2 == null || var2.width >= Class34.gameWidth && var2.height >= Node_Sub9.gameHeight) {
+				if (var2 == null || var2.width >= Occluder.gameWidth && var2.height >= Node_Sub9.gameHeight) {
 					aBool1982 = true;
 				}
 			}
@@ -461,11 +461,11 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 
 	}
 
-	static Sprite[] method1040() {
-		Sprite[] var0 = new Sprite[Class7.size];
+	static IndexedSprite[] method1040() {
+		IndexedSprite[] var0 = new IndexedSprite[Class7.size];
 
 		for (int var2 = 0; var2 < Class7.size; var2++) {
-			Sprite var1 = var0[var2] = new Sprite();
+			IndexedSprite var1 = var0[var2] = new IndexedSprite();
 			var1.width = Class7.width;
 			var1.height = Class7.height;
 			var1.offsetX = Class7.offsetsX[var2];

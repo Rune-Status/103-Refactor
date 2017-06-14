@@ -1,27 +1,27 @@
 import java.util.Random;
 
-public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
+public abstract class AbstractFont extends Raster {
 
-	public static Sprite[] aDualNode_Sub13_Sub2Array1827;
+	public static IndexedSprite[] modSprites;
 	int[] anIntArray1826;
-	public int anInt1824 = 0;
+	public int verticalSpace = 0;
 	byte[] aByteArray1821;
-	static int anInt1835 = 256;
+	static int alpha = 256;
 	static int anInt1837 = 0;
-	byte[][] aByteArrayArray1819 = new byte[256][];
-	int[] anIntArray1822;
-	int[] anIntArray1823;
-	int[] anIntArray1820;
-	int[] anIntArray1832;
-	int anInt1825;
-	int anInt1838;
+	byte[][] gylphs = new byte[256][];
+	int[] horizontalOffsets;
+	int[] verticalOffsets;
+	int[] gylphHeights;
+	int[] glyphWidths;
+	int minSpacing;
+	int maxSpacing;
 	static int anInt1836 = 0;
-	static int anInt1829 = -1;
-	static int anInt1818 = -1;
-	static int anInt1831 = -1;
-	static int anInt1830 = -1;
-	static int anInt1833 = 0;
-	static int anInt1834 = 0;
+	static int strikeRGB = -1;
+	static int underlineRGB = -1;
+	static int prevShadeRGB = -1;
+	static int shadeRGB = -1;
+	static int prevColorRGB = 0;
+	static int colorRGB = 0;
 	static Random aRandom1828 = new Random();
 	static String[] aStringArray1839 = new String[100];
 
@@ -47,7 +47,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 				this.anIntArray1826[var3] = var1[var3] & 0xff;
 			}
 
-			this.anInt1824 = var1[256] & 0xff;
+			this.verticalSpace = var1[256] & 0xff;
 		} else {
 			var3 = 0;
 
@@ -106,7 +106,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 				}
 			}
 
-			this.anInt1824 = var9[32] + var121[32];
+			this.verticalSpace = var9[32] + var121[32];
 		}
 
 	}
@@ -115,7 +115,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 		if (var1 != null) {
 			this.method984(var4, var5);
 			aRandom1828.setSeed((long) var6);
-			anInt1835 = (aRandom1828.nextInt() & 0x1f) + 192;
+			alpha = (aRandom1828.nextInt() & 0x1f) + 192;
 			int[] var9 = new int[var1.length()];
 			int var8 = 0;
 
@@ -154,8 +154,8 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 								if (var7.startsWith("img=")) {
 									try {
 										String var8 = var7.substring(4);
-										int var9 = AnimationSkin.method535(var8, 10, true);
-										var4 += aDualNode_Sub13_Sub2Array1827[var9].width;
+										int var9 = AnimationSkin.getInt(var8, 10, true);
+										var4 += modSprites[var9].width;
 										var3 = -1;
 									} catch (Exception var10) {
 										;
@@ -237,8 +237,8 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 						} else if (var16.startsWith("img=")) {
 							try {
 								String var17 = var16.substring(4);
-								int var18 = AnimationSkin.method535(var17, 10, true);
-								var4 += aDualNode_Sub13_Sub2Array1827[var18].width;
+								int var18 = AnimationSkin.getInt(var17, 10, true);
+								var4 += modSprites[var18].width;
 								var11 = 0;
 							} catch (Exception var19) {
 								;
@@ -381,7 +381,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 	}
 
 	void method975(String var1, int var2, int var3) {
-		var3 -= this.anInt1824;
+		var3 -= this.verticalSpace;
 		int var4 = -1;
 		int var5 = -1;
 
@@ -402,16 +402,16 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 								if (var14.startsWith("img=")) {
 									try {
 										String var141 = var14.substring(4);
-										var10 = AnimationSkin.method535(var141, 10, true);
-										Sprite var12 = aDualNode_Sub13_Sub2Array1827[var10];
-										var12.method929(var2, this.anInt1824 + var3 - var12.height);
+										var10 = AnimationSkin.getInt(var141, 10, true);
+										IndexedSprite var12 = modSprites[var10];
+										var12.method929(var2, this.verticalSpace + var3 - var12.height);
 										var2 += var12.width;
 										var5 = -1;
 									} catch (Exception var121) {
 										;
 									}
 								} else {
-									this.method985(var14);
+									this.setRGB(var14);
 								}
 								continue;
 							}
@@ -429,25 +429,25 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 							var2 += this.aByteArray1821[(var5 << 8) + var7];
 						}
 
-						int var13 = this.anIntArray1820[var7];
-						var10 = this.anIntArray1832[var7];
+						int var13 = this.gylphHeights[var7];
+						var10 = this.glyphWidths[var7];
 						if (var7 != 32) {
-							if (anInt1835 == 256) {
-								if (anInt1830 != -1) {
-									method977(this.aByteArrayArray1819[var7], this.anIntArray1822[var7] + var2 + 1,
-											this.anIntArray1823[var7] + var3 + 1, var13, var10, anInt1830);
+							if (alpha == 256) {
+								if (shadeRGB != -1) {
+									renderShadeRGB(this.gylphs[var7], this.horizontalOffsets[var7] + var2 + 1,
+											this.verticalOffsets[var7] + var3 + 1, var13, var10, shadeRGB);
 								}
 
-								this.method989(this.aByteArrayArray1819[var7], this.anIntArray1822[var7] + var2,
-										this.anIntArray1823[var7] + var3, var13, var10, anInt1834);
+								this.renderRGB(this.gylphs[var7], this.horizontalOffsets[var7] + var2,
+										this.verticalOffsets[var7] + var3, var13, var10, colorRGB);
 							} else {
-								if (anInt1830 != -1) {
-									method978(this.aByteArrayArray1819[var7], this.anIntArray1822[var7] + var2 + 1,
-											this.anIntArray1823[var7] + var3 + 1, var13, var10, anInt1830, anInt1835);
+								if (shadeRGB != -1) {
+									renderShadeRGBA(this.gylphs[var7], this.horizontalOffsets[var7] + var2 + 1,
+											this.verticalOffsets[var7] + var3 + 1, var13, var10, shadeRGB, alpha);
 								}
 
-								this.method988(this.aByteArrayArray1819[var7], this.anIntArray1822[var7] + var2,
-										this.anIntArray1823[var7] + var3, var13, var10, anInt1834, anInt1835);
+								this.renderRGBA(this.gylphs[var7], this.horizontalOffsets[var7] + var2,
+										this.verticalOffsets[var7] + var3, var13, var10, colorRGB, alpha);
 							}
 						} else if (anInt1836 > 0) {
 							anInt1837 += anInt1836;
@@ -456,12 +456,12 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 						}
 
 						int var9 = this.anIntArray1826[var7];
-						if (anInt1829 != -1) {
-							method796(var2, (int) ((double) this.anInt1824 * 0.7D) + var3, var9, anInt1829);
+						if (strikeRGB != -1) {
+							drawHorizontal(var2, (int) ((double) this.verticalSpace * 0.7D) + var3, var9, strikeRGB);
 						}
 
-						if (anInt1818 != -1) {
-							method796(var2, this.anInt1824 + var3 + 1, var9, anInt1818);
+						if (underlineRGB != -1) {
+							drawHorizontal(var2, this.verticalSpace + var3 + 1, var9, underlineRGB);
 						}
 
 						var2 += var9;
@@ -474,7 +474,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 	}
 
 	void method976(String var1, int var2, int var3, int[] var4, int[] var5) {
-		var3 -= this.anInt1824;
+		var3 -= this.verticalSpace;
 		int var6 = -1;
 		int var7 = -1;
 		int var8 = 0;
@@ -511,16 +511,16 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 										++var8;
 										String var191 = var19.substring(4);
-										var15 = AnimationSkin.method535(var191, 10, true);
-										Sprite var17 = aDualNode_Sub13_Sub2Array1827[var15];
-										var17.method929(var2 + var12, this.anInt1824 + var3 - var17.height + var13);
+										var15 = AnimationSkin.getInt(var191, 10, true);
+										IndexedSprite var17 = modSprites[var15];
+										var17.method929(var2 + var12, this.verticalSpace + var3 - var17.height + var13);
 										var2 += var17.width;
 										var7 = -1;
 									} catch (Exception var171) {
 										;
 									}
 								} else {
-									this.method985(var19);
+									this.setRGB(var19);
 								}
 								continue;
 							}
@@ -538,8 +538,8 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 							var2 += this.aByteArray1821[(var7 << 8) + var10];
 						}
 
-						int var18 = this.anIntArray1820[var10];
-						var12 = this.anIntArray1832[var10];
+						int var18 = this.gylphHeights[var10];
+						var12 = this.glyphWidths[var10];
 						if (var4 != null) {
 							var13 = var4[var8];
 						} else {
@@ -554,27 +554,27 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 						++var8;
 						if (var10 != 32) {
-							if (anInt1835 == 256) {
-								if (anInt1830 != -1) {
-									method977(this.aByteArrayArray1819[var10],
-											this.anIntArray1822[var10] + var2 + 1 + var13,
-											this.anIntArray1823[var10] + var3 + 1 + var15, var18, var12, anInt1830);
+							if (alpha == 256) {
+								if (shadeRGB != -1) {
+									renderShadeRGB(this.gylphs[var10],
+											this.horizontalOffsets[var10] + var2 + 1 + var13,
+											this.verticalOffsets[var10] + var3 + 1 + var15, var18, var12, shadeRGB);
 								}
 
-								this.method989(this.aByteArrayArray1819[var10],
-										this.anIntArray1822[var10] + var2 + var13,
-										this.anIntArray1823[var10] + var3 + var15, var18, var12, anInt1834);
+								this.renderRGB(this.gylphs[var10],
+										this.horizontalOffsets[var10] + var2 + var13,
+										this.verticalOffsets[var10] + var3 + var15, var18, var12, colorRGB);
 							} else {
-								if (anInt1830 != -1) {
-									method978(this.aByteArrayArray1819[var10],
-											this.anIntArray1822[var10] + var2 + 1 + var13,
-											this.anIntArray1823[var10] + var3 + 1 + var15, var18, var12, anInt1830,
-											anInt1835);
+								if (shadeRGB != -1) {
+									renderShadeRGBA(this.gylphs[var10],
+											this.horizontalOffsets[var10] + var2 + 1 + var13,
+											this.verticalOffsets[var10] + var3 + 1 + var15, var18, var12, shadeRGB,
+											alpha);
 								}
 
-								this.method988(this.aByteArrayArray1819[var10],
-										this.anIntArray1822[var10] + var2 + var13,
-										this.anIntArray1823[var10] + var3 + var15, var18, var12, anInt1834, anInt1835);
+								this.renderRGBA(this.gylphs[var10],
+										this.horizontalOffsets[var10] + var2 + var13,
+										this.verticalOffsets[var10] + var3 + var15, var18, var12, colorRGB, alpha);
 							}
 						} else if (anInt1836 > 0) {
 							anInt1837 += anInt1836;
@@ -583,12 +583,12 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 						}
 
 						int var14 = this.anIntArray1826[var10];
-						if (anInt1829 != -1) {
-							method796(var2, (int) ((double) this.anInt1824 * 0.7D) + var3, var14, anInt1829);
+						if (strikeRGB != -1) {
+							drawHorizontal(var2, (int) ((double) this.verticalSpace * 0.7D) + var3, var14, strikeRGB);
 						}
 
-						if (anInt1818 != -1) {
-							method796(var2, this.anInt1824 + var3, var14, anInt1818);
+						if (underlineRGB != -1) {
+							drawHorizontal(var2, this.verticalSpace + var3, var14, underlineRGB);
 						}
 
 						var2 += var14;
@@ -600,31 +600,31 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 	}
 
-	DualNode_Sub13_Sub3(byte[] var1, int[] var2, int[] var3, int[] var4, int[] var5, int[] var6, byte[][] var7) {
-		this.anIntArray1822 = var2;
-		this.anIntArray1823 = var3;
-		this.anIntArray1820 = var4;
-		this.anIntArray1832 = var5;
+	AbstractFont(byte[] var1, int[] var2, int[] var3, int[] var4, int[] var5, int[] var6, byte[][] var7) {
+		this.horizontalOffsets = var2;
+		this.verticalOffsets = var3;
+		this.gylphHeights = var4;
+		this.glyphWidths = var5;
 		this.method965(var1);
-		this.aByteArrayArray1819 = var7;
+		this.gylphs = var7;
 		int var9 = Integer.MAX_VALUE;
 		int var10 = Integer.MIN_VALUE;
 
-		for (int var8 = 0; var8 < 256; var8++) {
-			if (this.anIntArray1823[var8] < var9 && this.anIntArray1832[var8] != 0) {
-				var9 = this.anIntArray1823[var8];
+		for (int i = 0; i < 256; i++) {
+			if (this.verticalOffsets[i] < var9 && this.glyphWidths[i] != 0) {
+				var9 = this.verticalOffsets[i];
 			}
 
-			if (this.anIntArray1823[var8] + this.anIntArray1832[var8] > var10) {
-				var10 = this.anIntArray1823[var8] + this.anIntArray1832[var8];
+			if (this.verticalOffsets[i] + this.glyphWidths[i] > var10) {
+				var10 = this.verticalOffsets[i] + this.glyphWidths[i];
 			}
 		}
 
-		this.anInt1825 = this.anInt1824 - var9;
-		this.anInt1838 = var10 - this.anInt1824;
+		this.minSpacing = this.verticalSpace - var9;
+		this.maxSpacing = var10 - this.verticalSpace;
 	}
 
-	static void method977(byte[] var0, int var1, int var2, int var3, int var4, int var5) {
+	static void renderShadeRGB(byte[] var0, int var1, int var2, int var3, int var4, int var5) {
 		int var6 = raster_width * var2 + var1;
 		int var10 = raster_width - var3;
 		int var7 = 0;
@@ -660,12 +660,12 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 		}
 
 		if (var3 > 0 && var4 > 0) {
-			method987(raster, var0, var5, var9, var6, var3, var4, var10, var7);
+			render(raster, var0, var5, var9, var6, var3, var4, var10, var7);
 		}
 
 	}
 
-	static void method978(byte[] var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+	static void renderShadeRGBA(byte[] var0, int var1, int var2, int var3, int var4, int var5, int var6) {
 		int var7 = raster_width * var2 + var1;
 		int var9 = raster_width - var3;
 		int var11 = 0;
@@ -701,12 +701,12 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 		}
 
 		if (var3 > 0 && var4 > 0) {
-			method979(raster, var0, var5, var10, var7, var3, var4, var9, var11, var6);
+			renderRGBA(raster, var0, var5, var10, var7, var3, var4, var9, var11, var6);
 		}
 
 	}
 
-	static void method979(int[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
+	static void renderRGBA(int[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8,
 			int var9) {
 		var2 = ((var2 & 0xff00ff) * var9 & 0xff00ff00) + ((var2 & 0xff00) * var9 & 0xff0000) >> 8;
 		var9 = 256 - var9;
@@ -774,53 +774,53 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 	}
 
 	void method984(int var1, int var2) {
-		anInt1829 = -1;
-		anInt1818 = -1;
-		anInt1831 = var2;
-		anInt1830 = var2;
-		anInt1833 = var1;
-		anInt1834 = var1;
-		anInt1835 = 256;
+		strikeRGB = -1;
+		underlineRGB = -1;
+		prevShadeRGB = var2;
+		shadeRGB = var2;
+		prevColorRGB = var1;
+		colorRGB = var1;
+		alpha = 256;
 		anInt1836 = 0;
 		anInt1837 = 0;
 	}
 
-	void method985(String var1) {
+	void setRGB(String text) {
 		try {
-			String var2;
-			int var3;
-			if (var1.startsWith("col=")) {
-				var2 = var1.substring(4);
-				var3 = AnimationSkin.method535(var2, 16, true);
-				anInt1834 = var3;
-			} else if (var1.equals("/col")) {
-				anInt1834 = anInt1833;
-			} else if (var1.startsWith("str=")) {
-				var2 = var1.substring(4);
-				var3 = AnimationSkin.method535(var2, 16, true);
-				anInt1829 = var3;
-			} else if (var1.equals("str")) {
-				anInt1829 = 8388608;
-			} else if (var1.equals("/str")) {
-				anInt1829 = -1;
-			} else if (var1.startsWith("u=")) {
-				var2 = var1.substring(2);
-				var3 = AnimationSkin.method535(var2, 16, true);
-				anInt1818 = var3;
-			} else if (var1.equals("u")) {
-				anInt1818 = 0;
-			} else if (var1.equals("/u")) {
-				anInt1818 = -1;
-			} else if (var1.startsWith("shad=")) {
-				var2 = var1.substring(5);
-				var3 = AnimationSkin.method535(var2, 16, true);
-				anInt1830 = var3;
-			} else if (var1.equals("shad")) {
-				anInt1830 = 0;
-			} else if (var1.equals("/shad")) {
-				anInt1830 = anInt1831;
-			} else if (var1.equals("br")) {
-				this.method984(anInt1833, anInt1831);
+			String subtext;
+			int rgb;
+			if (text.startsWith("col=")) {
+				subtext = text.substring(4);
+				rgb = AnimationSkin.getInt(subtext, 16, true);
+				colorRGB = rgb;
+			} else if (text.equals("/col")) {
+				colorRGB = prevColorRGB;
+			} else if (text.startsWith("str=")) {
+				subtext = text.substring(4);
+				rgb = AnimationSkin.getInt(subtext, 16, true);
+				strikeRGB = rgb;
+			} else if (text.equals("str")) {
+				strikeRGB = 8388608;
+			} else if (text.equals("/str")) {
+				strikeRGB = -1;
+			} else if (text.startsWith("u=")) {
+				subtext = text.substring(2);
+				rgb = AnimationSkin.getInt(subtext, 16, true);
+				underlineRGB = rgb;
+			} else if (text.equals("u")) {
+				underlineRGB = 0;
+			} else if (text.equals("/u")) {
+				underlineRGB = -1;
+			} else if (text.startsWith("shad=")) {
+				subtext = text.substring(5);
+				rgb = AnimationSkin.getInt(subtext, 16, true);
+				shadeRGB = rgb;
+			} else if (text.equals("shad")) {
+				shadeRGB = 0;
+			} else if (text.equals("/shad")) {
+				shadeRGB = prevShadeRGB;
+			} else if (text.equals("br")) {
+				this.method984(prevColorRGB, prevShadeRGB);
 			}
 		} catch (Exception var4) {
 			;
@@ -828,7 +828,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 	}
 
-	DualNode_Sub13_Sub3(byte[] var1) {
+	AbstractFont(byte[] var1) {
 		this.method965(var1);
 	}
 
@@ -867,7 +867,7 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 		return -var19;
 	}
 
-	static void method987(int[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7,
+	static void render(int[] var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8) {
 		int var9 = -(var5 >> 2);
 		var5 = -(var5 & 0x3);
@@ -914,9 +914,9 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 
 	}
 
-	abstract void method988(byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7);
+	abstract void renderRGBA(byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7);
 
-	abstract void method989(byte[] var1, int var2, int var3, int var4, int var5, int var6);
+	abstract void renderRGB(byte[] var1, int var2, int var3, int var4, int var5, int var6);
 
 	public int method990(String var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9,
 			int var10) {
@@ -925,11 +925,11 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 		} else {
 			this.method984(var6, var7);
 			if (var10 == 0) {
-				var10 = this.anInt1824;
+				var10 = this.verticalSpace;
 			}
 
 			int[] var14 = new int[] { var4 };
-			if (var5 < this.anInt1825 + this.anInt1838 + var10 && var5 < var10 + var10) {
+			if (var5 < this.minSpacing + this.maxSpacing + var10 && var5 < var10 + var10) {
 				var14 = null;
 			}
 
@@ -941,18 +941,18 @@ public abstract class DualNode_Sub13_Sub3 extends RSGraphics {
 			int var11;
 			int var13;
 			if (var9 == 0) {
-				var13 = this.anInt1825 + var3;
+				var13 = this.minSpacing + var3;
 			} else if (var9 == 1) {
-				var13 = this.anInt1825 + var3 + (var5 - this.anInt1825 - this.anInt1838 - (var12 - 1) * var10) / 2;
+				var13 = this.minSpacing + var3 + (var5 - this.minSpacing - this.maxSpacing - (var12 - 1) * var10) / 2;
 			} else if (var9 == 2) {
-				var13 = var3 + var5 - this.anInt1838 - (var12 - 1) * var10;
+				var13 = var3 + var5 - this.maxSpacing - (var12 - 1) * var10;
 			} else {
-				var11 = (var5 - this.anInt1825 - this.anInt1838 - (var12 - 1) * var10) / (var12 + 1);
+				var11 = (var5 - this.minSpacing - this.maxSpacing - (var12 - 1) * var10) / (var12 + 1);
 				if (var11 < 0) {
 					var11 = 0;
 				}
 
-				var13 = this.anInt1825 + var3 + var11;
+				var13 = this.minSpacing + var3 + var11;
 				var10 += var11;
 			}
 

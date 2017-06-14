@@ -167,32 +167,32 @@ public class World {
 
 	static final void method484(int var0) {
 		ByteBuf.method644();
-		Class39.method220();
+		Scene.method220();
 		int var2 = Class37.getVarPlayerType(var0).anInt1546;
 		if (var2 != 0) {
 			int var1 = Class94.tempVars[var0];
 			if (var2 == 1) {
 				if (var1 == 1) {
-					TexturedGraphic.setBrightness(0.9D);
-					((TextureLoader) TexturedGraphic.textureLoader).brightness(0.9D);
+					Graphics3D.setBrightness(0.9D);
+					((TextureLoader) Graphics3D.textureLoader).brightness(0.9D);
 				}
 
 				if (var1 == 2) {
-					TexturedGraphic.setBrightness(0.8D);
-					((TextureLoader) TexturedGraphic.textureLoader).brightness(0.8D);
+					Graphics3D.setBrightness(0.8D);
+					((TextureLoader) Graphics3D.textureLoader).brightness(0.8D);
 				}
 
 				if (var1 == 3) {
-					TexturedGraphic.setBrightness(0.7D);
-					((TextureLoader) TexturedGraphic.textureLoader).brightness(0.7D);
+					Graphics3D.setBrightness(0.7D);
+					((TextureLoader) Graphics3D.textureLoader).brightness(0.7D);
 				}
 
 				if (var1 == 4) {
-					TexturedGraphic.setBrightness(0.6D);
-					((TextureLoader) TexturedGraphic.textureLoader).brightness(0.6D);
+					Graphics3D.setBrightness(0.6D);
+					((TextureLoader) Graphics3D.textureLoader).brightness(0.6D);
 				}
 
-				DualNode_Sub8.method711();
+				ChatMessage.method711();
 			}
 
 			if (var2 == 3) {
@@ -324,7 +324,7 @@ public class World {
 
 	}
 
-	static boolean method485(String var0) {
+	static boolean isIgnored(String var0) {
 		if (var0 == null) {
 			return false;
 		} else {

@@ -1,6 +1,6 @@
 public class Class56 {
 
-	static Picture aSprite542;
+	static Sprite aSprite542;
 
 	public static String method284(int var0, int var1, boolean var2) {
 		if (var1 >= 2 && var1 <= 36) {
@@ -74,7 +74,7 @@ public class Class56 {
 					return InterfaceNode.floorLevel * -1331355705;
 				}
 
-				if ((Class39.renderRules[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
+				if ((Scene.renderFlags[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
 					var4 = InterfaceNode.floorLevel * -1331355705;
 				}
 
@@ -105,7 +105,7 @@ public class Class56 {
 							--var2;
 						}
 
-						if ((Class39.renderRules[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
+						if ((Scene.renderFlags[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
 							var4 = InterfaceNode.floorLevel * -1331355705;
 						}
 
@@ -118,7 +118,7 @@ public class Class56 {
 								--var1;
 							}
 
-							if ((Class39.renderRules[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
+							if ((Scene.renderFlags[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
 								var4 = InterfaceNode.floorLevel * -1331355705;
 							}
 						}
@@ -134,7 +134,7 @@ public class Class56 {
 							--var1;
 						}
 
-						if ((Class39.renderRules[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
+						if ((Scene.renderFlags[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
 							var4 = InterfaceNode.floorLevel * -1331355705;
 						}
 
@@ -147,7 +147,7 @@ public class Class56 {
 								--var2;
 							}
 
-							if ((Class39.renderRules[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
+							if ((Scene.renderFlags[InterfaceNode.floorLevel * -1331355705][var2][var1] & 0x4) != 0) {
 								var4 = InterfaceNode.floorLevel * -1331355705;
 							}
 						}
@@ -157,7 +157,7 @@ public class Class56 {
 
 			if (Class68.myPlayer.strictX >= 0 && Class68.myPlayer.strictY >= 0 && Class68.myPlayer.strictX < 13312
 					&& Class68.myPlayer.strictY < 13312) {
-				if ((Class39.renderRules[InterfaceNode.floorLevel
+				if ((Scene.renderFlags[InterfaceNode.floorLevel
 						* -1331355705][Class68.myPlayer.strictX >> 7][Class68.myPlayer.strictY >> 7] & 0x4) != 0) {
 					var4 = InterfaceNode.floorLevel * -1331355705;
 				}

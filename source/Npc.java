@@ -1,6 +1,6 @@
 public final class Npc extends Character {
 
-	static Picture mapedge;
+	static Sprite mapedge;
 	NpcType type;
 	public static byte[][] spritePixels;
 	static AbstractIndex aClass87_1967;
@@ -64,7 +64,7 @@ public final class Npc extends Character {
 		this.aByteArray1951[0] = var2;
 	}
 
-	protected final Rasterizer method654(byte var1) {
+	protected final Model getModel(byte var1) {
 		if (this.type == null) {
 			return null;
 		} else {
@@ -72,18 +72,18 @@ public final class Npc extends Character {
 					: null;
 			SequenceType var4 = this.anInt1932 == -1 || this.anInt1959 == this.anInt1932 && var3 != null ? null
 					: Node_Sub6.getSequenceType(this.anInt1932);
-			Rasterizer var2 = this.type.method799(var3, this.anInt1934, var4, this.anInt1914);
+			Model var2 = this.type.method799(var3, this.anInt1934, var4, this.anInt1914);
 			if (var2 == null) {
 				return null;
 			} else {
 				var2.method998();
-				this.height = var2.modelHeight * 1812947537;
+				this.charHeight = var2.height * 1812947537;
 				if (this.graphicsId != -1 && this.anInt1925 != -1) {
-					Rasterizer var5 = Class96_Sub1.getSpotAnimType(this.graphicsId).method656(this.anInt1925);
+					Model var5 = Class96_Sub1.getSpotAnimType(this.graphicsId).method656(this.anInt1925);
 					if (var5 != null) {
 						var5.method1008(0, -this.graphicsHeight, 0);
-						Rasterizer[] var6 = new Rasterizer[] { var2, var5 };
-						var2 = new Rasterizer(var6, 2);
+						Model[] var6 = new Model[] { var2, var5 };
+						var2 = new Model(var6, 2);
 					}
 				}
 

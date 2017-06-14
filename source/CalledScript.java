@@ -7,13 +7,13 @@ public class CalledScript {
 	static int[] anIntArray365;
 	int anInt363 = -1;
 
-	static final int method197(int var0, int var1) {
-		int var2 = VarClientType.method721(var0 - 1, var1 - 1) + VarClientType.method721(var0 + 1, var1 - 1)
-				+ VarClientType.method721(var0 - 1, var1 + 1) + VarClientType.method721(var0 + 1, var1 + 1);
-		int var4 = VarClientType.method721(var0 - 1, var1) + VarClientType.method721(var0 + 1, var1)
-				+ VarClientType.method721(var0, var1 - 1) + VarClientType.method721(var0, var1 + 1);
-		int var3 = VarClientType.method721(var0, var1);
-		return var3 / 4 + var4 / 8 + var2 / 16;
+	static final int getSmoothNoise2D(int x, int y) {
+		int corners = VarClientType.getNoise(x - 1, y - 1) + VarClientType.getNoise(x + 1, y - 1)
+				+ VarClientType.getNoise(x - 1, y + 1) + VarClientType.getNoise(x + 1, y + 1);
+		int sides = VarClientType.getNoise(x - 1, y) + VarClientType.getNoise(x + 1, y)
+				+ VarClientType.getNoise(x, y - 1) + VarClientType.getNoise(x, y + 1);
+		int center = VarClientType.getNoise(x, y);
+		return center / 4 + sides / 8 + corners / 16;
 	}
 
 	static void method198(int var0) {
@@ -28,26 +28,26 @@ public class CalledScript {
 		return var0 == 57 || var0 == 58 || var0 == 1007 || var0 == 25 || var0 == 30;
 	}
 
-	static final int method200(int var0, int var1) {
-		if (var0 == -2) {
+	static final int adjustHSLListness0(int color, int lightness) {
+		if (color == -2) {
 			return 12345678;
-		} else if (var0 == -1) {
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
+		} else if (color == -1) {
+			if (lightness < 2) {
+				lightness = 2;
+			} else if (lightness > 126) {
+				lightness = 126;
 			}
 
-			return var1;
+			return lightness;
 		} else {
-			var1 = (var0 & 0x7f) * var1 / 128;
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
+			lightness = (color & 0x7f) * lightness / 128;
+			if (lightness < 2) {
+				lightness = 2;
+			} else if (lightness > 126) {
+				lightness = 126;
 			}
 
-			return (var0 & 0xff80) + var1;
+			return (color & 0xff80) + lightness;
 		}
 	}
 

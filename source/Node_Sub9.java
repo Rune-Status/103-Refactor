@@ -12,7 +12,7 @@ public class Node_Sub9 extends Node {
 	}
 
 	static void method564() {
-		Class32.aMap359.clear();
+		Class32.messageContainers.clear();
 		Class32.aClass107_355.method431();
 		Class32.aClass108_354.method434();
 		Class32.anInt358 = 0;

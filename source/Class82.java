@@ -14,8 +14,8 @@ public final class Class82 {
 		int var4 = var2 + 6;
 		int var5 = Client.p12_full.method969(var0, 250);
 		int var6 = Client.p12_full.method970(var0, 250) * 13;
-		RSGraphics.method793(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var2 + var6, 0);
-		RSGraphics.drawRectangle(var3 - var2, var4 - var2, var5 + var2 + var2, var2 + var2 + var6, 16777215);
+		Raster.method793(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var2 + var6, 0);
+		Raster.drawRectangle(var3 - var2, var4 - var2, var5 + var2 + var2, var2 + var2 + var6, 16777215);
 		Client.p12_full.method990(var0, var3, var4, var5, var6, 16777215, -1, 1, 1, 0);
 		IdentKitType.method668(var3 - var2, var4 - var2, var2 + var2 + var5, var2 + var2 + var6);
 		if (var1) {

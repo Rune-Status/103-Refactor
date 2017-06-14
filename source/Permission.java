@@ -1,7 +1,7 @@
 public class Permission implements IOrdinal {
 
 	static int[] anIntArray605;
-	static int[] anIntArray614;
+	static int[] blendedHue;
 	int rights;
 	public int sprite;
 	public boolean aBool611;

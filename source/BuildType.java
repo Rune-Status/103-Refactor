@@ -63,8 +63,8 @@ public class BuildType {
 		}
 
 		Client.anInt2111 = -1;
-		Client.projectileDeque.method467();
-		Client.graphicsObjectDeque.method467();
+		Client.projectileDeque.clear();
+		Client.graphicsObjectDeque.clear();
 
 		int var1;
 		for (var0 = 0; var0 < 4; var0++) {
@@ -122,7 +122,7 @@ public class BuildType {
 		BitBuf var51 = Client.outBuffer;
 		var1 = Client.resizable ? 2 : 1;
 		var51.putByte(var1);
-		Client.outBuffer.putShort(Class34.gameWidth);
+		Client.outBuffer.putShort(Occluder.gameWidth);
 		Client.outBuffer.putShort(Node_Sub9.gameHeight);
 		Client.clanChatOwner = null;
 		Class86.clanChatSize = 0;

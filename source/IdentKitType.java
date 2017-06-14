@@ -16,21 +16,21 @@ public class IdentKitType extends DualNode {
 	short[] aShortArray1464;
 	static NodeMap identKits = new NodeMap(64);
 
-	public Model method660() {
+	public RSModel method660() {
 		if (this.anIntArray1460 == null) {
 			return null;
 		} else {
-			Model[] var2 = new Model[this.anIntArray1460.length];
+			RSModel[] var2 = new RSModel[this.anIntArray1460.length];
 
 			for (int var4 = 0; var4 < this.anIntArray1460.length; var4++) {
-				var2[var4] = Model.method887(Class120.aClass87_805, this.anIntArray1460[var4], 0);
+				var2[var4] = RSModel.method887(Class120.aClass87_805, this.anIntArray1460[var4], 0);
 			}
 
-			Model var41;
+			RSModel var41;
 			if (var2.length == 1) {
 				var41 = var2[0];
 			} else {
-				var41 = new Model(var2, var2.length);
+				var41 = new RSModel(var2, var2.length);
 			}
 
 			int var1;
@@ -106,17 +106,17 @@ public class IdentKitType extends DualNode {
 		}
 	}
 
-	public Model method663() {
-		Model[] var1 = new Model[5];
+	public RSModel method663() {
+		RSModel[] var1 = new RSModel[5];
 		int var4 = 0;
 
 		for (int var5 = 0; var5 < 5; var5++) {
 			if (this.anIntArray1462[var5] != -1) {
-				var1[var4++] = Model.method887(Class120.aClass87_805, this.anIntArray1462[var5], 0);
+				var1[var4++] = RSModel.method887(Class120.aClass87_805, this.anIntArray1462[var5], 0);
 			}
 		}
 
-		Model var51 = new Model(var1, var4);
+		RSModel var51 = new RSModel(var1, var4);
 		int var2;
 		if (this.aShortArray1461 != null) {
 			for (var2 = 0; var2 < this.aShortArray1461.length; var2++) {

@@ -4,7 +4,7 @@ import java.net.URL;
 public class Class30 implements Runnable {
 
 	static Widget aWidget339;
-	static AbstractSoundSystem aClass8_341;
+	static AbstractSoundSystem soundSystem1;
 	boolean aBool336 = true;
 	int[] anIntArray337 = new int[500];
 	int anInt338 = 0;
@@ -59,7 +59,7 @@ public class Class30 implements Runnable {
 						return;
 					}
 
-					Class81.aNodeQueue_672.method422(var2);
+					Class81.aNodeQueue_672.setHead(var2);
 					Class81.aNodeTable673.put(var2, var2.key);
 					++Class81.anInt674;
 					--Class81.anInt669;

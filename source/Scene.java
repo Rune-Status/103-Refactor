@@ -1,23 +1,23 @@
-public final class Class39 {
+public final class Scene {
 
 	public static CacheFile[] cacheIndexFiles;
 	static byte[][][] overlayIds;
-	static byte[][][] aByteArrayArrayArray430;
-	static int[] anIntArray432;
-	static int[][][] anIntArrayArrayArray433;
-	static int[][] anIntArrayArray441;
-	static Picture[] hintIcons;
-	static int[] anIntArray427 = new int[] { 1, 0, -1, 0 };
-	static int anInt431 = (int) (Math.random() * 17.0D) - 8;
-	static int[] anIntArray434 = new int[] { 1, 2, 4, 8 };
-	static int[] anIntArray435 = new int[] { 16, 32, 64, 128 };
-	static byte[][][] renderRules = new byte[4][104][104];
+	static byte[][][] shadowMap;
+	static int[] blendedLightness;
+	static int[][][] occludeFlags;
+	static int[][] lightMap;
+	static Sprite[] hintIcons;
+	static int[] WALL_DECO_ROT_SIZE_X_DIR = new int[] { 1, 0, -1, 0 };
+	static int hueOffset = (int) (Math.random() * 17.0D) - 8;
+	static int[] WALL_ROTATION_TYPE1 = new int[] { 1, 2, 4, 8 };
+	static int[] WALL_ROTATION_TYPE2 = new int[] { 16, 32, 64, 128 };
+	static byte[][][] renderFlags = new byte[4][104][104];
 	static int[][][] tileHeights = new int[4][105][105];
-	static int[] anIntArray436 = new int[] { 0, -1, 0, 1 };
-	static int[] anIntArray437 = new int[] { -1, -1, 1, 1 };
-	static int anInt438 = 99;
-	static int anInt439 = (int) (Math.random() * 33.0D) - 16;
-	static int[] anIntArray440 = new int[] { 1, -1, -1, 1 };
+	static int[] WALL_DECO_ROT_SIZE_Y_DIR = new int[] { 0, -1, 0, 1 };
+	static int[] SEQ_DECO_ROT_SIZE_Y_DIR = new int[] { -1, -1, 1, 1 };
+	static int level = 99;
+	static int luminanceOffset = (int) (Math.random() * 33.0D) - 16;
+	static int[] SEQ_DECO_ROT_SIZE_X_DIR = new int[] { 1, -1, -1, 1 };
 
 	static final void method215(Character character, int var1, int var2, int var3, int var4, int var5) {
 		if (character != null && character.hasConfig()) {
@@ -44,7 +44,7 @@ public final class Class39 {
 				}
 
 				if (var11.skullIcon != -1 || var11.prayerIcon != -1) {
-					SkeletonSet.characterToScreen(character, character.height + 15);
+					SkeletonSet.characterToScreen(character, character.charHeight + 15);
 					if (Client.screenY > -1) {
 						if (var11.skullIcon != -1) {
 							VarBitType.pkIcons[var11.skullIcon].method946(Client.screenY + var2 - 12,
@@ -61,7 +61,7 @@ public final class Class39 {
 				}
 
 				if (var1 >= 0 && Client.anInt2075 == 10 && Client.anInt2158 == var6[var1]) {
-					SkeletonSet.characterToScreen(character, character.height + 15);
+					SkeletonSet.characterToScreen(character, character.charHeight + 15);
 					if (Client.screenY > -1) {
 						hintIcons[1].method946(Client.screenY + var2 - 12, Client.screenX + var3 - var8);
 					}
@@ -73,7 +73,7 @@ public final class Class39 {
 				}
 
 				if (var13.anInt1577 >= 0 && var13.anInt1577 < ItemType.prayerIcons.length) {
-					SkeletonSet.characterToScreen(character, character.height + 15);
+					SkeletonSet.characterToScreen(character, character.charHeight + 15);
 					if (Client.screenY > -1) {
 						ItemType.prayerIcons[var13.anInt1577].method946(Client.screenY + var2 - 12,
 								Client.screenX + var3 - 30);
@@ -82,7 +82,7 @@ public final class Class39 {
 
 				if (Client.anInt2075 == 1 && Client.npcIndices[var1 - var101] == Client.anInt2021
 						&& Client.engineCycle % 20 < 10) {
-					SkeletonSet.characterToScreen(character, character.height + 15);
+					SkeletonSet.characterToScreen(character, character.charHeight + 15);
 					if (Client.screenY > -1) {
 						hintIcons[0].method946(Client.screenY + var2 - 12, Client.screenX + var3 - 28);
 					}
@@ -92,10 +92,10 @@ public final class Class39 {
 			if (character.overheadText != null && (var1 >= var101 || !character.aBool1923
 					&& (Client.anInt2110 == 4 || !character.aBool1946 && (Client.anInt2110 == 0 || Client.anInt2110 == 3
 							|| Client.anInt2110 == 1 && AnimationSkin.isFriended(((Player) character).name, false))))) {
-				SkeletonSet.characterToScreen(character, character.height);
+				SkeletonSet.characterToScreen(character, character.charHeight);
 				if (Client.screenY > -1 && Client.anInt2082 < Client.anInt2083) {
 					Client.anIntArray2087[Client.anInt2082] = Class35.b12_full.method967(character.overheadText) / 2;
-					Client.anIntArray2086[Client.anInt2082] = Class35.b12_full.anInt1824;
+					Client.anIntArray2086[Client.anInt2082] = Class35.b12_full.verticalSpace;
 					Client.anIntArray2084[Client.anInt2082] = Client.screenY;
 					Client.anIntArray2085[Client.anInt2082] = Client.screenX;
 					Client.anIntArray2088[Client.anInt2082] = character.anInt1942;
@@ -107,7 +107,7 @@ public final class Class39 {
 			}
 
 			if (character.healthBarCycle > Client.engineCycle) {
-				SkeletonSet.characterToScreen(character, character.height + 15);
+				SkeletonSet.characterToScreen(character, character.charHeight + 15);
 				if (Client.screenY > -1) {
 					if (var1 < var101) {
 						var8 = 30;
@@ -123,16 +123,16 @@ public final class Class39 {
 						var12 = 1;
 					}
 
-					RSGraphics.method793(Client.screenY + var2 - var8 / 2, Client.screenX + var3 - 3, var12, 5,
+					Raster.method793(Client.screenY + var2 - var8 / 2, Client.screenX + var3 - 3, var12, 5,
 							'\uff00');
-					RSGraphics.method793(Client.screenY + var2 - var8 / 2 + var12, Client.screenX + var3 - 3,
+					Raster.method793(Client.screenY + var2 - var8 / 2 + var12, Client.screenX + var3 - 3,
 							var8 - var12, 5, 16711680);
 				}
 			}
 
 			for (var8 = 0; var8 < 4; var8++) {
 				if (character.hitsplatCycles[var8] > Client.engineCycle) {
-					SkeletonSet.characterToScreen(character, character.height / 2);
+					SkeletonSet.characterToScreen(character, character.charHeight / 2);
 					if (Client.screenY > -1) {
 						if (var8 == 1) {
 							Client.screenX -= 20;
@@ -296,8 +296,8 @@ public final class Class39 {
 					var21 = var21 + 1 & 0xfff;
 					var28 = var14 - var10;
 					var30 = var11 - var16;
-					var19 = var14 - var4.anInt505;
-					var20 = var11 - var4.anInt506;
+					var19 = var14 - var4.xOffset;
+					var20 = var11 - var4.yOffset;
 					if (var3.method245(1, var14, var11, var4, -1909538051)) {
 						LoginHandler.anInt545 = var14;
 						Class48_Sub1.anInt1298 = var11;
@@ -416,8 +416,8 @@ public final class Class39 {
 					var21 = var21 + 1 & 0xfff;
 					var28 = var14 - var10;
 					var30 = var11 - var16;
-					var19 = var14 - var4.anInt505;
-					var20 = var11 - var4.anInt506;
+					var19 = var14 - var4.xOffset;
+					var20 = var11 - var4.yOffset;
 					if (var3.method245(2, var14, var11, var4, -1833137502)) {
 						LoginHandler.anInt545 = var14;
 						Class48_Sub1.anInt1298 = var11;
@@ -634,7 +634,7 @@ public final class Class39 {
 					FriendedPlayer.addMenuRow("Use", Client.selectedItemName + " " + Class35.aString391 + " "
 							+ Class48_Sub1.method545(16776960) + var6, 7, var1, var2, var3);
 				} else if (Client.spellSelected) {
-					if ((Class31.currentSpellTargets & 0x2) == 2) {
+					if ((TileUnderlay.currentSpellTargets & 0x2) == 2) {
 						FriendedPlayer.addMenuRow(Client.menuActionPrefix, Client.selectedSpellName + " "
 								+ Class35.aString391 + " " + Class48_Sub1.method545(16776960) + var6, 8, var1, var2,
 								var3);
@@ -723,7 +723,7 @@ public final class Class39 {
 
 	}
 
-	Class39() throws Throwable {
+	Scene() throws Throwable {
 		throw new Error();
 	}
 
@@ -767,7 +767,7 @@ public final class Class39 {
 						Class81.aNodeTable685.put(request, hash);
 						++Class81.anInt670;
 					} else {
-						Class81.aNodeQueue_672.method425(request);
+						Class81.aNodeQueue_672.push(request);
 						Class81.aNodeTable673.put(request, hash);
 						++Class81.anInt674;
 					}

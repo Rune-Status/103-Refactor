@@ -162,12 +162,12 @@ public class Class7 {
 		return offset - position;
 	}
 
-	static final void method77(int var0, int var1, int var2, int var3, Picture var4, DualNode_Sub14 var5) {
+	static final void method77(int var0, int var1, int var2, int var3, Sprite var4, DualNode_Sub14 var5) {
 		int var6 = var3 * var3 + var2 * var2;
 		if (var6 > 4225 && var6 < 90000) {
 			int var10 = Client.minimapRotation + Client.minimapScale & 0x7ff;
-			int var12 = TexturedGraphic.SIN_TABLE[var10];
-			int var11 = TexturedGraphic.COS_TABLE[var10];
+			int var12 = Graphics3D.SIN_TABLE[var10];
+			int var11 = Graphics3D.COS_TABLE[var10];
 			var12 = var12 * 256 / (Client.viewRotation + 256);
 			var11 = var11 * 256 / (Client.viewRotation + 256);
 			int var13 = var11 * var2 + var3 * var12 >> 16;

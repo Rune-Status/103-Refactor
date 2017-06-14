@@ -34,10 +34,10 @@ public class SpotAnimType extends DualNode {
 		}
 	}
 
-	public final Rasterizer method656(int var1) {
-		Rasterizer var2 = (Rasterizer) aClass106_1442.get((long) this.id);
+	public final Model method656(int var1) {
+		Model var2 = (Model) aClass106_1442.get((long) this.id);
 		if (var2 == null) {
-			Model var5 = Model.method887(aClass87_1440, this.anInt1444, 0);
+			RSModel var5 = RSModel.method887(aClass87_1440, this.anInt1444, 0);
 			if (var5 == null) {
 				return null;
 			}
@@ -59,7 +59,7 @@ public class SpotAnimType extends DualNode {
 			aClass106_1442.put(var2, (long) this.id);
 		}
 
-		Rasterizer var51;
+		Model var51;
 		if (this.anInt1441 != -1 && var1 != -1) {
 			var51 = Node_Sub6.getSequenceType(this.anInt1441).method677(var2, var1);
 		} else {
@@ -134,13 +134,13 @@ public class SpotAnimType extends DualNode {
 	}
 
 	static void method658(int var0, String var1, String var2, String var3) {
-		Class5 var4 = (Class5) Class32.aMap359.get(Integer.valueOf(var0));
+		ChatMessageContainer var4 = (ChatMessageContainer) Class32.messageContainers.get(Integer.valueOf(var0));
 		if (var4 == null) {
-			var4 = new Class5();
-			Class32.aMap359.put(Integer.valueOf(var0), var4);
+			var4 = new ChatMessageContainer();
+			Class32.messageContainers.put(Integer.valueOf(var0), var4);
 		}
 
-		DualNode_Sub8 var5 = var4.method72(var0, var1, var2, var3);
+		ChatMessage var5 = var4.method72(var0, var1, var2, var3);
 		Class32.aClass107_355.method433(var5, (long) var5.anInt1516);
 		Class32.aClass108_354.method435(var5);
 		Client.anInt2078 = Client.anInt2151;
@@ -149,7 +149,7 @@ public class SpotAnimType extends DualNode {
 	static void method659() {
 		int var0 = Client.anInt1983;
 		int var1 = Client.anInt1978;
-		int var2 = VarClientStringType.anInt1505 - Class34.gameWidth - var0;
+		int var2 = VarClientStringType.anInt1505 - Occluder.gameWidth - var0;
 		int var3 = Class21.anInt281 - Node_Sub9.gameHeight - var1;
 		if (var0 > 0 || var2 > 0 || var1 > 0 || var3 > 0) {
 			try {

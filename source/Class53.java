@@ -15,8 +15,8 @@ public class Class53 {
 
 	static final void method272(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7,
 			int var8) {
-		RSGraphics.setDrawRegion(var2, var3, var4, var5);
-		TexturedGraphic.method909();
+		Raster.setDrawRegion(var2, var3, var4, var5);
+		Graphics3D.method909();
 
 		for (int var14 = 0; var14 < var0.length; var14++) {
 			Widget var15 = var0[var14];
@@ -198,8 +198,8 @@ public class Class53 {
 								var16 = Client.anInt2224;
 								var13 = Client.screenHeight;
 								var31 = Client.screenWidth;
-								RSGraphics.setDrawRegion(var9, var16, var9 + var13, var31 + var16);
-								TexturedGraphic.method909();
+								Raster.setDrawRegion(var9, var16, var9 + var13, var31 + var16);
+								Graphics3D.method909();
 								int var52;
 								if (!Client.aBool2046) {
 									var30 = Client.anInt2051;
@@ -224,16 +224,16 @@ public class Class53 {
 									var36 = var26;
 									int var68;
 									if (var27 != 0) {
-										var35 = TexturedGraphic.SIN_TABLE[var27];
-										var68 = TexturedGraphic.COS_TABLE[var27];
+										var35 = Graphics3D.SIN_TABLE[var27];
+										var68 = Graphics3D.COS_TABLE[var27];
 										var52 = var68 * var34 - var35 * var26 >> 16;
 										var36 = var68 * var26 + var35 * var34 >> 16;
 										var34 = var52;
 									}
 
 									if (var37 != 0) {
-										var35 = TexturedGraphic.SIN_TABLE[var37];
-										var68 = TexturedGraphic.COS_TABLE[var37];
+										var35 = Graphics3D.SIN_TABLE[var37];
+										var68 = Graphics3D.COS_TABLE[var37];
 										var52 = var68 * var39 + var35 * var36 >> 16;
 										var36 = var68 * var36 - var39 * var35 >> 16;
 										var39 = var52;
@@ -302,25 +302,25 @@ public class Class53 {
 								}
 
 								if (var27 >= var9 && var27 < var9 + var13 && var37 >= var16 && var37 < var31 + var16) {
-									Rasterizer.aBool1904 = true;
-									Rasterizer.onCursorCount = 0;
-									Rasterizer.anInt1905 = var27 - var9;
-									Rasterizer.anInt1910 = var37 - var16;
+									Model.aBool1904 = true;
+									Model.onCursorCount = 0;
+									Model.anInt1905 = var27 - var9;
+									Model.anInt1910 = var37 - var16;
 								} else {
-									Rasterizer.aBool1904 = false;
-									Rasterizer.onCursorCount = 0;
+									Model.aBool1904 = false;
+									Model.onCursorCount = 0;
 								}
 
-								Class34.method201();
-								RSGraphics.method793(var9, var16, var13, var31, 0);
-								Class34.method201();
-								var39 = TexturedGraphic.anInt1784;
-								TexturedGraphic.anInt1784 = Client.screenZoom;
-								InterfaceNode.landscape.method39(Projectile.cameraX, FriendedPlayer.cameraZ,
+								Occluder.method201();
+								Raster.method793(var9, var16, var13, var31, 0);
+								Occluder.method201();
+								var39 = Graphics3D.viewportWidth;
+								Graphics3D.viewportWidth = Client.screenZoom;
+								InterfaceNode.landscape.draw(Projectile.cameraX, FriendedPlayer.cameraZ,
 										Class72.cameraY, Class67.cameraPitch, Class65.cameraYaw, var30);
-								TexturedGraphic.anInt1784 = var39;
-								Class34.method201();
-								InterfaceNode.landscape.method50();
+								Graphics3D.viewportWidth = var39;
+								Occluder.method201();
+								InterfaceNode.landscape.clearEntities();
 								Client.anInt2082 = 0;
 								var67 = false;
 								var36 = -1;
@@ -340,11 +340,11 @@ public class Class53 {
 										var70 = Client.npcArray[Client.npcIndices[var52 - var35]];
 									}
 
-									Class39.method215((Character) var70, var52, var9, var16, var13, var31);
+									Scene.method215((Character) var70, var52, var9, var16, var13, var31);
 								}
 
 								if (var67) {
-									Class39.method215(Client.playerArray[Client.anInt2111], var36, var9, var16, var13,
+									Scene.method215(Client.playerArray[Client.anInt2111], var36, var9, var16, var13,
 											var31);
 								}
 
@@ -452,11 +452,11 @@ public class Class53 {
 										if (Client.anIntArray2089[var52] == 4) {
 											var32 = (150 - Client.anIntArray2132[var52])
 													* (Class35.b12_full.method967(var711) + 100) / 150;
-											RSGraphics.setInnerDrawRegion(Client.screenY + var9 - 50, var16,
+											Raster.setInnerDrawRegion(Client.screenY + var9 - 50, var16,
 													Client.screenY + var9 + 50, var16 + var31);
 											Class35.b12_full.method980(var711, Client.screenY + var9 + 50 - var32,
 													Client.screenX + var16, var12, 0);
-											RSGraphics.setDrawRegion(var9, var16, var9 + var13, var16 + var31);
+											Raster.setDrawRegion(var9, var16, var9 + var13, var16 + var31);
 										}
 
 										if (Client.anIntArray2089[var52] == 5) {
@@ -468,12 +468,12 @@ public class Class53 {
 												var42 = var32 - 125;
 											}
 
-											RSGraphics.setInnerDrawRegion(var9,
-													Client.screenX + var16 - Class35.b12_full.anInt1824 - 1,
+											Raster.setInnerDrawRegion(var9,
+													Client.screenX + var16 - Class35.b12_full.verticalSpace - 1,
 													var13 + var9, var16 + 5 + Client.screenX);
 											Class35.b12_full.method982(var711, Client.screenY + var9,
 													Client.screenX + var16 + var42, var12, 0);
-											RSGraphics.setDrawRegion(var9, var16, var13 + var9, var31 + var16);
+											Raster.setDrawRegion(var9, var16, var13 + var9, var31 + var16);
 										}
 									} else {
 										Class35.b12_full.method982(var711, Client.screenY + var9,
@@ -487,13 +487,13 @@ public class Class53 {
 											(Client.hintArrowY - VarClientHub.chunkLeftY << 7) + Client.anInt2025,
 											Client.anInt2032 * 1818880718);
 									if (Client.screenY > -1 && Client.engineCycle % 20 < 10) {
-										Class39.hintIcons[0].method946(Client.screenY + var9 - 12,
+										Scene.hintIcons[0].method946(Client.screenY + var9 - 12,
 												Client.screenX + var16 - 28);
 									}
 								}
 
-								((TextureLoader) TexturedGraphic.textureLoader).method186(Client.anInt2066);
-								Class5.method71(var9, var16, var13, var31);
+								((TextureLoader) Graphics3D.textureLoader).method186(Client.anInt2066);
+								ChatMessageContainer.method71(var9, var16, var13, var31);
 								Projectile.cameraX = var38;
 								FriendedPlayer.cameraZ = var24;
 								Class72.cameraY = var40;
@@ -508,18 +508,18 @@ public class Class53 {
 								}
 
 								if (Client.aBool2214) {
-									RSGraphics.method793(var9, var16, var13, var31, 0);
+									Raster.method793(var9, var16, var13, var31, 0);
 									Class82.method363("Loading - please wait.", false);
 								}
 
 								Client.aBoolArray2118[var15.boundsIndex] = true;
-								RSGraphics.setDrawRegion(var2, var3, var4, var5);
+								Raster.setDrawRegion(var2, var3, var4, var5);
 								continue;
 							}
 
 							if (var15.contentType == 1338) {
 								Node_Sub8.method547(var15, var10, var11, var18);
-								RSGraphics.setDrawRegion(var2, var3, var4, var5);
+								Raster.setDrawRegion(var2, var3, var4, var5);
 								continue;
 							}
 
@@ -531,12 +531,12 @@ public class Class53 {
 												var541.anInt1648, 25, 25, Client.minimapRotation, 256,
 												var541.anIntArray1646, var541.anIntArray1645);
 									} else {
-										RSGraphics.method792(var10, var11, 0, var541.anIntArray1646,
+										Raster.method792(var10, var11, 0, var541.anIntArray1646,
 												var541.anIntArray1645);
 									}
 								}
 
-								RSGraphics.setDrawRegion(var2, var3, var4, var5);
+								Raster.setDrawRegion(var2, var3, var4, var5);
 								continue;
 							}
 						}
@@ -568,8 +568,8 @@ public class Class53 {
 								ClientSettings.method164(var17.type, var22, var23, var28, var29, var10, var11, var18);
 							}
 
-							RSGraphics.setDrawRegion(var2, var3, var4, var5);
-							TexturedGraphic.method909();
+							Raster.setDrawRegion(var2, var3, var4, var5);
+							Graphics3D.method909();
 						}
 
 						if (Client.resizable || Client.aBoolArray2137[var18] || Client.anInt2177 > 1) {
@@ -582,22 +582,22 @@ public class Class53 {
 								var31 = var15.viewportHeight;
 								Class35.scrollbar[0].method929(var9, var11);
 								Class35.scrollbar[1].method929(var9, var13 + var11 - 16);
-								RSGraphics.method793(var9, var11 + 16, 16, var13 - 32, Client.anInt2067);
+								Raster.method793(var9, var11 + 16, 16, var13 - 32, Client.anInt2067);
 								var481 = (var13 - 32) * var13 / var31;
 								if (var481 < 8) {
 									var481 = 8;
 								}
 
 								var30 = (var13 - 32 - var481) * var16 / (var31 - var13);
-								RSGraphics.method793(var9, var30 + 16 + var11, 16, var481, Client.anInt2068);
-								RSGraphics.method784(var9, var30 + var11 + 16, var481, Client.anInt2070);
-								RSGraphics.method784(var9 + 1, var11 + 16 + var30, var481, Client.anInt2070);
-								RSGraphics.method796(var9, var30 + 16 + var11, 16, Client.anInt2070);
-								RSGraphics.method796(var9, var11 + 17 + var30, 16, Client.anInt2070);
-								RSGraphics.method784(var9 + 15, var11 + 16 + var30, var481, Client.anInt2069);
-								RSGraphics.method784(var9 + 14, var30 + 17 + var11, var481 - 1, Client.anInt2069);
-								RSGraphics.method796(var9, var481 + var30 + var11 + 15, 16, Client.anInt2069);
-								RSGraphics.method796(var9 + 1, var11 + 14 + var30 + var481, 15, Client.anInt2069);
+								Raster.method793(var9, var30 + 16 + var11, 16, var481, Client.anInt2068);
+								Raster.method784(var9, var30 + var11 + 16, var481, Client.anInt2070);
+								Raster.method784(var9 + 1, var11 + 16 + var30, var481, Client.anInt2070);
+								Raster.drawHorizontal(var9, var30 + 16 + var11, 16, Client.anInt2070);
+								Raster.drawHorizontal(var9, var11 + 17 + var30, 16, Client.anInt2070);
+								Raster.method784(var9 + 15, var11 + 16 + var30, var481, Client.anInt2069);
+								Raster.method784(var9 + 14, var30 + 17 + var11, var481 - 1, Client.anInt2069);
+								Raster.drawHorizontal(var9, var481 + var30 + var11 + 15, 16, Client.anInt2069);
+								Raster.drawHorizontal(var9 + 1, var11 + 14 + var30 + var481, 15, Client.anInt2069);
 							}
 
 							if (var15.type != 1) {
@@ -615,7 +615,7 @@ public class Class53 {
 
 											if (var15.itemIds[var9] <= 0) {
 												if (var15.anIntArray1164 != null && var9 < 20) {
-													Picture var50 = var15.method488(var9);
+													Sprite var50 = var15.method488(var9);
 													if (var50 != null) {
 														var50.method946(var31, var481);
 													} else if (Widget.aBool1128) {
@@ -630,7 +630,7 @@ public class Class53 {
 														&& var481 < var5
 														|| SpotAnimType.aWidget1446 == var15
 																&& Client.anInt2100 == var9) {
-													Picture var621;
+													Sprite var621;
 													if (Client.itemSelectionStatus == 1
 															&& Class40.selectedItemIndex == var9
 															&& var15.hash == Class22.anInt286) {
@@ -662,9 +662,9 @@ public class Class53 {
 															var621.method951(var31 + var30, var481 + var38, 128);
 															if (var1 != -1) {
 																Widget var69 = var0[var1 & 0xffff];
-																if (var38 + var481 < RSGraphics.draw_region_y
+																if (var38 + var481 < Raster.draw_region_y
 																		&& var69.insetY > 0) {
-																	var26 = Client.anInt2066 * (RSGraphics.draw_region_y
+																	var26 = Client.anInt2066 * (Raster.draw_region_y
 																			- var481 - var38) / 3;
 																	if (var26 > Client.anInt2066 * 10) {
 																		var26 = Client.anInt2066 * 10;
@@ -679,11 +679,11 @@ public class Class53 {
 																	Class68.method326(var69);
 																}
 
-																if (var38 + var481 + 32 > RSGraphics.draw_region_max_y
+																if (var38 + var481 + 32 > Raster.draw_region_max_y
 																		&& var69.insetY < var69.viewportHeight
 																				- var69.height * 1227800423) {
 																	var26 = Client.anInt2066 * (var38 + 32 + var481
-																			- RSGraphics.draw_region_max_y) / 3;
+																			- Raster.draw_region_max_y) / 3;
 																	if (var26 > Client.anInt2066 * 10) {
 																		var26 = Client.anInt2066 * 10;
 																	}
@@ -731,21 +731,21 @@ public class Class53 {
 
 									if (var19 == 0) {
 										if (var15.aBool1161) {
-											RSGraphics.method793(var10, var11, var15.width, var15.height * 1227800423,
+											Raster.method793(var10, var11, var15.width, var15.height * 1227800423,
 													var9);
 										} else {
-											RSGraphics.drawRectangle(var10, var11, var15.width,
+											Raster.drawRectangle(var10, var11, var15.width,
 													var15.height * 1227800423, var9);
 										}
 									} else if (var15.aBool1161) {
-										RSGraphics.fillRectangle(var10, var11, var15.width, var15.height * 1227800423,
+										Raster.fillRectangle(var10, var11, var15.width, var15.height * 1227800423,
 												var9, 256 - (var19 & 0xff));
 									} else {
-										RSGraphics.method794(var10, var11, var15.width, var15.height * 1227800423, var9,
+										Raster.method794(var10, var11, var15.width, var15.height * 1227800423, var9,
 												256 - (var19 & 0xff));
 									}
 								} else {
-									DualNode_Sub13_Sub3_Sub1 var48;
+									IndexedFont var48;
 									if (var15.type == 4) {
 										var48 = var15.method490();
 										if (var48 == null) {
@@ -800,7 +800,7 @@ public class Class53 {
 													var15.anInt1138, var15.anInt1158);
 										}
 									} else if (var15.type == 5) {
-										Picture var531;
+										Sprite var531;
 										if (!var15.interactable) {
 											var531 = var15.method489(RuntimeException_Sub1.method932(var15));
 											if (var531 != null) {
@@ -841,7 +841,7 @@ public class Class53 {
 																var15.height * 1227800423);
 													}
 												} else {
-													RSGraphics.setInnerDrawRegion(var10, var11, var15.width + var10,
+													Raster.setInnerDrawRegion(var10, var11, var15.width + var10,
 															var15.height * 1227800423 + var11);
 													var31 = (var15.width + (var16 - 1)) / var16;
 													var481 = (var15.height * 1227800423 + (var13 - 1)) / var13;
@@ -862,7 +862,7 @@ public class Class53 {
 														}
 													}
 
-													RSGraphics.setDrawRegion(var2, var3, var4, var5);
+													Raster.setDrawRegion(var2, var3, var4, var5);
 												}
 											}
 										}
@@ -876,7 +876,7 @@ public class Class53 {
 												var16 = var15.anInt1162;
 											}
 
-											Rasterizer var63 = null;
+											Model var63 = null;
 											var31 = 0;
 											if (var15.itemId != -1) {
 												var53 = FriendedPlayer.getItemType(var15.itemId);
@@ -885,7 +885,7 @@ public class Class53 {
 													var63 = var53.method811(1);
 													if (var63 != null) {
 														var63.method998();
-														var31 = var63.modelHeight * 1812947537 / 2;
+														var31 = var63.height * 1812947537 / 2;
 													} else {
 														Class68.method326(var15);
 													}
@@ -895,7 +895,7 @@ public class Class53 {
 													var63 = Client.aPlayerConfig2138.method268((SequenceType) null, -1,
 															(SequenceType) null, -1);
 												} else {
-													var63 = Class68.myPlayer.method654((byte) 13);
+													var63 = Class68.myPlayer.getModel((byte) 13);
 												}
 											} else if (var16 == -1) {
 												var63 = var15.method492((SequenceType) null, -1, var58,
@@ -912,10 +912,10 @@ public class Class53 {
 												}
 											}
 
-											TexturedGraphic.method911(var15.width / 2 + var10,
+											Graphics3D.method911(var15.width / 2 + var10,
 													var15.height * 1227800423 / 2 + var11);
-											var481 = var15.modelZoom * TexturedGraphic.SIN_TABLE[var15.rotationX] >> 16;
-											var30 = var15.modelZoom * TexturedGraphic.COS_TABLE[var15.rotationX] >> 16;
+											var481 = var15.modelZoom * Graphics3D.SIN_TABLE[var15.rotationX] >> 16;
+											var30 = var15.modelZoom * Graphics3D.COS_TABLE[var15.rotationX] >> 16;
 											if (var63 != null) {
 												if (!var15.interactable) {
 													var63.method1012(0, var15.rotationZ, 0, var15.rotationX, 0, var481,
@@ -936,7 +936,7 @@ public class Class53 {
 												}
 											}
 
-											TexturedGraphic.method910();
+											Graphics3D.method910();
 										} else {
 											if (var15.type == 7) {
 												var48 = var15.method490();
@@ -988,12 +988,12 @@ public class Class53 {
 													&& Client.anInt2008 == Client.anInt2117) {
 												var9 = 0;
 												var16 = 0;
-												DualNode_Sub13_Sub3_Sub1 var57 = Client.p12_full;
+												IndexedFont var57 = Client.p12_full;
 												String var62 = var15.text;
 
 												String var54;
 												for (var62 = Node_Sub8.method551(var62, var15); var62
-														.length() > 0; var16 += var57.anInt1824 + 1) {
+														.length() > 0; var16 += var57.verticalSpace + 1) {
 													var30 = var62.indexOf(Class35.aString390);
 													if (var30 != -1) {
 														var54 = var62.substring(0, var30);
@@ -1025,13 +1025,13 @@ public class Class53 {
 													var38 = var5 - var16;
 												}
 
-												RSGraphics.method793(var30, var38, var9, var16, 16777120);
-												RSGraphics.drawRectangle(var30, var38, var9, var16, 0);
+												Raster.method793(var30, var38, var9, var16, 16777120);
+												Raster.drawRectangle(var30, var38, var9, var16, 0);
 												var62 = var15.text;
-												var24 = var57.anInt1824 + var38 + 2;
+												var24 = var57.verticalSpace + var38 + 2;
 
 												for (var62 = Node_Sub8.method551(var62, var15); var62
-														.length() > 0; var24 += var57.anInt1824 + 1) {
+														.length() > 0; var24 += var57.verticalSpace + 1) {
 													var40 = var62.indexOf(Class35.aString390);
 													if (var40 != -1) {
 														var54 = var62.substring(0, var40);
@@ -1059,7 +1059,7 @@ public class Class53 {
 														var31 = var15.height * 1227800423 + var11;
 													}
 
-													RSGraphics.drawLine(var9, var16, var13, var31, var15.textColor);
+													Raster.drawLine(var9, var16, var13, var31, var15.textColor);
 												} else {
 													var9 = var15.width >= 0 ? var15.width : -var15.width;
 													var16 = var15.height * 1227800423 >= 0 ? var15.height * 1227800423
@@ -1090,11 +1090,11 @@ public class Class53 {
 														var34 = var11 - var40;
 														var36 = var15.height * 1227800423 + var11 - var40;
 														var35 = var24 + var11 + var15.height * 1227800423;
-														TexturedGraphic.method916(var25, var26, var27);
-														TexturedGraphic.method917(var39, var34, var36, var25, var26,
+														Graphics3D.method916(var25, var26, var27);
+														Graphics3D.method917(var39, var34, var36, var25, var26,
 																var27, var15.textColor);
-														TexturedGraphic.method916(var25, var27, var37);
-														TexturedGraphic.method917(var39, var36, var35, var25, var27,
+														Graphics3D.method916(var25, var27, var37);
+														Graphics3D.method917(var39, var36, var35, var25, var27,
 																var37, var15.textColor);
 													}
 												}

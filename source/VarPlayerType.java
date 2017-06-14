@@ -70,7 +70,7 @@ public class VarPlayerType extends DualNode {
 				for (int var8 = var4; var8 < var5; var8++) {
 					char var6 = var0.charAt(var8);
 					if (MachineInfo.method565(var6)) {
-						char var7 = Class39.method216(var6);
+						char var7 = Scene.method216(var6);
 						if (var7 != 0) {
 							var3.append(var7);
 						}

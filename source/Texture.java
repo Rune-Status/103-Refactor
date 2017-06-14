@@ -141,7 +141,7 @@ public class Texture extends Node {
 		this.pixels = new int[size];
 
 		for (int var7 = 0; var7 < this.fileIds.length; var7++) {
-			Sprite var12 = IndexTable.method306(sprites, this.fileIds[var7]);
+			IndexedSprite var12 = IndexTable.method306(sprites, this.fileIds[var7]);
 			var12.method930();
 			byte[] var14 = var12.pixels;
 			int[] var9 = var12.palette;
@@ -172,7 +172,7 @@ public class Texture extends Node {
 			}
 
 			for (var10 = 0; var10 < var9.length; var10++) {
-				var9[var10] = TexturedGraphic.adjustRGB(var9[var10], brigness);
+				var9[var10] = Graphics3D.adjustRGB(var9[var10], brigness);
 			}
 
 			if (var7 == 0) {

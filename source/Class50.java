@@ -62,10 +62,10 @@ public class Class50 {
 		TileDecorationStub.aWidget838 = null;
 		if (Client.anInt2226 != -1) {
 			Client.anInt2168 = 0;
-			ClientSettings.method164(Client.anInt2226, 0, 0, Class34.gameWidth, Node_Sub9.gameHeight, 0, 0, -1);
+			ClientSettings.method164(Client.anInt2226, 0, 0, Occluder.gameWidth, Node_Sub9.gameHeight, 0, 0, -1);
 		}
 
-		RSGraphics.noClip();
+		Raster.noClip();
 		int var7;
 		if (!Client.menuOpen) {
 			if (Client.anInt2122 != -1) {
@@ -96,10 +96,10 @@ public class Class50 {
 		if (Client.anInt2177 == 3) {
 			for (var1 = 0; var1 < Client.anInt2168; var1++) {
 				if (Client.aBoolArray2137[var1]) {
-					RSGraphics.fillRectangle(Client.anIntArray2173[var1], Client.anIntArray2174[var1],
+					Raster.fillRectangle(Client.anIntArray2173[var1], Client.anIntArray2174[var1],
 							Client.anIntArray2175[var1], Client.anIntArray2176[var1], 16711935, 128);
 				} else if (Client.aBoolArray2171[var1]) {
-					RSGraphics.fillRectangle(Client.anIntArray2173[var1], Client.anIntArray2174[var1],
+					Raster.fillRectangle(Client.anIntArray2173[var1], Client.anIntArray2174[var1],
 							Client.anIntArray2175[var1], Client.anIntArray2176[var1], 16711680, 128);
 				}
 			}
@@ -133,11 +133,11 @@ public class Class50 {
 					}
 
 					int var10 = (var2.anInt1282 - var4) * Client.anInt2205 * 873913835 / var2.anInt1282;
-					Class14 var10000;
+					Track var10000;
 					if (var2.aNode_Sub4_Sub2_1276 == null) {
 						if (var2.anInt1281 >= 0) {
-							var10000 = (Class14) null;
-							Class14 var11 = Class14.method119(VarClientType.sfxIndex, var2.anInt1281, 0);
+							var10000 = (Track) null;
+							Track var11 = Track.getTrack(VarClientType.sfxIndex, var2.anInt1281, 0);
 							if (var11 != null) {
 								Node_Sub2_Sub1 var14 = var11.method122().method722(Class59.aClass16_548);
 								Node_Sub4_Sub2 var12 = Node_Sub4_Sub2.method771(var14, 100, var10);
@@ -153,8 +153,8 @@ public class Class50 {
 					if (var2.aNode_Sub4_Sub2_1280 == null) {
 						if (var2.anIntArray1273 != null && (var2.anInt1274 -= var8) <= 0) {
 							int var131 = (int) (Math.random() * (double) var2.anIntArray1273.length);
-							var10000 = (Class14) null;
-							Class14 var141 = Class14.method119(VarClientType.sfxIndex, var2.anIntArray1273[var131], 0);
+							var10000 = (Track) null;
+							Track var141 = Track.getTrack(VarClientType.sfxIndex, var2.anIntArray1273[var131], 0);
 							if (var141 != null) {
 								Node_Sub2_Sub1 var15 = var141.method122().method722(Class59.aClass16_548);
 								Node_Sub4_Sub2 var0 = Node_Sub4_Sub2.method771(var15, 100, var10);
@@ -167,7 +167,7 @@ public class Class50 {
 						}
 					} else {
 						var2.aNode_Sub4_Sub2_1280.method741(var10);
-						if (!var2.aNode_Sub4_Sub2_1280.method12()) {
+						if (!var2.aNode_Sub4_Sub2_1280.hasPrevious()) {
 							var2.aNode_Sub4_Sub2_1280 = null;
 						}
 					}

@@ -9,7 +9,7 @@ public final class NodeMap {
 	public DualNode get(long var1) {
 		DualNode var3 = (DualNode) this.aNodeTable764.get(var1);
 		if (var3 != null) {
-			this.aNodeQueue_767.method425(var3);
+			this.aNodeQueue_767.push(var3);
 		}
 
 		return var3;
@@ -17,11 +17,11 @@ public final class NodeMap {
 
 	public void put(DualNode var1, long var2) {
 		if (this.anInt765 == 0) {
-			DualNode var4 = this.aNodeQueue_767.method423();
+			DualNode var4 = this.aNodeQueue_767.pop();
 			var4.unlink();
 			var4.unlinkDual();
 			if (this.aDualNode766 == var4) {
-				var4 = this.aNodeQueue_767.method423();
+				var4 = this.aNodeQueue_767.pop();
 				var4.unlink();
 				var4.unlinkDual();
 			}
@@ -30,11 +30,11 @@ public final class NodeMap {
 		}
 
 		this.aNodeTable764.put(var1, var2);
-		this.aNodeQueue_767.method425(var1);
+		this.aNodeQueue_767.push(var1);
 	}
 
 	public void method429() {
-		this.aNodeQueue_767.method426();
+		this.aNodeQueue_767.clear();
 		this.aNodeTable764.method149();
 		this.aDualNode766 = new DualNode();
 		this.anInt765 = this.anInt763;

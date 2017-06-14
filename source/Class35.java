@@ -1,8 +1,8 @@
 public class Class35 {
 
-	static DualNode_Sub13_Sub3_Sub1 b12_full;
+	static IndexedFont b12_full;
 	static Connection aClass60_394;
-	static Sprite[] scrollbar;
+	static IndexedSprite[] scrollbar;
 	static String aString387 = ",";
 	static String aString388 = "|";
 	static String aString389 = " (";

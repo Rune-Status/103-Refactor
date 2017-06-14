@@ -3,7 +3,7 @@ import java.awt.Component;
 public class VarBitType extends DualNode {
 
 	public static AbstractIndex varbit_ref;
-	static Picture[] pkIcons;
+	static Sprite[] pkIcons;
 	public int varp;
 	public int lowBit;
 	public int highBit;
@@ -35,7 +35,7 @@ public class VarBitType extends DualNode {
 		comp.addFocusListener(KeyFocusListener.kfListener);
 	}
 
-	static final void method877(Sprite var0) {
+	static final void method877(IndexedSprite var0) {
 		short var1 = 256;
 
 		int var5;

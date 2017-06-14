@@ -5,7 +5,7 @@ public final class ItemPile {
 	int regionY;
 	Entity middle;
 	int counterHeight;
-	int anInt831;
+	int bitset;
 	int height;
 	Entity anEntity832;
 
@@ -45,8 +45,8 @@ public final class ItemPile {
 				if (var1 == 0) {
 					InterfaceNode.landscape.method56(var0, var2, var3);
 					var12 = Class37.getObjectType(var36);
-					if (var12.anInt1690 != 0) {
-						Client.collisionMaps[var0].method238(var2, var3, var21, var8, var12.aBool1714);
+					if (var12.interactType != 0) {
+						Client.collisionMaps[var0].removeWall(var2, var3, var21, var8, var12.aBool1714);
 					}
 				}
 
@@ -62,8 +62,8 @@ public final class ItemPile {
 						return;
 					}
 
-					if (var12.anInt1690 != 0) {
-						Client.collisionMaps[var0].method239(var2, var3, var12.sizeX, var12.sizeY, var8,
+					if (var12.interactType != 0) {
+						Client.collisionMaps[var0].removeObject(var2, var3, var12.sizeX, var12.sizeY, var8,
 								var12.aBool1714);
 					}
 				}
@@ -71,15 +71,15 @@ public final class ItemPile {
 				if (var1 == 3) {
 					InterfaceNode.landscape.method27(var0, var2, var3);
 					var12 = Class37.getObjectType(var36);
-					if (var12.anInt1690 == 1) {
-						Client.collisionMaps[var0].method241(var2, var3);
+					if (var12.interactType == 1) {
+						Client.collisionMaps[var0].unblock(var2, var3);
 					}
 				}
 			}
 
 			if (var4 >= 0) {
 				var14 = var0;
-				if (var0 < 3 && (Class39.renderRules[1][var2][var3] & 0x2) == 2) {
+				if (var0 < 3 && (Scene.renderFlags[1][var2][var3] & 0x2) == 2) {
 					var14 = var0 + 1;
 				}
 
@@ -116,7 +116,7 @@ public final class ItemPile {
 					var30 = var3 + 1;
 				}
 
-				int[][] var17 = Class39.tileHeights[var14];
+				int[][] var17 = Scene.tileHeights[var14];
 				int var18 = var17[var29][var30] + var17[var29][var31] + var17[var28][var31] + var17[var28][var30] >> 2;
 				int var13 = (var2 << 7) + (var121 << 6);
 				int var19 = (var27 << 6) + (var3 << 7);
@@ -140,8 +140,8 @@ public final class ItemPile {
 					}
 
 					var361.addTileDecoration(var0, var2, var3, var18, (Entity) var20, var22, var23);
-					if (var81.anInt1690 == 1) {
-						var211.method236(var2, var3);
+					if (var81.interactType == 1) {
+						var211.block(var2, var3);
 					}
 				} else if (var6 != 10 && var6 != 11) {
 					if (var6 >= 12) {
@@ -153,8 +153,8 @@ public final class ItemPile {
 						}
 
 						var361.method18(var0, var2, var3, var18, 1, 1, (Entity) var20, 0, var22, var23);
-						if (var81.anInt1690 != 0) {
-							var211.method234(var2, var3, var121, var27, var81.aBool1714);
+						if (var81.interactType != 0) {
+							var211.addObject(var2, var3, var121, var27, var81.aBool1714);
 						}
 					} else if (var6 == 0) {
 						if (var81.anInt1698 == -1 && var81.transformIds == null) {
@@ -165,9 +165,9 @@ public final class ItemPile {
 						}
 
 						var361.addBoundary(var0, var2, var3, var18, (Entity) var20, (Entity) null,
-								Class39.anIntArray434[var5], 0, var22, var23);
-						if (var81.anInt1690 != 0) {
-							var211.method242(var2, var3, var6, var5, var81.aBool1714);
+								Scene.WALL_ROTATION_TYPE1[var5], 0, var22, var23);
+						if (var81.interactType != 0) {
+							var211.addWall(var2, var3, var6, var5, var81.aBool1714);
 						}
 					} else if (var6 == 1) {
 						if (var81.anInt1698 == -1 && var81.transformIds == null) {
@@ -178,9 +178,9 @@ public final class ItemPile {
 						}
 
 						var361.addBoundary(var0, var2, var3, var18, (Entity) var20, (Entity) null,
-								Class39.anIntArray435[var5], 0, var22, var23);
-						if (var81.anInt1690 != 0) {
-							var211.method242(var2, var3, var6, var5, var81.aBool1714);
+								Scene.WALL_ROTATION_TYPE2[var5], 0, var22, var23);
+						if (var81.interactType != 0) {
+							var211.addWall(var2, var3, var6, var5, var81.aBool1714);
 						}
 					} else {
 						Object var24;
@@ -199,9 +199,9 @@ public final class ItemPile {
 							}
 
 							var361.addBoundary(var0, var2, var3, var18, (Entity) var35, (Entity) var24,
-									Class39.anIntArray434[var5], Class39.anIntArray434[var37], var22, var23);
-							if (var81.anInt1690 != 0) {
-								var211.method242(var2, var3, var6, var5, var81.aBool1714);
+									Scene.WALL_ROTATION_TYPE1[var5], Scene.WALL_ROTATION_TYPE1[var37], var22, var23);
+							if (var81.interactType != 0) {
+								var211.addWall(var2, var3, var6, var5, var81.aBool1714);
 							}
 						} else if (var6 == 3) {
 							if (var81.anInt1698 == -1 && var81.transformIds == null) {
@@ -212,9 +212,9 @@ public final class ItemPile {
 							}
 
 							var361.addBoundary(var0, var2, var3, var18, (Entity) var20, (Entity) null,
-									Class39.anIntArray435[var5], 0, var22, var23);
-							if (var81.anInt1690 != 0) {
-								var211.method242(var2, var3, var6, var5, var81.aBool1714);
+									Scene.WALL_ROTATION_TYPE2[var5], 0, var22, var23);
+							if (var81.interactType != 0) {
+								var211.addWall(var2, var3, var6, var5, var81.aBool1714);
 							}
 						} else if (var6 == 9) {
 							if (var81.anInt1698 == -1 && var81.transformIds == null) {
@@ -225,8 +225,8 @@ public final class ItemPile {
 							}
 
 							var361.method18(var0, var2, var3, var18, 1, 1, (Entity) var20, 0, var22, var23);
-							if (var81.anInt1690 != 0) {
-								var211.method234(var2, var3, var121, var27, var81.aBool1714);
+							if (var81.interactType != 0) {
+								var211.addObject(var2, var3, var121, var27, var81.aBool1714);
 							}
 						} else if (var6 == 4) {
 							if (var81.anInt1698 == -1 && var81.transformIds == null) {
@@ -237,7 +237,7 @@ public final class ItemPile {
 							}
 
 							var361.addBoundaryDecoration(var0, var2, var3, var18, (Entity) var20, (Entity) null,
-									Class39.anIntArray434[var5], 0, 0, 0, var22, var23);
+									Scene.WALL_ROTATION_TYPE1[var5], 0, 0, 0, var22, var23);
 						} else {
 							int var351;
 							if (var6 == 5) {
@@ -255,8 +255,8 @@ public final class ItemPile {
 								}
 
 								var361.addBoundaryDecoration(var0, var2, var3, var18, (Entity) var24, (Entity) null,
-										Class39.anIntArray434[var5], 0, Class39.anIntArray427[var5] * var37,
-										Class39.anIntArray436[var5] * var37, var22, var23);
+										Scene.WALL_ROTATION_TYPE1[var5], 0, Scene.WALL_DECO_ROT_SIZE_X_DIR[var5] * var37,
+										Scene.WALL_DECO_ROT_SIZE_Y_DIR[var5] * var37, var22, var23);
 							} else if (var6 == 6) {
 								var37 = 8;
 								var351 = var361.method53(var0, var2, var3);
@@ -272,8 +272,8 @@ public final class ItemPile {
 								}
 
 								var361.addBoundaryDecoration(var0, var2, var3, var18, (Entity) var24, (Entity) null,
-										256, var5, Class39.anIntArray440[var5] * var37,
-										Class39.anIntArray437[var5] * var37, var22, var23);
+										256, var5, Scene.SEQ_DECO_ROT_SIZE_X_DIR[var5] * var37,
+										Scene.SEQ_DECO_ROT_SIZE_Y_DIR[var5] * var37, var22, var23);
 							} else if (var6 == 7) {
 								var351 = var5 + 2 & 0x3;
 								if (var81.anInt1698 == -1 && var81.transformIds == null) {
@@ -305,8 +305,8 @@ public final class ItemPile {
 								}
 
 								var361.addBoundaryDecoration(var0, var2, var3, var18, (Entity) var24, (Entity) var26,
-										256, var5, Class39.anIntArray440[var5] * var37,
-										Class39.anIntArray437[var5] * var37, var22, var23);
+										256, var5, Scene.SEQ_DECO_ROT_SIZE_X_DIR[var5] * var37,
+										Scene.SEQ_DECO_ROT_SIZE_Y_DIR[var5] * var37, var22, var23);
 							}
 						}
 					}
@@ -323,8 +323,8 @@ public final class ItemPile {
 								var22, var23);
 					}
 
-					if (var81.anInt1690 != 0) {
-						var211.method234(var2, var3, var121, var27, var81.aBool1714);
+					if (var81.interactType != 0) {
+						var211.addObject(var2, var3, var121, var27, var81.aBool1714);
 					}
 				}
 			}

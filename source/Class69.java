@@ -222,7 +222,7 @@ public class Class69 {
 			var0.method1016();
 		}
 
-		DualNode_Sub8.method710(var0);
+		ChatMessage.method710(var0);
 		var0.aBool1919 = false;
 		if (var0.anInt1932 != -1) {
 			var11 = Node_Sub6.getSequenceType(var0.anInt1932);

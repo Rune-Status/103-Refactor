@@ -30,7 +30,7 @@ public class ImplSoundSystem extends AbstractSoundSystem {
 	}
 
 	void write() {
-		system.write(this.anInt1209, this.anIntArray160);
+		system.write(this.anInt1209, this.samples);
 	}
 
 	ImplSoundSystem(TaskManager var1, int var2) {

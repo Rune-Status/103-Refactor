@@ -19,7 +19,7 @@ public class TextureLoader implements ITextureLoader {
 		Texture texture = this.textures[id];
 		if (texture != null) {
 			if (texture.pixels != null) {
-				this.deque.method474(texture);
+				this.deque.addTail(texture);
 				texture.loaded = true;
 				return texture.pixels;
 			}
@@ -27,13 +27,13 @@ public class TextureLoader implements ITextureLoader {
 			boolean success = texture.method543(this.brightness, this.width, this.sprites);
 			if (success) {
 				if (this.size == 0) {
-					Texture var5 = (Texture) this.deque.method470();
+					Texture var5 = (Texture) this.deque.popTail();
 					var5.resetPixels();
 				} else {
 					--this.size;
 				}
 
-				this.deque.method474(texture);
+				this.deque.addTail(texture);
 				texture.loaded = true;
 				return texture.pixels;
 			}
@@ -77,7 +77,7 @@ public class TextureLoader implements ITextureLoader {
 
 	}
 
-	public int method7(int var1) {
+	public int getAverageTextureRGB(int var1) {
 		return this.textures[var1] != null ? this.textures[var1].anInt1286 : 0;
 	}
 

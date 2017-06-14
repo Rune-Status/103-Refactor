@@ -6,7 +6,7 @@ public class Node_Sub4_Sub1 extends Node_Sub4 {
 	int anInt1552 = -1;
 
 	public final synchronized void method729(Node_Sub4 var1) {
-		this.aDeque1549.method474(var1);
+		this.aDeque1549.addTail(var1);
 	}
 
 	public final synchronized void method730(Node_Sub4 var1) {
@@ -27,12 +27,12 @@ public class Node_Sub4_Sub1 extends Node_Sub4 {
 	}
 
 	void method732(Node var1, Node_Sub1 var2) {
-		while (this.aDeque1550.head != var1 && ((Node_Sub1) var1).anInt1211 <= var2.anInt1211) {
+		while (this.aDeque1550.tail != var1 && ((Node_Sub1) var1).anInt1211 <= var2.anInt1211) {
 			var1 = var1.next;
 		}
 
 		Deque.method468(var2, var1);
-		this.anInt1552 = ((Node_Sub1) this.aDeque1550.head.next).anInt1211;
+		this.anInt1552 = ((Node_Sub1) this.aDeque1550.tail.next).anInt1211;
 	}
 
 	protected Node_Sub4 method526() {
@@ -125,8 +125,8 @@ public class Node_Sub4_Sub1 extends Node_Sub4 {
 	void method734(Node_Sub1 var1) {
 		var1.unlink();
 		var1.method506();
-		Node var2 = this.aDeque1550.head.next;
-		if (this.aDeque1550.head == var2) {
+		Node var2 = this.aDeque1550.tail.next;
+		if (this.aDeque1550.tail == var2) {
 			this.anInt1552 = -1;
 		} else {
 			this.anInt1552 = ((Node_Sub1) var2).anInt1211;

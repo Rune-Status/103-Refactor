@@ -37,7 +37,7 @@ public class Class21 {
 					int var13 = var2 + var12;
 					if (var10 > 0 && var13 > 0 && var10 < 103 && var13 < 103) {
 						ObjectType var15 = Class37.getObjectType(var7);
-						if (var14 != 22 || !Client.lowMemory || var15.anInt1692 != 0 || var15.anInt1690 == 1
+						if (var14 != 22 || !Client.lowMemory || var15.anInt1692 != 0 || var15.interactType == 1
 								|| var15.aBool1711) {
 							if (!var15.method867()) {
 								++Client.anInt2049;
@@ -74,7 +74,7 @@ public class Class21 {
 			Client.aClass48_Sub1_2234.anInt512 = 1;
 			Client.aClass48_Sub1_2234.anInt510 = 1;
 			Class48_Sub1 var11 = Client.aClass48_Sub1_2234;
-			int var10 = Class39.method218(var4, var7, var9, var11, Client.collisionMaps[var0.anInt2004], true,
+			int var10 = Scene.method218(var4, var7, var9, var11, Client.collisionMaps[var0.anInt2004], true,
 					Client.anIntArray2235, Client.anIntArray2236);
 			if (var10 >= 1) {
 				for (int var5 = 0; var5 < var10 - 1; var5++) {
@@ -86,10 +86,10 @@ public class Class21 {
 	}
 
 	static int method157(int var0) {
-		DualNode_Sub8 var1 = (DualNode_Sub8) Class32.aClass107_355.method432((long) var0);
+		ChatMessage var1 = (ChatMessage) Class32.aClass107_355.method432((long) var0);
 		return var1 == null ? -1
 				: (var1.dualPrevious == Class32.aClass108_354.aDualNode771 ? -1
-						: ((DualNode_Sub8) var1.dualPrevious).anInt1516);
+						: ((ChatMessage) var1.dualPrevious).anInt1516);
 	}
 
 	Class21(Class21 var1) {

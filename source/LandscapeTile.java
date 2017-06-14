@@ -2,29 +2,29 @@ import java.awt.Canvas;
 
 public final class LandscapeTile extends Node {
 
-	boolean aBool1402;
-	int anInt1403;
-	Class31 aClass31_1404;
-	Class38 aClass38_1405;
-	BoundaryStub boundaryStub;
+	boolean drawEntities;
+	int wallUncullDirection;
+	TileUnderlay underlay;
+	TileOverlay overlay;
+	BoundaryStub wall;
 	static byte[][] aByteArrayArray1406;
 	TileDecorationStub tileDecorationStub;
 	ItemPile itemPile;
-	int anInt1407;
-	int anInt1409;
-	int anInt1410;
-	boolean aBool1411;
-	boolean aBool1412;
+	int entityCount;
+	int wallCullDirection;
+	int physicalLevel;
+	boolean draw;
+	boolean visible;
 	BoundaryDecorationStub boundaryDecorationStub;
-	int anInt1413;
-	int anInt1414;
-	LandscapeTile aLandscapeTile1415;
+	int wallCullOppositeDirection;
+	int wallDrawFlags;
+	LandscapeTile bridge;
 	public static Canvas gameCanvas;
-	int anInt1401 = 0;
+	int flags = 0;
 	EntityMarker[] entityMarkers = new EntityMarker[5];
-	int[] anIntArray1408 = new int[5];
-	int floorLevel;
-	int anInt1416;
+	int[] entityFlags = new int[5];
+	int level;
+	int renderLevel;
 	int regionX;
 	int regionY;
 
@@ -67,7 +67,7 @@ public final class LandscapeTile extends Node {
 	}
 
 	LandscapeTile(int var1, int var2, int var3) {
-		this.anInt1416 = this.floorLevel = var1;
+		this.renderLevel = this.level = var1;
 		this.regionX = var2;
 		this.regionY = var3;
 	}

@@ -12,7 +12,7 @@ public abstract class AbstractProducer {
 	public abstract void drawImageClip(Graphics var1, int var2, int var3, int var4, int var5);
 
 	public final void setRaster() {
-		RSGraphics.setRaster(this.dataArray, this.width, this.height);
+		Raster.setRaster(this.dataArray, this.width, this.height);
 	}
 
 	static final void method143(Player var0, int var1, int var2, int var3) {
@@ -32,7 +32,7 @@ public abstract class AbstractProducer {
 				FriendedPlayer.addMenuRow("Use", Client.selectedItemName + " " + Class35.aString391 + " "
 						+ Class48_Sub1.method545(16777215) + var5, 14, var1, var2, var3);
 			} else if (Client.spellSelected) {
-				if ((Class31.currentSpellTargets & 0x8) == 8) {
+				if ((TileUnderlay.currentSpellTargets & 0x8) == 8) {
 					FriendedPlayer.addMenuRow(Client.menuActionPrefix, Client.selectedSpellName + " "
 							+ Class35.aString391 + " " + Class48_Sub1.method545(16777215) + var5, 15, var1, var2, var3);
 				}

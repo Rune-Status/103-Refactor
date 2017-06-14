@@ -12,10 +12,10 @@ public final class BoundaryStub {
 	int orientationA;
 	int strictX;
 	int config = 0;
-	public int anInt277 = 0;
+	public int bitset = 0;
 
-	static Sprite set() {
-		Sprite sprite = new Sprite();
+	static IndexedSprite set() {
+		IndexedSprite sprite = new IndexedSprite();
 		sprite.width = Class7.width;
 		sprite.height = Class7.height;
 		sprite.offsetX = Class7.offsetsX[0];

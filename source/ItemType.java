@@ -5,7 +5,7 @@ import java.io.IOException;
 public class ItemType extends DualNode {
 
 	public int id;
-	static Picture[] prayerIcons;
+	static Sprite[] prayerIcons;
 	public static AbstractIndex item_ref;
 	int anInt1630;
 	public int anInt1637 = 2000;
@@ -67,7 +67,7 @@ public class ItemType extends DualNode {
 		}
 	}
 
-	public final Model method809(int var1) {
+	public final RSModel method809(int var1) {
 		int var3;
 		if (this.anIntArray1631 != null && var1 > 1) {
 			int var4 = -1;
@@ -83,7 +83,7 @@ public class ItemType extends DualNode {
 			}
 		}
 
-		Model var41 = Model.method887(GZipDecompressor.aClass87_516, this.anInt1630, 0);
+		RSModel var41 = RSModel.method887(GZipDecompressor.aClass87_516, this.anInt1630, 0);
 		if (var41 == null) {
 			return null;
 		} else {
@@ -136,7 +136,7 @@ public class ItemType extends DualNode {
 		Client.aBool1981 = true;
 	}
 
-	public final Rasterizer method811(int var1) {
+	public final Model method811(int var1) {
 		if (this.anIntArray1631 != null && var1 > 1) {
 			int var6 = -1;
 
@@ -151,11 +151,11 @@ public class ItemType extends DualNode {
 			}
 		}
 
-		Rasterizer var51 = (Rasterizer) aClass106_1607.get((long) this.id);
+		Model var51 = (Model) aClass106_1607.get((long) this.id);
 		if (var51 != null) {
 			return var51;
 		} else {
-			Model var61 = Model.method887(GZipDecompressor.aClass87_516, this.anInt1630, 0);
+			RSModel var61 = RSModel.method887(GZipDecompressor.aClass87_516, this.anInt1630, 0);
 			if (var61 == null) {
 				return null;
 			} else {
@@ -232,7 +232,7 @@ public class ItemType extends DualNode {
 		}
 	}
 
-	public final Model method814(boolean var1) {
+	public final RSModel method814(boolean var1) {
 		int var2 = this.anInt1641;
 		int var5 = this.anInt1608;
 		int var4 = this.anInt1626;
@@ -245,16 +245,16 @@ public class ItemType extends DualNode {
 		if (var2 == -1) {
 			return null;
 		} else {
-			Model var6 = Model.method887(GZipDecompressor.aClass87_516, var2, 0);
+			RSModel var6 = RSModel.method887(GZipDecompressor.aClass87_516, var2, 0);
 			if (var5 != -1) {
-				Model var9 = Model.method887(GZipDecompressor.aClass87_516, var5, 0);
+				RSModel var9 = RSModel.method887(GZipDecompressor.aClass87_516, var5, 0);
 				if (var4 != -1) {
-					Model var10 = Model.method887(GZipDecompressor.aClass87_516, var4, 0);
-					Model[] var8 = new Model[] { var6, var9, var10 };
-					var6 = new Model(var8, 3);
+					RSModel var10 = RSModel.method887(GZipDecompressor.aClass87_516, var4, 0);
+					RSModel[] var8 = new RSModel[] { var6, var9, var10 };
+					var6 = new RSModel(var8, 3);
 				} else {
-					Model[] var101 = new Model[] { var6, var9 };
-					var6 = new Model(var101, 2);
+					RSModel[] var101 = new RSModel[] { var6, var9 };
+					var6 = new RSModel(var101, 2);
 				}
 			}
 
@@ -459,7 +459,7 @@ public class ItemType extends DualNode {
 
 	}
 
-	public final Model method818(boolean var1) {
+	public final RSModel method818(boolean var1) {
 		int var2 = this.anInt1628;
 		int var4 = this.anInt1629;
 		if (var1) {
@@ -470,11 +470,11 @@ public class ItemType extends DualNode {
 		if (var2 == -1) {
 			return null;
 		} else {
-			Model var5 = Model.method887(GZipDecompressor.aClass87_516, var2, 0);
+			RSModel var5 = RSModel.method887(GZipDecompressor.aClass87_516, var2, 0);
 			if (var4 != -1) {
-				Model var7 = Model.method887(GZipDecompressor.aClass87_516, var4, 0);
-				Model[] var6 = new Model[] { var5, var7 };
-				var5 = new Model(var6, 2);
+				RSModel var7 = RSModel.method887(GZipDecompressor.aClass87_516, var4, 0);
+				RSModel[] var6 = new RSModel[] { var5, var7 };
+				var5 = new RSModel(var6, 2);
 			}
 
 			int var71;

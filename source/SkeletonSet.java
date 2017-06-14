@@ -35,7 +35,7 @@ public class SkeletonSet extends DualNode {
 				}
 
 				skin = new AnimationSkin(skinId, skinBytes);
-				skins.add(skin);
+				skins.addFront(skin);
 			}
 
 			this.skeletons[childs[child]] = new AnimationSkeleton(bytes, skin);

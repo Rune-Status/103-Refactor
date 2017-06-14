@@ -6,7 +6,7 @@ public class Class16 {
 
 	public Class16(int var1, int var2) {
 		if (var2 != var1) {
-			int var7 = Class31.method191(var1, var2);
+			int var7 = TileUnderlay.method191(var1, var2);
 			var1 /= var7;
 			var2 /= var7;
 			this.anInt246 = var1;
@@ -202,7 +202,7 @@ public class Class16 {
 										}
 									}
 
-									if (Class5.anInt112 == 13) {
+									if (ChatMessageContainer.anInt112 == 13) {
 										PlayerLoginDetails.anInt116 = 0;
 										PlayerLoginDetails.username = "";
 										PlayerLoginDetails.password = "";
@@ -210,12 +210,12 @@ public class Class16 {
 										Class37.pinText = "";
 										PlayerLoginDetails.trust = true;
 									} else if (PlayerLoginDetails.anInt115 == 0) {
-										if (Class5.anInt112 == 85 && PlayerLoginDetails.username.length() > 0) {
+										if (ChatMessageContainer.anInt112 == 85 && PlayerLoginDetails.username.length() > 0) {
 											PlayerLoginDetails.username = PlayerLoginDetails.username.substring(0,
 													PlayerLoginDetails.username.length() - 1);
 										}
 
-										if (Class5.anInt112 == 84 || Class5.anInt112 == 80) {
+										if (ChatMessageContainer.anInt112 == 84 || ChatMessageContainer.anInt112 == 80) {
 											PlayerLoginDetails.anInt115 = 1;
 										}
 
@@ -223,16 +223,16 @@ public class Class16 {
 											PlayerLoginDetails.username = PlayerLoginDetails.username + Class2.aChar80;
 										}
 									} else if (PlayerLoginDetails.anInt115 == 1) {
-										if (Class5.anInt112 == 85 && PlayerLoginDetails.password.length() > 0) {
+										if (ChatMessageContainer.anInt112 == 85 && PlayerLoginDetails.password.length() > 0) {
 											PlayerLoginDetails.password = PlayerLoginDetails.password.substring(0,
 													PlayerLoginDetails.password.length() - 1);
 										}
 
-										if (Class5.anInt112 == 84 || Class5.anInt112 == 80) {
+										if (ChatMessageContainer.anInt112 == 84 || ChatMessageContainer.anInt112 == 80) {
 											PlayerLoginDetails.anInt115 = 0;
 										}
 
-										if (Class5.anInt112 == 84) {
+										if (ChatMessageContainer.anInt112 == 84) {
 											PlayerLoginDetails.username = PlayerLoginDetails.username.trim();
 											if (PlayerLoginDetails.username.length() == 0) {
 												GPI.method230("", "Please enter your username/email address.", "");
@@ -314,19 +314,19 @@ public class Class16 {
 										}
 									}
 
-									if (Class5.anInt112 == 13) {
+									if (ChatMessageContainer.anInt112 == 13) {
 										PlayerLoginDetails.anInt116 = 0;
 										PlayerLoginDetails.username = "";
 										PlayerLoginDetails.password = "";
 										Class114.pin = 0;
 										Class37.pinText = "";
 									} else {
-										if (Class5.anInt112 == 85 && Class37.pinText.length() > 0) {
+										if (ChatMessageContainer.anInt112 == 85 && Class37.pinText.length() > 0) {
 											Class37.pinText = Class37.pinText.substring(0,
 													Class37.pinText.length() - 1);
 										}
 
-										if (Class5.anInt112 == 84) {
+										if (ChatMessageContainer.anInt112 == 84) {
 											Class37.pinText.trim();
 											if (Class37.pinText.length() != 6) {
 												GPI.method230("", "Please enter a 6-digin PIN.", "");
@@ -376,7 +376,7 @@ public class Class16 {
 										}
 									}
 
-									if (Class5.anInt112 == 13) {
+									if (ChatMessageContainer.anInt112 == 13) {
 										PlayerLoginDetails.aString133 = "";
 										PlayerLoginDetails.aString134 = "Enter your username/email & password.";
 										PlayerLoginDetails.aString135 = "";
@@ -384,12 +384,12 @@ public class Class16 {
 										PlayerLoginDetails.anInt115 = 0;
 										PlayerLoginDetails.password = "";
 									} else {
-										if (Class5.anInt112 == 85 && PlayerLoginDetails.username.length() > 0) {
+										if (ChatMessageContainer.anInt112 == 85 && PlayerLoginDetails.username.length() > 0) {
 											PlayerLoginDetails.username = PlayerLoginDetails.username.substring(0,
 													PlayerLoginDetails.username.length() - 1);
 										}
 
-										if (Class5.anInt112 == 84) {
+										if (ChatMessageContainer.anInt112 == 84) {
 											Class41.method224();
 											return;
 										}
@@ -415,7 +415,7 @@ public class Class16 {
 
 											return;
 										}
-									} while (Class5.anInt112 != 84 && Class5.anInt112 != 13);
+									} while (ChatMessageContainer.anInt112 != 84 && ChatMessageContainer.anInt112 != 13);
 
 									PlayerLoginDetails.aString133 = "";
 									PlayerLoginDetails.aString134 = "Enter your username/email & password.";
@@ -428,13 +428,13 @@ public class Class16 {
 						}
 					} else {
 						while (LoginHandler.method289(2102970548)) {
-							if (Class5.anInt112 == 84) {
+							if (ChatMessageContainer.anInt112 == 84) {
 								PlayerLoginDetails.aString133 = "";
 								PlayerLoginDetails.aString134 = "Enter your username/email & password.";
 								PlayerLoginDetails.aString135 = "";
 								PlayerLoginDetails.anInt116 = 2;
 								PlayerLoginDetails.anInt115 = 0;
-							} else if (Class5.anInt112 == 13) {
+							} else if (ChatMessageContainer.anInt112 == 13) {
 								PlayerLoginDetails.anInt116 = 0;
 							}
 						}

@@ -66,7 +66,7 @@ public class Class94 {
 							+ var3;
 					if (var11 > 0 && var21 > 0 && var11 < 103 && var21 < 103) {
 						int var31 = var1;
-						if ((Class39.renderRules[1][var11][var21] & 0x2) == 2) {
+						if ((Scene.renderFlags[1][var11][var21] & 0x2) == 2) {
 							var31 = var1 - 1;
 						}
 
@@ -75,7 +75,7 @@ public class Class94 {
 							var32 = var9[var31];
 						}
 
-						ScriptEvent.method650(var1, var11, var21, var25, var7 + var20 & 0x3, var30, var8, var32);
+						ScriptEvent.addObject(var1, var11, var21, var25, var7 + var20 & 0x3, var30, var8, var32);
 					}
 				}
 			}

@@ -1,7 +1,7 @@
 public class Class48_Sub1 extends Class48 {
 
 	static CacheIndex landscapesIndex;
-	static Picture compass;
+	static Sprite compass;
 	static Class124 aClass124_1297;
 	static int anInt1298;
 	static int anInt1299;
@@ -15,7 +15,7 @@ public class Class48_Sub1 extends Class48 {
 			return InterfaceNode.floorLevel * -1331355705;
 		} else {
 			int var0 = NpcType.getTileHeight(Projectile.cameraX, Class72.cameraY, InterfaceNode.floorLevel * -1331355705);
-			return var0 - FriendedPlayer.cameraZ < 800 && (Class39.renderRules[InterfaceNode.floorLevel
+			return var0 - FriendedPlayer.cameraZ < 800 && (Scene.renderFlags[InterfaceNode.floorLevel
 					* -1331355705][Projectile.cameraX >> 7][Class72.cameraY >> 7] & 0x4) != 0
 							? InterfaceNode.floorLevel * -1331355705 : 3;
 		}

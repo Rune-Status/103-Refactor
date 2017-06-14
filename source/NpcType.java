@@ -147,12 +147,12 @@ public class NpcType extends DualNode {
 	void post() {
 	}
 
-	public final Rasterizer method799(SequenceType var1, int var2, SequenceType var3, int var4) {
+	public final Model method799(SequenceType var1, int var2, SequenceType var3, int var4) {
 		if (this.transformIds != null) {
 			NpcType var111 = this.transform();
 			return var111 == null ? null : var111.method799(var1, var2, var3, var4);
 		} else {
-			Rasterizer var5 = (Rasterizer) aClass106_1578.get((long) this.id);
+			Model var5 = (Model) aClass106_1578.get((long) this.id);
 			if (var5 == null) {
 				boolean var12 = false;
 
@@ -166,18 +166,18 @@ public class NpcType extends DualNode {
 					return null;
 				}
 
-				Model[] var121 = new Model[this.anIntArray1581.length];
+				RSModel[] var121 = new RSModel[this.anIntArray1581.length];
 
 				int var6;
 				for (var6 = 0; var6 < this.anIntArray1581.length; var6++) {
-					var121[var6] = Model.method887(aClass87_1596, this.anIntArray1581[var6], 0);
+					var121[var6] = RSModel.method887(aClass87_1596, this.anIntArray1581[var6], 0);
 				}
 
-				Model var11;
+				RSModel var11;
 				if (var121.length == 1) {
 					var11 = var121[0];
 				} else {
-					var11 = new Model(var121, var121.length);
+					var11 = new RSModel(var121, var121.length);
 				}
 
 				if (this.colors != null) {
@@ -196,7 +196,7 @@ public class NpcType extends DualNode {
 				aClass106_1578.put(var5, (long) this.id);
 			}
 
-			Rasterizer var10;
+			Model var10;
 			if (var1 != null && var3 != null) {
 				var10 = var1.method678(var5, var2, var3, var4);
 			} else if (var1 != null) {
@@ -215,7 +215,7 @@ public class NpcType extends DualNode {
 		}
 	}
 
-	public final Model method800() {
+	public final RSModel method800() {
 		if (this.transformIds != null) {
 			NpcType var5 = this.transform();
 			return var5 == null ? null : var5.method800();
@@ -233,17 +233,17 @@ public class NpcType extends DualNode {
 			if (var2) {
 				return null;
 			} else {
-				Model[] var61 = new Model[this.anIntArray1582.length];
+				RSModel[] var61 = new RSModel[this.anIntArray1582.length];
 
 				for (int var6 = 0; var6 < this.anIntArray1582.length; var6++) {
-					var61[var6] = Model.method887(aClass87_1596, this.anIntArray1582[var6], 0);
+					var61[var6] = RSModel.method887(aClass87_1596, this.anIntArray1582[var6], 0);
 				}
 
-				Model model;
+				RSModel model;
 				if (var61.length == 1) {
 					model = var61[0];
 				} else {
-					model = new Model(var61, var61.length);
+					model = new RSModel(var61, var61.length);
 				}
 
 				int var1;
@@ -292,15 +292,15 @@ public class NpcType extends DualNode {
 		int ry = y >> 7;
 		if (rx >= 0 && ry >= 0 && rx <= 103 && ry <= 103) {
 			int rz = z;
-			if (z < 3 && (Class39.renderRules[1][rx][ry] & 0x2) == 2) {
+			if (z < 3 && (Scene.renderFlags[1][rx][ry] & 0x2) == 2) {
 				rz = z + 1;
 			}
 
 			int ax = x & 0x7f;
 			int ay = y & 0x7f;
-			int aa = Class39.tileHeights[rz][rx][ry] * (128 - ax) + Class39.tileHeights[rz][rx + 1][ry] * ax >> 7;
-			int ab = Class39.tileHeights[rz][rx + 1][ry + 1] * ax
-					+ Class39.tileHeights[rz][rx][ry + 1] * (128 - ax) >> 7;
+			int aa = Scene.tileHeights[rz][rx][ry] * (128 - ax) + Scene.tileHeights[rz][rx + 1][ry] * ax >> 7;
+			int ab = Scene.tileHeights[rz][rx + 1][ry + 1] * ax
+					+ Scene.tileHeights[rz][rx][ry + 1] * (128 - ax) >> 7;
 			return (128 - ay) * aa + ab * ay >> 7;
 		}
 		return 0;
@@ -347,7 +347,7 @@ public class NpcType extends DualNode {
 			var9.anInt1300 = var1;
 			var9.anInt1312 = var2;
 			Class41.method226(var9);
-			Client.aDeque2193.add(var9);
+			Client.aDeque2193.addFront(var9);
 		}
 
 		var9.anInt1307 = var4;
@@ -360,7 +360,7 @@ public class NpcType extends DualNode {
 	static CacheIndex openCacheIndex(int var0, boolean var1, boolean var2, boolean var3) {
 		IndexTable var4 = null;
 		if (Class75.cacheDataFile != null) {
-			var4 = new IndexTable(var0, Class75.cacheDataFile, Class39.cacheIndexFiles[var0], 1000000);
+			var4 = new IndexTable(var0, Class75.cacheDataFile, Scene.cacheIndexFiles[var0], 1000000);
 		}
 
 		return new CacheIndex(var4, Class3.refIndexTable, var0, var1, var2, var3);

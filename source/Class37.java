@@ -19,7 +19,7 @@ final class Class37 implements Comparator {
 
 			type.post();
 			if (type.aBool1720) {
-				type.anInt1690 = 0;
+				type.interactType = 0;
 				type.aBool1714 = false;
 			}
 
@@ -180,7 +180,7 @@ final class Class37 implements Comparator {
 		BitBuf var31 = Client.outBuffer;
 		int var2 = Client.resizable ? 2 : 1;
 		var31.putByte(var2);
-		Client.outBuffer.putShort(Class34.gameWidth);
+		Client.outBuffer.putShort(Occluder.gameWidth);
 		Client.outBuffer.putShort(Node_Sub9.gameHeight);
 	}
 

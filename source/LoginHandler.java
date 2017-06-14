@@ -52,7 +52,7 @@ public class LoginHandler {
 			if (KeyFocusListener.anInt599 == KeyFocusListener.anInt600) {
 				return false;
 			} else {
-				Class5.anInt112 = KeyFocusListener.anIntArray598[KeyFocusListener.anInt599];
+				ChatMessageContainer.anInt112 = KeyFocusListener.anIntArray598[KeyFocusListener.anInt599];
 				Class2.aChar80 = KeyFocusListener.aCharArray597[KeyFocusListener.anInt599];
 				KeyFocusListener.anInt599 = KeyFocusListener.anInt599 + 1 & 0x7f;
 				return true;
@@ -74,9 +74,9 @@ public class LoginHandler {
 	static final void processLogin() {
 		try {
 			if (Client.connectionState == 0) {
-				if (Class31.gameConnection != null) {
-					Class31.gameConnection.shutdown();
-					Class31.gameConnection = null;
+				if (TileUnderlay.gameConnection != null) {
+					TileUnderlay.gameConnection.shutdown();
+					TileUnderlay.gameConnection = null;
 				}
 
 				KeyFocusListener.socket = null;
@@ -96,7 +96,7 @@ public class LoginHandler {
 				}
 
 				if (KeyFocusListener.socket.status == 1) {
-					Class31.gameConnection = new Connection((Socket) KeyFocusListener.socket.value,
+					TileUnderlay.gameConnection = new Connection((Socket) KeyFocusListener.socket.value,
 							IsaacRandom.taskManager);
 					KeyFocusListener.socket = null;
 					Client.connectionState = 2;
@@ -106,28 +106,28 @@ public class LoginHandler {
 			if (Client.connectionState == 2) {
 				Client.outBuffer.position = 0;
 				Client.outBuffer.putByte(14);
-				Class31.gameConnection.write(Client.outBuffer.payload, 0, 1);
+				TileUnderlay.gameConnection.write(Client.outBuffer.payload, 0, 1);
 				Client.inBuffer.position = 0;
 				Client.connectionState = 3;
 			}
 
 			int var10;
 			if (Client.connectionState == 3) {
-				if (DualNode_Sub14.aClass8_1644 != null) {
-					DualNode_Sub14.aClass8_1644.method92();
+				if (DualNode_Sub14.soundSystem0 != null) {
+					DualNode_Sub14.soundSystem0.method92();
 				}
 
-				if (Class30.aClass8_341 != null) {
-					Class30.aClass8_341.method92();
+				if (Class30.soundSystem1 != null) {
+					Class30.soundSystem1.method92();
 				}
 
-				var10 = Class31.gameConnection.read();
-				if (DualNode_Sub14.aClass8_1644 != null) {
-					DualNode_Sub14.aClass8_1644.method92();
+				var10 = TileUnderlay.gameConnection.read();
+				if (DualNode_Sub14.soundSystem0 != null) {
+					DualNode_Sub14.soundSystem0.method92();
 				}
 
-				if (Class30.aClass8_341 != null) {
-					Class30.aClass8_341.method92();
+				if (Class30.soundSystem1 != null) {
+					Class30.soundSystem1.method92();
 				}
 
 				if (var10 != 0) {
@@ -182,7 +182,7 @@ public class LoginHandler {
 				xteaStart = Client.loginBuffer.position;
 				Client.loginBuffer.putString(PlayerLoginDetails.username);
 				Client.loginBuffer.putByte((Client.resizable ? 1 : 0) << 1 | (Client.lowMemory ? 1 : 0));
-				Client.loginBuffer.putShort(Class34.gameWidth);
+				Client.loginBuffer.putShort(Occluder.gameWidth);
 				Client.loginBuffer.putShort(Node_Sub9.gameHeight);
 				BitBuf var16 = Client.loginBuffer;
 				byte[] var18 = new byte[24];
@@ -212,7 +212,7 @@ public class LoginHandler {
 				IdentKitType.aNode_Sub10_1467.method566(var19);
 				Client.loginBuffer.putBytes(var19.payload, 0, var19.payload.length);
 				Client.loginBuffer.putByte(TextureLoader.sessionId);
-				Client.loginBuffer.putInt(Class34.skeletonsIndex.crc);
+				Client.loginBuffer.putInt(Occluder.skeletonsIndex.crc);
 				Client.loginBuffer.putInt(Client.meshesIndex.crc);
 				Client.loginBuffer.putInt(Client.configsIndex.crc);
 				Client.loginBuffer.putInt(RuneScript.interfaceIndex.crc);
@@ -230,7 +230,7 @@ public class LoginHandler {
 				Client.loginBuffer.putInt(Class59.midiInstrumentsIndex.crc);
 				Client.loginBuffer.encryptXTEA(var14, xteaStart, Client.loginBuffer.position);
 				Client.loginBuffer.putVarShort(Client.loginBuffer.position - varStart);
-				Class31.gameConnection.write(Client.loginBuffer.payload, 0, Client.loginBuffer.position);
+				TileUnderlay.gameConnection.write(Client.loginBuffer.payload, 0, Client.loginBuffer.position);
 				Client.outBuffer.setRandom(var14);
 
 				for (var5 = 0; var5 < 4; var5++) {
@@ -241,8 +241,8 @@ public class LoginHandler {
 				Client.connectionState = 6;
 			}
 
-			if (Client.connectionState == 6 && Class31.gameConnection.avail() > 0) {
-				var10 = Class31.gameConnection.read();
+			if (Client.connectionState == 6 && TileUnderlay.gameConnection.avail() > 0) {
+				var10 = TileUnderlay.gameConnection.read();
 				if (var10 == 21 && Client.clientState == 20) {
 					Client.connectionState = 7;
 				} else if (var10 == 2) {
@@ -263,8 +263,8 @@ public class LoginHandler {
 				}
 			}
 
-			if (Client.connectionState == 7 && Class31.gameConnection.avail() > 0) {
-				Client.transferTime = (Class31.gameConnection.read() + 3) * 60;
+			if (Client.connectionState == 7 && TileUnderlay.gameConnection.avail() > 0) {
+				Client.transferTime = (TileUnderlay.gameConnection.read() + 3) * 60;
 				Client.connectionState = 8;
 			}
 
@@ -276,9 +276,9 @@ public class LoginHandler {
 					Client.connectionState = 0;
 				}
 			} else {
-				if (Client.connectionState == 9 && Class31.gameConnection.avail() >= 13) {
-					boolean var13 = Class31.gameConnection.read() == 1;
-					Class31.gameConnection.read(Client.inBuffer.payload, 0, 4);
+				if (Client.connectionState == 9 && TileUnderlay.gameConnection.avail() >= 13) {
+					boolean var13 = TileUnderlay.gameConnection.read() == 1;
+					TileUnderlay.gameConnection.read(Client.inBuffer.payload, 0, 4);
 					Client.inBuffer.position = 0;
 					if (var13) {
 						varStart = Client.inBuffer.getHeader() << 24;
@@ -297,16 +297,16 @@ public class LoginHandler {
 						Class75.serializeSettings();
 					}
 
-					Client.myRights = Class31.gameConnection.read();
-					Client.aBool2179 = Class31.gameConnection.read() == 1;
-					Client.myPlayerIndex = Class31.gameConnection.read();
+					Client.myRights = TileUnderlay.gameConnection.read();
+					Client.aBool2179 = TileUnderlay.gameConnection.read() == 1;
+					Client.myPlayerIndex = TileUnderlay.gameConnection.read();
 					Client.myPlayerIndex <<= 8;
-					Client.myPlayerIndex += Class31.gameConnection.read();
-					Client.anInt2106 = Class31.gameConnection.read();
-					Class31.gameConnection.read(Client.inBuffer.payload, 0, 1);
+					Client.myPlayerIndex += TileUnderlay.gameConnection.read();
+					Client.anInt2106 = TileUnderlay.gameConnection.read();
+					TileUnderlay.gameConnection.read(Client.inBuffer.payload, 0, 1);
 					Client.inBuffer.position = 0;
 					Client.frameId = Client.inBuffer.getHeader();
-					Class31.gameConnection.read(Client.inBuffer.payload, 0, 2);
+					TileUnderlay.gameConnection.read(Client.inBuffer.payload, 0, 2);
 					Client.inBuffer.position = 0;
 					Client.frameSize = Client.inBuffer.getUShort();
 					Client var161;
@@ -330,9 +330,9 @@ public class LoginHandler {
 				}
 
 				if (Client.connectionState == 10) {
-					if (Class31.gameConnection.avail() >= Client.frameSize) {
+					if (TileUnderlay.gameConnection.avail() >= Client.frameSize) {
 						Client.inBuffer.position = 0;
-						Class31.gameConnection.read(Client.inBuffer.payload, 0, Client.frameSize);
+						TileUnderlay.gameConnection.read(Client.inBuffer.payload, 0, Client.frameSize);
 						BuildType.clearCache();
 						ItemTable.initializeGPI(Client.inBuffer);
 						TileDecorationStub.chunkBaseX = -1;
@@ -340,17 +340,17 @@ public class LoginHandler {
 						Client.frameId = -1;
 					}
 				} else {
-					if (Client.connectionState == 11 && Class31.gameConnection.avail() >= 2) {
+					if (Client.connectionState == 11 && TileUnderlay.gameConnection.avail() >= 2) {
 						Client.inBuffer.position = 0;
-						Class31.gameConnection.read(Client.inBuffer.payload, 0, 2);
+						TileUnderlay.gameConnection.read(Client.inBuffer.payload, 0, 2);
 						Client.inBuffer.position = 0;
-						Class31.anInt352 = Client.inBuffer.getUShort();
+						TileUnderlay.anInt352 = Client.inBuffer.getUShort();
 						Client.connectionState = 12;
 					}
 
-					if (Client.connectionState == 12 && Class31.gameConnection.avail() >= Class31.anInt352) {
+					if (Client.connectionState == 12 && TileUnderlay.gameConnection.avail() >= TileUnderlay.anInt352) {
 						Client.inBuffer.position = 0;
-						Class31.gameConnection.read(Client.inBuffer.payload, 0, Class31.anInt352);
+						TileUnderlay.gameConnection.read(Client.inBuffer.payload, 0, TileUnderlay.anInt352);
 						Client.inBuffer.position = 0;
 						String var141 = Client.inBuffer.getString();
 						String var17 = Client.inBuffer.getString();
@@ -361,17 +361,17 @@ public class LoginHandler {
 
 					if (Client.connectionState == 13) {
 						if (Client.frameSize == -1) {
-							if (Class31.gameConnection.avail() < 2) {
+							if (TileUnderlay.gameConnection.avail() < 2) {
 								return;
 							}
 
-							Class31.gameConnection.read(Client.inBuffer.payload, 0, 2);
+							TileUnderlay.gameConnection.read(Client.inBuffer.payload, 0, 2);
 							Client.inBuffer.position = 0;
 							Client.frameSize = Client.inBuffer.getUShort();
 						}
 
-						if (Class31.gameConnection.avail() >= Client.frameSize) {
-							Class31.gameConnection.read(Client.inBuffer.payload, 0, Client.frameSize);
+						if (TileUnderlay.gameConnection.avail() >= Client.frameSize) {
+							TileUnderlay.gameConnection.read(Client.inBuffer.payload, 0, Client.frameSize);
 							Client.inBuffer.position = 0;
 							var10 = Client.frameSize;
 							Class37.method214();

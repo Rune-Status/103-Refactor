@@ -2,7 +2,7 @@ public class Class93 {
 
 	public static ByteBuf aBuffer731;
 	static int[] anIntArray732;
-	static Picture[] aSpriteArray733;
+	static Sprite[] aSpriteArray733;
 
 	Class93() throws Throwable {
 		throw new Error();

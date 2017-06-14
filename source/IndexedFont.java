@@ -1,15 +1,15 @@
-public final class DualNode_Sub13_Sub3_Sub1 extends DualNode_Sub13_Sub3 {
+public final class IndexedFont extends AbstractFont {
 
-	public DualNode_Sub13_Sub3_Sub1(byte[] var1, int[] var2, int[] var3, int[] var4, int[] var5, int[] var6,
+	public IndexedFont(byte[] var1, int[] var2, int[] var3, int[] var4, int[] var5, int[] var6,
 			byte[][] var7) {
 		super(var1, var2, var3, var4, var5, var6, var7);
 	}
 
-	public DualNode_Sub13_Sub3_Sub1(byte[] var1) {
+	public IndexedFont(byte[] var1) {
 		super(var1);
 	}
 
-	final void method989(byte[] var1, int var2, int var3, int var4, int var5, int var6) {
+	final void renderRGB(byte[] var1, int var2, int var3, int var4, int var5, int var6) {
 		int var7 = raster_width * var3 + var2;
 		int var8 = raster_width - var4;
 		int var10 = 0;
@@ -45,12 +45,12 @@ public final class DualNode_Sub13_Sub3_Sub1 extends DualNode_Sub13_Sub3 {
 		}
 
 		if (var4 > 0 && var5 > 0) {
-			method987(raster, var1, var6, var11, var7, var4, var5, var8, var10);
+			render(raster, var1, var6, var11, var7, var4, var5, var8, var10);
 		}
 
 	}
 
-	final void method988(byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+	final void renderRGBA(byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7) {
 		int var8 = raster_width * var3 + var2;
 		int var12 = raster_width - var4;
 		int var9 = 0;
@@ -86,7 +86,7 @@ public final class DualNode_Sub13_Sub3_Sub1 extends DualNode_Sub13_Sub3 {
 		}
 
 		if (var4 > 0 && var5 > 0) {
-			method979(raster, var1, var6, var11, var8, var4, var5, var12, var9, var7);
+			renderRGBA(raster, var1, var6, var11, var8, var4, var5, var12, var9, var7);
 		}
 
 	}

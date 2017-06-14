@@ -183,10 +183,10 @@ public final class Node_Sub6 extends Node {
 		Class75.referenceFile = new CacheFile(
 				new CacheFileAccessor(VarClientStringType.method700("main_file_cache.idx255"), "rw", 1048576L), 6000,
 				0);
-		Class39.cacheIndexFiles = new CacheFile[Class75.indexCount];
+		Scene.cacheIndexFiles = new CacheFile[Class75.indexCount];
 
 		for (var4 = 0; var4 < Class75.indexCount; var4++) {
-			Class39.cacheIndexFiles[var4] = new CacheFile(
+			Scene.cacheIndexFiles[var4] = new CacheFile(
 					new CacheFileAccessor(VarClientStringType.method700("main_file_cache.idx" + var4), "rw", 1048576L),
 					6000, 0);
 		}

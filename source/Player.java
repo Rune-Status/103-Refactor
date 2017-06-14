@@ -22,7 +22,7 @@ public final class Player extends Character {
 	int totalLevel;
 	boolean hidden;
 	PlayerConfig config;
-	Rasterizer aModel2001;
+	Model aModel2001;
 	String[] aStringArray1986 = new String[3];
 	int anInt1989;
 	int anInt1990;
@@ -130,7 +130,7 @@ public final class Player extends Character {
 		this.config.method262(var6, var91, var2 == 1, var3);
 	}
 
-	protected final Rasterizer method654(byte var1) {
+	protected final Model getModel(byte var1) {
 		if (this.config == null) {
 			return null;
 		} else {
@@ -139,20 +139,20 @@ public final class Player extends Character {
 			SequenceType var3 = this.anInt1932 == -1 || this.aBool1996
 					|| this.anInt1932 == this.anInt1959 && var6 != null ? null
 							: Node_Sub6.getSequenceType(this.anInt1932);
-			Rasterizer var4 = this.config.method268(var6, this.anInt1934, var3, this.anInt1914);
+			Model var4 = this.config.method268(var6, this.anInt1934, var3, this.anInt1914);
 			if (var4 == null) {
 				return null;
 			} else {
 				var4.method998();
-				this.height = var4.modelHeight * 1812947537;
-				Rasterizer var2;
-				Rasterizer[] var5;
+				this.charHeight = var4.height * 1812947537;
+				Model var2;
+				Model[] var5;
 				if (!this.aBool1996 && this.graphicsId != -1 && this.anInt1925 != -1) {
 					var2 = Class96_Sub1.getSpotAnimType(this.graphicsId).method656(this.anInt1925);
 					if (var2 != null) {
 						var2.method1008(0, -this.graphicsHeight, 0);
-						var5 = new Rasterizer[] { var4, var2 };
-						var4 = new Rasterizer(var5, 2);
+						var5 = new Model[] { var4, var2 };
+						var4 = new Model(var5, 2);
 					}
 				}
 
@@ -176,8 +176,8 @@ public final class Player extends Character {
 							var2.method1013();
 						}
 
-						var5 = new Rasterizer[] { var4, var2 };
-						var4 = new Rasterizer(var5, 2);
+						var5 = new Model[] { var4, var2 };
+						var4 = new Model(var5, 2);
 						if (this.anInt1953 * -2061229533 == 512) {
 							var2.method1013();
 						} else if (this.anInt1953 * -2061229533 == 1024) {
@@ -553,7 +553,7 @@ public final class Player extends Character {
 		int var1;
 		int var2;
 		if (var3 == null) {
-			var1 = Class34.gameWidth;
+			var1 = Occluder.gameWidth;
 			var2 = Node_Sub9.gameHeight;
 		} else {
 			var1 = var3.width;

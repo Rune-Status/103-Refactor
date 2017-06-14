@@ -10,7 +10,7 @@ import java.awt.image.ImageProducer;
 
 public final class ConsumingImageProducer extends AbstractProducer implements ImageProducer, ImageObserver {
 
-	static DualNode_Sub13_Sub3_Sub1 p11_full;
+	static IndexedFont p11_full;
 	static Task aClass61_1215;
 	ColorModel model;
 	ImageConsumer consumer;

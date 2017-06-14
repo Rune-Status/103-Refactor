@@ -4,11 +4,11 @@ import java.util.Map;
 public class Class32 {
 
 	static int anInt356;
-	static Sprite[] aDualNode_Sub13_Sub2Array357;
+	static IndexedSprite[] aDualNode_Sub13_Sub2Array357;
 	static Class108 aClass108_354 = new Class108();
 	static Class107 aClass107_355 = new Class107(1024);
 	static int anInt358 = 0;
-	static Map aMap359 = new HashMap();
+	static Map messageContainers = new HashMap();
 
 	public static void method193(AbstractIndex var0, AbstractIndex var1, AbstractIndex var2, AbstractIndex var3) {
 		Widget.widgetIndex = var0;
@@ -24,7 +24,7 @@ public class Class32 {
 			Class75.cacheDataFile.method444();
 
 			for (int var0 = 0; var0 < Class75.indexCount; var0++) {
-				Class39.cacheIndexFiles[var0].method444();
+				Scene.cacheIndexFiles[var0].method444();
 			}
 
 			Class75.referenceFile.method444();
@@ -64,7 +64,7 @@ public class Class32 {
 			if (var9 == null) {
 				InterfaceNode.landscape.method28(InterfaceNode.floorLevel * -1331355705, var0, var1);
 			} else {
-				var2.method474(var9);
+				var2.addTail(var9);
 				GroundItem var121 = null;
 				GroundItem var111 = null;
 

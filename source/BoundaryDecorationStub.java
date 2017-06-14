@@ -11,7 +11,7 @@ public final class BoundaryDecorationStub {
 	static String[] cacheLocations;
 	int regionX;
 	int orientationA;
-	public int anInt218 = 0;
+	public int bitset = 0;
 	int config = 0;
 
 	static final void loadLocations(byte[] bytes, int x, int y, Landscape land, CollisionMap[] maps) {
@@ -44,7 +44,7 @@ public final class BoundaryDecorationStub {
 				int yOffset = y + localY;
 				if (xOffset > 0 && yOffset > 0 && xOffset < 103 && yOffset < 103) {
 					int plane = height;
-					if ((Class39.renderRules[1][xOffset][yOffset] & 0x2) == 2) {
+					if ((Scene.renderFlags[1][xOffset][yOffset] & 0x2) == 2) {
 						plane = height - 1;
 					}
 
@@ -53,7 +53,7 @@ public final class BoundaryDecorationStub {
 						map = maps[plane];
 					}
 
-					ScriptEvent.method650(height, xOffset, yOffset, id, orientation, type, land, map);
+					ScriptEvent.addObject(height, xOffset, yOffset, id, orientation, type, land, map);
 				}
 			}
 		}
@@ -138,13 +138,13 @@ public final class BoundaryDecorationStub {
 	static void bootClient() {
 		int var0;
 		if (Client.bootState == 0) {
-			InterfaceNode.landscape = new Landscape(4, 104, 104, Class39.tileHeights);
+			InterfaceNode.landscape = new Landscape(4, 104, 104, Scene.tileHeights);
 
 			for (var0 = 0; var0 < 4; var0++) {
 				Client.collisionMaps[var0] = new CollisionMap(104, 104);
 			}
 
-			RuneScript.minimapSprite = new Picture(512, 512);
+			RuneScript.minimapSprite = new Sprite(512, 512);
 			PlayerLoginDetails.bootMessage = "Starting game engine...";
 			PlayerLoginDetails.loadingPercentage = 5;
 			Client.bootState = 20;
@@ -159,7 +159,7 @@ public final class BoundaryDecorationStub {
 				for (var1 = 0; var1 < 9; var1++) {
 					var2 = var1 * 32 + 128 + 15;
 					var4 = var2 * 3 + 600;
-					var3 = TexturedGraphic.SIN_TABLE[var2];
+					var3 = Graphics3D.SIN_TABLE[var2];
 					var11[var1] = var4 * var3 >> 16;
 				}
 
@@ -168,7 +168,7 @@ public final class BoundaryDecorationStub {
 				PlayerLoginDetails.loadingPercentage = 10;
 				Client.bootState = 30;
 			} else if (Client.bootState == 30) {
-				Class34.skeletonsIndex = NpcType.openCacheIndex(0, false, true, true);
+				Occluder.skeletonsIndex = NpcType.openCacheIndex(0, false, true, true);
 				Client.meshesIndex = NpcType.openCacheIndex(1, false, true, true);
 				Client.configsIndex = NpcType.openCacheIndex(2, true, false, true);
 				RuneScript.interfaceIndex = NpcType.openCacheIndex(3, false, true, true);
@@ -188,7 +188,7 @@ public final class BoundaryDecorationStub {
 				PlayerLoginDetails.loadingPercentage = 20;
 				Client.bootState = 40;
 			} else if (Client.bootState == 40) {
-				var0 = Class34.skeletonsIndex.percentage() * 4 / 100;
+				var0 = Occluder.skeletonsIndex.percentage() * 4 / 100;
 				var0 += Client.meshesIndex.percentage() * 4 / 100;
 				var0 += Client.configsIndex.percentage() * 2 / 100;
 				var0 += RuneScript.interfaceIndex.percentage() * 2 / 100;
@@ -221,12 +221,12 @@ public final class BoundaryDecorationStub {
 					boolean var5 = !Client.lowMemory;
 					AbstractSoundSystem.sampleRate = 22050;
 					AbstractSoundSystem.highMemory = var5;
-					AbstractSoundSystem.anInt172 = 2;
+					AbstractSoundSystem.priority = 2;
 					Node_Sub4_Sub4 var9 = new Node_Sub4_Sub4();
 					var9.method832(9, 128);
-					DualNode_Sub14.aClass8_1644 = ScriptEvent.method651(IsaacRandom.taskManager,
+					DualNode_Sub14.soundSystem0 = ScriptEvent.createSystem(IsaacRandom.taskManager,
 							LandscapeTile.gameCanvas, 0, 22050);
-					DualNode_Sub14.aClass8_1644.method91(var9);
+					DualNode_Sub14.soundSystem0.method91(var9);
 					var141 = Class59.midiInstrumentsIndex;
 					CacheIndex var14 = Class26.vorbisIndex;
 					CacheIndex var12 = VarClientType.sfxIndex;
@@ -234,10 +234,10 @@ public final class BoundaryDecorationStub {
 					Class110.vorbis_ref = var14;
 					Class110.sfx_ref = var12;
 					Class110.aNode_Sub4_Sub4_784 = var9;
-					Class30.aClass8_341 = ScriptEvent.method651(IsaacRandom.taskManager, LandscapeTile.gameCanvas, 1,
+					Class30.soundSystem1 = ScriptEvent.createSystem(IsaacRandom.taskManager, LandscapeTile.gameCanvas, 1,
 							2048);
 					FriendedPlayer.aNode_Sub4_Sub1_740 = new Node_Sub4_Sub1();
-					Class30.aClass8_341.method91(FriendedPlayer.aNode_Sub4_Sub1_740);
+					Class30.soundSystem1.method91(FriendedPlayer.aNode_Sub4_Sub1_740);
 					Class59.aClass16_548 = new Class16(22050, AbstractSoundSystem.sampleRate);
 					PlayerLoginDetails.bootMessage = "Prepared sound engine";
 					PlayerLoginDetails.loadingPercentage = 35;
@@ -300,13 +300,13 @@ public final class BoundaryDecorationStub {
 						CacheIndex var18 = Client.configsIndex;
 						var141 = Class3.modelsIndex;
 						boolean var20 = Client.membersWorld;
-						DualNode_Sub13_Sub3_Sub1 var21 = ConsumingImageProducer.p11_full;
+						IndexedFont var21 = ConsumingImageProducer.p11_full;
 						ItemType.item_ref = var18;
 						GZipDecompressor.aClass87_516 = var141;
 						Class94.aBool735 = var20;
 						Class13.itemsSize = ItemType.item_ref.fileCount(10);
-						Class31.aDualNode_Sub13_Sub3_Sub1_350 = var21;
-						VarClientStringType.method699(Client.configsIndex, Class34.skeletonsIndex, Client.meshesIndex);
+						TileUnderlay.aDualNode_Sub13_Sub3_Sub1_350 = var21;
+						VarClientStringType.method699(Client.configsIndex, Occluder.skeletonsIndex, Client.meshesIndex);
 						CacheIndex var16 = Client.configsIndex;
 						CacheIndex var8 = Class3.modelsIndex;
 						SpotAnimType.anim_ref = var16;
@@ -316,7 +316,7 @@ public final class BoundaryDecorationStub {
 						Node_Sub8.method549(Client.configsIndex);
 						Class32.method193(RuneScript.interfaceIndex, Class3.modelsIndex, AnimationSkin.spritesIndex,
 								Class2.fontMetricsIndex);
-						Class31.method190(Client.configsIndex);
+						TileUnderlay.method190(Client.configsIndex);
 						ItemTable.method648(Client.configsIndex);
 						Class32.method196(Client.configsIndex);
 						CacheIndex var6 = Client.configsIndex;
@@ -334,8 +334,8 @@ public final class BoundaryDecorationStub {
 						} else {
 							TextureLoader var161 = new TextureLoader(Class1.texturesIndex, AnimationSkin.spritesIndex,
 									20, 0.8D, Client.lowMemory ? 64 : 128);
-							TexturedGraphic.setTextureLoader(var161);
-							TexturedGraphic.setBrightness(0.8D);
+							Graphics3D.setTextureLoader(var161);
+							Graphics3D.setBrightness(0.8D);
 							PlayerLoginDetails.bootMessage = "Loaded textures";
 							PlayerLoginDetails.loadingPercentage = 90;
 							Client.bootState = 110;
@@ -428,8 +428,8 @@ public final class BoundaryDecorationStub {
 						++var0;
 					}
 
-					if (Class39.hintIcons == null) {
-						Class39.hintIcons = DynamicObject.method1023(AnimationSkin.spritesIndex, "headicons_hint",
+					if (Scene.hintIcons == null) {
+						Scene.hintIcons = DynamicObject.method1023(AnimationSkin.spritesIndex, "headicons_hint",
 								"");
 					} else {
 						++var0;
@@ -471,7 +471,7 @@ public final class BoundaryDecorationStub {
 						PlayerLoginDetails.bootMessage = "Loading sprites - " + var0 * 100 / 13 + "%";
 						PlayerLoginDetails.loadingPercentage = 70;
 					} else {
-						DualNode_Sub13_Sub3.aDualNode_Sub13_Sub2Array1827 = IgnoredPlayer.modIcons;
+						AbstractFont.modSprites = IgnoredPlayer.modIcons;
 						Npc.mapedge.method948();
 						var1 = (int) (Math.random() * 21.0D) - 10;
 						var2 = (int) (Math.random() * 21.0D) - 10;

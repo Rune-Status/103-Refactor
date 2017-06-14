@@ -99,7 +99,7 @@ public class Floor1 {
 			}
 
 			var5 = RANGES[this.multiplier - 1];
-			int btis = DualNode_Sub8.ilog(var5 - 1);
+			int btis = ChatMessage.ilog(var5 - 1);
 			yList[0] = Node_Sub3.getInt(btis);
 			yList[1] = Node_Sub3.getInt(btis);
 			int offset = 2;

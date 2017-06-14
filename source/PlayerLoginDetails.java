@@ -1,15 +1,15 @@
 public class PlayerLoginDetails {
 
-	static Sprite titlebuttonSprite;
-	static Sprite[] runesSprite;
-	static Sprite radioButtons0Sprite;
-	static Sprite radioButtons2Sprite;
+	static IndexedSprite titlebuttonSprite;
+	static IndexedSprite[] runesSprite;
+	static IndexedSprite radioButtons0Sprite;
+	static IndexedSprite radioButtons2Sprite;
 	static int[] anIntArray124;
 	static int[] anIntArray125;
-	static Picture aSprite137;
+	static Sprite aSprite137;
 	static boolean titleScreenState;
 	static Widget[] aWidgetArray146;
-	static Sprite titleboxSprite;
+	static IndexedSprite titleboxSprite;
 	static int anInt114 = 0;
 	static int anInt115 = 0;
 	static int anInt116 = 0;

@@ -144,9 +144,9 @@ public final class GraphicsStub extends Entity {
 		return new File(var4);
 	}
 
-	protected final Rasterizer method654(byte var1) {
+	protected final Model getModel(byte var1) {
 		SpotAnimType var2 = Class96_Sub1.getSpotAnimType(this.anInt1812);
-		Rasterizer var3;
+		Model var3;
 		if (!this.finished) {
 			var3 = var2.method656(this.anInt1811);
 		} else {

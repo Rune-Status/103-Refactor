@@ -7,17 +7,17 @@ public class Class25 {
 
 	static void resetMapInfo() {
 		Class118.underlayIds = (byte[][][]) ((byte[][][]) null);
-		Class39.overlayIds = (byte[][][]) ((byte[][][]) null);
+		Scene.overlayIds = (byte[][][]) ((byte[][][]) null);
 		VarClientStringType.overlayPaths = (byte[][][]) ((byte[][][]) null);
 		GZipDecompressor.overlayRotations = (byte[][][]) ((byte[][][]) null);
-		Class39.anIntArrayArrayArray433 = (int[][][]) ((int[][][]) null);
-		Class39.aByteArrayArrayArray430 = (byte[][][]) ((byte[][][]) null);
-		Class39.anIntArrayArray441 = (int[][]) ((int[][]) null);
-		Permission.anIntArray614 = null;
-		Class51.anIntArray526 = null;
-		Class39.anIntArray432 = null;
-		Class89.anIntArray715 = null;
-		RuneScript.anIntArray1724 = null;
+		Scene.occludeFlags = (int[][][]) ((int[][][]) null);
+		Scene.shadowMap = (byte[][][]) ((byte[][][]) null);
+		Scene.lightMap = (int[][]) ((int[][]) null);
+		Permission.blendedHue = null;
+		Class51.blendedSaturation = null;
+		Scene.blendedLightness = null;
+		Class89.blendedHueMultiplier = null;
+		RuneScript.blendedDirectionTracker = null;
 	}
 
 }

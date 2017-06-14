@@ -107,8 +107,8 @@ public class MilliTimer extends Timer {
 		var2 += 8;
 		var3 = Client.menuItemCount * 15 + 22;
 		var4 = var0 - var2 / 2;
-		if (var2 + var4 > Class34.gameWidth) {
-			var4 = Class34.gameWidth - var2;
+		if (var2 + var4 > Occluder.gameWidth) {
+			var4 = Occluder.gameWidth - var2;
 		}
 
 		if (var4 < 0) {

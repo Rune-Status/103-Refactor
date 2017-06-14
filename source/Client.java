@@ -16,7 +16,7 @@ import netscape.javascript.JSObject;
 public final class Client extends GameEngine {
 
 	static CacheIndex meshesIndex;
-	static DualNode_Sub13_Sub3_Sub1 p12_full;
+	static IndexedFont p12_full;
 	static int[] regionIds;
 	static CacheIndex configsIndex;
 	static int languageId = 0;
@@ -263,7 +263,7 @@ public final class Client extends GameEngine {
 	static Deque aDeque2193;
 	static int[] anIntArray2196;
 	static int[] anIntArray2197;
-	static Picture[] aSpriteArray2198;
+	static Sprite[] aSpriteArray2198;
 	static Class36 aClass36_2199;
 	static int anInt2201;
 	static int anInt2202;
@@ -273,7 +273,7 @@ public final class Client extends GameEngine {
 	static int[] anIntArray2206;
 	static int anInt2208;
 	static int[] anIntArray2209;
-	static Class14[] aClass14Array2210;
+	static Track[] aClass14Array2210;
 	static int connectionState;
 	static String[] menuNouns;
 	static int[] anIntArray2212;
@@ -443,8 +443,8 @@ public final class Client extends GameEngine {
 			Class110.aClass87_783 = null;
 		}
 
-		Class34.method201();
-		Class31.method192();
+		Occluder.method201();
+		TileUnderlay.method192();
 		MouseInput var81 = MouseInput.aClass74_618;
 		synchronized (var81) {
 			MouseInput.anInt624 = MouseInput.anInt626 * -562612321;
@@ -545,39 +545,39 @@ public final class Client extends GameEngine {
 									+ "%" + Class35.aString392, true);
 						}
 
-						Class34.method201();
+						Occluder.method201();
 						Timer.method325();
-						Class34.method201();
-						InterfaceNode.landscape.method15();
-						Class34.method201();
+						Occluder.method201();
+						InterfaceNode.landscape.reset();
+						Occluder.method201();
 						System.gc();
 
 						for (var3 = 0; var3 < 4; var3++) {
-							collisionMaps[var3].method244();
+							collisionMaps[var3].reset();
 						}
 
 						for (var3 = 0; var3 < 4; var3++) {
 							for (var83 = 0; var83 < 104; var83++) {
 								for (var5 = 0; var5 < 104; var5++) {
-									Class39.renderRules[var3][var83][var5] = 0;
+									Scene.renderFlags[var3][var83][var5] = 0;
 								}
 							}
 						}
 
-						Class34.method201();
-						Class39.anInt438 = 99;
+						Occluder.method201();
+						Scene.level = 99;
 						Class118.underlayIds = new byte[4][104][104];
-						Class39.overlayIds = new byte[4][104][104];
+						Scene.overlayIds = new byte[4][104][104];
 						VarClientStringType.overlayPaths = new byte[4][104][104];
 						GZipDecompressor.overlayRotations = new byte[4][104][104];
-						Class39.anIntArrayArrayArray433 = new int[4][105][105];
-						Class39.aByteArrayArrayArray430 = new byte[4][105][105];
-						Class39.anIntArrayArray441 = new int[105][105];
-						Permission.anIntArray614 = new int[104];
-						Class51.anIntArray526 = new int[104];
-						Class39.anIntArray432 = new int[104];
-						Class89.anIntArray715 = new int[104];
-						RuneScript.anIntArray1724 = new int[104];
+						Scene.occludeFlags = new int[4][105][105];
+						Scene.shadowMap = new byte[4][105][105];
+						Scene.lightMap = new int[105][105];
+						Permission.blendedHue = new int[104];
+						Class51.blendedSaturation = new int[104];
+						Scene.blendedLightness = new int[104];
+						Class89.blendedHueMultiplier = new int[104];
+						RuneScript.blendedDirectionTracker = new int[104];
 						var3 = Class7.aByteArrayArray152.length;
 
 						for (Node_Sub6 var63 = (Node_Sub6) Node_Sub6.aDeque1279
@@ -593,7 +593,7 @@ public final class Client extends GameEngine {
 							}
 						}
 
-						Node_Sub6.aDeque1279.method467();
+						Node_Sub6.aDeque1279.clear();
 						MouseInput.flush(true);
 						if (!dynamicRegion) {
 							for (var83 = 0; var83 < var3; var83++) {
@@ -601,7 +601,7 @@ public final class Client extends GameEngine {
 								var6 = (regionIds[var83] & 0xff) * 64 - VarClientHub.chunkLeftY;
 								var19 = Class7.aByteArrayArray152[var83];
 								if (var19 != null) {
-									Class34.method201();
+									Occluder.method201();
 									Class93.loadTerrain(var19, var5, var6, TileDecorationStub.chunkBaseX * 8 - 48,
 											Class90.chunkBaseY * 8 - 48, collisionMaps);
 								}
@@ -612,7 +612,7 @@ public final class Client extends GameEngine {
 								var6 = (regionIds[var83] & 0xff) * 64 - VarClientHub.chunkLeftY;
 								var19 = Class7.aByteArrayArray152[var83];
 								if (var19 == null && Class90.chunkBaseY < 800) {
-									Class34.method201();
+									Occluder.method201();
 									VarClientHub.method182(var5, var6, 64, 64);
 								}
 							}
@@ -624,7 +624,7 @@ public final class Client extends GameEngine {
 								if (var85 != null) {
 									var6 = (regionIds[var83] >> 8) * 64 - MachineInfo.chunkLeftX;
 									var89 = (regionIds[var83] & 0xff) * 64 - VarClientHub.chunkLeftY;
-									Class34.method201();
+									Occluder.method201();
 									BoundaryDecorationStub.loadLocations(var85, var6, var89, InterfaceNode.landscape,
 											collisionMaps);
 								}
@@ -663,7 +663,7 @@ public final class Client extends GameEngine {
 											break label3948;
 										}
 
-										Class34.method201();
+										Occluder.method201();
 
 										for (var5 = 0; var5 < 13; var5++) {
 											for (var6 = 0; var6 < 13; var6++) {
@@ -693,7 +693,7 @@ public final class Client extends GameEngine {
 									}
 								}
 
-								Class34.method201();
+								Occluder.method201();
 
 								for (var5 = 0; var5 < 13; var5++) {
 									for (var6 = 0; var6 < 13; var6++) {
@@ -776,56 +776,56 @@ public final class Client extends GameEngine {
 
 						MouseInput.flush(true);
 						Timer.method325();
-						Class34.method201();
-						Landscape var891 = InterfaceNode.landscape;
-						CollisionMap[] var911 = collisionMaps;
+						Occluder.method201();
+						Landscape landscape = InterfaceNode.landscape;
+						CollisionMap[] lastCollisionMap = collisionMaps;
 
 						for (var6 = 0; var6 < 4; var6++) {
 							for (var89 = 0; var89 < 104; var89++) {
 								for (var8 = 0; var8 < 104; var8++) {
-									if ((Class39.renderRules[var6][var89][var8] & 0x1) == 1) {
+									if ((Scene.renderFlags[var6][var89][var8] & 0x1) == 1) {
 										var9 = var6;
-										if ((Class39.renderRules[1][var89][var8] & 0x2) == 2) {
+										if ((Scene.renderFlags[1][var89][var8] & 0x2) == 2) {
 											var9 = var6 - 1;
 										}
 
 										if (var9 >= 0) {
-											var911[var9].method235(var89, var8);
+											lastCollisionMap[var9].blockBridge(var89, var8);
 										}
 									}
 								}
 							}
 						}
 
-						Class39.anInt431 += (int) (Math.random() * 5.0D) - 2;
-						if (Class39.anInt431 < -8) {
-							Class39.anInt431 = -8;
+						Scene.hueOffset += (int) (Math.random() * 5.0D) - 2;
+						if (Scene.hueOffset < -8) {
+							Scene.hueOffset = -8;
 						}
 
-						if (Class39.anInt431 > 8) {
-							Class39.anInt431 = 8;
+						if (Scene.hueOffset > 8) {
+							Scene.hueOffset = 8;
 						}
 
-						Class39.anInt439 += (int) (Math.random() * 5.0D) - 2;
-						if (Class39.anInt439 < -16) {
-							Class39.anInt439 = -16;
+						Scene.luminanceOffset += (int) (Math.random() * 5.0D) - 2;
+						if (Scene.luminanceOffset < -16) {
+							Scene.luminanceOffset = -16;
 						}
 
-						if (Class39.anInt439 > 16) {
-							Class39.anInt439 = 16;
+						if (Scene.luminanceOffset > 16) {
+							Scene.luminanceOffset = 16;
 						}
 
 						for (var6 = 0; var6 < 4; var6++) {
-							byte[][] var941 = Class39.aByteArrayArrayArray430[var6];
+							byte[][] var941 = Scene.shadowMap[var6];
 							var13 = (int) Math.sqrt(5100.0D);
 							var14 = var13 * 768 >> 8;
 
 							for (var114 = 1; var114 < 103; var114++) {
 								for (var16 = 1; var16 < 103; var16++) {
-									var17 = Class39.tileHeights[var6][var16 + 1][var114]
-											- Class39.tileHeights[var6][var16 - 1][var114];
-									var18 = Class39.tileHeights[var6][var16][var114 + 1]
-											- Class39.tileHeights[var6][var16][var114 - 1];
+									var17 = Scene.tileHeights[var6][var16 + 1][var114]
+											- Scene.tileHeights[var6][var16 - 1][var114];
+									var18 = Scene.tileHeights[var6][var16][var114 + 1]
+											- Scene.tileHeights[var6][var16][var114 - 1];
 									var66 = (int) Math.sqrt((double) (var18 * var18 + var17 * var17 + 65536));
 									var145 = (var17 << 8) / var66;
 									var65 = 65536 / var66;
@@ -834,16 +834,16 @@ public final class Client extends GameEngine {
 									var86 = (var941[var16][var114 - 1] >> 2) + (var941[var16 - 1][var114] >> 2)
 											+ (var941[var16 + 1][var114] >> 3) + (var941[var16][var114 + 1] >> 3)
 											+ (var941[var16][var114] >> 1);
-									Class39.anIntArrayArray441[var16][var114] = var121 - var86;
+									Scene.lightMap[var16][var114] = var121 - var86;
 								}
 							}
 
 							for (var114 = 0; var114 < 104; var114++) {
-								Permission.anIntArray614[var114] = 0;
-								Class51.anIntArray526[var114] = 0;
-								Class39.anIntArray432[var114] = 0;
-								Class89.anIntArray715[var114] = 0;
-								RuneScript.anIntArray1724[var114] = 0;
+								Permission.blendedHue[var114] = 0;
+								Class51.blendedSaturation[var114] = 0;
+								Scene.blendedLightness[var114] = 0;
+								Class89.blendedHueMultiplier[var114] = 0;
+								RuneScript.blendedDirectionTracker[var114] = 0;
 							}
 
 							for (var114 = -5; var114 < 109; var114++) {
@@ -854,11 +854,11 @@ public final class Client extends GameEngine {
 										var18 = Class118.underlayIds[var6][var17][var16] & 0xff;
 										if (var18 > 0) {
 											var100 = InterfaceNode.getUnderlayType(var18 - 1);
-											Permission.anIntArray614[var16] += var100.hue;
-											Class51.anIntArray526[var16] += var100.saturation;
-											Class39.anIntArray432[var16] += var100.lightness;
-											Class89.anIntArray715[var16] += var100.pCDivider;
-											++RuneScript.anIntArray1724[var16];
+											Permission.blendedHue[var16] += var100.hue;
+											Class51.blendedSaturation[var16] += var100.saturation;
+											Scene.blendedLightness[var16] += var100.lightness;
+											Class89.blendedHueMultiplier[var16] += var100.hueMultiplier;
+											++RuneScript.blendedDirectionTracker[var16];
 										}
 									}
 
@@ -867,11 +867,11 @@ public final class Client extends GameEngine {
 										var66 = Class118.underlayIds[var6][var18][var16] & 0xff;
 										if (var66 > 0) {
 											var100 = InterfaceNode.getUnderlayType(var66 - 1);
-											Permission.anIntArray614[var16] -= var100.hue;
-											Class51.anIntArray526[var16] -= var100.saturation;
-											Class39.anIntArray432[var16] -= var100.lightness;
-											Class89.anIntArray715[var16] -= var100.pCDivider;
-											--RuneScript.anIntArray1724[var16];
+											Permission.blendedHue[var16] -= var100.hue;
+											Class51.blendedSaturation[var16] -= var100.saturation;
+											Scene.blendedLightness[var16] -= var100.lightness;
+											Class89.blendedHueMultiplier[var16] -= var100.hueMultiplier;
+											--RuneScript.blendedDirectionTracker[var16];
 										}
 									}
 								}
@@ -886,40 +886,40 @@ public final class Client extends GameEngine {
 									for (var65 = -5; var65 < 109; var65++) {
 										var94 = var65 + 5;
 										if (var94 >= 0 && var94 < 104) {
-											var16 += Permission.anIntArray614[var94];
-											var17 += Class51.anIntArray526[var94];
-											var18 += Class39.anIntArray432[var94];
-											var66 += Class89.anIntArray715[var94];
-											var145 += RuneScript.anIntArray1724[var94];
+											var16 += Permission.blendedHue[var94];
+											var17 += Class51.blendedSaturation[var94];
+											var18 += Scene.blendedLightness[var94];
+											var66 += Class89.blendedHueMultiplier[var94];
+											var145 += RuneScript.blendedDirectionTracker[var94];
 										}
 
 										var121 = var65 - 5;
 										if (var121 >= 0 && var121 < 104) {
-											var16 -= Permission.anIntArray614[var121];
-											var17 -= Class51.anIntArray526[var121];
-											var18 -= Class39.anIntArray432[var121];
-											var66 -= Class89.anIntArray715[var121];
-											var145 -= RuneScript.anIntArray1724[var121];
+											var16 -= Permission.blendedHue[var121];
+											var17 -= Class51.blendedSaturation[var121];
+											var18 -= Scene.blendedLightness[var121];
+											var66 -= Class89.blendedHueMultiplier[var121];
+											var145 -= RuneScript.blendedDirectionTracker[var121];
 										}
 
 										if (var65 >= 1 && var65 < 103
-												&& (!lowMemory || (Class39.renderRules[0][var114][var65] & 0x2) != 0
-														|| (Class39.renderRules[var6][var114][var65] & 0x10) == 0)) {
-											if (var6 < Class39.anInt438) {
-												Class39.anInt438 = var6;
+												&& (!lowMemory || (Scene.renderFlags[0][var114][var65] & 0x2) != 0
+														|| (Scene.renderFlags[var6][var114][var65] & 0x10) == 0)) {
+											if (var6 < Scene.level) {
+												Scene.level = var6;
 											}
 
 											var86 = Class118.underlayIds[var6][var114][var65] & 0xff;
-											int var102 = Class39.overlayIds[var6][var114][var65] & 0xff;
+											int var102 = Scene.overlayIds[var6][var114][var65] & 0xff;
 											if (var86 > 0 || var102 > 0) {
-												int var141 = Class39.tileHeights[var6][var114][var65];
-												var91 = Class39.tileHeights[var6][var114 + 1][var65];
-												int var56 = Class39.tileHeights[var6][var114 + 1][var65 + 1];
-												var69 = Class39.tileHeights[var6][var114][var65 + 1];
-												var176 = Class39.anIntArrayArray441[var114][var65];
-												var115 = Class39.anIntArrayArray441[var114 + 1][var65];
-												var182 = Class39.anIntArrayArray441[var114 + 1][var65 + 1];
-												int var162 = Class39.anIntArrayArray441[var114][var65 + 1];
+												int var141 = Scene.tileHeights[var6][var114][var65];
+												var91 = Scene.tileHeights[var6][var114 + 1][var65];
+												int var56 = Scene.tileHeights[var6][var114 + 1][var65 + 1];
+												var69 = Scene.tileHeights[var6][var114][var65 + 1];
+												var176 = Scene.lightMap[var114][var65];
+												var115 = Scene.lightMap[var114 + 1][var65];
+												var182 = Scene.lightMap[var114 + 1][var65 + 1];
+												int var162 = Scene.lightMap[var114][var65 + 1];
 												int var135 = -1;
 												int var113 = -1;
 												int var124;
@@ -928,16 +928,16 @@ public final class Client extends GameEngine {
 													var124 = var16 * 256 / var66;
 													var138 = var17 / var145;
 													int var108 = var18 / var145;
-													var135 = IndexTable.method304(var124, var138, var108);
-													var124 = Class39.anInt431 + var124 & 0xff;
-													var108 += Class39.anInt439;
+													var135 = IndexTable.hsl24to16(var124, var138, var108);
+													var124 = Scene.hueOffset + var124 & 0xff;
+													var108 += Scene.luminanceOffset;
 													if (var108 < 0) {
 														var108 = 0;
 													} else if (var108 > 255) {
 														var108 = 255;
 													}
 
-													var113 = IndexTable.method304(var124, var138, var108);
+													var113 = IndexTable.hsl24to16(var124, var138, var108);
 												}
 
 												if (var6 > 0) {
@@ -954,82 +954,82 @@ public final class Client extends GameEngine {
 
 													if (var120 && var141 == var91 && var141 == var56
 															&& var141 == var69) {
-														Class39.anIntArrayArrayArray433[var6][var114][var65] |= 2340;
+														Scene.occludeFlags[var6][var114][var65] |= 2340;
 													}
 												}
 
 												var124 = 0;
 												if (var113 != -1) {
-													var124 = TexturedGraphic.anIntArray1793[Class86.method366(var113,
+													var124 = Graphics3D.palette[Class86.adjustHSLLightness1(var113,
 															96)];
 												}
 
 												if (var102 == 0) {
-													var891.method17(var6, var114, var65, 0, 0, -1, var141, var91, var56,
-															var69, Class86.method366(var135, var176),
-															Class86.method366(var135, var115),
-															Class86.method366(var135, var182),
-															Class86.method366(var135, var162), 0, 0, 0, 0, var124, 0);
+													landscape.addTile(var6, var114, var65, 0, 0, -1, var141, var91, var56,
+															var69, Class86.adjustHSLLightness1(var135, var176),
+															Class86.adjustHSLLightness1(var135, var115),
+															Class86.adjustHSLLightness1(var135, var182),
+															Class86.adjustHSLLightness1(var135, var162), 0, 0, 0, 0, var124, 0);
 												} else {
 													var138 = VarClientStringType.overlayPaths[var6][var114][var65] + 1;
 													byte var126 = GZipDecompressor.overlayRotations[var6][var114][var65];
 													OverlayType var97 = AbstractSoundSystem.getOverlayType(var102 - 1);
-													int var62 = var97.texture;
-													int var96;
-													int var111;
+													int texture = var97.texture;
+													int rgb;
+													int hsl;
 													int var153;
 													int var44;
-													if (var62 >= 0) {
-														var96 = TexturedGraphic.textureLoader.method7(var62);
-														var111 = -1;
+													if (texture >= 0) {
+														rgb = Graphics3D.textureLoader.getAverageTextureRGB(texture);
+														hsl = -1;
 													} else if (var97.rgbColor == 16711935) {
-														var111 = -2;
-														var62 = -1;
-														var96 = -2;
+														hsl = -2;
+														texture = -1;
+														rgb = -2;
 													} else {
-														var111 = IndexTable.method304(var97.hue, var97.saturation,
+														hsl = IndexTable.hsl24to16(var97.hue, var97.saturation,
 																var97.lightness);
-														var153 = Class39.anInt431 + var97.hue & 0xff;
-														var44 = Class39.anInt439 + var97.lightness;
+														var153 = Scene.hueOffset + var97.hue & 0xff;
+														var44 = Scene.luminanceOffset + var97.lightness;
 														if (var44 < 0) {
 															var44 = 0;
 														} else if (var44 > 255) {
 															var44 = 255;
 														}
 
-														var96 = IndexTable.method304(var153, var97.saturation, var44);
+														rgb = IndexTable.hsl24to16(var153, var97.saturation, var44);
 													}
 
 													var153 = 0;
-													if (var96 != -2) {
-														var153 = TexturedGraphic.anIntArray1793[CalledScript
-																.method200(var96, 96)];
+													if (rgb != -2) {
+														var153 = Graphics3D.palette[CalledScript
+																.adjustHSLListness0(rgb, 96)];
 													}
 
 													if (var97.otherRgbColor != -1) {
-														var44 = var97.otherHue + Class39.anInt431 & 0xff;
-														int var45 = Class39.anInt439 + var97.otherLightness;
+														var44 = var97.otherHue + Scene.hueOffset & 0xff;
+														int var45 = Scene.luminanceOffset + var97.otherLightness;
 														if (var45 < 0) {
 															var45 = 0;
 														} else if (var45 > 255) {
 															var45 = 255;
 														}
 
-														var96 = IndexTable.method304(var44, var97.otherSaturation,
+														rgb = IndexTable.hsl24to16(var44, var97.otherSaturation,
 																var45);
-														var153 = TexturedGraphic.anIntArray1793[CalledScript
-																.method200(var96, 96)];
+														var153 = Graphics3D.palette[CalledScript
+																.adjustHSLListness0(rgb, 96)];
 													}
 
-													var891.method17(var6, var114, var65, var138, var126, var62, var141,
-															var91, var56, var69, Class86.method366(var135, var176),
-															Class86.method366(var135, var115),
-															Class86.method366(var135, var182),
-															Class86.method366(var135, var162),
-															CalledScript.method200(var111, var176),
-															CalledScript.method200(var111, var115),
-															CalledScript.method200(var111, var182),
-															CalledScript.method200(var111, var162), var124, var153);
+													landscape.addTile(var6, var114, var65, var138, var126, texture, var141,
+															var91, var56, var69, Class86.adjustHSLLightness1(var135, var176),
+															Class86.adjustHSLLightness1(var135, var115),
+															Class86.adjustHSLLightness1(var135, var182),
+															Class86.adjustHSLLightness1(var135, var162),
+															CalledScript.adjustHSLListness0(hsl, var176),
+															CalledScript.adjustHSLListness0(hsl, var115),
+															CalledScript.adjustHSLListness0(hsl, var182),
+															CalledScript.adjustHSLListness0(hsl, var162), var124, var153);
 												}
 											}
 										}
@@ -1039,24 +1039,24 @@ public final class Client extends GameEngine {
 
 							for (var114 = 1; var114 < 103; var114++) {
 								for (var16 = 1; var16 < 103; var16++) {
-									var891.method52(var6, var16, var114,
-											RuntimeException_Sub1.method931(var6, var16, var114));
+									landscape.setPhysicalLevel(var6, var16, var114,
+											RuntimeException_Sub1.getRenderLevel(var6, var16, var114));
 								}
 							}
 
 							Class118.underlayIds[var6] = (byte[][]) ((byte[][]) null);
-							Class39.overlayIds[var6] = (byte[][]) ((byte[][]) null);
+							Scene.overlayIds[var6] = (byte[][]) ((byte[][]) null);
 							VarClientStringType.overlayPaths[var6] = (byte[][]) ((byte[][]) null);
 							GZipDecompressor.overlayRotations[var6] = (byte[][]) ((byte[][]) null);
-							Class39.aByteArrayArrayArray430[var6] = (byte[][]) ((byte[][]) null);
+							Scene.shadowMap[var6] = (byte[][]) ((byte[][]) null);
 						}
 
-						var891.method55(-50, -10, -50);
+						landscape.applyLighting(-50, -10, -50);
 
 						for (var6 = 0; var6 < 104; var6++) {
 							for (var89 = 0; var89 < 104; var89++) {
-								if ((Class39.renderRules[1][var6][var89] & 0x2) == 2) {
-									var891.method35(var6, var89);
+								if ((Scene.renderFlags[1][var6][var89] & 0x2) == 2) {
+									landscape.setBridge(var6, var89);
 								}
 							}
 						}
@@ -1076,39 +1076,39 @@ public final class Client extends GameEngine {
 								for (var11 = 0; var11 <= 104; var11++) {
 									for (var12 = 0; var12 <= 104; var12++) {
 										short var971;
-										if ((Class39.anIntArrayArrayArray433[var10][var12][var11] & var6) != 0) {
+										if ((Scene.occludeFlags[var10][var12][var11] & var6) != 0) {
 											var13 = var11;
 											var14 = var11;
 											var114 = var10;
 
 											for (var16 = var10; var13 > 0
-													&& (Class39.anIntArrayArrayArray433[var10][var12][var13 - 1]
+													&& (Scene.occludeFlags[var10][var12][var13 - 1]
 															& var6) != 0; --var13) {
 												;
 											}
 
 											while (var14 < 104
-													&& (Class39.anIntArrayArrayArray433[var10][var12][var14 + 1]
+													&& (Scene.occludeFlags[var10][var12][var14 + 1]
 															& var6) != 0) {
 												++var14;
 											}
 
-											label3606: while (var114 > 0) {
+											findBottomLevel: while (var114 > 0) {
 												for (var17 = var13; var17 <= var14; var17++) {
-													if ((Class39.anIntArrayArrayArray433[var114 - 1][var12][var17]
+													if ((Scene.occludeFlags[var114 - 1][var12][var17]
 															& var6) == 0) {
-														break label3606;
+														break findBottomLevel;
 													}
 												}
 
 												--var114;
 											}
 
-											label3595: while (var16 < var9) {
+											findTopLevel: while (var16 < var9) {
 												for (var17 = var13; var17 <= var14; var17++) {
-													if ((Class39.anIntArrayArrayArray433[var16 + 1][var12][var17]
+													if ((Scene.occludeFlags[var16 + 1][var12][var17]
 															& var6) == 0) {
-														break label3595;
+														break findTopLevel;
 													}
 												}
 
@@ -1118,52 +1118,52 @@ public final class Client extends GameEngine {
 											var17 = (var16 + 1 - var114) * (var14 - var13 + 1);
 											if (var17 >= 8) {
 												var971 = 240;
-												var66 = Class39.tileHeights[var16][var12][var13] - var971;
-												var145 = Class39.tileHeights[var114][var12][var13];
-												Landscape.method49(var9, 1, var12 * 128, var12 * 128, var13 * 128,
+												var66 = Scene.tileHeights[var16][var12][var13] - var971;
+												var145 = Scene.tileHeights[var114][var12][var13];
+												Landscape.addOcclude(var9, 1, var12 * 128, var12 * 128, var13 * 128,
 														var14 * 128 + 128, var66, var145);
 
 												for (var65 = var114; var65 <= var16; var65++) {
 													for (var94 = var13; var94 <= var14; var94++) {
-														Class39.anIntArrayArrayArray433[var65][var12][var94] &= ~var6;
+														Scene.occludeFlags[var65][var12][var94] &= ~var6;
 													}
 												}
 											}
 										}
 
-										if ((Class39.anIntArrayArrayArray433[var10][var12][var11] & var89) != 0) {
+										if ((Scene.occludeFlags[var10][var12][var11] & var89) != 0) {
 											var13 = var12;
 											var14 = var12;
 											var114 = var10;
 
 											for (var16 = var10; var13 > 0
-													&& (Class39.anIntArrayArrayArray433[var10][var13 - 1][var11]
+													&& (Scene.occludeFlags[var10][var13 - 1][var11]
 															& var89) != 0; --var13) {
 												;
 											}
 
 											while (var14 < 104
-													&& (Class39.anIntArrayArrayArray433[var10][var14 + 1][var11]
+													&& (Scene.occludeFlags[var10][var14 + 1][var11]
 															& var89) != 0) {
 												++var14;
 											}
 
-											label3659: while (var114 > 0) {
+											findBottomLevel: while (var114 > 0) {
 												for (var17 = var13; var17 <= var14; var17++) {
-													if ((Class39.anIntArrayArrayArray433[var114 - 1][var17][var11]
+													if ((Scene.occludeFlags[var114 - 1][var17][var11]
 															& var89) == 0) {
-														break label3659;
+														break findBottomLevel;
 													}
 												}
 
 												--var114;
 											}
 
-											label3648: while (var16 < var9) {
+											findTopLevel: while (var16 < var9) {
 												for (var17 = var13; var17 <= var14; var17++) {
-													if ((Class39.anIntArrayArrayArray433[var16 + 1][var17][var11]
+													if ((Scene.occludeFlags[var16 + 1][var17][var11]
 															& var89) == 0) {
-														break label3648;
+														break findTopLevel;
 													}
 												}
 
@@ -1173,52 +1173,52 @@ public final class Client extends GameEngine {
 											var17 = (var16 + 1 - var114) * (var14 - var13 + 1);
 											if (var17 >= 8) {
 												var971 = 240;
-												var66 = Class39.tileHeights[var16][var13][var11] - var971;
-												var145 = Class39.tileHeights[var114][var13][var11];
-												Landscape.method49(var9, 2, var13 * 128, var14 * 128 + 128, var11 * 128,
+												var66 = Scene.tileHeights[var16][var13][var11] - var971;
+												var145 = Scene.tileHeights[var114][var13][var11];
+												Landscape.addOcclude(var9, 2, var13 * 128, var14 * 128 + 128, var11 * 128,
 														var11 * 128, var66, var145);
 
 												for (var65 = var114; var65 <= var16; var65++) {
 													for (var94 = var13; var94 <= var14; var94++) {
-														Class39.anIntArrayArrayArray433[var65][var94][var11] &= ~var89;
+														Scene.occludeFlags[var65][var94][var11] &= ~var89;
 													}
 												}
 											}
 										}
 
-										if ((Class39.anIntArrayArrayArray433[var10][var12][var11] & var8) != 0) {
+										if ((Scene.occludeFlags[var10][var12][var11] & var8) != 0) {
 											var13 = var12;
 											var14 = var12;
 											var114 = var11;
 
 											for (var16 = var11; var114 > 0
-													&& (Class39.anIntArrayArrayArray433[var10][var12][var114 - 1]
+													&& (Scene.occludeFlags[var10][var12][var114 - 1]
 															& var8) != 0; --var114) {
 												;
 											}
 
 											while (var16 < 104
-													&& (Class39.anIntArrayArrayArray433[var10][var12][var16 + 1]
+													&& (Scene.occludeFlags[var10][var12][var16 + 1]
 															& var8) != 0) {
 												++var16;
 											}
 
-											label3712: while (var13 > 0) {
+											findBottomLevel: while (var13 > 0) {
 												for (var17 = var114; var17 <= var16; var17++) {
-													if ((Class39.anIntArrayArrayArray433[var10][var13 - 1][var17]
+													if ((Scene.occludeFlags[var10][var13 - 1][var17]
 															& var8) == 0) {
-														break label3712;
+														break findBottomLevel;
 													}
 												}
 
 												--var13;
 											}
 
-											label3701: while (var14 < 104) {
+											findTopLevel: while (var14 < 104) {
 												for (var17 = var114; var17 <= var16; var17++) {
-													if ((Class39.anIntArrayArrayArray433[var10][var14 + 1][var17]
+													if ((Scene.occludeFlags[var10][var14 + 1][var17]
 															& var8) == 0) {
-														break label3701;
+														break findTopLevel;
 													}
 												}
 
@@ -1226,13 +1226,13 @@ public final class Client extends GameEngine {
 											}
 
 											if ((var14 - var13 + 1) * (var16 - var114 + 1) >= 4) {
-												var17 = Class39.tileHeights[var10][var13][var114];
-												Landscape.method49(var9, 4, var13 * 128, var14 * 128 + 128,
+												var17 = Scene.tileHeights[var10][var13][var114];
+												Landscape.addOcclude(var9, 4, var13 * 128, var14 * 128 + 128,
 														var114 * 128, var16 * 128 + 128, var17, var17);
 
 												for (var18 = var13; var18 <= var14; var18++) {
 													for (var66 = var114; var66 <= var16; var66++) {
-														Class39.anIntArrayArrayArray433[var10][var18][var66] &= ~var8;
+														Scene.occludeFlags[var10][var18][var66] &= ~var8;
 													}
 												}
 											}
@@ -1243,7 +1243,7 @@ public final class Client extends GameEngine {
 						}
 
 						MouseInput.flush(true);
-						var6 = Class39.anInt438;
+						var6 = Scene.level;
 						if (var6 > InterfaceNode.floorLevel * -1331355705) {
 							var6 = InterfaceNode.floorLevel * -1331355705;
 						}
@@ -1253,9 +1253,9 @@ public final class Client extends GameEngine {
 						}
 
 						if (lowMemory) {
-							InterfaceNode.landscape.method16(Class39.anInt438);
+							InterfaceNode.landscape.setup(Scene.level);
 						} else {
-							InterfaceNode.landscape.method16(0);
+							InterfaceNode.landscape.setup(0);
 						}
 
 						for (var89 = 0; var89 < 104; var89++) {
@@ -1264,7 +1264,7 @@ public final class Client extends GameEngine {
 							}
 						}
 
-						Class34.method201();
+						Occluder.method201();
 
 						for (Node_Sub8 var991 = (Node_Sub8) aDeque2193
 								.getFront(); var991 != null; var991 = (Node_Sub8) aDeque2193.getNext()) {
@@ -1299,7 +1299,7 @@ public final class Client extends GameEngine {
 						}
 
 						Node_Sub8.setClientState(30);
-						Class34.method201();
+						Occluder.method201();
 						Class25.resetMapInfo();
 						outBuffer.putHeader(179);
 						Class2.method61();
@@ -1336,19 +1336,19 @@ public final class Client extends GameEngine {
 				String var691;
 				Widget var71;
 				for (var2 = 0; var2 < 100; var2++) {
-					if (Class31.gameConnection == null) {
+					if (TileUnderlay.gameConnection == null) {
 						var67 = false;
 					} else {
 						label4260: {
 							try {
-								var83 = Class31.gameConnection.avail();
+								var83 = TileUnderlay.gameConnection.avail();
 								if (var83 == 0) {
 									var67 = false;
 									break label4260;
 								}
 
 								if (frameId == -1) {
-									Class31.gameConnection.read(inBuffer.payload, 0, 1);
+									TileUnderlay.gameConnection.read(inBuffer.payload, 0, 1);
 									inBuffer.position = 0;
 									frameId = inBuffer.getHeader();
 									frameSize = PacketConstants.frameSizes[frameId];
@@ -1361,7 +1361,7 @@ public final class Client extends GameEngine {
 										break label4260;
 									}
 
-									Class31.gameConnection.read(inBuffer.payload, 0, 1);
+									TileUnderlay.gameConnection.read(inBuffer.payload, 0, 1);
 									frameSize = inBuffer.payload[0] & 0xff;
 									--var83;
 								}
@@ -1372,7 +1372,7 @@ public final class Client extends GameEngine {
 										break label4260;
 									}
 
-									Class31.gameConnection.read(inBuffer.payload, 0, 2);
+									TileUnderlay.gameConnection.read(inBuffer.payload, 0, 2);
 									inBuffer.position = 0;
 									frameSize = inBuffer.getUShort();
 									var83 -= 2;
@@ -1384,7 +1384,7 @@ public final class Client extends GameEngine {
 								}
 
 								inBuffer.position = 0;
-								Class31.gameConnection.read(inBuffer.payload, 0, frameSize);
+								TileUnderlay.gameConnection.read(inBuffer.payload, 0, frameSize);
 								anInt2041 = 0;
 								thridLastFrameId = secondLastFrameId;
 								secondLastFrameId = lastFrameId;
@@ -1746,7 +1746,7 @@ public final class Client extends GameEngine {
 										}
 									}
 
-									if (World.method485(var691)) {
+									if (World.isIgnored(var691)) {
 										var112 = true;
 									}
 
@@ -1770,7 +1770,7 @@ public final class Client extends GameEngine {
 											var1131 = "Cabbage";
 										}
 
-										var1131 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var1131));
+										var1131 = AbstractFont.appendTags(Class48.method246(var1131));
 										byte var125;
 										if (var1081.aBool611) {
 											var125 = 7;
@@ -2021,7 +2021,7 @@ public final class Client extends GameEngine {
 										}
 									}
 
-									if (var122.aBool615 && World.method485(var691)) {
+									if (var122.aBool615 && World.isIgnored(var691)) {
 										var118 = true;
 									}
 
@@ -2046,7 +2046,7 @@ public final class Client extends GameEngine {
 											var1411 = "Cabbage";
 										}
 
-										var1411 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var1411));
+										var1411 = AbstractFont.appendTags(Class48.method246(var1411));
 										if (var122.sprite != -1) {
 											SpotAnimType.method658(9, Class41.method223(var122.sprite) + var691,
 													var1411, OverlayType.method716(var64));
@@ -2480,7 +2480,7 @@ public final class Client extends GameEngine {
 										var117 = "Cabbage";
 									}
 
-									var117 = DualNode_Sub13_Sub3.appendTags(Class48.method246(var117));
+									var117 = AbstractFont.appendTags(Class48.method246(var117));
 									Class75.method334(6, var691, var117);
 									frameId = -1;
 									var67 = true;
@@ -3054,7 +3054,7 @@ public final class Client extends GameEngine {
 									var119 = false;
 									if (var118) {
 										var1151 = inBuffer.getString();
-										if (World.method485(var1151)) {
+										if (World.isIgnored(var1151)) {
 											var119 = true;
 										}
 									}
@@ -3091,8 +3091,8 @@ public final class Client extends GameEngine {
 									var6 = inBuffer.getInt();
 									var130.flags = var6;
 									Node_Sub8.setClientState(45);
-									Class31.gameConnection.shutdown();
-									Class31.gameConnection = null;
+									TileUnderlay.gameConnection.shutdown();
+									TileUnderlay.gameConnection = null;
 									Class88.setWorld(var130);
 									frameId = -1;
 									var67 = false;
@@ -3356,8 +3356,8 @@ public final class Client extends GameEngine {
 						var5 = MouseInput.anInt628;
 						if (var5 < 0) {
 							var5 = 0;
-						} else if (var5 > Class34.gameWidth) {
-							var5 = Class34.gameWidth;
+						} else if (var5 > Occluder.gameWidth) {
+							var5 = Occluder.gameWidth;
 						}
 
 						var6 = (int) var72;
@@ -3438,11 +3438,11 @@ public final class Client extends GameEngine {
 
 								for (var89 = 1; var89 < 103; var89++) {
 									for (var8 = 1; var8 < 103; var8++) {
-										if ((Class39.renderRules[var2][var8][var89] & 0x18) == 0) {
+										if ((Scene.renderFlags[var2][var8][var89] & 0x18) == 0) {
 											method1055(var2, var8, var89, var5, var6);
 										}
 
-										if (var2 < 3 && (Class39.renderRules[var2 + 1][var8][var89] & 0x8) != 0) {
+										if (var2 < 3 && (Scene.renderFlags[var2 + 1][var8][var89] & 0x8) != 0) {
 											method1055(var2 + 1, var8, var89, var5, var6);
 										}
 									}
@@ -3505,11 +3505,11 @@ public final class Client extends GameEngine {
 							var6 = (103 - var5) * 2048 + 24628;
 
 							for (var89 = 1; var89 < 103; var89++) {
-								if ((Class39.renderRules[var2][var89][var5] & 0x18) == 0) {
+								if ((Scene.renderFlags[var2][var89][var5] & 0x18) == 0) {
 									InterfaceNode.landscape.method36(var77, var6, 512, var2, var89, var5);
 								}
 
-								if (var2 < 3 && (Class39.renderRules[var2 + 1][var89][var5] & 0x8) != 0) {
+								if (var2 < 3 && (Scene.renderFlags[var2 + 1][var89][var5] & 0x8) != 0) {
 									InterfaceNode.landscape.method36(var77, var6, 512, var2 + 1, var89, var5);
 								}
 
@@ -3620,27 +3620,27 @@ public final class Client extends GameEngine {
 							anInt2188 = 0;
 
 							while (LoginHandler.method289(2023348341) && anInt2188 < 128) {
-								if (myRights >= 2 && KeyFocusListener.aBoolArray593[82] && Class5.anInt112 == 66) {
+								if (myRights >= 2 && KeyFocusListener.aBoolArray593[82] && ChatMessageContainer.anInt112 == 66) {
 									var691 = "";
 
-									DualNode_Sub8 var87;
+									ChatMessage var87;
 									for (Iterator var82 = Class32.aClass107_355.iterator(); var82
 											.hasNext(); var691 = var691 + var87.aString1521 + ':' + var87.aString1520
 													+ '\n') {
-										var87 = (DualNode_Sub8) var82.next();
+										var87 = (ChatMessage) var82.next();
 									}
 
 									CacheIndex.sysClipboard.setContents(new StringSelection(var691),
 											(ClipboardOwner) null);
 								} else {
-									anIntArray2190[anInt2188] = Class5.anInt112;
+									anIntArray2190[anInt2188] = ChatMessageContainer.anInt112;
 									anIntArray2162[anInt2188] = Class2.aChar80;
 									++anInt2188;
 								}
 							}
 
 							if (anInt2226 != -1) {
-								Class40.method222(anInt2226, 0, 0, Class34.gameWidth, Node_Sub9.gameHeight, 0, 0);
+								Class40.method222(anInt2226, 0, 0, Occluder.gameWidth, Node_Sub9.gameHeight, 0, 0);
 							}
 
 							++anInt2151;
@@ -3649,15 +3649,15 @@ public final class Client extends GameEngine {
 								Widget var851;
 								ScriptEvent var88;
 								do {
-									var88 = (ScriptEvent) aDeque2165.method469();
+									var88 = (ScriptEvent) aDeque2165.popFront();
 									if (var88 == null) {
 										while (true) {
 											do {
-												var88 = (ScriptEvent) aDeque2166.method469();
+												var88 = (ScriptEvent) aDeque2166.popFront();
 												if (var88 == null) {
 													while (true) {
 														do {
-															var88 = (ScriptEvent) aDeque2164.method469();
+															var88 = (ScriptEvent) aDeque2164.popFront();
 															if (var88 == null) {
 																Connection.method301();
 																if (aWidget2141 != null) {
@@ -3742,7 +3742,7 @@ public final class Client extends GameEngine {
 																					outBuffer.putLEShortA(
 																							aWidget2141.index);
 																				}
-																			} else if ((anInt2144 == 1 || Class39
+																			} else if ((anInt2144 == 1 || Scene
 																					.method217(menuItemCount - 1))
 																					&& menuItemCount > 2) {
 																				MilliTimer.method554(
@@ -3818,7 +3818,7 @@ public final class Client extends GameEngine {
 																						SpotAnimType.aWidget1446.hash);
 																			}
 																		} else if ((anInt2144 == 1
-																				|| Class39.method217(menuItemCount - 1))
+																				|| Scene.method217(menuItemCount - 1))
 																				&& menuItemCount > 2) {
 																			MilliTimer.method554(anInt2131, anInt2101);
 																		} else if (menuItemCount > 0) {
@@ -3844,9 +3844,9 @@ public final class Client extends GameEngine {
 																	}
 																}
 
-																if (Landscape.anInt53 != -1) {
-																	var83 = Landscape.anInt53;
-																	var5 = Landscape.anInt58;
+																if (Landscape.clickedTileX != -1) {
+																	var83 = Landscape.clickedTileX;
+																	var5 = Landscape.clickedTileZ;
 																	outBuffer.putHeader(12);
 																	outBuffer.putByte(5);
 																	outBuffer
@@ -3858,7 +3858,7 @@ public final class Client extends GameEngine {
 																			MachineInfo.chunkLeftX + var83);
 																	outBuffer
 																			.putLEShort(VarClientHub.chunkLeftY + var5);
-																	Landscape.anInt53 = -1;
+																	Landscape.clickedTileX = -1;
 																	anInt2095 = MouseInput.anInt628;
 																	anInt2096 = MouseInput.anInt629;
 																	cursorState = 1;
@@ -3975,13 +3975,13 @@ public final class Client extends GameEngine {
 																			var12 = InterfaceNode.floorLevel
 																					* -1331355705;
 																			if (var12 < 3
-																					&& (Class39.renderRules[1][var10][var11]
+																					&& (Scene.renderFlags[1][var10][var11]
 																							& 0x2) == 2) {
 																				++var12;
 																			}
 
 																			var13 = var8
-																					- Class39.tileHeights[var12][var10][var11];
+																					- Scene.tileHeights[var12][var10][var11];
 																			if (var13 > var9) {
 																				var9 = var13;
 																			}
@@ -4255,9 +4255,9 @@ public final class Client extends GameEngine {
 																}
 
 																try {
-																	if (Class31.gameConnection != null
+																	if (TileUnderlay.gameConnection != null
 																			&& outBuffer.position > 0) {
-																		Class31.gameConnection.write(outBuffer.payload,
+																		TileUnderlay.gameConnection.write(outBuffer.payload,
 																				0, outBuffer.position);
 																		outBuffer.position = 0;
 																		flushCount = 0;
@@ -4358,7 +4358,7 @@ public final class Client extends GameEngine {
 						}
 
 						while (Class81.anInt669 < 20 && Class81.anInt674 > 0) {
-							var21 = (FileRequest) Class81.aNodeQueue_672.method424();
+							var21 = (FileRequest) Class81.aNodeQueue_672.peek();
 							var6 = new ByteBuf(4);
 							var6.putByte(0);
 							var6.putMedium((int) var21.key);
@@ -4672,9 +4672,9 @@ public final class Client extends GameEngine {
 		}
 
 		Npc.aClass30_1968 = null;
-		if (Class31.gameConnection != null) {
-			Class31.gameConnection.shutdown();
-			Class31.gameConnection = null;
+		if (TileUnderlay.gameConnection != null) {
+			TileUnderlay.gameConnection.shutdown();
+			TileUnderlay.gameConnection = null;
 		}
 
 		if (KeyFocusListener.kfListener != null) {
@@ -4692,12 +4692,12 @@ public final class Client extends GameEngine {
 		}
 
 		Class26.wheelListener = null;
-		if (DualNode_Sub14.aClass8_1644 != null) {
-			DualNode_Sub14.aClass8_1644.method84();
+		if (DualNode_Sub14.soundSystem0 != null) {
+			DualNode_Sub14.soundSystem0.method84();
 		}
 
-		if (Class30.aClass8_341 != null) {
-			Class30.aClass8_341.method84();
+		if (Class30.soundSystem1 != null) {
+			Class30.soundSystem1.method84();
 		}
 
 		if (Class81.js5Con != null) {
@@ -4742,7 +4742,7 @@ public final class Client extends GameEngine {
 		Class3.refIndexTable = new IndexTable(255, Class75.cacheDataFile, Class75.referenceFile, 500000);
 		AnimationSkin.settings = ItemType.desrializeSettings();
 		CacheIndex.sysClipboard = this.getToolkit().getSystemClipboard();
-		AbstractByteBuffer.method260(this, Class31.aString349);
+		AbstractByteBuffer.method260(this, TileUnderlay.aString349);
 		if (socketType != 0) {
 			displayFps = true;
 		}
@@ -4761,7 +4761,7 @@ public final class Client extends GameEngine {
 			BitBuf var5 = outBuffer;
 			int var6 = resizable ? 2 : 1;
 			var5.putByte(var6);
-			outBuffer.putShort(Class34.gameWidth);
+			outBuffer.putShort(Occluder.gameWidth);
 			outBuffer.putShort(Node_Sub9.gameHeight);
 		}
 
@@ -4811,8 +4811,8 @@ public final class Client extends GameEngine {
 			var2 = false;
 		}
 
-		if (var2 && aBool2191 && DualNode_Sub14.aClass8_1644 != null) {
-			DualNode_Sub14.aClass8_1644.method83();
+		if (var2 && aBool2191 && DualNode_Sub14.soundSystem0 != null) {
+			DualNode_Sub14.soundSystem0.method83();
 		}
 
 		int var6;
@@ -4832,7 +4832,7 @@ public final class Client extends GameEngine {
 					BitBuf var19 = outBuffer;
 					var6 = resizable ? 2 : 1;
 					var19.putByte(var6);
-					outBuffer.putShort(Class34.gameWidth);
+					outBuffer.putShort(Occluder.gameWidth);
 					outBuffer.putShort(Node_Sub9.gameHeight);
 				}
 
@@ -4877,7 +4877,7 @@ public final class Client extends GameEngine {
 
 				if (var17) {
 					g.setColor(Color.black);
-					g.fillRect(0, 0, Class34.gameWidth, Node_Sub9.gameHeight);
+					g.fillRect(0, 0, Occluder.gameWidth, Node_Sub9.gameHeight);
 				}
 
 				if (color == null) {
@@ -4899,10 +4899,10 @@ public final class Client extends GameEngine {
 					ig.setFont(Class7.helveticaFont);
 					ig.setColor(Color.white);
 					ig.drawString(message, (304 - IsaacRandom.helveticaMetrics.stringWidth(message)) / 2, 22);
-					g.drawImage(IndexTable.dbImage, Class34.gameWidth / 2 - 152, Node_Sub9.gameHeight / 2 - 18,
+					g.drawImage(IndexTable.dbImage, Occluder.gameWidth / 2 - 152, Node_Sub9.gameHeight / 2 - 18,
 							(ImageObserver) null);
 				} catch (Exception var111) {
-					int w = Class34.gameWidth / 2 - 152;
+					int w = Occluder.gameWidth / 2 - 152;
 					int h = Node_Sub9.gameHeight / 2 - 18;
 					g.setColor(color);
 					g.drawRect(w, h, 303, 33);
@@ -4993,7 +4993,7 @@ public final class Client extends GameEngine {
 		int var10;
 		int var11;
 		int var14;
-		Sprite var20;
+		IndexedSprite var20;
 		if (var5 != 0) {
 			var7 = InterfaceNode.landscape.method34(var0, var1, var2, var5);
 			var14 = var7 >> 6 & 0x3;
@@ -5120,7 +5120,7 @@ public final class Client extends GameEngine {
 			var7 = var5 >> 14 & 0x7fff;
 			var231 = Class37.getObjectType(var7);
 			if (var231.anInt1703 != -1) {
-				Sprite var182 = Class2.mapscenes[var231.anInt1703];
+				IndexedSprite var182 = Class2.mapscenes[var231.anInt1703];
 				if (var182 != null) {
 					var10 = (var231.sizeX * 4 - var182.subWidth) / 2;
 					int var202 = (var231.sizeY * 4 - var182.subHeight) / 2;
@@ -5274,7 +5274,7 @@ public final class Client extends GameEngine {
 		anInt2195 = 0;
 		anIntArray2196 = new int[1000];
 		anIntArray2197 = new int[1000];
-		aSpriteArray2198 = new Picture[1000];
+		aSpriteArray2198 = new Sprite[1000];
 		destinationX = 0;
 		aClass36_2199 = Class36.aClass36_399;
 		anInt2200 = 0;
@@ -5288,7 +5288,7 @@ public final class Client extends GameEngine {
 		anInt2207 = 0;
 		anInt2208 = 0;
 		anIntArray2209 = new int[50];
-		aClass14Array2210 = new Class14[50];
+		aClass14Array2210 = new Track[50];
 		connectionState = 0;
 		menuNouns = new String[500];
 		anIntArray2212 = new int[5];
@@ -5325,14 +5325,14 @@ public final class Client extends GameEngine {
 		anIntArray2236 = new int[50];
 	}
 
-	static Picture[] method510(AbstractIndex var0, int var1, int var2) {
+	static Sprite[] method510(AbstractIndex var0, int var1, int var2) {
 		if (!Class35.decodeSprite(var0, var1, var2)) {
 			return null;
 		} else {
-			Picture[] var7 = new Picture[Class7.size];
+			Sprite[] var7 = new Sprite[Class7.size];
 
 			for (int var6 = 0; var6 < Class7.size; var6++) {
-				Picture var5 = var7[var6] = new Picture();
+				Sprite var5 = var7[var6] = new Sprite();
 				var5.width = Class7.width;
 				var5.height = Class7.height;
 				var5.offsetX = Class7.offsetsX[var6];
@@ -5408,8 +5408,8 @@ public final class Client extends GameEngine {
 								var13 = var13 + 1 & 0xfff;
 								var18 = var5 - var8;
 								var19 = var11 - var9;
-								var15 = var5 - var4.anInt505;
-								var16 = var11 - var4.anInt506;
+								var15 = var5 - var4.xOffset;
+								var16 = var11 - var4.yOffset;
 								if (var3.method245(var2, var5, var11, var4, -2034765952)) {
 									LoginHandler.anInt545 = var5;
 									Class48_Sub1.anInt1298 = var11;
@@ -5597,28 +5597,28 @@ public final class Client extends GameEngine {
 		int var3;
 		for (var3 = 0; var3 < 8; var3++) {
 			for (int var4 = 0; var4 < 8; var4++) {
-				Class39.tileHeights[var0][var3 + var1][var2 + var4] = 0;
+				Scene.tileHeights[var0][var3 + var1][var2 + var4] = 0;
 			}
 		}
 
 		if (var1 > 0) {
 			for (var3 = 1; var3 < 8; var3++) {
-				Class39.tileHeights[var0][var1][var3 + var2] = Class39.tileHeights[var0][var1 - 1][var2 + var3];
+				Scene.tileHeights[var0][var1][var3 + var2] = Scene.tileHeights[var0][var1 - 1][var2 + var3];
 			}
 		}
 
 		if (var2 > 0) {
 			for (var3 = 1; var3 < 8; var3++) {
-				Class39.tileHeights[var0][var1 + var3][var2] = Class39.tileHeights[var0][var3 + var1][var2 - 1];
+				Scene.tileHeights[var0][var1 + var3][var2] = Scene.tileHeights[var0][var3 + var1][var2 - 1];
 			}
 		}
 
-		if (var1 > 0 && Class39.tileHeights[var0][var1 - 1][var2] != 0) {
-			Class39.tileHeights[var0][var1][var2] = Class39.tileHeights[var0][var1 - 1][var2];
-		} else if (var2 > 0 && Class39.tileHeights[var0][var1][var2 - 1] != 0) {
-			Class39.tileHeights[var0][var1][var2] = Class39.tileHeights[var0][var1][var2 - 1];
-		} else if (var1 > 0 && var2 > 0 && Class39.tileHeights[var0][var1 - 1][var2 - 1] != 0) {
-			Class39.tileHeights[var0][var1][var2] = Class39.tileHeights[var0][var1 - 1][var2 - 1];
+		if (var1 > 0 && Scene.tileHeights[var0][var1 - 1][var2] != 0) {
+			Scene.tileHeights[var0][var1][var2] = Scene.tileHeights[var0][var1 - 1][var2];
+		} else if (var2 > 0 && Scene.tileHeights[var0][var1][var2 - 1] != 0) {
+			Scene.tileHeights[var0][var1][var2] = Scene.tileHeights[var0][var1][var2 - 1];
+		} else if (var1 > 0 && var2 > 0 && Scene.tileHeights[var0][var1 - 1][var2 - 1] != 0) {
+			Scene.tileHeights[var0][var1][var2] = Scene.tileHeights[var0][var1 - 1][var2 - 1];
 		}
 
 	}

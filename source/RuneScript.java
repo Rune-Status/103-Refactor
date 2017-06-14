@@ -9,8 +9,8 @@ public class RuneScript extends DualNode {
 	static int anInt1722;
 	int[] intOperands;
 	static CacheIndex interfaceIndex;
-	static int[] anIntArray1724;
-	static Picture minimapSprite;
+	static int[] blendedDirectionTracker;
+	static Sprite minimapSprite;
 	int stringStackCount;
 	static NodeMap aClass106_1725 = new NodeMap(128);
 
@@ -115,7 +115,7 @@ public class RuneScript extends DualNode {
 							BoundaryStub var34 = InterfaceNode.landscape
 									.method21(InterfaceNode.floorLevel * -1331355705, var5, var6);
 							if (var34 != null) {
-								var33 = var34.anInt277 >> 14 & 0x7fff;
+								var33 = var34.bitset >> 14 & 0x7fff;
 								if (var1 == 2) {
 									var34.entityA = new DynamicObject(var33, 2, var2 + 4,
 											InterfaceNode.floorLevel * -1331355705, var5, var6, var9, false,
@@ -135,7 +135,7 @@ public class RuneScript extends DualNode {
 							BoundaryDecorationStub var35 = InterfaceNode.landscape
 									.method29(InterfaceNode.floorLevel * -1331355705, var5, var6);
 							if (var35 != null) {
-								var33 = var35.anInt218 >> 14 & 0x7fff;
+								var33 = var35.bitset >> 14 & 0x7fff;
 								if (var1 != 4 && var1 != 5) {
 									if (var1 == 6) {
 										var35.entityA = new DynamicObject(var33, 4, var2 + 4,
@@ -169,7 +169,7 @@ public class RuneScript extends DualNode {
 							}
 
 							if (var36 != null) {
-								var36.entity = new DynamicObject(var36.anInt269 >> 14 & 0x7fff, var1, var2,
+								var36.entity = new DynamicObject(var36.nitset >> 14 & 0x7fff, var1, var2,
 										InterfaceNode.floorLevel * -1331355705, var5, var6, var9, false, var36.entity);
 							}
 						}
@@ -178,7 +178,7 @@ public class RuneScript extends DualNode {
 							TileDecorationStub var371 = InterfaceNode.landscape
 									.method59(InterfaceNode.floorLevel * -1331355705, var5, var6);
 							if (var371 != null) {
-								var371.entity = new DynamicObject(var371.anInt839 >> 14 & 0x7fff, 22, var2,
+								var371.entity = new DynamicObject(var371.bitset >> 14 & 0x7fff, 22, var2,
 										InterfaceNode.floorLevel * -1331355705, var5, var6, var9, false, var371.entity);
 							}
 						}
@@ -197,7 +197,7 @@ public class RuneScript extends DualNode {
 							Client.groundItemDeque[InterfaceNode.floorLevel * -1331355705][var1][var2] = new Deque();
 						}
 
-						Client.groundItemDeque[InterfaceNode.floorLevel * -1331355705][var1][var2].add(var29);
+						Client.groundItemDeque[InterfaceNode.floorLevel * -1331355705][var1][var2].addFront(var29);
 						Class32.method195(var1, var2);
 					}
 				} else if (Client.frameId == 182) {
@@ -225,7 +225,7 @@ public class RuneScript extends DualNode {
 						GraphicsStub var38 = new GraphicsStub(var3, InterfaceNode.floorLevel * -1331355705, var1, var2,
 								NpcType.getTileHeight(var1, var2, InterfaceNode.floorLevel * -1331355705) - var32, var5,
 								Client.engineCycle);
-						Client.graphicsObjectDeque.add(var38);
+						Client.graphicsObjectDeque.addFront(var38);
 					}
 				} else {
 					int var23;
@@ -256,7 +256,7 @@ public class RuneScript extends DualNode {
 							var11.method992(var3, var32,
 									NpcType.getTileHeight(var3, var32, InterfaceNode.floorLevel * -1331355705) - var7,
 									Client.engineCycle + var33);
-							Client.projectileDeque.add(var11);
+							Client.projectileDeque.addFront(var11);
 						}
 					} else {
 						if (Client.frameId == 5) {
@@ -298,12 +298,12 @@ public class RuneScript extends DualNode {
 								int var26 = (var24 + 1 >> 1) + var5;
 								int var27 = (var13 >> 1) + var6;
 								int var28 = (var13 + 1 >> 1) + var6;
-								int[][] var17 = Class39.tileHeights[InterfaceNode.floorLevel * -1331355705];
+								int[][] var17 = Scene.tileHeights[InterfaceNode.floorLevel * -1331355705];
 								int var19 = var17[var25][var28] + var17[var25][var27] + var17[var26][var27]
 										+ var17[var26][var28] >> 2;
 								int var18 = (var24 << 6) + (var5 << 7);
 								int var20 = (var13 << 6) + (var6 << 7);
-								Rasterizer var15 = var16.method861(var1, var2, var17, var18, var19, var20);
+								Model var15 = var16.method861(var1, var2, var17, var18, var19, var20);
 								if (var15 != null) {
 									NpcType.method805(InterfaceNode.floorLevel * -1331355705, var5, var6, var3, -1, 0,
 											0, var7 + 1, var23 + 1);

@@ -1,9 +1,9 @@
 public class IgnoredPlayer {
 
-	static Sprite logoSprite;
+	static IndexedSprite logoSprite;
 	String previousName;
 	String displayName;
-	static Sprite[] modIcons;
+	static IndexedSprite[] modIcons;
 
 	public static byte method414(char var0) {
 		byte var1;
@@ -72,11 +72,11 @@ public class IgnoredPlayer {
 		return var1;
 	}
 
-	public static DualNode_Sub13_Sub3_Sub1 method415(byte[] var0) {
+	public static IndexedFont method415(byte[] var0) {
 		if (var0 == null) {
 			return null;
 		} else {
-			DualNode_Sub13_Sub3_Sub1 var1 = new DualNode_Sub13_Sub3_Sub1(var0, Class7.offsetsX, VarPlayerType.offsetsY,
+			IndexedFont var1 = new IndexedFont(var0, Class7.offsetsX, VarPlayerType.offsetsY,
 					Class7.subWidths, Class7.subHeights, Class85.palette, Npc.spritePixels);
 			Class65.resetSprite();
 			return var1;

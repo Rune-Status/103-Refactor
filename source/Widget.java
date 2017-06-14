@@ -295,21 +295,21 @@ public class Widget extends Node {
 		}
 	}
 
-	public Picture method488(int var1) {
+	public Sprite method488(int var1) {
 		aBool1128 = false;
 		if (var1 >= 0 && var1 < this.anIntArray1164.length) {
 			int var2 = this.anIntArray1164[var1];
 			if (var2 != -1) {
-				Picture var3 = (Picture) aClass106_1167.get((long) var2);
+				Sprite var3 = (Sprite) aClass106_1167.get((long) var2);
 				if (var3 != null) {
 					return var3;
 				} else {
 					AbstractIndex var4 = Npc.aClass87_1967;
-					Picture var6;
+					Sprite var6;
 					if (!Class35.decodeSprite(var4, var2, 0)) {
 						var6 = null;
 					} else {
-						Picture var5 = new Picture();
+						Sprite var5 = new Sprite();
 						var5.width = Class7.width;
 						var5.height = Class7.height;
 						var5.offsetX = Class7.offsetsX[0];
@@ -344,7 +344,7 @@ public class Widget extends Node {
 		}
 	}
 
-	public Picture method489(boolean var1) {
+	public Sprite method489(boolean var1) {
 		aBool1128 = false;
 		int var11;
 		if (var1) {
@@ -358,16 +358,16 @@ public class Widget extends Node {
 		} else {
 			long var8 = ((long) this.shadowColor << 40) + ((this.flippedVertically ? 1L : 0L) << 38) + (long) var11
 					+ ((long) this.borderThickness << 36) + ((this.flippedHorizontally ? 1L : 0L) << 39);
-			Picture var2 = (Picture) aClass106_1167.get(var8);
+			Sprite var2 = (Sprite) aClass106_1167.get(var8);
 			if (var2 != null) {
 				return var2;
 			} else {
 				AbstractIndex var10 = Npc.aClass87_1967;
-				Picture var7;
+				Sprite var7;
 				if (!Class35.decodeSprite(var10, var11, 0)) {
 					var7 = null;
 				} else {
-					Picture var3 = new Picture();
+					Sprite var3 = new Sprite();
 					var3.width = Class7.width;
 					var3.height = Class7.height;
 					var3.offsetX = Class7.offsetsX[0];
@@ -421,17 +421,17 @@ public class Widget extends Node {
 		}
 	}
 
-	public DualNode_Sub13_Sub3_Sub1 method490() {
+	public IndexedFont method490() {
 		aBool1128 = false;
 		if (this.fontId == -1) {
 			return null;
 		} else {
-			DualNode_Sub13_Sub3_Sub1 var1 = (DualNode_Sub13_Sub3_Sub1) aClass106_1192.get((long) this.fontId);
+			IndexedFont var1 = (IndexedFont) aClass106_1192.get((long) this.fontId);
 			if (var1 == null) {
 				AbstractIndex var3 = Npc.aClass87_1967;
 				AbstractIndex var4 = Class96_Sub1.aClass87_1207;
 				int var5 = this.fontId;
-				DualNode_Sub13_Sub3_Sub1 var2;
+				IndexedFont var2;
 				if (!Class35.decodeSprite(var3, var5, 0)) {
 					var2 = null;
 				} else {
@@ -466,11 +466,11 @@ public class Widget extends Node {
 			if (var9 != null) {
 				return var9;
 			} else {
-				Picture sprite = this.method489(var1);
+				Sprite sprite = this.method489(var1);
 				if (sprite == null) {
 					return null;
 				} else {
-					Picture copy = sprite.copy();
+					Sprite copy = sprite.copy();
 					int[] var10 = new int[copy.subHeight];
 					int[] var6 = new int[copy.subHeight];
 
@@ -505,7 +505,7 @@ public class Widget extends Node {
 		}
 	}
 
-	public Rasterizer method492(SequenceType var1, int var2, boolean var3, PlayerConfig var4) {
+	public Model method492(SequenceType var1, int var2, boolean var3, PlayerConfig var4) {
 		aBool1128 = false;
 		int var6;
 		int var7;
@@ -522,11 +522,11 @@ public class Widget extends Node {
 		} else if (var6 == 1 && var7 == -1) {
 			return null;
 		} else {
-			Rasterizer var8 = (Rasterizer) aClass106_1127.get((long) ((var6 << 16) + var7));
+			Model var8 = (Model) aClass106_1127.get((long) ((var6 << 16) + var7));
 			if (var8 == null) {
-				Model var5;
+				RSModel var5;
 				if (var6 == 1) {
-					var5 = Model.method887(aClass87_1131, var7, 0);
+					var5 = RSModel.method887(aClass87_1131, var7, 0);
 					if (var5 == null) {
 						aBool1128 = true;
 						return null;
@@ -596,18 +596,18 @@ public class Widget extends Node {
 		this.actions[var1] = var2;
 	}
 
-	static final int method494(int var0, int var1, int var2) {
-		int var3 = var0 / var2;
-		int var8 = var2 - 1 & var0;
-		int var4 = var1 / var2;
-		int var6 = var2 - 1 & var1;
-		int var11 = CalledScript.method197(var3, var4);
-		int var10 = CalledScript.method197(var3 + 1, var4);
-		int var7 = CalledScript.method197(var3, var4 + 1);
-		int var5 = CalledScript.method197(var3 + 1, var4 + 1);
-		int var12 = InterfaceNode.method578(var11, var10, var8, var2);
-		int var9 = InterfaceNode.method578(var7, var5, var8, var2);
-		return InterfaceNode.method578(var12, var9, var6, var2);
+	static final int getSmoothNoise(int x, int y, int fraction) {
+		int x1 = x / fraction;
+		int x2 = fraction - 1 & x;
+		int y1 = y / fraction;
+		int y2 = fraction - 1 & y;
+		int a = CalledScript.getSmoothNoise2D(x1, y1);
+		int b = CalledScript.getSmoothNoise2D(x1 + 1, y1);
+		int c = CalledScript.getSmoothNoise2D(x1, y1 + 1);
+		int d = CalledScript.getSmoothNoise2D(x1 + 1, y1 + 1);
+		int e = InterfaceNode.getCosineLerp(a, b, x2, fraction);
+		int f = InterfaceNode.getCosineLerp(c, d, x2, fraction);
+		return InterfaceNode.getCosineLerp(e, f, y2, fraction);
 	}
 
 	Object[] method495(ByteBuf var1) {

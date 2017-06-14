@@ -61,9 +61,9 @@ public final class Class91 {
 	}
 
 	static int method403(int var0) {
-		DualNode_Sub8 var1 = (DualNode_Sub8) Class32.aClass107_355.method432((long) var0);
+		ChatMessage var1 = (ChatMessage) Class32.aClass107_355.method432((long) var0);
 		return var1 == null ? -1
-				: (var1.dualNext != Class32.aClass108_354.aDualNode771 ? ((DualNode_Sub8) var1.dualNext).anInt1516
+				: (var1.dualNext != Class32.aClass108_354.aDualNode771 ? ((ChatMessage) var1.dualNext).anInt1516
 						: -1);
 	}
 

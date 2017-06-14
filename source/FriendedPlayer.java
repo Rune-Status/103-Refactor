@@ -9,7 +9,7 @@ public class FriendedPlayer {
 	static int anInt739;
 	static Node_Sub4_Sub1 aNode_Sub4_Sub1_740;
 	String previousName;
-	static Sprite[] titlemuteSprite;
+	static IndexedSprite[] titlemuteSprite;
 
 	static final void method407() {
 		for (int var0 = 0; var0 < Client.anInt2225; var0++) {

@@ -19,16 +19,16 @@ final class Class122 implements Comparator {
 	static final void loadTerrain(ByteBuf buf, int plane, int x, int y, int chunkX, int chunkY, int shapeOffset) {
 		int attribute;
 		if (x >= 0 && x < 104 && y >= 0 && y < 104) {
-			Class39.renderRules[plane][x][y] = 0;
+			Scene.renderFlags[plane][x][y] = 0;
 
 			while (true) {
 				attribute = buf.getUByte();
 				if (attribute == 0) {
 					if (plane == 0) {
-						Class39.tileHeights[0][x][y] = -Character.calculateTileHeight(chunkX + 932731 + x,
+						Scene.tileHeights[0][x][y] = -Character.getPerlinNoise(chunkX + 932731 + x,
 								chunkY + 556238 + y) * 8;
 					} else {
-						Class39.tileHeights[plane][x][y] = Class39.tileHeights[plane - 1][x][y] - 240;
+						Scene.tileHeights[plane][x][y] = Scene.tileHeights[plane - 1][x][y] - 240;
 					}
 					break;
 				}
@@ -40,19 +40,19 @@ final class Class122 implements Comparator {
 					}
 
 					if (plane == 0) {
-						Class39.tileHeights[0][x][y] = -height * 8;
+						Scene.tileHeights[0][x][y] = -height * 8;
 					} else {
-						Class39.tileHeights[plane][x][y] = Class39.tileHeights[plane - 1][x][y] - height * 8;
+						Scene.tileHeights[plane][x][y] = Scene.tileHeights[plane - 1][x][y] - height * 8;
 					}
 					break;
 				}
 
 				if (attribute <= 49) {
-					Class39.overlayIds[plane][x][y] = buf.getByte();
+					Scene.overlayIds[plane][x][y] = buf.getByte();
 					VarClientStringType.overlayPaths[plane][x][y] = (byte) ((attribute - 2) / 4);
 					GZipDecompressor.overlayRotations[plane][x][y] = (byte) (attribute - 2 + shapeOffset & 0x3);
 				} else if (attribute <= 81) {
-					Class39.renderRules[plane][x][y] = (byte) (attribute - 49);
+					Scene.renderFlags[plane][x][y] = (byte) (attribute - 49);
 				} else {
 					Class118.underlayIds[plane][x][y] = (byte) (attribute - 81);
 				}

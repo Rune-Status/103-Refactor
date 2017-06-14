@@ -5,12 +5,12 @@ public abstract class AbstractByteBuffer {
 
 	static boolean aBool528 = false;
 
-	public static Picture method257(AbstractIndex sprites, String file, String child) {
+	public static Sprite method257(AbstractIndex sprites, String file, String child) {
 		int fileId = sprites.getFile(file);
 		int childId = sprites.getChild(fileId, child);
-		Picture var9;
+		Sprite var9;
 		if (Class35.decodeSprite(sprites, fileId, childId)) {
-			Picture picture = new Picture();
+			Sprite picture = new Sprite();
 			picture.width = Class7.width;
 			picture.height = Class7.height;
 			picture.offsetX = Class7.offsetsX[0];

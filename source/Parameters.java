@@ -1,6 +1,6 @@
 public class Parameters {
 
-	static Picture[] mapDots;
+	static Sprite[] mapDots;
 	public String key;
 	public static Parameters aParameters60 = new Parameters("5", "5");
 	public static Parameters aParameters61 = new Parameters("6", "6");

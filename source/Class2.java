@@ -1,8 +1,8 @@
 public class Class2 {
 
 	static CacheIndex fontMetricsIndex;
-	static Sprite[] mapscenes;
-	static Sprite[] aDualNode_Sub13_Sub2Array78;
+	static IndexedSprite[] mapscenes;
+	static IndexedSprite[] aDualNode_Sub13_Sub2Array78;
 	static CacheIndex midiTrack1Index;
 	public static char aChar80;
 
@@ -38,10 +38,10 @@ public class Class2 {
 			z -= FriendedPlayer.cameraZ;
 			y -= Class72.cameraY;
 
-			int sinCurveY = TexturedGraphic.SIN_TABLE[Class67.cameraPitch];
-			int cosCurveY = TexturedGraphic.COS_TABLE[Class67.cameraPitch];
-			int sinCurveX = TexturedGraphic.SIN_TABLE[Class65.cameraYaw];
-			int cosCurveX = TexturedGraphic.COS_TABLE[Class65.cameraYaw];
+			int sinCurveY = Graphics3D.SIN_TABLE[Class67.cameraPitch];
+			int cosCurveY = Graphics3D.COS_TABLE[Class67.cameraPitch];
+			int sinCurveX = Graphics3D.SIN_TABLE[Class65.cameraYaw];
+			int cosCurveX = Graphics3D.COS_TABLE[Class65.cameraYaw];
 
 			int calculation = x * cosCurveX + y * sinCurveX >> 16;
 			y = cosCurveX * y - x * sinCurveX >> 16;

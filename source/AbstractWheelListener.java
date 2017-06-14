@@ -20,14 +20,14 @@ public abstract class AbstractWheelListener {
 		for (int var9 = 0; var9 < Client.audioEffectCount; var9++) {
 			--Client.anIntArray2029[var9];
 			if (Client.anIntArray2029[var9] >= -10) {
-				Class14 var101 = Client.aClass14Array2210[var9];
+				Track var101 = Client.aClass14Array2210[var9];
 				if (var101 == null) {
-					var101 = Class14.method119(VarClientType.sfxIndex, Client.anIntArray2206[var9], 0);
+					var101 = Track.getTrack(VarClientType.sfxIndex, Client.anIntArray2206[var9], 0);
 					if (var101 == null) {
 						continue;
 					}
 
-					Client.anIntArray2029[var9] += var101.method121();
+					Client.anIntArray2029[var9] += var101.calculateDelay();
 					Client.aClass14Array2210[var9] = var101;
 				}
 

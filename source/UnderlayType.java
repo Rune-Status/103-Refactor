@@ -4,7 +4,7 @@ public class UnderlayType extends DualNode {
 	int rgbColor = 0;
 	public int saturation;
 	public int lightness;
-	public int pCDivider;
+	public int hueMultiplier;
 	public int hue;
 	static NodeMap underlays = new NodeMap(64);
 
@@ -82,16 +82,16 @@ public class UnderlayType extends DualNode {
 		}
 
 		if (lightness > 0.5D) {
-			this.pCDivider = (int) ((1.0D - lightness) * saturation * 512.0D);
+			this.hueMultiplier = (int) ((1.0D - lightness) * saturation * 512.0D);
 		} else {
-			this.pCDivider = (int) (saturation * 512.0D * lightness);
+			this.hueMultiplier = (int) (saturation * 512.0D * lightness);
 		}
 
-		if (this.pCDivider < 1) {
-			this.pCDivider = 1;
+		if (this.hueMultiplier < 1) {
+			this.hueMultiplier = 1;
 		}
 
-		this.hue = (int) ((double) this.pCDivider * hue);
+		this.hue = (int) ((double) this.hueMultiplier * hue);
 	}
 
 	static void method704(int var0, int var1) {

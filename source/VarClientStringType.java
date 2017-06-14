@@ -32,7 +32,7 @@ public class VarClientStringType extends DualNode {
 			Deque var0 = Class90.aDeque718;
 			Node_Sub9 var1;
 			synchronized (var0) {
-				var1 = (Node_Sub9) Class90.aDeque717.method469();
+				var1 = (Node_Sub9) Class90.aDeque717.popFront();
 			}
 
 			if (var1 == null) {

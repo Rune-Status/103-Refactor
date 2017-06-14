@@ -4,9 +4,9 @@ public class RuntimeException_Sub1 extends RuntimeException {
 	String aString1806;
 	Throwable aThrowable1808;
 
-	static int method931(int var0, int var1, int var2) {
-		return (Class39.renderRules[var0][var1][var2] & 0x8) != 0 ? 0
-				: (var0 > 0 && (Class39.renderRules[1][var1][var2] & 0x2) != 0 ? var0 - 1 : var0);
+	static int getRenderLevel(int level, int x, int y) {
+		return (Scene.renderFlags[level][x][y] & 0x8) != 0 ? 0
+				: (level > 0 && (Scene.renderFlags[1][x][y] & 0x2) != 0 ? level - 1 : level);
 	}
 
 	RuntimeException_Sub1(Throwable var1, String var2) {

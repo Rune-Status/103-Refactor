@@ -101,25 +101,24 @@ public final class IndexTable {
 		}
 	}
 
-	static final int method304(int var0, int var1, int var2) {
-		if (var2 > 179) {
-			var1 /= 2;
+	static final int hsl24to16(int hue, int saturation, int lightness) {
+		if (lightness > 179) {
+			saturation /= 2;
 		}
 
-		if (var2 > 192) {
-			var1 /= 2;
+		if (lightness > 192) {
+			saturation /= 2;
 		}
 
-		if (var2 > 217) {
-			var1 /= 2;
+		if (lightness > 217) {
+			saturation /= 2;
 		}
 
-		if (var2 > 243) {
-			var1 /= 2;
+		if (lightness > 243) {
+			saturation /= 2;
 		}
 
-		int var3 = var2 / 2 + (var1 / 32 << 7) + (var0 / 4 << 10);
-		return var3;
+		return lightness / 2 + (saturation / 32 << 7) + (hue / 4 << 10);
 	}
 
 	public IndexTable(int var1, CacheFile var2, CacheFile var3, int var4) {
@@ -245,7 +244,7 @@ public final class IndexTable {
 		}
 	}
 
-	public static Sprite method306(AbstractIndex var0, int var1) {
+	public static IndexedSprite method306(AbstractIndex var0, int var1) {
 		byte[] var2 = var0.method378(var1);
 		boolean var3;
 		if (var2 != null) {
