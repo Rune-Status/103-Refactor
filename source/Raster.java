@@ -1,4 +1,4 @@
-public class RSGraphics extends DualNode {
+public class Raster extends DualNode {
 
 	public static int[] raster;
 	public static int raster_width;
@@ -153,8 +153,8 @@ public class RSGraphics extends DualNode {
 	}
 
 	public static void drawRectangle(int var0, int var1, int var2, int var3, int var4) {
-		method796(var0, var1, var2, var4);
-		method796(var0, var1 + var3 - 1, var2, var4);
+		drawHorizontal(var0, var1, var2, var4);
+		drawHorizontal(var0, var1 + var3 - 1, var2, var4);
 		method784(var0, var1, var3, var4);
 		method784(var0 + var2 - 1, var1, var3, var4);
 	}
@@ -244,9 +244,9 @@ public class RSGraphics extends DualNode {
 		var3 -= var1;
 		if (var3 == 0) {
 			if (var2 >= 0) {
-				method796(var0, var1, var2 + 1, var4);
+				drawHorizontal(var0, var1, var2 + 1, var4);
 			} else {
-				method796(var0 + var2, var1, -var2 + 1, var4);
+				drawHorizontal(var0 + var2, var1, -var2 + 1, var4);
 			}
 		} else if (var2 == 0) {
 			if (var3 >= 0) {
@@ -394,7 +394,7 @@ public class RSGraphics extends DualNode {
 
 	}
 
-	public static void method796(int var0, int var1, int var2, int var3) {
+	public static void drawHorizontal(int var0, int var1, int var2, int var3) {
 		if (var1 >= draw_region_y && var1 < draw_region_max_y) {
 			if (var0 < draw_region_x) {
 				var2 -= draw_region_x - var0;
